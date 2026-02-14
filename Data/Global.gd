@@ -179,6 +179,9 @@ func GenerateOre(DepthChange = 0):
 		if OreRarityTable[OreID] == 0:
 			TotalWeighting += Rarity / Global.Pickaxe["stats"][3]
 			OreWeights.append(Rarity / Global.Pickaxe["stats"][3])
+		elif OreRarityTable[OreID] == 4 or OreRarityTable[OreID] == 5:
+			TotalWeighting += Rarity * Global.Pickaxe["stats"][4]
+			OreWeights.append(Rarity * Global.Pickaxe["stats"][4])
 		else:
 			TotalWeighting += Rarity
 			OreWeights.append(Rarity)
