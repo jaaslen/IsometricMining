@@ -1,0 +1,22 @@
+{
+  "skills": [
+	{
+	  "id": 0,
+	  "name": "dev",
+	  "description": "You gain [color=white]1000 Times[/color] as many ores as before.",
+	  "color": "#FF00FF"
+	},
+	{
+	  "id": 1,
+	  "name": "luck",
+	  "description": "Chance for stone-type ore is now lower, chance/[color=white]%s[/color].",
+	  "color": "#B6D7A8"
+	},
+	{
+	  "id": 1,
+	  "name": "xp mult",
+	  "description": "You gain [color=white]%s[/color]x as much xp as before.",
+	  "color": "#674EA7"
+	}
+  ]
+}

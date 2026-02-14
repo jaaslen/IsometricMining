@@ -1,0 +1,224 @@
+[gd_scene load_steps=17 format=3 uid="uid://60t2vbjjambe"]
+
+[ext_resource type="Script" uid="uid://bofqhbhajepx" path="res://Scripts/PickaxesForge.gd" id="1_ewbv2"]
+[ext_resource type="Script" uid="uid://c1yv6u68gcq66" path="res://Scripts/ForgeContainer.gd" id="1_tpr0r"]
+[ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="2_lex3g"]
+[ext_resource type="Script" uid="uid://dk0xk5sp76el" path="res://Scripts/PickaxeCosts.gd" id="2_lg3is"]
+[ext_resource type="Theme" uid="uid://dmws17unfrsq1" path="res://Visuals/MinerTheme.tres" id="3_2b4ie"]
+[ext_resource type="Script" uid="uid://cp61yd8jx3rod" path="res://Scripts/Stats.gd" id="3_qlblt"]
+[ext_resource type="Script" uid="uid://t74boarcjsoe" path="res://Scripts/StatsPanel.gd" id="4_gk1wl"]
+[ext_resource type="Script" uid="uid://dpvrx7jorkwps" path="res://Scripts/UpgradeStats.gd" id="4_wi1hq"]
+[ext_resource type="Script" uid="uid://dr6rqbdiybyif" path="res://Scripts/CostPanel.gd" id="5_aelxu"]
+[ext_resource type="Script" uid="uid://dhycof7suqcmr" path="res://Scripts/UpgradedPickaxeSelection.gd" id="6_042mp"]
+[ext_resource type="Script" uid="uid://b7sfjxux4a26a" path="res://Scripts/ForgeButton.gd" id="6_mbix4"]
+[ext_resource type="PackedScene" uid="uid://xok4ed1xpd5x" path="res://Scenes/PickaxeSelect.tscn" id="9_gs31o"]
+[ext_resource type="Script" uid="uid://da04gc0c3olsn" path="res://Scripts/UpgradeCosts.gd" id="9_qjbut"]
+[ext_resource type="Script" uid="uid://cs42pixs20bwv" path="res://Scripts/RegularPickaxeSelection.gd" id="9_ugol7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcom1"]
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dejnt"]
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[node name="Forge" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ForgeContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_tpr0r")
+
+[node name="Selection" type="PanelContainer" parent="ForgeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_lcom1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/Selection"]
+z_index = 1
+layout_mode = 2
+
+[node name="PickaxeHeader" type="Label" parent="ForgeContainer/Selection/VBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lex3g")
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = SubResource("StyleBoxFlat_dejnt")
+text = "Pickaxes"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/Selection/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="PickaxeSelection" type="VBoxContainer" parent="ForgeContainer/Selection/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_ewbv2")
+
+[node name="StatsPanel" type="TabContainer" parent="ForgeContainer"]
+custom_minimum_size = Vector2(0, 1072)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme = ExtResource("3_2b4ie")
+theme_override_constants/tab_separation = 10
+current_tab = 0
+script = ExtResource("4_gk1wl")
+
+[node name="Stats" type="HBoxContainer" parent="ForgeContainer/StatsPanel"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/StatsPanel/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StatsList" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Stats/ScrollContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+script = ExtResource("3_qlblt")
+
+[node name="CostPanel" type="PanelContainer" parent="ForgeContainer/StatsPanel/Stats"]
+custom_minimum_size = Vector2(0, 540)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+script = ExtResource("5_aelxu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Stats/CostPanel"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="OreCosts" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_lg3is")
+
+[node name="ForgeButton" type="Button" parent="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "Forge!"
+script = ExtResource("6_mbix4")
+
+[node name="Upgrades" type="HBoxContainer" parent="ForgeContainer/StatsPanel"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Upgrades"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Selection" type="MarginContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 0
+script = ExtResource("9_ugol7")
+
+[node name="Button" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/Selection" instance=ExtResource("9_gs31o")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 101
+text = "▼"
+horizontal_alignment = 1
+
+[node name="UpgradeSelection2" type="MarginContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+script = ExtResource("6_042mp")
+
+[node name="Button" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/UpgradeSelection2" instance=ExtResource("9_gs31o")]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="UpgradeInfo" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.2
+theme_override_constants/separation = 0
+script = ExtResource("4_wi1hq")
+
+[node name="CostPanel" type="PanelContainer" parent="ForgeContainer/StatsPanel/Upgrades"]
+custom_minimum_size = Vector2(0, 540)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Upgrades/CostPanel"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("9_qjbut")
+
+[node name="Button" type="Button" parent="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 64
+text = "Forge!"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[connection signal="PickaxeSetup" from="ForgeContainer/Selection/VBoxContainer/ScrollContainer/PickaxeSelection" to="ForgeContainer" method="PickaxeSetup"]
+[connection signal="PickaxesReady" from="ForgeContainer/Selection/VBoxContainer/ScrollContainer/PickaxeSelection" to="ForgeContainer" method="PickaxesReady"]
+[connection signal="PriceChange" from="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ScrollContainer/OreCosts" to="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ForgeButton" method="PriceChange"]
+[connection signal="pressed" from="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ForgeButton" to="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ForgeButton" method="_on_pressed"]

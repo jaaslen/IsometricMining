@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="OreData" load_steps=2 format=3 uid="uid://ck2xd2fqmmwep"]
+
+[ext_resource type="Script" uid="uid://cowkbdut6hsrt" path="res://Scripts/OreData.gd" id="1_s07gq"]
+
+[resource]
+script = ExtResource("1_s07gq")
+display_name = "Test"
+metadata/_custom_type_script = "uid://cowkbdut6hsrt"
