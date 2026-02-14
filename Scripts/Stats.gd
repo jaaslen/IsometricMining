@@ -30,7 +30,7 @@ func PickaxeChanged(PickaxeID):
 			add_child(NewInventoryItem)
 		StatIndex += 1
 	for skill in Global.GameData["pickaxes"][var_to_str(PickaxeID)]["traits"]:
-		var NewInventoryItem = load("res://SkillBar.tscn").instantiate()
+		var NewInventoryItem = load("uid://b04p6hia7y3l0").instantiate()
 		NewInventoryItem.Skill = Global.SkillInfo["traits"][skill]
 		add_child(NewInventoryItem)
 	
