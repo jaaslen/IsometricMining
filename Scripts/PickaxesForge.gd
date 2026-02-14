@@ -11,7 +11,7 @@ func _ready() -> void:
 		i.queue_free()
 	for Index in range(1,Global.PickaxesInGame):
 		
-		var NewInventoryItem = load("res://PickaxeSelect.tscn").instantiate()
+		var NewInventoryItem = load("uid://xok4ed1xpd5x").instantiate()
 		if Global.GameData["pickaxes"][var_to_str(Index)]["unlocked"] == false:
 			Index = 0
 			
@@ -29,7 +29,7 @@ func NewPickaxe(_id):
 		i.queue_free()
 	for Index in range(1,Global.PickaxesInGame):
 		
-		var NewInventoryItem = load("res://PickaxeSelect.tscn").instantiate()
+		var NewInventoryItem = load("uid://xok4ed1xpd5x").instantiate()
 		if Global.GameData["pickaxes"][var_to_str(Index)]["unlocked"] == false:
 			Index = 0
 		NewInventoryItem.Forged = Global.GameData["pickaxes"][var_to_str(Index)]["forged"]
@@ -50,7 +50,7 @@ func PickaxeChanged(_PickaxeID) -> void:
 		i.queue_free()
 	for Index in range(1,Global.PickaxesInGame):
 		
-		var NewInventoryItem = load("res://PickaxeSelect.tscn").instantiate()
+		var NewInventoryItem = load("uid://xok4ed1xpd5x").instantiate()
 		if Global.GameData["pickaxes"][var_to_str(Index)]["unlocked"] == false:
 			Index = 0
 		NewInventoryItem.Forged = Global.GameData["pickaxes"][var_to_str(Index)]["forged"]

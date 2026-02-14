@@ -34,7 +34,7 @@ func PickaxeChanged(PickaxeID):
 			var StatIndex = 0
 			for stat in UpgradedPickaxe["stats"]:
 				if stat != 1.0 or StatIndex in [0,1]:
-					var NewInventoryItem = load("res://MiniStatBar.tscn").instantiate()
+					var NewInventoryItem = load("uid://d1pe2igwdtaun").instantiate()
 					NewInventoryItem.Stat = StatIndex
 					NewInventoryItem.Value = stat
 					NewInventoryItem.Pickaxe = UpgradedPickaxe

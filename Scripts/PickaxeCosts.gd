@@ -28,7 +28,7 @@ func PickaxeChanged(PickaxeID):
 		
 	Buyable = true
 	for cost in Global.GameData["pickaxes"][var_to_str(OriginalID)]["cost"]:
-		var NewInventoryItem = load("res://CostPanel.tscn").instantiate()
+		var NewInventoryItem = load("uid://w4sqtpegcrlw").instantiate()
 		NewInventoryItem.Ore = Global.GameData["ores"][var_to_str(int(cost[0]))]
 		NewInventoryItem.Cost = cost[1]
 		if Global.OreAmounts[int(cost[0])] < int(cost[1]):
