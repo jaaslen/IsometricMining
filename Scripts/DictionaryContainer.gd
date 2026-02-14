@@ -30,7 +30,7 @@ func AddScenes():
 
 	for key in keys:
 		if data[key]["id"] != 0:
-			var scene: PackedScene = load("res://OreInfoButton.tscn")
+			var scene: PackedScene = load("uid://be6lsgn3ms26")
 			var instance = scene.instantiate()
 			if data[key]["found"]:
 				instance.Found = true

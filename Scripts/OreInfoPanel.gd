@@ -5,7 +5,7 @@ var Order = [1,2,3,5,7,6,4,13,14,16,18,22,9,15,8,12,17,32,34,11,10,28,23,20,24,2
 @export var ActualOre = Global.GameData["ores"]["0"]
 @export var Ore = Global.GameData["ores"]["0"]
 
-@onready var PanelStyle = load("res://InfoBars.tres")
+@onready var PanelStyle = load("uid://bu0qaxonbmuh1")
 @onready var Buttons = %GridContainer
 @onready var IDlabel = $HBoxContainer/VBoxContainer2/HBoxContainer/Panel3/ID
 @onready var Icon = $HBoxContainer/VBoxContainer/Panel/MarginContainer/Icon

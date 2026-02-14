@@ -21,7 +21,7 @@ func PickaxeChanged(PickaxeID):
 		if Global.GameData["pickaxes"][var_to_str(OriginalID)]["stats"][StatIndex] == 1 and StatIndex > 1:
 			pass
 		elif stat != 1 or StatIndex in [0,1]:
-			var NewInventoryItem = load("res://StatBar.tscn").instantiate()
+			var NewInventoryItem = load("uid://ctx8xrjc65lmv").instantiate()
 			NewInventoryItem.Pickaxe = Global.GameData["pickaxes"][var_to_str(PickaxeID)]
 			NewInventoryItem.Value = stat #NewInventoryItem.Pickaxe["stats"][stat["stat"]]["value"]
 			NewInventoryItem.Stat = StatIndex#Global.StatInfo["stats"][StatIndex]["i"]
