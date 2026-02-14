@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://chbgis4c6afk7"]
+
+[ext_resource type="Script" uid="uid://sr3kwxijwepr" path="res://Dictionary.gd" id="1_3abks"]
+[ext_resource type="Script" uid="uid://beygvhct1lf0w" path="res://DictionaryContainer.gd" id="1_la43g"]
+[ext_resource type="PackedScene" uid="uid://dg1k0b6frkr3x" path="res://OreInfo.tscn" id="2_xvgq2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvgq2"]
+bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3abks")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+clip_contents = false
+custom_minimum_size = Vector2(1760, 0)
+layout_mode = 0
+offset_right = 1744.0
+offset_bottom = 496.0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 160
+theme_override_constants/v_separation = 160
+columns = 11
+script = ExtResource("1_la43g")
+
+[node name="Control" parent="." instance=ExtResource("2_xvgq2")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = -21.120117
+
+[node name="Panel" type="Panel" parent="."]
+z_index = -10
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xvgq2")

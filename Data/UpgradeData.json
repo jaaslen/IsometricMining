@@ -1,0 +1,127 @@
+{
+  "1": {
+	"name": "Test",
+	"color": "#FF00FF",
+	"cost": [
+	  {
+		"ore": 0,
+		"amount": 1
+	  },
+	  {
+		"ore": 1,
+		"amount": 1000
+	  }
+	],
+	"stats": [
+	  1,
+	  0.1,
+	  10,
+	  10
+	],
+	"skills": [],
+	"level": 1,
+	"maxlevel": false,
+	"unlocked": true,
+	"forged": false
+  },
+  "101": {
+	"name": "Stone Pickaxe [color=white]★[/color]",
+	"color": "#666666",
+	"cost": [
+	  {
+		"ore": 0,
+		"amount": 1
+	  },
+	  {
+		"ore": 1,
+		"amount": 1000
+	  }
+	],
+	"stats": [
+	  1,
+	  1,
+	  1,
+	  1
+	],
+	"skills": [],
+	"level": 1,
+	"maxlevel": false,
+	"unlocked": true,
+	"forged": false
+  },
+  "102": {
+	"name": "Stone Pickaxe",
+	"color": "#666667",
+	"cost": [
+	  {
+		"ore": 0,
+		"amount": 1
+	  },
+	  {
+		"ore": 1,
+		"amount": 1000
+	  }
+	],
+	"stats": [
+	  1,
+	  1,
+	  1,
+	  1
+	],
+	"skills": [],
+	"level": 2,
+	"maxlevel": true,
+	"unlocked": true,
+	"forged": false
+  },
+  "201": {
+	"name": "Iron Pickaxe",
+	"color": "#A59C94",
+	"cost": [
+	  {
+		"ore": 0,
+		"amount": 1
+	  },
+	  {
+		"ore": 1,
+		"amount": 1000
+	  }
+	],
+	"stats": [
+	  2,
+	  0.8,
+	  1,
+	  1
+	],
+	"skills": [],
+	"level": 1,
+	"maxlevel": false,
+	"unlocked": true,
+	"forged": false
+  },
+  "301": {
+	"name": "Gold Pickaxe",
+	"color": "#FFD966",
+	"cost": [
+	  {
+		"ore": 0,
+		"amount": 1
+	  },
+	  {
+		"ore": 1,
+		"amount": 1000
+	  }
+	],
+	"stats": [
+	  4,
+	  1.2,
+	  1,
+	  1
+	],
+	"skills": [],
+	"level": 1,
+	"maxlevel": false,
+	"unlocked": true,
+	"forged": false
+  }
+}

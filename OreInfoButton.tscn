@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://be6lsgn3ms26"]
+
+[ext_resource type="Script" uid="uid://nuh1nxkw6hlv" path="res://OreInfo.gd" id="1_q4b0w"]
+[ext_resource type="Texture2D" uid="uid://cyllyhadc53sh" path="res://OreSheet.png" id="2_q4b0w"]
+[ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://outlinedfont2.otf" id="3_h6mq5"]
+[ext_resource type="Script" uid="uid://rjgygt1sckq7" path="res://OreInfoName.gd" id="4_2if1f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auoxk"]
+atlas = ExtResource("2_q4b0w")
+region = Rect2(128, 0, 128, 136)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bgkoc"]
+bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+border_width_left = 4
+border_width_top = 4
+border_color = Color(0.42352942, 0.42352942, 0.43529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_auoxk"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_color = Color(1, 1, 1, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 0.133
+anchor_bottom = 0.32000002
+offset_right = -47.40001
+offset_bottom = -3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q4b0w")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 160.0
+offset_bottom = 160.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = SubResource("AtlasTexture_auoxk")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_bgkoc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_auoxk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 176.0
+offset_right = 160.0
+offset_bottom = 260.0
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("3_h6mq5")
+theme_override_font_sizes/normal_font_size = 90
+text = "quartz"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_2if1f")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
