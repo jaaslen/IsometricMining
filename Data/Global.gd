@@ -30,7 +30,7 @@ var GameData : Dictionary = LoadJson("res://Data/Data.json")
 var Pickaxe = GameData["pickaxes"]["1"]
 var Layer = GameData["layers"]["0"]
 
-var OresInGame : int = 0
+var OresInGame : int = -1
 var PickaxesInGame : int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -40,6 +40,8 @@ func _ready() -> void:
 	normalizeores()
 	normalizepickaxes()
 	AvailableOres()
+	
+	print(OresInGame)
 	#for v in range(6):
 		#var newlayer = []
 		#for i in range(9):

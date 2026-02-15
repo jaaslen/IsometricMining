@@ -1,5 +1,9 @@
 extends TileMapLayer
 @onready var detector
+
+signal StartedMiningAnim
+
+
 var ModFactor = [0.05,0.05,0.05]
 
 @onready var Cursor = self.get_node("Cursor")
@@ -443,9 +447,11 @@ func MineTile(layer,shift = Vector2i.ZERO):
 	
 func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID):
 		if Locked == false and ShiftLocked == false:
+			emit_signal("StartedMiningAnim",0,0)
 			for i in Effects.get_children():
 				if i.name != "Mining":
 					i.call_deferred("queue_free")
+					
 	
 		var BottomBlocked = false
 		var TopLeftBlocked = false
@@ -525,7 +531,13 @@ func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID):
 		
 		Effects.call_deferred("add_child", TopAnimation)
 		
-		TopAnimation.speed_scale = ( (3 * Global.Pickaxe["stats"][0] * Global.Pickaxe["stats"][0]) / Global.GameData["ores"][var_to_str(OreID)]["hardness"]) / (pow(1.5, log(Global.Depth + 1) / log(10.0)))
+		var frame_count = TopAnimation.sprite_frames.get_frame_count(TopAnimation.animation)
+		var desired_time = (Global.GameData["ores"][var_to_str(OreID)]["hardness"] * (pow(1.5, log(Global.Depth + 1) / log(10.0)))) / ( 3 * Global.Pickaxe["stats"][0] )
+
+		TopAnimation.sprite_frames.set_animation_speed(TopAnimation.animation, frame_count / desired_time)
+		
+		emit_signal("StartedMiningAnim",desired_time,OreID)
+		#TopAnimation.speed_scale = ( (3 * Global.Pickaxe["stats"][0] * Global.Pickaxe["stats"][0]) / Global.GameData["ores"][var_to_str(OreID)]["hardness"]) / (pow(1.5, log(Global.Depth + 1) / log(10.0)))
 		#print((pow(1.5, log(max(Global.Depth,1)) / log(10.0))))
 		if TopAnimation.speed_scale > 10:
 			TopAnimation.speed_scale *= 20

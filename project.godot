@@ -13,6 +13,7 @@ config_version=5
 config/name="Isometric"
 run/main_scene="res://Scenes/Main.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
+run/max_fps=60
 config/icon="res://Visuals/icon.svg"
 
 [autoload]
@@ -31,6 +32,10 @@ window/stretch/aspect="expand"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[gui]
+
+theme/custom_font="uid://dl7cun7xt8hoy"
 
 [input]
 
