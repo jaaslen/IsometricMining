@@ -6,7 +6,7 @@ func _ready() -> void:
 	var Index = 0
 	for amount in Global.OreAmounts:
 		
-		var NewInventoryItem = load("uid://oyxab1yvfiji").instantiate()
+		var NewInventoryItem = preload("res://Scenes/InventoryValue.tscn").instantiate()
 		NewInventoryItem.Ore = Global.GameData["ores"][var_to_str(Index)]
 		
 		

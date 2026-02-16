@@ -6,19 +6,19 @@ signal PriceChange
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.PickaxeChanged.connect(PickaxeChanged)
-
+	PickaxeChanged(1)
 	
 	pass # Replace with function body.
 
 func PickaxeChanged(PickaxeID):
 	
-	var Level = Global.GameData["pickaxes"][var_to_str(PickaxeID)]["level"]
+	var CurrentLevel = Global.PickaxeLevels[PickaxeID]
 	
 	var OriginalID = PickaxeID
 	if Global.GameData["pickaxes"][var_to_str(PickaxeID)]["unlocked"] == false:
 		PickaxeID = 0
-	elif Global.GameData["pickaxes"][var_to_str(PickaxeID)]["maxlevel"] == false:
-		Cost = Global.GameData["upgrades"][var_to_str(OriginalID * 1000 + (Level+1))]["cost"]
+	elif Global.GameData["pickaxes"][var_to_str(PickaxeID)]["maxlevel"] > CurrentLevel:
+		Cost = Global.GameData["pickaxes"][var_to_str(OriginalID + 1000 * (CurrentLevel+1))]["cost"]
 		
 		
 	
@@ -30,9 +30,9 @@ func PickaxeChanged(PickaxeID):
 	Buyable = true
 	for cost in Cost:
 		var NewInventoryItem = load("uid://w4sqtpegcrlw").instantiate()
-		NewInventoryItem.Ore = Global.GameData["ores"][var_to_str(int(cost["ore"]))]
-		NewInventoryItem.Cost = cost["amount"]
-		if Global.OreAmounts[int(cost["ore"])] < int(cost["amount"]):
+		NewInventoryItem.Ore = Global.GameData["ores"][var_to_str(int(cost[0]))]
+		NewInventoryItem.Cost = cost[1]
+		if Global.OreAmounts[int(cost[0])] < int(cost[1]):
 			Buyable = false
 			pass
 			

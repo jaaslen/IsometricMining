@@ -35,6 +35,24 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+size_flags_stretch_ratio = 0.3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_eegc5")
+theme_override_font_sizes/font_size = 40
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 2
+text_overrun_behavior = 1
+script = ExtResource("5_d1p0m")
+
+[node name="Increase" type="Label" parent="Container/Text"]
+z_index = 1
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.5
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_eegc5")
@@ -78,7 +96,8 @@ vertical_alignment = 2
 text_overrun_behavior = 1
 script = ExtResource("5_d1p0m")
 
-[node name="Increase" type="Label" parent="Container/Text"]
+[node name="Increase3" type="Label" parent="Container/Text"]
+visible = false
 z_index = 1
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
@@ -88,7 +107,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_eegc5")
 theme_override_font_sizes/font_size = 25
-text = "(+?)"
+text = "???"
 horizontal_alignment = 1
 vertical_alignment = 2
 text_overrun_behavior = 1

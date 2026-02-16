@@ -200,12 +200,12 @@ func _process(delta: float) -> void:
 
 	var pos = GetMouse() + Vector2(Global.CellSize.x / 2, Global.CellSize.y / 2)
 	
-	if Input.is_action_just_pressed("MoveDown") and MovingDown == false and MovingBetween == false and Mining == false:
+	if Input.is_action_just_pressed("MoveDown") and MovingDown == false and MovingBetween == false and Mining == false and MovingSideways == Vector2(0,0):
 		#MoveBetween()
 		MoveDown()
 		pass
 	
-	if ((Input.is_action_just_pressed("Mine") and InMine == true and MovingBetween == false) or Locked == true or ShiftLocked == true) and MovingDown == false and Mining == false and MovingSideways == Vector2(0,0):
+	if ((Input.is_action_just_pressed("Mine") and InMine == true and MovingBetween == false) or Locked == true or ShiftLocked == true) and MovingDown == false and MovingSideways == Vector2(0,0):
 		
 		#var pos = get_global_mouse_position() + Vector2(Global.CellSize.x / 2, Global.CellSize.y / 2)
 		
@@ -226,7 +226,7 @@ func _process(delta: float) -> void:
 					##(previouslayer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(0,str_to_var(layer.name)-1)) == -1 or str_to_var(layer.name) == 1)
 					#(previouslayer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(1,0)) + previouslayer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(-1,1)))
 					if previouslayer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(0,str_to_var(layer.name)-1)) == -1 and previouslayer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(1,0)) + previouslayer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(-1,1)) or str_to_var(layer.name) == 1 : 
-						if Mining == false:
+						#if Mining == false:
 							MineTile(layer)
 							
 							if str_to_var(layer.name) == 1:
@@ -419,6 +419,7 @@ func equal_approx(a,b,c) -> bool:
 	return a.distance_to(b) < c
 	
 func MineTile(layer,shift = Vector2i.ZERO):
+	Mining = true
 	#round(Cursor.position)# 
 	
 	
@@ -532,7 +533,7 @@ func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID):
 		Effects.call_deferred("add_child", TopAnimation)
 		
 		var frame_count = TopAnimation.sprite_frames.get_frame_count(TopAnimation.animation)
-		var desired_time = (Global.GameData["ores"][var_to_str(OreID)]["hardness"] * (pow(1.5, log(Global.Depth + 1) / log(10.0)))) / ( 3 * Global.Pickaxe["stats"][0] )
+		var desired_time = (Global.GameData["ores"][var_to_str(OreID)]["hardness"] * (pow(1.5, log(Global.Depth + 1) / log(10.0)))) / ( Global.Pickaxe["stats"][0] )
 
 		TopAnimation.sprite_frames.set_animation_speed(TopAnimation.animation, frame_count / desired_time)
 		

@@ -4,8 +4,9 @@ extends Button
 
 @export var Icon : CompressedTexture2D
 @export var Pickaxe: Dictionary = Global.GameData["pickaxes"]["0"]
+@onready var SaveData = Global.SaveData
 @export var Unlocked: bool
-@export var Forged: bool
+@export var Forged: bool = true
 
 @onready var EquipButton = $Button
 @onready var IconBox = self.get_node("Texture")
@@ -15,29 +16,29 @@ extends Button
 func _ready() -> void:
 	Global.PickaxeChanged.connect(PickaxeChanged)
 	PickaxeChanged(1)
+	
 
 	
 
 
 
 func _on_pressed() -> void:
-	var PickaxeID = Pickaxe["id"]
-	print(PickaxeID)
+	var PickaxeID = Pickaxe["original"]
 	Global.SelectPickaxe(PickaxeID)
 	pass # Replace with function body.
 
 
 func _on_button_pressed() -> void:
-	var PickaxeID = Pickaxe["id"]
+	var PickaxeID = Pickaxe["original"]
 	Global.EquipPickaxe(PickaxeID)
 	#_ready()
 	pass # Replace with function body.
 
-func PickaxeChanged(_PickaxeID):
+func PickaxeChanged(__):
 	
 	EquipButton.visible = true
 	EquipButton.disabled = true
-	if Pickaxe["unlocked"] == true and Pickaxe["forged"] == true:
+	if SaveData["unlocked"][int(Pickaxe["id"]) % 1000] == true and SaveData["forged"][int(Pickaxe["id"]) % 1000] == true and Forged == true:
 		EquipButton.visible = true
 		EquipButton.disabled = false
 		EquipButton.text = "Equip?"

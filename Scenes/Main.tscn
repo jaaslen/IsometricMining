@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=4 uid="uid://ckd04gu6f1lw"]
+[gd_scene load_steps=119 format=4 uid="uid://ckd04gu6f1lw"]
 
 [ext_resource type="TileSet" uid="uid://b73qq53megiib" path="res://Visuals/DefaultTileset.tres" id="2_cm0pq"]
 [ext_resource type="Texture2D" uid="uid://by84fajab3xgw" path="res://Visuals/MiningAnim.png" id="3_fos0i"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dkb6cx8pl66f8" path="res://Scripts/DepthLabel.gd" id="7_lgr22"]
 [ext_resource type="Script" uid="uid://bwjkpywr2l3c4" path="res://Scripts/XpLabel.gd" id="8_trn2v"]
 [ext_resource type="Script" uid="uid://nhg83jc5qjgs" path="res://Scripts/FPS.gd" id="9_03owx"]
+[ext_resource type="Script" uid="uid://kqlw2m68m2qf" path="res://Scenes/available.gd" id="9_erwvk"]
 [ext_resource type="Script" uid="uid://oxl83epljceq" path="res://Scenes/MiningProgress.gd" id="9_h1m7h"]
 [ext_resource type="PackedScene" uid="uid://60t2vbjjambe" path="res://Scenes/Forge.tscn" id="10_wkp8b"]
 [ext_resource type="Script" uid="uid://chsj4ane58jum" path="res://Scripts/ForgeUI.gd" id="11_5vvyt"]
@@ -951,11 +952,13 @@ offset_bottom = -225.0
 text = "0m"
 script = ExtResource("9_03owx")
 
-[node name="Available" type="Label" parent="Camera2D/UI"]
+[node name="Ores" type="Label" parent="Camera2D/UI"]
+visible = false
 layout_mode = 0
 offset_left = -40.0
 offset_top = -248.0
 offset_bottom = -225.0
+script = ExtResource("9_erwvk")
 
 [node name="ProgressBar" type="ProgressBar" parent="Camera2D/UI"]
 layout_mode = 1

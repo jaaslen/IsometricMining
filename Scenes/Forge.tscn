@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://60t2vbjjambe"]
+[gd_scene load_steps=18 format=3 uid="uid://60t2vbjjambe"]
 
 [ext_resource type="Script" uid="uid://bofqhbhajepx" path="res://Scripts/PickaxesForge.gd" id="1_ewbv2"]
 [ext_resource type="Script" uid="uid://c1yv6u68gcq66" path="res://Scripts/ForgeContainer.gd" id="1_tpr0r"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://xok4ed1xpd5x" path="res://Scenes/PickaxeSelect.tscn" id="9_gs31o"]
 [ext_resource type="Script" uid="uid://da04gc0c3olsn" path="res://Scripts/UpgradeCosts.gd" id="9_qjbut"]
 [ext_resource type="Script" uid="uid://cs42pixs20bwv" path="res://Scripts/RegularPickaxeSelection.gd" id="9_ugol7"]
+[ext_resource type="Script" uid="uid://c8r5cq064hj73" path="res://Scenes/UpgradeButton.gd" id="15_667t3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcom1"]
 bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
@@ -59,11 +60,12 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/Selection/VBoxContainer"]
-clip_contents = false
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="PickaxeSelection" type="VBoxContainer" parent="ForgeContainer/Selection/VBoxContainer/ScrollContainer"]
+clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -203,12 +205,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("9_qjbut")
 
-[node name="Button" type="Button" parent="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer"]
+[node name="UpgradeButton" type="Button" parent="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 64
 text = "Forge!"
+script = ExtResource("15_667t3")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
@@ -222,3 +225,5 @@ color = Color(0.3019608, 0.3019608, 0.3019608, 1)
 [connection signal="PickaxesReady" from="ForgeContainer/Selection/VBoxContainer/ScrollContainer/PickaxeSelection" to="ForgeContainer" method="PickaxesReady"]
 [connection signal="PriceChange" from="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ScrollContainer/OreCosts" to="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ForgeButton" method="PriceChange"]
 [connection signal="pressed" from="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ForgeButton" to="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ForgeButton" method="_on_pressed"]
+[connection signal="PriceChange" from="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer/ScrollContainer/VBoxContainer" to="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer/UpgradeButton" method="PriceChange"]
+[connection signal="pressed" from="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer/UpgradeButton" to="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer/UpgradeButton" method="_on_pressed"]

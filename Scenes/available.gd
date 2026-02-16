@@ -1,15 +1,12 @@
-extends AnimationPlayer
+extends Label
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.LayerChanged.connect(LayerChanged)
 	pass # Replace with function body.
-
-func LayerChanged(Layer):
-	play("LayerTransition")
 
 
 # Called every frame. '_delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	text = var_to_str(Global.OreAmounts)
 	pass

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://be6lsgn3ms26"]
 
 [ext_resource type="Script" uid="uid://nuh1nxkw6hlv" path="res://Scripts/OreInfo.gd" id="1_lg6u6"]
-[ext_resource type="Texture2D" uid="uid://cyllyhadc53sh" path="res://Visuals/OreSheet.png" id="2_pr6m8"]
+[ext_resource type="Texture2D" uid="uid://dcicd3utpj2kf" path="res://Visuals/OreSheet.png" id="2_pr6m8"]
 [ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="3_efd83"]
 [ext_resource type="Script" uid="uid://rjgygt1sckq7" path="res://Scripts/OreInfoName.gd" id="4_x65v3"]
 
@@ -23,10 +23,10 @@ border_color = Color(1, 1, 1, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchor_right = 0.133
-anchor_bottom = 0.32000002
-offset_right = -47.40001
-offset_bottom = -3.0517578e-05
+anchor_right = 0.083000004
+anchor_bottom = 0.156
+offset_right = 0.63998413
+offset_bottom = -0.480011
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lg6u6")

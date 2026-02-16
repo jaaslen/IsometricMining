@@ -12,15 +12,18 @@ var CellSize : Vector2i = Vector2i(32,17)
 var TileSize : Vector2i = Vector2i(64,34) 
 var TotalOreAmount: int = 3
 var TotalStoneAmount : int = 1
+
 var OreAmounts : Array = []
+var PickaxeLevels : Array = []
+
 var Tiles : Array = []
-var PickaxeLevels = [0,0,0,0]
+
 var TopLayer : Array = [0,0,0,0,0,0,0,0,0]
 var PreviousTopLayer : Array = [0,0,0,0,0,0,0,0,0]
 var PickaxeLevel:int = 0
 
 var GameData : Dictionary = LoadJson("res://Data/Data.json")
-
+var SaveData : Dictionary = LoadJson("res://Data/SaveData.json")
 #var SkillInfo : Dictionary = LoadJson("res://Data/Data.json")
 #var StatInfo : Dictionary = LoadJson("res://Data/Stats.json")
 #var GameData : Dictionary = LoadJson("res://Data/OreData.json")
@@ -34,7 +37,7 @@ var OresInGame : int = -1
 var PickaxesInGame : int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
+	Load()
 	#GameData = loadjson("res://Data/OreData.json")
 	CacheData()
 	normalizeores()
@@ -42,6 +45,7 @@ func _ready() -> void:
 	AvailableOres()
 	
 	print(OresInGame)
+	print(OreAmounts.size())
 	#for v in range(6):
 		#var newlayer = []
 		#for i in range(9):
@@ -53,6 +57,18 @@ func _ready() -> void:
 var OreDepthTables : Dictionary = {}
 var OreRarityTable : Dictionary = {}
 var PrecomputedRarity : Dictionary = {}
+
+func Save():
+	SaveData["inventory"] = OreAmounts
+	SaveData["levels"] = PickaxeLevels
+	save_json("res://Data/SaveData.json",SaveData)
+	pass
+
+func Load():
+	for i in SaveData["inventory"]:
+		OreAmounts.append(int(i))
+	for i in SaveData["levels"]:
+		PickaxeLevels.append(int(i))
 
 func PrecomputeRarity(max_depth: int):
 	for ore_id in OreDepthTables:
@@ -80,7 +96,7 @@ func AvailableOres():
 			if layer == int(Layer["id"]):
 				Available.append(ore["id"])
 				
-	print(Available)
+	#print(Available)
 	OresInLayer = Available
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -94,7 +110,7 @@ func GlobalLayerChange():
 		Layer = GameData["layers"][var_to_str(int(Layer["id"]) + 1)]
 		AvailableOres()
 		emit_signal("LayerChanged",Layer)
-		print(Layer)
+		
 	
 func GlobalMoveDown():
 	Depth += 1 
@@ -127,7 +143,9 @@ func normalizeores() -> void:
 		
 		
 		OresInGame += 1
-		OreAmounts.append(0)
+		
+		if OreAmounts.size() < OresInGame:
+			OreAmounts.append(0)
 		
 
 	
@@ -135,6 +153,7 @@ func normalizepickaxes():
 	for Pickaxes in GameData["pickaxes"].values():
 		Pickaxes["id"] = int(Pickaxes["id"])
 		Pickaxes["level"] = int(Pickaxes["level"])
+		Pickaxes["original"] = int(Pickaxes["original"])
 		PickaxesInGame += 1
 
 	pass
@@ -225,13 +244,15 @@ func GainXP(amount):
 	XP += amount * Global.Pickaxe["stats"][2]
 
 func UpgradePickaxe(PickaxeID):
-	var CurrentLevel = GameData["pickaxes"][str(PickaxeID)]
-	GameData["pickaxes"] = GameData["upgrades"][var_to_str(PickaxeID * 1000 + int(CurrentLevel+1))]
+	PickaxeLevels[PickaxeID] += 1
+	SelectPickaxe(PickaxeID)
+	
+	#GameData["pickaxes"] = GameData["upgrades"][var_to_str(PickaxeID * 1000 + int(CurrentLevel+1))]
 	#save_json("res://Data/Data.json",GameData)
 	return false
 	
 func ForgePickaxe(PickaxeID):
-	GameData["pickaxes"][var_to_str(PickaxeID)]["forged"] = true
+	SaveData["forged"][PickaxeID] = true
 	emit_signal("PickaxeChanged",PickaxeID)
 
 func save_json(path: String, data) -> void:
@@ -244,9 +265,14 @@ func save_json(path: String, data) -> void:
 	file.close()
 	
 func EquipPickaxe(PickaxeID):
-	Pickaxe = GameData["pickaxes"][var_to_str(PickaxeID)]
+	var CurrentLevel = PickaxeLevels[PickaxeID]
+	Pickaxe = GameData["pickaxes"][var_to_str(1000 * CurrentLevel + PickaxeID)]
 	emit_signal("PickaxeChanged",PickaxeID)
 	
 func SelectPickaxe(PickaxeID):
 	emit_signal("PickaxeChanged",PickaxeID)
 	
+func _notification(event):
+	if event == NOTIFICATION_WM_CLOSE_REQUEST:
+		Save()
+		get_tree().quit()

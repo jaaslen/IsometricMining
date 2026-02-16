@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dj1fqu822omon" path="res://Scripts/InventoryValue.gd" id="1_5i07b"]
 [ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="2_tujle"]
-[ext_resource type="Texture2D" uid="uid://cyllyhadc53sh" path="res://Visuals/OreSheet.png" id="3_qvtl0"]
+[ext_resource type="Texture2D" uid="uid://dcicd3utpj2kf" path="res://Visuals/OreSheet.png" id="3_qvtl0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7y85p"]
 border_blend = true
@@ -72,7 +72,7 @@ offset_top = -2.0
 offset_right = 356.0
 offset_bottom = 38.0
 size_flags_vertical = 8
-theme_override_constants/separation = 0
+theme_override_constants/separation = 4
 
 [node name="Texture" type="TextureRect" parent="Text"]
 custom_minimum_size = Vector2(30, 30)

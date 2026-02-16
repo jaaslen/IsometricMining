@@ -22,27 +22,26 @@ func PickaxeChanged(PickaxeID):
 	
 	
 
-	var CurrentLevel = Global.GameData["pickaxes"][var_to_str(PickaxeID)]["level"]
+	var CurrentLevel = Global.PickaxeLevels[PickaxeID]
 	
-	if Global.GameData["pickaxes"][var_to_str(PickaxeID)]["maxlevel"] == false:
+	if Global.GameData["pickaxes"][var_to_str(PickaxeID)]["maxlevel"] > CurrentLevel:
 		
-		var UpgradedPickaxe = Global.GameData["upgrades"][var_to_str(PickaxeID * 1000 + int(CurrentLevel+1))]
+		var UpgradedPickaxe = Global.GameData["pickaxes"][var_to_str(PickaxeID * 1000 + int(CurrentLevel+1))]
 		
 		
-		if Global.GameData["upgrades"][var_to_str(PickaxeID * 1000 + int(CurrentLevel+1))]["forged"] == false:
-			print(UpgradedPickaxe["stats"])
-			var StatIndex = 0
-			for stat in UpgradedPickaxe["stats"]:
-				if stat != 1.0 or StatIndex in [0,1]:
-					var NewInventoryItem = load("uid://d1pe2igwdtaun").instantiate()
-					NewInventoryItem.Stat = StatIndex
-					NewInventoryItem.Value = stat
-					NewInventoryItem.Pickaxe = UpgradedPickaxe
-					add_child(NewInventoryItem)
-				StatIndex += 1
+
+		print(UpgradedPickaxe["stats"])
+		var StatIndex = 0
+		for stat in UpgradedPickaxe["stats"]:
+			if stat != 1.0 or StatIndex in [0,1]:
+				var NewInventoryItem = load("uid://d1pe2igwdtaun").instantiate()
+				NewInventoryItem.Stat = StatIndex
+				NewInventoryItem.Value = stat
+				NewInventoryItem.Pickaxe = UpgradedPickaxe
+				add_child(NewInventoryItem)
+			StatIndex += 1
 				
-		else:
-			push_error("idk what happened")
+
 		
 	
 	#for stat in Global.GameData["pickaxes"][str(PickaxeID)]["stats"]:
