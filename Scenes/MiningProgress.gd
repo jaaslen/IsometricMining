@@ -1,5 +1,5 @@
 extends ProgressBar
-
+@onready var Camera : Camera2D = %Camera2D
 @onready var timer: Timer = $Timer
 var DesiredTime: float
 
@@ -33,3 +33,6 @@ func _process(_delta):
 		visible = false
 		return
 	value = DesiredTime - timer.time_left
+	var completion = (value / max_value)
+	if DesiredTime > 1:
+		Camera.zoom = Vector2((1 + completion * 0.3) ,(1 + completion * 0.3))

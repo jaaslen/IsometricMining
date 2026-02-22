@@ -448,7 +448,8 @@ func MineTile(layer,shift = Vector2i.ZERO):
 	
 func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID):
 		if Locked == false and ShiftLocked == false:
-			emit_signal("StartedMiningAnim",0,0)
+			print(TileCoordinates)
+			emit_signal("StartedMiningAnim",0,0,MouseCoordinates)
 			for i in Effects.get_children():
 				if i.name != "Mining":
 					i.call_deferred("queue_free")

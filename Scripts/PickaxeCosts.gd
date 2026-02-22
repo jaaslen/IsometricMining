@@ -15,7 +15,7 @@ func PickaxeChanged(PickaxeID):
 	
 	
 	var OriginalID = PickaxeID
-	if Global.GameData["pickaxes"][var_to_str(PickaxeID)]["unlocked"] == false:
+	if Global.UnlockedPickaxes[PickaxeID] == false:
 		PickaxeID = 0
 	else:
 		Cost = Global.GameData["pickaxes"][var_to_str(OriginalID)]["cost"]

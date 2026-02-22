@@ -50,7 +50,7 @@ func LoadOre(OreID,opening = true):
 		IDlabel.text = "#0" + var_to_str(ActualOre["sorting"])
 	else:
 		IDlabel.text = "#" + var_to_str(ActualOre["sorting"])
-	if Ore["found"] == false:
+	if Global.FoundOres[Ore["id"]] == false:
 		Ore = Global.GameData["ores"]["0"]
 
 	PanelStyle.border_color = Color(Ore["color"])  / 5 + Color(0.25,0.25,0.25,1)

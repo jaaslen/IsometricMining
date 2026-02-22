@@ -10,6 +10,7 @@ var grid_pos := Vector2.ZERO
 enum movestates {MOUSE, KEYBOARD}
 var state = movestates.MOUSE
 var OnGrid : bool = true
+var SnappedToGrid : Vector2 = Vector2(0,0)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -21,7 +22,7 @@ func _ready():
 
 	
 func _process(delta):
-	#var coordinates = snap_to_grid(get_global_mouse_position()) 
+	#var coordinates = SnapToGrid(get_global_mouse_position()) 
 	#if int(coordinates.x + coordinates.y) % 2 != 9:
 		#if coordinates == Vector2(0,3):
 			#texture.region = Rect2(0,0,64,68)
@@ -41,8 +42,8 @@ func _process(delta):
 		#texture.region = Rect2(188,16,4,4)
 	if state == movestates.MOUSE:
 		var mouse_pos := get_global_mouse_position() #+ Vector2(CellSize.x, CellSize.y)
-		var snappedtogrid := (snap_to_grid(mouse_pos) * Vector2(TileSize)) + Vector2(CellSize.x, CellSize.y)
-		global_position = global_position.lerp(snappedtogrid, smooth_speed * delta)
+		SnappedToGrid = (SnapToGrid(mouse_pos) * Vector2(TileSize)) + Vector2(CellSize.x, CellSize.y)
+		global_position = global_position.lerp(SnappedToGrid, smooth_speed * delta)
 	if (roundi(position.x / 32) + roundi(position.y / 17)) % 2 == 0:
 		OnGrid = true
 		#modulate = Color(1.0, 1.0, 1.0, 1.0)
@@ -50,7 +51,7 @@ func _process(delta):
 		#modulate - Color(1.0, 0.0, 0.0, 1.0)
 		OnGrid = false
 
-func snap_to_grid(pos: Vector2) -> Vector2:
+func SnapToGrid(pos: Vector2) -> Vector2:
 	return Vector2(floor(pos.x / TileSize.x),floor(pos.y / TileSize.y)) #+ Vector2(CellSize.x / 2, CellSize.y / 2)
 	
 func _input(event):

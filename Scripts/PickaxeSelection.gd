@@ -4,7 +4,7 @@ extends Button
 
 @export var Icon : CompressedTexture2D
 @export var Pickaxe: Dictionary = Global.GameData["pickaxes"]["0"]
-@onready var SaveData = Global.SaveData
+
 @export var Unlocked: bool
 @export var Forged: bool = true
 
@@ -38,7 +38,7 @@ func PickaxeChanged(__):
 	
 	EquipButton.visible = true
 	EquipButton.disabled = true
-	if SaveData["unlocked"][int(Pickaxe["id"]) % 1000] == true and SaveData["forged"][int(Pickaxe["id"]) % 1000] == true and Forged == true:
+	if Global.UnlockedPickaxes[int(Pickaxe["id"]) % 1000] == true and Global.ForgedPickaxes[int(Pickaxe["id"]) % 1000] == true and Forged == true:
 		EquipButton.visible = true
 		EquipButton.disabled = false
 		EquipButton.text = "Equip?"

@@ -15,6 +15,9 @@ var TotalStoneAmount : int = 1
 
 var OreAmounts : Array = []
 var PickaxeLevels : Array = []
+var UnlockedPickaxes : Array = []
+var ForgedPickaxes : Array = []
+var FoundOres : Array = []
 
 var Tiles : Array = []
 
@@ -61,6 +64,9 @@ var PrecomputedRarity : Dictionary = {}
 func Save():
 	SaveData["inventory"] = OreAmounts
 	SaveData["levels"] = PickaxeLevels
+	SaveData["unlocked"] = UnlockedPickaxes
+	SaveData["found"] = FoundOres
+	SaveData["forged"] = ForgedPickaxes
 	save_json("res://Data/SaveData.json",SaveData)
 	pass
 
@@ -69,6 +75,9 @@ func Load():
 		OreAmounts.append(int(i))
 	for i in SaveData["levels"]:
 		PickaxeLevels.append(int(i))
+	UnlockedPickaxes = SaveData["unlocked"]
+	ForgedPickaxes = SaveData["forged"]
+	FoundOres = SaveData["found"]
 
 func PrecomputeRarity(max_depth: int):
 	for ore_id in OreDepthTables:
@@ -146,17 +155,20 @@ func normalizeores() -> void:
 		
 		if OreAmounts.size() < OresInGame:
 			OreAmounts.append(0)
+		if FoundOres.size() < OresInGame+1:
+			FoundOres.append(false)
 		
 
 	
 func normalizepickaxes():
 	for Pickaxes in GameData["pickaxes"].values():
 		Pickaxes["id"] = int(Pickaxes["id"])
-		Pickaxes["level"] = int(Pickaxes["level"])
+		#Pickaxes["level"] = int(Pickaxes["level"])
 		Pickaxes["original"] = int(Pickaxes["original"])
 		PickaxesInGame += 1
 
-	pass
+		if PickaxeLevels.size() < PickaxesInGame:
+			PickaxeLevels.append(0)
 
 func GetRarity(DepthValue: float, OreID: int) -> float:
 	
@@ -226,8 +238,8 @@ func AddOre(OreID,amount = 1):
 	else:
 		TotalStoneAmount += amount
 	
-	if GameData["ores"][var_to_str(OreID)]["found"] == false:
-		GameData["ores"][var_to_str(OreID)]["found"] = true
+	if Global.FoundOres[OreID] == false:
+		Global.FoundOres[OreID] = true
 	#save_json("res://Data/Data.json",GameData)
 		
 	emit_signal("OreChanged",OreID)
@@ -246,13 +258,14 @@ func GainXP(amount):
 func UpgradePickaxe(PickaxeID):
 	PickaxeLevels[PickaxeID] += 1
 	SelectPickaxe(PickaxeID)
+	EquipPickaxe(PickaxeID)
 	
 	#GameData["pickaxes"] = GameData["upgrades"][var_to_str(PickaxeID * 1000 + int(CurrentLevel+1))]
 	#save_json("res://Data/Data.json",GameData)
 	return false
 	
 func ForgePickaxe(PickaxeID):
-	SaveData["forged"][PickaxeID] = true
+	ForgedPickaxes[PickaxeID] = true
 	emit_signal("PickaxeChanged",PickaxeID)
 
 func save_json(path: String, data) -> void:

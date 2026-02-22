@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 
 
 func OpenButtonPressed() -> void:
-	
+	%Control.LoadOre(1,false)
 	%GridContainer.AddScenes()
 	
 	if Opening:

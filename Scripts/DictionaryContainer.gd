@@ -32,7 +32,7 @@ func AddScenes():
 		if data[key]["id"] != 0:
 			var scene: PackedScene = load("uid://be6lsgn3ms26")
 			var instance = scene.instantiate()
-			if data[key]["found"]:
+			if Global.FoundOres[data[key]["id"]]:
 				instance.Found = true
 			instance.Ore = data[key]
 			add_child(instance)

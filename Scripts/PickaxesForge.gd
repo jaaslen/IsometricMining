@@ -75,7 +75,7 @@ func Setup():
 			if Global.SaveData["unlocked"][ID] == false:
 				ID = 0
 				
-			NewInventoryItem.Forged = Global.SaveData["forged"][ID]
+			NewInventoryItem.Forged = Global.ForgedPickaxes[ID]
 			if CurrentLevel > 0:
 				NewInventoryItem.Pickaxe = Global.GameData["pickaxes"][var_to_str(1000 * (CurrentLevel) + ID)]
 			else:

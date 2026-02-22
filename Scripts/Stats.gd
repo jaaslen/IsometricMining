@@ -10,12 +10,13 @@ func _ready() -> void:
 func PickaxeChanged(PickaxeID):
 	
 	var CurrentLevel = Global.PickaxeLevels[PickaxeID]
-	PickaxeID = 1000 * (CurrentLevel) + PickaxeID
+	
 	
 	var OriginalID = PickaxeID
-	if Global.GameData["pickaxes"][var_to_str(PickaxeID)]["unlocked"] == false:
+	if Global.UnlockedPickaxes[PickaxeID] == false:
 		PickaxeID = 0
-	
+	else:
+		PickaxeID = 1000 * (CurrentLevel) + PickaxeID
 	
 	for i in self.get_children():
 		i.queue_free()
