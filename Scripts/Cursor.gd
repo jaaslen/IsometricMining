@@ -44,11 +44,11 @@ func _process(delta):
 		var mouse_pos := get_global_mouse_position() #+ Vector2(CellSize.x, CellSize.y)
 		SnappedToGrid = (SnapToGrid(mouse_pos) * Vector2(TileSize)) + Vector2(CellSize.x, CellSize.y)
 		global_position = global_position.lerp(SnappedToGrid, smooth_speed * delta)
-	if (roundi(position.x / 32) + roundi(position.y / 17)) % 2 == 0:
+	if (roundi(position.x / 32) + roundi(position.y / 17)) == 0 or (roundi(position.x / 32) + roundi(position.y / 17)) == 2 or (roundi(position.x / 32) + roundi(position.y / 17)) == -2:
 		OnGrid = true
-		#modulate = Color(1.0, 1.0, 1.0, 1.0)
+		modulate = Color(1.0, 1.0, 1.0, 1.0)
 	else:
-		#modulate - Color(1.0, 0.0, 0.0, 1.0)
+		modulate = Color(1.0, 0.0, 0.0, 0.0)
 		OnGrid = false
 
 func SnapToGrid(pos: Vector2) -> Vector2:

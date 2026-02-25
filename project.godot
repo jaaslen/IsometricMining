@@ -19,6 +19,7 @@ config/icon="res://Visuals/icon.svg"
 [autoload]
 
 Global="*res://Data/Global.gd"
+Skills="*res://Skills/SkillDatabase.gd"
 
 [display]
 

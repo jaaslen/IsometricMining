@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="OreProficiency" load_steps=2 format=3 uid="uid://d3016fju66ao1"]
+
+[ext_resource type="Script" uid="uid://r5576cxa4qp5" path="res://Skills/SkillBases/OreProficiency.gd" id="1_pex7m"]
+
+[resource]
+script = ExtResource("1_pex7m")
+BlockID = 1
+metadata/_custom_type_script = "uid://r5576cxa4qp5"

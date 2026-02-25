@@ -89,7 +89,7 @@
 	  "id": 2,
 	  "sorting": 2,
 	  "name": "Coal",
-	  "hardness": 4,
+	  "hardness": 0.5,
 	  "value": 3,
 	  "xp": 3,
 	  "color": "#1A1A1A",
@@ -1707,7 +1707,7 @@
 		-1,
 		-1
 	  ],
-	  "traits": [],
+	  "skills": [1],
 	  "original": 0,
 	  "maxlevel": 0,
 	  "value": -1,
@@ -1734,7 +1734,7 @@
 		1,
 		1
 	  ],
-	  "traits": [],
+	  "skills": [1],
 	  "original": 1,
 	  "maxlevel": 2,
 	  "value": 0,
@@ -1761,7 +1761,7 @@
 		1,
 		1
 	  ],
-	  "traits": [],
+	  "skills": [1],
 	  "original": 2,
 	  "maxlevel": 0,
 	  "value": 1,
@@ -1792,7 +1792,7 @@
 		1,
 		1
 	  ],
-	  "traits": [],
+	  "skills": [1],
 	  "original": 3,
 	  "maxlevel": 0,
 	  "value": 2,
@@ -1819,7 +1819,7 @@
 		1,
 		1
 	  ],
-	  "traits": [],
+	  "skills": [1],
 	  "original": 4,
 	  "maxlevel": 0,
 	  "value": 1,
@@ -1850,7 +1850,7 @@
 		1.2,
 		1
 	  ],
-	  "traits": [],
+	  "skills": [1],
 	  "original": 5,
 	  "maxlevel": 0,
 	  "value": 2,
@@ -1881,7 +1881,7 @@
 		1,
 		1
 	  ],
-	  "traits": [],
+	  "skills": [1],
 	  "original": 6,
 	  "maxlevel": 0,
 	  "value": 2,
@@ -1912,7 +1912,7 @@
 		1.2,
 		1.5
 	  ],
-	  "traits": [],
+	  "skills": [1],
 	  "original": 7,
 	  "maxlevel": 0,
 	  "value": 2,
@@ -1947,7 +1947,7 @@
 		1,
 		1
 	  ],
-	  "traits": [],
+	  "skills": [1],
 	  "original": 8,
 	  "maxlevel": 0,
 	  "base": true
@@ -1973,7 +1973,7 @@
 		2,
 		1
 	  ],
-	  "traits": [],
+	  "skills": [1],
 	  "original": 9,
 	  "maxlevel": 0,
 	  "base": true
@@ -2003,7 +2003,7 @@
 		2,
 		1
 	  ],
-	  "traits": [],
+	  "skills": [1],
 	  "original": 10,
 	  "maxlevel": 0,
 	  "base": true
@@ -2019,13 +2019,13 @@
 		]
 	  ],
 	  "stats": [
-		100,
+		1000,
 		0.05,
 		10,
 		1,
 		1
 	  ],
-	  "traits": [],
+	  "skills": [1],
 	  "original": 11,
 	  "maxlevel": 0,
 	  "value": 3,
@@ -2052,7 +2052,7 @@
 		1,
 		1
 	  ],
-	  "traits": [],
+	  "skills": [1],
 	  "original": 1,
 	  "maxlevel": 2,
 	  "value": 0,
@@ -2079,7 +2079,7 @@
 		1,
 		1
 	  ],
-	  "traits": [],
+	  "skills": [1],
 	  "original": 1,
 	  "maxlevel": 2,
 	  "value": 0,
@@ -2396,7 +2396,7 @@
 	  "end": 9000
 	}
   },
-  "traits": {
+  "skills": {
 	"0": {
 	  "id": 0,
 	  "name": "dev",
@@ -2404,7 +2404,9 @@
 	},
 	"1": {
 	  "id": 1,
-	  "name": "perception"
+	  "name": "Stone Proficiency",
+	  "description": "idk"
+	
 	},
 	"2": {
 	  "id": 2,

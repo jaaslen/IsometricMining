@@ -1,6 +1,6 @@
 extends PanelContainer
 
-@export var Skill: Dictionary = Global.SkillInfo["skills"][0]
+@export var Skill: Dictionary = Global.GameData["skills"]["0"]
 
 #@onready var IconBox =  self.get_node("Container").get_node("Text").get_node("Texture")
 @onready var LabelBox = self.get_node("Container").get_node("Text").get_node("Name")
@@ -34,7 +34,7 @@ func _ready() -> void:
 
 func OreChanged():
 
-	var NodeColor = Color(Skill["color"])
+	var NodeColor = Color(1,1,1,1)#Color(Skill["color"])
 
 
 	var Original := get_theme_stylebox("panel")

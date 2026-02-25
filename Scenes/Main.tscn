@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=4 uid="uid://ckd04gu6f1lw"]
+[gd_scene load_steps=124 format=4 uid="uid://ckd04gu6f1lw"]
 
 [ext_resource type="TileSet" uid="uid://b73qq53megiib" path="res://Visuals/DefaultTileset.tres" id="2_cm0pq"]
 [ext_resource type="Texture2D" uid="uid://82jgclr6ge6t" path="res://Visuals/OIP-2686731067.jpg" id="3_2w5on"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://b7hvuwmxoi1qb" path="res://Scripts/Cursor.gd" id="5_lgr22"]
 [ext_resource type="Script" uid="uid://ce00buhltmq1e" path="res://Scenes/Camera.gd" id="6_0sclb"]
 [ext_resource type="Script" uid="uid://d3ocoxtblykxh" path="res://Scripts/Inventory.gd" id="6_lgr22"]
+[ext_resource type="Texture2D" uid="uid://c1p6mrayp35rh" path="res://Visuals/OIP-3916291435.jpg" id="6_sxkr1"]
+[ext_resource type="Script" uid="uid://cgoxf007xiycg" path="res://Scenes/Lantern.gd" id="7_fq0cl"]
 [ext_resource type="Script" uid="uid://dkb6cx8pl66f8" path="res://Scripts/DepthLabel.gd" id="7_lgr22"]
 [ext_resource type="Script" uid="uid://bwjkpywr2l3c4" path="res://Scripts/XpLabel.gd" id="8_trn2v"]
 [ext_resource type="Script" uid="uid://nhg83jc5qjgs" path="res://Scripts/FPS.gd" id="9_03owx"]
@@ -809,7 +811,7 @@ script = ExtResource("4_fos0i")
 [node name="Layers" type="Node2D" parent="Detection"]
 
 [node name="1" type="TileMapLayer" parent="Detection/Layers"]
-light_mask = 5
+light_mask = 517
 z_index = 4
 y_sort_enabled = true
 texture_filter = 1
@@ -817,17 +819,9 @@ tile_map_data = PackedByteArray("AAABAP//AAABAAAAAAD+/wAAAAABAAAAAAD/////AAABAAA
 tile_set = ExtResource("2_cm0pq")
 collision_enabled = false
 
-[node name="PointLight2D" type="PointLight2D" parent="Detection/Layers/1"]
-visible = false
-position = Vector2(1.5000143, 0.50000095)
-scale = Vector2(0.38055563, 0.28888887)
-color = Color(1, 0.25, 0.25, 1)
-energy = 0.8
-texture = ExtResource("3_2w5on")
-
 [node name="2" type="TileMapLayer" parent="Detection/Layers"]
 modulate = Color(0.9063318, 0.9063318, 0.9063318, 1)
-light_mask = 3
+light_mask = 517
 z_index = 3
 y_sort_enabled = true
 texture_filter = 1
@@ -838,7 +832,7 @@ collision_enabled = false
 
 [node name="3" type="TileMapLayer" parent="Detection/Layers"]
 modulate = Color(0.7977378, 0.7977378, 0.7977378, 1)
-light_mask = 3
+light_mask = 517
 z_index = 2
 y_sort_enabled = true
 texture_filter = 1
@@ -849,7 +843,7 @@ collision_enabled = false
 
 [node name="4" type="TileMapLayer" parent="Detection/Layers"]
 modulate = Color(0.6651851, 0.6651851, 0.6651851, 1)
-light_mask = 3
+light_mask = 517
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
@@ -860,7 +854,7 @@ collision_enabled = false
 
 [node name="5" type="TileMapLayer" parent="Detection/Layers"]
 modulate = Color(0.6651851, 0.6651851, 0.6651851, 1)
-light_mask = 3
+light_mask = 517
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, 136)
@@ -870,7 +864,7 @@ collision_enabled = false
 
 [node name="6" type="TileMapLayer" parent="Detection/Layers"]
 modulate = Color(0.6651851, 0.6651851, 0.6651851, 1)
-light_mask = 3
+light_mask = 517
 z_index = -1
 y_sort_enabled = true
 texture_filter = 1
@@ -1084,6 +1078,22 @@ texture = ExtResource("13_c6i3y")
 [node name="Tint" type="CanvasModulate" parent="."]
 color = Color(0.9372549, 0.9372549, 0.9372549, 1)
 script = ExtResource("18_346fj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 7
+position = Vector2(960, 540)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("6_sxkr1")
+script = ExtResource("7_fq0cl")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+light_mask = 0
+z_index = 1
+scale = Vector2(8.456792, 6.419753)
+color = Color(0.96324986, 0.54813164, 1.540184e-06, 1)
+energy = 1.2
+range_item_cull_mask = 512
+texture = ExtResource("3_2w5on")
 
 [connection signal="StartedMiningAnim" from="Detection" to="CanvasLayer/ProgressBar" method="ShowTime"]
 [connection signal="pressed" from="CanvasLayer/TextureButton2" to="CanvasLayer/Forge" method="OtherButtonPressed"]

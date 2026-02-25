@@ -193,6 +193,7 @@ func _process(delta: float) -> void:
 			for i in Effects.get_children():
 				if i.name != "Mining":
 					i.call_deferred("queue_free")
+			emit_signal("StartedMiningAnim",0,0,GetMouse())
 		#
 		pass
 	
@@ -419,6 +420,7 @@ func equal_approx(a,b,c) -> bool:
 	return a.distance_to(b) < c
 	
 func MineTile(layer,shift = Vector2i.ZERO):
+	
 	Mining = true
 	#round(Cursor.position)# 
 	
@@ -440,15 +442,25 @@ func MineTile(layer,shift = Vector2i.ZERO):
 	if str_to_var(layer.name) == 1:
 		OreID = Global.TopLayer[TileCoords.find(local_to_map(GetMouse()))]
 		
+	var Context = MiningContext.new()
+	
+	Context.Power = ( Global.Pickaxe["stats"][0] )
+	print(Context.Power + 0.67)
+	for id in Global.Pickaxe["skills"]:
+		print(id)
+		var Skill = Skills.GetSkill(id)
+		Skill.Apply(OreID,Context)
+	print(Context.Power + 0.67)
 		
+	var MineTime = (Global.GameData["ores"][var_to_str(OreID)]["hardness"] * (pow(1.5, log(Global.Depth + 1) / log(10.0)))) / Context.Power
 		
-	MiningAnim(Coordinates,Cursor.position,layer,OreID)
+	MiningAnim(Coordinates,GetMouse(),layer,OreID,MineTime)
 		
 	pass
 	
-func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID):
+func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID,MineTime):
 		if Locked == false and ShiftLocked == false:
-			print(TileCoordinates)
+			#print(TileCoordinates)
 			emit_signal("StartedMiningAnim",0,0,MouseCoordinates)
 			for i in Effects.get_children():
 				if i.name != "Mining":
@@ -534,11 +546,11 @@ func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID):
 		Effects.call_deferred("add_child", TopAnimation)
 		
 		var frame_count = TopAnimation.sprite_frames.get_frame_count(TopAnimation.animation)
-		var desired_time = (Global.GameData["ores"][var_to_str(OreID)]["hardness"] * (pow(1.5, log(Global.Depth + 1) / log(10.0)))) / ( Global.Pickaxe["stats"][0] )
-
-		TopAnimation.sprite_frames.set_animation_speed(TopAnimation.animation, frame_count / desired_time)
 		
-		emit_signal("StartedMiningAnim",desired_time,OreID)
+
+		TopAnimation.sprite_frames.set_animation_speed(TopAnimation.animation, frame_count / MineTime)
+		
+		emit_signal("StartedMiningAnim",MineTime,OreID,MouseCoordinates)
 		#TopAnimation.speed_scale = ( (3 * Global.Pickaxe["stats"][0] * Global.Pickaxe["stats"][0]) / Global.GameData["ores"][var_to_str(OreID)]["hardness"]) / (pow(1.5, log(Global.Depth + 1) / log(10.0)))
 		#print((pow(1.5, log(max(Global.Depth,1)) / log(10.0))))
 		if TopAnimation.speed_scale > 10:

@@ -13,5 +13,5 @@ func _process(delta: float) -> void:
 
 func LayerChanged(Layer):
 	
-	color = Color(Layer["color"])
+	color = Color(Layer["color"]) * 0.8 + Color(0,0,0,1)
 	pass

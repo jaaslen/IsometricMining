@@ -4,6 +4,7 @@ signal DepthChanged
 signal PickaxeChanged
 signal LayerChanged
 
+
 var OresInLayer : Array = [0]
 var UsingMouse : bool = true
 var XP : int = 0
@@ -243,6 +244,8 @@ func AddOre(OreID,amount = 1):
 	#save_json("res://Data/Data.json",GameData)
 		
 	emit_signal("OreChanged",OreID)
+	#emit_signal("Pulse",1.025,0.2)
+	#emit_signal("Pulse",true)
 	
 func RemoveOre(OreID,amount = 1):
 	OreAmounts[OreID] -= amount
