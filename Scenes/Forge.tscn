@@ -27,14 +27,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ForgeContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 1920.0
-offset_bottom = 1080.0
+offset_bottom = 1000.0
 script = ExtResource("1_tpr0r")
 
 [node name="Selection" type="PanelContainer" parent="ForgeContainer"]
@@ -72,7 +71,7 @@ theme_override_constants/separation = 0
 script = ExtResource("1_ewbv2")
 
 [node name="StatsPanel" type="TabContainer" parent="ForgeContainer"]
-custom_minimum_size = Vector2(0, 1072)
+custom_minimum_size = Vector2(0, 1000)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
@@ -216,7 +215,7 @@ script = ExtResource("15_667t3")
 z_index = -1
 layout_mode = 0
 offset_right = 1920.0
-offset_bottom = 1080.0
+offset_bottom = 1008.0
 mouse_filter = 2
 color = Color(0.3019608, 0.3019608, 0.3019608, 1)
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://chbgis4c6afk7"]
+[gd_scene load_steps=6 format=3 uid="uid://chbgis4c6afk7"]
 
 [ext_resource type="Script" uid="uid://sr3kwxijwepr" path="res://Scripts/Dictionary.gd" id="1_3abks"]
 [ext_resource type="Script" uid="uid://beygvhct1lf0w" path="res://Scripts/DictionaryContainer.gd" id="1_la43g"]
 [ext_resource type="PackedScene" uid="uid://dg1k0b6frkr3x" path="res://Scenes/OreInfo.tscn" id="2_xvgq2"]
+[ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="4_d3rv7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvgq2"]
 bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
@@ -32,20 +33,23 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/h_separation = 160
-theme_override_constants/v_separation = 160
+theme_override_constants/h_separation = 150
+theme_override_constants/v_separation = 150
 columns = 11
 script = ExtResource("1_la43g")
 
 [node name="Control" parent="." instance=ExtResource("2_xvgq2")]
 unique_name_in_owner = true
+visible = false
+z_index = 2
 layout_mode = 1
 offset_right = -21.120117
 
 [node name="Panel" type="Panel" parent="."]
-z_index = -10
+z_index = -1
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
+theme = ExtResource("4_d3rv7")
 theme_override_styles/panel = SubResource("StyleBoxFlat_xvgq2")

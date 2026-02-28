@@ -2,11 +2,11 @@ extends TileMapLayer
 @onready var detector
 
 signal StartedMiningAnim
-
+signal Scaled
 
 var ModFactor = [0.05,0.05,0.05]
 
-@onready var Cursor = self.get_node("Cursor")
+#@onready var %Cursor = self.get_node("%Cursor")
 @onready var Effects = self.get_node("Effects")
 var InMine = true
 var ToSurface = false
@@ -27,7 +27,8 @@ var TargetPos = []#[-Global.Tile_Size.y,0,Global.Tile_Size.y,68,102,136,170,204]
 #var Global.Tiles = [[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,1,0],[0,0,0,0,0,0,0,1,0],[1,1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	get_viewport().connect("size_changed", Callable(self, "update_position_and_scale"))
+	update_position_and_scale()
 	
 	
 	
@@ -59,6 +60,25 @@ func _ready() -> void:
 
   #*# (pow(1.5, log(Global.Depth + 1) / log(10.0))) * 10)
 var Speed = ((100 / Global.Pickaxe["stats"][1]))
+
+
+
+@export var scale_with_viewport: bool = true
+@export var reference_resolution: Vector2 = Vector2(1920, 1080)
+
+
+	
+
+
+
+func update_position_and_scale():
+	var vp_size = get_viewport_rect().size
+	scale.x = 4 * vp_size.x / reference_resolution.x
+	scale.y = scale.x
+	emit_signal("Scaled")
+		
+		
+		
 @onready var Layer1 = self.get_node("Layers").get_node("1")
 func _process(delta: float) -> void:
 	if MovingDown == true:
@@ -215,12 +235,12 @@ func _process(delta: float) -> void:
 		
 		for layer in self.get_node("Layers").get_children():
 			#print(Vector2i(int(floor(pos.x / Global.CellSize.x)),int(floor(pos.y / Global.CellSize.y)) - int(str_to_var(layer.name)-1) ))
-			if Cursor.OnGrid or Locked == true or ShiftLocked == true:
+			if %Cursor.OnGrid or Locked == true or ShiftLocked == true:
 				#for offset in [Vector2i(-1,0),Vector2i(0,0),Vector2i(0,0),Vector2i(0,0),Vector2i(0,0)]
 				##(layer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(0,str_to_var(layer.name)-1)) != -1)
 				#if str_to_var(layer.name) > 1:
 					#pass
-				
+				print(GetMouse())
 				if layer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(0,str_to_var(layer.name)-1)) != -1:
 					
 					var previouslayer = self.get_node("Layers").get_child(str_to_var(layer.name)-1-1)
@@ -422,7 +442,7 @@ func equal_approx(a,b,c) -> bool:
 func MineTile(layer,shift = Vector2i.ZERO):
 	
 	Mining = true
-	#round(Cursor.position)# 
+	#round(%Cursor.position)# 
 	
 	
 	var GlobalCoordinates = Vector2(round(GetMouse().x / Global.CellSize.x) * Global.CellSize.x,round(GetMouse().y / Global.CellSize.y) * Global.CellSize.y)#GetMouse() #- Vector2(0,str_to_var(layer.name)-1) * Vector2(Global.TileSize)
@@ -446,22 +466,22 @@ func MineTile(layer,shift = Vector2i.ZERO):
 	
 	Context.Power = ( Global.Pickaxe["stats"][0] )
 	print(Context.Power + 0.67)
-	for id in Global.Pickaxe["skills"]:
+	for id in Global.Pickaxe["traits"]:
 		print(id)
-		var Skill = Skills.GetSkill(id)
-		Skill.Apply(OreID,Context)
+		var Trait = TraitData.GetTrait(id)
+		Trait.Apply(OreID,Context)
 	print(Context.Power + 0.67)
 		
 	var MineTime = (Global.GameData["ores"][var_to_str(OreID)]["hardness"] * (pow(1.5, log(Global.Depth + 1) / log(10.0)))) / Context.Power
 		
-	MiningAnim(Coordinates,GetMouse(),layer,OreID,MineTime)
+	MiningAnim(Coordinates,GetMouse(),layer,OreID,MineTime,GlobalCoordinates)
 		
 	pass
 	
-func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID,MineTime):
+func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID,MineTime,GlobalCoordinates):
 		if Locked == false and ShiftLocked == false:
 			#print(TileCoordinates)
-			emit_signal("StartedMiningAnim",0,0,MouseCoordinates)
+			emit_signal("StartedMiningAnim",0,0,GlobalCoordinates)
 			for i in Effects.get_children():
 				if i.name != "Mining":
 					i.call_deferred("queue_free")
@@ -500,7 +520,7 @@ func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID,MineTime):
 			return
 			#TopAnimation = Effects.get_node(var_to_str(TileCoordinates))
 		if Locked == false and ShiftLocked == false:
-			TopAnimation.position = MouseCoordinates
+			TopAnimation.position = GlobalCoordinates#floor(MouseCoordinates / Vector2(Global.TileSize)) * Vector2(Global.TileSize)
 		elif Locked:
 			TopAnimation.position = Vector2(0,0)
 		elif ShiftLocked:
@@ -565,7 +585,7 @@ func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID,MineTime):
 
 func GetMouse():
 	if Locked == false and ShiftLocked == false:
-			return Cursor.position
+			return get_local_mouse_position() #- Vector2(960,510))#%Cursor.Pos)
 	elif Locked:
 		return Vector2(0,0)
 	elif ShiftLocked:

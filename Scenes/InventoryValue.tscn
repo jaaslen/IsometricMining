@@ -1,15 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://oyxab1yvfiji"]
+[gd_scene load_steps=7 format=3 uid="uid://oyxab1yvfiji"]
 
 [ext_resource type="Script" uid="uid://dj1fqu822omon" path="res://Scripts/InventoryValue.gd" id="1_5i07b"]
+[ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="1_tujle"]
 [ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="2_tujle"]
 [ext_resource type="Texture2D" uid="uid://dcicd3utpj2kf" path="res://Visuals/OreSheet.png" id="3_qvtl0"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7y85p"]
-border_blend = true
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 1
-corner_radius_bottom_left = 4
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tujle"]
+bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+border_width_left = 5
+border_width_top = 8
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0.8, 0.8, 0.21176471)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2gq36"]
 atlas = ExtResource("3_qvtl0")
@@ -18,9 +20,11 @@ region = Rect2(0, 0, 64, 68)
 [node name="Panel" type="Panel"]
 custom_minimum_size = Vector2(0, 26)
 offset_right = 356.0
-offset_bottom = 26.0
+offset_bottom = 41.0
 scale = Vector2(2, 2)
-theme_override_styles/panel = SubResource("StyleBoxFlat_7y85p")
+mouse_filter = 2
+theme = ExtResource("1_tujle")
+theme_override_styles/panel = SubResource("StyleBoxFlat_tujle")
 script = ExtResource("1_5i07b")
 
 [node name="Label" type="Label" parent="."]
@@ -48,6 +52,7 @@ layout_mode = 0
 offset_left = 34.0
 offset_right = 356.0
 offset_bottom = 26.0
+mouse_filter = 2
 show_percentage = false
 
 [node name="Texture" type="TextureRect" parent="."]
@@ -58,26 +63,31 @@ offset_right = 30.0
 offset_bottom = 26.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
+mouse_filter = 2
 
 [node name="ProgressBar2" type="ProgressBar" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0.27100003)
 layout_mode = 0
 size_flags_vertical = 1
+mouse_filter = 2
 show_percentage = false
 
 [node name="Text" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_top = -2.0
-offset_right = 356.0
-offset_bottom = 38.0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = 362.0
+offset_bottom = 44.0
 size_flags_vertical = 8
+mouse_filter = 2
 theme_override_constants/separation = 4
 
 [node name="Texture" type="TextureRect" parent="Text"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_vertical = 0
+mouse_filter = 2
 texture = SubResource("AtlasTexture_2gq36")
 expand_mode = 5
 stretch_mode = 6
@@ -102,6 +112,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.02
+mouse_filter = 2
 
 [node name="Cost" type="Label" parent="Text"]
 z_index = 1

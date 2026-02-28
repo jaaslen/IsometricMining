@@ -89,7 +89,7 @@
 	  "id": 2,
 	  "sorting": 2,
 	  "name": "Coal",
-	  "hardness": 0.5,
+	  "hardness": 4,
 	  "value": 3,
 	  "xp": 3,
 	  "color": "#1A1A1A",
@@ -1707,7 +1707,7 @@
 		-1,
 		-1
 	  ],
-	  "skills": [1],
+	  "traits": [],
 	  "original": 0,
 	  "maxlevel": 0,
 	  "value": -1,
@@ -1734,7 +1734,7 @@
 		1,
 		1
 	  ],
-	  "skills": [1],
+	  "traits": [],
 	  "original": 1,
 	  "maxlevel": 2,
 	  "value": 0,
@@ -1761,7 +1761,7 @@
 		1,
 		1
 	  ],
-	  "skills": [1],
+	  "traits": [],
 	  "original": 2,
 	  "maxlevel": 0,
 	  "value": 1,
@@ -1792,7 +1792,7 @@
 		1,
 		1
 	  ],
-	  "skills": [1],
+	  "traits": [],
 	  "original": 3,
 	  "maxlevel": 0,
 	  "value": 2,
@@ -1819,7 +1819,7 @@
 		1,
 		1
 	  ],
-	  "skills": [1],
+	  "traits": [],
 	  "original": 4,
 	  "maxlevel": 0,
 	  "value": 1,
@@ -1850,7 +1850,7 @@
 		1.2,
 		1
 	  ],
-	  "skills": [1],
+	  "traits": [],
 	  "original": 5,
 	  "maxlevel": 0,
 	  "value": 2,
@@ -1881,7 +1881,7 @@
 		1,
 		1
 	  ],
-	  "skills": [1],
+	  "traits": [],
 	  "original": 6,
 	  "maxlevel": 0,
 	  "value": 2,
@@ -1912,7 +1912,7 @@
 		1.2,
 		1.5
 	  ],
-	  "skills": [1],
+	  "traits": [],
 	  "original": 7,
 	  "maxlevel": 0,
 	  "value": 2,
@@ -1947,7 +1947,7 @@
 		1,
 		1
 	  ],
-	  "skills": [1],
+	  "traits": [],
 	  "original": 8,
 	  "maxlevel": 0,
 	  "base": true
@@ -1973,7 +1973,7 @@
 		2,
 		1
 	  ],
-	  "skills": [1],
+	  "traits": [],
 	  "original": 9,
 	  "maxlevel": 0,
 	  "base": true
@@ -2003,7 +2003,7 @@
 		2,
 		1
 	  ],
-	  "skills": [1],
+	  "traits": [],
 	  "original": 10,
 	  "maxlevel": 0,
 	  "base": true
@@ -2019,13 +2019,13 @@
 		]
 	  ],
 	  "stats": [
-		1000,
+		10,
 		0.05,
 		10,
-		1,
+		10,
 		1
 	  ],
-	  "skills": [1],
+	  "traits": [],
 	  "original": 11,
 	  "maxlevel": 0,
 	  "value": 3,
@@ -2052,7 +2052,7 @@
 		1,
 		1
 	  ],
-	  "skills": [1],
+	  "traits": [],
 	  "original": 1,
 	  "maxlevel": 2,
 	  "value": 0,
@@ -2079,7 +2079,7 @@
 		1,
 		1
 	  ],
-	  "skills": [1],
+	  "traits": [],
 	  "original": 1,
 	  "maxlevel": 2,
 	  "value": 0,
@@ -2090,7 +2090,7 @@
 	"0": {
 	  "id": 0,
 	  "name": "surface",
-	  "color": "#9F754A",
+	  "color": "#EFEFEF",
 	  "brightness": 16,
 	  "atlas": [
 		1,
@@ -2396,7 +2396,7 @@
 	  "end": 9000
 	}
   },
-  "skills": {
+  "traits": {
 	"0": {
 	  "id": 0,
 	  "name": "dev",
@@ -2404,9 +2404,7 @@
 	},
 	"1": {
 	  "id": 1,
-	  "name": "Stone Proficiency",
-	  "description": "idk"
-	
+	  "name": "perception"
 	},
 	"2": {
 	  "id": 2,
@@ -2466,6 +2464,10 @@
 	  "id": 13,
 	  "name": "(ORE) Proficiency",
 	  "description": "ore type mined faster"
+	},
+	"": {
+	  "name": "x ray",
+	  "description": "stone is transparent or invisible or something"
 	}
   },
   "stats": {
@@ -2498,6 +2500,193 @@
 	  "name": "rare luck",
 	  "color": "#FFD966",
 	  "description": "Rare-type ores now appear at a rate of [nowrap](chance x [color=white]%s[/color])[/nowrap]"
+	}
+  },
+  "levels": {
+	"0": {
+	  "id": 0,
+	  "name": "Z",
+	  "nextxp": 100
+	},
+	"1": {
+	  "id": 1,
+	  "name": "Y",
+	  "nextxp": 500
+	},
+	"2": {
+	  "id": 2,
+	  "name": "X",
+	  "nextxp": 1500
+	},
+	"3": {
+	  "id": 3,
+	  "name": "W",
+	  "nextxp": 4000
+	},
+	"4": {
+	  "id": 4,
+	  "name": "V",
+	  "nextxp": 10000
+	},
+	"5": {
+	  "id": 5,
+	  "name": "U",
+	  "nextxp": 999999
+	},
+	"6": {
+	  "id": 6,
+	  "name": "T",
+	  "nextxp": 999999
+	},
+	"7": {
+	  "id": 7,
+	  "name": "R",
+	  "nextxp": 999999
+	},
+	"8": {
+	  "id": 8,
+	  "name": "Q",
+	  "nextxp": 999999
+	},
+	"9": {
+	  "id": 9,
+	  "name": "P",
+	  "nextxp": 999999
+	},
+	"10": {
+	  "id": 10,
+	  "name": "O",
+	  "nextxp": 999999
+	},
+	"11": {
+	  "id": 11,
+	  "name": "N",
+	  "nextxp": 999999
+	},
+	"12": {
+	  "id": 12,
+	  "name": "M",
+	  "nextxp": 999999
+	},
+	"13": {
+	  "id": 13,
+	  "name": "L",
+	  "nextxp": 999999
+	},
+	"14": {
+	  "id": 14,
+	  "name": "K",
+	  "nextxp": 999999
+	},
+	"15": {
+	  "id": 15,
+	  "name": "J",
+	  "nextxp": 999999
+	},
+	"16": {
+	  "id": 16,
+	  "name": "I",
+	  "nextxp": 999999
+	},
+	"17": {
+	  "id": 17,
+	  "name": "H",
+	  "nextxp": 999999
+	},
+	"18": {
+	  "id": 18,
+	  "name": "G",
+	  "nextxp": 999999
+	},
+	"19": {
+	  "id": 19,
+	  "name": "F",
+	  "nextxp": 999999
+	},
+	"20": {
+	  "id": 20,
+	  "name": "E",
+	  "nextxp": 999999
+	},
+	"21": {
+	  "id": 21,
+	  "name": "D",
+	  "nextxp": 999999
+	},
+	"22": {
+	  "id": 22,
+	  "name": "C",
+	  "nextxp": 999999
+	},
+	"23": {
+	  "id": 23,
+	  "name": "B",
+	  "nextxp": 999999
+	},
+	"24": {
+	  "id": 24,
+	  "name": "A",
+	  "nextxp": 999999
+	},
+	"25": {
+	  "id": 25,
+	  "name": "S",
+	  "nextxp": 999999
+	},
+	"26": {
+	  "id": 26,
+	  "name": "S+",
+	  "nextxp": 999999
+	},
+	"27": {
+	  "id": 27,
+	  "name": "Ω",
+	  "nextxp": 999999
+	},
+	"28": {
+	  "id": 28,
+	  "name": "Ψ",
+	  "nextxp": 999999
+	},
+	"29": {
+	  "id": 29,
+	  "name": "Φ",
+	  "nextxp": 999999
+	},
+	"30": {
+	  "id": 30,
+	  "name": "Σ",
+	  "nextxp": 999999
+	},
+	"31": {
+	  "id": 31,
+	  "name": "Π",
+	  "nextxp": 999999
+	},
+	"32": {
+	  "id": 32,
+	  "name": "Ξ",
+	  "nextxp": 999999
+	},
+	"33": {
+	  "id": 33,
+	  "name": "Λ",
+	  "nextxp": 999999
+	},
+	"34": {
+	  "id": 34,
+	  "name": "Θ",
+	  "nextxp": 999999
+	},
+	"35": {
+	  "id": 35,
+	  "name": "Δ",
+	  "nextxp": 999999
+	},
+	"36": {
+	  "id": 36,
+	  "name": "Γ",
+	  "nextxp": 999999
 	}
   }
 }

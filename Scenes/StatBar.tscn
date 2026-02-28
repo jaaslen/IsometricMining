@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ctx8xrjc65lmv"]
 
-[ext_resource type="StyleBox" uid="uid://br67tv5l7dcgo" path="res://Visuals/StatBar.tres" id="1_s813n"]
+[ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="1_s813n"]
 [ext_resource type="Script" uid="uid://c73civ214bgmm" path="res://Scripts/StatBar.gd" id="2_w0e0x"]
 [ext_resource type="Texture2D" uid="uid://d35wlbx8ymfgl" path="res://Visuals/icon.svg" id="3_fxmb0"]
 [ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="4_tl8ww"]
@@ -12,7 +12,7 @@ bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 [node name="PanelContainer" type="PanelContainer"]
 offset_right = 800.0
 offset_bottom = 136.0
-theme_override_styles/panel = ExtResource("1_s813n")
+theme = ExtResource("1_s813n")
 script = ExtResource("2_w0e0x")
 
 [node name="Container" type="VBoxContainer" parent="."]
@@ -100,33 +100,16 @@ text_overrun_behavior = 1
 [node name="Line" type="HBoxContainer" parent="Container"]
 layout_mode = 2
 
-[node name="Barrier" type="ColorRect" parent="Container/Line"]
-custom_minimum_size = Vector2(0, 3)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.1764706, 0.1764706, 0.1764706, 1)
-
 [node name="Line" type="ColorRect" parent="Container/Line"]
-custom_minimum_size = Vector2(0, 3)
+custom_minimum_size = Vector2(260, 3)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
 size_flags_stretch_ratio = 10.0
-
-[node name="Barrier2" type="ColorRect" parent="Container/Line"]
-custom_minimum_size = Vector2(0, 3)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.1764706, 0.1764706, 0.1764706, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Container"]
-custom_minimum_size = Vector2(500, 2)
-layout_mode = 2
-size_flags_horizontal = 4
-color = Color(0.1764706, 0.1764706, 0.1764706, 1)
+color = Color(0.43529412, 0.4392157, 0.4392157, 1)
 
 [node name="Description" type="RichTextLabel" parent="Container"]
 clip_contents = false
-custom_minimum_size = Vector2(0, 5)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/line_separation = 10

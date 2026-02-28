@@ -34,10 +34,11 @@ func _ready() -> void:
 		#CostLabelBox.text = var_to_str(Value) 
 		##NameLabelBox.FitText()
 		#CostLabelBox.FitText()
-		var Original := get_theme_stylebox("panel")
-		var style := Original.duplicate(true)
-		style.border_color = ColorValue#Color.html(Pickaxe["color"]) * 0.5
-		add_theme_stylebox_override("panel", style)
+		#var Original := get_theme_stylebox("panel")
+		#var style := Original.duplicate(true)
+		modulate = ColorValue
+		#style.border_color = ColorValue#Color.html(Pickaxe["color"]) * 0.5
+		#add_theme_stylebox_override("panel", style)
 
 		
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d1pe2igwdtaun"]
 
-[ext_resource type="StyleBox" uid="uid://br67tv5l7dcgo" path="res://Visuals/StatBar.tres" id="1_cmwbx"]
+[ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="1_cmwbx"]
 [ext_resource type="Script" uid="uid://bcnxxteurg3yx" path="res://Scripts/MiniStatBar.gd" id="2_sfqhn"]
 [ext_resource type="Texture2D" uid="uid://d35wlbx8ymfgl" path="res://Visuals/icon.svg" id="3_na2f5"]
 [ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="4_eegc5"]
@@ -10,7 +10,7 @@
 offset_right = 800.0
 offset_bottom = 68.0
 size_flags_vertical = 4
-theme_override_styles/panel = ExtResource("1_cmwbx")
+theme = ExtResource("1_cmwbx")
 script = ExtResource("2_sfqhn")
 
 [node name="Container" type="VBoxContainer" parent="."]

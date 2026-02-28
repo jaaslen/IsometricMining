@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=4 uid="uid://ckd04gu6f1lw"]
+[gd_scene load_steps=129 format=4 uid="uid://ckd04gu6f1lw"]
 
 [ext_resource type="TileSet" uid="uid://b73qq53megiib" path="res://Visuals/DefaultTileset.tres" id="2_cm0pq"]
 [ext_resource type="Texture2D" uid="uid://82jgclr6ge6t" path="res://Visuals/OIP-2686731067.jpg" id="3_2w5on"]
@@ -19,7 +19,11 @@
 [ext_resource type="PackedScene" uid="uid://chbgis4c6afk7" path="res://Scenes/Dictionary.tscn" id="12_c2ibq"]
 [ext_resource type="Texture2D" uid="uid://dqs17kmqkxwp4" path="res://Visuals/Background.png" id="13_c6i3y"]
 [ext_resource type="Script" uid="uid://b3km0j1twgxfq" path="res://Scripts/Cutscenes.gd" id="14_c2ibq"]
+[ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="14_c4ay3"]
 [ext_resource type="Texture2D" uid="uid://cory6h36gsiop" path="res://Visuals/OIP-2832759397.jpg" id="14_j4qnp"]
+[ext_resource type="Script" uid="uid://birc53blgft01" path="res://Scenes/XPBar.gd" id="14_jyqft"]
+[ext_resource type="Shader" uid="uid://laldtqrrrl1v" path="res://Visuals/Outline.gdshader" id="15_3tgeq"]
+[ext_resource type="Texture2D" uid="uid://8nvcwhrd4fup" path="res://Visuals/Ranks/Y.png" id="15_jyqft"]
 [ext_resource type="Script" uid="uid://cgd67btyn6bw5" path="res://Scripts/LayerTint.gd" id="18_346fj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6i3y"]
@@ -727,9 +731,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c2ibq"]
-size = Vector2(4, 4)
-
 [sub_resource type="Gradient" id="Gradient_c6i3y"]
 offsets = PackedFloat32Array(0.33163264, 0.5102041, 1)
 colors = PackedColorArray(0.17283294, 0.17283258, 0.17283267, 0, 0.21230483, 0.21230483, 0.21230483, 1, 0, 0, 0, 1)
@@ -760,6 +761,12 @@ bg_color = Color(0, 0, 0, 1)
 border_width_top = 3
 border_width_bottom = 3
 border_blend = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c4ay3"]
+shader = ExtResource("15_3tgeq")
+shader_parameter/clr = Color(0.18431373, 0.18431373, 0.18431373, 1)
+shader_parameter/type = 2
+shader_parameter/thickness = 6.095
 
 [sub_resource type="Animation" id="Animation_c6i3y"]
 resource_name = "LayerTransition"
@@ -798,6 +805,9 @@ _data = {
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpfj3"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c2ibq"]
+size = Vector2(4, 4)
 
 [node name="Node2D" type="Node2D"]
 
@@ -873,7 +883,19 @@ tile_map_data = PackedByteArray("AAD9/wEAAAABAAAAAAD+/wEAAAABAAAAAAD//wEAAAABAAA
 tile_set = ExtResource("2_cm0pq")
 collision_enabled = false
 
+[node name="7" type="TileMapLayer" parent="Detection/Layers"]
+modulate = Color(0.6651851, 0.6651851, 0.6651851, 1)
+light_mask = 517
+z_index = -2
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(0, 204)
+tile_map_data = PackedByteArray("AAD9/wEAAAABAAAAAAD+/wEAAAABAAAAAAD//wEAAAABAAAAAAAAAAAAAAABAAAAAAABAP//AAABAAAAAAAAAP//AAABAAAAAAD//wAAAAABAAAAAAD+/wAAAAABAAAAAAD/////AAABAAAAAAA=")
+tile_set = ExtResource("2_cm0pq")
+collision_enabled = false
+
 [node name="Effects" type="Node2D" parent="Detection"]
+z_index = 5
 
 [node name="Mining" type="AnimatedSprite2D" parent="Detection/Effects"]
 visible = false
@@ -882,12 +904,6 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_c6i3y")
 animation = &"Top"
 offset = Vector2(0, 17)
-
-[node name="Cursor" type="Sprite2D" parent="Detection"]
-z_index = 10
-texture_filter = 1
-texture = SubResource("PlaceholderTexture2D_c2ibq")
-script = ExtResource("5_lgr22")
 
 [node name="Sprite2D" type="Sprite2D" parent="Detection"]
 visible = false
@@ -916,8 +932,10 @@ mouse_filter = 2
 script = ExtResource("11_5vvyt")
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("12_c2ibq")]
-offset_left = 1920.0
-offset_right = 1920.0
+z_index = 2
+anchors_preset = 11
+anchor_left = 1.0
+grow_horizontal = 0
 mouse_filter = 2
 ClosedPos = Vector2(1920, 0)
 
@@ -949,16 +967,25 @@ texture_normal = SubResource("PlaceholderTexture2D_c6i3y")
 stretch_mode = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
-offset_left = 1372.0
-offset_top = 280.0
-offset_right = 1900.0
-offset_bottom = 1080.0
+z_index = -2
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -528.0
+offset_top = -400.0
+offset_bottom = 400.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Inventory" type="VBoxContainer" parent="CanvasLayer/ScrollContainer"]
 light_mask = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_constants/separation = 0
 script = ExtResource("6_lgr22")
 
@@ -1006,6 +1033,7 @@ offset_right = 120.0
 offset_bottom = 307.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_1p5hy")
 theme_override_styles/fill = SubResource("StyleBoxFlat_h1m7h")
 value = 50.0
@@ -1015,11 +1043,28 @@ script = ExtResource("9_h1m7h")
 one_shot = true
 
 [node name="Level" type="ProgressBar" parent="CanvasLayer"]
-offset_left = 48.0
-offset_top = 32.0
-offset_right = 592.0
-offset_bottom = 68.0
+offset_left = 72.0
+offset_top = 40.0
+offset_right = 616.0
+offset_bottom = 96.0
+theme = ExtResource("14_c4ay3")
 theme_override_font_sizes/font_size = 26
+show_percentage = false
+script = ExtResource("14_jyqft")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Level"]
+material = SubResource("ShaderMaterial_c4ay3")
+position = Vector2(1.4305115e-06, 24.000002)
+rotation = 0.2617994
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("15_jyqft")
+
+[node name="PointLight2D" type="PointLight2D" parent="CanvasLayer/Level/Sprite2D"]
+visible = false
+position = Vector2(0, -7.615)
+scale = Vector2(1.355, 1.355)
+energy = 2.91
+texture = ExtResource("3_2w5on")
 
 [node name="Background" type="Sprite2D" parent="."]
 visible = false
@@ -1030,8 +1075,17 @@ texture = ExtResource("13_c6i3y")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
-offset_right = 960.0
-offset_bottom = 540.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1032.0
+offset_top = -616.0
+offset_right = 888.0
+offset_bottom = 464.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(2, 2)
 mouse_filter = 2
 color = Color(0.23753911, 0.23753914, 0.23753911, 1)
@@ -1064,8 +1118,11 @@ script = ExtResource("14_c2ibq")
 [node name="Panel" type="Panel" parent="."]
 modulate = Color(0.3, 0.3, 0.3, 0)
 z_index = 10
-offset_right = 1920.0
-offset_bottom = 1080.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fpfj3")
 
@@ -1095,6 +1152,14 @@ energy = 1.2
 range_item_cull_mask = 512
 texture = ExtResource("3_2w5on")
 
+[node name="Cursor" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+z_index = 10
+texture_filter = 1
+texture = SubResource("PlaceholderTexture2D_c2ibq")
+script = ExtResource("5_lgr22")
+
+[connection signal="Scaled" from="Detection" to="Cursor" method="Scaled"]
 [connection signal="StartedMiningAnim" from="Detection" to="CanvasLayer/ProgressBar" method="ShowTime"]
 [connection signal="pressed" from="CanvasLayer/TextureButton2" to="CanvasLayer/Forge" method="OtherButtonPressed"]
 [connection signal="pressed" from="CanvasLayer/TextureButton2" to="CanvasLayer/Control" method="OpenButtonPressed"]

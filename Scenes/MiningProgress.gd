@@ -4,8 +4,11 @@ extends ProgressBar
 var DesiredTime: float
 var OrePosition: Vector2 = Vector2(0,0)
 var Extent = 0.3
+
+var Active = false
+
 func ShowTime(desired_time: float,oreid,Position) -> void:
-	
+	Active = true
 	OrePosition = Position
 	
 	if desired_time == 0:
@@ -38,21 +41,23 @@ func ShowTime(desired_time: float,oreid,Position) -> void:
 	
 	
 
-func _process(_delta):
-	if timer.is_stopped():
-		visible = false
-		Camera.position = Vector2(960,540)
-		#Camera.zoom = Vector2(1,1)
-		Camera.toggle(false)
-		Camera.Return()
-		return
-	else:
-		value = DesiredTime - timer.time_left
-		
-		
-		var completion = floor((value / max_value) * 7) / 7.0
-		
-		if DesiredTime > 1:
-			Camera.zoom = Vector2((1 + completion * (Extent)) ,(1 + completion * (Extent)))
+func _process(delta):
+	if Active or 1==1:
+		if timer.is_stopped():
+			visible = false
+			Camera.position = Vector2(960,540)
+			#Camera.zoom = Vector2(1,1)
+			Camera.toggle(false)
+			Camera.Return()
+			Active = false
+			return
+		else:
+			value = DesiredTime - timer.time_left
 			
-			Camera.position =  (4*OrePosition * completion) + Vector2(960,540)
+			
+			var completion = floor((value / max_value) * 7) / 7.0
+			
+			if DesiredTime > 1:
+				Camera.zoom = lerp(Camera.zoom,Vector2((1 + completion * (Extent)) ,(1 + completion * (Extent))), 50 * delta)
+				
+				#Camera.position =  (4*OrePosition * completion) + Vector2(960,540)

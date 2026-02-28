@@ -12,10 +12,10 @@ func _ready() -> void:
 	if Found == false:
 		Ore = Global.GameData["ores"]["0"]
 	
-	var buttonbox = OpenButton.get_theme_stylebox("normal").duplicate(true)
-	buttonbox.border_color = Ore["color"]
-	OpenButton.add_theme_stylebox_override("normal",buttonbox)
-	
+	#var buttonbox = OpenButton.get_theme_stylebox("normal").duplicate(true)
+	#buttonbox.border_color = Ore["color"]
+	#OpenButton.add_theme_stylebox_override("normal",buttonbox)
+	OpenButton.modulate = Ore["color"]
 	
 	NameLabel.text = Ore["name"]
 	NameLabel.fit_text(NameLabel,Vector2(140,90))

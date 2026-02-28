@@ -7,7 +7,6 @@ signal LayerChanged
 
 var OresInLayer : Array = [0]
 var UsingMouse : bool = true
-var XP : int = 0
 var Depth : int = 0
 var CellSize : Vector2i = Vector2i(32,17)
 var TileSize : Vector2i = Vector2i(64,34) 
@@ -19,6 +18,8 @@ var PickaxeLevels : Array = []
 var UnlockedPickaxes : Array = []
 var ForgedPickaxes : Array = []
 var FoundOres : Array = []
+var XP: int = 0
+var Level: int = 0
 
 var Tiles : Array = []
 
@@ -68,6 +69,8 @@ func Save():
 	SaveData["unlocked"] = UnlockedPickaxes
 	SaveData["found"] = FoundOres
 	SaveData["forged"] = ForgedPickaxes
+	SaveData["xp"] = XP
+	SaveData["level"] = Level
 	save_json("res://Data/SaveData.json",SaveData)
 	pass
 
@@ -79,6 +82,8 @@ func Load():
 	UnlockedPickaxes = SaveData["unlocked"]
 	ForgedPickaxes = SaveData["forged"]
 	FoundOres = SaveData["found"]
+	XP = SaveData["xp"]
+	Level = SaveData["level"]
 
 func PrecomputeRarity(max_depth: int):
 	for ore_id in OreDepthTables:
