@@ -2400,74 +2400,92 @@
 	"0": {
 	  "id": 0,
 	  "name": "dev",
-	  "description": "You gain [color=white]10[/color] x as many ores as before."
+	  "description": "You gain [color=white]10[/color] x as many ores as before.",
+	  "color": "#FF00FF"
 	},
 	"1": {
 	  "id": 1,
-	  "name": "perception"
+	  "name": "perception",
+	  "description": "ok",
+	  "color": "#FFFA73"
 	},
 	"2": {
 	  "id": 2,
 	  "name": "dualmine",
-	  "description": "You move down [color=white]2m[/color] at a time instead of 1."
+	  "description": "You move down [color=white]2m[/color] at a time instead of 1.",
+	  "color": "#EAD1DC"
 	},
 	"3": {
 	  "id": 3,
 	  "name": "trimine",
-	  "description": "You move down [color=white]3m[/color] at a time instead of 1."
+	  "description": "You move down [color=white]3m[/color] at a time instead of 1.",
+	  "color": "#0000FF"
 	},
 	"4": {
 	  "id": 4,
 	  "name": "fullmine",
-	  "description": "[color=white]Every tile[/color] on your layer gets mined."
+	  "description": "[color=white]Every tile[/color] on your layer gets mined.",
+	  "color": "#00C4C4"
 	},
 	"5": {
 	  "id": 5,
 	  "name": "stone smasher",
-	  "description": "Stone-type tiles get mined twice as fast."
+	  "description": "Stone-type tiles get mined twice as fast.",
+	  "color": "#00DC5F"
 	},
 	"6": {
 	  "id": 6,
 	  "name": "stone struggle",
-	  "description": "Stone-type tiles take 50% longer to mine"
+	  "description": "Stone-type tiles take 50% longer to mine",
+	  "color": "#00DC5F"
 	},
 	"7": {
 	  "id": 7,
 	  "name": "rarest ores",
-	  "description": "Rare ores only appear half as often"
+	  "description": "Rare ores only appear half as often",
+	  "color": "#00DC5F"
 	},
 	"8": {
 	  "id": 8,
 	  "name": "not-so-rare",
-	  "description": "Rare ores are 3 times as likely to appear"
+	  "description": "Rare ores are 3 times as likely to appear",
+	  "color": "#FF00FF"
 	},
 	"9": {
 	  "id": 9,
 	  "name": "instant",
-	  "description": "can instantly break stronger blocks than usual"
+	  "description": "can instantly break stronger blocks than usual",
+	  "color": "#FFFA73"
 	},
 	"10": {
 	  "id": 10,
 	  "name": "consistency",
-	  "description": "more consistent?"
+	  "description": "more consistent?",
+	  "color": "#EAD1DC"
 	},
 	"11": {
 	  "id": 11,
-	  "name": "extra drops"
+	  "name": "extra drops",
+	  "description": "ok",
+	  "color": "#0000FF"
 	},
 	"12": {
 	  "id": 12,
 	  "name": "??",
-	  "description": "every 3rd non-rare block mined gived double"
+	  "description": "every 3rd non-rare block mined gived double",
+	  "color": "#00C4C4"
 	},
 	"13": {
 	  "id": 13,
 	  "name": "(ORE) Proficiency",
-	  "description": "ore type mined faster"
+	  "description": "ore type mined faster",
+	  "color": "#00DC5F"
 	},
-	"": {
+	"14": {
+	  "id": 14,
 	  "name": "x ray",
-	  "description": "stone is transparent or invisible or something"
+	  "description": "stone is transparent or invisible or something",
+	  "color": "#00DC5F"
 	}
   },
   "stats": {
@@ -2505,188 +2523,206 @@
   "levels": {
 	"0": {
 	  "id": 0,
-	  "name": "Z",
-	  "nextxp": 100
+	  "name": "F",
+	  "nextxp": 100,
+	  "requiredxp": 0
 	},
 	"1": {
 	  "id": 1,
-	  "name": "Y",
-	  "nextxp": 500
+	  "name": "E",
+	  "nextxp": 500,
+	  "requiredxp": 100
 	},
 	"2": {
 	  "id": 2,
-	  "name": "X",
-	  "nextxp": 1500
+	  "name": "D",
+	  "nextxp": 1500,
+	  "requiredxp": 500
 	},
 	"3": {
 	  "id": 3,
-	  "name": "W",
-	  "nextxp": 4000
+	  "name": "C",
+	  "nextxp": 4000,
+	  "requiredxp": 1500
 	},
 	"4": {
 	  "id": 4,
-	  "name": "V",
-	  "nextxp": 10000
+	  "name": "B",
+	  "nextxp": 10000,
+	  "requiredxp": 4000
 	},
 	"5": {
 	  "id": 5,
-	  "name": "U",
-	  "nextxp": 999999
+	  "name": "A",
+	  "nextxp": 999999,
+	  "requiredxp": 10000
 	},
 	"6": {
 	  "id": 6,
-	  "name": "T",
-	  "nextxp": 999999
+	  "name": "S",
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"7": {
 	  "id": 7,
-	  "name": "R",
-	  "nextxp": 999999
+	  "name": "X",
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"8": {
 	  "id": 8,
-	  "name": "Q",
-	  "nextxp": 999999
+	  "name": "Γ",
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"9": {
 	  "id": 9,
-	  "name": "P",
-	  "nextxp": 999999
+	  "name": "Δ",
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"10": {
 	  "id": 10,
-	  "name": "O",
-	  "nextxp": 999999
+	  "name": "θ",
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"11": {
 	  "id": 11,
-	  "name": "N",
-	  "nextxp": 999999
+	  "name": "Λ",
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"12": {
 	  "id": 12,
-	  "name": "M",
-	  "nextxp": 999999
+	  "name": "λ",
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"13": {
 	  "id": 13,
-	  "name": "L",
-	  "nextxp": 999999
+	  "name": "Π",
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"14": {
 	  "id": 14,
-	  "name": "K",
-	  "nextxp": 999999
+	  "name": "Σ",
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"15": {
 	  "id": 15,
-	  "name": "J",
-	  "nextxp": 999999
+	  "name": "Φ",
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"16": {
 	  "id": 16,
-	  "name": "I",
-	  "nextxp": 999999
+	  "name": "Ψ",
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"17": {
 	  "id": 17,
-	  "name": "H",
-	  "nextxp": 999999
+	  "name": "Ω",
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"18": {
 	  "id": 18,
-	  "name": "G",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"19": {
 	  "id": 19,
-	  "name": "F",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"20": {
 	  "id": 20,
-	  "name": "E",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"21": {
 	  "id": 21,
-	  "name": "D",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"22": {
 	  "id": 22,
-	  "name": "C",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"23": {
 	  "id": 23,
-	  "name": "B",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"24": {
 	  "id": 24,
-	  "name": "A",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"25": {
 	  "id": 25,
-	  "name": "S",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"26": {
 	  "id": 26,
-	  "name": "S+",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"27": {
 	  "id": 27,
-	  "name": "Ω",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"28": {
 	  "id": 28,
-	  "name": "Ψ",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"29": {
 	  "id": 29,
-	  "name": "Φ",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"30": {
 	  "id": 30,
-	  "name": "Σ",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"31": {
 	  "id": 31,
-	  "name": "Π",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"32": {
 	  "id": 32,
-	  "name": "Ξ",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"33": {
 	  "id": 33,
-	  "name": "Λ",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"34": {
 	  "id": 34,
-	  "name": "Θ",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"35": {
 	  "id": 35,
-	  "name": "Δ",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	},
 	"36": {
 	  "id": 36,
-	  "name": "Γ",
-	  "nextxp": 999999
+	  "nextxp": 999999,
+	  "requiredxp": 999999
 	}
   }
 }

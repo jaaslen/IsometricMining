@@ -11,14 +11,14 @@ border_width_left = 5
 border_width_top = 8
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(0.8, 0.8, 0.8, 0.21176471)
+border_color = Color(0.8, 0.8, 0.8, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2gq36"]
 atlas = ExtResource("3_qvtl0")
 region = Rect2(0, 0, 64, 68)
 
 [node name="Panel" type="Panel"]
-custom_minimum_size = Vector2(0, 26)
+custom_minimum_size = Vector2(0, 41)
 offset_right = 356.0
 offset_bottom = 41.0
 scale = Vector2(2, 2)

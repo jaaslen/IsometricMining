@@ -1,10 +1,14 @@
 extends ProgressBar
-@onready var Sprite = $Sprite2D
-var Level = Global.Level
+@onready var Sprite = $Panel/Level
+#var Level = Global.Level
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	GetLevel()
+	
 	value = Global.XP
-	max_value = Global.GameData["levels"][str(Global.Level)]["nextxp"] 
+	#max_value = Global.GameData["levels"][str(Global.Level)]["nextxp"]
+	#Sprite.texture = load("res://Visuals/Ranks/" + Global.GameData["levels"][str(Global.Level)]["name"] + ".png")
 	pass # Replace with function body.
 
 
@@ -19,9 +23,16 @@ func _process(delta: float) -> void:
 
 func LevelUp():
 	value = 0
-	Global.XP = 0
+	#Global.XP = 0
 	Global.Level += 1
 	max_value = Global.GameData["levels"][str(Global.Level)]["nextxp"]
 	Sprite.texture = load("res://Visuals/Ranks/" + Global.GameData["levels"][str(Global.Level)]["name"] + ".png")
 	
 	pass
+	
+func GetLevel():
+	for level in Global.GameData["levels"].values():
+		if Global.XP >= level["requiredxp"] and Global.XP < level["nextxp"]:
+			Global.Level = level["id"]
+			Sprite.texture = load("res://Visuals/Ranks/" + level["name"] + ".png")
+			max_value = level["nextxp"]

@@ -6,6 +6,7 @@ extends Panel
 @onready var NameLabelBox = self.get_node("Text").get_node("Name")
 @onready var AmountLabelBox = self.get_node("Text").get_node("Cost")
 @onready var OreProgressBar = self.get_node("ProgressBar")
+@onready var Divider = $Text/Divider
 var  atlas
 var Amount : int = 0
 var Name : String
@@ -17,6 +18,7 @@ func _ready() -> void:
 	Name = Ore["name"]
 	Amount = Global.OreAmounts[Ore["id"]]
 	
+	Divider.color = Color(Ore["color"]) * 1.2
 	
 	NameLabelBox.text = Name # + " " + var_to_str(Amount)
 	AmountLabelBox.text = var_to_str(Amount)

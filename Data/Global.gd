@@ -45,6 +45,7 @@ func _ready() -> void:
 	Load()
 	#GameData = loadjson("res://Data/OreData.json")
 	CacheData()
+	
 	normalizeores()
 	normalizepickaxes()
 	AvailableOres()
@@ -70,7 +71,7 @@ func Save():
 	SaveData["found"] = FoundOres
 	SaveData["forged"] = ForgedPickaxes
 	SaveData["xp"] = XP
-	SaveData["level"] = Level
+	#SaveData["level"] = Level
 	save_json("res://Data/SaveData.json",SaveData)
 	pass
 
@@ -83,7 +84,7 @@ func Load():
 	ForgedPickaxes = SaveData["forged"]
 	FoundOres = SaveData["found"]
 	XP = SaveData["xp"]
-	Level = SaveData["level"]
+	#Level = SaveData["level"]
 
 func PrecomputeRarity(max_depth: int):
 	for ore_id in OreDepthTables:
