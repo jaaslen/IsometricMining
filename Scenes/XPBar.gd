@@ -1,9 +1,9 @@
-extends ProgressBar
+extends TextureProgressBar
 @onready var Sprite = $Panel/Level
 #var Level = Global.Level
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	Global.LevelUp.connect(LevelUI)
 	GetLevel()
 	
 	value = Global.XP
@@ -22,17 +22,28 @@ func _process(delta: float) -> void:
 
 
 func LevelUp():
-	value = 0
+	
+	
+	
+	
+	#value = 0
 	#Global.XP = 0
 	Global.Level += 1
 	max_value = Global.GameData["levels"][str(Global.Level)]["nextxp"]
 	Sprite.texture = load("res://Visuals/Ranks/" + Global.GameData["levels"][str(Global.Level)]["name"] + ".png")
+	Global.LeveledUp()
 	
 	pass
 	
 func GetLevel():
 	for level in Global.GameData["levels"].values():
 		if Global.XP >= level["requiredxp"] and Global.XP < level["nextxp"]:
-			Global.Level = level["id"]
+			#Global.Level = level["id"]
 			Sprite.texture = load("res://Visuals/Ranks/" + level["name"] + ".png")
 			max_value = level["nextxp"]
+			self_modulate = Color(level["color"]) * 1.8
+			$Panel.self_modulate = Color(level["color"]) * 1.8
+			
+func LevelUI(level):
+	self_modulate = Color(level["color"]) * 1.8
+	$Panel.self_modulate = Color(level["color"]) * 1.8

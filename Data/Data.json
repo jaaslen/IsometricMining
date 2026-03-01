@@ -91,7 +91,7 @@
 	  "name": "Coal",
 	  "hardness": 4,
 	  "value": 3,
-	  "xp": 3,
+	  "xp": 8,
 	  "color": "#1A1A1A",
 	  "depth": [
 		[
@@ -128,7 +128,7 @@
 	  "name": "Tin",
 	  "hardness": 8,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 16,
 	  "color": "#F9CB9C",
 	  "depth": [
 		[
@@ -165,7 +165,7 @@
 	  "name": "Copper",
 	  "hardness": 12,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 36,
 	  "color": "#B45F06",
 	  "depth": [
 		[
@@ -197,7 +197,7 @@
 	  "name": "Sulfur",
 	  "hardness": 4,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 8,
 	  "color": "#F4D766",
 	  "depth": [
 		[
@@ -250,7 +250,7 @@
 	  "name": "Nickel",
 	  "hardness": 16,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 48,
 	  "color": "#7B776C",
 	  "depth": [
 		[
@@ -262,7 +262,7 @@
 		  40
 		]
 	  ],
-	  "rarity": 1,
+	  "rarity": 2,
 	  "atlas": [
 		1,
 		3
@@ -282,7 +282,7 @@
 	  "name": "Quartz",
 	  "hardness": 16,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 32,
 	  "color": "#E3E3E3",
 	  "depth": [
 		[
@@ -314,7 +314,7 @@
 	  "name": "Radium",
 	  "hardness": 20,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 60,
 	  "color": "#6AA84F",
 	  "depth": [
 		[
@@ -347,7 +347,7 @@
 	  "name": "Selenite",
 	  "hardness": 20,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 60,
 	  "color": "#E4D7C8",
 	  "depth": [
 		[
@@ -383,7 +383,7 @@
 	  "name": "Erbium",
 	  "hardness": 80,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 240,
 	  "color": "#434343",
 	  "depth": [
 		[
@@ -416,7 +416,7 @@
 	  "name": "Bauxite",
 	  "hardness": 60,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 60,
 	  "color": "#8E5948",
 	  "depth": [
 		[
@@ -448,7 +448,7 @@
 	  "name": "Yttrium",
 	  "hardness": 40,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 40,
 	  "color": "#7D8444",
 	  "depth": [
 		[
@@ -497,7 +497,7 @@
 	  "name": "Iron",
 	  "hardness": 20,
 	  "value": 25,
-	  "xp": 10,
+	  "xp": 20,
 	  "color": "#A69489",
 	  "depth": [
 		[
@@ -533,7 +533,7 @@
 	  "name": "Zinc",
 	  "hardness": 35,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 35,
 	  "color": "#999E9C",
 	  "depth": [
 		[
@@ -566,7 +566,7 @@
 	  "name": "Calcite",
 	  "hardness": 30,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 30,
 	  "color": "#C5A246",
 	  "depth": [
 		[
@@ -598,7 +598,7 @@
 	  "name": "Cobalt",
 	  "hardness": 60,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 60,
 	  "color": "#8992AD",
 	  "depth": [
 		[
@@ -630,7 +630,7 @@
 	  "name": "Uranium-238",
 	  "hardness": 50,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 50,
 	  "color": "#B9DA4D",
 	  "depth": [
 		[
@@ -662,7 +662,7 @@
 	  "name": "Uranium-240",
 	  "hardness": 50,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 50,
 	  "color": "#B9DA4D",
 	  "depth": [
 		[
@@ -694,7 +694,7 @@
 	  "name": "Lithium",
 	  "hardness": 55,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 55,
 	  "color": "#7E7255",
 	  "depth": [
 		[
@@ -726,7 +726,7 @@
 	  "name": "Tantalum",
 	  "hardness": 70,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 70,
 	  "color": "#0B5394",
 	  "depth": [
 		[
@@ -758,7 +758,7 @@
 	  "name": "Thorium",
 	  "hardness": 80,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 80,
 	  "color": "#E69138",
 	  "depth": [
 		[
@@ -808,7 +808,7 @@
 	  "name": "Osmium",
 	  "hardness": 100,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 100,
 	  "color": "#596B5A",
 	  "depth": [
 		[
@@ -841,7 +841,7 @@
 	  "name": "Neodymium",
 	  "hardness": 45,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 45,
 	  "color": "#666666",
 	  "depth": [
 		[
@@ -873,7 +873,7 @@
 	  "name": "Gold",
 	  "hardness": 25,
 	  "value": 100,
-	  "xp": 20,
+	  "xp": 25,
 	  "color": "#FFD966",
 	  "depth": [
 		[
@@ -912,7 +912,7 @@
 	  "name": "Magnesium",
 	  "hardness": 60,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 60,
 	  "color": "#543142",
 	  "depth": [
 		[
@@ -944,7 +944,7 @@
 	  "name": "Phosphorus",
 	  "hardness": 55,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 55,
 	  "color": "#84262B",
 	  "depth": [
 		[
@@ -977,7 +977,7 @@
 	  "name": "Zircon",
 	  "hardness": 80,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 80,
 	  "color": "#D16156",
 	  "depth": [
 		[
@@ -1009,7 +1009,7 @@
 	  "name": "Arsenic",
 	  "hardness": 25,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 25,
 	  "color": "#B99F54",
 	  "depth": [
 		[
@@ -1041,7 +1041,7 @@
 	  "name": "Silver",
 	  "hardness": 30,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 30,
 	  "color": "#C9DAF8",
 	  "depth": [
 		[
@@ -1077,7 +1077,7 @@
 	  "name": "Xenon",
 	  "hardness": 5,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 5,
 	  "color": "#BBA4FF",
 	  "depth": [
 		[
@@ -1112,7 +1112,7 @@
 	  "name": "Krypton",
 	  "hardness": 5,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 5,
 	  "color": "#FCFCFC",
 	  "depth": [
 		[
@@ -1144,7 +1144,7 @@
 	  "name": "Azure",
 	  "hardness": 70,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 70,
 	  "color": "#9900FF",
 	  "depth": [
 		[
@@ -1180,7 +1180,7 @@
 	  "name": "Cinnabar",
 	  "hardness": 50,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 50,
 	  "color": "#DE0000",
 	  "depth": [
 		[
@@ -1217,7 +1217,7 @@
 	  "name": "Titainium",
 	  "hardness": 100,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 100,
 	  "color": "#F3F3F3",
 	  "depth": [
 		[
@@ -1249,7 +1249,7 @@
 	  "name": "Barium",
 	  "hardness": 100,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 100,
 	  "color": "#B77A00",
 	  "depth": [
 		[
@@ -1281,7 +1281,7 @@
 	  "name": "Vanadium",
 	  "hardness": 100,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 100,
 	  "color": "#C62A00",
 	  "depth": [
 		[
@@ -1317,7 +1317,7 @@
 	  "name": "Chromium",
 	  "hardness": 90,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 90,
 	  "color": "#351940",
 	  "depth": [
 		[
@@ -1350,7 +1350,7 @@
 	  "name": "Antimony",
 	  "hardness": 80,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 80,
 	  "color": "#7D5B74",
 	  "depth": [
 		[
@@ -1383,7 +1383,7 @@
 	  "name": "Tungsten",
 	  "hardness": 120,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 120,
 	  "color": "#D9D9D9",
 	  "depth": [
 		[
@@ -1415,7 +1415,7 @@
 	  "name": "Unobtainium",
 	  "hardness": 80,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 80,
 	  "color": "#FF00FF",
 	  "depth": [
 		[
@@ -1456,7 +1456,7 @@
 	  "name": "Stellarite",
 	  "hardness": 80,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 80,
 	  "color": "#FFFA73",
 	  "depth": [
 		[
@@ -1500,7 +1500,7 @@
 	  "name": "Tourmaline",
 	  "hardness": 20,
 	  "value": 1,
-	  "xp": 1,
+	  "xp": 20,
 	  "color": "#EAD1DC",
 	  "depth": [
 		[
@@ -1533,7 +1533,7 @@
 	  "name": "Sapphire",
 	  "hardness": 20,
 	  "value": 1,
-	  "xp": 1,
+	  "xp": 20,
 	  "color": "#0000FF",
 	  "depth": [
 		[
@@ -1565,7 +1565,7 @@
 	  "name": "Aquamarine",
 	  "hardness": 20,
 	  "value": 1,
-	  "xp": 1,
+	  "xp": 20,
 	  "color": "#00C4C4",
 	  "depth": [
 		[
@@ -1597,7 +1597,7 @@
 	  "name": "Malachite",
 	  "hardness": 20,
 	  "value": 1,
-	  "xp": 1,
+	  "xp": 20,
 	  "color": "#00DC5F",
 	  "depth": [
 		[
@@ -1629,7 +1629,7 @@
 	  "name": "Jade",
 	  "hardness": 20,
 	  "value": 1,
-	  "xp": 1,
+	  "xp": 20,
 	  "color": "#00DC5F",
 	  "depth": [
 		[
@@ -1661,7 +1661,7 @@
 	  "name": "Axinite",
 	  "hardness": 20,
 	  "value": 1,
-	  "xp": 1,
+	  "xp": 20,
 	  "color": "#00DC5F",
 	  "depth": [
 		[
@@ -2525,204 +2525,241 @@
 	  "id": 0,
 	  "name": "F",
 	  "nextxp": 100,
-	  "requiredxp": 0
+	  "requiredxp": 0,
+	  "color": "#D9D9D9"
 	},
 	"1": {
 	  "id": 1,
 	  "name": "E",
 	  "nextxp": 500,
-	  "requiredxp": 100
+	  "requiredxp": 100,
+	  "color": "#EA9999"
 	},
 	"2": {
 	  "id": 2,
 	  "name": "D",
 	  "nextxp": 1500,
-	  "requiredxp": 500
+	  "requiredxp": 500,
+	  "color": "#CC0000"
 	},
 	"3": {
 	  "id": 3,
 	  "name": "C",
 	  "nextxp": 4000,
-	  "requiredxp": 1500
+	  "requiredxp": 1500,
+	  "color": "#FF9900"
 	},
 	"4": {
 	  "id": 4,
 	  "name": "B",
 	  "nextxp": 10000,
-	  "requiredxp": 4000
+	  "requiredxp": 4000,
+	  "color": "#FFD966"
 	},
 	"5": {
 	  "id": 5,
 	  "name": "A",
 	  "nextxp": 999999,
-	  "requiredxp": 10000
+	  "requiredxp": 10000,
+	  "color": "#93C47D"
 	},
 	"6": {
 	  "id": 6,
 	  "name": "S",
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#6D9EEB"
 	},
 	"7": {
 	  "id": 7,
 	  "name": "X",
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#8E7CC3"
 	},
 	"8": {
 	  "id": 8,
 	  "name": "Γ",
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"9": {
 	  "id": 9,
 	  "name": "Δ",
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"10": {
 	  "id": 10,
 	  "name": "θ",
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"11": {
 	  "id": 11,
 	  "name": "Λ",
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"12": {
 	  "id": 12,
 	  "name": "λ",
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"13": {
 	  "id": 13,
 	  "name": "Π",
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"14": {
 	  "id": 14,
 	  "name": "Σ",
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"15": {
 	  "id": 15,
 	  "name": "Φ",
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"16": {
 	  "id": 16,
 	  "name": "Ψ",
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"17": {
 	  "id": 17,
 	  "name": "Ω",
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"18": {
 	  "id": 18,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"19": {
 	  "id": 19,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"20": {
 	  "id": 20,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"21": {
 	  "id": 21,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"22": {
 	  "id": 22,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"23": {
 	  "id": 23,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"24": {
 	  "id": 24,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"25": {
 	  "id": 25,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"26": {
 	  "id": 26,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"27": {
 	  "id": 27,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"28": {
 	  "id": 28,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"29": {
 	  "id": 29,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"30": {
 	  "id": 30,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"31": {
 	  "id": 31,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"32": {
 	  "id": 32,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"33": {
 	  "id": 33,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"34": {
 	  "id": 34,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"35": {
 	  "id": 35,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	},
 	"36": {
 	  "id": 36,
 	  "nextxp": 999999,
-	  "requiredxp": 999999
+	  "requiredxp": 999999,
+	  "color": "#FFFFFF"
 	}
   }
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=4 uid="uid://ckd04gu6f1lw"]
+[gd_scene load_steps=134 format=4 uid="uid://ckd04gu6f1lw"]
 
 [ext_resource type="TileSet" uid="uid://b73qq53megiib" path="res://Visuals/DefaultTileset.tres" id="2_cm0pq"]
 [ext_resource type="Texture2D" uid="uid://82jgclr6ge6t" path="res://Visuals/OIP-2686731067.jpg" id="3_2w5on"]
@@ -13,6 +13,7 @@
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="8_c4ay3"]
 [ext_resource type="Script" uid="uid://bwjkpywr2l3c4" path="res://Scripts/XpLabel.gd" id="8_trn2v"]
 [ext_resource type="Script" uid="uid://nhg83jc5qjgs" path="res://Scripts/FPS.gd" id="9_03owx"]
+[ext_resource type="Script" uid="uid://c8nfew0i7wsnt" path="res://Scenes/Scroll.gd" id="9_aht7i"]
 [ext_resource type="Script" uid="uid://kqlw2m68m2qf" path="res://Scenes/available.gd" id="9_erwvk"]
 [ext_resource type="Script" uid="uid://oxl83epljceq" path="res://Scenes/MiningProgress.gd" id="9_h1m7h"]
 [ext_resource type="PackedScene" uid="uid://60t2vbjjambe" path="res://Scenes/Forge.tscn" id="10_wkp8b"]
@@ -23,8 +24,10 @@
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="14_c4ay3"]
 [ext_resource type="Texture2D" uid="uid://cory6h36gsiop" path="res://Visuals/OIP-2832759397.jpg" id="14_j4qnp"]
 [ext_resource type="Script" uid="uid://birc53blgft01" path="res://Scenes/XPBar.gd" id="14_jyqft"]
+[ext_resource type="Texture2D" uid="uid://dhmp7jfu8pog1" path="res://Visuals/Panel.png" id="17_5jffn"]
 [ext_resource type="Texture2D" uid="uid://dabrji05aeu2n" path="res://Visuals/Ranks/F.png" id="17_c4ay3"]
 [ext_resource type="Script" uid="uid://cgd67btyn6bw5" path="res://Scripts/LayerTint.gd" id="18_346fj"]
+[ext_resource type="Texture2D" uid="uid://bjwm0qp2c3htl" path="res://Visuals/PanelRim.png" id="18_kpo4j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6i3y"]
 atlas = ExtResource("3_fos0i")
@@ -760,6 +763,13 @@ border_width_top = 3
 border_width_bottom = 3
 border_blend = true
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpo4j"]
+
+[sub_resource type="Gradient" id="Gradient_kpo4j"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4n42c"]
+gradient = SubResource("Gradient_kpo4j")
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c6i3y"]
 
 [sub_resource type="Animation" id="Animation_c6i3y"]
@@ -955,6 +965,7 @@ grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 0
 theme_override_styles/panel = ExtResource("8_c4ay3")
+script = ExtResource("9_aht7i")
 
 [node name="Inventory" type="VBoxContainer" parent="CanvasLayer/BaseUI/ScrollContainer"]
 clip_children = 2
@@ -1026,22 +1037,41 @@ script = ExtResource("9_h1m7h")
 one_shot = true
 
 [node name="Level" type="ProgressBar" parent="CanvasLayer/BaseUI"]
+visible = false
 layout_mode = 0
 offset_left = 150.0
 offset_right = 694.0
 offset_bottom = 56.0
 theme = ExtResource("14_c4ay3")
 theme_override_font_sizes/font_size = 26
+theme_override_styles/fill = SubResource("StyleBoxFlat_kpo4j")
+value = 50.0
 show_percentage = false
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/BaseUI"]
+layout_mode = 0
+offset_left = 150.0
+offset_right = 896.0
+offset_bottom = 48.0
+value = 50.0
+nine_patch_stretch = true
+stretch_margin_left = 10
+stretch_margin_top = 10
+stretch_margin_right = 10
+stretch_margin_bottom = 8
+texture_under = ExtResource("17_5jffn")
+texture_over = ExtResource("18_kpo4j")
+texture_progress = SubResource("GradientTexture1D_4n42c")
 script = ExtResource("14_jyqft")
 
-[node name="Panel" type="PanelContainer" parent="CanvasLayer/BaseUI/Level"]
+[node name="Panel" type="PanelContainer" parent="CanvasLayer/BaseUI/TextureProgressBar"]
 layout_mode = 0
 offset_left = -150.0
 offset_right = 10.0
 offset_bottom = 160.0
+theme = ExtResource("14_c4ay3")
 
-[node name="Level" type="Sprite2D" parent="CanvasLayer/BaseUI/Level/Panel"]
+[node name="Level" type="Sprite2D" parent="CanvasLayer/BaseUI/TextureProgressBar/Panel"]
 position = Vector2(80, 80)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("17_c4ay3")

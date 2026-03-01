@@ -3,6 +3,7 @@ signal OreChanged
 signal DepthChanged
 signal PickaxeChanged
 signal LayerChanged
+signal LevelUp
 
 
 var OresInLayer : Array = [0]
@@ -45,7 +46,7 @@ func _ready() -> void:
 	Load()
 	#GameData = loadjson("res://Data/OreData.json")
 	CacheData()
-	
+	GetLevel()
 	normalizeores()
 	normalizepickaxes()
 	AvailableOres()
@@ -58,11 +59,16 @@ func _ready() -> void:
 			#newlayer.append(GenerateOre())
 		##Depth += 1
 	Tiles = [[1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1],[1,1,1,1,2,1,1,1,1],[1,1,2,1,3,1,1,1,1],[1,3,1,1,1,3,2,1,1],[1,1,1,3,1,1,1,1,1],[1,1,1,1,1,1,1,2,1]]
-	
+	emit_signal("LevelUp",GameData["levels"][str(Level)])
 
 var OreDepthTables : Dictionary = {}
 var OreRarityTable : Dictionary = {}
 var PrecomputedRarity : Dictionary = {}
+
+func GetLevel():
+	for level in GameData["levels"].values():
+		if XP >= level["requiredxp"] and XP < level["nextxp"]:
+			Level = level["id"]
 
 func Save():
 	SaveData["inventory"] = OreAmounts
@@ -96,6 +102,9 @@ func PrecomputeRarity(max_depth: int):
 
 		PrecomputedRarity[ore_id] = rarity_map
 
+func LeveledUp():
+	print("ok")
+	emit_signal("LevelUp",GameData["levels"][str(Level)])
 
 func CacheData():
 	for id in GameData["ores"]:
