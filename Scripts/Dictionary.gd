@@ -2,8 +2,10 @@ extends Control
 var Open = false
 var Closing = false
 var Opening = false
-@export var ClosedPos = Vector2(0,-1080)
-@export var OpenPos = Vector2(0,0)
+var ClosedPos = Vector2(1900,0)
+var OpenPos = Vector2(0,0)
+signal MenuOpened
+signal MenuClosed
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -13,34 +15,44 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Closing:
 		position = position.lerp(ClosedPos,delta * 10)
-		if position.distance_to(ClosedPos) < 10:
+		if position.distance_squared_to(ClosedPos) < 100:
 			position = ClosedPos
 			Closing = false
 			Open = false
+			#emit_signal("MenuClosed")
 		
 	elif Opening:
 		position = position.lerp(OpenPos,delta * 10)
-		if position.distance_to(OpenPos) < 10:
+		if position.distance_squared_to(OpenPos) < 100:
 			position = OpenPos
 			Open = true
 			Opening = false
+			emit_signal("MenuOpened")
+			
 			
 
 
 
 func OpenButtonPressed() -> void:
-	%Control.LoadOre(1,false)
-	%GridContainer.AddScenes()
 	
 	if Opening:
 		Opening = false
 		Closing = true
+		emit_signal("MenuClosed")
 	elif Closing:
 		Opening = true
 		Closing = false
+		%Control.LoadOre(1,false)
+		%GridContainer.AddScenes()
+		
 	else:
 		Closing = Open
 		Opening = !Open
+		if Open:
+			emit_signal("MenuClosed")
+		else:
+			%Control.LoadOre(1,false)
+			%GridContainer.AddScenes()
 		
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Forge"):

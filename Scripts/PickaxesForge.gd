@@ -72,7 +72,11 @@ func Setup():
 			
 			var ID = int(var_to_str(Pickaxe["id"]))
 			var NewInventoryItem = load("uid://xok4ed1xpd5x").instantiate()
+			
+			NewInventoryItem.Original = Global.GameData["pickaxes"][var_to_str(ID)]
+			
 			if Global.SaveData["unlocked"][ID] == false:
+				
 				ID = 0
 				
 			NewInventoryItem.Forged = Global.ForgedPickaxes[ID]

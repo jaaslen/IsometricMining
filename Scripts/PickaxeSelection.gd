@@ -3,7 +3,8 @@ extends Button
 #signal PickaxeListUpdated
 
 @export var Icon : CompressedTexture2D
-@export var Pickaxe: Dictionary = Global.GameData["pickaxes"]["0"]
+var Pickaxe: Dictionary = Global.GameData["pickaxes"]["0"]
+var Original = Global.GameData["pickaxes"]["0"]
 
 @export var Unlocked: bool
 @export var Forged: bool = true
@@ -12,6 +13,7 @@ extends Button
 @onready var IconBox = self.get_node("Texture")
 @onready var LabelBox = self.get_node("Label")
 @onready var OreProgressBar = self.get_node("ProgressBar")
+@onready var IDLabel = $ID
 
 func _ready() -> void:
 	Global.PickaxeChanged.connect(PickaxeChanged)
@@ -35,6 +37,8 @@ func _on_button_pressed() -> void:
 	pass # Replace with function body.
 
 func PickaxeChanged(__):
+	IDLabel.self_modulate = Color(Pickaxe["color"])
+	IDLabel.text = "#" + str(Original["id"])
 	
 	EquipButton.visible = true
 	EquipButton.disabled = true

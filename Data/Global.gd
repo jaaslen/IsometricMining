@@ -78,7 +78,8 @@ func Save():
 	SaveData["found"] = FoundOres
 	SaveData["forged"] = ForgedPickaxes
 	SaveData["xp"] = XP
-	#SaveData["level"] = Level
+	SaveData["level"] = Level["id"]
+	
 	save_json("res://Data/SaveData.json",SaveData)
 	pass
 

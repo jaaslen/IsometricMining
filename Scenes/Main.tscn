@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=4 uid="uid://ckd04gu6f1lw"]
+[gd_scene load_steps=137 format=4 uid="uid://ckd04gu6f1lw"]
 
 [ext_resource type="TileSet" uid="uid://b73qq53megiib" path="res://Visuals/DefaultTileset.tres" id="2_cm0pq"]
 [ext_resource type="Texture2D" uid="uid://82jgclr6ge6t" path="res://Visuals/OIP-2686731067.jpg" id="3_2w5on"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cgoxf007xiycg" path="res://Scenes/Lantern.gd" id="7_fq0cl"]
 [ext_resource type="Script" uid="uid://dkb6cx8pl66f8" path="res://Scripts/DepthLabel.gd" id="7_lgr22"]
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="8_c4ay3"]
+[ext_resource type="Script" uid="uid://cgdad8gk70kif" path="res://Scenes/BaseUI.gd" id="8_c5snn"]
 [ext_resource type="Script" uid="uid://bwjkpywr2l3c4" path="res://Scripts/XpLabel.gd" id="8_trn2v"]
 [ext_resource type="Script" uid="uid://nhg83jc5qjgs" path="res://Scripts/FPS.gd" id="9_03owx"]
 [ext_resource type="Script" uid="uid://c8nfew0i7wsnt" path="res://Scenes/Scroll.gd" id="9_aht7i"]
@@ -989,13 +990,13 @@ anchors_preset = 11
 anchor_left = 1.0
 grow_horizontal = 0
 mouse_filter = 2
-ClosedPos = Vector2(1920, 0)
 
 [node name="BaseUI" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("8_c5snn")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/BaseUI"]
 z_index = -2
@@ -1293,6 +1294,10 @@ texture = ExtResource("3_2w5on")
 
 [connection signal="Scaled" from="Detection" to="Cursor" method="Scaled"]
 [connection signal="StartedMiningAnim" from="Detection" to="CanvasLayer/BaseUI/ProgressBar" method="ShowTime"]
+[connection signal="MenuClosed" from="CanvasLayer/Forge" to="CanvasLayer/BaseUI" method="MenuClosed"]
+[connection signal="MenuOpened" from="CanvasLayer/Forge" to="CanvasLayer/BaseUI" method="MenuOpened"]
+[connection signal="MenuClosed" from="CanvasLayer/Control" to="CanvasLayer/BaseUI" method="MenuClosed"]
+[connection signal="MenuOpened" from="CanvasLayer/Control" to="CanvasLayer/BaseUI" method="MenuOpened"]
 [connection signal="pressed" from="CanvasLayer/Dictionary" to="CanvasLayer/Forge" method="OtherButtonPressed"]
 [connection signal="pressed" from="CanvasLayer/Dictionary" to="CanvasLayer/Control" method="OpenButtonPressed"]
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer/Forge" method="OpenButtonPressed"]

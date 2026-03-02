@@ -4,6 +4,8 @@ var Closing = false
 var Opening = false
 var ClosedPos = Vector2(0,-1080)
 var OpenPos = Vector2(0,0)
+signal MenuOpened
+signal MenuClosed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,6 +20,7 @@ func _process(delta: float) -> void:
 			position = ClosedPos
 			Closing = false
 			Open = false
+			
 		
 	elif Opening:
 		position = position.lerp(OpenPos,delta * 10)
@@ -26,6 +29,7 @@ func _process(delta: float) -> void:
 			Open = true
 			Opening = false
 			
+			
 
 
 
@@ -33,12 +37,21 @@ func OpenButtonPressed() -> void:
 	if Opening:
 		Opening = false
 		Closing = true
+		emit_signal("MenuClosed")
+		
 	elif Closing:
+		emit_signal("MenuOpened")
 		Opening = true
 		Closing = false
 	else:
 		Closing = Open
 		Opening = !Open
+		
+		if Open == false:
+			emit_signal("MenuOpened")
+		else:
+			emit_signal("MenuClosed")
+		
 		
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Forge"):
