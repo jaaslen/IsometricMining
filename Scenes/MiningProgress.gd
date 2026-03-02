@@ -27,11 +27,13 @@ func ShowTime(desired_time: float,oreid,Position) -> void:
 
 		var Ore = Global.GameData["ores"][var_to_str(oreid)]
 
-		var Original := get_theme_stylebox("fill")
-		var style := Original.duplicate(true)
-		style.bg_color = Color.html(Ore["color"])
-		add_theme_stylebox_override("fill", style)
-
+		#var Original := get_theme_stylebox("fill")
+		#var style := Original.duplicate(true)
+		#style.bg_color = Color.html(Ore["color"])
+		#add_theme_stylebox_override("fill", style)
+		
+		modulate = Color(Ore["color"]) * 0.7 + Color(0.3,0.3,0.3,1)
+		
 		timer.stop()
 		timer.wait_time = desired_time
 		timer.start()

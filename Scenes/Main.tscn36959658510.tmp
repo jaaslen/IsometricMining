@@ -1103,7 +1103,6 @@ offset_right = 896.0
 offset_bottom = 48.0
 value = 50.0
 rounded = true
-allow_greater = true
 nine_patch_stretch = true
 stretch_margin_left = 10
 stretch_margin_top = 10

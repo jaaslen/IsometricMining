@@ -2524,242 +2524,322 @@
 	"0": {
 	  "id": 0,
 	  "name": "F",
+	  "Tier": 1,
+	  "TierTotal": 1,
 	  "nextxp": 100,
 	  "requiredxp": 0,
-	  "color": "#D9D9D9"
+	  "color": "#D9D9D9",
+	  "fullxp": 100
 	},
 	"1": {
 	  "id": 1,
 	  "name": "E",
-	  "nextxp": 500,
+	  "Tier": 1,
+	  "TierTotal": 2,
+	  "nextxp": 300,
 	  "requiredxp": 100,
-	  "color": "#EA9999"
+	  "color": "#EA9999",
+	  "fullxp": 640
 	},
 	"2": {
 	  "id": 2,
-	  "name": "D",
-	  "nextxp": 1500,
-	  "requiredxp": 500,
-	  "color": "#CC0000"
+	  "name": "E",
+	  "Tier": 2,
+	  "TierTotal": 2,
+	  "nextxp": 640,
+	  "requiredxp": 300,
+	  "color": "#EA9999",
+	  "fullxp": 640
 	},
 	"3": {
 	  "id": 3,
-	  "name": "C",
-	  "nextxp": 4000,
-	  "requiredxp": 1500,
-	  "color": "#FF9900"
+	  "name": "D",
+	  "Tier": 1,
+	  "TierTotal": 2,
+	  "nextxp": 1500,
+	  "requiredxp": 640,
+	  "color": "#CC0000",
+	  "fullxp": 3000
 	},
 	"4": {
 	  "id": 4,
-	  "name": "B",
-	  "nextxp": 10000,
-	  "requiredxp": 4000,
-	  "color": "#FFD966"
+	  "name": "D",
+	  "Tier": 2,
+	  "TierTotal": 2,
+	  "nextxp": 3000,
+	  "requiredxp": 1500,
+	  "color": "#CC0001",
+	  "fullxp": 3000
 	},
 	"5": {
 	  "id": 5,
-	  "name": "A",
-	  "nextxp": 999999,
-	  "requiredxp": 10000,
-	  "color": "#93C47D"
+	  "name": "C",
+	  "Tier": 1,
+	  "TierTotal": 3,
+	  "nextxp": 7000,
+	  "requiredxp": 3000,
+	  "color": "#FF9900",
+	  "fullxp": 22000
 	},
 	"6": {
 	  "id": 6,
-	  "name": "S",
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#6D9EEB"
+	  "name": "C",
+	  "Tier": 2,
+	  "TierTotal": 3,
+	  "nextxp": 15000,
+	  "requiredxp": 7000,
+	  "color": "#FF9900",
+	  "fullxp": 22000
 	},
 	"7": {
 	  "id": 7,
-	  "name": "X",
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#8E7CC3"
+	  "name": "C",
+	  "Tier": 3,
+	  "TierTotal": 3,
+	  "nextxp": 22000,
+	  "requiredxp": 15000,
+	  "color": "#FF9900",
+	  "fullxp": 22000
 	},
 	"8": {
 	  "id": 8,
-	  "name": "Γ",
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "B",
+	  "Tier": 1,
+	  "TierTotal": 3,
+	  "nextxp": 32000,
+	  "requiredxp": 22000,
+	  "color": "#FFD966",
+	  "fullxp": 95000
 	},
 	"9": {
 	  "id": 9,
-	  "name": "Δ",
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "B",
+	  "Tier": 2,
+	  "TierTotal": 3,
+	  "nextxp": 63000,
+	  "requiredxp": 32000,
+	  "color": "#FFD966",
+	  "fullxp": 95000
 	},
 	"10": {
 	  "id": 10,
-	  "name": "θ",
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "B",
+	  "Tier": 3,
+	  "TierTotal": 3,
+	  "nextxp": 95000,
+	  "requiredxp": 63000,
+	  "color": "#FFD966",
+	  "fullxp": 95000
 	},
 	"11": {
 	  "id": 11,
-	  "name": "Λ",
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "A",
+	  "Tier": 1,
+	  "TierTotal": 5,
+	  "nextxp": 76000,
+	  "requiredxp": 95000,
+	  "color": "#93C47D",
+	  "fullxp": 380000
 	},
 	"12": {
 	  "id": 12,
-	  "name": "λ",
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "A",
+	  "Tier": 2,
+	  "TierTotal": 5,
+	  "nextxp": 152000,
+	  "requiredxp": 76000,
+	  "color": "#93C47D",
+	  "fullxp": 380000
 	},
 	"13": {
 	  "id": 13,
-	  "name": "Π",
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "A",
+	  "Tier": 3,
+	  "TierTotal": 5,
+	  "nextxp": 228000,
+	  "requiredxp": 152000,
+	  "color": "#93C47D",
+	  "fullxp": 380000
 	},
 	"14": {
 	  "id": 14,
-	  "name": "Σ",
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "A",
+	  "Tier": 4,
+	  "TierTotal": 5,
+	  "nextxp": 304000,
+	  "requiredxp": 228000,
+	  "color": "#93C47D",
+	  "fullxp": 380000
 	},
 	"15": {
 	  "id": 15,
-	  "name": "Φ",
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "A",
+	  "Tier": 5,
+	  "TierTotal": 5,
+	  "nextxp": 380000,
+	  "requiredxp": 304000,
+	  "color": "#93C47D",
+	  "fullxp": 380000
 	},
 	"16": {
 	  "id": 16,
-	  "name": "Ψ",
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "S",
+	  "Tier": 1,
+	  "TierTotal": 5,
+	  "nextxp": 300000,
+	  "requiredxp": 380000,
+	  "color": "#6D9EEB",
+	  "fullxp": 1500000
 	},
 	"17": {
 	  "id": 17,
-	  "name": "Ω",
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "S",
+	  "Tier": 2,
+	  "TierTotal": 5,
+	  "nextxp": 600000,
+	  "requiredxp": 300000,
+	  "color": "#6D9EEB",
+	  "fullxp": 1500000
 	},
 	"18": {
 	  "id": 18,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "S",
+	  "Tier": 3,
+	  "TierTotal": 5,
+	  "nextxp": 900000,
+	  "requiredxp": 600000,
+	  "color": "#6D9EEB",
+	  "fullxp": 1500000
 	},
 	"19": {
 	  "id": 19,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "S",
+	  "Tier": 4,
+	  "TierTotal": 5,
+	  "nextxp": 1200000,
+	  "requiredxp": 900000,
+	  "color": "#6D9EEB",
+	  "fullxp": 1500000
 	},
 	"20": {
 	  "id": 20,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "S",
+	  "Tier": 5,
+	  "TierTotal": 5,
+	  "nextxp": 1500000,
+	  "requiredxp": 1200000,
+	  "color": "#6D9EEB",
+	  "fullxp": 1500000
 	},
 	"21": {
 	  "id": 21,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "X",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 6200000,
+	  "requiredxp": 1500000,
+	  "color": "#8E7CC3",
+	  "fullxp": 6200000
 	},
 	"22": {
 	  "id": 22,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "α",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 25000000,
+	  "requiredxp": 6200000,
+	  "color": "#FFFFFF",
+	  "fullxp": 25000000
 	},
 	"23": {
 	  "id": 23,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "β",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 105000000,
+	  "requiredxp": 25000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 105000000
 	},
 	"24": {
 	  "id": 24,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "θ",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 440000000,
+	  "requiredxp": 105000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 440000000
 	},
 	"25": {
 	  "id": 25,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "Λ",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 2000000000,
+	  "requiredxp": 440000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 2000000000
 	},
 	"26": {
 	  "id": 26,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "λ",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 8200000000,
+	  "requiredxp": 2000000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 8200000000
 	},
 	"27": {
 	  "id": 27,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "Π",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 36000000000,
+	  "requiredxp": 8200000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 36000000000
 	},
 	"28": {
 	  "id": 28,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "Σ",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 160000000000,
+	  "requiredxp": 36000000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 160000000000
 	},
 	"29": {
 	  "id": 29,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "Φ",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 720000000000,
+	  "requiredxp": 160000000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 720000000000
 	},
 	"30": {
 	  "id": 30,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "Ψ",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 3500000000000,
+	  "requiredxp": 720000000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 3500000000000
 	},
 	"31": {
 	  "id": 31,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
-	},
-	"32": {
-	  "id": 32,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
-	},
-	"33": {
-	  "id": 33,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
-	},
-	"34": {
-	  "id": 34,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
-	},
-	"35": {
-	  "id": 35,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
-	},
-	"36": {
-	  "id": 36,
-	  "nextxp": 999999,
-	  "requiredxp": 999999,
-	  "color": "#FFFFFF"
+	  "name": "Ω",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 15000000000000,
+	  "requiredxp": 3500000000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 15000000000000
 	}
   }
 }
