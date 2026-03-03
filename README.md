@@ -1,10 +1,27 @@
-This is a mining game based in isometric perspective, It is unfinished, and this is moreso a way of saving my revisions, as this is only playable within the Godot editor for now.
-It is coded entirely within the Godot game engine.
-If you are interested in seeing the data used for the game, (exact ore rarities, etc.) 
-then here is the link to a spreadsheet I used: https://docs.google.com/spreadsheets/d/1dcqrPa2Oz8lTYyx-V2MXr_ye-x5gexULq7xX7FrgTDU/edit?gid=741192721#gid=741192721
+# Isometric Mining Game
 
-Inspired by both Azure Mines: https://www.roblox.com/games/428114181/Azure-Mines
+This project is an **isometric mining game prototype** currently in development. The project is unfinished and primarily serves as a way to store and track development revisions.
 
-And it's successor, Celestial Caverns: https://www.roblox.com/games/7199514095/Celestial-Caverns
+At the moment, the game can only be played **within the Godot Engine editor**.
 
-Go check those out!
+## Project Details
+- Built entirely using the Godot Engine
+- Isometric perspective
+- Early development prototype
+- Repository used mainly for version tracking and experimentation
+
+## Game Data
+If you're interested in the underlying game data (such as **ore rarities and balancing values**), you can view the spreadsheet used during development:
+
+https://docs.google.com/spreadsheets/d/1dcqrPa2Oz8lTYyx-V2MXr_ye-x5gexULq7xX7FrgTDU/edit?gid=741192721#gid=741192721
+
+## Inspiration
+This project is inspired by the following games:
+
+- Azure Mines  
+  https://www.roblox.com/games/428114181/Azure-Mines
+
+- Celestial Caverns  
+  https://www.roblox.com/games/7199514095/Celestial-Caverns
+
+If you enjoy mining-style progression games, check them out!
