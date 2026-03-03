@@ -19,14 +19,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_3abks")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(1760, 0)
-layout_mode = 0
-offset_right = 1744.0
-offset_bottom = 496.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
 unique_name_in_owner = true
@@ -40,16 +45,20 @@ script = ExtResource("1_la43g")
 
 [node name="Control" parent="." instance=ExtResource("2_xvgq2")]
 unique_name_in_owner = true
-visible = false
 z_index = 2
 layout_mode = 1
-offset_right = -21.120117
+offset_left = 1900.0
+offset_right = 1900.0
+offset_bottom = 0.0
 
 [node name="Panel" type="Panel" parent="."]
 z_index = -1
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("4_d3rv7")
 theme_override_styles/panel = SubResource("StyleBoxFlat_xvgq2")

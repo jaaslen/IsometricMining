@@ -2,6 +2,7 @@ extends GridContainer
 
 
 func _ready() -> void:
+	get_viewport().connect("size_changed", Callable(self, "update_position_and_scale"))
 	#Global.OreChanged.connect(AddScenes)
 	AddScenes()
 	#var Index = 0
@@ -15,6 +16,13 @@ func _ready() -> void:
 			#NewInventoryItem.visible = false
 		#
 		#Index += 1
+		
+func update_position_and_scale():
+	columns = floori(get_viewport_rect().size.x / 160)
+	#var vp_size = get_viewport_rect().size
+	#scale.x = 4 * vp_size.x / reference_resolution.x
+	#scale.y = scale.x
+	#emit_signal("Scaled")
 
 func AddScenes():
 	var data = Global.GameData["ores"]

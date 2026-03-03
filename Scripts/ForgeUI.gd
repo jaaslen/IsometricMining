@@ -9,6 +9,7 @@ signal MenuClosed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_viewport().connect("size_changed", Callable(self, "update_position_and_scale"))
 	pass # Replace with function body.
 
 
@@ -28,6 +29,7 @@ func _process(delta: float) -> void:
 			position = OpenPos
 			Open = true
 			Opening = false
+			emit_signal("MenuOpened")
 			
 			
 
@@ -40,16 +42,14 @@ func OpenButtonPressed() -> void:
 		emit_signal("MenuClosed")
 		
 	elif Closing:
-		emit_signal("MenuOpened")
+		
 		Opening = true
 		Closing = false
 	else:
 		Closing = Open
 		Opening = !Open
 		
-		if Open == false:
-			emit_signal("MenuOpened")
-		else:
+		if Open:
 			emit_signal("MenuClosed")
 		
 		
@@ -63,3 +63,9 @@ func OtherButtonPressed() -> void:
 	if Open:
 		OpenButtonPressed()
 	pass # Replace with function body.
+
+func update_position_and_scale():
+	var vp_size = get_viewport_rect().size
+	if Open == false and Opening == false and Closing == false:
+		position.y = -vp_size.y
+	ClosedPos = Vector2(0,-vp_size.y)

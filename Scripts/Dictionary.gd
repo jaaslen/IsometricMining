@@ -2,12 +2,13 @@ extends Control
 var Open = false
 var Closing = false
 var Opening = false
-var ClosedPos = Vector2(1900,0)
+@onready var ClosedPos = Vector2(get_viewport().get_visible_rect().size.x,0)
 var OpenPos = Vector2(0,0)
 signal MenuOpened
 signal MenuClosed
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_viewport().connect("size_changed", Callable(self, "update_position_and_scale"))
 	pass # Replace with function body.
 
 
@@ -64,3 +65,9 @@ func OtherButtonPressed() -> void:
 	if Open:
 		OpenButtonPressed()
 	pass # Replace with function body.
+	
+func update_position_and_scale():
+	var vp_size = get_viewport_rect().size
+	if Open == false and Opening == false and Closing == false:
+		position.x = vp_size.x
+	ClosedPos = Vector2(vp_size.x,0)

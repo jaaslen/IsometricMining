@@ -7,23 +7,24 @@ var Order = [1,2,3,5,7,6,4,13,14,16,18,22,9,15,8,12,17,32,34,11,10,28,23,20,24,2
 
 @onready var PanelStyle = load("uid://bu0qaxonbmuh1")
 @onready var Buttons = %GridContainer
-@onready var IDlabel = $HBoxContainer/VBoxContainer2/HBoxContainer/Panel3/ID
-@onready var Icon = $HBoxContainer/VBoxContainer/Panel/MarginContainer/Icon
-@onready var Name = $HBoxContainer/VBoxContainer/Label
-@onready var MinDepth = $HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container/Text/MinValue
-@onready var MinDescription = $HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container/Description
-@onready var MaxDepth = $HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container/Text/MaxValue
-@onready var MaxDescription = $HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container/Description
-@onready var OptimalDepth = $HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container/Text/OptValue
-@onready var OptDescription = $HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container/Description
-@onready var Hardness = $HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4/Container/Text/Hardness
-@onready var HardDescription = $HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4/Container/Description
+@onready var IDlabel = $FullContainer/HBoxContainer/VBoxContainer2/HBoxContainer/Panel3/ID
+@onready var Icon = $FullContainer/HBoxContainer/VBoxContainer/Panel/MarginContainer/Icon
+@onready var Name = $FullContainer/HBoxContainer/VBoxContainer/Label
+@onready var MinDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container/Text/MinValue
+@onready var MinDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container/Description
+@onready var MaxDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container/Text/MaxValue
+@onready var MaxDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container/Description
+@onready var OptimalDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container/Text/OptValue
+@onready var OptDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container/Description
+@onready var Hardness = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4/Container/Text/Hardness
+@onready var HardDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4/Container/Description
 
-@onready var Description = $ScrollContainer/Description
+@onready var Description = $FullContainer/ScrollContainer/Description
 
-@onready var RareLabel = $HBoxContainer/VBoxContainer2/HBoxContainer/Panel/Rarity
+@onready var RareLabel = $FullContainer/HBoxContainer/VBoxContainer2/HBoxContainer/Panel/Rarity
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_viewport().connect("size_changed", Callable(self, "update_position_and_scale"))
 	#if Buttons != null:
 		#for i in Buttons.get_children():
 			#i.OreSelected.connect(LoadOre)
@@ -112,14 +113,14 @@ var OpenPos = Vector2(0,0)
 func _process(delta: float) -> void:
 	if Closing:
 		position = position.lerp(ClosedPos,delta * 10)
-		if position.distance_to(ClosedPos) < 10:
+		if position.distance_squared_to(ClosedPos) < 100:
 			position = ClosedPos
 			Closing = false
 			Open = false
 		
 	elif Opening:
-		position = position.lerp(OpenPos,delta * 10)
-		if position.distance_to(OpenPos) < 10:
+		position = position.lerp(OpenPos,delta * 7)
+		if position.distance_squared_to(OpenPos) < 100:
 			position = OpenPos
 			Open = true
 			Opening = false
@@ -185,3 +186,13 @@ func RightPress() -> void:
 	else:
 		LoadOre(1,false)
 	pass # Replace with function body.
+
+func update_position_and_scale():
+	var vp_size = get_viewport_rect().size
+	if Open == false and Opening == false and Closing == false:
+		position.x = vp_size.x
+	ClosedPos = Vector2(vp_size.x,0)
+	
+	#scale.x = 4 * vp_size.x / reference_resolution.x
+	#scale.y = scale.x
+	#emit_signal("Scaled")
