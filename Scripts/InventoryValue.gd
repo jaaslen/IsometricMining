@@ -19,7 +19,8 @@ func _ready() -> void:
 	Amount = Global.OreAmounts[Ore["id"]]
 	
 	Divider.color = Color(Ore["color"]) * 1.2
-	
+	NameLabelBox.add_theme_color_override("font_color", Color(Ore["color"]) * 1.2)
+	AmountLabelBox.add_theme_color_override("font_color", Color(Ore["color"]) * 1.2)
 	NameLabelBox.text = Name # + " " + var_to_str(Amount)
 	AmountLabelBox.text = var_to_str(Amount)
 	var Original := get_theme_stylebox("panel")
@@ -33,6 +34,8 @@ func _ready() -> void:
 	#LabelOutline(NameLabelBox)
 	#LabelOutline(AmountLabelBox)
 	OreChanged(int(Ore["id"]))
+	IconBox.texture.region = Rect2(Vector2(64 * atlas[0],68 * atlas[1]),Vector2(64,68))
+	LabelOutline(NameLabelBox)
 	pass # Replace with function body.
 
 func OreChanged(OreID):
@@ -47,23 +50,22 @@ func OreChanged(OreID):
 		NameLabelBox.text = Name # + " " + var_to_str(Amount)
 		AmountLabelBox.text = var_to_str(Amount)
 		
-		var Original := get_theme_stylebox("panel")
-		var style := Original.duplicate(true)
-		style.bg_color = Color(Ore["color"]) * 0.5
-		add_theme_stylebox_override("panel", style)
-		NameLabelBox.add_theme_color_override("font_color", Color(Ore["color"]) * 1.2)
-		AmountLabelBox.add_theme_color_override("font_color", Color(Ore["color"]) * 1.2)
+		
+		#var Original := get_theme_stylebox("panel")
+		#var style := Original.duplicate(true)
+		#style.bg_color = Color(Ore["color"]) * 0.5
+		#add_theme_stylebox_override("panel", style)
+		#NameLabelBox.add_theme_color_override("font_color", Color(Ore["color"]) * 1.2)
+		#AmountLabelBox.add_theme_color_override("font_color", Color(Ore["color"]) * 1.2)
 		
 		if Ore["rarity"] != 0:
 			OreProgressBar.max_value = Global.TotalOreAmount
 		else:
 			OreProgressBar.max_value = Global.TotalStoneAmount
-		
 		OreProgressBar.value = Amount
 
-		IconBox.texture.region = Rect2(Vector2(64 * atlas[0],68 * atlas[1]),Vector2(64,68))
-		if visible:
-			LabelOutline(NameLabelBox)
+
+			
 			#LabelOutline(AmountLabelBox)
 		pass
 		

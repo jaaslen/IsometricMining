@@ -47,7 +47,7 @@ func _process(delta):
 	if Active or 1==1:
 		if timer.is_stopped():
 			visible = false
-			Camera.position = Vector2(960,540)
+			#Camera.position = Vector2(960,540)
 			#Camera.zoom = Vector2(1,1)
 			Camera.toggle(false)
 			Camera.Return()

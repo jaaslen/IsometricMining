@@ -4,6 +4,7 @@ signal DepthChanged
 signal PickaxeChanged
 signal LayerChanged
 signal LevelUp
+signal ExitPromptSelected
 
 var GameData : Dictionary = LoadJson("res://Data/Data.json")
 var SaveData : Dictionary = LoadJson("res://Data/SaveData.json")
