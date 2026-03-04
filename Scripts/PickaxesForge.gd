@@ -63,15 +63,19 @@ func PickaxeChanged(__) -> void:
 			#add_child(NewInventoryItem)
 
 func Setup():
+	var InventoryScene = load("uid://xok4ed1xpd5x")#.duplicate(true)
 	for i in self.get_children():
 		i.queue_free()
 	for Pickaxe in Global.GameData["pickaxes"].values():
 
 		if Pickaxe["base"] == true:
+			
+			var NewInventoryItem = InventoryScene.instantiate()
+			
 			var CurrentLevel = Global.PickaxeLevels[Pickaxe["id"]]
 			
 			var ID = int(var_to_str(Pickaxe["id"]))
-			var NewInventoryItem = load("uid://xok4ed1xpd5x").instantiate()
+			
 			
 			NewInventoryItem.Original = Global.GameData["pickaxes"][var_to_str(ID)]
 			

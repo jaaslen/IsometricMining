@@ -234,8 +234,9 @@ func _process(delta: float) -> void:
 		#
 		pass
 	
-	if Input.is_action_just_pressed("MoveBetween") and MovingDown == false and MovingBetween == false and Mining == false and MovingSideways == Vector2(0,0):
-		
+	if Input.is_action_just_pressed("MoveBetween") and MovingDown == false and MovingBetween == false and MovingSideways == Vector2(0,0):
+		Locked = false
+		Mining = false
 		MoveBetween()
 
 	var pos = GetMouse() + Vector2(Global.CellSize.x / 2, Global.CellSize.y / 2)

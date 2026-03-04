@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://be6lsgn3ms26"]
+[gd_scene load_steps=5 format=3 uid="uid://be6lsgn3ms26"]
 
 [ext_resource type="Script" uid="uid://nuh1nxkw6hlv" path="res://Scripts/OreInfo.gd" id="1_lg6u6"]
 [ext_resource type="Texture2D" uid="uid://dcicd3utpj2kf" path="res://Visuals/OreSheet.png" id="2_pr6m8"]
-[ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="3_efd83"]
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="3_pr6m8"]
-[ext_resource type="Script" uid="uid://rjgygt1sckq7" path="res://Scripts/OreInfoName.gd" id="4_x65v3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_auoxk"]
 atlas = ExtResource("2_pr6m8")
@@ -46,19 +44,5 @@ layout_mode = 0
 offset_right = 160.0
 offset_bottom = 160.0
 theme = ExtResource("3_pr6m8")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
-layout_mode = 0
-offset_top = 176.0
-offset_right = 160.0
-offset_bottom = 260.0
-size_flags_vertical = 3
-theme_override_fonts/normal_font = ExtResource("3_efd83")
-theme_override_font_sizes/normal_font_size = 90
-text = "quartz"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("4_x65v3")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

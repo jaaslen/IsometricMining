@@ -4,7 +4,7 @@ extends ScrollContainer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.LevelUp.connect(LevelUI)
-	LevelUI(Global.GameData["levels"][str(int(Global.Level["id"]))])
+	LevelUI(Global.Level)
 	pass # Replace with funuction body.
 
 

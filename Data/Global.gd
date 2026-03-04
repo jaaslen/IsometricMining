@@ -17,7 +17,9 @@ var TileSize : Vector2i = Vector2i(64,34)
 var TotalOreAmount: int = 3
 var TotalStoneAmount : int = 1
 
+var OwnedTraits : Array = []
 var OreAmounts : Array = []
+var StorageOreAmounts : Array = []
 var PickaxeLevels : Array = []
 var UnlockedPickaxes : Array = []
 var ForgedPickaxes : Array = []
@@ -73,6 +75,7 @@ var PrecomputedRarity : Dictionary = {}
 			#Level = level
 
 func Save():
+	SaveData["storage"] = StorageOreAmounts
 	SaveData["inventory"] = OreAmounts
 	SaveData["levels"] = PickaxeLevels
 	SaveData["unlocked"] = UnlockedPickaxes
@@ -84,11 +87,19 @@ func Save():
 	save_json("res://Data/SaveData.json",SaveData)
 	pass
 
+func IntArray(FloatArray):
+	
+	var result: Array
+	#print(result)
+	for i in FloatArray:
+		result.append(int(i))
+	return result
+
 func Load():
-	for i in SaveData["inventory"]:
-		OreAmounts.append(int(i))
-	for i in SaveData["levels"]:
-		PickaxeLevels.append(int(i))
+	OreAmounts = IntArray(SaveData["inventory"])
+	StorageOreAmounts = IntArray(SaveData["storage"])
+	PickaxeLevels = IntArray(SaveData["levels"])
+		
 	UnlockedPickaxes = SaveData["unlocked"]
 	ForgedPickaxes = SaveData["forged"]
 	FoundOres = SaveData["found"]
@@ -96,14 +107,15 @@ func Load():
 	Level = GameData["levels"][str(int(SaveData["level"]))]
 
 func PrecomputeRarity(max_depth: int):
-	for ore_id in OreDepthTables:
-		var table = OreDepthTables[ore_id]
-		var rarity_map = {}
-
-		for d in range(max_depth + 1):
-			rarity_map[d] = GetRarity(d, ore_id)
-
-		PrecomputedRarity[ore_id] = rarity_map
+	pass
+	#for ore_id in OreDepthTables:
+		#var table = OreDepthTables[ore_id]
+		#var rarity_map = {}
+#
+		#for d in range(max_depth + 1):
+			#rarity_map[d] = GetRarity(d, ore_id)
+#
+		#PrecomputedRarity[ore_id] = rarity_map
 
 func LeveledUp():
 	print("ok")
@@ -250,6 +262,19 @@ func GenerateOre(DepthChange = 0):
 		Index += 1
 	return Index
 
+func StoreOre(OreID,amount = 1,into = true):
+	if into and OreAmounts[OreID] >= amount:
+		OreAmounts[OreID] -= amount
+		StorageOreAmounts[OreID] += amount
+		emit_signal("OreChanged",OreID)
+	elif StorageOreAmounts[OreID] >= amount:
+		OreAmounts[OreID] += amount
+		StorageOreAmounts[OreID] -= amount
+		emit_signal("OreChanged",OreID)
+	
+	
+	pass
+
 func AddOre(OreID,amount = 1):
 	OreAmounts[OreID] += amount
 	if OreRarityTable[OreID] != 0:
@@ -278,7 +303,7 @@ func GainXP(amount):
 
 func UpgradePickaxe(PickaxeID):
 	PickaxeLevels[PickaxeID] += 1
-	SelectPickaxe(PickaxeID)
+	await SelectPickaxe(PickaxeID)
 	EquipPickaxe(PickaxeID)
 	
 	#GameData["pickaxes"] = GameData["upgrades"][var_to_str(PickaxeID * 1000 + int(CurrentLevel+1))]

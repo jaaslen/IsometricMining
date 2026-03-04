@@ -1,23 +1,34 @@
 extends Panel
-@export var Icon : CompressedTexture2D
-@export var Ore: Dictionary = Global.GameData["ores"]["1"]
+signal MovedOre
 
+
+
+var LeftSide = false
+
+var Ore: Dictionary = Global.GameData["ores"]["1"]
+
+@onready var InfoContainer = $Text
 @onready var IconBox = self.get_node("Text").get_node("Texture")
 @onready var NameLabelBox = self.get_node("Text").get_node("Name")
 @onready var AmountLabelBox = self.get_node("Text").get_node("Cost")
 #@onready var OreProgressBar = self.get_node("ProgressBar")
 @onready var Divider = $Text/Divider
+@onready var MoveAllButton = $Text/All
 #var Ore
 var  atlas
 var Amount : int = 0
 var Name : String
-var ID = Ore["id"]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	if LeftSide == false:
+		InfoContainer.move_child(MoveAllButton,0)
+		MoveAllButton.text = "<"
+	
 	Global.OreChanged.connect(OreChanged)
 	Name = Ore["name"]
-	Amount = Global.OreAmounts[Ore["id"]]
+	#Amount = Global.OreAmounts[Ore["id"]]
 	
 	Divider.color = Color(Ore["color"]) * 1.2
 	NameLabelBox.modulate = Color(Ore["color"]) + Color(0.4, 0.4, 0.4, 1.0)
@@ -43,8 +54,14 @@ func _ready() -> void:
 func OreChanged(OreID):
 	
 	if OreID == Ore["id"]:
+		print(Ore["id"])
+		#Amount = Global.OreAmounts[Ore["id"]]
 		
-		Amount = Global.OreAmounts[Ore["id"]]
+		if LeftSide:
+			Amount = Global.OreAmounts[Ore["id"]]
+		else:
+			Amount = Global.StorageOreAmounts[Ore["id"]]
+		
 		visible = true
 		if Amount == 0:
 			visible = false
@@ -71,7 +88,7 @@ func OreChanged(OreID):
 			#LabelOutline(AmountLabelBox)
 		pass
 		
-func LabelOutline(label):
+func LabelOutline(_label):
 		var color
 		#if label is RichTextLabel:
 		color = Color(Ore["color"])#label.get_theme_color("default_color")
@@ -85,9 +102,14 @@ func LabelOutline(label):
 			#label.add_theme_color_override("font_outline_color",Color(1.0,1.0,1.0))
 			#AmountLabelBox.add_theme_color_override("font_outline_color",Color(1.0,1.0,1.0))
 		elif visible:
-			NameLabelBox.modulate = Color(Ore["color"]) + Color(0.4, 0.4, 0.4, 1.0)
-			AmountLabelBox.modulate = Color(Ore["color"]) + Color(0.4, 0.4, 0.4, 1.0)
+			NameLabelBox.modulate = 0.9 * Color(Ore["color"]) + Color(0.3, 0.3, 0.3, 1.0)
+			AmountLabelBox.modulate = 0.9 * Color(Ore["color"]) + Color(0.3, 0.3, 0.3, 1.0)
 			#label.add_theme_color_override("font_outline_color",Color(0.0, 0.0, 0.0, 1.0))
 			#AmountLabelBox.add_theme_color_override("font_outline_color",Color(0.0, 0.0, 0.0, 1.0))
 		pass
 		
+
+
+func MoveAll() -> void:
+	emit_signal("MovedOre",LeftSide,true,1,Ore["id"]) #to storage?, percentage?, value for percentage / absolute, oreid
+	pass # Replace with function body.

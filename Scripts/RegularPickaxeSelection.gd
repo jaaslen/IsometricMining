@@ -23,12 +23,14 @@ func PickaxeChanged(PickaxeID):
 			var NewInventoryItem = load("uid://xok4ed1xpd5x").instantiate()
 			if Global.GameData["pickaxes"][var_to_str(PickaxeID)]["maxlevel"] > CurrentLevel:
 				NewInventoryItem.Pickaxe = Global.GameData["pickaxes"][var_to_str(PickaxeID * 1000 + int(CurrentLevel))]
+				NewInventoryItem.Original = Global.GameData["pickaxes"][var_to_str(PickaxeID)]
 				NewInventoryItem.disabled = true
 			add_child(NewInventoryItem)
 	else: 
 		if Global.GameData["pickaxes"][var_to_str(PickaxeID)]["maxlevel"] > CurrentLevel:
 			var NewInventoryItem = load("uid://xok4ed1xpd5x").instantiate()
 			NewInventoryItem.Pickaxe = Global.GameData["pickaxes"][str(PickaxeID)]
+			NewInventoryItem.Original = Global.GameData["pickaxes"][var_to_str(PickaxeID)]
 			NewInventoryItem.disabled = true
 			add_child(NewInventoryItem)
 	

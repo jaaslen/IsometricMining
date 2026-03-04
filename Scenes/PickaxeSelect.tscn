@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://xok4ed1xpd5x"]
+[gd_scene load_steps=8 format=3 uid="uid://xok4ed1xpd5x"]
 
 [ext_resource type="Script" uid="uid://bynqtr6o477ob" path="res://Scripts/PickaxeSelection.gd" id="1_48p6v"]
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="1_dgjc1"]
@@ -6,12 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d35wlbx8ymfgl" path="res://Visuals/icon.svg" id="3_wob85"]
 [ext_resource type="Script" uid="uid://dwwe4laybj2bm" path="res://Scripts/EquipButton.gd" id="4_3lv84"]
 [ext_resource type="Script" uid="uid://cqd6q58brunci" path="res://Scripts/RichListLabel.gd" id="4_bmk7m"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmk7m"]
-bg_color = Color(0.11858138, 0.11858138, 0.11858138, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3lv84"]
-bg_color = Color(5.583167e-06, 0.1824345, 0.018237019, 1)
+[ext_resource type="FontFile" uid="uid://dpdergqk62w75" path="res://Visuals/Orbitron-VariableFont_wght.ttf" id="6_iktsf"]
 
 [node name="Button" type="Button"]
 custom_minimum_size = Vector2(240, 100)
@@ -60,15 +55,14 @@ modulate = Color(1, 1, 1, 0.6117647)
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = 16.0
-offset_top = 100.0
-offset_right = 106.0
-offset_bottom = -16.0
+offset_left = 13.000001
+offset_top = 95.0
+offset_right = 1110.4999
+offset_bottom = 37.0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_1ieuc")
-theme_override_font_sizes/font_size = 13
-theme_override_styles/normal = SubResource("StyleBoxFlat_bmk7m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_3lv84")
+scale = Vector2(0.4, 0.4)
+theme_override_fonts/font = ExtResource("6_iktsf")
+theme_override_font_sizes/font_size = 25
 text = "Equip?"
 vertical_icon_alignment = 2
 script = ExtResource("4_3lv84")
@@ -80,13 +74,14 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -72.0
+offset_left = -71.0
 offset_top = -44.0
-offset_right = -12.0
+offset_right = -11.0
 offset_bottom = -4.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_1ieuc")
 theme_override_font_sizes/font_size = 40
 text = "#1"
 

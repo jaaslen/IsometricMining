@@ -38,6 +38,7 @@ func _on_button_pressed() -> void:
 
 func PickaxeChanged(__):
 	IDLabel.self_modulate = Color(Pickaxe["color"])
+	
 	IDLabel.text = "#" + str(Original["id"])
 	
 	EquipButton.visible = true
