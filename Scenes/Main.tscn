@@ -1414,16 +1414,17 @@ range_item_cull_mask = 512
 texture = ExtResource("3_2w5on")
 
 [node name="Button" type="Button" parent="."]
+visible = false
 z_index = 8
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 900.0
-offset_top = 168.0
-offset_right = 1020.0
-offset_bottom = 232.5
+offset_left = 824.0
+offset_top = 258.0
+offset_right = 1092.0
+offset_bottom = 460.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Chest"
