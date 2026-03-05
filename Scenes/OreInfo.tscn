@@ -40,6 +40,7 @@ offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("4_42bqh")
 script = ExtResource("1_swqym")
 
 [node name="FullContainer" type="VBoxContainer" parent="." unique_id=460564032]
@@ -49,6 +50,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_42bqh")
 theme_override_constants/separation = -8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="FullContainer" unique_id=1227188718]
@@ -58,6 +60,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 mouse_filter = 2
+theme = ExtResource("4_42bqh")
 theme_override_constants/separation = -8
 
 [node name="Button" type="Button" parent="FullContainer/HBoxContainer" unique_id=1383076590]
@@ -65,6 +68,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 focus_mode = 0
+theme = ExtResource("4_42bqh")
 theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = ExtResource("2_auoxk")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_oqe5m")
@@ -75,11 +79,13 @@ text = "◀"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.8
+theme = ExtResource("4_42bqh")
 theme_override_constants/separation = -4
 
 [node name="Label" type="Label" parent="FullContainer/HBoxContainer/VBoxContainer" unique_id=1322785795]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_wc56c")
@@ -104,6 +110,7 @@ offset_top = -9.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_42bqh")
 theme_override_constants/margin_left = 80
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 80
@@ -112,18 +119,21 @@ theme_override_constants/margin_bottom = 30
 [node name="Icon" type="TextureRect" parent="FullContainer/HBoxContainer/VBoxContainer/Panel/MarginContainer" unique_id=863232011]
 texture_filter = 1
 layout_mode = 2
+theme = ExtResource("4_42bqh")
 texture = SubResource("AtlasTexture_auoxk")
 stretch_mode = 5
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="FullContainer/HBoxContainer" unique_id=1425885787]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_42bqh")
 theme_override_constants/separation = -12
 
 [node name="HBoxContainer" type="HBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2" unique_id=1864680450]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.6
+theme = ExtResource("4_42bqh")
 theme_override_constants/separation = -4
 
 [node name="Panel" type="Panel" parent="FullContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=154433673]
@@ -142,6 +152,7 @@ anchor_bottom = 1.0
 offset_top = -24.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_42bqh")
 theme_override_font_sizes/font_size = 91
 text = "★★★★★"
 horizontal_alignment = 1
@@ -163,6 +174,7 @@ anchor_bottom = 1.0
 offset_top = 16.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_wc56c")
@@ -188,6 +200,7 @@ offset_top = -96.0
 offset_bottom = 79.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_42bqh")
 theme_override_fonts/font = ExtResource("2_wc56c")
 theme_override_font_sizes/font_size = 124
 theme_override_styles/normal = SubResource("StyleBoxFlat_auoxk")
@@ -200,12 +213,14 @@ vertical_icon_alignment = 2
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.85
+theme = ExtResource("4_42bqh")
 theme_override_styles/panel = ExtResource("2_auoxk")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer" unique_id=1060689651]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_42bqh")
 theme_override_constants/separation = -8
 
 [node name="PanelContainer" type="PanelContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer" unique_id=1654085442]
@@ -215,17 +230,20 @@ theme_override_styles/panel = ExtResource("2_auoxk")
 
 [node name="Container" type="VBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer" unique_id=1348933683]
 layout_mode = 2
+theme = ExtResource("4_42bqh")
 
 [node name="Text" type="HBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container" unique_id=649008796]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("4_42bqh")
 theme_override_constants/separation = 0
 
 [node name="Texture" type="TextureRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container/Text" unique_id=468891745]
 visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+theme = ExtResource("4_42bqh")
 texture = ExtResource("7_nbjw7")
 expand_mode = 1
 
@@ -235,6 +253,7 @@ custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_wc56c")
@@ -251,6 +270,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.1
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_wc56c")
@@ -266,6 +286,7 @@ custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_wc56c")
@@ -276,11 +297,13 @@ text_overrun_behavior = 1
 
 [node name="Line" type="HBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container" unique_id=86414324]
 layout_mode = 2
+theme = ExtResource("4_42bqh")
 
 [node name="Barrier" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container/Line" unique_id=427155656]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_42bqh")
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [node name="Line" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container/Line" unique_id=1562493486]
@@ -288,17 +311,20 @@ custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 10.0
+theme = ExtResource("4_42bqh")
 
 [node name="Barrier2" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container/Line" unique_id=1468173938]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_42bqh")
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container" unique_id=375222252]
 custom_minimum_size = Vector2(500, 2)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("4_42bqh")
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [node name="Description" type="RichTextLabel" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container" unique_id=1065283232]
@@ -306,6 +332,7 @@ clip_contents = false
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("4_42bqh")
 theme_override_constants/line_separation = 10
 theme_override_constants/outline_size = 3
 theme_override_fonts/normal_font = ExtResource("2_wc56c")
@@ -325,6 +352,7 @@ custom_minimum_size = Vector2(68, 68)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_color = Color(0, 0.4, 0.8, 1)
 theme_override_fonts/font = ExtResource("2_wc56c")
 theme_override_font_sizes/font_size = 30
@@ -338,17 +366,20 @@ theme_override_styles/panel = ExtResource("2_auoxk")
 
 [node name="Container" type="VBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2" unique_id=429816329]
 layout_mode = 2
+theme = ExtResource("4_42bqh")
 
 [node name="Text" type="HBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container" unique_id=824611680]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("4_42bqh")
 theme_override_constants/separation = 0
 
 [node name="Texture" type="TextureRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container/Text" unique_id=670730523]
 visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+theme = ExtResource("4_42bqh")
 texture = ExtResource("7_nbjw7")
 expand_mode = 1
 
@@ -358,6 +389,7 @@ custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_wc56c")
@@ -374,6 +406,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.1
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_wc56c")
@@ -389,6 +422,7 @@ custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_wc56c")
@@ -399,11 +433,13 @@ text_overrun_behavior = 1
 
 [node name="Line" type="HBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container" unique_id=1437634002]
 layout_mode = 2
+theme = ExtResource("4_42bqh")
 
 [node name="Barrier" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container/Line" unique_id=1020639507]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_42bqh")
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [node name="Line" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container/Line" unique_id=1391266924]
@@ -411,17 +447,20 @@ custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 10.0
+theme = ExtResource("4_42bqh")
 
 [node name="Barrier2" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container/Line" unique_id=107662051]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_42bqh")
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container" unique_id=1043005271]
 custom_minimum_size = Vector2(500, 2)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("4_42bqh")
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [node name="Description" type="RichTextLabel" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container" unique_id=1812153283]
@@ -429,6 +468,7 @@ clip_contents = false
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("4_42bqh")
 theme_override_constants/line_separation = 10
 theme_override_constants/outline_size = 3
 theme_override_fonts/normal_font = ExtResource("2_wc56c")
@@ -448,6 +488,7 @@ custom_minimum_size = Vector2(68, 68)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_color = Color(0, 0.4, 0.8, 1)
 theme_override_fonts/font = ExtResource("2_wc56c")
 theme_override_font_sizes/font_size = 30
@@ -461,17 +502,20 @@ theme_override_styles/panel = ExtResource("2_auoxk")
 
 [node name="Container" type="VBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3" unique_id=586194902]
 layout_mode = 2
+theme = ExtResource("4_42bqh")
 
 [node name="Text" type="HBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container" unique_id=1724633863]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("4_42bqh")
 theme_override_constants/separation = 0
 
 [node name="Texture" type="TextureRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container/Text" unique_id=662387426]
 visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+theme = ExtResource("4_42bqh")
 texture = ExtResource("7_nbjw7")
 expand_mode = 1
 
@@ -481,6 +525,7 @@ custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_wc56c")
@@ -497,6 +542,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.1
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_wc56c")
@@ -512,6 +558,7 @@ custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_wc56c")
@@ -521,11 +568,13 @@ vertical_alignment = 2
 
 [node name="Line" type="HBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container" unique_id=508052084]
 layout_mode = 2
+theme = ExtResource("4_42bqh")
 
 [node name="Barrier" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container/Line" unique_id=283796157]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_42bqh")
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [node name="Line" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container/Line" unique_id=250341958]
@@ -533,17 +582,20 @@ custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 10.0
+theme = ExtResource("4_42bqh")
 
 [node name="Barrier2" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container/Line" unique_id=797342190]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_42bqh")
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container" unique_id=820369567]
 custom_minimum_size = Vector2(500, 2)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("4_42bqh")
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [node name="Description" type="RichTextLabel" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container" unique_id=1192602060]
@@ -551,6 +603,7 @@ clip_contents = false
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("4_42bqh")
 theme_override_constants/line_separation = 10
 theme_override_constants/outline_size = 3
 theme_override_fonts/normal_font = ExtResource("2_wc56c")
@@ -570,6 +623,7 @@ custom_minimum_size = Vector2(68, 68)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_color = Color(0, 0.4, 0.8, 1)
 theme_override_fonts/font = ExtResource("2_wc56c")
 theme_override_font_sizes/font_size = 30
@@ -583,17 +637,20 @@ theme_override_styles/panel = ExtResource("2_auoxk")
 
 [node name="Container" type="VBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4" unique_id=259364798]
 layout_mode = 2
+theme = ExtResource("4_42bqh")
 
 [node name="Text" type="HBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4/Container" unique_id=1221435974]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("4_42bqh")
 theme_override_constants/separation = 0
 
 [node name="Texture" type="TextureRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4/Container/Text" unique_id=1039784099]
 visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+theme = ExtResource("4_42bqh")
 texture = ExtResource("7_nbjw7")
 expand_mode = 1
 
@@ -603,6 +660,7 @@ custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_wc56c")
@@ -619,6 +677,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.1
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_wc56c")
@@ -634,6 +693,7 @@ custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_wc56c")
@@ -643,11 +703,13 @@ vertical_alignment = 2
 
 [node name="Line" type="HBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4/Container" unique_id=626873970]
 layout_mode = 2
+theme = ExtResource("4_42bqh")
 
 [node name="Barrier" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4/Container/Line" unique_id=1615978913]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_42bqh")
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [node name="Line" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4/Container/Line" unique_id=1409114957]
@@ -655,17 +717,20 @@ custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 10.0
+theme = ExtResource("4_42bqh")
 
 [node name="Barrier2" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4/Container/Line" unique_id=417188533]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_42bqh")
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4/Container" unique_id=1947544295]
 custom_minimum_size = Vector2(500, 2)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("4_42bqh")
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [node name="Description" type="RichTextLabel" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4/Container" unique_id=1066624579]
@@ -673,6 +738,7 @@ clip_contents = false
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("4_42bqh")
 theme_override_constants/line_separation = 10
 theme_override_constants/outline_size = 3
 theme_override_fonts/normal_font = ExtResource("2_wc56c")
@@ -692,6 +758,7 @@ custom_minimum_size = Vector2(68, 68)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_color = Color(0, 0.4, 0.8, 1)
 theme_override_fonts/font = ExtResource("2_wc56c")
 theme_override_font_sizes/font_size = 30
@@ -705,17 +772,20 @@ theme_override_styles/panel = ExtResource("2_auoxk")
 
 [node name="Container" type="VBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer5" unique_id=1378166854]
 layout_mode = 2
+theme = ExtResource("4_42bqh")
 
 [node name="Text" type="HBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer5/Container" unique_id=1515119292]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("4_42bqh")
 theme_override_constants/separation = 0
 
 [node name="Texture" type="TextureRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer5/Container/Text" unique_id=772301678]
 visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+theme = ExtResource("4_42bqh")
 texture = ExtResource("7_nbjw7")
 expand_mode = 1
 
@@ -725,6 +795,7 @@ custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_wc56c")
@@ -741,6 +812,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.1
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_wc56c")
@@ -756,6 +828,7 @@ custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_wc56c")
@@ -765,11 +838,13 @@ vertical_alignment = 2
 
 [node name="Line" type="HBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer5/Container" unique_id=1102280622]
 layout_mode = 2
+theme = ExtResource("4_42bqh")
 
 [node name="Barrier" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer5/Container/Line" unique_id=1317962945]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_42bqh")
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [node name="Line" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer5/Container/Line" unique_id=89273831]
@@ -777,17 +852,20 @@ custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 10.0
+theme = ExtResource("4_42bqh")
 
 [node name="Barrier2" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer5/Container/Line" unique_id=1034262776]
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("4_42bqh")
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer5/Container" unique_id=361409236]
 custom_minimum_size = Vector2(500, 2)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("4_42bqh")
 color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [node name="Description" type="RichTextLabel" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer5/Container" unique_id=202623670]
@@ -795,6 +873,7 @@ clip_contents = false
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("4_42bqh")
 theme_override_constants/line_separation = 10
 theme_override_constants/outline_size = 3
 theme_override_fonts/normal_font = ExtResource("2_wc56c")
@@ -814,6 +893,7 @@ custom_minimum_size = Vector2(68, 68)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_color = Color(0, 0.4, 0.8, 1)
 theme_override_fonts/font = ExtResource("2_wc56c")
 theme_override_font_sizes/font_size = 30
@@ -824,6 +904,7 @@ text = "[?]"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
+theme = ExtResource("4_42bqh")
 theme_override_constants/separation = -8
 
 [node name="Panel4" type="Panel" parent="FullContainer/HBoxContainer/VBoxContainer3" unique_id=760229381]
@@ -838,6 +919,7 @@ custom_minimum_size = Vector2(0, 628)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.2
+theme = ExtResource("4_42bqh")
 theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = ExtResource("2_auoxk")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_oqe5m")
@@ -847,6 +929,7 @@ text = "▶ "
 [node name="ScrollContainer" type="ScrollContainer" parent="FullContainer" unique_id=1639120223]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("4_42bqh")
 theme_override_styles/panel = ExtResource("2_auoxk")
 
 [node name="Description" type="Label" parent="FullContainer/ScrollContainer" unique_id=1150594983]
@@ -854,6 +937,7 @@ custom_minimum_size = Vector2(1800, 300)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_42bqh")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_wc56c")

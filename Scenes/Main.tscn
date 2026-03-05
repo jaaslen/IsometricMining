@@ -985,6 +985,7 @@ script = ExtResource("6_0sclb")
 z_index = 30
 offset_left = -1900.0
 offset_right = -1900.0
+theme = ExtResource("14_c4ay3")
 script = ExtResource("6_btbly")
 
 [node name="Forge" parent="CanvasLayer" unique_id=386438354 instance=ExtResource("10_wkp8b")]
@@ -993,6 +994,7 @@ offset_top = -1000.0
 offset_right = 0.0
 offset_bottom = -1000.0
 mouse_filter = 2
+theme = ExtResource("14_c4ay3")
 script = ExtResource("11_5vvyt")
 
 [node name="Dictionary" parent="CanvasLayer" unique_id=325743707 instance=ExtResource("12_c2ibq")]
@@ -1001,6 +1003,7 @@ offset_left = 1900.0
 offset_right = 1940.0
 offset_bottom = 96.0
 mouse_filter = 2
+theme = ExtResource("14_c4ay3")
 
 [node name="BaseUI" type="Control" parent="CanvasLayer" unique_id=214010551]
 layout_mode = 3
@@ -1010,6 +1013,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("14_c4ay3")
 script = ExtResource("8_c5snn")
 
 [node name="DepthLabel" type="Label" parent="CanvasLayer/BaseUI" unique_id=1568614968]
@@ -1072,6 +1076,7 @@ offset_bottom = -63.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
+theme = ExtResource("14_c4ay3")
 theme_override_styles/background = SubResource("StyleBoxTexture_kpo4j")
 theme_override_styles/fill = SubResource("StyleBoxFlat_h1m7h")
 value = 50.0
@@ -1098,6 +1103,7 @@ offset_left = 150.0
 offset_right = 896.0
 offset_bottom = 48.0
 tooltip_text = "your XP bar, shows how close you are to the next tier / rank. Left number is current xp, right number is required xp."
+theme = ExtResource("14_c4ay3")
 value = 50.0
 rounded = true
 allow_greater = true
@@ -1148,6 +1154,7 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 tooltip_text = "your XP bar, shows how close you are to the next tier / rank. Left number is current xp, right number is required xp."
+theme = ExtResource("14_c4ay3")
 value = 50.0
 rounded = true
 allow_greater = true
@@ -1202,6 +1209,7 @@ offset_left = -476.0
 offset_top = 202.0
 grow_horizontal = 0
 grow_vertical = 2
+theme = ExtResource("14_c4ay3")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/BaseUI/Inventory" unique_id=1810906618]
 z_index = -2
@@ -1213,6 +1221,7 @@ grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Inventory, when full, return to the surface to put your ores in storage."
 mouse_default_cursor_shape = 9
+theme = ExtResource("14_c4ay3")
 theme_override_styles/panel = ExtResource("8_c4ay3")
 script = ExtResource("25_6heos")
 
@@ -1224,6 +1233,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
+theme = ExtResource("14_c4ay3")
 theme_override_constants/separation = 10
 script = ExtResource("6_lgr22")
 
@@ -1245,6 +1255,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("14_c4ay3")
 theme_override_styles/panel = ExtResource("24_x3rx7")
 script = ExtResource("25_6heos")
 
@@ -1260,6 +1271,7 @@ offset_bottom = 128.0
 grow_horizontal = 0
 scale = Vector2(0.5, 0.5)
 focus_mode = 0
+theme = ExtResource("14_c4ay3")
 texture_normal = SubResource("PlaceholderTexture2D_c6i3y")
 stretch_mode = 0
 script = ExtResource("32_u7mjy")
@@ -1276,6 +1288,7 @@ offset_bottom = 128.0
 grow_horizontal = 0
 scale = Vector2(0.5, 0.5)
 focus_mode = 0
+theme = ExtResource("14_c4ay3")
 texture_normal = SubResource("PlaceholderTexture2D_c6i3y")
 stretch_mode = 0
 script = ExtResource("32_u7mjy")
@@ -1292,6 +1305,7 @@ offset_bottom = 128.0
 grow_horizontal = 0
 scale = Vector2(0.5, 0.5)
 focus_mode = 0
+theme = ExtResource("14_c4ay3")
 texture_normal = SubResource("PlaceholderTexture2D_c6i3y")
 stretch_mode = 0
 script = ExtResource("32_u7mjy")
@@ -1311,6 +1325,7 @@ offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme = ExtResource("14_c4ay3")
 script = ExtResource("25_4yxf6")
 
 [node name="Label" type="Label" parent="CanvasLayer/Prompt" unique_id=1437568710]
@@ -1415,6 +1430,7 @@ offset_bottom = 6080.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("14_c4ay3")
 theme_override_styles/panel = SubResource("StyleBoxFlat_fpfj3")
 
 [node name="Label" type="Label" parent="Panel" unique_id=2048706056]
@@ -1477,6 +1493,7 @@ offset_right = 1092.0
 offset_bottom = 460.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("14_c4ay3")
 text = "Chest"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1063907511]
@@ -1492,6 +1509,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 mouse_filter = 2
+theme = ExtResource("14_c4ay3")
 color = Color(0.23753911, 0.23753914, 0.23753911, 1)
 
 [connection signal="ExitAttempt" from="Detection" to="CanvasLayer/Prompt" method="ExitAttempt"]

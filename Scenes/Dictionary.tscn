@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://chbgis4c6afk7"]
+[gd_scene format=3 uid="uid://chbgis4c6afk7"]
 
 [ext_resource type="Script" uid="uid://sr3kwxijwepr" path="res://Scripts/Dictionary.gd" id="1_3abks"]
 [ext_resource type="Script" uid="uid://beygvhct1lf0w" path="res://Scripts/DictionaryContainer.gd" id="1_la43g"]
@@ -12,7 +12,7 @@ border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=2082685999]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,9 +21,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_d3rv7")
 script = ExtResource("1_3abks")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1582259720]
 clip_contents = false
 custom_minimum_size = Vector2(1760, 0)
 layout_mode = 1
@@ -32,26 +33,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_d3rv7")
 
-[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=367698296]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("4_d3rv7")
 theme_override_constants/h_separation = 150
 theme_override_constants/v_separation = 150
 columns = 11
 script = ExtResource("1_la43g")
 
-[node name="Control" parent="." instance=ExtResource("2_xvgq2")]
+[node name="Control" parent="." unique_id=9308825 instance=ExtResource("2_xvgq2")]
 unique_name_in_owner = true
 z_index = 2
 layout_mode = 1
 offset_left = 1900.0
 offset_right = 1900.0
 offset_bottom = 0.0
+theme = ExtResource("4_d3rv7")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=576616960]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15

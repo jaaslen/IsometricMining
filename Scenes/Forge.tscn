@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://60t2vbjjambe"]
+[gd_scene format=3 uid="uid://60t2vbjjambe"]
 
 [ext_resource type="Script" uid="uid://bofqhbhajepx" path="res://Scripts/PickaxesForge.gd" id="1_ewbv2"]
 [ext_resource type="Script" uid="uid://c1yv6u68gcq66" path="res://Scripts/ForgeContainer.gd" id="1_tpr0r"]
@@ -22,7 +22,7 @@ bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dejnt"]
 bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
 
-[node name="Forge" type="Control"]
+[node name="Forge" type="Control" unique_id=468790923]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,29 +30,31 @@ anchor_bottom = 1.0
 offset_right = 508.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_667t3")
 
-[node name="ForgeContainer" type="HBoxContainer" parent="."]
+[node name="ForgeContainer" type="HBoxContainer" parent="." unique_id=629458856]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_667t3")
 script = ExtResource("1_tpr0r")
 
-[node name="Selection" type="PanelContainer" parent="ForgeContainer"]
+[node name="Selection" type="PanelContainer" parent="ForgeContainer" unique_id=1418927988]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 theme = ExtResource("2_667t3")
 theme_override_styles/panel = SubResource("StyleBoxFlat_lcom1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/Selection"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/Selection" unique_id=1159781669]
 z_index = 1
 layout_mode = 2
 theme = ExtResource("2_667t3")
 
-[node name="PickaxeHeader" type="Label" parent="ForgeContainer/Selection/VBoxContainer"]
+[node name="PickaxeHeader" type="Label" parent="ForgeContainer/Selection/VBoxContainer" unique_id=632639103]
 z_index = 1
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
@@ -64,13 +66,13 @@ text = "Pickaxes"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/Selection/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/Selection/VBoxContainer" unique_id=1406883267]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
 
-[node name="PickaxeSelection" type="VBoxContainer" parent="ForgeContainer/Selection/VBoxContainer/ScrollContainer"]
+[node name="PickaxeSelection" type="VBoxContainer" parent="ForgeContainer/Selection/VBoxContainer/ScrollContainer" unique_id=576380366]
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -79,7 +81,7 @@ theme = ExtResource("2_667t3")
 theme_override_constants/separation = 0
 script = ExtResource("1_ewbv2")
 
-[node name="StatsPanel" type="TabContainer" parent="ForgeContainer"]
+[node name="StatsPanel" type="TabContainer" parent="ForgeContainer" unique_id=837666918]
 custom_minimum_size = Vector2(0, 1000)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -89,19 +91,19 @@ theme_override_constants/tab_separation = 10
 current_tab = 1
 script = ExtResource("4_gk1wl")
 
-[node name="Stats" type="HBoxContainer" parent="ForgeContainer/StatsPanel"]
+[node name="Stats" type="HBoxContainer" parent="ForgeContainer/StatsPanel" unique_id=1712034042]
 visible = false
 layout_mode = 2
 theme = ExtResource("2_667t3")
 metadata/_tab_index = 0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/StatsPanel/Stats"]
+[node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/StatsPanel/Stats" unique_id=1046368221]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
 
-[node name="StatsList" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Stats/ScrollContainer"]
+[node name="StatsList" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Stats/ScrollContainer" unique_id=472295295]
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -110,7 +112,7 @@ theme = ExtResource("2_667t3")
 theme_override_constants/separation = 0
 script = ExtResource("3_qlblt")
 
-[node name="CostPanel" type="PanelContainer" parent="ForgeContainer/StatsPanel/Stats"]
+[node name="CostPanel" type="PanelContainer" parent="ForgeContainer/StatsPanel/Stats" unique_id=1250627148]
 custom_minimum_size = Vector2(0, 540)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -118,23 +120,23 @@ size_flags_stretch_ratio = 0.4
 theme = ExtResource("2_667t3")
 script = ExtResource("5_aelxu")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Stats/CostPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Stats/CostPanel" unique_id=1376624245]
 layout_mode = 2
 theme = ExtResource("2_667t3")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer" unique_id=1843331967]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
 
-[node name="OreCosts" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ScrollContainer"]
+[node name="OreCosts" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ScrollContainer" unique_id=999441316]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
 script = ExtResource("2_lg3is")
 
-[node name="ForgeButton" type="Button" parent="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer"]
+[node name="ForgeButton" type="Button" parent="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer" unique_id=1770057595]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
@@ -142,18 +144,18 @@ theme_override_font_sizes/font_size = 64
 text = "Forge!"
 script = ExtResource("6_mbix4")
 
-[node name="Upgrades" type="HBoxContainer" parent="ForgeContainer/StatsPanel"]
+[node name="Upgrades" type="HBoxContainer" parent="ForgeContainer/StatsPanel" unique_id=1269663643]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
 metadata/_tab_index = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Upgrades"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Upgrades" unique_id=888677723]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_667t3")
 
-[node name="Selection" type="MarginContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer"]
+[node name="Selection" type="MarginContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer" unique_id=1401146119]
 layout_mode = 2
 theme = ExtResource("2_667t3")
 theme_override_constants/margin_left = 30
@@ -162,17 +164,18 @@ theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 0
 script = ExtResource("9_ugol7")
 
-[node name="Button" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/Selection" instance=ExtResource("9_gs31o")]
+[node name="Button" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/Selection" unique_id=1922722823 instance=ExtResource("9_gs31o")]
 layout_mode = 2
+theme = ExtResource("2_667t3")
 
-[node name="Label" type="Label" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer"]
+[node name="Label" type="Label" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer" unique_id=1928889459]
 layout_mode = 2
 theme = ExtResource("2_667t3")
 theme_override_font_sizes/font_size = 101
 text = "▼"
 horizontal_alignment = 1
 
-[node name="UpgradeSelection2" type="MarginContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer"]
+[node name="UpgradeSelection2" type="MarginContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer" unique_id=2015187051]
 layout_mode = 2
 theme = ExtResource("2_667t3")
 theme_override_constants/margin_left = 30
@@ -181,16 +184,17 @@ theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 script = ExtResource("6_042mp")
 
-[node name="Button" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/UpgradeSelection2" instance=ExtResource("9_gs31o")]
+[node name="Button" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/UpgradeSelection2" unique_id=1188483409 instance=ExtResource("9_gs31o")]
 layout_mode = 2
+theme = ExtResource("2_667t3")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer" unique_id=42393773]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
 
-[node name="MarginContainer" type="MarginContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/ScrollContainer" unique_id=1150672510]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -200,7 +204,7 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="UpgradeInfo" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/ScrollContainer/MarginContainer"]
+[node name="UpgradeInfo" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/ScrollContainer/MarginContainer" unique_id=44807692]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -209,38 +213,39 @@ theme = ExtResource("2_667t3")
 theme_override_constants/separation = 0
 script = ExtResource("4_wi1hq")
 
-[node name="CostPanel" type="PanelContainer" parent="ForgeContainer/StatsPanel/Upgrades"]
+[node name="CostPanel" type="PanelContainer" parent="ForgeContainer/StatsPanel/Upgrades" unique_id=440346282]
 custom_minimum_size = Vector2(0, 540)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.4
 theme = ExtResource("2_667t3")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Upgrades/CostPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Upgrades/CostPanel" unique_id=1211579266]
 layout_mode = 2
 theme = ExtResource("2_667t3")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer" unique_id=1196502971]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer/ScrollContainer" unique_id=231952696]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
 script = ExtResource("9_qjbut")
 
-[node name="UpgradeButton" type="Button" parent="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer"]
+[node name="UpgradeButton" type="Button" parent="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer" unique_id=748763982]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("2_667t3")
 theme_override_font_sizes/font_size = 64
 text = "Forge!"
 script = ExtResource("15_667t3")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1056933540]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -249,6 +254,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("2_667t3")
 color = Color(0.3019608, 0.3019608, 0.3019608, 1)
 
 [connection signal="PickaxeSetup" from="ForgeContainer/Selection/VBoxContainer/ScrollContainer/PickaxeSelection" to="ForgeContainer" method="PickaxeSetup"]
