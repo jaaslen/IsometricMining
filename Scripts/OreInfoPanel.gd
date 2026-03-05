@@ -7,19 +7,24 @@ var Order = [1,2,3,5,7,6,4,13,14,16,18,22,9,15,8,12,17,32,34,11,10,28,23,20,24,2
 
 @onready var PanelStyle = load("uid://bu0qaxonbmuh1")
 @onready var Buttons = %GridContainer
-@onready var IDlabel = $HBoxContainer/VBoxContainer2/HBoxContainer/Panel3/ID
-@onready var Icon = $HBoxContainer/VBoxContainer/Panel/MarginContainer/Icon
-@onready var Name = $HBoxContainer/VBoxContainer/Label
-@onready var MinDepth = $HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container/Text/MinValue
-@onready var MinDescription = $HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container/Description
-@onready var MaxDepth = $HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container/Text/MaxValue
-@onready var MaxDescription = $HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container/Description
-@onready var OptimalDepth = $HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container/Text/OptValue
-@onready var OptDescription = $HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container/Description
-@onready var Description = $ScrollContainer/Description
-@onready var RareLabel = $HBoxContainer/VBoxContainer2/HBoxContainer/Panel/Rarity
+@onready var IDlabel = $FullContainer/HBoxContainer/VBoxContainer2/HBoxContainer/Panel3/ID
+@onready var Icon = $FullContainer/HBoxContainer/VBoxContainer/Panel/MarginContainer/Icon
+@onready var Name = $FullContainer/HBoxContainer/VBoxContainer/Label
+@onready var MinDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container/Text/MinValue
+@onready var MinDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container/Description
+@onready var MaxDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container/Text/MaxValue
+@onready var MaxDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container/Description
+@onready var OptimalDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container/Text/OptValue
+@onready var OptDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container/Description
+@onready var Hardness = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4/Container/Text/Hardness
+@onready var HardDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4/Container/Description
+
+@onready var Description = $FullContainer/ScrollContainer/Description
+
+@onready var RareLabel = $FullContainer/HBoxContainer/VBoxContainer2/HBoxContainer/Panel/Rarity
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_viewport().connect("size_changed", Callable(self, "update_position_and_scale"))
 	#if Buttons != null:
 		#for i in Buttons.get_children():
 			#i.OreSelected.connect(LoadOre)
@@ -46,7 +51,7 @@ func LoadOre(OreID,opening = true):
 		IDlabel.text = "#0" + var_to_str(ActualOre["sorting"])
 	else:
 		IDlabel.text = "#" + var_to_str(ActualOre["sorting"])
-	if Ore["found"] == false:
+	if Global.FoundOres[Ore["id"]] == false:
 		Ore = Global.GameData["ores"]["0"]
 
 	PanelStyle.border_color = Color(Ore["color"])  / 5 + Color(0.25,0.25,0.25,1)
@@ -70,23 +75,26 @@ func LoadOre(OreID,opening = true):
 	if Ore["id"] == 0:
 		MinDepth.text = "%sm" % int(ActualOre["arrival"])
 		MaxDepth.text = "???m"
+		Hardness.text = "???"
 		OptimalDepth.text = "???m"
 		OptimalDepth.add_theme_font_size_override("font_size",50)
 	else:
 	
 		MinDepth.text = "%sm" % int(Ore["arrival"])
 		MaxDepth.text = "%sm" % int(Ore["depth"][-1][0])
+		Hardness.text = "%s" % int(Ore["hardness"])
 		if Ore["optimal"].size() == 2:
 			OptimalDepth.text = "%s-%sm " % [int(Ore["optimal"][0]),int(Ore["optimal"][1])]
-			OptDescription.text = "This ore is most common a a depth of [color=white]%s[/color]-[color=white]%s[/color]m." % [int(Ore["optimal"][0]),int(Ore["optimal"][1])]
+			OptDescription.text = "This ore is most common at a depth of [color=white]%s[/color]-[color=white]%s[/color]m." % [int(Ore["optimal"][0]),int(Ore["optimal"][1])]
 			OptimalDepth.add_theme_font_size_override("font_size",40)
 		else:
 			OptimalDepth.text = "%sm" % int(Ore["optimal"][0])
-			OptDescription.text = "This ore is most common a a depth of [color=white]%d[/color]m." % int(Ore["optimal"][0])
+			OptDescription.text = "This ore is most common at a depth of [color=white]%d[/color]m." % int(Ore["optimal"][0])
 			OptimalDepth.add_theme_font_size_override("font_size",50)
 			
-	MinDescription.text = "This ore first starts appearing at a depth of [color=white]%d[/color]m."
-	MaxDescription.text = "This ore will stop appearing past a depth of [color=white]%d[/color]m."
+	MinDescription.text = "This ore first starts appearing at a depth of [color=white]%d[/color]m." % int(Ore["arrival"])
+	MaxDescription.text = "This ore will stop appearing past a depth of [color=white]%d[/color]m." % int(Ore["depth"][-1][0])
+	HardDescription.text = "This ore has a toughness of %s, this is %sx as tough as stone. " % [int(Ore["hardness"]),int(Ore["hardness"])/2]
 	
 		
 	if opening:
@@ -105,14 +113,14 @@ var OpenPos = Vector2(0,0)
 func _process(delta: float) -> void:
 	if Closing:
 		position = position.lerp(ClosedPos,delta * 10)
-		if position.distance_to(ClosedPos) < 10:
+		if position.distance_squared_to(ClosedPos) < 100:
 			position = ClosedPos
 			Closing = false
 			Open = false
 		
 	elif Opening:
-		position = position.lerp(OpenPos,delta * 10)
-		if position.distance_to(OpenPos) < 10:
+		position = position.lerp(OpenPos,delta * 7)
+		if position.distance_squared_to(OpenPos) < 100:
 			position = OpenPos
 			Open = true
 			Opening = false
@@ -156,8 +164,11 @@ func LeftPress() -> void:
 		for i in Global.GameData["ores"].values():
 			if i["sorting"] == Global.OresInGame:
 				nextid = i["id"]
-				
-		LoadOre(nextid,false)
+		if nextid != null:
+			LoadOre(nextid,false)
+		else:
+			LoadOre(1,false)
+		#LoadOre(nextid,false)
 	pass # Replace with function body.
 
 
@@ -168,8 +179,20 @@ func RightPress() -> void:
 			if i["sorting"] == ActualOre["sorting"] + 1:
 				nextid = i["id"]
 				print(nextid)
-		print(nextid)
-		LoadOre(nextid,false)
+		if nextid != null:
+			LoadOre(nextid,false)
+		else:
+			LoadOre(1,false)
 	else:
 		LoadOre(1,false)
 	pass # Replace with function body.
+
+func update_position_and_scale():
+	var vp_size = get_viewport_rect().size
+	if Open == false and Opening == false and Closing == false:
+		position.x = vp_size.x
+	ClosedPos = Vector2(vp_size.x,0)
+	
+	#scale.x = 4 * vp_size.x / reference_resolution.x
+	#scale.y = scale.x
+	#emit_signal("Scaled")

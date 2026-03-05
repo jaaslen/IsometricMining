@@ -8,8 +8,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func PickaxeChanged(PickaxeID):
-	
-	if Global.GameData["pickaxes"][str(PickaxeID)]["forged"] == false:
+	var CurrentLevel = Global.PickaxeLevels[PickaxeID]
+	if Global.GameData["pickaxes"][str(PickaxeID + 1000 * CurrentLevel)]["maxlevel"] == CurrentLevel:
 		set_tab_disabled(1,true)
 		if current_tab == 1:
 			select_previous_available()

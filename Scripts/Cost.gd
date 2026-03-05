@@ -6,12 +6,11 @@ extends PanelContainer
 @onready var NameLabelBox = self.get_node("Text").get_node("Name")
 @onready var CostLabelBox = self.get_node("Text").get_node("Cost")
 @onready var OreProgressBar = self.get_node("ProgressBar")
-var ID = int(Ore["id"])
-
+var ID : int
 var Name : String
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
+	ID = int(Ore["id"])
 	Global.OreChanged.connect(OreChanged)
 	Name = Ore["name"]
 
@@ -25,12 +24,21 @@ func _ready() -> void:
 	var style := Original.duplicate(true)
 	style.border_color = Color.html(Ore["color"]) * 0.5
 	add_theme_stylebox_override("panel", style)
+	style.bg_color = Color.html(Ore["color"]) * 0.5
+	OreProgressBar.add_theme_stylebox_override("background", style)
 	OreProgressBar.max_value = Cost
-	#OreChanged(0)
+	if Global.OreAmounts[ID] >= Cost: 
+		CostLabelBox.modulate = Color(Ore["color"]) * 1.2
+	else:
+		CostLabelBox.modulate = Color(1.0, 0.0, 0.0, 1.0)
+		print("not enough dipshit")
+	OreProgressBar.max_value = Cost
+	OreProgressBar.value = Global.OreAmounts[ID] 
 	pass # Replace with function body.
 
 func OreChanged(OreID):
-	pass
+	print(OreID)
+
 
 #func OreChanged(OreID):
 	#print(OreID)

@@ -38,10 +38,11 @@ func _ready() -> void:
 			ValueLabelBox.text = " " + ( "%.1f" % Value)
 		else:
 			ValueLabelBox.text = " " + ( "%.0f" % Value)
-		var Original := get_theme_stylebox("panel")
-		var style := Original.duplicate(true)
-		style.border_color = ColorValue
-		add_theme_stylebox_override("panel", style)
+		#var Original := get_theme_stylebox("panel")
+		#var style := Original.duplicate(true)
+		#style.border_color = ColorValue
+		self_modulate = ColorValue
+		#add_theme_stylebox_override("panel", style)
 		ColorLine.custom_minimum_size.x = size.x - 60
 		Seperation.modulate = ColorValue * 0.8
 		LabelBox.modulate = ColorValue * 1.2

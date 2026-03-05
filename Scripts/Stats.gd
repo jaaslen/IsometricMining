@@ -9,14 +9,19 @@ func _ready() -> void:
 
 func PickaxeChanged(PickaxeID):
 	
-	var OriginalID = PickaxeID
-	if Global.GameData["pickaxes"][var_to_str(PickaxeID)]["unlocked"] == false:
-		PickaxeID = 0
+	var CurrentLevel = Global.PickaxeLevels[PickaxeID]
 	
+	
+	var OriginalID = PickaxeID
+	if Global.UnlockedPickaxes[PickaxeID] == false:
+		PickaxeID = 0
+	else:
+		PickaxeID = 1000 * (CurrentLevel) + PickaxeID
 	
 	for i in self.get_children():
 		i.queue_free()
 	var StatIndex = 0
+	var stats = Global.GameData["pickaxes"][var_to_str(PickaxeID)]["stats"]
 	for stat in Global.GameData["pickaxes"][var_to_str(PickaxeID)]["stats"]:
 		if Global.GameData["pickaxes"][var_to_str(OriginalID)]["stats"][StatIndex] == 1 and StatIndex > 1:
 			pass
@@ -29,8 +34,8 @@ func PickaxeChanged(PickaxeID):
 			
 			add_child(NewInventoryItem)
 		StatIndex += 1
-	for skill in Global.GameData["pickaxes"][var_to_str(PickaxeID)]["traits"]:
+	for Trait in Global.GameData["pickaxes"][var_to_str(PickaxeID)]["traits"]:
 		var NewInventoryItem = load("uid://b04p6hia7y3l0").instantiate()
-		NewInventoryItem.Skill = Global.SkillInfo["traits"][skill]
+		NewInventoryItem.Trait = Global.GameData["traits"][str(int(Trait))]
 		add_child(NewInventoryItem)
 	

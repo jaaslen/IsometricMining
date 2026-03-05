@@ -1,26 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://w4sqtpegcrlw"]
+[gd_scene load_steps=5 format=3 uid="uid://w4sqtpegcrlw"]
 
+[ext_resource type="StyleBox" uid="uid://cwtqwhjmul0wo" path="res://Visuals/CostPanel.tres" id="1_omuaq"]
 [ext_resource type="Script" uid="uid://brkaflc6e6d3v" path="res://Scripts/Cost.gd" id="1_tfwe7"]
 [ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="2_omuaq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhnps"]
-bg_color = Color(0.17641908, 0.17641911, 0.17641899, 1)
-border_width_top = 3
-border_width_bottom = 3
-border_blend = true
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omuaq"]
+bg_color = Color(1, 1, 1, 0.62352943)
 
 [node name="PanelContainer" type="PanelContainer"]
 custom_minimum_size = Vector2(0, 64)
 offset_right = 353.0
 offset_bottom = 64.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_vhnps")
+theme_override_styles/panel = ExtResource("1_omuaq")
 script = ExtResource("1_tfwe7")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 modulate = Color(1, 1, 1, 0.27100003)
 layout_mode = 2
 size_flags_vertical = 1
-show_percentage = false
+theme_override_fonts/font = ExtResource("2_omuaq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_omuaq")
+step = 1.0
+value = 67.0
 
 [node name="Text" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 64)

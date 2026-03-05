@@ -4,8 +4,12 @@ var Closing = false
 var Opening = false
 var ClosedPos = Vector2(0,-1080)
 var OpenPos = Vector2(0,0)
+signal MenuOpened
+signal MenuClosed
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_viewport().connect("size_changed", Callable(self, "update_position_and_scale"))
 	pass # Replace with function body.
 
 
@@ -17,6 +21,7 @@ func _process(delta: float) -> void:
 			position = ClosedPos
 			Closing = false
 			Open = false
+			
 		
 	elif Opening:
 		position = position.lerp(OpenPos,delta * 10)
@@ -24,6 +29,8 @@ func _process(delta: float) -> void:
 			position = OpenPos
 			Open = true
 			Opening = false
+			emit_signal("MenuOpened")
+			
 			
 
 
@@ -32,12 +39,19 @@ func OpenButtonPressed() -> void:
 	if Opening:
 		Opening = false
 		Closing = true
+		emit_signal("MenuClosed")
+		
 	elif Closing:
+		
 		Opening = true
 		Closing = false
 	else:
 		Closing = Open
 		Opening = !Open
+		
+		if Open:
+			emit_signal("MenuClosed")
+		
 		
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Forge"):
@@ -49,3 +63,9 @@ func OtherButtonPressed() -> void:
 	if Open:
 		OpenButtonPressed()
 	pass # Replace with function body.
+
+func update_position_and_scale():
+	var vp_size = get_viewport_rect().size
+	if Open == false and Opening == false and Closing == false:
+		position.y = -vp_size.y
+	ClosedPos = Vector2(0,-vp_size.y)

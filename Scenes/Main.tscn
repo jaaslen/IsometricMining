@@ -1,19 +1,42 @@
-[gd_scene load_steps=118 format=4 uid="uid://ckd04gu6f1lw"]
+[gd_scene load_steps=144 format=4 uid="uid://ckd04gu6f1lw"]
 
 [ext_resource type="TileSet" uid="uid://b73qq53megiib" path="res://Visuals/DefaultTileset.tres" id="2_cm0pq"]
+[ext_resource type="Texture2D" uid="uid://82jgclr6ge6t" path="res://Visuals/OIP-2686731067.jpg" id="3_2w5on"]
 [ext_resource type="Texture2D" uid="uid://by84fajab3xgw" path="res://Visuals/MiningAnim.png" id="3_fos0i"]
 [ext_resource type="Script" uid="uid://c4cmnb0uq5k4f" path="res://Scripts/Detection.gd" id="4_fos0i"]
 [ext_resource type="Script" uid="uid://b7hvuwmxoi1qb" path="res://Scripts/Cursor.gd" id="5_lgr22"]
+[ext_resource type="PackedScene" uid="uid://bjcsjc87cvvcu" path="res://Scenes/Storage.tscn" id="5_vvnwx"]
+[ext_resource type="Script" uid="uid://ce00buhltmq1e" path="res://Scripts/Camera.gd" id="6_0sclb"]
+[ext_resource type="Script" uid="uid://3mqh8asbi3a" path="res://Scenes/StorageUI.gd" id="6_btbly"]
 [ext_resource type="Script" uid="uid://d3ocoxtblykxh" path="res://Scripts/Inventory.gd" id="6_lgr22"]
+[ext_resource type="Texture2D" uid="uid://c1p6mrayp35rh" path="res://Visuals/OIP-3916291435.jpg" id="6_sxkr1"]
+[ext_resource type="Script" uid="uid://cgoxf007xiycg" path="res://Scripts/Lantern.gd" id="7_fq0cl"]
 [ext_resource type="Script" uid="uid://dkb6cx8pl66f8" path="res://Scripts/DepthLabel.gd" id="7_lgr22"]
+[ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="8_c4ay3"]
+[ext_resource type="Script" uid="uid://cgdad8gk70kif" path="res://Scripts/BaseUI.gd" id="8_c5snn"]
 [ext_resource type="Script" uid="uid://bwjkpywr2l3c4" path="res://Scripts/XpLabel.gd" id="8_trn2v"]
 [ext_resource type="Script" uid="uid://nhg83jc5qjgs" path="res://Scripts/FPS.gd" id="9_03owx"]
+[ext_resource type="Script" uid="uid://kqlw2m68m2qf" path="res://Scripts/available.gd" id="9_erwvk"]
+[ext_resource type="Script" uid="uid://oxl83epljceq" path="res://Scripts/MiningProgress.gd" id="9_h1m7h"]
 [ext_resource type="PackedScene" uid="uid://60t2vbjjambe" path="res://Scenes/Forge.tscn" id="10_wkp8b"]
 [ext_resource type="Script" uid="uid://chsj4ane58jum" path="res://Scripts/ForgeUI.gd" id="11_5vvyt"]
 [ext_resource type="PackedScene" uid="uid://chbgis4c6afk7" path="res://Scenes/Dictionary.tscn" id="12_c2ibq"]
 [ext_resource type="Texture2D" uid="uid://dqs17kmqkxwp4" path="res://Visuals/Background.png" id="13_c6i3y"]
 [ext_resource type="Script" uid="uid://b3km0j1twgxfq" path="res://Scripts/Cutscenes.gd" id="14_c2ibq"]
+[ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="14_c4ay3"]
 [ext_resource type="Texture2D" uid="uid://cory6h36gsiop" path="res://Visuals/OIP-2832759397.jpg" id="14_j4qnp"]
+[ext_resource type="Script" uid="uid://birc53blgft01" path="res://Scripts/XPBar.gd" id="14_jyqft"]
+[ext_resource type="Texture2D" uid="uid://dhmp7jfu8pog1" path="res://Visuals/Panel.png" id="17_5jffn"]
+[ext_resource type="Texture2D" uid="uid://dabrji05aeu2n" path="res://Visuals/Ranks/F.png" id="17_c4ay3"]
+[ext_resource type="Script" uid="uid://cgd67btyn6bw5" path="res://Scripts/LayerTint.gd" id="18_346fj"]
+[ext_resource type="Texture2D" uid="uid://bjwm0qp2c3htl" path="res://Visuals/PanelRim.png" id="18_kpo4j"]
+[ext_resource type="Texture2D" uid="uid://bnvwmi4m3oyck" path="res://Visuals/Ranks/4.png" id="21_4n42c"]
+[ext_resource type="Script" uid="uid://cxe4k0d6wfxa0" path="res://Scripts/InventoryLabel.gd" id="23_xvtyr"]
+[ext_resource type="StyleBox" uid="uid://d1icai52bnijw" path="res://Visuals/OutlinePanel.tres" id="24_x3rx7"]
+[ext_resource type="Script" uid="uid://chusng02dmeij" path="res://Scripts/ReturnPrompt.gd" id="25_4yxf6"]
+[ext_resource type="Script" uid="uid://4e43bb8dsw4h" path="res://Scenes/DefaultUI.gd" id="25_6heos"]
+[ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="26_qta6b"]
+[ext_resource type="Script" uid="uid://dtrrficamtdai" path="res://Scripts/Button.gd" id="32_u7mjy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6i3y"]
 atlas = ExtResource("3_fos0i")
@@ -720,29 +743,39 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c2ibq"]
-size = Vector2(4, 4)
-
 [sub_resource type="Gradient" id="Gradient_c6i3y"]
-offsets = PackedFloat32Array(0.23469388, 0.5102041, 1)
-colors = PackedColorArray(0.60933036, 0.60933, 0.6093302, 1, 0.34901962, 0.34901962, 0.34901962, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0.33163264, 0.5102041, 1)
+colors = PackedColorArray(0.17283294, 0.17283258, 0.17283267, 0, 0.21230483, 0.21230483, 0.21230483, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_c2ibq"]
 gradient = SubResource("Gradient_c6i3y")
 width = 1920
 height = 1080
 fill = 1
-fill_from = Vector2(0.5, 0.45500004)
-fill_to = Vector2(1, 0.155)
+fill_from = Vector2(0.5, 0.53)
+fill_to = Vector2(1, 0.585)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_j4qnp"]
-size = Vector2(50, 40)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kpo4j"]
+texture = ExtResource("17_5jffn")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fpfj3"]
-size = Vector2(50, 25)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1m7h"]
+bg_color = Color(0.61960787, 0.62352943, 0.61960787, 1)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sc1dx"]
-size = Vector2(50, 50)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kpo4j"]
+
+[sub_resource type="Gradient" id="Gradient_kpo4j"]
+colors = PackedColorArray(0.26666668, 0.27058825, 0.26666668, 1, 0.7019608, 0.7058824, 0.7019608, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4n42c"]
+gradient = SubResource("Gradient_kpo4j")
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c6i3y"]
 
@@ -761,6 +794,32 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2)
 }
 
+[sub_resource type="Animation" id="Animation_kpo4j"]
+resource_name = "LevelUp"
+length = 15.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/BaseUI/TextureProgressBar/Rank:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-150, -0.25, 0, 0.25, 0, 400, -0.12111124, -91.666664, 0, 0, 400, -0.081924126, 0, 0.05234925, 0, 400, -0.083333336, 0, 0, 0, 400, -0.029835027, 0, 0, 0, 400, -0.013669372, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.9333334, 2.4248781, 2.7389736, 2.9179838, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/BaseUI/TextureProgressBar/Rank:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 400, -0.12111124, -66.666664, 0, 0, 400, -0.081924126, 5.084411, 0.05234925, -3.2489223, 350, -0.083333336, 8.333334, 0, 0, 420, -0.029835027, -11.666667, 0, 0, 400, -0.013669372, 3.3333333, 0, 0),
+"times": PackedFloat32Array(0, 1.9333334, 2.4248781, 2.7389736, 2.9179838, 3)
+}
+
 [sub_resource type="Animation" id="Animation_j4qnp"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -774,20 +833,46 @@ tracks/0/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/BaseUI/TextureProgressBar/Rank:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-150, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/BaseUI/TextureProgressBar/Rank:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c2ibq"]
 _data = {
 &"LayerTransition": SubResource("Animation_c6i3y"),
+&"LevelUp": SubResource("Animation_kpo4j"),
 &"RESET": SubResource("Animation_j4qnp")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpfj3"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c2ibq"]
+size = Vector2(4, 4)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Detection" type="TileMapLayer" parent="."]
-position = Vector2(960, 510)
+position = Vector2(960, 5510)
 scale = Vector2(4, 4)
 tile_set = ExtResource("2_cm0pq")
 collision_enabled = false
@@ -796,7 +881,7 @@ script = ExtResource("4_fos0i")
 [node name="Layers" type="Node2D" parent="Detection"]
 
 [node name="1" type="TileMapLayer" parent="Detection/Layers"]
-light_mask = 5
+light_mask = 517
 z_index = 4
 y_sort_enabled = true
 texture_filter = 1
@@ -806,7 +891,7 @@ collision_enabled = false
 
 [node name="2" type="TileMapLayer" parent="Detection/Layers"]
 modulate = Color(0.9063318, 0.9063318, 0.9063318, 1)
-light_mask = 3
+light_mask = 517
 z_index = 3
 y_sort_enabled = true
 texture_filter = 1
@@ -817,7 +902,7 @@ collision_enabled = false
 
 [node name="3" type="TileMapLayer" parent="Detection/Layers"]
 modulate = Color(0.7977378, 0.7977378, 0.7977378, 1)
-light_mask = 3
+light_mask = 517
 z_index = 2
 y_sort_enabled = true
 texture_filter = 1
@@ -828,7 +913,7 @@ collision_enabled = false
 
 [node name="4" type="TileMapLayer" parent="Detection/Layers"]
 modulate = Color(0.6651851, 0.6651851, 0.6651851, 1)
-light_mask = 3
+light_mask = 517
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
@@ -839,7 +924,7 @@ collision_enabled = false
 
 [node name="5" type="TileMapLayer" parent="Detection/Layers"]
 modulate = Color(0.6651851, 0.6651851, 0.6651851, 1)
-light_mask = 3
+light_mask = 517
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, 136)
@@ -849,7 +934,7 @@ collision_enabled = false
 
 [node name="6" type="TileMapLayer" parent="Detection/Layers"]
 modulate = Color(0.6651851, 0.6651851, 0.6651851, 1)
-light_mask = 3
+light_mask = 517
 z_index = -1
 y_sort_enabled = true
 texture_filter = 1
@@ -858,7 +943,19 @@ tile_map_data = PackedByteArray("AAD9/wEAAAABAAAAAAD+/wEAAAABAAAAAAD//wEAAAABAAA
 tile_set = ExtResource("2_cm0pq")
 collision_enabled = false
 
+[node name="7" type="TileMapLayer" parent="Detection/Layers"]
+modulate = Color(0.6651851, 0.6651851, 0.6651851, 1)
+light_mask = 517
+z_index = -2
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(0, 204)
+tile_map_data = PackedByteArray("AAD9/wEAAAABAAAAAAD+/wEAAAABAAAAAAD//wEAAAABAAAAAAAAAAAAAAABAAAAAAABAP//AAABAAAAAAAAAP//AAABAAAAAAD//wAAAAABAAAAAAD+/wAAAAABAAAAAAD/////AAABAAAAAAA=")
+tile_set = ExtResource("2_cm0pq")
+collision_enabled = false
+
 [node name="Effects" type="Node2D" parent="Detection"]
+z_index = 5
 
 [node name="Mining" type="AnimatedSprite2D" parent="Detection/Effects"]
 visible = false
@@ -868,12 +965,6 @@ sprite_frames = SubResource("SpriteFrames_c6i3y")
 animation = &"Top"
 offset = Vector2(0, 17)
 
-[node name="Cursor" type="Sprite2D" parent="Detection"]
-z_index = 10
-texture_filter = 1
-texture = SubResource("PlaceholderTexture2D_c2ibq")
-script = ExtResource("5_lgr22")
-
 [node name="Sprite2D" type="Sprite2D" parent="Detection"]
 visible = false
 z_index = 8
@@ -882,123 +973,355 @@ scale = Vector2(13.935715, 12.25)
 texture = SubResource("GradientTexture2D_c2ibq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(960, 540)
-
-[node name="UI" type="Control" parent="."]
-z_index = 5
-layout_mode = 3
-anchors_preset = 0
-offset_left = 960.0
-offset_top = 520.0
-offset_right = 1000.0
-offset_bottom = 560.0
-
-[node name="ScrollContainer" type="ScrollContainer" parent="UI"]
-layout_mode = 0
-offset_left = 432.0
-offset_top = -240.0
-offset_right = 960.0
-offset_bottom = 560.0
-
-[node name="Inventory" type="VBoxContainer" parent="UI/ScrollContainer"]
-light_mask = 0
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 0
-script = ExtResource("6_lgr22")
-
-[node name="DepthLabel" type="Label" parent="UI"]
-layout_mode = 0
-offset_left = -8.0
-offset_top = -296.0
-offset_right = 32.0
-offset_bottom = -273.0
-text = "0m"
-script = ExtResource("7_lgr22")
-
-[node name="XPLabel" type="Label" parent="UI"]
-layout_mode = 0
-offset_left = -64.0
-offset_top = -296.0
-offset_right = -24.0
-offset_bottom = -273.0
-text = "0m"
-script = ExtResource("8_trn2v")
-
-[node name="FPS" type="Label" parent="UI"]
-layout_mode = 0
-offset_left = -288.0
-offset_top = -248.0
-offset_right = -248.0
-offset_bottom = -225.0
-text = "0m"
-script = ExtResource("9_03owx")
-
-[node name="Available" type="Label" parent="UI"]
-layout_mode = 0
-offset_left = -40.0
-offset_top = -248.0
-offset_bottom = -225.0
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="UI"]
-layout_mode = 0
-offset_right = 280.0
-offset_bottom = 40.0
-value = 100.0
-texture_under = SubResource("PlaceholderTexture2D_j4qnp")
-texture_over = SubResource("PlaceholderTexture2D_fpfj3")
-texture_progress = SubResource("PlaceholderTexture2D_sc1dx")
+unique_name_in_owner = true
+position = Vector2(950, 500)
+script = ExtResource("6_0sclb")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Storage" parent="CanvasLayer" instance=ExtResource("5_vvnwx")]
+z_index = 30
+offset_left = -1900.0
+offset_right = -1900.0
+script = ExtResource("6_btbly")
+
 [node name="Forge" parent="CanvasLayer" instance=ExtResource("10_wkp8b")]
-z_index = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_top = -1080.0
-offset_bottom = -1080.0
-grow_horizontal = 1
-grow_vertical = 1
+z_index = 20
+offset_top = -1000.0
+offset_right = 0.0
+offset_bottom = -1000.0
 mouse_filter = 2
 script = ExtResource("11_5vvyt")
 
+[node name="Dictionary" parent="CanvasLayer" instance=ExtResource("12_c2ibq")]
+z_index = 10
+offset_left = 1900.0
+offset_right = 1940.0
+offset_bottom = 96.0
+mouse_filter = 2
+
+[node name="BaseUI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("8_c5snn")
+
+[node name="DepthLabel" type="Label" parent="CanvasLayer/BaseUI"]
+layout_mode = 0
+offset_left = 932.0
+offset_top = 224.0
+offset_right = 972.0
+offset_bottom = 247.0
+text = "0m"
+script = ExtResource("7_lgr22")
+
+[node name="XPLabel" type="Label" parent="CanvasLayer/BaseUI"]
+layout_mode = 0
+offset_left = 876.0
+offset_top = 224.0
+offset_right = 916.0
+offset_bottom = 247.0
+text = "0m"
+script = ExtResource("8_trn2v")
+
+[node name="FPS" type="Label" parent="CanvasLayer/BaseUI"]
+layout_mode = 0
+offset_left = 652.0
+offset_top = 272.0
+offset_right = 692.0
+offset_bottom = 295.0
+text = "0m"
+script = ExtResource("9_03owx")
+
+[node name="Ores" type="Label" parent="CanvasLayer/BaseUI"]
+visible = false
+layout_mode = 0
+offset_left = 900.0
+offset_top = 272.0
+offset_right = 940.0
+offset_bottom = 295.0
+script = ExtResource("9_erwvk")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/BaseUI"]
+top_level = true
+z_index = 10
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -100.0
+offset_right = 120.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_kpo4j")
+theme_override_styles/fill = SubResource("StyleBoxFlat_h1m7h")
+value = 50.0
+script = ExtResource("9_h1m7h")
+
+[node name="Timer" type="Timer" parent="CanvasLayer/BaseUI/ProgressBar"]
+one_shot = true
+
+[node name="Level" type="ProgressBar" parent="CanvasLayer/BaseUI"]
+visible = false
+layout_mode = 0
+offset_left = 150.0
+offset_right = 694.0
+offset_bottom = 56.0
+theme = ExtResource("14_c4ay3")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/fill = SubResource("StyleBoxFlat_kpo4j")
+value = 50.0
+show_percentage = false
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/BaseUI"]
+layout_mode = 1
+offset_left = 150.0
+offset_right = 896.0
+offset_bottom = 48.0
+tooltip_text = "your XP bar, shows how close you are to the next tier / rank. Left number is current xp, right number is required xp."
+value = 50.0
+rounded = true
+allow_greater = true
+nine_patch_stretch = true
+stretch_margin_left = 10
+stretch_margin_top = 10
+stretch_margin_right = 10
+stretch_margin_bottom = 8
+texture_under = ExtResource("17_5jffn")
+texture_over = ExtResource("18_kpo4j")
+texture_progress = SubResource("GradientTexture1D_4n42c")
+script = ExtResource("14_jyqft")
+
+[node name="Rank" type="PanelContainer" parent="CanvasLayer/BaseUI/TextureProgressBar"]
+z_index = 1
+layout_mode = 0
+offset_left = -150.0
+offset_right = 9.999878
+offset_bottom = 159.999
+tooltip_text = "rank this is how cool you are"
+theme = ExtResource("14_c4ay3")
+
+[node name="Level" type="Sprite2D" parent="CanvasLayer/BaseUI/TextureProgressBar/Rank"]
+z_index = 1
+position = Vector2(80, 80)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("17_c4ay3")
+
+[node name="Tier" type="PanelContainer" parent="CanvasLayer/BaseUI/TextureProgressBar"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 140.0
+offset_bottom = 160.0
+tooltip_text = "Your tier, higher levels usually have more tiers. Act as mini levels in between the ranks."
+theme = ExtResource("14_c4ay3")
+
+[node name="Level" type="Sprite2D" parent="CanvasLayer/BaseUI/TextureProgressBar/Tier"]
+position = Vector2(70, 60)
+scale = Vector2(0.195, 0.18333334)
+texture = ExtResource("21_4n42c")
+
+[node name="Amount" type="Label" parent="CanvasLayer/BaseUI/TextureProgressBar"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 234.0
+offset_bottom = 38.0
+theme_override_font_sizes/font_size = 20
+text = "6350"
+
+[node name="Required" type="Label" parent="CanvasLayer/BaseUI/TextureProgressBar"]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 18.0
+offset_right = 730.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 20
+text = "100"
+horizontal_alignment = 2
+
+[node name="Inventory" type="Control" parent="CanvasLayer/BaseUI"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -476.0
+offset_top = 202.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/BaseUI/Inventory"]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 9
+theme_override_styles/panel = ExtResource("8_c4ay3")
+script = ExtResource("25_6heos")
+
+[node name="Inventory" type="VBoxContainer" parent="CanvasLayer/BaseUI/Inventory/ScrollContainer"]
+clip_children = 2
+light_mask = 0
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 10
+script = ExtResource("6_lgr22")
+
+[node name="Label" type="Label" parent="CanvasLayer/BaseUI/Inventory"]
+layout_mode = 0
+offset_top = -18.0
+offset_right = 78.0
+offset_bottom = 5.0
+text = "90/100"
+script = ExtResource("23_xvtyr")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/BaseUI/Inventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Inventory, when full, return to the surface to put your ores in storage."
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("24_x3rx7")
+script = ExtResource("25_6heos")
+
+[node name="DictionaryButton" type="TextureButton" parent="CanvasLayer"]
+top_level = true
+z_index = 20
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -140.0
+offset_right = -12.0
+offset_bottom = 128.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+focus_mode = 0
+texture_normal = SubResource("PlaceholderTexture2D_c6i3y")
+stretch_mode = 0
+script = ExtResource("32_u7mjy")
+
+[node name="StorageButton" type="TextureButton" parent="CanvasLayer"]
+top_level = true
+z_index = 20
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -212.0
+offset_right = -84.0
+offset_bottom = 128.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+focus_mode = 0
+texture_normal = SubResource("PlaceholderTexture2D_c6i3y")
+stretch_mode = 0
+script = ExtResource("32_u7mjy")
+
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
-z_index = 2
+top_level = true
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -68.0
-offset_top = 4.0
 offset_right = 60.0
-offset_bottom = 132.0
+offset_bottom = 128.0
 grow_horizontal = 0
 scale = Vector2(0.5, 0.5)
 focus_mode = 0
 texture_normal = SubResource("PlaceholderTexture2D_c6i3y")
 stretch_mode = 0
+script = ExtResource("32_u7mjy")
 
-[node name="TextureButton2" type="TextureButton" parent="CanvasLayer"]
-z_index = 10
-anchors_preset = 1
-anchor_left = 1.0
+[node name="Prompt" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("25_4yxf6")
+
+[node name="Label" type="Label" parent="CanvasLayer/Prompt"]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = -136.0
-offset_top = 4.0
-offset_right = -8.0
-offset_bottom = 132.0
-grow_horizontal = 0
-scale = Vector2(0.5, 0.5)
-focus_mode = 0
-texture_normal = SubResource("PlaceholderTexture2D_c6i3y")
-stretch_mode = 0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = ExtResource("8_c4ay3")
+text = "are you sure bro"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Control" parent="CanvasLayer" instance=ExtResource("12_c2ibq")]
-offset_left = 1920.0
-offset_right = 1920.0
-mouse_filter = 2
-ClosedPos = Vector2(1920, 0)
+[node name="No" type="Button" parent="CanvasLayer/Prompt/Label"]
+modulate = Color(1, 0.49, 0.49, 1)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 292.0
+offset_right = 438.0
+offset_bottom = -16.0
+grow_vertical = 2
+theme = ExtResource("14_c4ay3")
+text = "nah"
+
+[node name="Yes" type="Button" parent="CanvasLayer/Prompt/Label"]
+modulate = Color(0, 0.74202985, 0.47793996, 1)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 438.0
+offset_top = 292.0
+offset_right = 580.0
+offset_bottom = -16.0
+grow_vertical = 2
+theme = ExtResource("14_c4ay3")
+text = "yeah"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 744.0
+offset_right = -1316.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("26_qta6b")
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = ExtResource("8_c4ay3")
+text = "press ~ to go 
+up and down"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Background" type="Sprite2D" parent="."]
 visible = false
@@ -1007,17 +1330,11 @@ position = Vector2(960, 540)
 scale = Vector2(4, 4)
 texture = ExtResource("13_c6i3y")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = -1
-offset_right = 960.0
-offset_bottom = 540.0
-scale = Vector2(2, 2)
-color = Color(0.23753911, 0.23753914, 0.23753911, 1)
-
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 1)
 position = Vector2(960, 540)
-energy = 1.28
+energy = 2.04
 blend_mode = 2
 range_item_cull_mask = 7
 shadow_item_cull_mask = 4
@@ -1041,11 +1358,105 @@ script = ExtResource("14_c2ibq")
 [node name="Panel" type="Panel" parent="."]
 modulate = Color(0.3, 0.3, 0.3, 0)
 z_index = 10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5000.0
 offset_right = 1920.0
-offset_bottom = 1080.0
+offset_bottom = 6080.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fpfj3")
 
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 96.0
+offset_right = 1348.0
+offset_bottom = 188.0
+theme_override_font_sizes/font_size = 91
+text = "Shallow Caves"
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(1008, 1976)
+scale = Vector2(4, 4)
+texture = ExtResource("13_c6i3y")
+
+[node name="Tint" type="CanvasModulate" parent="."]
+color = Color(0.9372549, 0.9372549, 0.9372549, 1)
+script = ExtResource("18_346fj")
+
+[node name="Cursor" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+z_index = 10
+texture_filter = 1
+texture = SubResource("PlaceholderTexture2D_c2ibq")
+script = ExtResource("5_lgr22")
+
+[node name="Lantern" type="Sprite2D" parent="."]
+z_index = 7
+position = Vector2(960, 540)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("6_sxkr1")
+centered = false
+offset = Vector2(-240, 0)
+script = ExtResource("7_fq0cl")
+
+[node name="PointLight2D" type="PointLight2D" parent="Lantern"]
+light_mask = 0
+z_index = 1
+position = Vector2(0, 288.88885)
+scale = Vector2(8.456792, 6.419753)
+color = Color(0.96324986, 0.54813164, 1.540184e-06, 1)
+energy = 1.2
+range_item_cull_mask = 512
+texture = ExtResource("3_2w5on")
+
+[node name="Button" type="Button" parent="."]
+z_index = 8
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 900.0
+offset_top = 168.0
+offset_right = 1020.0
+offset_bottom = 232.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Chest"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2016.0
+offset_top = 3240.0
+offset_right = 984.0
+offset_bottom = 23240.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+mouse_filter = 2
+color = Color(0.23753911, 0.23753914, 0.23753911, 1)
+
+[connection signal="ExitAttempt" from="Detection" to="CanvasLayer/Prompt" method="ExitAttempt"]
+[connection signal="Scaled" from="Detection" to="Cursor" method="Scaled"]
+[connection signal="StartedMiningAnim" from="Detection" to="CanvasLayer/BaseUI/ProgressBar" method="ShowTime"]
+[connection signal="MenuClosed" from="CanvasLayer/Forge" to="CanvasLayer/BaseUI" method="MenuClosed"]
+[connection signal="MenuOpened" from="CanvasLayer/Forge" to="CanvasLayer/BaseUI" method="MenuOpened"]
+[connection signal="MenuClosed" from="CanvasLayer/Dictionary" to="CanvasLayer/BaseUI" method="MenuClosed"]
+[connection signal="MenuOpened" from="CanvasLayer/Dictionary" to="CanvasLayer/BaseUI" method="MenuOpened"]
+[connection signal="FullCheck" from="CanvasLayer/BaseUI/Inventory/Label" to="Detection" method="FullCheck"]
+[connection signal="pressed" from="CanvasLayer/DictionaryButton" to="CanvasLayer/Forge" method="OtherButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/DictionaryButton" to="CanvasLayer/Dictionary" method="OpenButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/StorageButton" to="CanvasLayer/Forge" method="OtherButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/StorageButton" to="CanvasLayer/Dictionary" method="OtherButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/StorageButton" to="CanvasLayer/Storage" method="OpenButtonPressed"]
 [connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer/Forge" method="OpenButtonPressed"]
-[connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer/Control" method="OtherButtonPressed"]
-[connection signal="pressed" from="CanvasLayer/TextureButton2" to="CanvasLayer/Forge" method="OtherButtonPressed"]
-[connection signal="pressed" from="CanvasLayer/TextureButton2" to="CanvasLayer/Control" method="OpenButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer/Dictionary" method="OtherButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Prompt/Label/No" to="CanvasLayer/Prompt" method="_on_no_pressed"]
+[connection signal="pressed" from="CanvasLayer/Prompt/Label/Yes" to="CanvasLayer/Prompt" method="_on_yes_pressed"]

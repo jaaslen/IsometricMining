@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func PickaxeChanged(PickaxeID):
-	if Global.GameData["pickaxes"][str(PickaxeID)]["forged"] == true:
+	if Global.ForgedPickaxes[PickaxeID] == true:
 		visible = false
 	else:
 		visible = true

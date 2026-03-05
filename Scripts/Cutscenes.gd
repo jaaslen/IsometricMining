@@ -10,6 +10,6 @@ func LayerChanged(Layer):
 	play("LayerTransition")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+# Called every frame. '_delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
 	pass

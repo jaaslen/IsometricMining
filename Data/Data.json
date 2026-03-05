@@ -2,6 +2,7 @@
   "ores": {
 	"0": {
 	  "id": 0,
+	  "sorting": 0,
 	  "name": "???",
 	  "hardness": 0,
 	  "value": 0,
@@ -29,14 +30,13 @@
 	  "layer": [
 		0
 	  ],
-	  "sorting": 0,
-	  "found": false,
 	  "description": "non"
 	},
 	"1": {
 	  "id": 1,
+	  "sorting": 1,
 	  "name": "Stone",
-	  "hardness": 2,
+	  "hardness": 0.5,
 	  "value": 1,
 	  "xp": 1,
 	  "color": "#999999",
@@ -83,16 +83,15 @@
 		20,
 		21
 	  ],
-	  "sorting": 1,
-	  "found": true,
 	  "description": "non"
 	},
 	"2": {
 	  "id": 2,
+	  "sorting": 2,
 	  "name": "Coal",
-	  "hardness": 10,
+	  "hardness": 4,
 	  "value": 3,
-	  "xp": 3,
+	  "xp": 8,
 	  "color": "#1A1A1A",
 	  "depth": [
 		[
@@ -121,16 +120,15 @@
 		4,
 		5
 	  ],
-	  "sorting": 2,
-	  "found": false,
 	  "description": "non"
 	},
 	"3": {
 	  "id": 3,
+	  "sorting": 3,
 	  "name": "Tin",
-	  "hardness": 20,
+	  "hardness": 8,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 16,
 	  "color": "#F9CB9C",
 	  "depth": [
 		[
@@ -159,16 +157,15 @@
 		0,
 		1
 	  ],
-	  "sorting": 3,
-	  "found": false,
 	  "description": "non"
 	},
 	"4": {
 	  "id": 4,
+	  "sorting": 5,
 	  "name": "Copper",
-	  "hardness": 25,
+	  "hardness": 12,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 36,
 	  "color": "#B45F06",
 	  "depth": [
 		[
@@ -192,16 +189,15 @@
 	  "layer": [
 		1
 	  ],
-	  "sorting": 5,
-	  "found": false,
 	  "description": "non"
 	},
 	"5": {
 	  "id": 5,
-	  "name": "Sulfur",
-	  "hardness": 10,
+	  "sorting": 7,
+	  "name": "Sulphur",
+	  "hardness": 4,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 8,
 	  "color": "#F4D766",
 	  "depth": [
 		[
@@ -246,20 +242,19 @@
 		5,
 		8
 	  ],
-	  "sorting": 7,
-	  "found": false,
 	  "description": "non"
 	},
 	"6": {
 	  "id": 6,
+	  "sorting": 11,
 	  "name": "Nickel",
-	  "hardness": 50,
+	  "hardness": 16,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 48,
 	  "color": "#7B776C",
 	  "depth": [
 		[
-		  150,
+		  300,
 		  40
 		],
 		[
@@ -267,28 +262,27 @@
 		  40
 		]
 	  ],
-	  "rarity": 1,
+	  "rarity": 2,
 	  "atlas": [
 		1,
 		3
 	  ],
-	  "arrival": 150,
+	  "arrival": 300,
 	  "optimal": [
 		0
 	  ],
 	  "layer": [
 		2
 	  ],
-	  "sorting": 11,
-	  "found": false,
 	  "description": "non"
 	},
 	"7": {
 	  "id": 7,
+	  "sorting": 14,
 	  "name": "Quartz",
-	  "hardness": 15,
+	  "hardness": 16,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 32,
 	  "color": "#E3E3E3",
 	  "depth": [
 		[
@@ -312,16 +306,15 @@
 	  "layer": [
 		3
 	  ],
-	  "sorting": 14,
-	  "found": false,
 	  "description": "Good for keeping time! But you would need a watch to put it in..."
 	},
 	"8": {
 	  "id": 8,
+	  "sorting": 43,
 	  "name": "Radium",
-	  "hardness": 50,
+	  "hardness": 20,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 60,
 	  "color": "#6AA84F",
 	  "depth": [
 		[
@@ -346,16 +339,15 @@
 		20,
 		21
 	  ],
-	  "sorting": 43,
-	  "found": false,
 	  "description": "non"
 	},
 	"9": {
 	  "id": 9,
+	  "sorting": 15,
 	  "name": "Selenite",
-	  "hardness": 8,
+	  "hardness": 20,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 60,
 	  "color": "#E4D7C8",
 	  "depth": [
 		[
@@ -383,16 +375,15 @@
 	  "layer": [
 		3
 	  ],
-	  "sorting": 15,
-	  "found": false,
 	  "description": "This one is round?"
 	},
 	"10": {
 	  "id": 10,
+	  "sorting": 41,
 	  "name": "Erbium",
-	  "hardness": 40,
+	  "hardness": 80,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 240,
 	  "color": "#434343",
 	  "depth": [
 		[
@@ -417,16 +408,15 @@
 		17,
 		18
 	  ],
-	  "sorting": 41,
-	  "found": false,
 	  "description": "Shoutout... to everyone from Ytterby, Sweden... Again. How many elements did these guys find?"
 	},
 	"11": {
 	  "id": 11,
+	  "sorting": 33,
 	  "name": "Bauxite",
-	  "hardness": 70,
+	  "hardness": 60,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 60,
 	  "color": "#8E5948",
 	  "depth": [
 		[
@@ -450,16 +440,15 @@
 	  "layer": [
 		10
 	  ],
-	  "sorting": 33,
-	  "found": false,
 	  "description": "non"
 	},
 	"12": {
 	  "id": 12,
+	  "sorting": 29,
 	  "name": "Yttrium",
 	  "hardness": 40,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 40,
 	  "color": "#7D8444",
 	  "depth": [
 		[
@@ -500,17 +489,16 @@
 		8,
 		21
 	  ],
-	  "sorting": 29,
-	  "found": false,
 	  "description": "Shoutout to everyone from Ytterby, Sweden"
 	},
 	"13": {
 	  "id": 13,
+	  "sorting": 6,
 	  "name": "Iron",
 	  "hardness": 20,
 	  "value": 25,
-	  "xp": 10,
-	  "color": "#CCCCCC",
+	  "xp": 20,
+	  "color": "#A69489",
 	  "depth": [
 		[
 		  20,
@@ -537,16 +525,15 @@
 	  "layer": [
 		1
 	  ],
-	  "sorting": 6,
-	  "found": false,
 	  "description": "non"
 	},
 	"14": {
 	  "id": 14,
+	  "sorting": 8,
 	  "name": "Zinc",
 	  "hardness": 35,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 35,
 	  "color": "#999E9C",
 	  "depth": [
 		[
@@ -571,16 +558,15 @@
 		1,
 		2
 	  ],
-	  "sorting": 8,
-	  "found": false,
 	  "description": "Come back...zinc...come back...zinc... Zinc? Zi..what? It was all a dream. Thank goodness I still live in a world of telephones, car batteries, handguns, and many things made of zinc!"
 	},
 	"15": {
 	  "id": 15,
+	  "sorting": 16,
 	  "name": "Calcite",
 	  "hardness": 30,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 30,
 	  "color": "#C5A246",
 	  "depth": [
 		[
@@ -604,16 +590,15 @@
 	  "layer": [
 		3
 	  ],
-	  "sorting": 16,
-	  "found": false,
 	  "description": "Do not eat this, it will not be good for your bones."
 	},
 	"16": {
 	  "id": 16,
+	  "sorting": 13,
 	  "name": "Cobalt",
-	  "hardness": 50,
+	  "hardness": 60,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 60,
 	  "color": "#8992AD",
 	  "depth": [
 		[
@@ -637,16 +622,15 @@
 	  "layer": [
 		2
 	  ],
-	  "sorting": 13,
-	  "found": false,
 	  "description": "ts is NOT blue"
 	},
 	"17": {
 	  "id": 17,
+	  "sorting": 30,
 	  "name": "Uranium-238",
 	  "hardness": 50,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 50,
 	  "color": "#B9DA4D",
 	  "depth": [
 		[
@@ -670,16 +654,15 @@
 	  "layer": [
 		8
 	  ],
-	  "sorting": 30,
-	  "found": false,
 	  "description": "Not actually super radioactive."
 	},
 	"18": {
 	  "id": 18,
+	  "sorting": 45,
 	  "name": "Uranium-240",
 	  "hardness": 50,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 50,
 	  "color": "#B9DA4D",
 	  "depth": [
 		[
@@ -703,16 +686,15 @@
 	  "layer": [
 		21
 	  ],
-	  "sorting": 45,
-	  "found": false,
 	  "description": "Not actually super radioactive."
 	},
 	"19": {
 	  "id": 19,
+	  "sorting": 12,
 	  "name": "Lithium",
 	  "hardness": 55,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 55,
 	  "color": "#7E7255",
 	  "depth": [
 		[
@@ -736,16 +718,15 @@
 	  "layer": [
 		2
 	  ],
-	  "sorting": 12,
-	  "found": false,
 	  "description": "75% of Lithium is used in batteries, Is the other 25% Pickaxes?"
 	},
 	"20": {
 	  "id": 20,
+	  "sorting": 42,
 	  "name": "Tantalum",
 	  "hardness": 70,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 70,
 	  "color": "#0B5394",
 	  "depth": [
 		[
@@ -769,16 +750,15 @@
 	  "layer": [
 		18
 	  ],
-	  "sorting": 42,
-	  "found": false,
 	  "description": "Shoutout... to everyone from Ytterby, Sweden... Again. How many elements did these guys find?"
 	},
 	"21": {
 	  "id": 21,
+	  "sorting": 38,
 	  "name": "Thorium",
 	  "hardness": 80,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 80,
 	  "color": "#E69138",
 	  "depth": [
 		[
@@ -820,16 +800,15 @@
 		13,
 		21
 	  ],
-	  "sorting": 38,
-	  "found": false,
 	  "description": "non"
 	},
 	"22": {
 	  "id": 22,
+	  "sorting": 40,
 	  "name": "Osmium",
 	  "hardness": 100,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 100,
 	  "color": "#596B5A",
 	  "depth": [
 		[
@@ -854,16 +833,15 @@
 		17,
 		18
 	  ],
-	  "sorting": 40,
-	  "found": false,
 	  "description": "Shoutout... to everyone from Ytterby, Sweden... Again. How many elements did these guys find?"
 	},
 	"23": {
 	  "id": 23,
+	  "sorting": 19,
 	  "name": "Neodymium",
 	  "hardness": 45,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 45,
 	  "color": "#666666",
 	  "depth": [
 		[
@@ -887,16 +865,15 @@
 	  "layer": [
 		4
 	  ],
-	  "sorting": 19,
-	  "found": false,
 	  "description": "The most attractive ore."
 	},
 	"24": {
 	  "id": 24,
+	  "sorting": 10,
 	  "name": "Gold",
 	  "hardness": 25,
 	  "value": 100,
-	  "xp": 20,
+	  "xp": 25,
 	  "color": "#FFD966",
 	  "depth": [
 		[
@@ -927,16 +904,15 @@
 		4,
 		5
 	  ],
-	  "sorting": 10,
-	  "found": false,
 	  "description": "Really bad for a pickaxe in real life. Good thing this is not real life."
 	},
 	"25": {
 	  "id": 25,
+	  "sorting": 35,
 	  "name": "Magnesium",
 	  "hardness": 60,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 60,
 	  "color": "#543142",
 	  "depth": [
 		[
@@ -960,16 +936,15 @@
 	  "layer": [
 		11
 	  ],
-	  "sorting": 35,
-	  "found": false,
 	  "description": "non"
 	},
 	"26": {
 	  "id": 26,
+	  "sorting": 18,
 	  "name": "Phosphorus",
 	  "hardness": 55,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 55,
 	  "color": "#84262B",
 	  "depth": [
 		[
@@ -994,16 +969,15 @@
 		4,
 		5
 	  ],
-	  "sorting": 18,
-	  "found": false,
 	  "description": "non"
 	},
 	"27": {
 	  "id": 27,
+	  "sorting": 17,
 	  "name": "Zircon",
 	  "hardness": 80,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 80,
 	  "color": "#D16156",
 	  "depth": [
 		[
@@ -1027,16 +1001,15 @@
 	  "layer": [
 		3
 	  ],
-	  "sorting": 17,
-	  "found": false,
 	  "description": "non"
 	},
 	"28": {
 	  "id": 28,
+	  "sorting": 44,
 	  "name": "Arsenic",
 	  "hardness": 25,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 25,
 	  "color": "#B99F54",
 	  "depth": [
 		[
@@ -1060,16 +1033,15 @@
 	  "layer": [
 		21
 	  ],
-	  "sorting": 44,
-	  "found": false,
 	  "description": "You shouldn't be allowed to mine this stuff without protective equipment, but I know you will."
 	},
 	"29": {
 	  "id": 29,
+	  "sorting": 9,
 	  "name": "Silver",
 	  "hardness": 30,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 30,
 	  "color": "#C9DAF8",
 	  "depth": [
 		[
@@ -1097,16 +1069,15 @@
 		4,
 		5
 	  ],
-	  "sorting": 9,
-	  "found": false,
 	  "description": "Each block is 1 cubic meter, at that size, the value of this block of silver should be over $8,000,000."
 	},
 	"30": {
 	  "id": 30,
+	  "sorting": 39,
 	  "name": "Xenon",
 	  "hardness": 5,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 5,
 	  "color": "#BBA4FF",
 	  "depth": [
 		[
@@ -1133,16 +1104,15 @@
 		16,
 		17
 	  ],
-	  "sorting": 39,
-	  "found": false,
 	  "description": "non"
 	},
 	"31": {
 	  "id": 31,
+	  "sorting": 32,
 	  "name": "Krypton",
 	  "hardness": 5,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 5,
 	  "color": "#FCFCFC",
 	  "depth": [
 		[
@@ -1166,16 +1136,15 @@
 	  "layer": [
 		9
 	  ],
-	  "sorting": 32,
-	  "found": false,
 	  "description": "This is not the planet Superman was born on, It is a real thing."
 	},
 	"32": {
 	  "id": 32,
+	  "sorting": 20,
 	  "name": "Azure",
 	  "hardness": 70,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 70,
 	  "color": "#9900FF",
 	  "depth": [
 		[
@@ -1203,16 +1172,15 @@
 	  "layer": [
 		4
 	  ],
-	  "sorting": 20,
-	  "found": false,
 	  "description": "I think there was a better game that used this stuff..."
 	},
 	"33": {
 	  "id": 33,
+	  "sorting": 34,
 	  "name": "Cinnabar",
 	  "hardness": 50,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 50,
 	  "color": "#DE0000",
 	  "depth": [
 		[
@@ -1241,16 +1209,15 @@
 		11,
 		12
 	  ],
-	  "sorting": 34,
-	  "found": false,
 	  "description": "non"
 	},
 	"34": {
 	  "id": 34,
+	  "sorting": 31,
 	  "name": "Titainium",
 	  "hardness": 100,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 100,
 	  "color": "#F3F3F3",
 	  "depth": [
 		[
@@ -1274,16 +1241,15 @@
 	  "layer": [
 		9
 	  ],
-	  "sorting": 31,
-	  "found": false,
 	  "description": "non"
 	},
 	"35": {
 	  "id": 35,
+	  "sorting": 37,
 	  "name": "Barium",
 	  "hardness": 100,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 100,
 	  "color": "#B77A00",
 	  "depth": [
 		[
@@ -1307,16 +1273,15 @@
 	  "layer": [
 		12
 	  ],
-	  "sorting": 37,
-	  "found": false,
 	  "description": "non"
 	},
 	"36": {
 	  "id": 36,
+	  "sorting": 36,
 	  "name": "Vanadium",
 	  "hardness": 100,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 100,
 	  "color": "#C62A00",
 	  "depth": [
 		[
@@ -1344,16 +1309,15 @@
 	  "layer": [
 		11
 	  ],
-	  "sorting": 36,
-	  "found": false,
 	  "description": "non"
 	},
 	"37": {
 	  "id": 37,
+	  "sorting": 22,
 	  "name": "Chromium",
 	  "hardness": 90,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 90,
 	  "color": "#351940",
 	  "depth": [
 		[
@@ -1378,16 +1342,15 @@
 		5,
 		6
 	  ],
-	  "sorting": 22,
-	  "found": false,
 	  "description": "non"
 	},
 	"38": {
 	  "id": 38,
+	  "sorting": 23,
 	  "name": "Antimony",
 	  "hardness": 80,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 80,
 	  "color": "#7D5B74",
 	  "depth": [
 		[
@@ -1412,16 +1375,15 @@
 		5,
 		6
 	  ],
-	  "sorting": 23,
-	  "found": false,
 	  "description": "non"
 	},
 	"39": {
 	  "id": 39,
+	  "sorting": 21,
 	  "name": "Tungsten",
 	  "hardness": 120,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 120,
 	  "color": "#D9D9D9",
 	  "depth": [
 		[
@@ -1445,16 +1407,15 @@
 	  "layer": [
 		5
 	  ],
-	  "sorting": 21,
-	  "found": false,
 	  "description": "Nietzsche once said that a man who has a why can bear almost any how. But a man who has a tungsten cube can bear any object less dense, and all this talk of why and how becomes unnecessary."
 	},
 	"40": {
 	  "id": 40,
+	  "sorting": 46,
 	  "name": "Unobtainium",
 	  "hardness": 80,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 80,
 	  "color": "#FF00FF",
 	  "depth": [
 		[
@@ -1487,16 +1448,15 @@
 		8,
 		9
 	  ],
-	  "sorting": 46,
-	  "found": false,
 	  "description": "Suprisingly obtainable!"
 	},
 	"41": {
 	  "id": 41,
+	  "sorting": 47,
 	  "name": "Stellarite",
 	  "hardness": 80,
 	  "value": 0,
-	  "xp": 0,
+	  "xp": 80,
 	  "color": "#FFFA73",
 	  "depth": [
 		[
@@ -1532,16 +1492,15 @@
 		15,
 		16
 	  ],
-	  "sorting": 47,
-	  "found": false,
 	  "description": "non"
 	},
 	"42": {
 	  "id": 42,
+	  "sorting": 4,
 	  "name": "Tourmaline",
 	  "hardness": 20,
 	  "value": 1,
-	  "xp": 1,
+	  "xp": 20,
 	  "color": "#EAD1DC",
 	  "depth": [
 		[
@@ -1566,16 +1525,15 @@
 		0,
 		1
 	  ],
-	  "sorting": 4,
-	  "found": false,
 	  "description": "Can be almost any colour, but you get this one."
 	},
 	"43": {
 	  "id": 43,
+	  "sorting": 27,
 	  "name": "Sapphire",
 	  "hardness": 20,
 	  "value": 1,
-	  "xp": 1,
+	  "xp": 20,
 	  "color": "#0000FF",
 	  "depth": [
 		[
@@ -1599,16 +1557,15 @@
 	  "layer": [
 		7
 	  ],
-	  "sorting": 27,
-	  "found": false,
 	  "description": "i didnt finish this yet"
 	},
 	"44": {
 	  "id": 44,
+	  "sorting": 28,
 	  "name": "Aquamarine",
 	  "hardness": 20,
 	  "value": 1,
-	  "xp": 1,
+	  "xp": 20,
 	  "color": "#00C4C4",
 	  "depth": [
 		[
@@ -1632,16 +1589,15 @@
 	  "layer": [
 		7
 	  ],
-	  "sorting": 28,
-	  "found": false,
 	  "description": "i didnt finish this yet"
 	},
 	"45": {
 	  "id": 45,
+	  "sorting": 24,
 	  "name": "Malachite",
 	  "hardness": 20,
 	  "value": 1,
-	  "xp": 1,
+	  "xp": 20,
 	  "color": "#00DC5F",
 	  "depth": [
 		[
@@ -1665,16 +1621,15 @@
 	  "layer": [
 		6
 	  ],
-	  "sorting": 24,
-	  "found": false,
 	  "description": "i didnt finish this yet"
 	},
 	"46": {
 	  "id": 46,
+	  "sorting": 25,
 	  "name": "Jade",
 	  "hardness": 20,
 	  "value": 1,
-	  "xp": 1,
+	  "xp": 20,
 	  "color": "#00DC5F",
 	  "depth": [
 		[
@@ -1698,16 +1653,15 @@
 	  "layer": [
 		6
 	  ],
-	  "sorting": 25,
-	  "found": false,
 	  "description": "i didnt finish this yet"
 	},
 	"47": {
 	  "id": 47,
+	  "sorting": 26,
 	  "name": "Axinite",
 	  "hardness": 20,
 	  "value": 1,
-	  "xp": 1,
+	  "xp": 20,
 	  "color": "#00DC5F",
 	  "depth": [
 		[
@@ -1732,280 +1686,7 @@
 		6,
 		7
 	  ],
-	  "sorting": 26,
-	  "found": false,
 	  "description": "i didnt finish this yet"
-	}
-  },
-  "layers": {
-	"0": {
-	  "id": 0,
-	  "name": "surface",
-	  "color": "#9F754A",
-	  "brightness": 16,
-	  "atlas": [
-		1,
-		0
-	  ],
-	  "length": 5,
-	  "start": 0,
-	  "end": 5
-	},
-	"1": {
-	  "id": 1,
-	  "name": "shallow caves",
-	  "color": "#A2C4C9",
-	  "brightness": 8,
-	  "atlas": [
-		2,
-		0
-	  ],
-	  "length": 145,
-	  "start": 5,
-	  "end": 150
-	},
-	"2": {
-	  "id": 2,
-	  "name": "abandoned mines",
-	  "color": "#999999",
-	  "brightness": 4,
-	  "atlas": [
-		3,
-		0
-	  ],
-	  "length": 500,
-	  "start": 150,
-	  "end": 650
-	},
-	"3": {
-	  "id": 3,
-	  "name": "gem caverns",
-	  "color": "#8E7CC3",
-	  "brightness": 2,
-	  "atlas": [
-		4,
-		0
-	  ],
-	  "length": 750,
-	  "start": 650,
-	  "end": 1400
-	},
-	"4": {
-	  "id": 4,
-	  "name": "deeper caves",
-	  "color": "#273934",
-	  "brightness": 1,
-	  "atlas": [
-		5,
-		0
-	  ],
-	  "length": 500,
-	  "start": 1400,
-	  "end": 1900
-	},
-	"5": {
-	  "id": 5,
-	  "name": "deeper caves",
-	  "color": "#354843",
-	  "atlas": [
-		6,
-		0
-	  ],
-	  "length": 600,
-	  "start": 1900,
-	  "end": 2500
-	},
-	"6": {
-	  "id": 6,
-	  "name": "rock taiga",
-	  "color": "#589D8C",
-	  "atlas": [
-		7,
-		0
-	  ],
-	  "length": 500,
-	  "start": 2500,
-	  "end": 3000
-	},
-	"7": {
-	  "id": 7,
-	  "name": "frozen",
-	  "color": "#00FFFF",
-	  "atlas": [
-		8,
-		0
-	  ],
-	  "length": 500,
-	  "start": 3000,
-	  "end": 3500
-	},
-	"8": {
-	  "id": 8,
-	  "name": "nuclear winter",
-	  "color": "#56DA84",
-	  "atlas": [
-		9,
-		0
-	  ],
-	  "length": 500,
-	  "start": 3500,
-	  "end": 4000
-	},
-	"9": {
-	  "id": 9,
-	  "name": "haze",
-	  "color": "#B3D8D8",
-	  "atlas": [
-		10,
-		0
-	  ],
-	  "length": 500,
-	  "start": 4000,
-	  "end": 4500
-	},
-	"10": {
-	  "id": 10,
-	  "name": "rock border (graphene?)",
-	  "color": "#434343",
-	  "atlas": [
-		11,
-		0
-	  ],
-	  "length": 50,
-	  "start": 4500,
-	  "end": 4550
-	},
-	"11": {
-	  "id": 11,
-	  "name": "molten rock",
-	  "color": "#CD1C1C",
-	  "atlas": [
-		12,
-		0
-	  ],
-	  "length": 450,
-	  "start": 4550,
-	  "end": 5000
-	},
-	"12": {
-	  "id": 12,
-	  "name": "outer core",
-	  "color": "#EE7C49",
-	  "atlas": [
-		13,
-		0
-	  ],
-	  "length": 250,
-	  "start": 5000,
-	  "end": 5250
-	},
-	"13": {
-	  "id": 13,
-	  "name": "the core",
-	  "color": "#F1C232",
-	  "atlas": [
-		14,
-		0
-	  ],
-	  "length": 750,
-	  "start": 5250,
-	  "end": 6000
-	},
-	"14": {
-	  "id": 14,
-	  "name": "coreset",
-	  "color": "#EE7C49",
-	  "atlas": [
-		15,
-		0
-	  ],
-	  "length": 100,
-	  "start": 6000,
-	  "end": 6300
-	},
-	"15": {
-	  "id": 15,
-	  "name": "coreset",
-	  "color": "#E0659E",
-	  "atlas": [
-		16,
-		0
-	  ],
-	  "length": 100,
-	  "start": 6100,
-	  "end": 6300
-	},
-	"16": {
-	  "id": 16,
-	  "name": "coreset",
-	  "color": "#8E7CC3",
-	  "atlas": [
-		17,
-		0
-	  ],
-	  "length": 100,
-	  "start": 6200,
-	  "end": 6300
-	},
-	"17": {
-	  "id": 17,
-	  "name": "night",
-	  "color": "#073763",
-	  "atlas": [
-		18,
-		0
-	  ],
-	  "length": 200,
-	  "start": 6300,
-	  "end": 6500
-	},
-	"18": {
-	  "id": 18,
-	  "name": "the deep blue",
-	  "color": "#0C343D",
-	  "atlas": [
-		19,
-		0
-	  ],
-	  "length": 900,
-	  "start": 6500,
-	  "end": 7400
-	},
-	"19": {
-	  "id": 19,
-	  "name": "respite",
-	  "color": "#0B5394",
-	  "atlas": [
-		20,
-		0
-	  ],
-	  "length": 100,
-	  "start": 7400,
-	  "end": 7500
-	},
-	"20": {
-	  "id": 20,
-	  "name": "electric blue",
-	  "color": "#2C75FF",
-	  "atlas": [
-		21,
-		0
-	  ],
-	  "length": 750,
-	  "start": 7500,
-	  "end": 8250
-	},
-	"21": {
-	  "id": 21,
-	  "name": "the nucleus",
-	  "color": "#59BA17",
-	  "atlas": [
-		22,
-		0
-	  ],
-	  "length": 750,
-	  "start": 8250,
-	  "end": 9000
 	}
   },
   "pickaxes": {
@@ -2027,11 +1708,10 @@
 		-1
 	  ],
 	  "traits": [],
-	  "level": 0,
-	  "maxlevel": false,
-	  "unlocked": true,
-	  "forged": false,
-	  "value": -1
+	  "original": 0,
+	  "maxlevel": 0,
+	  "value": -1,
+	  "base": false
 	},
 	"1": {
 	  "id": 1,
@@ -2055,11 +1735,10 @@
 		1
 	  ],
 	  "traits": [],
-	  "level": 0,
-	  "maxlevel": false,
-	  "unlocked": true,
-	  "forged": true,
-	  "value": 0
+	  "original": 1,
+	  "maxlevel": 2,
+	  "value": 0,
+	  "base": true
 	},
 	"2": {
 	  "id": 2,
@@ -2083,11 +1762,10 @@
 		1
 	  ],
 	  "traits": [],
-	  "level": 0,
-	  "maxlevel": false,
-	  "unlocked": true,
-	  "forged": false,
-	  "value": 1
+	  "original": 2,
+	  "maxlevel": 0,
+	  "value": 1,
+	  "base": true
 	},
 	"3": {
 	  "id": 3,
@@ -2115,11 +1793,10 @@
 		1
 	  ],
 	  "traits": [],
-	  "level": 0,
-	  "maxlevel": true,
-	  "unlocked": true,
-	  "forged": false,
-	  "value": 2
+	  "original": 3,
+	  "maxlevel": 0,
+	  "value": 2,
+	  "base": true
 	},
 	"4": {
 	  "id": 4,
@@ -2128,11 +1805,11 @@
 	  "cost": [
 		[
 		  1,
-		  8
+		  12
 		],
 		[
 		  13,
-		  3
+		  8
 		]
 	  ],
 	  "stats": [
@@ -2143,11 +1820,10 @@
 		1
 	  ],
 	  "traits": [],
-	  "level": 0,
-	  "maxlevel": true,
-	  "unlocked": true,
-	  "forged": false,
-	  "value": 1
+	  "original": 4,
+	  "maxlevel": 0,
+	  "value": 1,
+	  "base": true
 	},
 	"5": {
 	  "id": 5,
@@ -2156,85 +1832,32 @@
 	  "cost": [
 		[
 		  2,
+		  1
+		],
+		[
+		  14,
 		  3
 		],
 		[
-		  28,
+		  29,
 		  3
 		]
 	  ],
 	  "stats": [
-		4,
-		1.4,
+		4.5,
+		2,
 		1,
 		1.2,
 		1
 	  ],
 	  "traits": [],
-	  "level": 0,
-	  "maxlevel": true,
-	  "unlocked": true,
-	  "forged": false,
-	  "value": 2
+	  "original": 5,
+	  "maxlevel": 0,
+	  "value": 2,
+	  "base": true
 	},
 	"6": {
 	  "id": 6,
-	  "name": "Tourmaline Chisel",
-	  "color": "#EAD1DC",
-	  "cost": [
-		[
-		  41,
-		  1
-		],
-		[
-		  13,
-		  2
-		],
-		[
-		  3,
-		  2
-		]
-	  ],
-	  "stats": [
-		4,
-		1.4,
-		1,
-		1.2,
-		1.5
-	  ],
-	  "traits": [],
-	  "level": 0,
-	  "maxlevel": true,
-	  "unlocked": true,
-	  "forged": false,
-	  "value": 2
-	},
-	"7": {
-	  "id": 7,
-	  "name": "dev",
-	  "color": "#FF00FF",
-	  "cost": [
-		[
-		  0,
-		  1
-		]
-	  ],
-	  "stats": [
-		10,
-		0.05,
-		10,
-		10,
-		1
-	  ],
-	  "traits": [],
-	  "level": 0,
-	  "maxlevel": true,
-	  "unlocked": true,
-	  "forged": true,
-	  "value": 3
-	},
-	"8": {
-	  "id": 8,
 	  "name": "Gold Pickaxe",
 	  "color": "#FFD966",
 	  "cost": [
@@ -2247,7 +1870,7 @@
 		  5
 		],
 		[
-		  23,
+		  24,
 		  2
 		]
 	  ],
@@ -2259,213 +1882,610 @@
 		1
 	  ],
 	  "traits": [],
-	  "level": 0,
-	  "maxlevel": true,
-	  "unlocked": true,
-	  "forged": false,
-	  "value": 2
-	}
-  },
-  "upgrades": {
-	"1": {
-	  "id": 1,
-	  "name": "Test",
-	  "color": "#FF00FF",
-	  "cost": [
-		{
-		  "ore": 0,
-		  "amount": 1
-		},
-		{
-		  "ore": 1,
-		  "amount": 1
-		}
-	  ],
-	  "stats": [
-		1,
-		0.1,
-		10,
-		10
-	  ],
-	  "skills": [],
-	  "level": 1,
-	  "maxlevel": false,
-	  "unlocked": true,
-	  "forged": false
+	  "original": 6,
+	  "maxlevel": 0,
+	  "value": 2,
+	  "base": true
 	},
-	"1001": {
-	  "id": 1001,
-	  "name": "Stone Pickaxe",
-	  "color": "#666666",
+	"7": {
+	  "id": 7,
+	  "name": "Tourmaline Chisel",
+	  "color": "#EAD1DC",
 	  "cost": [
-		{
-		  "ore": 0,
-		  "amount": 1
-		},
-		{
-		  "ore": 1,
-		  "amount": 1
-		}
-	  ],
-	  "stats": [
-		1,
-		1,
-		1,
-		1
-	  ],
-	  "skills": [],
-	  "level": 1,
-	  "maxlevel": false,
-	  "unlocked": true,
-	  "forged": false
-	},
-	"1002": {
-	  "id": 1002,
-	  "name": "Stone Pickaxe",
-	  "color": "#666667",
-	  "cost": [
-		{
-		  "ore": 0,
-		  "amount": 1
-		},
-		{
-		  "ore": 1,
-		  "amount": 1000
-		}
-	  ],
-	  "stats": [
-		1,
-		1,
-		1,
-		1
-	  ],
-	  "skills": [],
-	  "level": 2,
-	  "maxlevel": true,
-	  "unlocked": true,
-	  "forged": false
-	},
-	"2001": {
-	  "id": 2001,
-	  "name": "Iron Pickaxe",
-	  "color": "#A59C94",
-	  "cost": [
-		{
-		  "ore": 0,
-		  "amount": 1
-		},
-		{
-		  "ore": 1,
-		  "amount": 1000
-		}
-	  ],
-	  "stats": [
-		2,
-		0.8,
-		1,
-		1
-	  ],
-	  "skills": [],
-	  "level": 1,
-	  "maxlevel": false,
-	  "unlocked": true,
-	  "forged": false
-	},
-	"3001": {
-	  "id": 3001,
-	  "name": "Gold Pickaxe",
-	  "color": "#FFD966",
-	  "cost": [
-		{
-		  "ore": 0,
-		  "amount": 1
-		},
-		{
-		  "ore": 1,
-		  "amount": 1000
-		}
+		[
+		  42,
+		  1
+		],
+		[
+		  24,
+		  3
+		],
+		[
+		  6,
+		  5
+		]
 	  ],
 	  "stats": [
 		4,
+		1.4,
+		1,
 		1.2,
+		1.5
+	  ],
+	  "traits": [],
+	  "original": 7,
+	  "maxlevel": 0,
+	  "value": 2,
+	  "base": true
+	},
+	"8": {
+	  "id": 8,
+	  "name": "Lithium Pickaxe",
+	  "color": "#7E7255",
+	  "cost": [
+		[
+		  19,
+		  8
+		],
+		[
+		  24,
+		  2
+		],
+		[
+		  29,
+		  3
+		],
+		[
+		  3,
+		  4
+		]
+	  ],
+	  "stats": [
+		7,
+		1.4,
+		1,
 		1,
 		1
 	  ],
-	  "skills": [],
-	  "level": 1,
-	  "maxlevel": false,
-	  "unlocked": true,
-	  "forged": false
+	  "traits": [],
+	  "original": 8,
+	  "maxlevel": 0,
+	  "base": true
+	},
+	"9": {
+	  "id": 9,
+	  "name": "Nickel Pickaxe",
+	  "color": "#7B776C",
+	  "cost": [
+		[
+		  6,
+		  8
+		],
+		[
+		  19,
+		  2
+		]
+	  ],
+	  "stats": [
+		6,
+		0.8,
+		2,
+		2,
+		1
+	  ],
+	  "traits": [],
+	  "original": 9,
+	  "maxlevel": 0,
+	  "base": true
+	},
+	"10": {
+	  "id": 10,
+	  "name": "Cobalt Pickaxe",
+	  "color": "#8992AD",
+	  "cost": [
+		[
+		  16,
+		  8
+		],
+		[
+		  19,
+		  2
+		],
+		[
+		  7,
+		  10
+		]
+	  ],
+	  "stats": [
+		6,
+		0.8,
+		2,
+		2,
+		1
+	  ],
+	  "traits": [],
+	  "original": 10,
+	  "maxlevel": 0,
+	  "base": true
+	},
+	"11": {
+	  "id": 11,
+	  "name": "dev",
+	  "color": "#FF00FF",
+	  "cost": [
+		[
+		  0,
+		  1
+		]
+	  ],
+	  "stats": [
+		250000,
+		0.001,
+		10,
+		1,
+		1
+	  ],
+	  "traits": [],
+	  "original": 11,
+	  "maxlevel": 0,
+	  "value": 3,
+	  "base": true
+	},
+	"1001": {
+	  "id": 1001,
+	  "name": "Stone Pickaxe ★",
+	  "color": "#666667",
+	  "cost": [
+		[
+		  1,
+		  1
+		],
+		[
+		  2,
+		  5
+		]
+	  ],
+	  "stats": [
+		4,
+		2,
+		1,
+		1,
+		1
+	  ],
+	  "traits": [],
+	  "original": 1,
+	  "maxlevel": 2,
+	  "value": 0,
+	  "base": false
+	},
+	"2001": {
+	  "id": 2001,
+	  "name": "Stone Pickaxe ★★",
+	  "color": "#666667",
+	  "cost": [
+		[
+		  1,
+		  2
+		],
+		[
+		  2,
+		  5
+		]
+	  ],
+	  "stats": [
+		10,
+		2,
+		1,
+		1,
+		1
+	  ],
+	  "traits": [],
+	  "original": 1,
+	  "maxlevel": 2,
+	  "value": 0,
+	  "base": false
+	}
+  },
+  "layers": {
+	"0": {
+	  "id": 0,
+	  "name": "surface",
+	  "color": "#EFEFEF",
+	  "brightness": 16,
+	  "atlas": [
+		1,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 5,
+	  "start": 0,
+	  "end": 5
+	},
+	"1": {
+	  "id": 1,
+	  "name": "shallow caves",
+	  "color": "#A2C4C9",
+	  "brightness": 8,
+	  "atlas": [
+		2,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 145,
+	  "start": 5,
+	  "end": 150
+	},
+	"2": {
+	  "id": 2,
+	  "name": "abandoned mines",
+	  "color": "#999999",
+	  "brightness": 4,
+	  "atlas": [
+		3,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 500,
+	  "start": 150,
+	  "end": 650
+	},
+	"3": {
+	  "id": 3,
+	  "name": "gem caverns",
+	  "color": "#8E7CC3",
+	  "brightness": 2,
+	  "atlas": [
+		4,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 750,
+	  "start": 650,
+	  "end": 1400
+	},
+	"4": {
+	  "id": 4,
+	  "name": "deeper caves",
+	  "color": "#273934",
+	  "brightness": 1,
+	  "atlas": [
+		5,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 500,
+	  "start": 1400,
+	  "end": 1900
+	},
+	"5": {
+	  "id": 5,
+	  "name": "deeper caves",
+	  "color": "#354843",
+	  "brightness": 1,
+	  "atlas": [
+		6,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 600,
+	  "start": 1900,
+	  "end": 2500
+	},
+	"6": {
+	  "id": 6,
+	  "name": "rock taiga",
+	  "color": "#589D8C",
+	  "brightness": 1,
+	  "atlas": [
+		7,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 500,
+	  "start": 2500,
+	  "end": 3000
+	},
+	"7": {
+	  "id": 7,
+	  "name": "frozen",
+	  "color": "#00FFFF",
+	  "brightness": 8,
+	  "atlas": [
+		8,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 500,
+	  "start": 3000,
+	  "end": 3500
+	},
+	"8": {
+	  "id": 8,
+	  "name": "nuclear winter",
+	  "color": "#56DA84",
+	  "brightness": 4,
+	  "atlas": [
+		9,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 500,
+	  "start": 3500,
+	  "end": 4000
+	},
+	"9": {
+	  "id": 9,
+	  "name": "haze",
+	  "color": "#B3D8D8",
+	  "brightness": 6,
+	  "atlas": [
+		10,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 500,
+	  "start": 4000,
+	  "end": 4500
+	},
+	"10": {
+	  "id": 10,
+	  "name": "rock border (graphene?)",
+	  "color": "#434343",
+	  "brightness": 1,
+	  "atlas": [
+		11,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 50,
+	  "start": 4500,
+	  "end": 4550
+	},
+	"11": {
+	  "id": 11,
+	  "name": "molten rock",
+	  "color": "#CD1C1C",
+	  "brightness": 2,
+	  "atlas": [
+		12,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 450,
+	  "start": 4550,
+	  "end": 5000
+	},
+	"12": {
+	  "id": 12,
+	  "name": "outer core",
+	  "color": "#EE7C49",
+	  "brightness": 4,
+	  "atlas": [
+		13,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 250,
+	  "start": 5000,
+	  "end": 5250
+	},
+	"13": {
+	  "id": 13,
+	  "name": "the core",
+	  "color": "#F1C232",
+	  "brightness": 8,
+	  "atlas": [
+		14,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 750,
+	  "start": 5250,
+	  "end": 6000
+	},
+	"14": {
+	  "id": 14,
+	  "name": "coreset",
+	  "color": "#EE7C49",
+	  "brightness": 4,
+	  "atlas": [
+		15,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 100,
+	  "start": 6000,
+	  "end": 6300
+	},
+	"15": {
+	  "id": 15,
+	  "name": "coreset",
+	  "color": "#E0659E",
+	  "brightness": 3,
+	  "atlas": [
+		16,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 100,
+	  "start": 6100,
+	  "end": 6300
+	},
+	"16": {
+	  "id": 16,
+	  "name": "coreset",
+	  "color": "#8E7CC3",
+	  "brightness": 1.5,
+	  "atlas": [
+		17,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 100,
+	  "start": 6200,
+	  "end": 6300
+	},
+	"17": {
+	  "id": 17,
+	  "name": "night",
+	  "color": "#073763",
+	  "brightness": 0.5,
+	  "atlas": [
+		18,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 200,
+	  "start": 6300,
+	  "end": 6500
+	},
+	"18": {
+	  "id": 18,
+	  "name": "the deep blue",
+	  "color": "#0C343D",
+	  "brightness": 0.5,
+	  "atlas": [
+		19,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 900,
+	  "start": 6500,
+	  "end": 7400
+	},
+	"19": {
+	  "id": 19,
+	  "name": "respite",
+	  "color": "#0B5394",
+	  "brightness": 1,
+	  "atlas": [
+		20,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 100,
+	  "start": 7400,
+	  "end": 7500
+	},
+	"20": {
+	  "id": 20,
+	  "name": "electric blue",
+	  "color": "#2C75FF",
+	  "brightness": 8,
+	  "atlas": [
+		21,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 750,
+	  "start": 7500,
+	  "end": 8250
+	},
+	"21": {
+	  "id": 21,
+	  "name": "the nucleus",
+	  "color": "#59BA17",
+	  "brightness": 7,
+	  "atlas": [
+		22,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 750,
+	  "start": 8250,
+	  "end": 9000
 	}
   },
   "traits": {
 	"0": {
 	  "id": 0,
 	  "name": "dev",
-	  "description": "You gain [color=white]10[/color] x as many ores as before."
+	  "description": "You gain [color=white]10[/color] x as many ores as before.",
+	  "color": "#FF00FF"
 	},
 	"1": {
 	  "id": 1,
-	  "name": "perception"
+	  "name": "perception",
+	  "description": "ok",
+	  "color": "#FFFA73"
 	},
 	"2": {
 	  "id": 2,
 	  "name": "dualmine",
-	  "description": "You move down [color=white]2m[/color] at a time instead of 1."
+	  "description": "You move down [color=white]2m[/color] at a time instead of 1.",
+	  "color": "#EAD1DC"
 	},
 	"3": {
 	  "id": 3,
 	  "name": "trimine",
-	  "description": "You move down [color=white]3m[/color] at a time instead of 1."
+	  "description": "You move down [color=white]3m[/color] at a time instead of 1.",
+	  "color": "#0000FF"
 	},
 	"4": {
 	  "id": 4,
 	  "name": "fullmine",
-	  "description": "[color=white]Every tile[/color] on your layer gets mined."
+	  "description": "[color=white]Every tile[/color] on your layer gets mined.",
+	  "color": "#00C4C4"
 	},
 	"5": {
 	  "id": 5,
 	  "name": "stone smasher",
-	  "description": "Stone-type tiles get mined twice as fast."
+	  "description": "Stone-type tiles get mined twice as fast.",
+	  "color": "#00DC5F"
 	},
 	"6": {
 	  "id": 6,
 	  "name": "stone struggle",
-	  "description": "Stone-type tiles take 50% longer to mine"
+	  "description": "Stone-type tiles take 50% longer to mine",
+	  "color": "#00DC5F"
 	},
 	"7": {
 	  "id": 7,
 	  "name": "rarest ores",
-	  "description": "Rare ores only appear half as often"
+	  "description": "Rare ores only appear half as often",
+	  "color": "#00DC5F"
 	},
 	"8": {
 	  "id": 8,
 	  "name": "not-so-rare",
-	  "description": "Rare ores are 3 times as likely to appear"
+	  "description": "Rare ores are 3 times as likely to appear",
+	  "color": "#FF00FF"
 	},
 	"9": {
 	  "id": 9,
 	  "name": "instant",
-	  "description": "can instantly break stronger blocks than usual"
+	  "description": "can instantly break stronger blocks than usual",
+	  "color": "#FFFA73"
 	},
 	"10": {
 	  "id": 10,
 	  "name": "consistency",
-	  "description": "more consistent?"
+	  "description": "more consistent?",
+	  "color": "#EAD1DC"
 	},
 	"11": {
 	  "id": 11,
-	  "name": "extra drops"
+	  "name": "extra drops",
+	  "description": "ok",
+	  "color": "#0000FF"
 	},
 	"12": {
 	  "id": 12,
 	  "name": "??",
-	  "description": "every 3rd non-rare block mined gived double"
+	  "description": "every 3rd non-rare block mined gived double",
+	  "color": "#00C4C4"
 	},
 	"13": {
 	  "id": 13,
 	  "name": "(ORE) Proficiency",
-	  "description": "ore type mined faster"
+	  "description": "ore type mined faster",
+	  "color": "#00DC5F"
+	},
+	"14": {
+	  "id": 14,
+	  "name": "x ray",
+	  "description": "stone is transparent or invisible or something",
+	  "color": "#00DC5F"
 	}
   },
   "stats": {
@@ -2491,13 +2511,335 @@
 	  "id": 3,
 	  "name": "luck",
 	  "color": "#B6D7A8",
-	  "description": "Stone-type ores now appear at a rate of (chance / [color=white]%s[/color])"
+	  "description": "Stone-type ores now appear at a rate of [nowrap](chance / [color=white]%s[/color])[/nowrap]"
 	},
 	"4": {
 	  "id": 4,
 	  "name": "rare luck",
 	  "color": "#FFD966",
-	  "description": "Rare-type ores now appear at a rate of (chance x [color=white]%s[/color])"
+	  "description": "Rare-type ores now appear at a rate of [nowrap](chance x [color=white]%s[/color])[/nowrap]"
+	}
+  },
+  "levels": {
+	"0": {
+	  "id": 0,
+	  "name": "F",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 100,
+	  "requiredxp": 0,
+	  "color": "#D9D9D9",
+	  "fullxp": 100
+	},
+	"1": {
+	  "id": 1,
+	  "name": "E",
+	  "Tier": 1,
+	  "TierTotal": 2,
+	  "nextxp": 300,
+	  "requiredxp": 100,
+	  "color": "#EA9999",
+	  "fullxp": 640
+	},
+	"2": {
+	  "id": 2,
+	  "name": "E",
+	  "Tier": 2,
+	  "TierTotal": 2,
+	  "nextxp": 640,
+	  "requiredxp": 300,
+	  "color": "#EA9999",
+	  "fullxp": 640
+	},
+	"3": {
+	  "id": 3,
+	  "name": "D",
+	  "Tier": 1,
+	  "TierTotal": 2,
+	  "nextxp": 1500,
+	  "requiredxp": 640,
+	  "color": "#CC0000",
+	  "fullxp": 3000
+	},
+	"4": {
+	  "id": 4,
+	  "name": "D",
+	  "Tier": 2,
+	  "TierTotal": 2,
+	  "nextxp": 3000,
+	  "requiredxp": 1500,
+	  "color": "#CC0001",
+	  "fullxp": 3000
+	},
+	"5": {
+	  "id": 5,
+	  "name": "C",
+	  "Tier": 1,
+	  "TierTotal": 3,
+	  "nextxp": 7000,
+	  "requiredxp": 3000,
+	  "color": "#FF9900",
+	  "fullxp": 22000
+	},
+	"6": {
+	  "id": 6,
+	  "name": "C",
+	  "Tier": 2,
+	  "TierTotal": 3,
+	  "nextxp": 15000,
+	  "requiredxp": 7000,
+	  "color": "#FF9900",
+	  "fullxp": 22000
+	},
+	"7": {
+	  "id": 7,
+	  "name": "C",
+	  "Tier": 3,
+	  "TierTotal": 3,
+	  "nextxp": 22000,
+	  "requiredxp": 15000,
+	  "color": "#FF9900",
+	  "fullxp": 22000
+	},
+	"8": {
+	  "id": 8,
+	  "name": "B",
+	  "Tier": 1,
+	  "TierTotal": 3,
+	  "nextxp": 32000,
+	  "requiredxp": 22000,
+	  "color": "#FFD966",
+	  "fullxp": 95000
+	},
+	"9": {
+	  "id": 9,
+	  "name": "B",
+	  "Tier": 2,
+	  "TierTotal": 3,
+	  "nextxp": 63000,
+	  "requiredxp": 32000,
+	  "color": "#FFD966",
+	  "fullxp": 95000
+	},
+	"10": {
+	  "id": 10,
+	  "name": "B",
+	  "Tier": 3,
+	  "TierTotal": 3,
+	  "nextxp": 95000,
+	  "requiredxp": 63000,
+	  "color": "#FFD966",
+	  "fullxp": 95000
+	},
+	"11": {
+	  "id": 11,
+	  "name": "A",
+	  "Tier": 1,
+	  "TierTotal": 5,
+	  "nextxp": 76000,
+	  "requiredxp": 95000,
+	  "color": "#93C47D",
+	  "fullxp": 380000
+	},
+	"12": {
+	  "id": 12,
+	  "name": "A",
+	  "Tier": 2,
+	  "TierTotal": 5,
+	  "nextxp": 152000,
+	  "requiredxp": 76000,
+	  "color": "#93C47D",
+	  "fullxp": 380000
+	},
+	"13": {
+	  "id": 13,
+	  "name": "A",
+	  "Tier": 3,
+	  "TierTotal": 5,
+	  "nextxp": 228000,
+	  "requiredxp": 152000,
+	  "color": "#93C47D",
+	  "fullxp": 380000
+	},
+	"14": {
+	  "id": 14,
+	  "name": "A",
+	  "Tier": 4,
+	  "TierTotal": 5,
+	  "nextxp": 304000,
+	  "requiredxp": 228000,
+	  "color": "#93C47D",
+	  "fullxp": 380000
+	},
+	"15": {
+	  "id": 15,
+	  "name": "A",
+	  "Tier": 5,
+	  "TierTotal": 5,
+	  "nextxp": 380000,
+	  "requiredxp": 304000,
+	  "color": "#93C47D",
+	  "fullxp": 380000
+	},
+	"16": {
+	  "id": 16,
+	  "name": "S",
+	  "Tier": 1,
+	  "TierTotal": 5,
+	  "nextxp": 300000,
+	  "requiredxp": 380000,
+	  "color": "#6D9EEB",
+	  "fullxp": 1500000
+	},
+	"17": {
+	  "id": 17,
+	  "name": "S",
+	  "Tier": 2,
+	  "TierTotal": 5,
+	  "nextxp": 600000,
+	  "requiredxp": 300000,
+	  "color": "#6D9EEB",
+	  "fullxp": 1500000
+	},
+	"18": {
+	  "id": 18,
+	  "name": "S",
+	  "Tier": 3,
+	  "TierTotal": 5,
+	  "nextxp": 900000,
+	  "requiredxp": 600000,
+	  "color": "#6D9EEB",
+	  "fullxp": 1500000
+	},
+	"19": {
+	  "id": 19,
+	  "name": "S",
+	  "Tier": 4,
+	  "TierTotal": 5,
+	  "nextxp": 1200000,
+	  "requiredxp": 900000,
+	  "color": "#6D9EEB",
+	  "fullxp": 1500000
+	},
+	"20": {
+	  "id": 20,
+	  "name": "S",
+	  "Tier": 5,
+	  "TierTotal": 5,
+	  "nextxp": 1500000,
+	  "requiredxp": 1200000,
+	  "color": "#6D9EEB",
+	  "fullxp": 1500000
+	},
+	"21": {
+	  "id": 21,
+	  "name": "X",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 6200000,
+	  "requiredxp": 1500000,
+	  "color": "#8E7CC3",
+	  "fullxp": 6200000
+	},
+	"22": {
+	  "id": 22,
+	  "name": "α",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 25000000,
+	  "requiredxp": 6200000,
+	  "color": "#FFFFFF",
+	  "fullxp": 25000000
+	},
+	"23": {
+	  "id": 23,
+	  "name": "β",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 105000000,
+	  "requiredxp": 25000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 105000000
+	},
+	"24": {
+	  "id": 24,
+	  "name": "θ",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 440000000,
+	  "requiredxp": 105000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 440000000
+	},
+	"25": {
+	  "id": 25,
+	  "name": "Λ",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 2000000000,
+	  "requiredxp": 440000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 2000000000
+	},
+	"26": {
+	  "id": 26,
+	  "name": "λ",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 8200000000,
+	  "requiredxp": 2000000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 8200000000
+	},
+	"27": {
+	  "id": 27,
+	  "name": "Π",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 36000000000,
+	  "requiredxp": 8200000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 36000000000
+	},
+	"28": {
+	  "id": 28,
+	  "name": "Σ",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 160000000000,
+	  "requiredxp": 36000000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 160000000000
+	},
+	"29": {
+	  "id": 29,
+	  "name": "Φ",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 720000000000,
+	  "requiredxp": 160000000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 720000000000
+	},
+	"30": {
+	  "id": 30,
+	  "name": "Ψ",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 3500000000000,
+	  "requiredxp": 720000000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 3500000000000
+	},
+	"31": {
+	  "id": 31,
+	  "name": "Ω",
+	  "Tier": 1,
+	  "TierTotal": 1,
+	  "nextxp": 15000000000000,
+	  "requiredxp": 3500000000000,
+	  "color": "#FFFFFF",
+	  "fullxp": 15000000000000
 	}
   }
 }
