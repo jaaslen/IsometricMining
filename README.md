@@ -4,6 +4,10 @@ This project is an **isometric mining game prototype** currently in development.
 
 At the moment, the game can only be played **within the Godot Engine editor**.
 
+## Issues
+- If you find any issues, please feel free to post them in issues so I can fix them, don't be embarrassed to share anything.
+
+
 ## Project Details
 - Built entirely using the Godot Engine
 - Isometric perspective
