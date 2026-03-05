@@ -3,6 +3,7 @@ extends TextureProgressBar
 @onready var Tier = $Tier/Level
 @onready var AmountLabel = $Amount
 @onready var RequiredLabel = $Required
+@onready var PowerLabel = $RankPower
 #var Level = Global.Level
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,8 +11,11 @@ func _ready() -> void:
 	#GetLevel()
 	
 	value = Global.XP
-
+	
 	var level = Global.Level
+	
+	
+	PowerLabel.text = "x" + str(level["boost"])
 	Sprite.texture = load("res://Visuals/Ranks/" + level["name"] + ".png")
 	Tier.texture = load("res://Visuals/Ranks/" + str(int(level["Tier"])) + ".png")
 	max_value = level["nextxp"]
@@ -29,8 +33,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	value = Global.XP
-	AmountLabel.text = str(int(value))
-	RequiredLabel.text = str(int(max_value))
+	AmountLabel.text = Global.Suffix(value)
+	RequiredLabel.text = Global.Suffix(max_value)
 	
 	if value >= max_value:
 		LevelUp()
@@ -42,7 +46,7 @@ func LevelUp():
 	
 	Global.XP = value - max_value
 	#value = Global.XP - max_value
-	
+	PowerLabel.text = "x" + str(Level["boost"])
 	Global.Level = Level
 	max_value = Level["nextxp"]
 	Sprite.texture = load("res://Visuals/Ranks/" + Level["name"] + ".png")

@@ -1,10 +1,11 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bujuhsiar273u"]
+[gd_resource type="Theme" format=3 uid="uid://bujuhsiar273u"]
 
 [ext_resource type="FontFile" uid="uid://dpdergqk62w75" path="res://Visuals/Orbitron-VariableFont_wght.ttf" id="1_jkx5x"]
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="1_mbn3v"]
 [ext_resource type="Texture2D" uid="uid://dhmp7jfu8pog1" path="res://Visuals/Panel.png" id="2_jkx5x"]
 [ext_resource type="StyleBox" uid="uid://br67tv5l7dcgo" path="res://Visuals/StatBar.tres" id="3_f7ckw"]
 [ext_resource type="StyleBox" uid="uid://ckar3elxenjvx" path="res://Visuals/ThinPanel.tres" id="4_f7ckw"]
+[ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="6_i7ojx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h7b0r"]
 texture = ExtResource("2_jkx5x")
@@ -22,4 +23,5 @@ Button/styles/normal = ExtResource("1_mbn3v")
 LineEdit/styles/normal = ExtResource("4_f7ckw")
 Panel/styles/panel = ExtResource("3_f7ckw")
 PanelContainer/styles/panel = ExtResource("1_mbn3v")
+ProgressBar/fonts/font = ExtResource("6_i7ojx")
 ProgressBar/styles/background = ExtResource("1_mbn3v")

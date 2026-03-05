@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjcsjc87cvvcu"]
+[gd_scene format=3 uid="uid://bjcsjc87cvvcu"]
 
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="1_ffo6q"]
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="2_clmel"]
 [ext_resource type="Script" uid="uid://b7v5ftjxpnlnp" path="res://Scenes/InventoryStoring.gd" id="3_tvprw"]
 
-[node name="Storage" type="Control"]
+[node name="Storage" type="Control" unique_id=1945124820]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FullHBox" type="HBoxContainer" parent="."]
+[node name="FullHBox" type="HBoxContainer" parent="." unique_id=855872637]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,12 +21,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = -10
 
-[node name="Inventory" type="VBoxContainer" parent="FullHBox"]
+[node name="Inventory" type="VBoxContainer" parent="FullHBox" unique_id=2090073752]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = -10
 
-[node name="Label" type="Label" parent="FullHBox/Inventory"]
+[node name="Label" type="Label" parent="FullHBox/Inventory" unique_id=1425566549]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.12
@@ -37,7 +37,22 @@ text = "Inventory"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Scroll" type="ScrollContainer" parent="FullHBox/Inventory"]
+[node name="Button" type="Button" parent="FullHBox/Inventory/Label" unique_id=866939645]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = -38.0
+offset_right = -16.0
+offset_bottom = 34.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Move All"
+
+[node name="Scroll" type="ScrollContainer" parent="FullHBox/Inventory" unique_id=1844637718]
 z_index = -2
 layout_mode = 2
 size_flags_vertical = 3
@@ -46,7 +61,7 @@ theme_override_styles/panel = ExtResource("2_clmel")
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="Inventory" type="VBoxContainer" parent="FullHBox/Inventory/Scroll"]
+[node name="Inventory" type="VBoxContainer" parent="FullHBox/Inventory/Scroll" unique_id=1395100259]
 clip_children = 2
 light_mask = 0
 clip_contents = true
@@ -57,12 +72,12 @@ mouse_filter = 2
 theme_override_constants/separation = 8
 script = ExtResource("3_tvprw")
 
-[node name="Storage" type="VBoxContainer" parent="FullHBox"]
+[node name="Storage" type="VBoxContainer" parent="FullHBox" unique_id=638352934]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = -10
 
-[node name="Label" type="Label" parent="FullHBox/Storage"]
+[node name="Label" type="Label" parent="FullHBox/Storage" unique_id=1412192033]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.12
@@ -73,7 +88,7 @@ text = "Storage"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Scroll" type="ScrollContainer" parent="FullHBox/Storage"]
+[node name="Scroll" type="ScrollContainer" parent="FullHBox/Storage" unique_id=2122581173]
 z_index = -2
 layout_mode = 2
 size_flags_vertical = 3
@@ -81,7 +96,7 @@ mouse_default_cursor_shape = 9
 theme_override_styles/panel = ExtResource("2_clmel")
 vertical_scroll_mode = 2
 
-[node name="Storage" type="VBoxContainer" parent="FullHBox/Storage/Scroll"]
+[node name="Storage" type="VBoxContainer" parent="FullHBox/Storage/Scroll" unique_id=319123870]
 clip_children = 2
 light_mask = 0
 clip_contents = true
@@ -92,3 +107,5 @@ mouse_filter = 2
 theme_override_constants/separation = 8
 script = ExtResource("3_tvprw")
 LeftSide = false
+
+[connection signal="pressed" from="FullHBox/Inventory/Label/Button" to="FullHBox/Inventory/Scroll/Inventory" method="MoveEverything"]

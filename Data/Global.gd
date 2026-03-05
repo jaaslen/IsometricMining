@@ -17,6 +17,7 @@ var TileSize : Vector2i = Vector2i(64,34)
 var TotalOreAmount: int = 3
 var TotalStoneAmount : int = 1
 
+var InventoryCapacity:int = 5000
 var OwnedTraits : Array = []
 var OreAmounts : Array = []
 var StorageOreAmounts : Array = []
@@ -335,3 +336,21 @@ func _notification(event):
 	if event == NOTIFICATION_WM_CLOSE_REQUEST:
 		Save()
 		get_tree().quit()
+
+func Suffix(value: float) -> String:
+	var suffixes = [
+		"", "K", "M", "B", "T",
+		"Qd", "Qi", "Sx", "Sp",
+		"Oc", "No", "Dc", "UDc", 
+		"DDc", "TDc", "QdDc", 
+		"QiDc", "SxDc", "SpDc", 
+		"OcDc", "NoDc", "Vg"
+	]
+	
+	var index = 0
+	
+	while abs(value) >= 1000.0 and index < suffixes.size() - 1:
+		value /= 1000.0
+		index += 1
+
+	return "%.2f%s" % [value, suffixes[index]]

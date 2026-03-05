@@ -1,6 +1,6 @@
 extends Label
 var ores = 0
-var capacity = 22500
+var capacity = Global.InventoryCapacity
 signal FullCheck
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

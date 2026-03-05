@@ -1,9 +1,8 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bhh6e3pgmrfbn"]
+[gd_resource type="Theme" format=3 uid="uid://bhh6e3pgmrfbn"]
 
 [ext_resource type="Texture2D" uid="uid://dhmp7jfu8pog1" path="res://Visuals/Panel.png" id="1_2u6v2"]
 [ext_resource type="StyleBox" uid="uid://br67tv5l7dcgo" path="res://Visuals/StatBar.tres" id="1_cbv25"]
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="1_m0vlx"]
-[ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="3_h7b0r"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h7b0r"]
 texture = ExtResource("1_2u6v2")
@@ -17,7 +16,6 @@ modulate_color = Color(3.7307422, 3.7307422, 3.7307422, 1)
 Button/styles/disabled = ExtResource("1_m0vlx")
 Button/styles/hover = SubResource("StyleBoxTexture_h7b0r")
 Button/styles/normal = ExtResource("1_m0vlx")
-Label/fonts/font = ExtResource("3_h7b0r")
 Panel/styles/panel = ExtResource("1_cbv25")
 PanelContainer/styles/panel = ExtResource("1_m0vlx")
 ProgressBar/styles/background = ExtResource("1_m0vlx")

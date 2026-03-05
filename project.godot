@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Isometric"
 run/main_scene="res://Scenes/Main.tscn"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=60
 config/icon="res://Visuals/icon.svg"
 
@@ -37,7 +41,7 @@ version_control/autoload_on_startup=true
 [gui]
 
 timers/tooltip_delay_sec.editor_hint=0.2
-theme/custom_font="uid://dl7cun7xt8hoy"
+theme/custom_font="uid://dpdergqk62w75"
 
 [input]
 

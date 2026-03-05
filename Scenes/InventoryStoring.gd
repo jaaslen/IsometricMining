@@ -67,3 +67,11 @@ func OreChanged(OreID):
 	#self.get_child(OreID).modulate = Color(1.0, 0.0, 0.0, 1.0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
+
+func MoveEverything() -> void:
+	var index = 0
+	for amount in Global.OreAmounts:
+		Global.StoreOre(index,amount,true)
+		index += 1
+	pass # Replace with function body.
