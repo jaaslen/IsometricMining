@@ -994,7 +994,6 @@ offset_top = -1000.0
 offset_right = 0.0
 offset_bottom = -1000.0
 mouse_filter = 2
-theme = ExtResource("14_c4ay3")
 script = ExtResource("11_5vvyt")
 
 [node name="Dictionary" parent="CanvasLayer" unique_id=325743707 instance=ExtResource("12_c2ibq")]
@@ -1003,7 +1002,6 @@ offset_left = 1900.0
 offset_right = 1940.0
 offset_bottom = 96.0
 mouse_filter = 2
-theme = ExtResource("14_c4ay3")
 
 [node name="BaseUI" type="Control" parent="CanvasLayer" unique_id=214010551]
 layout_mode = 3
