@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://w4sqtpegcrlw"]
+[gd_scene format=3 uid="uid://w4sqtpegcrlw"]
 
 [ext_resource type="StyleBox" uid="uid://cwtqwhjmul0wo" path="res://Visuals/CostPanel.tres" id="1_omuaq"]
 [ext_resource type="Script" uid="uid://brkaflc6e6d3v" path="res://Scripts/Cost.gd" id="1_tfwe7"]
@@ -7,14 +7,14 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omuaq"]
 bg_color = Color(1, 1, 1, 0.62352943)
 
-[node name="PanelContainer" type="PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" unique_id=2122839461]
 custom_minimum_size = Vector2(0, 64)
 offset_right = 353.0
 offset_bottom = 64.0
 theme_override_styles/panel = ExtResource("1_omuaq")
 script = ExtResource("1_tfwe7")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1665824736]
 modulate = Color(1, 1, 1, 0.27100003)
 layout_mode = 2
 size_flags_vertical = 1
@@ -23,18 +23,18 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_omuaq")
 step = 1.0
 value = 67.0
 
-[node name="Text" type="HBoxContainer" parent="."]
+[node name="Text" type="HBoxContainer" parent="." unique_id=911926770]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 0
 
-[node name="Texture" type="TextureRect" parent="Text"]
+[node name="Texture" type="TextureRect" parent="Text" unique_id=1607584439]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Name" type="Label" parent="Text"]
+[node name="Name" type="Label" parent="Text" unique_id=1755500681]
 z_index = 1
 clip_contents = true
 custom_minimum_size = Vector2(0, 56)
@@ -49,14 +49,14 @@ text = "???"
 vertical_alignment = 1
 text_overrun_behavior = 1
 
-[node name="Divider" type="ColorRect" parent="Text"]
+[node name="Divider" type="ColorRect" parent="Text" unique_id=1915661559]
 custom_minimum_size = Vector2(0.01, 40.475)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.02
 
-[node name="Cost" type="Label" parent="Text"]
+[node name="Cost" type="Label" parent="Text" unique_id=1589127130]
 z_index = 1
 clip_contents = true
 custom_minimum_size = Vector2(0, 56)

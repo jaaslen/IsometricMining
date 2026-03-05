@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1pe2igwdtaun"]
+[gd_scene format=3 uid="uid://d1pe2igwdtaun"]
 
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="1_cmwbx"]
 [ext_resource type="Script" uid="uid://bcnxxteurg3yx" path="res://Scripts/MiniStatBar.gd" id="2_sfqhn"]
@@ -6,30 +6,30 @@
 [ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="4_eegc5"]
 [ext_resource type="Script" uid="uid://b6toywc661chx" path="res://Scripts/ListLabel.gd" id="5_d1p0m"]
 
-[node name="PanelContainer" type="PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" unique_id=17400746]
 offset_right = 800.0
 offset_bottom = 68.0
 size_flags_vertical = 4
 theme = ExtResource("1_cmwbx")
 script = ExtResource("2_sfqhn")
 
-[node name="Container" type="VBoxContainer" parent="."]
+[node name="Container" type="VBoxContainer" parent="." unique_id=1597209769]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Text" type="HBoxContainer" parent="Container"]
+[node name="Text" type="HBoxContainer" parent="Container" unique_id=1288178114]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="Texture" type="TextureRect" parent="Container/Text"]
+[node name="Texture" type="TextureRect" parent="Container/Text" unique_id=1274180343]
 visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 texture = ExtResource("3_na2f5")
 expand_mode = 1
 
-[node name="Name" type="Label" parent="Container/Text"]
+[node name="Name" type="Label" parent="Container/Text" unique_id=851697548]
 z_index = 1
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -46,7 +46,7 @@ vertical_alignment = 2
 text_overrun_behavior = 1
 script = ExtResource("5_d1p0m")
 
-[node name="Increase" type="Label" parent="Container/Text"]
+[node name="Increase" type="Label" parent="Container/Text" unique_id=478560392]
 z_index = 1
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -63,7 +63,7 @@ vertical_alignment = 2
 text_overrun_behavior = 1
 script = ExtResource("5_d1p0m")
 
-[node name="Seperation" type="Label" parent="Container/Text"]
+[node name="Seperation" type="Label" parent="Container/Text" unique_id=1359981850]
 z_index = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -80,7 +80,7 @@ vertical_alignment = 2
 text_overrun_behavior = 1
 script = ExtResource("5_d1p0m")
 
-[node name="Value" type="Label" parent="Container/Text"]
+[node name="Value" type="Label" parent="Container/Text" unique_id=1785664]
 z_index = 1
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -96,7 +96,7 @@ vertical_alignment = 2
 text_overrun_behavior = 1
 script = ExtResource("5_d1p0m")
 
-[node name="Increase3" type="Label" parent="Container/Text"]
+[node name="Increase3" type="Label" parent="Container/Text" unique_id=1098219273]
 visible = false
 z_index = 1
 custom_minimum_size = Vector2(0, 35)

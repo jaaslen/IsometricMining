@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://oyxab1yvfiji"]
+[gd_scene format=3 uid="uid://oyxab1yvfiji"]
 
 [ext_resource type="Script" uid="uid://dj1fqu822omon" path="res://Scripts/InventoryValue.gd" id="1_5i07b"]
 [ext_resource type="Theme" uid="uid://bujuhsiar273u" path="res://Visuals/OrbitronTheme.tres" id="1_qvtl0"]
@@ -20,7 +20,7 @@ modulate_color = Color(2.184344, 2.184344, 2.184344, 1)
 atlas = ExtResource("3_qvtl0")
 region = Rect2(0, 0, 64, 68)
 
-[node name="Panel" type="Panel"]
+[node name="Panel" type="Panel" unique_id=1835721096]
 clip_contents = true
 custom_minimum_size = Vector2(0, 45)
 offset_right = 424.0
@@ -31,7 +31,7 @@ theme = ExtResource("1_qvtl0")
 theme_override_styles/panel = SubResource("StyleBoxTexture_qcpwt")
 script = ExtResource("1_5i07b")
 
-[node name="Text" type="HBoxContainer" parent="."]
+[node name="Text" type="HBoxContainer" parent="." unique_id=518476992]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,7 +43,7 @@ size_flags_vertical = 8
 mouse_filter = 2
 theme_override_constants/separation = 4
 
-[node name="Texture" type="TextureRect" parent="Text"]
+[node name="Texture" type="TextureRect" parent="Text" unique_id=325535345]
 custom_minimum_size = Vector2(47.62, 41.66)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -54,7 +54,7 @@ texture = SubResource("AtlasTexture_2gq36")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Name" type="Label" parent="Text"]
+[node name="Name" type="Label" parent="Text" unique_id=283064192]
 z_index = 1
 clip_contents = true
 layout_mode = 2
@@ -66,7 +66,7 @@ horizontal_alignment = 1
 vertical_alignment = 2
 text_overrun_behavior = 1
 
-[node name="Divider" type="ColorRect" parent="Text"]
+[node name="Divider" type="ColorRect" parent="Text" unique_id=1305991430]
 custom_minimum_size = Vector2(0.01, 45)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -74,7 +74,7 @@ size_flags_vertical = 8
 size_flags_stretch_ratio = 0.02
 mouse_filter = 2
 
-[node name="Cost" type="Label" parent="Text"]
+[node name="Cost" type="Label" parent="Text" unique_id=501717260]
 z_index = 1
 clip_contents = true
 layout_mode = 2

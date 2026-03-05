@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://be6lsgn3ms26"]
+[gd_scene format=3 uid="uid://be6lsgn3ms26"]
 
 [ext_resource type="Script" uid="uid://nuh1nxkw6hlv" path="res://Scripts/OreInfo.gd" id="1_lg6u6"]
 [ext_resource type="Texture2D" uid="uid://dcicd3utpj2kf" path="res://Visuals/OreSheet.png" id="2_pr6m8"]
@@ -8,7 +8,7 @@
 atlas = ExtResource("2_pr6m8")
 region = Rect2(128, 0, 128, 136)
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=1398558418]
 layout_mode = 3
 anchor_right = 0.083000004
 anchor_bottom = 0.156
@@ -18,7 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lg6u6")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=500605163]
 z_index = 1
 layout_mode = 0
 offset_left = 16.0
@@ -29,17 +29,17 @@ theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1851666345]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1940523556]
 texture_filter = 1
 layout_mode = 2
 texture = SubResource("AtlasTexture_auoxk")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=961969495]
 layout_mode = 0
 offset_right = 160.0
 offset_bottom = 160.0

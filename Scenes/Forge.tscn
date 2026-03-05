@@ -166,7 +166,6 @@ script = ExtResource("9_ugol7")
 
 [node name="Button" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/Selection" unique_id=1922722823 instance=ExtResource("9_gs31o")]
 layout_mode = 2
-theme = ExtResource("2_667t3")
 
 [node name="Label" type="Label" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer" unique_id=1928889459]
 layout_mode = 2
@@ -186,7 +185,6 @@ script = ExtResource("6_042mp")
 
 [node name="Button" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/UpgradeSelection2" unique_id=1188483409 instance=ExtResource("9_gs31o")]
 layout_mode = 2
-theme = ExtResource("2_667t3")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer" unique_id=42393773]
 layout_mode = 2

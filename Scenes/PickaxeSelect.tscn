@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://xok4ed1xpd5x"]
+[gd_scene format=3 uid="uid://xok4ed1xpd5x"]
 
 [ext_resource type="Script" uid="uid://bynqtr6o477ob" path="res://Scripts/PickaxeSelection.gd" id="1_48p6v"]
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="1_dgjc1"]
@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://cqd6q58brunci" path="res://Scripts/RichListLabel.gd" id="4_bmk7m"]
 [ext_resource type="FontFile" uid="uid://dpdergqk62w75" path="res://Visuals/Orbitron-VariableFont_wght.ttf" id="6_iktsf"]
 
-[node name="Button" type="Button"]
+[node name="Button" type="Button" unique_id=1486486683]
 custom_minimum_size = Vector2(240, 100)
 offset_right = 536.0
 offset_bottom = 144.0
@@ -16,7 +16,7 @@ size_flags_horizontal = 3
 theme = ExtResource("1_dgjc1")
 script = ExtResource("1_48p6v")
 
-[node name="Texture" type="TextureRect" parent="."]
+[node name="Texture" type="TextureRect" parent="." unique_id=689352701]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 0
 offset_left = 16.0
@@ -27,13 +27,13 @@ size_flags_horizontal = 0
 texture = ExtResource("3_wob85")
 expand_mode = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1050923681]
 visible = false
 modulate = Color(1, 1, 1, 0.238)
 layout_mode = 0
 show_percentage = false
 
-[node name="Label" type="RichTextLabel" parent="."]
+[node name="Label" type="RichTextLabel" parent="." unique_id=1358114135]
 layout_mode = 0
 offset_left = 112.0
 offset_top = 16.0
@@ -50,7 +50,7 @@ autowrap_mode = 0
 vertical_alignment = 2
 script = ExtResource("4_bmk7m")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1097033466]
 modulate = Color(1, 1, 1, 0.6117647)
 layout_mode = 1
 anchors_preset = 9
@@ -67,7 +67,7 @@ text = "Equip?"
 vertical_icon_alignment = 2
 script = ExtResource("4_3lv84")
 
-[node name="ID" type="Label" parent="."]
+[node name="ID" type="Label" parent="." unique_id=858748157]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="OreData" load_steps=2 format=3 uid="uid://ck2xd2fqmmwep"]
+[gd_resource type="Resource" script_class="OreData" format=3 uid="uid://ck2xd2fqmmwep"]
 
 [ext_resource type="Script" uid="uid://cowkbdut6hsrt" path="res://Scripts/OreData.gd" id="1_s07gq"]
 
