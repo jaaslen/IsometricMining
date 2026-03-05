@@ -6,7 +6,7 @@ var Order = [1,2,3,5,7,6,4,13,14,16,18,22,9,15,8,12,17,32,34,11,10,28,23,20,24,2
 @export var Ore = Global.GameData["ores"]["0"]
 
 @onready var PanelStyle = load("uid://bu0qaxonbmuh1")
-@onready var Buttons = %GridContainer
+#@onready var Buttons = %GridContainer
 @onready var IDlabel = $FullContainer/HBoxContainer/VBoxContainer2/HBoxContainer/Panel3/ID
 @onready var Icon = $FullContainer/HBoxContainer/VBoxContainer/Panel/MarginContainer/Icon
 @onready var Name = $FullContainer/HBoxContainer/VBoxContainer/Label
@@ -31,10 +31,11 @@ func _ready() -> void:
 	LoadOre(1)
 
 func reconnect():
-	if Buttons != null:
-		for i in Buttons.get_children():
-			if i.is_connected("OreSelected",LoadOre) == false:
-				i.OreSelected.connect(LoadOre)
+	pass
+	#if Buttons != null:
+		#for i in Buttons.get_children():
+			#if i.is_connected("OreSelected",LoadOre) == false:
+				#i.OreSelected.connect(LoadOre)
 
 func LoadOre(OreID,opening = true):
 	

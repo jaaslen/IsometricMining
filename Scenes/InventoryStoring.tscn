@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8rriee0ffc4q"]
+[gd_scene format=3 uid="uid://c8rriee0ffc4q"]
 
 [ext_resource type="Theme" uid="uid://bujuhsiar273u" path="res://Visuals/OrbitronTheme.tres" id="1_eal2v"]
 [ext_resource type="Texture2D" uid="uid://dhmp7jfu8pog1" path="res://Visuals/Panel.png" id="2_dq7vn"]
-[ext_resource type="Script" uid="uid://bbkr2um2q1wma" path="res://StoringInventoryValue.gd" id="3_ud746"]
+[ext_resource type="Script" uid="uid://bbkr2um2q1wma" path="res://Scripts/StoringInventoryValue.gd" id="3_ud746"]
 [ext_resource type="Texture2D" uid="uid://dcicd3utpj2kf" path="res://Visuals/OreSheet.png" id="4_k6h4k"]
 [ext_resource type="StyleBox" uid="uid://ckar3elxenjvx" path="res://Visuals/ThinPanel.tres" id="5_dq7vn"]
 

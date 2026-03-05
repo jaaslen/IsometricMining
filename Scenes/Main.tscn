@@ -23,7 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://chbgis4c6afk7" path="res://Scenes/Dictionary.tscn" id="12_c2ibq"]
 [ext_resource type="Texture2D" uid="uid://dqs17kmqkxwp4" path="res://Visuals/Background.png" id="13_c6i3y"]
 [ext_resource type="Script" uid="uid://b3km0j1twgxfq" path="res://Scripts/Cutscenes.gd" id="14_c2ibq"]
-[ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="14_c4ay3"]
 [ext_resource type="Texture2D" uid="uid://cory6h36gsiop" path="res://Visuals/OIP-2832759397.jpg" id="14_j4qnp"]
 [ext_resource type="Script" uid="uid://birc53blgft01" path="res://Scripts/XPBar.gd" id="14_jyqft"]
 [ext_resource type="Texture2D" uid="uid://dhmp7jfu8pog1" path="res://Visuals/Panel.png" id="17_5jffn"]
@@ -985,7 +984,6 @@ script = ExtResource("6_0sclb")
 z_index = 30
 offset_left = -1900.0
 offset_right = -1900.0
-theme = ExtResource("14_c4ay3")
 script = ExtResource("6_btbly")
 
 [node name="Forge" parent="CanvasLayer" unique_id=386438354 instance=ExtResource("10_wkp8b")]
@@ -994,6 +992,7 @@ offset_top = -1000.0
 offset_right = 0.0
 offset_bottom = -1000.0
 mouse_filter = 2
+theme = null
 script = ExtResource("11_5vvyt")
 
 [node name="Dictionary" parent="CanvasLayer" unique_id=325743707 instance=ExtResource("12_c2ibq")]
@@ -1002,6 +1001,7 @@ offset_left = 1900.0
 offset_right = 1940.0
 offset_bottom = 96.0
 mouse_filter = 2
+theme = null
 
 [node name="BaseUI" type="Control" parent="CanvasLayer" unique_id=214010551]
 layout_mode = 3
@@ -1011,7 +1011,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("14_c4ay3")
 script = ExtResource("8_c5snn")
 
 [node name="DepthLabel" type="Label" parent="CanvasLayer/BaseUI" unique_id=1568614968]
@@ -1020,7 +1019,6 @@ offset_left = 932.0
 offset_top = 224.0
 offset_right = 972.0
 offset_bottom = 247.0
-theme = ExtResource("14_c4ay3")
 theme_override_constants/outline_size = 0
 text = "0m"
 script = ExtResource("7_lgr22")
@@ -1031,7 +1029,6 @@ offset_left = 876.0
 offset_top = 224.0
 offset_right = 916.0
 offset_bottom = 247.0
-theme = ExtResource("14_c4ay3")
 theme_override_constants/outline_size = 0
 text = "0m"
 script = ExtResource("8_trn2v")
@@ -1042,7 +1039,6 @@ offset_left = 652.0
 offset_top = 272.0
 offset_right = 692.0
 offset_bottom = 295.0
-theme = ExtResource("14_c4ay3")
 theme_override_constants/outline_size = 0
 text = "0m"
 script = ExtResource("9_03owx")
@@ -1054,7 +1050,6 @@ offset_left = 900.0
 offset_top = 272.0
 offset_right = 940.0
 offset_bottom = 295.0
-theme = ExtResource("14_c4ay3")
 theme_override_constants/outline_size = 0
 script = ExtResource("9_erwvk")
 
@@ -1074,7 +1069,6 @@ offset_bottom = -63.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-theme = ExtResource("14_c4ay3")
 theme_override_styles/background = SubResource("StyleBoxTexture_kpo4j")
 theme_override_styles/fill = SubResource("StyleBoxFlat_h1m7h")
 value = 50.0
@@ -1089,7 +1083,6 @@ layout_mode = 0
 offset_left = 150.0
 offset_right = 694.0
 offset_bottom = 56.0
-theme = ExtResource("14_c4ay3")
 theme_override_font_sizes/font_size = 26
 theme_override_styles/fill = SubResource("StyleBoxFlat_kpo4j")
 value = 50.0
@@ -1101,7 +1094,6 @@ offset_left = 150.0
 offset_right = 896.0
 offset_bottom = 48.0
 tooltip_text = "your XP bar, shows how close you are to the next tier / rank. Left number is current xp, right number is required xp."
-theme = ExtResource("14_c4ay3")
 value = 50.0
 rounded = true
 allow_greater = true
@@ -1122,7 +1114,6 @@ offset_left = -150.0
 offset_right = 9.999878
 offset_bottom = 159.999
 tooltip_text = "rank this is how cool you are"
-theme = ExtResource("14_c4ay3")
 
 [node name="Level" type="Sprite2D" parent="CanvasLayer/BaseUI/TextureProgressBar/Rank" unique_id=1314883875]
 z_index = 1
@@ -1133,10 +1124,9 @@ texture = ExtResource("17_c4ay3")
 [node name="Tier" type="PanelContainer" parent="CanvasLayer/BaseUI/TextureProgressBar" unique_id=1249379833]
 layout_mode = 0
 offset_top = 40.0
-offset_right = 202.0
+offset_right = 185.0
 offset_bottom = 160.0
 tooltip_text = "Your tier, higher levels usually have more tiers. Act as mini levels in between the ranks."
-theme = ExtResource("14_c4ay3")
 
 [node name="Level" type="Sprite2D" parent="CanvasLayer/BaseUI/TextureProgressBar/Tier" unique_id=743681765]
 position = Vector2(71, 58)
@@ -1144,7 +1134,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("21_vvnwx")
 
 [node name="Level" type="Sprite2D" parent="CanvasLayer/BaseUI/TextureProgressBar/Tier/Level" unique_id=1897965580]
-position = Vector2(335.00003, -185.00003)
+position = Vector2(1160, -30.000013)
 texture = ExtResource("21_vvnwx")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/BaseUI/TextureProgressBar/Tier" unique_id=278608050]
@@ -1152,7 +1142,6 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 tooltip_text = "your XP bar, shows how close you are to the next tier / rank. Left number is current xp, right number is required xp."
-theme = ExtResource("14_c4ay3")
 value = 50.0
 rounded = true
 allow_greater = true
@@ -1169,7 +1158,6 @@ offset_left = 18.0
 offset_top = 18.0
 offset_right = 234.0
 offset_bottom = 38.0
-theme = ExtResource("14_c4ay3")
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 20
 text = "6350"
@@ -1180,7 +1168,6 @@ offset_left = 506.0
 offset_top = 18.0
 offset_right = 730.0
 offset_bottom = 35.0
-theme = ExtResource("14_c4ay3")
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 20
 text = "100"
@@ -1193,7 +1180,6 @@ offset_left = -138.0
 offset_top = 13.0
 offset_right = -98.0
 offset_bottom = 30.0
-theme = ExtResource("14_c4ay3")
 theme_override_constants/outline_size = 0
 text = "10x"
 
@@ -1207,7 +1193,6 @@ offset_left = -476.0
 offset_top = 202.0
 grow_horizontal = 0
 grow_vertical = 2
-theme = ExtResource("14_c4ay3")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/BaseUI/Inventory" unique_id=1810906618]
 z_index = -2
@@ -1219,7 +1204,6 @@ grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Inventory, when full, return to the surface to put your ores in storage."
 mouse_default_cursor_shape = 9
-theme = ExtResource("14_c4ay3")
 theme_override_styles/panel = ExtResource("8_c4ay3")
 script = ExtResource("25_6heos")
 
@@ -1231,7 +1215,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-theme = ExtResource("14_c4ay3")
 theme_override_constants/separation = 10
 script = ExtResource("6_lgr22")
 
@@ -1240,7 +1223,6 @@ layout_mode = 0
 offset_top = -18.0
 offset_right = 78.0
 offset_bottom = 5.0
-theme = ExtResource("14_c4ay3")
 theme_override_constants/outline_size = 0
 text = "90/100"
 script = ExtResource("23_xvtyr")
@@ -1253,7 +1235,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("14_c4ay3")
 theme_override_styles/panel = ExtResource("24_x3rx7")
 script = ExtResource("25_6heos")
 
@@ -1269,7 +1250,6 @@ offset_bottom = 128.0
 grow_horizontal = 0
 scale = Vector2(0.5, 0.5)
 focus_mode = 0
-theme = ExtResource("14_c4ay3")
 texture_normal = SubResource("PlaceholderTexture2D_c6i3y")
 stretch_mode = 0
 script = ExtResource("32_u7mjy")
@@ -1286,7 +1266,6 @@ offset_bottom = 128.0
 grow_horizontal = 0
 scale = Vector2(0.5, 0.5)
 focus_mode = 0
-theme = ExtResource("14_c4ay3")
 texture_normal = SubResource("PlaceholderTexture2D_c6i3y")
 stretch_mode = 0
 script = ExtResource("32_u7mjy")
@@ -1303,7 +1282,6 @@ offset_bottom = 128.0
 grow_horizontal = 0
 scale = Vector2(0.5, 0.5)
 focus_mode = 0
-theme = ExtResource("14_c4ay3")
 texture_normal = SubResource("PlaceholderTexture2D_c6i3y")
 stretch_mode = 0
 script = ExtResource("32_u7mjy")
@@ -1323,7 +1301,6 @@ offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-theme = ExtResource("14_c4ay3")
 script = ExtResource("25_4yxf6")
 
 [node name="Label" type="Label" parent="CanvasLayer/Prompt" unique_id=1437568710]
@@ -1333,7 +1310,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("14_c4ay3")
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 51
 theme_override_styles/normal = ExtResource("8_c4ay3")
@@ -1351,7 +1327,6 @@ offset_top = 292.0
 offset_right = 438.0
 offset_bottom = -16.0
 grow_vertical = 2
-theme = ExtResource("14_c4ay3")
 text = "nah"
 
 [node name="Yes" type="Button" parent="CanvasLayer/Prompt/Label" unique_id=1938239709]
@@ -1364,7 +1339,6 @@ offset_top = 292.0
 offset_right = 580.0
 offset_bottom = -16.0
 grow_vertical = 2
-theme = ExtResource("14_c4ay3")
 text = "yeah"
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1433114537]
@@ -1377,7 +1351,6 @@ offset_right = -1316.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("14_c4ay3")
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 51
 theme_override_styles/normal = ExtResource("8_c4ay3")
@@ -1428,7 +1401,6 @@ offset_bottom = 6080.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("14_c4ay3")
 theme_override_styles/panel = SubResource("StyleBoxFlat_fpfj3")
 
 [node name="Label" type="Label" parent="Panel" unique_id=2048706056]
@@ -1437,7 +1409,6 @@ offset_left = 600.0
 offset_top = 96.0
 offset_right = 1348.0
 offset_bottom = 188.0
-theme = ExtResource("14_c4ay3")
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 91
 text = "Shallow Caves"
@@ -1491,7 +1462,6 @@ offset_right = 1092.0
 offset_bottom = 460.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("14_c4ay3")
 text = "Chest"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1063907511]
@@ -1507,7 +1477,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 mouse_filter = 2
-theme = ExtResource("14_c4ay3")
 color = Color(0.23753911, 0.23753914, 0.23753911, 1)
 
 [connection signal="ExitAttempt" from="Detection" to="CanvasLayer/Prompt" method="ExitAttempt"]

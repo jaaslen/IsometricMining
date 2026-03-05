@@ -19,10 +19,10 @@ func _ready() -> void:
 	Sprite.texture = load("res://Visuals/Ranks/" + level["name"] + ".png")
 	Tier.texture = load("res://Visuals/Ranks/" + str(int(level["Tier"])) + ".png")
 	max_value = level["nextxp"]
-	self_modulate = Color(level["color"]) * 1.8
-	$Rank.self_modulate = Color(level["color"]) * 1.8
-	$Tier.self_modulate = Color(level["color"]) * 1.8
-	Tier.self_modulate = Color(level["color"]) * 1.8
+	self_modulate = Color(level["color"]) 
+	$Rank.self_modulate = Color(level["color"]) 
+	$Tier.self_modulate = Color(level["color"]) 
+	Tier.self_modulate = Color(level["color"]) 
 	
 	
 	#max_value = Global.GameData["levels"][str(Global.Level)]["nextxp"]
@@ -62,13 +62,13 @@ func LevelUp():
 			#Sprite.texture = load("res://Visuals/Ranks/" + level["name"] + ".png")
 			#Tier.texture = load("res://Visuals/Ranks/" + str(int(level["Tier"])) + ".png")
 			#max_value = level["nextxp"]
-			#self_modulate = Color(level["color"]) * 1.8
-			#$Rank.self_modulate = Color(level["color"]) * 1.8
-			#$Tier.self_modulate = Color(level["color"]) * 1.8
-			#Tier.self_modulate = Color(level["color"]) * 1.8
+			#self_modulate = Color(level["color"]) 
+			#$Rank.self_modulate = Color(level["color"]) 
+			#$Tier.self_modulate = Color(level["color"]) 
+			#Tier.self_modulate = Color(level["color"]) 
 			
 func LevelUI(level):
-	self_modulate = Color(level["color"]) * 1.8
-	$Rank.self_modulate = Color(level["color"]) * 1.8
-	$Tier.self_modulate = Color(level["color"]) * 1.8
-	Tier.self_modulate = Color(level["color"]) * 1.8
+	self_modulate = Color(level["color"]) 
+	$Rank.self_modulate = Color(level["color"]) 
+	$Tier.self_modulate = Color(level["color"]) 
+	Tier.self_modulate = Color(level["color"]) 

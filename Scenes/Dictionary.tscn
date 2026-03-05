@@ -53,7 +53,6 @@ layout_mode = 1
 offset_left = 1900.0
 offset_right = 1900.0
 offset_bottom = 0.0
-theme = ExtResource("4_d3rv7")
 
 [node name="Panel" type="Panel" parent="." unique_id=576616960]
 z_index = -1

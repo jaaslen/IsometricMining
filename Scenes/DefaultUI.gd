@@ -10,4 +10,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func LevelUI(level):
-	self.self_modulate = Color(level["color"]) * 1.8
+	self.self_modulate = Color(level["color"]) 
