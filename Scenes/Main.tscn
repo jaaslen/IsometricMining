@@ -1133,11 +1133,7 @@ position = Vector2(71, 58)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("21_vvnwx")
 
-[node name="Level" type="Sprite2D" parent="CanvasLayer/BaseUI/TextureProgressBar/Tier/Level" unique_id=1897965580]
-position = Vector2(1160, -30.000013)
-texture = ExtResource("21_vvnwx")
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/BaseUI/TextureProgressBar/Tier" unique_id=278608050]
+[node name="TierProgess" type="TextureProgressBar" parent="CanvasLayer/BaseUI/TextureProgressBar/Tier" unique_id=278608050]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -1145,12 +1141,20 @@ tooltip_text = "your XP bar, shows how close you are to the next tier / rank. Le
 value = 50.0
 rounded = true
 allow_greater = true
-fill_mode = 2
+fill_mode = 3
 nine_patch_stretch = true
 stretch_margin_left = 10
+stretch_margin_top = 10
+stretch_margin_right = 10
+stretch_margin_bottom = 10
 texture_under = ExtResource("17_5jffn")
 texture_over = ExtResource("18_kpo4j")
 texture_progress = SubResource("GradientTexture1D_vvnwx")
+
+[node name="FinalTier" type="Sprite2D" parent="CanvasLayer/BaseUI/TextureProgressBar/Tier/TierProgess" unique_id=1897965580]
+position = Vector2(20, 18)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("21_vvnwx")
 
 [node name="Amount" type="Label" parent="CanvasLayer/BaseUI/TextureProgressBar" unique_id=1983879341]
 layout_mode = 0

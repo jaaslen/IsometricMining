@@ -29,14 +29,10 @@ window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
 
-[editor]
-
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true
-
 [gui]
 
 timers/tooltip_delay_sec.editor_hint=0.2
+theme/custom="uid://bhh6e3pgmrfbn"
 
 [input]
 

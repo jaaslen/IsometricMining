@@ -4,6 +4,7 @@ extends TextureProgressBar
 @onready var AmountLabel = $Amount
 @onready var RequiredLabel = $Required
 @onready var PowerLabel = $RankPower
+@onready var FinalTier = $Tier/TierProgess/FinalTier
 #var Level = Global.Level
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
