@@ -7,6 +7,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func LayerChanged(Layer):
+	
 	play("LayerTransition")
 
 

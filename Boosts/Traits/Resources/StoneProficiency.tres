@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="OreProficiency" format=3 uid="uid://etsa5q3rds3l"]
+
+[ext_resource type="Script" uid="uid://r5576cxa4qp5" path="res://Boosts/Traits/TraitBases/OreProficiency.gd" id="1_1b8ml"]
+
+[resource]
+script = ExtResource("1_1b8ml")
+BlockID = 1
+metadata/_custom_type_script = "uid://r5576cxa4qp5"

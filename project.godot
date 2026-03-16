@@ -19,12 +19,10 @@ config/icon="res://Visuals/icon.svg"
 [autoload]
 
 Global="*res://Data/Global.gd"
-TraitData="*res://Traits/TraitDatabase.gd"
+TraitData="*res://Boosts/BoostDatabase.gd"
 
 [display]
 
-window/size/viewport_width=1900
-window/size/viewport_height=1000
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
@@ -33,6 +31,7 @@ window/handheld/orientation=1
 
 timers/tooltip_delay_sec.editor_hint=0.2
 theme/custom="uid://bhh6e3pgmrfbn"
+theme/custom_font="uid://daivjrli5uhag"
 
 [input]
 

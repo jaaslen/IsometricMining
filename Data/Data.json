@@ -2089,7 +2089,7 @@
   "layers": {
 	"0": {
 	  "id": 0,
-	  "name": "surface",
+	  "name": "Surface",
 	  "color": "#EFEFEF",
 	  "brightness": 16,
 	  "atlas": [
@@ -2103,7 +2103,7 @@
 	},
 	"1": {
 	  "id": 1,
-	  "name": "shallow caves",
+	  "name": "Shallow Caves",
 	  "color": "#A2C4C9",
 	  "brightness": 8,
 	  "atlas": [

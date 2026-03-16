@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ddtdjj1xp3xsc"]
+
+[ext_resource type="Shader" uid="uid://e7br5tw64jaf" path="res://Scenes/TileGlow.gdshader" id="1_l4stg"]
+
+[resource]
+shader = ExtResource("1_l4stg")
+shader_parameter/strength = 1.0

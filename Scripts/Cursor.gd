@@ -13,7 +13,7 @@ var SnappedToGrid : Vector2 = Vector2(0,0)
 var Pos : Vector2 = Vector2(0,0)
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(TileSize)
+
 	pass
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
@@ -110,5 +110,5 @@ func _input(event):
 func Scaled() -> void:
 	TileSize = Global.TileSize / 2 #* (self.get_parent().scale.x / 4)# * (Detection.scale / 4)
 	CellSize = Global.CellSize / 2 #* (self.get_parent().scale.x / 4)# * (Detection.scale / 4)
-	print(TileSize)
+
 	pass # Replace with function body.

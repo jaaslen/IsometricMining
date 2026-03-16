@@ -27,6 +27,7 @@ var ForgedPickaxes : Array = []
 var FoundOres : Array = []
 var XP: int = 0
 var Level: Dictionary = GameData["levels"]["0"]
+var FoundLayers: Array = []
 
 var Tiles : Array = []
 
@@ -81,6 +82,7 @@ func Save():
 	SaveData["levels"] = PickaxeLevels
 	SaveData["unlocked"] = UnlockedPickaxes
 	SaveData["found"] = FoundOres
+	SaveData["foundlayers"] = FoundLayers
 	SaveData["forged"] = ForgedPickaxes
 	SaveData["xp"] = XP
 	SaveData["level"] = Level["id"]
@@ -91,7 +93,7 @@ func Save():
 func IntArray(FloatArray):
 	
 	var result: Array
-	#print(result)
+
 	for i in FloatArray:
 		result.append(int(i))
 	return result
@@ -106,6 +108,7 @@ func Load():
 	FoundOres = SaveData["found"]
 	XP = SaveData["xp"]
 	Level = GameData["levels"][str(int(SaveData["level"]))]
+	FoundLayers = SaveData["foundlayers"]
 
 func PrecomputeRarity(max_depth: int):
 	pass
@@ -119,7 +122,7 @@ func PrecomputeRarity(max_depth: int):
 		#PrecomputedRarity[ore_id] = rarity_map
 
 func LeveledUp():
-	print("ok")
+
 	emit_signal("LevelUp",Level)
 
 func CacheData():
@@ -137,7 +140,7 @@ func AvailableOres():
 			if layer == int(Layer["id"]):
 				Available.append(ore["id"])
 				
-	#print(Available)
+
 	OresInLayer = Available
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -352,5 +355,8 @@ func Suffix(value: float) -> String:
 	while abs(value) >= 1000.0 and index < suffixes.size() - 1:
 		value /= 1000.0
 		index += 1
-
-	return "%.2f%s" % [value, suffixes[index]]
+	
+	if index >= 1:
+		return "%.2f%s" % [value, suffixes[index]]
+	else:
+		return str(int(value))

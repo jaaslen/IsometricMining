@@ -1,0 +1,12 @@
+[gd_resource type="FontVariation" format=3 uid="uid://daivjrli5uhag"]
+
+[ext_resource type="FontFile" uid="uid://dpdergqk62w75" path="res://Visuals/Orbitron-VariableFont_wght.ttf" id="1_1b6hj"]
+
+[resource]
+base_font = ExtResource("1_1b6hj")
+variation_opentype = {
+2003265652: 800
+}
+opentype_features = {
+1667329140: 0
+}

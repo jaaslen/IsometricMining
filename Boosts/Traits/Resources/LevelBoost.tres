@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="LevelBoost" format=3 uid="uid://c0lm8mr1gh5lm"]
+
+[ext_resource type="Script" uid="uid://6o3a711dj1f5" path="res://Boosts/Traits/TraitBases/LevelBoost.gd" id="1_hbh7l"]
+
+[resource]
+script = ExtResource("1_hbh7l")
+metadata/_custom_type_script = "uid://6o3a711dj1f5"

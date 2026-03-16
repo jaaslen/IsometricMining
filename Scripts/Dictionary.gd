@@ -9,6 +9,8 @@ signal MenuClosed
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_viewport().connect("size_changed", Callable(self, "update_position_and_scale"))
+	update_position_and_scale()
+	position = ClosedPos
 	pass # Replace with function body.
 
 
@@ -20,6 +22,7 @@ func _process(delta: float) -> void:
 			position = ClosedPos
 			Closing = false
 			Open = false
+			modulate = Color(0,0,0,0)
 			#emit_signal("MenuClosed")
 		
 	elif Opening:
@@ -28,6 +31,7 @@ func _process(delta: float) -> void:
 			position = OpenPos
 			Open = true
 			Opening = false
+			
 			emit_signal("MenuOpened")
 			
 			
@@ -43,6 +47,7 @@ func OpenButtonPressed() -> void:
 	elif Closing:
 		Opening = true
 		Closing = false
+		modulate = Color(1,1,1,1)
 		%Control.LoadOre(1,false)
 		%GridContainer.AddScenes()
 		
@@ -50,8 +55,11 @@ func OpenButtonPressed() -> void:
 		Closing = Open
 		Opening = !Open
 		if Open:
+			
 			emit_signal("MenuClosed")
 		else:
+			modulate = Color(1,1,1,1)
+			
 			%Control.LoadOre(1,false)
 			%GridContainer.AddScenes()
 		

@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://dg1k0b6frkr3x"]
+[gd_scene format=3 uid="uid://cdsd6xbm8m530"]
 
-[ext_resource type="Script" uid="uid://c45yi4iig5m6m" path="res://Scripts/OreInfoPanel.gd" id="1_swqym"]
-[ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="2_wc56c"]
-[ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="3_7a4tp"]
-[ext_resource type="Texture2D" uid="uid://dcicd3utpj2kf" path="res://Visuals/OreSheet.png" id="4_e1t2j"]
-[ext_resource type="Texture2D" uid="uid://d35wlbx8ymfgl" path="res://Visuals/icon.svg" id="7_nbjw7"]
-[ext_resource type="Script" uid="uid://bqnhevyq06und" path="res://Scripts/Description.gd" id="8_665rs"]
+[ext_resource type="Script" uid="uid://c45yi4iig5m6m" path="res://Scripts/OreInfoPanel.gd" id="1_8vn1h"]
+[ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="2_ksa2b"]
+[ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="3_ptoyi"]
+[ext_resource type="Texture2D" uid="uid://dcicd3utpj2kf" path="res://Visuals/OreSheet.png" id="4_anmin"]
+[ext_resource type="Texture2D" uid="uid://d35wlbx8ymfgl" path="res://Visuals/icon.svg" id="5_71kgp"]
+[ext_resource type="Script" uid="uid://bqnhevyq06und" path="res://Scripts/Description.gd" id="6_ivsmg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqe5m"]
 bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
@@ -14,7 +14,7 @@ bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_auoxk"]
-atlas = ExtResource("4_e1t2j")
+atlas = ExtResource("4_anmin")
 region = Rect2(128, 0, 128, 136)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_42bqh"]
@@ -35,7 +35,7 @@ offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_swqym")
+script = ExtResource("1_8vn1h")
 
 [node name="FullContainer" type="VBoxContainer" parent="." unique_id=460564032]
 layout_mode = 1
@@ -48,6 +48,7 @@ theme_override_constants/separation = -8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="FullContainer" unique_id=1227188718]
 clip_contents = true
+custom_minimum_size = Vector2(1916, 750)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
@@ -75,9 +76,10 @@ custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_ksa2b")
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = ExtResource("3_7a4tp")
-text = "Ore Name"
+theme_override_styles/normal = ExtResource("3_ptoyi")
+text = "Layer Name"
 horizontal_alignment = 1
 vertical_alignment = 2
 
@@ -127,9 +129,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -24.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 53
+theme_override_font_sizes/font_size = 91
 text = "★★★★★"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -170,7 +173,7 @@ offset_top = -97.75
 offset_bottom = 81.25
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_wc56c")
+theme_override_fonts/font = ExtResource("2_ksa2b")
 theme_override_font_sizes/font_size = 124
 theme_override_styles/normal = SubResource("StyleBoxEmpty_42bqh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nbjw7")
@@ -205,7 +208,7 @@ theme_override_constants/separation = 0
 visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-texture = ExtResource("7_nbjw7")
+texture = ExtResource("5_71kgp")
 expand_mode = 1
 
 [node name="Name" type="Label" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container/Text" unique_id=871982904]
@@ -292,7 +295,7 @@ autowrap_mode = 2
 tab_size = 0
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("8_665rs")
+script = ExtResource("6_ivsmg")
 
 [node name="Button" type="Button" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer" unique_id=1965654210]
 visible = false
@@ -301,7 +304,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0.4, 0.8, 1)
-theme_override_fonts/font = ExtResource("2_wc56c")
+theme_override_fonts/font = ExtResource("2_ksa2b")
 theme_override_font_sizes/font_size = 30
 text = "[?]"
 
@@ -321,7 +324,7 @@ theme_override_constants/separation = 0
 visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-texture = ExtResource("7_nbjw7")
+texture = ExtResource("5_71kgp")
 expand_mode = 1
 
 [node name="Name" type="Label" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container/Text" unique_id=2011026641]
@@ -408,7 +411,7 @@ autowrap_mode = 2
 tab_size = 0
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("8_665rs")
+script = ExtResource("6_ivsmg")
 
 [node name="Button" type="Button" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2" unique_id=2129392518]
 visible = false
@@ -417,7 +420,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0.4, 0.8, 1)
-theme_override_fonts/font = ExtResource("2_wc56c")
+theme_override_fonts/font = ExtResource("2_ksa2b")
 theme_override_font_sizes/font_size = 30
 text = "[?]"
 
@@ -437,7 +440,7 @@ theme_override_constants/separation = 0
 visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-texture = ExtResource("7_nbjw7")
+texture = ExtResource("5_71kgp")
 expand_mode = 1
 
 [node name="Name" type="Label" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container/Text" unique_id=1427156115]
@@ -523,7 +526,7 @@ autowrap_mode = 2
 tab_size = 0
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("8_665rs")
+script = ExtResource("6_ivsmg")
 
 [node name="Button" type="Button" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3" unique_id=1547284615]
 visible = false
@@ -532,7 +535,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0.4, 0.8, 1)
-theme_override_fonts/font = ExtResource("2_wc56c")
+theme_override_fonts/font = ExtResource("2_ksa2b")
 theme_override_font_sizes/font_size = 30
 text = "[?]"
 
@@ -552,7 +555,7 @@ theme_override_constants/separation = 0
 visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-texture = ExtResource("7_nbjw7")
+texture = ExtResource("5_71kgp")
 expand_mode = 1
 
 [node name="Name" type="Label" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4/Container/Text" unique_id=540886611]
@@ -638,7 +641,7 @@ autowrap_mode = 2
 tab_size = 0
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("8_665rs")
+script = ExtResource("6_ivsmg")
 
 [node name="Button" type="Button" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4" unique_id=34349530]
 visible = false
@@ -647,7 +650,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0.4, 0.8, 1)
-theme_override_fonts/font = ExtResource("2_wc56c")
+theme_override_fonts/font = ExtResource("2_ksa2b")
 theme_override_font_sizes/font_size = 30
 text = "[?]"
 
@@ -667,7 +670,7 @@ theme_override_constants/separation = 0
 visible = false
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
-texture = ExtResource("7_nbjw7")
+texture = ExtResource("5_71kgp")
 expand_mode = 1
 
 [node name="Name" type="Label" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer5/Container/Text" unique_id=721741773]
@@ -753,7 +756,7 @@ autowrap_mode = 2
 tab_size = 0
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("8_665rs")
+script = ExtResource("6_ivsmg")
 
 [node name="Button" type="Button" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer5" unique_id=838659844]
 visible = false
@@ -762,7 +765,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0.4, 0.8, 1)
-theme_override_fonts/font = ExtResource("2_wc56c")
+theme_override_fonts/font = ExtResource("2_ksa2b")
 theme_override_font_sizes/font_size = 30
 text = "[?]"
 

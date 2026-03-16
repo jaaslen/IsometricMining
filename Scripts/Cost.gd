@@ -31,13 +31,13 @@ func _ready() -> void:
 		CostLabelBox.modulate = Color(Ore["color"]) * 1.2
 	else:
 		CostLabelBox.modulate = Color(1.0, 0.0, 0.0, 1.0)
-		print("not enough dipshit")
+
 	OreProgressBar.max_value = Cost
 	OreProgressBar.value = Global.OreAmounts[ID] 
 	pass # Replace with function body.
 
 func OreChanged(OreID):
-	print(OreID)
+	pass
 
 
 #func OreChanged(OreID):

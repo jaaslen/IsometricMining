@@ -20,8 +20,8 @@ func _ready() -> void:
 	Amount = Global.OreAmounts[Ore["id"]]
 	
 	Divider.color = Color(Ore["color"]) * 1.2
-	NameLabelBox.modulate = Color(Ore["color"]) + Color(0.4, 0.4, 0.4, 1.0)
-	AmountLabelBox.modulate = Color(Ore["color"]) + Color(0.4, 0.4, 0.4, 1.0)
+	NameLabelBox.modulate = 0.9 * Color(Ore["color"]) + Color(0.3, 0.3, 0.3, 1.0)
+	AmountLabelBox.modulate = 0.9 * Color(Ore["color"]) + Color(0.3, 0.3, 0.3, 1.0)
 	NameLabelBox.text = Name # + " " + var_to_str(Amount)
 	AmountLabelBox.text = var_to_str(Amount)
 	#var Original := get_theme_stylebox("panel")
@@ -85,8 +85,8 @@ func LabelOutline(label):
 			#label.add_theme_color_override("font_outline_color",Color(1.0,1.0,1.0))
 			#AmountLabelBox.add_theme_color_override("font_outline_color",Color(1.0,1.0,1.0))
 		elif visible:
-			NameLabelBox.modulate = Color(Ore["color"]) + Color(0.4, 0.4, 0.4, 1.0)
-			AmountLabelBox.modulate = Color(Ore["color"]) + Color(0.4, 0.4, 0.4, 1.0)
+			NameLabelBox.modulate = 0.9 * Color(Ore["color"]) + Color(0.3, 0.3, 0.3, 1.0)
+			AmountLabelBox.modulate = 0.9 * Color(Ore["color"]) + Color(0.3, 0.3, 0.3, 1.0)
 			#label.add_theme_color_override("font_outline_color",Color(0.0, 0.0, 0.0, 1.0))
 			#AmountLabelBox.add_theme_color_override("font_outline_color",Color(0.0, 0.0, 0.0, 1.0))
 		pass

@@ -51,7 +51,7 @@ func PickaxeChanged(__):
 		
 		if Global.Pickaxe["id"] == Pickaxe["id"]:
 			EquipButton.text = "Equipped!"
-			print(Pickaxe["name"])
+			
 			EquipButton.disabled = true
 			
 	else:

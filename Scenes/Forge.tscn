@@ -82,10 +82,8 @@ theme_override_constants/separation = 0
 script = ExtResource("1_ewbv2")
 
 [node name="StatsPanel" type="TabContainer" parent="ForgeContainer" unique_id=837666918]
-custom_minimum_size = Vector2(0, 1000)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 8
 theme = ExtResource("2_667t3")
 theme_override_constants/tab_separation = 10
 current_tab = 1

@@ -1,7 +1,6 @@
 # Trait_speed.gd
-extends PickaxeTrait
+extends Boost
 class_name OreProficiency
-
 @export var PowerMult := 5
 @export var BlockID := -1
 

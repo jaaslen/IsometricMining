@@ -10,6 +10,8 @@ signal MenuClosed
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_viewport().connect("size_changed", Callable(self, "update_position_and_scale"))
+	update_position_and_scale()
+	position = ClosedPos
 	pass # Replace with function body.
 
 
@@ -21,7 +23,7 @@ func _process(delta: float) -> void:
 			position = ClosedPos
 			Closing = false
 			Open = false
-			
+			modulate = Color(0,0,0,0)
 		
 	elif Opening:
 		position = position.lerp(OpenPos,delta * 10)
@@ -45,13 +47,15 @@ func OpenButtonPressed() -> void:
 		
 		Opening = true
 		Closing = false
+		modulate = Color(1,1,1,1)
 	else:
 		Closing = Open
 		Opening = !Open
 		
 		if Open:
 			emit_signal("MenuClosed")
-		
+		else:
+			modulate = Color(1,1,1,1)
 		
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Forge"):

@@ -24,6 +24,7 @@ theme_override_constants/separation = -10
 [node name="Inventory" type="VBoxContainer" parent="FullHBox" unique_id=2090073752]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 0
 theme_override_constants/separation = -10
 
 [node name="Label" type="Label" parent="FullHBox/Inventory" unique_id=1425566549]

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dvqtounvua7ul"]
+
+[ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="1_m6rkq"]
+[ext_resource type="Script" uid="uid://d1v5877lsmr4v" path="res://Scripts/LoadingScreen.gd" id="1_qjj4j"]
+[ext_resource type="Texture2D" uid="uid://dhmp7jfu8pog1" path="res://Visuals/Panel.png" id="2_qjj4j"]
+[ext_resource type="Texture2D" uid="uid://bjwm0qp2c3htl" path="res://Visuals/PanelRim.png" id="3_dq85b"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ffghy"]
+
+[sub_resource type="Gradient" id="Gradient_68uam"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_davxm"]
+gradient = SubResource("Gradient_68uam")
+width = 200
+
+[node name="Loading" type="Control" unique_id=434512329]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qjj4j")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=671646722]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_ffghy")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=243784766]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = 350.0
+offset_right = 550.0
+offset_bottom = 430.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m6rkq")
+nine_patch_stretch = true
+stretch_margin_left = 10
+stretch_margin_top = 10
+stretch_margin_right = 10
+stretch_margin_bottom = 10
+texture_under = ExtResource("2_qjj4j")
+texture_over = ExtResource("3_dq85b")
+texture_progress = SubResource("GradientTexture1D_davxm")

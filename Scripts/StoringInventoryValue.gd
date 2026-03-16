@@ -31,8 +31,8 @@ func _ready() -> void:
 	#Amount = Global.OreAmounts[Ore["id"]]
 	
 	Divider.color = Color(Ore["color"]) * 1.2
-	NameLabelBox.modulate = Color(Ore["color"]) + Color(0.4, 0.4, 0.4, 1.0)
-	AmountLabelBox.modulate = Color(Ore["color"]) + Color(0.4, 0.4, 0.4, 1.0)
+	NameLabelBox.modulate = 0.9 * Color(Ore["color"]) + Color(0.3, 0.3, 0.3, 1.0)
+	AmountLabelBox.modulate = 0.9 * Color(Ore["color"]) + Color(0.3, 0.3, 0.3, 1.0)
 	NameLabelBox.text = Name # + " " + var_to_str(Amount)
 	AmountLabelBox.text = var_to_str(Amount)
 	#var Original := get_theme_stylebox("panel")
@@ -54,7 +54,7 @@ func _ready() -> void:
 func OreChanged(OreID):
 	
 	if OreID == Ore["id"]:
-		print(Ore["id"])
+		
 		#Amount = Global.OreAmounts[Ore["id"]]
 		
 		if LeftSide:

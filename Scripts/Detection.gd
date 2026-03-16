@@ -254,13 +254,13 @@ func _process(delta: float) -> void:
 		
 		
 		for layer in self.get_node("Layers").get_children():
-			#print(Vector2i(int(floor(pos.x / Global.CellSize.x)),int(floor(pos.y / Global.CellSize.y)) - int(str_to_var(layer.name)-1) ))
+			
 			if %Cursor.OnGrid or Locked == true or ShiftLocked == true:
 				#for offset in [Vector2i(-1,0),Vector2i(0,0),Vector2i(0,0),Vector2i(0,0),Vector2i(0,0)]
 				##(layer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(0,str_to_var(layer.name)-1)) != -1)
 				#if str_to_var(layer.name) > 1:
 					#pass
-				print(GetMouse())
+				
 				if layer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(0,str_to_var(layer.name)-1)) != -1:
 					
 					var previouslayer = self.get_node("Layers").get_child(str_to_var(layer.name)-1-1)
@@ -485,12 +485,13 @@ func MineTile(layer,shift = Vector2i.ZERO):
 	var Context = MiningContext.new()
 	
 	Context.Power = ( Global.Pickaxe["stats"][0] )
-	print(Context.Power + 0.67)
+	
 	for id in Global.Pickaxe["traits"]:
-		print(id)
+		
 		var Trait = TraitData.GetTrait(id)
 		Trait.Apply(OreID,Context)
-	print(Context.Power + 0.67)
+	
+	TraitData.GetBoost("Level").Apply(OreID,Context)
 		
 	var MineTime = (Global.GameData["ores"][var_to_str(OreID)]["hardness"] * (pow(1.5, log(Global.Depth + 1) / log(10.0)))) / Context.Power
 		
@@ -500,7 +501,7 @@ func MineTile(layer,shift = Vector2i.ZERO):
 	
 func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID,MineTime,GlobalCoordinates):
 		if Locked == false and ShiftLocked == false:
-			#print(TileCoordinates)
+
 			emit_signal("StartedMiningAnim",0,0,GlobalCoordinates)
 			for i in Effects.get_children():
 				if i.name != "Mining":
@@ -591,8 +592,7 @@ func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID,MineTime,GlobalCoor
 		TopAnimation.sprite_frames.set_animation_speed(TopAnimation.animation, frame_count / MineTime)
 		
 		emit_signal("StartedMiningAnim",MineTime,OreID,MouseCoordinates)
-		#TopAnimation.speed_scale = ( (3 * Global.Pickaxe["stats"][0] * Global.Pickaxe["stats"][0]) / Global.GameData["ores"][var_to_str(OreID)]["hardness"]) / (pow(1.5, log(Global.Depth + 1) / log(10.0)))
-		#print((pow(1.5, log(max(Global.Depth,1)) / log(10.0))))
+
 		if TopAnimation.speed_scale > 10:
 			TopAnimation.speed_scale *= 20
 
