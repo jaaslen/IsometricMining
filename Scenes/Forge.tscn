@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bofqhbhajepx" path="res://Scripts/PickaxesForge.gd" id="1_ewbv2"]
 [ext_resource type="Script" uid="uid://c1yv6u68gcq66" path="res://Scripts/ForgeContainer.gd" id="1_tpr0r"]
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="2_667t3"]
-[ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="2_lex3g"]
 [ext_resource type="Script" uid="uid://dk0xk5sp76el" path="res://Scripts/PickaxeCosts.gd" id="2_lg3is"]
+[ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="3_667t3"]
 [ext_resource type="Script" uid="uid://cp61yd8jx3rod" path="res://Scripts/Stats.gd" id="3_qlblt"]
 [ext_resource type="Script" uid="uid://t74boarcjsoe" path="res://Scripts/StatsPanel.gd" id="4_gk1wl"]
 [ext_resource type="Script" uid="uid://dpvrx7jorkwps" path="res://Scripts/UpgradeStats.gd" id="4_wi1hq"]
@@ -17,9 +17,6 @@
 [ext_resource type="Script" uid="uid://c8r5cq064hj73" path="res://Scripts/UpgradeButton.gd" id="15_667t3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcom1"]
-bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dejnt"]
 bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
 
 [node name="Forge" type="Control" unique_id=468790923]
@@ -53,15 +50,15 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_lcom1")
 z_index = 1
 layout_mode = 2
 theme = ExtResource("2_667t3")
+theme_override_constants/separation = -10
 
 [node name="PickaxeHeader" type="Label" parent="ForgeContainer/Selection/VBoxContainer" unique_id=632639103]
 z_index = 1
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 theme = ExtResource("2_667t3")
-theme_override_fonts/font = ExtResource("2_lex3g")
 theme_override_font_sizes/font_size = 96
-theme_override_styles/normal = SubResource("StyleBoxFlat_dejnt")
+theme_override_styles/normal = ExtResource("3_667t3")
 text = "Pickaxes"
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -71,6 +68,7 @@ custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
+horizontal_scroll_mode = 2
 
 [node name="PickaxeSelection" type="VBoxContainer" parent="ForgeContainer/Selection/VBoxContainer/ScrollContainer" unique_id=576380366]
 clip_contents = true

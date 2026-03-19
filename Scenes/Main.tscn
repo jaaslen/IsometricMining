@@ -760,17 +760,17 @@ expand_margin_bottom = 10.0
 bg_color = Color(0.61960787, 0.62352943, 0.61960787, 1)
 
 [sub_resource type="Gradient" id="Gradient_kpo4j"]
-colors = PackedColorArray(0.7019608, 0.7058824, 0.7019608, 1, 0.26666668, 0.27058825, 0.26666668, 1)
+colors = PackedColorArray(0.26666668, 0.27058825, 0.26666668, 1, 0.7019608, 0.7058824, 0.7019608, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_4n42c"]
 gradient = SubResource("Gradient_kpo4j")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ehlx"]
 shader = ExtResource("20_vs04g")
-shader_parameter/fov = 90.0
-shader_parameter/cull_back = true
+shader_parameter/fov = 30.0000013775
+shader_parameter/cull_back = false
 shader_parameter/y_rot = 0.0
-shader_parameter/x_rot = -11.867992013730003
+shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vs04g"]
@@ -917,7 +917,7 @@ _data = {
 }
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c2ibq"]
-size = Vector2(4, 4)
+size = Vector2(80, 80)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vvnwx"]
 light_mode = 1
@@ -925,6 +925,7 @@ light_mode = 1
 [node name="Node2D" type="Node2D" unique_id=1283150566]
 
 [node name="Detection" type="TileMapLayer" parent="." unique_id=1629541775]
+unique_name_in_owner = true
 position = Vector2(960, 5510)
 scale = Vector2(4, 4)
 tile_set = ExtResource("2_cm0pq")
@@ -938,7 +939,7 @@ light_mask = 517
 z_index = 4
 y_sort_enabled = true
 texture_filter = 1
-tile_map_data = PackedByteArray("AAD+/wAAAAABABIAAAAAAP//AAABABIAAAD+/wEAAAABABIAAAAAAAAAAAABABIAAAD/////AAALAAAAAAD//wAAAAAMAAAAAAD9/wEAAAAOAAAAAAABAP//AAAQAAAAAAD//wEAAAABABMAAAA=")
+tile_map_data = PackedByteArray("AAD+/wAAAAABABIAAAD+/wEAAAABABIAAAAAAAAAAAABABIAAAD/////AAALAAAAAAD//wAAAAAMAAAAAAD9/wEAAAAOAAAAAAABAP//AAAQAAAAAAD//wEAAAABABMAAAAAAP//AAABABIAAAA=")
 tile_set = ExtResource("2_cm0pq")
 collision_enabled = false
 
@@ -1033,9 +1034,9 @@ script = ExtResource("6_btbly")
 
 [node name="Forge" parent="CanvasLayer" unique_id=386438354 instance=ExtResource("10_wkp8b")]
 z_index = 20
-offset_top = -1000.0
+offset_top = -1080.0
 offset_right = 0.0
-offset_bottom = -1000.0
+offset_bottom = -1080.0
 mouse_filter = 2
 theme = null
 script = ExtResource("11_5vvyt")
@@ -1179,10 +1180,10 @@ layout_mode = 0
 offset_left = 16.0
 offset_top = 9.0
 offset_right = 232.0
-offset_bottom = 56.0
-theme_override_constants/outline_size = 0
+offset_bottom = 40.0
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 24
-text = "6350"
+text = "17"
 
 [node name="TierProgress" type="TextureProgressBar" parent="CanvasLayer/BaseUI/TextureProgressBar" unique_id=348721212]
 layout_mode = 0
@@ -1455,8 +1456,10 @@ script = ExtResource("18_346fj")
 
 [node name="Cursor" type="Sprite2D" parent="." unique_id=1106042090]
 unique_name_in_owner = true
+visible = false
 z_index = 10
 texture_filter = 1
+position = Vector2(968, 5456)
 texture = SubResource("PlaceholderTexture2D_c2ibq")
 script = ExtResource("5_lgr22")
 

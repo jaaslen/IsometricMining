@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b36543imxsy58"]
+
+[ext_resource type="Shader" uid="uid://da0ng4r8gxa8" path="res://Visuals/TileHues.gdshader" id="1_q0wby"]
+
+[resource]
+shader = ExtResource("1_q0wby")
+shader_parameter/range = 0.1

@@ -2,8 +2,8 @@ extends Sprite2D
 
 @export var smooth_speed := 20
 @onready var Detection = self.get_parent()
-@onready var TileSize = Global.TileSize / 2#* (self.get_parent().scale.x / 2)# * (Detection.scale / 4)
-@onready var CellSize = Global.CellSize / 2 #* (self.get_parent().scale.x / 2)# * (Detection.scale / 4)
+@onready var TileSize = Global.TileSize#* (self.get_parent().scale.x / 2)# * (Detection.scale / 4)
+@onready var CellSize = Global.CellSize #* (self.get_parent().scale.x / 2)# * (Detection.scale / 4)
 var move_timer := 0.0
 var grid_pos := Vector2.ZERO
 enum movestates {MOUSE, KEYBOARD}
@@ -43,7 +43,7 @@ func _process(delta):
 		#texture.region = Rect2(188,16,4,4)
 	if state == movestates.MOUSE:
 		var mouse_pos := get_global_mouse_position() + Vector2(CellSize)
-		SnappedToGrid = (SnapToGrid(mouse_pos) * Vector2(TileSize)) #+ Vector2(CellSize)
+		SnappedToGrid = TileCenter(mouse_pos)# + Vector2(0,5000)#(SnapToGrid(mouse_pos) * Vector2(TileSize)) #+ Vector2(CellSize)
 		Pos = SnappedToGrid - (get_viewport_rect().size / 2)#Vector2(960,510)
 		global_position = global_position.lerp(SnappedToGrid, smooth_speed * delta)
 		
@@ -103,7 +103,14 @@ func _input(event):
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		#Input.warp_mouse(get_viewport().get_canvas_transform() * global_position)
 		
-
+		
+func TileCenter(pos) -> Vector2:
+	var local_pos = (position)
+	
+	var tile_coords = %Detection.local_to_map(local_pos)
+	var tile_center_local = %Detection.map_to_local(tile_coords)
+	
+	return (tile_center_local)
 		
 
 

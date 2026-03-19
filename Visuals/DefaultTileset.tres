@@ -1,5 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://b73qq53megiib"]
 
+[ext_resource type="Material" uid="uid://b36543imxsy58" path="res://Visuals/TileHues.tres" id="1_6fn0c"]
 [ext_resource type="Texture2D" uid="uid://dcicd3utpj2kf" path="res://Visuals/OreSheet.png" id="1_fo3br"]
 [ext_resource type="Material" uid="uid://ddtdjj1xp3xsc" path="res://Visuals/TileGlow.tres" id="1_jow4j"]
 
@@ -22,6 +23,7 @@ texture_region_size = Vector2i(64, 68)
 1:1/0/texture_origin = Vector2i(0, -17)
 2:1/0 = 0
 2:1/0/texture_origin = Vector2i(0, -17)
+2:1/0/material = ExtResource("1_6fn0c")
 0:2/0 = 0
 0:2/0/texture_origin = Vector2i(0, -17)
 1:2/0 = 0
@@ -288,6 +290,7 @@ texture_region_size = Vector2i(64, 68)
 0:16/0/texture_origin = Vector2i(0, -17)
 1:10/0 = 0
 1:10/0/texture_origin = Vector2i(0, -17)
+1:10/0/material = ExtResource("1_6fn0c")
 1:11/0 = 0
 1:11/0/texture_origin = Vector2i(0, -17)
 1:12/0 = 0
@@ -390,6 +393,7 @@ texture_region_size = Vector2i(64, 68)
 1:17/0/texture_origin = Vector2i(0, -17)
 1:18/0 = 0
 1:18/0/texture_origin = Vector2i(0, -17)
+1:18/0/material = ExtResource("1_6fn0c")
 1:19/0 = 0
 1:19/0/texture_origin = Vector2i(0, -17)
 1:19/0/material = ExtResource("1_jow4j")

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bynqtr6o477ob" path="res://Scripts/PickaxeSelection.gd" id="1_48p6v"]
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="1_dgjc1"]
-[ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="2_1ieuc"]
 [ext_resource type="Texture2D" uid="uid://d35wlbx8ymfgl" path="res://Visuals/icon.svg" id="3_wob85"]
 [ext_resource type="Script" uid="uid://dwwe4laybj2bm" path="res://Scripts/EquipButton.gd" id="4_3lv84"]
 [ext_resource type="Script" uid="uid://cqd6q58brunci" path="res://Scripts/RichListLabel.gd" id="4_bmk7m"]
@@ -41,7 +40,6 @@ offset_right = 509.0
 offset_bottom = 74.0
 mouse_filter = 2
 theme_override_constants/outline_size = 5
-theme_override_fonts/normal_font = ExtResource("2_1ieuc")
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "kffff"
@@ -74,16 +72,16 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -71.0
+offset_left = -73.0
 offset_top = -44.0
-offset_right = -11.0
-offset_bottom = -4.0
+offset_right = -13.0
+offset_bottom = 7.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("2_1ieuc")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 30
 text = "#1"
+horizontal_alignment = 2
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

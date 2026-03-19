@@ -340,7 +340,7 @@ func _notification(event):
 		Save()
 		get_tree().quit()
 
-func Suffix(value: float) -> String:
+func Suffix(value: float,Integer = false) -> String:
 	var suffixes = [
 		"", "K", "M", "B", "T",
 		"Qd", "Qi", "Sx", "Sp",
@@ -358,5 +358,11 @@ func Suffix(value: float) -> String:
 	
 	if index >= 1:
 		return "%.2f%s" % [value, suffixes[index]]
-	else:
+	elif Integer == false:
+		return str((value))
+	elif Integer == true:
 		return str(int(value))
+	else:
+		push_error("What???? (Global, func Suffix())")
+		return "bruh"
+		

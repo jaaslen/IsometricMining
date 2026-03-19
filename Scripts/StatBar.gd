@@ -32,12 +32,15 @@ func _ready() -> void:
 				Description.text = "Current Stat!"
 			Description.add_theme_color_override("default_color",ColorValue * 0.8)
 		LabelBox.text = Name + " "#+ " : " + ( "%.2f" % Value)
-		if Value < 10:
-			ValueLabelBox.text = " " + ( "%.2f" % Value)
-		elif Value < 100:
-			ValueLabelBox.text = " " + ( "%.1f" % Value)
-		else:
-			ValueLabelBox.text = " " + ( "%.0f" % Value)
+		#if Value < 10:
+			#ValueLabelBox.text = " " + ( "%.2f" % Value)
+		#elif Value < 100:
+			#ValueLabelBox.text = " " + ( "%.1f" % Value)
+		#else:
+			#ValueLabelBox.text = " " + ( "%.0f" % Value)
+			
+		ValueLabelBox.text = Global.Suffix(Value)
+			
 		#var Original := get_theme_stylebox("panel")
 		#var style := Original.duplicate(true)
 		#style.border_color = ColorValue

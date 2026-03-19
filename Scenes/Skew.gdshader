@@ -16,6 +16,15 @@ uniform float inset : hint_range(0, 1) = 0.0;
 
 varying flat vec2 o;
 varying vec3 p;
+// CC0, shadecore_dev
+
+
+
+
+float scale(float value, float inMin, float inMax, float outMin, float outMax) {
+    return (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+}
+
 
 
 // Creates rotation matrix
@@ -49,8 +58,10 @@ void vertex(){
 }
 
 void fragment(){
+
 	if (cull_back && p.z <= 0.0) discard;
 	vec2 uv = (p.xy / p.z).xy - o;
     COLOR = texture(TEXTURE, uv + 0.5);
 	COLOR.a *= step(max(abs(uv.x), abs(uv.y)), 0.5);
+
 }

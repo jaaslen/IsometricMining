@@ -255,7 +255,7 @@ func _process(delta: float) -> void:
 		
 		for layer in self.get_node("Layers").get_children():
 			
-			if %Cursor.OnGrid or Locked == true or ShiftLocked == true:
+			#if Locked == true or ShiftLocked == true: #%Cursor.OnGrid or
 				#for offset in [Vector2i(-1,0),Vector2i(0,0),Vector2i(0,0),Vector2i(0,0),Vector2i(0,0)]
 				##(layer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(0,str_to_var(layer.name)-1)) != -1)
 				#if str_to_var(layer.name) > 1:
@@ -541,7 +541,7 @@ func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID,MineTime,GlobalCoor
 			return
 			#TopAnimation = Effects.get_node(var_to_str(TileCoordinates))
 		if Locked == false and ShiftLocked == false:
-			TopAnimation.position = GlobalCoordinates#floor(MouseCoordinates / Vector2(Global.TileSize)) * Vector2(Global.TileSize)
+			TopAnimation.position = ClickedCenter(GetMouse())#GlobalCoordinates#floor(MouseCoordinates / Vector2(Global.TileSize)) * Vector2(Global.TileSize)
 		elif Locked:
 			TopAnimation.position = Vector2(0,0)
 		elif ShiftLocked:
@@ -591,7 +591,7 @@ func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID,MineTime,GlobalCoor
 
 		TopAnimation.sprite_frames.set_animation_speed(TopAnimation.animation, frame_count / MineTime)
 		
-		emit_signal("StartedMiningAnim",MineTime,OreID,MouseCoordinates)
+		emit_signal("StartedMiningAnim",MineTime,OreID,ClickedCenter(MouseCoordinates))
 
 		if TopAnimation.speed_scale > 10:
 			TopAnimation.speed_scale *= 20
@@ -657,3 +657,11 @@ func FinishedMining(AnimName,TileCoordinates,OreID,Layer):
 func FullCheck(result) -> void:
 	InventoryFull = result
 	pass # Replace with function body.
+	
+func ClickedCenter(pos) -> Vector2:
+	var local_pos = (GetMouse())
+	
+	var tile_coords = local_to_map(local_pos)
+	var tile_center_local = map_to_local(tile_coords)
+	
+	return (tile_center_local)

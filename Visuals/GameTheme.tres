@@ -15,6 +15,7 @@ modulate_color = Color(3.7307422, 3.7307422, 3.7307422, 1)
 Button/styles/disabled = ExtResource("1_m0vlx")
 Button/styles/hover = SubResource("StyleBoxTexture_h7b0r")
 Button/styles/normal = ExtResource("1_m0vlx")
+Label/constants/outline_size = 8
 Panel/styles/panel = ExtResource("1_m0vlx")
 PanelContainer/styles/panel = ExtResource("1_m0vlx")
 ProgressBar/styles/background = ExtResource("1_m0vlx")

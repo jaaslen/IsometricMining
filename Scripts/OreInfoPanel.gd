@@ -10,14 +10,15 @@ var Order = [1,2,3,5,7,6,4,13,14,16,18,22,9,15,8,12,17,32,34,11,10,28,23,20,24,2
 @onready var IDlabel = $FullContainer/HBoxContainer/VBoxContainer2/HBoxContainer/Panel3/ID
 @onready var Icon = $FullContainer/HBoxContainer/VBoxContainer/Panel/MarginContainer/Icon
 @onready var Name = $FullContainer/HBoxContainer/VBoxContainer/Label
-@onready var MinDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container/Text/MinValue
-@onready var MinDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer/Container/Description
-@onready var MaxDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container/Text/MaxValue
-@onready var MaxDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer2/Container/Description
-@onready var OptimalDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container/Text/OptValue
-@onready var OptDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer3/Container/Description
-@onready var Hardness = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4/Container/Text/Hardness
-@onready var HardDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/VBoxContainer/PanelContainer4/Container/Description
+@onready var InfoContainer = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer
+#@onready var MinDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer/Container/Text/MinValue
+#@onready var MinDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer/Container/Description
+#@onready var MaxDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer2/Container/Text/MaxValue
+#@onready var MaxDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer2/Container/Description
+#@onready var OptimalDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer3/Container/Text/OptValue
+#@onready var OptDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer3/Container/Description
+#@onready var Hardness = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer4/Container/Text/Hardness
+#@onready var HardDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer4/Container/Description
 
 @onready var Description = $FullContainer/ScrollContainer/Description
 
@@ -25,9 +26,8 @@ var Order = [1,2,3,5,7,6,4,13,14,16,18,22,9,15,8,12,17,32,34,11,10,28,23,20,24,2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_viewport().connect("size_changed", Callable(self, "update_position_and_scale"))
-	#if Buttons != null:
-		#for i in Buttons.get_children():
-			#i.OreSelected.connect(LoadOre)
+	update_position_and_scale()
+	
 	LoadOre(1)
 
 func reconnect():
@@ -72,29 +72,31 @@ func LoadOre(OreID,opening = true):
 	Icon.texture = Icon.texture.duplicate(true)
 	Icon.texture.region = Rect2(Vector2(Global.TileSize.x * atlas[0],2 * Global.TileSize.y * atlas[1]),Vector2(Global.TileSize.x,Global.TileSize.y * 2))#Rect2(Vector2(Global.TileSize.x * atlas[0],2 * Global.TileSize.y * atlas[1]),Vector2(Global.TileSize.x,Global.TileSize.y * 2))#Rect2(Vector2(64 * atlas[0],68 * atlas[1])*2,Vector2(64,68)*2)
 	
-	if Ore["id"] == 0:
-		MinDepth.text = "%sm" % int(ActualOre["arrival"])
-		MaxDepth.text = "???m"
-		Hardness.text = "???"
-		OptimalDepth.text = "???m"
-		OptimalDepth.add_theme_font_size_override("font_size",50)
-	else:
+	InfoContainer.LoadOre(OreID)
 	
-		MinDepth.text = "%sm" % int(Ore["arrival"])
-		MaxDepth.text = "%sm" % int(Ore["depth"][-1][0])
-		Hardness.text = "%s" % int(Ore["hardness"])
-		if Ore["optimal"].size() == 2:
-			OptimalDepth.text = "%s-%sm " % [int(Ore["optimal"][0]),int(Ore["optimal"][1])]
-			OptDescription.text = "This ore is most common at a depth of [color=white]%s[/color]-[color=white]%s[/color]m." % [int(Ore["optimal"][0]),int(Ore["optimal"][1])]
-			OptimalDepth.add_theme_font_size_override("font_size",40)
-		else:
-			OptimalDepth.text = "%sm" % int(Ore["optimal"][0])
-			OptDescription.text = "This ore is most common at a depth of [color=white]%d[/color]m." % int(Ore["optimal"][0])
-			OptimalDepth.add_theme_font_size_override("font_size",50)
-			
-	MinDescription.text = "This ore first starts appearing at a depth of [color=white]%d[/color]m." % int(Ore["arrival"])
-	MaxDescription.text = "This ore will stop appearing past a depth of [color=white]%d[/color]m." % int(Ore["depth"][-1][0])
-	HardDescription.text = "This ore has a toughness of %s, this is %sx as tough as stone. " % [int(Ore["hardness"]),int(Ore["hardness"])/2]
+	#if Ore["id"] == 0:
+		#MinDepth.text = "%sm" % int(ActualOre["arrival"])
+		#MaxDepth.text = "???m"
+		#Hardness.text = "???"
+		#OptimalDepth.text = "???m"
+		#OptimalDepth.add_theme_font_size_override("font_size",50)
+	#else:
+	#
+		#MinDepth.text = "%sm" % int(Ore["arrival"])
+		#MaxDepth.text = "%sm" % int(Ore["depth"][-1][0])
+		#Hardness.text = "%s" % int(Ore["hardness"])
+		#if Ore["optimal"].size() == 2:
+			#OptimalDepth.text = "%s-%sm " % [int(Ore["optimal"][0]),int(Ore["optimal"][1])]
+			#OptDescription.text = "This ore is most common at a depth of [color=white]%s[/color]-[color=white]%s[/color]m." % [int(Ore["optimal"][0]),int(Ore["optimal"][1])]
+			#OptimalDepth.add_theme_font_size_override("font_size",40)
+		#else:
+			#OptimalDepth.text = "%sm" % int(Ore["optimal"][0])
+			#OptDescription.text = "This ore is most common at a depth of [color=white]%d[/color]m." % int(Ore["optimal"][0])
+			#OptimalDepth.add_theme_font_size_override("font_size",50)
+			#
+	#MinDescription.text = "This ore first starts appearing at a depth of [color=white]%d[/color]m." % int(Ore["arrival"])
+	#MaxDescription.text = "This ore will stop appearing past a depth of [color=white]%d[/color]m." % int(Ore["depth"][-1][0])
+	#HardDescription.text = "This ore has a toughness %sx harder than stone" % int(Ore["hardness"])
 	
 		
 	if opening:

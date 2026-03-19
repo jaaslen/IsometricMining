@@ -48,8 +48,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	value = Global.XP
-	AmountLabel.text = Global.Suffix(value)
-	RequiredLabel.text = Global.Suffix(max_value)
+	AmountLabel.text = Global.Suffix(value,true)
+	RequiredLabel.text = Global.Suffix(max_value,true)
 	
 	if value >= max_value:
 		LevelUp()

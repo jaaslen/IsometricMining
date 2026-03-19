@@ -5,6 +5,7 @@ func _ready() -> void:
 	get_viewport().connect("size_changed", Callable(self, "update_position_and_scale"))
 	#Global.OreChanged.connect(AddScenes)
 	AddScenes()
+	update_position_and_scale()
 	#var Index = 0
 	#for amount in range(40):
 		#
