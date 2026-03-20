@@ -198,7 +198,8 @@ func _draw() -> void:
 					(x_size / (last_val-values[0][0]) * (values[i][0]-values[0][0])) - (line_width / 2), # x value
 					y_size - (y_size / max_val * values[i][1]) - (line_width / 2) # y value
 					)
-				draw_circle(vector2_array[i],circle_width,line_color)
+				if i != 0 and i != total_point_count-1:
+					draw_circle(vector2_array[i],circle_width,line_color)
 			draw_polyline(vector2_array, line_color, line_width, antialiasing) # Draws the main line.
 			
 			# The code above draws the LineGraph.
@@ -242,6 +243,7 @@ func _draw() -> void:
 		var text_size_single_liner := default_font.get_multiline_string_size("0", HORIZONTAL_ALIGNMENT_CENTER, -1, number_font_size)
 		
 		for j in helper_line_amount:
+
 			draw_string(
 				default_font, # Font
 				Vector2(
@@ -249,26 +251,20 @@ func _draw() -> void:
 					float(y_size) - float(j) * (float(y_size) / float(helper_line_amount)) + (text_size_single_liner.y / 4.0)
 				), # Position
 				str((is_int(max_val / helper_line_amount * j))), # Contains [String]
-				HORIZONTAL_ALIGNMENT_CENTER, # Alignment
+				HORIZONTAL_ALIGNMENT_RIGHT, # Alignment
 				-1, # Width
 				number_font_size, # Font Size
-				number_color # Color
-			) # The draw_string() function above draws the helper_numbers on the left side of LineGraph.
+				number_color) # Color)
+			  #The draw_string() function above draws the helper_numbers on the left side of LineGraph.
 		
-		draw_string(default_font, Vector2((text_size_max.x * -0.5), (number_font_size * -1)), str(max_val), HORIZONTAL_ALIGNMENT_CENTER, -1, number_font_size, number_color)
+		draw_string(default_font, Vector2((text_size_max.x * -0.5), (number_font_size * -1)), str(max_val) + " Weighted Chance Maximum", HORIZONTAL_ALIGNMENT_CENTER, -1, number_font_size, number_color)
 		
 		
 		for index in vector2_array.size():
-			draw_string(default_font, Vector2(vector2_array[index].x - (text_size_single_liner.x / 2), y_size + text_size_single_liner.y), str((is_int( values[index][0]))), HORIZONTAL_ALIGNMENT_CENTER, -1, number_font_size, number_color)
+			print("max index = " + str(vector2_array.size()))
+			if index == (vector2_array.size()-1):
+				draw_string(default_font, Vector2(vector2_array[index].x - (text_size_single_liner.x / 2), y_size + text_size_single_liner.y), str((is_int( values[index][0]))) + "m", HORIZONTAL_ALIGNMENT_LEFT, -1, number_font_size, number_color)
+			elif values[index][0] + 1 < values[index+1][0]:
+				draw_string(default_font, Vector2(vector2_array[index].x - (text_size_single_liner.x / 2), y_size + text_size_single_liner.y), str((is_int( values[index][0]))) + "m", HORIZONTAL_ALIGNMENT_LEFT, -1, number_font_size, number_color)
 	
 	#endregion
-
-
-func _on_button_pressed() -> void:
-	visible = !visible
-	pass # Replace with function body.
-
-
-func LoadGraph(Data) -> void:
-	set_values(Data)
-	pass # Replace with function body.

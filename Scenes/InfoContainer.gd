@@ -28,7 +28,7 @@ func LoadOre(OreID):
 		
 		add_child(InfoBar)
 	
-	emit_signal("LoadGraph",ToVector2(Global.GameData["ores"][str(OreID)]["depth"]))
+	emit_signal("LoadGraph",ToVector2(Global.GameData["ores"][str(OreID)]["depth"]),Global.GameData["ores"][str(OreID)])
 	pass
 
 func ToVector2(arr: Array) -> PackedVector2Array:
