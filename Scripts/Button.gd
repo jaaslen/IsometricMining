@@ -1,4 +1,4 @@
-extends TextureButton
+extends BaseButton
 @export var Pos = Vector2(1772,0) #(1,0) is top right, (0,1) is bottom left (0.5,0.5) is center as you get the idea
 
 # Called when the node enters the scene tree for the first time.
@@ -13,4 +13,6 @@ func _process(delta: float) -> void:
 
 func update_position_and_scale():
 	position = Pos - %Camera2D.offset
+	
+	
 	

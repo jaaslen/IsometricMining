@@ -59,7 +59,8 @@ func _process(delta):
 			
 			var completion = floor((value / max_value) * 7) / 7.0
 			
+			var NomralizedCompletion = Vector2(1 + completion * (Extent) , (1 + completion * (Extent)))
+			
 			if DesiredTime > 1:
-				Camera.zoom = lerp(Camera.zoom,Vector2((1 + completion * (Extent)) ,(1 + completion * (Extent))), 50 * delta)
+				Camera.zoom = NomralizedCompletion
 				
-				#Camera.position =  (4*OrePosition * completion) + Vector2(960,540)

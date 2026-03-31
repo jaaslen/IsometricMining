@@ -16,7 +16,7 @@ func _on_button_pressed() -> void:
 
 func LoadGraph(Data,OreInfo) -> void:
 	$MarginContainer/Chart.set_values(Data)
-	modulate = Color(OreInfo["color"])  / 5 + Color(0.25,0.25,0.25,1)
+	#modulate = Color(OreInfo["color"])  / 5 + Color(0.25,0.25,0.25,1)
 	
 	
 	pass # Replace with function body.

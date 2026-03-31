@@ -55,7 +55,7 @@ size_flags_stretch_ratio = 2.0
 mouse_filter = 2
 theme_override_constants/separation = -8
 
-[node name="Button" type="Button" parent="FullContainer/HBoxContainer" unique_id=1383076590]
+[node name="Left" type="Button" parent="FullContainer/HBoxContainer" unique_id=1383076590]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
@@ -65,28 +65,28 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_oqe5m")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5h8xl")
 text = "◀"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="FullContainer/HBoxContainer" unique_id=1153031582]
+[node name="Ore" type="VBoxContainer" parent="FullContainer/HBoxContainer" unique_id=1153031582]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.8
 theme_override_constants/separation = -4
 
-[node name="Label" type="Label" parent="FullContainer/HBoxContainer/VBoxContainer" unique_id=1322785795]
+[node name="Label" type="Label" parent="FullContainer/HBoxContainer/Ore" unique_id=1322785795]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
+theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = ExtResource("3_7a4tp")
 text = "Ore Name"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Panel" type="Panel" parent="FullContainer/HBoxContainer/VBoxContainer" unique_id=1652584609]
+[node name="Panel" type="Panel" parent="FullContainer/HBoxContainer/Ore" unique_id=1652584609]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="FullContainer/HBoxContainer/VBoxContainer/Panel" unique_id=976465815]
+[node name="MarginContainer" type="MarginContainer" parent="FullContainer/HBoxContainer/Ore/Panel" unique_id=976465815]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -100,30 +100,30 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 80
 theme_override_constants/margin_bottom = 30
 
-[node name="Icon" type="TextureRect" parent="FullContainer/HBoxContainer/VBoxContainer/Panel/MarginContainer" unique_id=863232011]
+[node name="Icon" type="TextureRect" parent="FullContainer/HBoxContainer/Ore/Panel/MarginContainer" unique_id=863232011]
 texture_filter = 1
 layout_mode = 2
 texture = SubResource("AtlasTexture_auoxk")
 stretch_mode = 5
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="FullContainer/HBoxContainer" unique_id=1425885787]
+[node name="Data" type="VBoxContainer" parent="FullContainer/HBoxContainer" unique_id=1425885787]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = -12
 
-[node name="HBoxContainer" type="HBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2" unique_id=1864680450]
+[node name="HBoxContainer" type="HBoxContainer" parent="FullContainer/HBoxContainer/Data" unique_id=1864680450]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.6
 theme_override_constants/separation = -4
 
-[node name="Panel" type="Panel" parent="FullContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=154433673]
+[node name="Panel" type="Panel" parent="FullContainer/HBoxContainer/Data/HBoxContainer" unique_id=154433673]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.2
 
-[node name="Rarity" type="Label" parent="FullContainer/HBoxContainer/VBoxContainer2/HBoxContainer/Panel" unique_id=1708996538]
+[node name="Rarity" type="Label" parent="FullContainer/HBoxContainer/Data/HBoxContainer/Panel" unique_id=1708996538]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -135,13 +135,13 @@ text = "★★★★★"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel3" type="Panel" parent="FullContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=355233569]
+[node name="Panel3" type="Panel" parent="FullContainer/HBoxContainer/Data/HBoxContainer" unique_id=355233569]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.8
 
-[node name="ID" type="Label" parent="FullContainer/HBoxContainer/VBoxContainer2/HBoxContainer/Panel3" unique_id=182260406]
+[node name="ID" type="Label" parent="FullContainer/HBoxContainer/Data/HBoxContainer/Panel3" unique_id=182260406]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -156,13 +156,13 @@ text = "#022"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel2" type="Panel" parent="FullContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1564238539]
+[node name="Panel2" type="Panel" parent="FullContainer/HBoxContainer/Data/HBoxContainer" unique_id=1564238539]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.33
 
-[node name="Button" type="Button" parent="FullContainer/HBoxContainer/VBoxContainer2/HBoxContainer/Panel2" unique_id=1805182059]
+[node name="Button" type="Button" parent="FullContainer/HBoxContainer/Data/HBoxContainer/Panel2" unique_id=1805182059]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -179,13 +179,13 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_665rs")
 text = "⌕"
 vertical_icon_alignment = 2
 
-[node name="Panel4" type="Panel" parent="FullContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=531454715]
+[node name="Panel4" type="Panel" parent="FullContainer/HBoxContainer/Data/HBoxContainer" unique_id=531454715]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.33
 
-[node name="Button" type="Button" parent="FullContainer/HBoxContainer/VBoxContainer2/HBoxContainer/Panel4" unique_id=147108110]
+[node name="Button" type="Button" parent="FullContainer/HBoxContainer/Data/HBoxContainer/Panel4" unique_id=147108110]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -202,30 +202,30 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_665rs")
 text = "📈"
 vertical_icon_alignment = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="FullContainer/HBoxContainer/VBoxContainer2" unique_id=1603072931]
+[node name="ScrollContainer" type="ScrollContainer" parent="FullContainer/HBoxContainer/Data" unique_id=1603072931]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.85
 
-[node name="InfoContainer" type="VBoxContainer" parent="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer" unique_id=1060689651]
+[node name="InfoContainer" type="VBoxContainer" parent="FullContainer/HBoxContainer/Data/ScrollContainer" unique_id=1060689651]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 script = ExtResource("5_42bqh")
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="FullContainer/HBoxContainer" unique_id=320148794]
+[node name="Right" type="VBoxContainer" parent="FullContainer/HBoxContainer" unique_id=320148794]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 theme_override_constants/separation = -8
 
-[node name="Panel4" type="Panel" parent="FullContainer/HBoxContainer/VBoxContainer3" unique_id=760229381]
+[node name="Panel4" type="Panel" parent="FullContainer/HBoxContainer/Right" unique_id=760229381]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="Button2" type="Button" parent="FullContainer/HBoxContainer/VBoxContainer3" unique_id=1135111892]
+[node name="Button2" type="Button" parent="FullContainer/HBoxContainer/Right" unique_id=1135111892]
 custom_minimum_size = Vector2(0, 628)
 layout_mode = 2
 size_flags_vertical = 3
@@ -252,6 +252,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Panel" type="Panel" parent="." unique_id=1294018499]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -259,9 +260,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -900.0
-offset_top = -450.0
+offset_top = -500.0
 offset_right = 900.0
-offset_bottom = 450.0
+offset_bottom = 500.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_42bqh")
@@ -286,17 +287,21 @@ line_color = Color(1, 1, 1, 1)
 line_width = 6.0
 circle_width = 10.0
 x_y_lines_color = Color(1, 1, 1, 1)
-x_y_lines_width = 12.0
+x_y_lines_width = 0.0
 number_font_size = 30.0
 number_color = Color(1, 1, 1, 1)
 number_adjustment = 80.0
 helper_line_amount = 5
 helper_line_color = Color(1, 1, 1, 0.5647059)
-background_color = Color(0, 0, 0, 0.72156864)
 metadata/_custom_type_script = "uid://c52ll0p02s5e8"
 
-[connection signal="pressed" from="FullContainer/HBoxContainer/Button" to="." method="LeftPress"]
-[connection signal="pressed" from="FullContainer/HBoxContainer/VBoxContainer2/HBoxContainer/Panel2/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="FullContainer/HBoxContainer/VBoxContainer2/HBoxContainer/Panel4/Button" to="Panel" method="_on_button_pressed"]
-[connection signal="LoadGraph" from="FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer" to="Panel" method="LoadGraph"]
-[connection signal="pressed" from="FullContainer/HBoxContainer/VBoxContainer3/Button2" to="." method="RightPress"]
+[node name="Line2D" type="Line2D" parent="Panel/MarginContainer/Chart" unique_id=1376933196]
+points = PackedVector2Array(-61, 587, 874, 229, 1662, 528)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[connection signal="pressed" from="FullContainer/HBoxContainer/Left" to="." method="LeftPress"]
+[connection signal="pressed" from="FullContainer/HBoxContainer/Data/HBoxContainer/Panel2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="FullContainer/HBoxContainer/Data/HBoxContainer/Panel4/Button" to="Panel" method="_on_button_pressed"]
+[connection signal="LoadGraph" from="FullContainer/HBoxContainer/Data/ScrollContainer/InfoContainer" to="Panel" method="LoadGraph"]
+[connection signal="pressed" from="FullContainer/HBoxContainer/Right/Button2" to="." method="RightPress"]

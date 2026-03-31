@@ -1,4 +1,5 @@
 extends Node
+signal NewOreFound
 signal OreChanged
 signal DepthChanged
 signal PickaxeChanged
@@ -81,7 +82,7 @@ func Save():
 	SaveData["inventory"] = OreAmounts
 	SaveData["levels"] = PickaxeLevels
 	SaveData["unlocked"] = UnlockedPickaxes
-	SaveData["found"] = FoundOres
+	SaveData["foundsorted"] = FoundOres
 	SaveData["foundlayers"] = FoundLayers
 	SaveData["forged"] = ForgedPickaxes
 	SaveData["xp"] = XP
@@ -105,7 +106,7 @@ func Load():
 		
 	UnlockedPickaxes = SaveData["unlocked"]
 	ForgedPickaxes = SaveData["forged"]
-	FoundOres = SaveData["found"]
+	FoundOres = SaveData["foundsorted"]
 	XP = SaveData["xp"]
 	Level = GameData["levels"][str(int(SaveData["level"]))]
 	FoundLayers = SaveData["foundlayers"]
@@ -208,6 +209,10 @@ func normalizepickaxes():
 func GetRarity(DepthValue: float, OreID: int) -> float:
 	
 	var DepthTable = OreDepthTables[OreID]#GameData["ores"][var_to_str(OreID)]["depth"]
+	var LevelRequirement = int(GameData["ores"][var_to_str(OreID)]["rank"])
+	
+	if int(Level["id"]) < LevelRequirement:
+		return 0
 	
 	if DepthTable.size() == 0:
 		return 0
@@ -279,15 +284,16 @@ func StoreOre(OreID,amount = 1,into = true):
 	
 	pass
 
-func AddOre(OreID,amount = 1):
+func AddOre(OreID,Ore,amount = 1):
 	OreAmounts[OreID] += amount
 	if OreRarityTable[OreID] != 0:
 		TotalOreAmount += amount
 	else:
 		TotalStoneAmount += amount
 	
-	if Global.FoundOres[OreID] == false:
-		Global.FoundOres[OreID] = true
+	if Global.FoundOres[Ore["sorting"]] == false:
+		Global.FoundOres[Ore["sorting"]] = true
+		emit_signal("NewOreFound")
 	#save_json("res://Data/Data.json",GameData)
 		
 	emit_signal("OreChanged",OreID)
@@ -365,4 +371,10 @@ func Suffix(value: float,Integer = false) -> String:
 	else:
 		push_error("What???? (Global, func Suffix())")
 		return "bruh"
-		
+
+func IndexFromSorting(SortingID):
+	for i in GameData["ores"].values():
+		if i["sorting"] == SortingID:
+			return i["id"]
+			
+			

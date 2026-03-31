@@ -5,7 +5,7 @@ signal StartedMiningAnim
 signal Scaled
 signal ExitAttempt
 
-var ModFactor = [0.05,0.05,0.05]
+var ModFactor = [0.25,0.25,0.2]
 
 #@onready var %Cursor = self.get_node("%Cursor")
 @onready var Effects = self.get_node("Effects")
@@ -103,10 +103,10 @@ func _process(delta: float) -> void:
 			else:
 				
 				layer.position += Vector2(0,-delta * Speed)
-				
+			
 				var posy = layer.position.y
-				var mod = 1 - (ModFactor[0] * ((posy)/Global.TileSize.y))
-				layer.modulate = Color(mod,mod,mod)
+				var mod = [1 - (ModFactor[0] * ((posy)/Global.TileSize.y)),1 - (ModFactor[1] * ((posy)/Global.TileSize.y)),1 - (ModFactor[2] * ((posy)/Global.TileSize.y))]
+				layer.modulate = Color(mod[0],mod[1],mod[2])
 				#layer.position = layer.position.lerp(Vector2(0,TargetPos[index]),delta * Speed / 10)
 				#var layernum = index 
 			index += 1
@@ -642,7 +642,7 @@ func FinishedMining(AnimName,TileCoordinates,OreID,Layer):
 	else:
 		Global.Tiles[str_to_var(Layer.name) -2][TileCoords.find(TileCoordinates)] = -1
 	
-	Global.AddOre(OreID)
+	Global.AddOre(OreID,Global.GameData["ores"][var_to_str(OreID)])
 	Global.GainXP( Global.GameData["ores"][var_to_str(OreID)]["xp"] )
 	MoveDownFullCheck()
 	if ShiftLocked == true:

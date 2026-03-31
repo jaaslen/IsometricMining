@@ -48,8 +48,8 @@ func OpenButtonPressed() -> void:
 		Opening = true
 		Closing = false
 		modulate = Color(1,1,1,1)
-		%Control.LoadOre(1,false)
-		%GridContainer.AddScenes()
+		#%Control.LoadOre(1,false)
+		#<%GridContainer.AddScenes()
 		
 	else:
 		Closing = Open
@@ -60,8 +60,8 @@ func OpenButtonPressed() -> void:
 		else:
 			modulate = Color(1,1,1,1)
 			
-			%Control.LoadOre(1,false)
-			%GridContainer.AddScenes()
+			#%Control.LoadOre(1,false)
+			#%GridContainer.AddScenes()
 		
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Forge"):

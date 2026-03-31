@@ -32,6 +32,8 @@ enum ChartType{
 
 ## The 'values' array is the array for the values displayed on the y axis in the Graph.
 ## It is also exported to the inspector on the right side of the screen (default setting). When you first get the add-on, there aren't any valuables set to this array, so you have to enter AT LEAST 2 values.
+@export var ColourScale : Array = [1,10] # Dark value, to Medium value,to Light value
+@export var ColourScaleColours : Array = [Color(1.0, 0.0, 0.0, 1.0),Color(0.0, 1.0, 0.0, 1.0)]
 @export var values: PackedVector2Array
 
 
@@ -198,9 +200,9 @@ func _draw() -> void:
 					(x_size / (last_val-values[0][0]) * (values[i][0]-values[0][0])) - (line_width / 2), # x value
 					y_size - (y_size / max_val * values[i][1]) - (line_width / 2) # y value
 					)
-				if i != 0 and i != total_point_count-1:
-					draw_circle(vector2_array[i],circle_width,line_color)
-			draw_polyline(vector2_array, line_color, line_width, antialiasing) # Draws the main line.
+				#if i != 0 and i != total_point_count-1:
+				#draw_circle(vector2_array[i],circle_width,ColourFromValue(values[i].y))
+			#draw_polyline(vector2_array, line_color, line_width, antialiasing) # Draws the main line.
 			
 			# The code above draws the LineGraph.
 			
@@ -216,8 +218,9 @@ func _draw() -> void:
 					x_size - (x_size / last_val * values[i][0]), # x value #(x_increment * i) + x_y_lines_width + (line_width / 2) + (distance_to_y / 2),
 					y_size - (y_size / max_val * values[i][1]) # y value
 				)
-				draw_line(vector2_array[i], Vector2(vector2_array[i].x, y_size - x_y_lines_width), line_color, line_width, antialiasing) # Draws the main lines.
-				draw_circle(vector2_array[i],circle_width,line_color)
+				
+				#CreateLine(vector2_array[i], Vector2(vector2_array[i].x, y_size - x_y_lines_width), [line_color], [line_width], antialiasing) # Draws the main lines.
+				
 			# The code above draws the BarChart.
 
 	draw_polyline(line_chart_x_y_indicator_point_array, x_y_lines_color, x_y_lines_width, antialiasing) # Draws the x and y axis lines.
@@ -261,10 +264,61 @@ func _draw() -> void:
 		
 		
 		for index in vector2_array.size():
-			print("max index = " + str(vector2_array.size()))
+			#print("max index = " + str(vector2_array.size()))
 			if index == (vector2_array.size()-1):
 				draw_string(default_font, Vector2(vector2_array[index].x - (text_size_single_liner.x / 2), y_size + text_size_single_liner.y), str((is_int( values[index][0]))) + "m", HORIZONTAL_ALIGNMENT_LEFT, -1, number_font_size, number_color)
 			elif values[index][0] + 1 < values[index+1][0]:
 				draw_string(default_font, Vector2(vector2_array[index].x - (text_size_single_liner.x / 2), y_size + text_size_single_liner.y), str((is_int( values[index][0]))) + "m", HORIZONTAL_ALIGNMENT_LEFT, -1, number_font_size, number_color)
 	
-	#endregion
+	CreateLine(vector2_array,[],[],false)
+#new_values: PackedVector2Array
+#from: Vector2, to: Vector2, color: Color, width: float = -1.0, antialiased: bool = false
+func CreateLine(Points: PackedVector2Array,Colors: PackedColorArray,Thickness: PackedFloat32Array, antialiased):
+	for i in self.get_children():
+		i.queue_free()
+	var NewLine = Line2D.new()
+	var LineGradient = Gradient.new()
+	NewLine.antialiased = antialiased
+	NewLine.begin_cap_mode = Line2D.LINE_CAP_ROUND
+	NewLine.end_cap_mode = Line2D.LINE_CAP_ROUND
+	
+	var index : int = 0
+	#for i in LineGradient.colors:
+	#	LineGradient.remove_point(index)
+	#	index += 1
+	
+	
+	
+	
+	index = 0
+	
+	LineGradient.colors = []
+	for point in Points:
+		LineGradient.add_point(index/float(Points.size()-1),ColourFromValue(values[index].y))
+		NewLine.add_point(point)
+		index += 1
+		
+	#for i in range()
+		
+	
+	LineGradient.interpolation_mode = Gradient.GRADIENT_INTERPOLATE_LINEAR
+	print(var_to_str(LineGradient))
+	NewLine.set_gradient(LineGradient)
+	#print(str(Points.size()) + "points") 
+	#print(str(LineGradient.get_point_count()) + "Graduebtsint points") 
+	add_child(NewLine)
+	
+func ColourFromValue(Value):
+	var NormalizedVal = (Value - ColourScale[0]) / (ColourScale[1] - ColourScale[0])
+		
+
+		
+	var Start = ColourScaleColours[0]
+	var End = ColourScaleColours[1]
+	
+	if Value <= ColourScale[0]:
+		return Start
+	elif Value >= ColourScale[1]:
+		return End
+	
+	return Start.lerp(End,NormalizedVal)

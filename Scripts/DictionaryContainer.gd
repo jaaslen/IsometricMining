@@ -3,7 +3,8 @@ extends GridContainer
 
 func _ready() -> void:
 	get_viewport().connect("size_changed", Callable(self, "update_position_and_scale"))
-	#Global.OreChanged.connect(AddScenes)
+	Global.NewOreFound.connect(AddScenes)
+	Global.LevelUp.connect(AddScenes)
 	AddScenes()
 	update_position_and_scale()
 	#var Index = 0
@@ -41,7 +42,7 @@ func AddScenes():
 		if data[key]["id"] != 0:
 			var scene: PackedScene = load("uid://be6lsgn3ms26")
 			var instance = scene.instantiate()
-			if Global.FoundOres[data[key]["id"]]:
+			if Global.FoundOres[data[key]["sorting"]]:
 				instance.Found = true
 			instance.Ore = data[key]
 			add_child(instance)

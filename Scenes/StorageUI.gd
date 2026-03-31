@@ -76,3 +76,11 @@ func update_position_and_scale():
 	if Open == false and Opening == false and Closing == false:
 		position.x = -vp_size.x
 	ClosedPos = Vector2(-vp_size.x,0)
+
+
+
+
+func CloseButton() -> void:
+	if Open:
+		OpenButtonPressed()
+	pass # Replace with function body.

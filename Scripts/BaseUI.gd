@@ -14,4 +14,4 @@ func MenuOpened():
 	
 func MenuClosed():
 	visible = true
-	mouse_filter = Control.MOUSE_FILTER_STOP#visible = true
+	#mouse_filter = Control.MOUSE_FILTER_STOP#visible = true

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://nuh1nxkw6hlv" path="res://Scripts/OreInfo.gd" id="1_lg6u6"]
 [ext_resource type="Texture2D" uid="uid://dcicd3utpj2kf" path="res://Visuals/OreSheet.png" id="2_pr6m8"]
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="3_pr6m8"]
+[ext_resource type="Texture2D" uid="uid://bhqqk4lwgwgs3" path="res://Visuals/Ranks/A.png" id="4_lg6u6"]
+[ext_resource type="Texture2D" uid="uid://by7ba5d0vn2ok" path="res://Visuals/Ranks/1.png" id="5_pr6m8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_auoxk"]
 atlas = ExtResource("2_pr6m8")
@@ -44,5 +46,24 @@ layout_mode = 0
 offset_right = 160.0
 offset_bottom = 160.0
 theme = ExtResource("3_pr6m8")
+
+[node name="Rank" type="TextureRect" parent="." unique_id=1130002818]
+z_index = 1
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 160.0
+mouse_filter = 2
+texture = ExtResource("4_lg6u6")
+expand_mode = 1
+
+[node name="Tier" type="TextureRect" parent="." unique_id=1567260776]
+z_index = 1
+layout_mode = 0
+offset_left = 80.0
+offset_top = 80.0
+offset_right = 160.0
+offset_bottom = 160.0
+texture = ExtResource("5_pr6m8")
+expand_mode = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

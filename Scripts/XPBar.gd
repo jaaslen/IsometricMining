@@ -17,11 +17,11 @@ func _ready() -> void:
 	
 	var level = Global.Level
 	
-	FinalTier.texture = load("res://Visuals/Ranks/" + str(int(level["TierTotal"])) + ".png")
+	FinalTier.texture = load("res://Visuals/Ranks/" + str(int(level["tiertotal"])) + ".png")
 	PowerLabel.text = "x" + str(level["boost"])
 	
 	Sprite.texture = load("res://Visuals/Ranks/" + level["name"] + ".png")
-	Tier.texture = load("res://Visuals/Ranks/" + str(int(level["Tier"])) + ".png")
+	Tier.texture = load("res://Visuals/Ranks/" + str(int(level["tier"])) + ".png")
 	max_value = level["nextxp"]
 	self_modulate = Color(level["color"]) 
 	$Rank.self_modulate = Color(level["color"]) 
@@ -31,10 +31,10 @@ func _ready() -> void:
 	#Tier.self_modulate = Color(level["color"]) 
 	
 	
-	if level["TierTotal"] > level["Tier"]:
+	if level["tiertotal"] > level["tier"]:
 		TierProgress.visible = true
-		TierProgress.max_value = level["TierTotal"]
-		TierProgress.value = level["Tier"]
+		TierProgress.max_value = level["tiertotal"]
+		TierProgress.value = level["tier"]
 		TierBox.size.x = 174
 	else:
 		TierProgress.visible = false
@@ -65,13 +65,13 @@ func LevelUp():
 	Global.Level = level
 	max_value = level["nextxp"]
 	Sprite.texture = load("res://Visuals/Ranks/" + level["name"] + ".png")
-	Tier.texture = load("res://Visuals/Ranks/" + str(int(level["Tier"])) + ".png")
+	Tier.texture = load("res://Visuals/Ranks/" + str(int(level["tier"])) + ".png")
 	Global.LeveledUp()
 	
-	if level["TierTotal"] > level["Tier"]:
+	if level["tiertotal"] > level["tier"]:
 		TierProgress.visible = true
-		TierProgress.max_value = level["TierTotal"]
-		TierProgress.value = level["Tier"]
+		TierProgress.max_value = level["tiertotal"]
+		TierProgress.value = level["tier"]
 		TierBox.size.x = 174
 	else:
 		TierProgress.visible = false
@@ -84,7 +84,7 @@ func LevelUp():
 		#if Global.XP >= level["requiredxp"] and Global.XP < level["nextxp"]:
 			##Global.level = level["id"]
 			#Sprite.texture = load("res://Visuals/Ranks/" + level["name"] + ".png")
-			#Tier.texture = load("res://Visuals/Ranks/" + str(int(level["Tier"])) + ".png")
+			#Tier.texture = load("res://Visuals/Ranks/" + str(int(level["tier"])) + ".png")
 			#max_value = level["nextxp"]
 			#self_modulate = Color(level["color"]) 
 			#$Rank.self_modulate = Color(level["color"]) 
