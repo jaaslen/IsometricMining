@@ -16,15 +16,20 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=60
 config/icon="res://Visuals/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dl3uqtbybd4r1"
+
 [autoload]
 
 Global="*res://Data/Global.gd"
 TraitData="*res://Boosts/BoostDatabase.gd"
+SFX="*uid://b5wt4k2kk7fmc"
 
 [display]
 
 window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_height=1000
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/handheld/orientation=1

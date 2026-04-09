@@ -40,10 +40,16 @@ func _process(delta: float) -> void:
 func OpenButtonPressed() -> void:
 	
 	if Opening:
+		
+		
+		
 		Opening = false
 		Closing = true
 		emit_signal("MenuClosed")
 	elif Closing:
+		
+		SFX.play_sfx("Open Panel")
+		
 		Opening = true
 		Closing = false
 		modulate = Color(1,1,1,1)
@@ -54,8 +60,12 @@ func OpenButtonPressed() -> void:
 		Closing = Open
 		Opening = !Open
 		if Open:
+			
 			emit_signal("MenuClosed")
 		else:
+			
+			SFX.play_sfx("Open Panel")
+			
 			modulate = Color(1,1,1,1)
 			#%Control.LoadOre(1,false)
 			#%GridContainer.AddScenes()

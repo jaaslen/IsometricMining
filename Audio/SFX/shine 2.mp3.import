@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cc78ouy3xxr8e"
+path="res://.godot/imported/shine 2.mp3-c42c3f4b4fa35e97c3dc7a564a07bff1.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/shine 2.mp3"
+dest_files=["res://.godot/imported/shine 2.mp3-c42c3f4b4fa35e97c3dc7a564a07bff1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -2,6 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cniaxay254ah6" path="res://Scenes/TitleScreen.gd" id="1_phf2g"]
 [ext_resource type="Texture2D" uid="uid://dqs17kmqkxwp4" path="res://Visuals/Background.png" id="1_tochr"]
+[ext_resource type="AudioStream" uid="uid://dqtehoo3d3pei" path="res://Audio/Music/Idk.mp3" id="3_6khh7"]
+[ext_resource type="Texture2D" uid="uid://cac7ikk2nei7g" path="res://Visuals/OIP-205755889.jpg" id="4_bwrlp"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_bwrlp"]
+stream_count = 1
+stream_0/stream = ExtResource("3_6khh7")
+stream_0/volume = 0.0
 
 [node name="Tilte" type="Control" unique_id=1854520791]
 layout_mode = 3
@@ -27,19 +34,6 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 112
 text = "PLAY"
 
-[node name="Title" type="Label" parent="." unique_id=1231269899]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -300.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 300
-text = "TITLE"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="TextureRect" type="TextureRect" parent="." unique_id=414375818]
 z_index = -1
 layout_mode = 1
@@ -48,6 +42,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("1_tochr")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=824395260]
@@ -79,6 +74,30 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.5
 text = "Quit?"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1743999783]
+stream = SubResource("AudioStreamSynchronized_bwrlp")
+autoplay = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1320396389]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -539.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 161
+bbcode_enabled = true
+text = "[tornado radius=2.0 freq=6.0 connected=0]Mining Game[/tornado]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="RichTextLabel" unique_id=1021965523]
+position = Vector2(915, 313)
+scale = Vector2(3.1392403, 1.3054187)
+energy = 5.04
+texture = ExtResource("4_bwrlp")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="HBoxContainer/Settings" to="." method="_on_settings_pressed"]

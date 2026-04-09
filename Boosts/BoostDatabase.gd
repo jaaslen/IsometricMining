@@ -3,7 +3,8 @@ extends Node
 class_name TraitDatabase
 
 @export var Traits := {
-	1: preload("res://Boosts/Traits/Resources/StoneProficiency.tres")
+	5: preload("res://Boosts/Traits/Resources/StoneProficiency.tres"),
+	6: preload("res://Boosts/Traits/Resources/StoneStruggle.tres")
 }
 
 @export var Boosts := {

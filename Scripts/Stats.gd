@@ -22,7 +22,7 @@ func PickaxeChanged(PickaxeID):
 		i.queue_free()
 	var StatIndex = 0
 	var stats = Global.GameData["pickaxes"][var_to_str(PickaxeID)]["stats"]
-	for stat in Global.GameData["pickaxes"][var_to_str(PickaxeID)]["stats"]:
+	for stat in stats:
 		if Global.GameData["pickaxes"][var_to_str(OriginalID)]["stats"][StatIndex] == 1 and StatIndex > 1:
 			pass
 		elif stat != 1 or StatIndex in [0,1]:

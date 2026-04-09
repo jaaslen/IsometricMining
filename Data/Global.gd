@@ -6,10 +6,12 @@ signal PickaxeChanged
 signal LayerChanged
 signal LevelUp
 signal ExitPromptSelected
+signal CameraShake
 
 var GameData : Dictionary = LoadJson("res://Data/Data.json")
 var SaveData : Dictionary = LoadJson("res://Data/SaveData.json")
 
+var LayerAmount : int = 0
 var OresInLayer : Array = [0]
 var UsingMouse : bool = true
 var Depth : int = 0
@@ -55,12 +57,11 @@ func _ready() -> void:
 	CacheData()
 	#GetLevel()
 	normalizeores()
+	normalizelayers()
 	normalizepickaxes()
 	AvailableOres()
 	
-	print(OresInGame)
-	print(OreAmounts.size())
-	#for v in range(6):
+
 		#var newlayer = []
 		#for i in range(9):
 			#newlayer.append(GenerateOre())
@@ -205,13 +206,18 @@ func normalizepickaxes():
 
 		if PickaxeLevels.size() < PickaxesInGame:
 			PickaxeLevels.append(0)
+			
+func normalizelayers():
+	for Layerinfo in GameData["layers"].values():
+		Layerinfo["id"] = int(Layerinfo["id"])
+		LayerAmount += 1
 
-func GetRarity(DepthValue: float, OreID: int) -> float:
+func GetRarity(DepthValue: float, OreID: int, Requirements : bool = true) -> float:
 	
 	var DepthTable = OreDepthTables[OreID]#GameData["ores"][var_to_str(OreID)]["depth"]
 	var LevelRequirement = int(GameData["ores"][var_to_str(OreID)]["rank"])
 	
-	if int(Level["id"]) < LevelRequirement:
+	if int(Level["id"]) < LevelRequirement and Requirements == true:
 		return 0
 	
 	if DepthTable.size() == 0:
@@ -365,7 +371,7 @@ func Suffix(value: float,Integer = false) -> String:
 	if index >= 1:
 		return "%.2f%s" % [value, suffixes[index]]
 	elif Integer == false:
-		return str((value))
+		return "%.2f" % value
 	elif Integer == true:
 		return str(int(value))
 	else:
@@ -377,4 +383,13 @@ func IndexFromSorting(SortingID):
 		if i["sorting"] == SortingID:
 			return i["id"]
 			
-			
+func ColourAdjust(InitialColor):
+	return InitialColor * 0.8 + Color(0.2,0.2,0.2,1)
+
+func Wait(seconds : float):
+	var timer = get_tree().create_timer(seconds)
+	await timer.timeout
+	return
+
+func ShakeCamera(amount):
+	emit_signal("CameraShake",amount)

@@ -112,4 +112,10 @@ func LabelOutline(_label):
 
 func MoveAll() -> void:
 	emit_signal("MovedOre",LeftSide,true,1,Ore["id"]) #to storage?, percentage?, value for percentage / absolute, oreid
+	SFX.play_sfx("Ring Button", 0.7 )
+
+
+
+func _on_all_mouse_entered() -> void:
+	SFX.play_sfx("Hover",0.6)
 	pass # Replace with function body.

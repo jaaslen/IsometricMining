@@ -12,39 +12,40 @@ extends PanelContainer
 var TraitName : String  
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var TraitName = Trait["name"]
+	TraitName = Trait["name"]
 
 	#Global.OreChanged.connect(OreChanged)
 	Description.text = Trait["description"]
 
 	#Value = Global.OreAmounts[Trait["id"]]
 	LabelBox.text = " " + capitalize_first(TraitName)#+ " : " + ( "%.2f" % Value)
-
-	#CostLabelBox.text = var_to_str(Value) 
+	
+	
+	modulate = Color(Trait["color"])#CostLabelBox.text = var_to_str(Value) 
 	##NameLabelBox.FitText()
 	#CostLabelBox.FitText()
-	var Original := get_theme_stylebox("panel")
-	var style := Original.duplicate(true)
-	#style.border_color = Trait["color"]#Color.html(Trait["color"]) * 0.5
-	add_theme_stylebox_override("panel", style)
+	#var Original := get_theme_stylebox("panel")
+	#var style := Original.duplicate(true)
+	##style.border_color = Trait["color"]#Color.html(Trait["color"]) * 0.5
+	#add_theme_stylebox_override("panel", style)
 
 	
-	Description.FitText()
+	#Description.FitText()
 	pass # Replace with function body.
 
 
 
-	var NodeColor = Color(1,1,1,1)#Color(Trait["color"])
+	#var NodeColor = Color(1,1,1,1)#Color(Trait["color"])
 
 
 	#var Original := get_theme_stylebox("panel")
 	#var style := Original.duplicate(true)
-	style.border_color = NodeColor * 0.5
-	add_theme_stylebox_override("panel", style)
-	#ValueLabelBox.modulate = NodeColor * 1.2
-	Seperation.modulate = NodeColor * 1.2
-	#LabelBox.modulate = Color(Trait["color"]) * 1.2
-	Description.add_theme_color_override("default_color",NodeColor * 1.2)#modulate = NodeColor * 1.2
+	#style.border_color = NodeColor * 0.5
+	#add_theme_stylebox_override("panel", style)
+	##ValueLabelBox.modulate = NodeColor * 1.2
+	#Seperation.modulate = NodeColor * 1.2
+	##LabelBox.modulate = Color(Trait["color"]) * 1.2
+	#Description.add_theme_color_override("default_color",NodeColor * 1.2)#modulate = NodeColor * 1.2
 	
 	#if (Value >= Global.Trait[Stat] and Stat != "delay") or (Value <= Global.Trait[Stat] and Stat == "delay"): 
 		#Description.modulate = Color(Trait["color"]) * 0.8

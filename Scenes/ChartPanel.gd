@@ -6,15 +6,13 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
 
 func _on_button_pressed() -> void:
 	visible = !visible
 	pass # Replace with function body.
 
-func LoadGraph(Data,OreInfo) -> void:
+func LoadGraph(Data,_OreInfo) -> void:
 	$MarginContainer/Chart.set_values(Data)
 	#modulate = Color(OreInfo["color"])  / 5 + Color(0.25,0.25,0.25,1)
 	

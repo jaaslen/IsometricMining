@@ -6,7 +6,7 @@ func _ready() -> void:
 	Global.LayerChanged.connect(LayerChanged)
 	pass # Replace with function body.
 
-func LayerChanged(Layer):
+func LayerChanged(_Layer):
 	
 	play("LayerTransition")
 

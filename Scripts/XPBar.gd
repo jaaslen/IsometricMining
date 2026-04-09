@@ -46,7 +46,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	value = Global.XP
 	AmountLabel.text = Global.Suffix(value,true)
 	RequiredLabel.text = Global.Suffix(max_value,true)
@@ -59,7 +59,7 @@ func LevelUp():
 	
 	var level = Global.GameData["levels"][str(int(Global.Level["id"]) + 1)]
 	
-	Global.XP = value - max_value
+	Global.XP = int(value) - int(max_value)
 	#value = Global.XP - max_value
 	PowerLabel.text = "x" + str(level["boost"])
 	Global.Level = level

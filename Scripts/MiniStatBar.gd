@@ -17,7 +17,7 @@ var Name:String
 func _ready() -> void:
 	
 	if Value >= 0:
-		var Increase = (Value - Pickaxe["stats"][Stat])
+		#var Increase = (Value - Pickaxe["stats"][Stat])
 		Name = capitalize(Global.GameData["stats"][var_to_str(Stat)]["name"])
 		ColorValue = Global.GameData["stats"][var_to_str(Stat)]["color"]
 

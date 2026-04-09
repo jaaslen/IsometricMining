@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dog60cbtohtnx"
+path="res://.godot/imported/cinematic hit.mp3-9c7162ea9773bbf7e3fd1fda934d8cad.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/cinematic hit.mp3"
+dest_files=["res://.godot/imported/cinematic hit.mp3-9c7162ea9773bbf7e3fd1fda934d8cad.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -153,6 +153,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_button_pressed() -> void:
+	SFX.play_sfx("ToggleOFF")
 	ButtonPressed()
 	pass # Replace with function body.
 

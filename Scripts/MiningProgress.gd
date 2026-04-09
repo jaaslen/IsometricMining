@@ -1,10 +1,11 @@
 extends ProgressBar
 @onready var Camera : Camera2D = %Camera2D
 @onready var timer: Timer = $Timer
+
 var DesiredTime: float
 var OrePosition: Vector2 = Vector2(0,0)
 var Extent = 0.3
-
+var SFXTime : float
 var Active = false
 
 func ShowTime(desired_time: float,oreid,Position) -> void:
@@ -36,6 +37,7 @@ func ShowTime(desired_time: float,oreid,Position) -> void:
 		
 		timer.stop()
 		timer.wait_time = desired_time
+		SFXTime = (desired_time / 7)
 		timer.start()
 		
 		Extent = 0.15 * Ore["rarity"]
@@ -44,10 +46,13 @@ func ShowTime(desired_time: float,oreid,Position) -> void:
 	
 
 func _process(delta):
-	if Active or 1==1:
+	if Active:
 		if timer.is_stopped():
+			
+			
 			visible = false
-			#Camera.position = Vector2(960,540)
+			#Camera.offset = Vector2(0,0)
+			Camera.position = Vector2(960,540)
 			#Camera.zoom = Vector2(1,1)
 			Camera.toggle(false)
 			Camera.Return()
@@ -59,8 +64,13 @@ func _process(delta):
 			
 			var completion = floor((value / max_value) * 7) / 7.0
 			
-			var NomralizedCompletion = Vector2(1 + completion * (Extent) , (1 + completion * (Extent)))
+			var NormalizedCompletion = Vector2(1 + completion * (Extent) , (1 + completion * (Extent)))
+			
+
 			
 			if DesiredTime > 1:
-				Camera.zoom = NomralizedCompletion
+				Camera.zoom = NormalizedCompletion
+				Camera.position = Vector2(960,540) + (OrePosition * 2 * completion)
+				
+				
 				

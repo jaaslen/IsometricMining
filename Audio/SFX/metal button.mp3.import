@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctjbfmpr7qnxs"
+path="res://.godot/imported/metal button.mp3-868e384c2f5431136f935cc53ff2ebe0.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/metal button.mp3"
+dest_files=["res://.godot/imported/metal button.mp3-868e384c2f5431136f935cc53ff2ebe0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

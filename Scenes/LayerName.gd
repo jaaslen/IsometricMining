@@ -10,5 +10,3 @@ func LayerChanged(Layer):
 	#var Layer = Global.GameData["layers"][int(LayerID)]
 	text = "[tornado radius=2.0 freq=10.0 connected=0]%s[/tornado]" % Layer["name"]
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

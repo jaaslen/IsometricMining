@@ -500,8 +500,11 @@ func MineTile(layer,shift = Vector2i.ZERO):
 	pass
 	
 func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID,MineTime,GlobalCoordinates):
+	
+		var Ore = Global.GameData["ores"][var_to_str(OreID)]
+	
 		if Locked == false and ShiftLocked == false:
-
+			
 			emit_signal("StartedMiningAnim",0,0,GlobalCoordinates)
 			for i in Effects.get_children():
 				if i.name != "Mining":
@@ -597,8 +600,8 @@ func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID,MineTime,GlobalCoor
 			TopAnimation.speed_scale *= 20
 
 		TopAnimation.play()
-		TopAnimation.animation_finished.connect(FinishedMining.bind(TopAnimation.name,TileCoordinates,OreID,Layer),CONNECT_ONE_SHOT)
-		
+		TopAnimation.animation_finished.connect(FinishedMining.bind(TopAnimation.name,TileCoordinates,OreID,Layer,Ore["breaksound"],Ore["sound"],Ore["hardness"]/10),CONNECT_ONE_SHOT)
+		TopAnimation.frame_changed.connect(FrameChanged.bind(TopAnimation,Ore["sound"],Ore["hardness"] / Global.Pickaxe["stats"][0]))
 		
 		
 		
@@ -632,7 +635,13 @@ func MoveBetween():
 		
 
 	
-func FinishedMining(AnimName,TileCoordinates,OreID,Layer):
+func FinishedMining(AnimName,TileCoordinates,OreID,Layer,BreakSound,Sound,Strength):
+	SFX.play_sfx(BreakSound,1,10*min(Strength-1,0))
+	SFX.play_sfx(Sound,1,10*min(Strength-1,0))
+	
+	
+	
+	Global.ShakeCamera(Strength * 3)
 	var TopAnimation = Effects.get_node(str(AnimName))
 	TopAnimation.call_deferred("queue_free")
 	Layer.erase_cell(TileCoordinates)
@@ -665,3 +674,11 @@ func ClickedCenter(pos) -> Vector2:
 	var tile_center_local = map_to_local(tile_coords)
 	
 	return (tile_center_local)
+	
+func FrameChanged(MineAnimNode,Sound,Strength,Playing = true):
+	if Playing:
+		
+		if Strength > 0.5:
+			#~40 hiighest and ~0.005 lowest
+			SFX.play_sfx(Sound,((float(MineAnimNode.frame) / 7.0) * 0.5 + 0.5),10*min(Strength-1,0))
+			Global.ShakeCamera(Strength)

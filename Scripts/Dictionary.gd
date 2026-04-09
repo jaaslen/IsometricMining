@@ -39,12 +39,14 @@ func _process(delta: float) -> void:
 
 
 func OpenButtonPressed() -> void:
-	
 	if Opening:
 		Opening = false
 		Closing = true
 		emit_signal("MenuClosed")
 	elif Closing:
+		
+		SFX.play_sfx("Open Panel")
+		
 		Opening = true
 		Closing = false
 		modulate = Color(1,1,1,1)
@@ -58,6 +60,9 @@ func OpenButtonPressed() -> void:
 			
 			emit_signal("MenuClosed")
 		else:
+			
+			SFX.play_sfx("Open Panel")
+			
 			modulate = Color(1,1,1,1)
 			
 			#%Control.LoadOre(1,false)
@@ -79,3 +84,7 @@ func update_position_and_scale():
 	if Open == false and Opening == false and Closing == false:
 		position.x = vp_size.x
 	ClosedPos = Vector2(vp_size.x,0)
+	
+func CloseButton() -> void:
+	if Open:
+		OpenButtonPressed()

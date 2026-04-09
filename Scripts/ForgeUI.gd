@@ -48,6 +48,8 @@ func OpenButtonPressed() -> void:
 		Opening = true
 		Closing = false
 		modulate = Color(1,1,1,1)
+		SFX.play_sfx("Open Panel")
+		
 	else:
 		Closing = Open
 		Opening = !Open
@@ -55,6 +57,9 @@ func OpenButtonPressed() -> void:
 		if Open:
 			emit_signal("MenuClosed")
 		else:
+			
+			SFX.play_sfx("Open Panel")
+			
 			modulate = Color(1,1,1,1)
 		
 func _input(event: InputEvent) -> void:
@@ -73,3 +78,8 @@ func update_position_and_scale():
 	if Open == false and Opening == false and Closing == false:
 		position.y = -vp_size.y
 	ClosedPos = Vector2(0,-vp_size.y)
+
+
+func CloseButton() -> void:
+	if Open:
+		OpenButtonPressed()

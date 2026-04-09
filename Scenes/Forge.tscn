@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bofqhbhajepx" path="res://Scripts/PickaxesForge.gd" id="1_ewbv2"]
 [ext_resource type="Script" uid="uid://c1yv6u68gcq66" path="res://Scripts/ForgeContainer.gd" id="1_tpr0r"]
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="2_667t3"]
+[ext_resource type="Script" uid="uid://chsj4ane58jum" path="res://Scripts/ForgeUI.gd" id="2_kbjox"]
 [ext_resource type="Script" uid="uid://dk0xk5sp76el" path="res://Scripts/PickaxeCosts.gd" id="2_lg3is"]
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="3_667t3"]
 [ext_resource type="Script" uid="uid://cp61yd8jx3rod" path="res://Scripts/Stats.gd" id="3_qlblt"]
@@ -19,6 +20,11 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcom1"]
 bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kbjox"]
+size = Vector2(96, 96)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_667t3"]
+
 [node name="Forge" type="Control" unique_id=468790923]
 layout_mode = 3
 anchors_preset = 15
@@ -28,6 +34,7 @@ offset_right = 508.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_667t3")
+script = ExtResource("2_kbjox")
 
 [node name="ForgeContainer" type="HBoxContainer" parent="." unique_id=629458856]
 layout_mode = 1
@@ -50,21 +57,29 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_lcom1")
 z_index = 1
 layout_mode = 2
 theme = ExtResource("2_667t3")
-theme_override_constants/separation = -10
+theme_override_constants/separation = 0
 
-[node name="PickaxeHeader" type="Label" parent="ForgeContainer/Selection/VBoxContainer" unique_id=632639103]
-z_index = 1
-custom_minimum_size = Vector2(0, 150)
+[node name="HBoxContainer2" type="HBoxContainer" parent="ForgeContainer/Selection/VBoxContainer" unique_id=1425979310]
 layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="ForgeContainer/Selection/VBoxContainer/HBoxContainer2" unique_id=23373860]
+visible = false
+layout_mode = 2
+texture_normal = SubResource("PlaceholderTexture2D_kbjox")
+
+[node name="PickaxeHeader" type="Label" parent="ForgeContainer/Selection/VBoxContainer/HBoxContainer2" unique_id=632639103]
+z_index = 1
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("2_667t3")
-theme_override_font_sizes/font_size = 96
+theme_override_font_sizes/font_size = 66
 theme_override_styles/normal = ExtResource("3_667t3")
 text = "Pickaxes"
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/Selection/VBoxContainer" unique_id=1406883267]
-custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
@@ -79,11 +94,15 @@ theme = ExtResource("2_667t3")
 theme_override_constants/separation = 0
 script = ExtResource("1_ewbv2")
 
+[node name="HBoxContainer" type="HBoxContainer" parent="ForgeContainer/Selection/VBoxContainer" unique_id=410237944]
+layout_mode = 2
+
 [node name="StatsPanel" type="TabContainer" parent="ForgeContainer" unique_id=837666918]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_667t3")
-theme_override_constants/tab_separation = 10
+theme_override_constants/tab_separation = 9
+theme_override_font_sizes/font_size = 40
 current_tab = 1
 script = ExtResource("4_gk1wl")
 
@@ -136,9 +155,23 @@ script = ExtResource("2_lg3is")
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 104
 text = "Forge!"
 script = ExtResource("6_mbix4")
+
+[node name="Bar" type="ProgressBar" parent="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ForgeButton" unique_id=697549182]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_667t3")
+max_value = 4.0
+value = 4.0
+fill_mode = 3
+show_percentage = false
 
 [node name="Upgrades" type="HBoxContainer" parent="ForgeContainer/StatsPanel" unique_id=1269663643]
 layout_mode = 2
@@ -151,8 +184,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_667t3")
 
-[node name="Selection" type="MarginContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer" unique_id=1401146119]
+[node name="PanelContainer" type="PanelContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer" unique_id=728925703]
 layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/PanelContainer" unique_id=283992865]
+layout_mode = 2
+
+[node name="Selection" type="MarginContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1401146119]
+layout_mode = 2
+size_flags_vertical = 4
 theme = ExtResource("2_667t3")
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
@@ -160,18 +201,19 @@ theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 0
 script = ExtResource("9_ugol7")
 
-[node name="Button" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/Selection" unique_id=1922722823 instance=ExtResource("9_gs31o")]
+[node name="Button" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/PanelContainer/VBoxContainer/Selection" unique_id=1922722823 instance=ExtResource("9_gs31o")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer" unique_id=1928889459]
+[node name="Label" type="Label" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1928889459]
 layout_mode = 2
 theme = ExtResource("2_667t3")
 theme_override_font_sizes/font_size = 101
 text = "▼"
 horizontal_alignment = 1
 
-[node name="UpgradeSelection2" type="MarginContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer" unique_id=2015187051]
+[node name="UpgradeSelection2" type="MarginContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/PanelContainer/VBoxContainer" unique_id=2015187051]
 layout_mode = 2
+size_flags_vertical = 4
 theme = ExtResource("2_667t3")
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 0
@@ -179,7 +221,7 @@ theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 script = ExtResource("6_042mp")
 
-[node name="Button" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/UpgradeSelection2" unique_id=1188483409 instance=ExtResource("9_gs31o")]
+[node name="Button" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer/PanelContainer/VBoxContainer/UpgradeSelection2" unique_id=1188483409 instance=ExtResource("9_gs31o")]
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ForgeContainer/StatsPanel/Upgrades/VBoxContainer" unique_id=42393773]
@@ -239,7 +281,21 @@ theme_override_font_sizes/font_size = 64
 text = "Forge!"
 script = ExtResource("15_667t3")
 
+[node name="Button" type="Button" parent="ForgeContainer" unique_id=824225297]
+modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+theme_override_font_sizes/font_size = 68
+text = "^
+^
+^
+^
+^
+"
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1056933540]
+visible = false
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -249,11 +305,13 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("2_667t3")
-color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+color = Color(0.05490196, 0.05490196, 0.05490196, 1)
 
 [connection signal="PickaxeSetup" from="ForgeContainer/Selection/VBoxContainer/ScrollContainer/PickaxeSelection" to="ForgeContainer" method="PickaxeSetup"]
 [connection signal="PickaxesReady" from="ForgeContainer/Selection/VBoxContainer/ScrollContainer/PickaxeSelection" to="ForgeContainer" method="PickaxesReady"]
 [connection signal="PriceChange" from="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ScrollContainer/OreCosts" to="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ForgeButton" method="PriceChange"]
+[connection signal="button_down" from="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ForgeButton" to="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ForgeButton" method="_on_button_down"]
 [connection signal="pressed" from="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ForgeButton" to="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ForgeButton" method="_on_pressed"]
 [connection signal="PriceChange" from="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer/ScrollContainer/VBoxContainer" to="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer/UpgradeButton" method="PriceChange"]
 [connection signal="pressed" from="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer/UpgradeButton" to="ForgeContainer/StatsPanel/Upgrades/CostPanel/VBoxContainer/UpgradeButton" method="_on_pressed"]
+[connection signal="pressed" from="ForgeContainer/Button" to="." method="CloseButton"]

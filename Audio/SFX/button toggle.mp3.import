@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://divmgwj7oldft"
+path="res://.godot/imported/button toggle.mp3-296a8dbdd7b46fa3d07ed6a4f4e80bf6.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/button toggle.mp3"
+dest_files=["res://.godot/imported/button toggle.mp3-296a8dbdd7b46fa3d07ed6a4f4e80bf6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

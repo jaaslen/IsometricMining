@@ -30,6 +30,8 @@
 		0,
 		0
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		0
 	  ],
@@ -69,6 +71,8 @@
 		1,
 		1
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Stone Drop",
 	  "layer": [
 		0,
 		1,
@@ -128,6 +132,8 @@
 		4,
 		8
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		0,
 		1,
@@ -176,6 +182,8 @@
 		8,
 		16
 	  ],
+	  "sound": "Metal Hit",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		0,
 		1
@@ -216,6 +224,8 @@
 		12,
 		36
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		1
 	  ],
@@ -271,6 +281,8 @@
 		4,
 		8
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		1,
 		2,
@@ -315,6 +327,8 @@
 		16,
 		48
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		2
 	  ],
@@ -354,6 +368,8 @@
 		16,
 		32
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		3
 	  ],
@@ -361,7 +377,7 @@
 	},
 	"8": {
 	  "id": 8,
-	  "sorting": 43,
+	  "sorting": 44,
 	  "name": "Radium",
 	  "color": "#6AA84F",
 	  "rank": 7,
@@ -393,6 +409,8 @@
 		20,
 		60
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		20,
 		21
@@ -437,6 +455,8 @@
 		20,
 		60
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		3
 	  ],
@@ -444,7 +464,7 @@
 	},
 	"10": {
 	  "id": 10,
-	  "sorting": 41,
+	  "sorting": 42,
 	  "name": "Erbium",
 	  "color": "#434343",
 	  "rank": 6,
@@ -476,6 +496,8 @@
 		80,
 		240
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		17,
 		18
@@ -484,7 +506,7 @@
 	},
 	"11": {
 	  "id": 11,
-	  "sorting": 33,
+	  "sorting": 34,
 	  "name": "Bauxite",
 	  "color": "#8E5948",
 	  "rank": 4,
@@ -516,6 +538,8 @@
 		60,
 		60
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		10
 	  ],
@@ -571,6 +595,8 @@
 		40,
 		40
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		8,
 		21
@@ -615,6 +641,8 @@
 		20,
 		20
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		1
 	  ],
@@ -654,6 +682,8 @@
 		35,
 		35
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		1,
 		2
@@ -694,6 +724,8 @@
 		30,
 		30
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		3
 	  ],
@@ -733,6 +765,8 @@
 		60,
 		60
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		2
 	  ],
@@ -772,6 +806,8 @@
 		50,
 		50
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		8
 	  ],
@@ -779,7 +815,7 @@
 	},
 	"18": {
 	  "id": 18,
-	  "sorting": 45,
+	  "sorting": 46,
 	  "name": "Uranium-240",
 	  "color": "#B9DA4D",
 	  "rank": 8,
@@ -811,6 +847,8 @@
 		50,
 		50
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		21
 	  ],
@@ -850,6 +888,8 @@
 		55,
 		55
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		2
 	  ],
@@ -857,7 +897,7 @@
 	},
 	"20": {
 	  "id": 20,
-	  "sorting": 42,
+	  "sorting": 43,
 	  "name": "Tantalum",
 	  "color": "#0B5394",
 	  "rank": 8,
@@ -889,6 +929,8 @@
 		70,
 		70
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		18
 	  ],
@@ -896,7 +938,7 @@
 	},
 	"21": {
 	  "id": 21,
-	  "sorting": 38,
+	  "sorting": 39,
 	  "name": "Thorium",
 	  "color": "#E69138",
 	  "rank": 6,
@@ -944,6 +986,8 @@
 		80,
 		80
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		12,
 		13,
@@ -953,7 +997,7 @@
 	},
 	"22": {
 	  "id": 22,
-	  "sorting": 40,
+	  "sorting": 41,
 	  "name": "Osmium",
 	  "color": "#596B5A",
 	  "rank": 7,
@@ -985,6 +1029,8 @@
 		100,
 		100
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		17,
 		18
@@ -1025,6 +1071,8 @@
 		45,
 		45
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		4
 	  ],
@@ -1068,6 +1116,8 @@
 		25,
 		25
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		2,
 		3,
@@ -1078,7 +1128,7 @@
 	},
 	"25": {
 	  "id": 25,
-	  "sorting": 35,
+	  "sorting": 36,
 	  "name": "Magnesium",
 	  "color": "#543142",
 	  "rank": 5,
@@ -1110,6 +1160,8 @@
 		60,
 		60
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		11
 	  ],
@@ -1149,6 +1201,8 @@
 		55,
 		55
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		4,
 		5
@@ -1189,6 +1243,8 @@
 		80,
 		80
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		3
 	  ],
@@ -1196,7 +1252,7 @@
 	},
 	"28": {
 	  "id": 28,
-	  "sorting": 44,
+	  "sorting": 45,
 	  "name": "Arsenic",
 	  "color": "#B99F54",
 	  "rank": 9,
@@ -1228,6 +1284,8 @@
 		25,
 		25
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		21
 	  ],
@@ -1267,6 +1325,8 @@
 		30,
 		30
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		1,
 		2,
@@ -1278,7 +1338,7 @@
 	},
 	"30": {
 	  "id": 30,
-	  "sorting": 39,
+	  "sorting": 40,
 	  "name": "Xenon",
 	  "color": "#BBA4FF",
 	  "rank": 8,
@@ -1310,6 +1370,8 @@
 		5,
 		5
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		14,
 		15,
@@ -1352,6 +1414,8 @@
 		5,
 		5
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		9
 	  ],
@@ -1395,6 +1459,8 @@
 		70,
 		70
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		4
 	  ],
@@ -1402,7 +1468,7 @@
 	},
 	"33": {
 	  "id": 33,
-	  "sorting": 34,
+	  "sorting": 35,
 	  "name": "Cinnabar",
 	  "color": "#DE0000",
 	  "rank": 4,
@@ -1438,6 +1504,8 @@
 		50,
 		50
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		11,
 		12
@@ -1478,6 +1546,8 @@
 		100,
 		100
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		9
 	  ],
@@ -1485,7 +1555,7 @@
 	},
 	"35": {
 	  "id": 35,
-	  "sorting": 37,
+	  "sorting": 38,
 	  "name": "Barium",
 	  "color": "#B77A00",
 	  "rank": 4,
@@ -1517,6 +1587,8 @@
 		100,
 		100
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		12
 	  ],
@@ -1524,7 +1596,7 @@
 	},
 	"36": {
 	  "id": 36,
-	  "sorting": 36,
+	  "sorting": 37,
 	  "name": "Vanadium",
 	  "color": "#C62A00",
 	  "rank": 6,
@@ -1560,6 +1632,8 @@
 		100,
 		100
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		11
 	  ],
@@ -1599,6 +1673,8 @@
 		50,
 		90
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		5,
 		6
@@ -1639,6 +1715,8 @@
 		80,
 		80
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		5,
 		6
@@ -1679,6 +1757,8 @@
 		120,
 		120
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		5
 	  ],
@@ -1718,6 +1798,8 @@
 		80,
 		80
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		0,
 		1,
@@ -1737,14 +1819,14 @@
 	  "sorting": 47,
 	  "name": "Stellarite",
 	  "color": "#FFFA73",
-	  "rank": 0,
+	  "rank": 8,
 	  "hardness": 80,
 	  "value": 461,
 	  "xp": 80,
 	  "depth": [
 		[
 		  5000,
-		  0
+		  0.2
 		],
 		[
 		  5250,
@@ -1774,6 +1856,8 @@
 		80,
 		80
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		12,
 		13,
@@ -1817,6 +1901,8 @@
 		20,
 		20
 	  ],
+	  "sound": "Cinematic Hit 2",
+	  "breaksound": "Glass Break",
 	  "layer": [
 		0,
 		1
@@ -1857,6 +1943,8 @@
 		20,
 		20
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		7
 	  ],
@@ -1896,6 +1984,8 @@
 		60,
 		20
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		7
 	  ],
@@ -1935,6 +2025,8 @@
 		20,
 		20
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		6
 	  ],
@@ -1974,6 +2066,8 @@
 		20,
 		20
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		6
 	  ],
@@ -2013,11 +2107,65 @@
 		20,
 		20
 	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
 	  "layer": [
 		6,
 		7
 	  ],
 	  "description": "i didnt finish this yet"
+	},
+	"48": {
+	  "id": 48,
+	  "sorting": 33,
+	  "name": "Graphene",
+	  "color": "#FFFA73",
+	  "rank": 7,
+	  "hardness": 150,
+	  "value": 477,
+	  "xp": 40,
+	  "depth": [
+		[
+		  4400,
+		  0
+		],
+		[
+		  4500,
+		  8000
+		],
+		[
+		  4550,
+		  100
+		],
+		[
+		  5250,
+		  0
+		]
+	  ],
+	  "rarity": 5,
+	  "atlas": [
+		2,
+		20
+	  ],
+	  "arrival": 4400,
+	  "optimal": 0,
+	  "maximum": "5250",
+	  "stats": [
+		4400,
+		0,
+		5250,
+		150,
+		40
+	  ],
+	  "sound": "Low Kick",
+	  "breaksound": "Rock Break",
+	  "layer": [
+		9,
+		10,
+		11,
+		12
+	  ],
+	  "description": "non"
 	}
   },
   "pickaxes": {
@@ -2065,7 +2213,7 @@
 		1,
 		1
 	  ],
-	  "traits": [],
+	  "traits": [5],
 	  "original": 1,
 	  "maxlevel": 2,
 	  "value": 0,
@@ -2086,13 +2234,13 @@
 		]
 	  ],
 	  "stats": [
-		1.5,
+		1.9,
 		1.5,
 		1,
 		1,
 		1
 	  ],
-	  "traits": [],
+	  "traits": [6],
 	  "original": 2,
 	  "maxlevel": 0,
 	  "value": 1,
@@ -2350,9 +2498,9 @@
 		]
 	  ],
 	  "stats": [
-		10000,
-		0.005,
-		0,
+		10,
+		0.05,
+		10,
 		10,
 		1
 	  ],
@@ -2417,316 +2565,6 @@
 	  "base": false
 	}
   },
-  "layers": {
-	"0": {
-	  "id": 0,
-	  "name": "surface",
-	  "color": "#EFEFEF",
-	  "brightness": 16,
-	  "atlas": [
-		1,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 5,
-	  "start": 0,
-	  "end": 5
-	},
-	"1": {
-	  "id": 1,
-	  "name": "shallow caves",
-	  "color": "#A2C4C9",
-	  "brightness": 8,
-	  "atlas": [
-		2,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 145,
-	  "start": 5,
-	  "end": 150
-	},
-	"2": {
-	  "id": 2,
-	  "name": "abandoned mines",
-	  "color": "#999999",
-	  "brightness": 4,
-	  "atlas": [
-		3,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 500,
-	  "start": 150,
-	  "end": 650
-	},
-	"3": {
-	  "id": 3,
-	  "name": "gem caverns",
-	  "color": "#8E7CC3",
-	  "brightness": 2,
-	  "atlas": [
-		4,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 750,
-	  "start": 650,
-	  "end": 1400
-	},
-	"4": {
-	  "id": 4,
-	  "name": "deeper caves",
-	  "color": "#273934",
-	  "brightness": 1,
-	  "atlas": [
-		5,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 500,
-	  "start": 1400,
-	  "end": 1900
-	},
-	"5": {
-	  "id": 5,
-	  "name": "deeper caves",
-	  "color": "#354843",
-	  "brightness": 1,
-	  "atlas": [
-		6,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 600,
-	  "start": 1900,
-	  "end": 2500
-	},
-	"6": {
-	  "id": 6,
-	  "name": "rock taiga",
-	  "color": "#589D8C",
-	  "brightness": 1,
-	  "atlas": [
-		7,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 500,
-	  "start": 2500,
-	  "end": 3000
-	},
-	"7": {
-	  "id": 7,
-	  "name": "frozen",
-	  "color": "#00FFFF",
-	  "brightness": 8,
-	  "atlas": [
-		8,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 500,
-	  "start": 3000,
-	  "end": 3500
-	},
-	"8": {
-	  "id": 8,
-	  "name": "nuclear winter",
-	  "color": "#56DA84",
-	  "brightness": 4,
-	  "atlas": [
-		9,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 500,
-	  "start": 3500,
-	  "end": 4000
-	},
-	"9": {
-	  "id": 9,
-	  "name": "haze",
-	  "color": "#B3D8D8",
-	  "brightness": 6,
-	  "atlas": [
-		10,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 500,
-	  "start": 4000,
-	  "end": 4500
-	},
-	"10": {
-	  "id": 10,
-	  "name": "rock border (graphene?)",
-	  "color": "#434343",
-	  "brightness": 1,
-	  "atlas": [
-		11,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 50,
-	  "start": 4500,
-	  "end": 4550
-	},
-	"11": {
-	  "id": 11,
-	  "name": "molten rock",
-	  "color": "#CD1C1C",
-	  "brightness": 2,
-	  "atlas": [
-		12,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 450,
-	  "start": 4550,
-	  "end": 5000
-	},
-	"12": {
-	  "id": 12,
-	  "name": "outer core",
-	  "color": "#EE7C49",
-	  "brightness": 4,
-	  "atlas": [
-		13,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 250,
-	  "start": 5000,
-	  "end": 5250
-	},
-	"13": {
-	  "id": 13,
-	  "name": "the core",
-	  "color": "#F1C232",
-	  "brightness": 8,
-	  "atlas": [
-		14,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 750,
-	  "start": 5250,
-	  "end": 6000
-	},
-	"14": {
-	  "id": 14,
-	  "name": "coreset",
-	  "color": "#EE7C49",
-	  "brightness": 4,
-	  "atlas": [
-		15,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 100,
-	  "start": 6000,
-	  "end": 6300
-	},
-	"15": {
-	  "id": 15,
-	  "name": "coreset",
-	  "color": "#E0659E",
-	  "brightness": 3,
-	  "atlas": [
-		16,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 100,
-	  "start": 6100,
-	  "end": 6300
-	},
-	"16": {
-	  "id": 16,
-	  "name": "coreset",
-	  "color": "#8E7CC3",
-	  "brightness": 1.5,
-	  "atlas": [
-		17,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 100,
-	  "start": 6200,
-	  "end": 6300
-	},
-	"17": {
-	  "id": 17,
-	  "name": "night",
-	  "color": "#073763",
-	  "brightness": 0.5,
-	  "atlas": [
-		18,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 200,
-	  "start": 6300,
-	  "end": 6500
-	},
-	"18": {
-	  "id": 18,
-	  "name": "the deep blue",
-	  "color": "#0C343D",
-	  "brightness": 0.5,
-	  "atlas": [
-		19,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 900,
-	  "start": 6500,
-	  "end": 7400
-	},
-	"19": {
-	  "id": 19,
-	  "name": "respite",
-	  "color": "#0B5394",
-	  "brightness": 1,
-	  "atlas": [
-		20,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 100,
-	  "start": 7400,
-	  "end": 7500
-	},
-	"20": {
-	  "id": 20,
-	  "name": "electric blue",
-	  "color": "#2C75FF",
-	  "brightness": 8,
-	  "atlas": [
-		21,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 750,
-	  "start": 7500,
-	  "end": 8250
-	},
-	"21": {
-	  "id": 21,
-	  "name": "the nucleus",
-	  "color": "#59BA17",
-	  "brightness": 7,
-	  "atlas": [
-		22,
-		0
-	  ],
-	  "description": "ok",
-	  "length": 750,
-	  "start": 8250,
-	  "end": 9000
-	}
-  },
   "traits": {
 	"0": {
 	  "id": 0,
@@ -2737,7 +2575,7 @@
 	"1": {
 	  "id": 1,
 	  "name": "perception",
-	  "description": "ok",
+	  "description": "Rare ores are highlighted and stuff",
 	  "color": "#FFFA73"
 	},
 	"2": {
@@ -3267,6 +3105,316 @@
 	  "color": "#FFFFFF",
 	  "fullxp": 15000000000000,
 	  "boost": 200
+	}
+  },
+  "layers": {
+	"0": {
+	  "id": 0,
+	  "name": "surface",
+	  "color": "#EFEFEF",
+	  "brightness": 16,
+	  "atlas": [
+		1,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 5,
+	  "start": 1,
+	  "end": 5
+	},
+	"1": {
+	  "id": 1,
+	  "name": "shallow caves",
+	  "color": "#A2C4C9",
+	  "brightness": 8,
+	  "atlas": [
+		2,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 145,
+	  "start": 6,
+	  "end": 150
+	},
+	"2": {
+	  "id": 2,
+	  "name": "abandoned mines",
+	  "color": "#999999",
+	  "brightness": 4,
+	  "atlas": [
+		3,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 500,
+	  "start": 151,
+	  "end": 650
+	},
+	"3": {
+	  "id": 3,
+	  "name": "gem caverns",
+	  "color": "#8E7CC3",
+	  "brightness": 2,
+	  "atlas": [
+		4,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 750,
+	  "start": 651,
+	  "end": 1400
+	},
+	"4": {
+	  "id": 4,
+	  "name": "deeper caves",
+	  "color": "#273934",
+	  "brightness": 1,
+	  "atlas": [
+		5,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 500,
+	  "start": 1401,
+	  "end": 1900
+	},
+	"5": {
+	  "id": 5,
+	  "name": "deeper caves",
+	  "color": "#354843",
+	  "brightness": 1,
+	  "atlas": [
+		6,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 600,
+	  "start": 1901,
+	  "end": 2500
+	},
+	"6": {
+	  "id": 6,
+	  "name": "rock taiga",
+	  "color": "#589D8C",
+	  "brightness": 1,
+	  "atlas": [
+		7,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 500,
+	  "start": 2501,
+	  "end": 3000
+	},
+	"7": {
+	  "id": 7,
+	  "name": "frozen",
+	  "color": "#00FFFF",
+	  "brightness": 8,
+	  "atlas": [
+		8,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 500,
+	  "start": 3001,
+	  "end": 3500
+	},
+	"8": {
+	  "id": 8,
+	  "name": "nuclear winter",
+	  "color": "#56DA84",
+	  "brightness": 4,
+	  "atlas": [
+		9,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 500,
+	  "start": 3501,
+	  "end": 4000
+	},
+	"9": {
+	  "id": 9,
+	  "name": "haze",
+	  "color": "#B3D8D8",
+	  "brightness": 6,
+	  "atlas": [
+		10,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 500,
+	  "start": 4001,
+	  "end": 4500
+	},
+	"10": {
+	  "id": 10,
+	  "name": "rock border (graphene?)",
+	  "color": "#434343",
+	  "brightness": 1,
+	  "atlas": [
+		11,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 50,
+	  "start": 4501,
+	  "end": 4550
+	},
+	"11": {
+	  "id": 11,
+	  "name": "molten rock",
+	  "color": "#CD1C1C",
+	  "brightness": 2,
+	  "atlas": [
+		12,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 450,
+	  "start": 4551,
+	  "end": 5000
+	},
+	"12": {
+	  "id": 12,
+	  "name": "outer core",
+	  "color": "#EE7C49",
+	  "brightness": 4,
+	  "atlas": [
+		13,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 250,
+	  "start": 5001,
+	  "end": 5250
+	},
+	"13": {
+	  "id": 13,
+	  "name": "the core",
+	  "color": "#F1C232",
+	  "brightness": 8,
+	  "atlas": [
+		14,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 750,
+	  "start": 5251,
+	  "end": 6000
+	},
+	"14": {
+	  "id": 14,
+	  "name": "coreset",
+	  "color": "#EE7C49",
+	  "brightness": 4,
+	  "atlas": [
+		15,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 100,
+	  "start": 6001,
+	  "end": 6300
+	},
+	"15": {
+	  "id": 15,
+	  "name": "coreset",
+	  "color": "#E0659E",
+	  "brightness": 3,
+	  "atlas": [
+		16,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 100,
+	  "start": 6101,
+	  "end": 6300
+	},
+	"16": {
+	  "id": 16,
+	  "name": "coreset",
+	  "color": "#8E7CC3",
+	  "brightness": 1.5,
+	  "atlas": [
+		17,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 100,
+	  "start": 6201,
+	  "end": 6300
+	},
+	"17": {
+	  "id": 17,
+	  "name": "night",
+	  "color": "#073763",
+	  "brightness": 0.5,
+	  "atlas": [
+		18,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 200,
+	  "start": 6301,
+	  "end": 6500
+	},
+	"18": {
+	  "id": 18,
+	  "name": "the deep blue",
+	  "color": "#0C343D",
+	  "brightness": 0.5,
+	  "atlas": [
+		19,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 900,
+	  "start": 6501,
+	  "end": 7400
+	},
+	"19": {
+	  "id": 19,
+	  "name": "respite",
+	  "color": "#0B5394",
+	  "brightness": 1,
+	  "atlas": [
+		20,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 100,
+	  "start": 7401,
+	  "end": 7500
+	},
+	"20": {
+	  "id": 20,
+	  "name": "electric blue",
+	  "color": "#2C75FF",
+	  "brightness": 8,
+	  "atlas": [
+		21,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 750,
+	  "start": 7501,
+	  "end": 8250
+	},
+	"21": {
+	  "id": 21,
+	  "name": "the nucleus",
+	  "color": "#59BA17",
+	  "brightness": 7,
+	  "atlas": [
+		22,
+		0
+	  ],
+	  "description": "ok",
+	  "length": 750,
+	  "start": 8251,
+	  "end": 9000
 	}
   }
 }

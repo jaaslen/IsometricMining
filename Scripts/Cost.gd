@@ -11,7 +11,7 @@ var Name : String
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ID = int(Ore["id"])
-	Global.OreChanged.connect(OreChanged)
+	#Global.OreChanged.connect(OreChanged)
 	Name = Ore["name"]
 
 	#Cost = Global.OreAmounts[ID]
@@ -36,13 +36,13 @@ func _ready() -> void:
 	OreProgressBar.value = Global.OreAmounts[ID] 
 	pass # Replace with function body.
 
-func OreChanged(OreID):
-	pass
+#func OreChanged(OreID):
+	#pass
 
 
 #func OreChanged(OreID):
-	#print(OreID)
-	#print(ID)
+
+
 	#
 	##LabelBox.text = " "+Name + " x " + var_to_str(Cost)
 	##var Original := get_theme_stylebox("panel")

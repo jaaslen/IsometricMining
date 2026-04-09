@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://twdx031qsh7a"
+path="res://.godot/imported/quasar 5.mp3-25bd6941578b958ab0ad5a644feaea80.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/quasar 5.mp3"
+dest_files=["res://.godot/imported/quasar 5.mp3-25bd6941578b958ab0ad5a644feaea80.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

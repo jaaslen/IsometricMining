@@ -14,7 +14,7 @@ func PickaxeChanged(PickaxeID):
 		i.queue_free()
 	
 	var CurrentLevel = Global.PickaxeLevels[PickaxeID]
-	#var print = Global.GameData["pickaxes"][var_to_str(PickaxeID)]["maxlevel"] 
+
 	if Global.GameData["pickaxes"][var_to_str(PickaxeID)]["maxlevel"] > CurrentLevel:
 		var NewInventoryItem = load("uid://xok4ed1xpd5x").instantiate()
 		#if Global.GameData["pickaxes"][var_to_str(PickaxeID * 1000 + int(CurrentLevel))]["forged"] == false:

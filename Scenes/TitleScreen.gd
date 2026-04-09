@@ -3,6 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	ResourceLoader.load_threaded_request("res://Scenes/LoadingScreen.tscn")
 	pass # Replace with function body.
 
 
@@ -12,6 +13,8 @@ func _process(delta: float) -> void:
 
 
 func _on_play_pressed() -> void:
+	var scene = ResourceLoader.load_threaded_get("res://Scenes/LoadingScreen.tscn")
+	get_tree().change_scene_to_packed(scene)
 	pass # Replace with function body.
 
 

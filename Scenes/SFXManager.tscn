@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b5wt4k2kk7fmc"]
+
+[ext_resource type="Script" uid="uid://l3awtjpw6vg3" path="res://SFXManager.gd" id="1_dv3p0"]
+
+[node name="SFX" type="Control" unique_id=447228622]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dv3p0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2102491675]
+bus = &"SFX"

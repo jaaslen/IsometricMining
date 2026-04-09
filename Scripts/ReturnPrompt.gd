@@ -7,8 +7,6 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 
 func ExitAttempt() -> void:
@@ -17,6 +15,7 @@ func ExitAttempt() -> void:
 
 
 func _on_no_pressed() -> void:
+	SFX.play_sfx("Metal Hit")
 	Global.emit_signal("ExitPromptSelected",false)
 	visible = false
 	pass # Replace with function body.

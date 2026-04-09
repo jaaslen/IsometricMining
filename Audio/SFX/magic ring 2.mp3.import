@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://t1oyxvj641by"
+path="res://.godot/imported/magic ring 2.mp3-8c1a5670067a39a576ba0c639ced64c3.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/magic ring 2.mp3"
+dest_files=["res://.godot/imported/magic ring 2.mp3-8c1a5670067a39a576ba0c639ced64c3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

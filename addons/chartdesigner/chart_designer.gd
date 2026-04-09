@@ -264,7 +264,7 @@ func _draw() -> void:
 		
 		
 		for index in vector2_array.size():
-			#print("max index = " + str(vector2_array.size()))
+		
 			if index == (vector2_array.size()-1):
 				draw_string(default_font, Vector2(vector2_array[index].x - (text_size_single_liner.x / 2), y_size + text_size_single_liner.y), str((is_int( values[index][0]))) + "m", HORIZONTAL_ALIGNMENT_LEFT, -1, number_font_size, number_color)
 			elif values[index][0] + 1 < values[index+1][0]:
@@ -302,10 +302,10 @@ func CreateLine(Points: PackedVector2Array,Colors: PackedColorArray,Thickness: P
 		
 	
 	LineGradient.interpolation_mode = Gradient.GRADIENT_INTERPOLATE_LINEAR
-	print(var_to_str(LineGradient))
+
 	NewLine.set_gradient(LineGradient)
-	#print(str(Points.size()) + "points") 
-	#print(str(LineGradient.get_point_count()) + "Graduebtsint points") 
+ 
+
 	add_child(NewLine)
 	
 func ColourFromValue(Value):

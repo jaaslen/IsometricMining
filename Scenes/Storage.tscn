@@ -114,7 +114,21 @@ theme_override_constants/separation = 8
 script = ExtResource("3_tvprw")
 LeftSide = false
 
+[node name="Button" type="Button" parent="FullHBox" unique_id=1877117569]
+modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+theme_override_font_sizes/font_size = 68
+text = "<
+<
+<
+<
+<
+"
+
 [node name="TextureButton" type="TextureButton" parent="." unique_id=2117998347]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -127,4 +141,5 @@ grow_horizontal = 0
 texture_normal = SubResource("PlaceholderTexture2D_i5cya")
 
 [connection signal="pressed" from="FullHBox/Inventory/Label/Button" to="FullHBox/Inventory/Scroll/Inventory" method="MoveEverything"]
+[connection signal="pressed" from="FullHBox/Button" to="." method="CloseButton"]
 [connection signal="pressed" from="TextureButton" to="." method="CloseButton"]

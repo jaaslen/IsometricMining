@@ -252,7 +252,6 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Panel" type="Panel" parent="." unique_id=1294018499]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

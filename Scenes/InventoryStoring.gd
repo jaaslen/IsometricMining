@@ -53,8 +53,7 @@ func OreMoved(intostorage,percentagebased,amountvalue,ID):
 
 func OreChanged(OreID):
 	pass
-	#print("ok")
-	#if LeftSide:
+
 		#if Global.OreAmounts[OreID] == 0:
 			#self.get_child(OreID).visible = false
 		#else:
@@ -70,6 +69,7 @@ func OreChanged(OreID):
 
 
 func MoveEverything() -> void:
+	SFX.play_sfx("Wood Hit",0.5)
 	var index = 0
 	for amount in Global.OreAmounts:
 		Global.StoreOre(index,amount,true)

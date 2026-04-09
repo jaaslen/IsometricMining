@@ -18,24 +18,21 @@ func _ready() -> void:
 		#Index += 1
 
 func AddScenes():
-	var data = Global.GameData["ores"]
+	var data = Global.GameData["layers"]
 	
 	for i in self.get_children():
 		i.queue_free()
 	
 	var keys = data.keys()
 
-	keys.sort_custom(func(a, b):
-		return data[a]["sorting"] < data[b]["sorting"]
-	)
+
 
 	for key in keys:
-		if data[key]["id"] != 0:
-			var scene: PackedScene = load("uid://be6lsgn3ms26")
-			var instance = scene.instantiate()
-			if Global.FoundOres[data[key]["id"]]:
-				instance.Found = true
-			instance.Ore = data[key]
-			add_child(instance)
+		var scene: PackedScene = load("uid://dqlc5y26aavlx")
+		var instance = scene.instantiate()
+		if Global.FoundLayers[int(data[key]["id"])]:
+			instance.Found = true
+		instance.Layer = data[key]
+		add_child(instance)
 			
 	%Control.reconnect()

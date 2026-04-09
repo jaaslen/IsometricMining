@@ -2,16 +2,18 @@ extends Control
 
 var Order = [1,2,3,5,7,6,4,13,14,16,18,22,9,15,8,12,17,32,34,11,10,28,23,20,24,25,27,36,21,26,31,35,38,29,37,33,30,19,39,40]
 
-@onready var OresInGame: int = Global.OresInGame
-@export var ActualOre = Global.GameData["ores"]["0"]
-@export var Ore = Global.GameData["ores"]["0"]
 
+@export var ActualLayer = Global.GameData["layers"]["0"]
+@export var Layer = Global.GameData["layers"]["0"]
+
+@onready var DepthSlider = $FullContainer/HBoxContainer/Data/HSlider
+@onready var Indicators = $FullContainer/HBoxContainer/Data/Indicators
 @onready var PanelStyle = load("uid://bu0qaxonbmuh1").duplicate(true)
-@onready var Buttons = %GridContainer
+@onready var Buttons = %VerticalContainer
 @onready var IDlabel = $FullContainer/HBoxContainer/Data/HBoxContainer/Panel3/ID
-@onready var Icon = $FullContainer/HBoxContainer/Ore/Panel/MarginContainer/Icon
-@onready var Name = $FullContainer/HBoxContainer/Ore/Label
-@onready var InfoContainer = $FullContainer/HBoxContainer/Data/ScrollContainer/InfoContainer
+#@onready var Icon = $FullContainer/HBoxContainer/Layer/Panel/MarginContainer/Icon
+@onready var Name = $FullContainer/HBoxContainer/Data/HBoxContainer/Label
+@onready var InfoContainer = $FullContainer/HBoxContainer/Data/ScrollContainer/OreInfo
 #@onready var MinDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer/Container/Text/MinValue
 #@onready var MinDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer/Container/Description
 #@onready var MaxDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer2/Container/Text/MaxValue
@@ -23,84 +25,123 @@ var Order = [1,2,3,5,7,6,4,13,14,16,18,22,9,15,8,12,17,32,34,11,10,28,23,20,24,2
 
 @onready var Description = $FullContainer/ScrollContainer/Description
 
-@onready var RareLabel = $FullContainer/HBoxContainer/Data/HBoxContainer/Panel/Rarity
+#@onready var RareLabel = $FullContainer/HBoxContainer/Data/HBoxContainer/Panel/Rarity
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_viewport().connect("size_changed", Callable(self, "update_position_and_scale"))
 	update_position_and_scale()
 	
-	LoadOre(1)
+	LoadLayer(0)
 	reconnect()
 
 func reconnect():
 	if Buttons != null:
 		for i in Buttons.get_children():
-			if i.is_connected("OreSelected",LoadOre) == false:
-				i.OreSelected.connect(LoadOre)
+			if i.is_connected("LayerSelected",LoadLayer) == false:
+				i.LayerSelected.connect(LoadLayer)
+	if Indicators != null:
+		for i in Indicators.get_children():
+			if i.is_connected("pressed",DepthButtonPressed) == false:
+				i.pressed.connect(DepthButtonPressed.bind(i))
 
-func LoadOre(OreID,opening = true):
+
+func LoadLayer(LayerID,opening = true):
+	
+	
+	
 	
 	visible = true
 	
-	Ore = Global.GameData["ores"][var_to_str(OreID)]
+	Layer = Global.GameData["layers"][var_to_str(LayerID)]
 	
 	
 	
-	modulate = Color(Ore["color"]) * 0.5 + Color(0.65,0.65,0.65) 
+
+		
 	
-	ActualOre = Global.GameData["ores"][var_to_str(OreID)]
-	if ActualOre["sorting"] < 10:
-		IDlabel.text = "#00" + var_to_str(ActualOre["sorting"])
-	elif ActualOre["sorting"] < 100:
-		IDlabel.text = "#0" + var_to_str(ActualOre["sorting"])
+	var A = Layer["start"]
+	var B = Layer["end"]
+	
+	DepthSlider.min_value = A
+	DepthSlider.max_value = B
+	#DepthSlider.step = 0.1
+	
+	
+	var index = 1
+	for i in Indicators.get_children():
+		if i.name != "Start":
+			i.visible = true
+			var ButtonDepth = A + (B-A)/20 * index
+
+			i.text = str(int(ButtonDepth)) + "m"
+			
+			
+			if int(ButtonDepth) == int( A + (B-A)/20 * (index-1)):
+				i.visible = false
+				
+			
+			
+			index += 1
+	
+	Indicators.get_node("Start").text = str(int(A)) + "m"
+	Indicators.get_node("Start").visible = true
+	Indicators.move_child(Indicators.get_node("Start"),0)
+	
+	modulate = Color(Layer["color"]) + Color(0.65,0.65,0.65) 
+	
+	ActualLayer = Global.GameData["layers"][var_to_str(LayerID)]
+	if ActualLayer["id"] < 10:
+		IDlabel.text = "#00" + var_to_str(ActualLayer["id"])
+	elif ActualLayer["id"] < 100:
+		IDlabel.text = "#0" + var_to_str(ActualLayer["id"])
 	else:
-		IDlabel.text = "#" + var_to_str(ActualOre["sorting"])
-	if Global.FoundOres[Ore["sorting"]] == false:
-		Ore = Global.GameData["ores"]["0"]
+		IDlabel.text = "#" + var_to_str(ActualLayer["id"])
+	if Global.FoundLayers[Layer["id"]] == false:
+		Layer = Global.GameData["layers"]["0"]
 
-	PanelStyle.border_color = Color(Ore["color"])  / 5 + Color(0.25,0.25,0.25,1)
-	PanelStyle.bg_color = Color(Ore["color"]) / 10 +Color(0.15,0.15,0.15,1)
+	PanelStyle.border_color = Color(Layer["color"])  / 5 + Color(0.25,0.25,0.25,1)
+	PanelStyle.bg_color = Color(Layer["color"]) / 10 +Color(0.15,0.15,0.15,1)
 
-	var atlas = Ore["atlas"]
-	RareLabel.text = ""
-	for i in range(ActualOre["rarity"]):
-		RareLabel.text += "★"
-	for i in range(5-ActualOre["rarity"]):
-		RareLabel.text += "☆"
+	#var atlas = Layer["atlas"]
+	#RareLabel.text = ""
+	#for i in range(ActualLayer["rarity"]):
+		#RareLabel.text += "★"
+	#for i in range(5-ActualLayer["rarity"]):
+		#RareLabel.text += "☆"
 	
 	#RareLabel.text = "★"
-	Name.text = Ore["name"]
-	#Name.self_modulate = Color(Ore["color"]) + Color(0.2,0.2,0.2) #add_theme_color_override("font_color",Color(Ore["color"])*1.2)
-	#Name.add_theme_color_override("font_outline_color",Color(Ore["color"]))
-	Description.text = Ore["description"]
-	Icon.texture = Icon.texture.duplicate(true)
-	Icon.texture.region = Rect2(Vector2(Global.TileSize.x * atlas[0],2 * Global.TileSize.y * atlas[1]),Vector2(Global.TileSize.x,Global.TileSize.y * 2))#Rect2(Vector2(Global.TileSize.x * atlas[0],2 * Global.TileSize.y * atlas[1]),Vector2(Global.TileSize.x,Global.TileSize.y * 2))#Rect2(Vector2(64 * atlas[0],68 * atlas[1])*2,Vector2(64,68)*2)
+	Name.text = Layer["name"]
+	#Name.self_modulate = Color(Layer["color"]) + Color(0.2,0.2,0.2) #add_theme_color_override("font_color",Color(Layer["color"])*1.2)
+	#Name.add_theme_color_override("font_outline_color",Color(Layer["color"]))
+	Description.text = Layer["description"]
+	#Icon.texture = Icon.texture.duplicate(true)
+	#Icon.texture.region = Rect2(Vector2(Global.TileSize.x * atlas[0],2 * Global.TileSize.y * atlas[1]),Vector2(Global.TileSize.x,Global.TileSize.y * 2))#Rect2(Vector2(Global.TileSize.x * atlas[0],2 * Global.TileSize.y * atlas[1]),Vector2(Global.TileSize.x,Global.TileSize.y * 2))#Rect2(Vector2(64 * atlas[0],68 * atlas[1])*2,Vector2(64,68)*2)
 	
-	InfoContainer.LoadOre(OreID)
-	
-	#if Ore["id"] == 0:
-		#MinDepth.text = "%sm" % int(ActualOre["arrival"])
+	InfoContainer.LoadLayerOres(LayerID)
+	DepthSlider.value = DepthSlider.min_value
+	#if Layer["id"] == 0:
+		#MinDepth.text = "%sm" % int(ActualLayer["arrival"])
 		#MaxDepth.text = "???m"
 		#Hardness.text = "???"
 		#OptimalDepth.text = "???m"
 		#OptimalDepth.add_theme_font_size_override("font_size",50)
 	#else:
 	#
-		#MinDepth.text = "%sm" % int(Ore["arrival"])
-		#MaxDepth.text = "%sm" % int(Ore["depth"][-1][0])
-		#Hardness.text = "%s" % int(Ore["hardness"])
-		#if Ore["optimal"].size() == 2:
-			#OptimalDepth.text = "%s-%sm " % [int(Ore["optimal"][0]),int(Ore["optimal"][1])]
-			#OptDescription.text = "This ore is most common at a depth of [color=white]%s[/color]-[color=white]%s[/color]m." % [int(Ore["optimal"][0]),int(Ore["optimal"][1])]
+		#MinDepth.text = "%sm" % int(Layer["arrival"])
+		#MaxDepth.text = "%sm" % int(Layer["depth"][-1][0])
+		#Hardness.text = "%s" % int(Layer["hardness"])
+		#if Layer["optimal"].size() == 2:
+			#OptimalDepth.text = "%s-%sm " % [int(Layer["optimal"][0]),int(Layer["optimal"][1])]
+			#OptDescription.text = "This layer is most common at a depth of [color=white]%s[/color]-[color=white]%s[/color]m." % [int(Layer["optimal"][0]),int(Layer["optimal"][1])]
 			#OptimalDepth.add_theme_font_size_override("font_size",40)
 		#else:
-			#OptimalDepth.text = "%sm" % int(Ore["optimal"][0])
-			#OptDescription.text = "This ore is most common at a depth of [color=white]%d[/color]m." % int(Ore["optimal"][0])
+			#OptimalDepth.text = "%sm" % int(Layer["optimal"][0])
+			#OptDescription.text = "This layer is most common at a depth of [color=white]%d[/color]m." % int(Layer["optimal"][0])
 			#OptimalDepth.add_theme_font_size_override("font_size",50)
 			#
-	#MinDescription.text = "This ore first starts appearing at a depth of [color=white]%d[/color]m." % int(Ore["arrival"])
-	#MaxDescription.text = "This ore will stop appearing past a depth of [color=white]%d[/color]m." % int(Ore["depth"][-1][0])
-	#HardDescription.text = "This ore has a toughness %sx harder than stone" % int(Ore["hardness"])
+	#MinDescription.text = "This layer first starts appearing at a depth of [color=white]%d[/color]m." % int(Layer["arrival"])
+	#MaxDescription.text = "This layer will stop appearing past a depth of [color=white]%d[/color]m." % int(Layer["depth"][-1][0])
+	#HardDescription.text = "This layer has a toughness %sx harder than stone" % int(Layer["hardness"])
 	
 		
 	if opening:
@@ -158,48 +199,20 @@ func _on_button_pressed() -> void:
 
 					 
 func LeftPress() -> void:
-	if ActualOre["sorting"] > (1):
-		var nextid : int
-		for i in Global.GameData["ores"].values():
-			if i["sorting"] == ActualOre["sorting"] - 1:
-				nextid = i["id"]
-				if Global.FoundOres[i["sorting"]] == false:
-					#var nextvalid : int = -67
-					for v : int in range(1,i["sorting"]):
-						var index : int = i["sorting"] - v
-						if Global.FoundOres[index] == true:
-							LoadOre(Global.IndexFromSorting(index),false)
-							return
+	if Global.FoundLayers[int(Layer["id"]-1)]:
+		LoadLayer(int(Layer["id"]-1),false)
+	
+	
 
-		LoadOre(nextid,false)
-	else:
-		for i in range(OresInGame):
-			if Global.FoundOres[OresInGame-i] == true:
-				LoadOre(Global.IndexFromSorting(OresInGame),false)
 
 func RightPress() -> void:
-	if ActualOre["sorting"] < (OresInGame):
-		var nextid : int
-		for i in Global.GameData["ores"].values():
-			if i["sorting"] == ActualOre["sorting"] + 1:
-				nextid = i["id"]
-				if Global.FoundOres[i["sorting"]] == false:
-					for v : int in range(1,(OresInGame-i["sorting"]+1)):
-						var index : int = i["sorting"] + v 
-						if Global.FoundOres[index] == true:
-							
-							LoadOre(Global.IndexFromSorting(index),false)
-							return
-					LoadOre(1,false)
-					return
+	if Global.FoundLayers[int(Layer["id"]+1)]:
+		LoadLayer(int(Layer["id"]+1),false)
 
-		LoadOre(nextid,false)
-	else:
-		LoadOre(1,false)
 		
-		#for i in range(OresInGame):
-			#if Global.FoundOres[OresInGame-i] == true:
-				#LoadOre(Global.IndexFromSorting(1),false)
+		#for i in range(LayersInGame):
+			#if Global.FoundLayers[LayersInGame-i] == true:
+				#LoadLayer(Global.IndexFromSorting(1),false)
 
 
 func update_position_and_scale():
@@ -211,3 +224,8 @@ func update_position_and_scale():
 	#scale.x = 4 * vp_size.x / reference_resolution.x
 	#scale.y = scale.x
 	#emit_signal("Scaled")
+
+
+func DepthButtonPressed(ButtonNode):
+	print(ButtonNode.text)
+	DepthSlider.value = float(ButtonNode.text.left(-1))

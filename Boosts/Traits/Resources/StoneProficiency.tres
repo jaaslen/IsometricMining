@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_1b8ml")
-BlockID = 1
+PowerMult = 1.5
+BlockIDs = [1]
 metadata/_custom_type_script = "uid://r5576cxa4qp5"

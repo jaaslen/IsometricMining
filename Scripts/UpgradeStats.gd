@@ -30,7 +30,7 @@ func PickaxeChanged(PickaxeID):
 		
 		
 
-		print(UpgradedPickaxe["stats"])
+
 		var StatIndex = 0
 		for stat in UpgradedPickaxe["stats"]:
 			if stat != 1.0 or StatIndex in [0,1]:

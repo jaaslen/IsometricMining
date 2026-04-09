@@ -38,6 +38,6 @@ func PickaxeChanged(PickaxeID):
 			
 		emit_signal("PriceChange",Cost,Buyable,PickaxeID)
 			
-		#1print(NewInventoryIt em.Pickaxe["color"])#Global.PickaxeInfo["pickaxes"][Index]["color"])
+	
 		add_child(NewInventoryItem)
 	

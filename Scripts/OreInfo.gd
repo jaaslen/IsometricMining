@@ -26,7 +26,7 @@ func _ready() -> void:
 	Icon.texture.region = Rect2(Vector2(Global.TileSize.x * atlas[0],2 * Global.TileSize.y * atlas[1]),Vector2(Global.TileSize.x,Global.TileSize.y * 2))
 	pass # Replace with function body.
 
-	if ActualOre["rank"] > Global.Level["symbolid"]:
+	if ActualOre["rank"] > Global.Level["id"]:
 		$Rank.visible = true
 		$Tier.visible = true
 		$Tier.modulate = Color(Global.GameData["levels"][str(int(ActualOre["rank"]))]["color"])
@@ -34,7 +34,7 @@ func _ready() -> void:
 		$Tier.texture = load("res://Visuals/Ranks/" + str(int(Global.GameData["levels"][str(int(ActualOre["rank"]))]["tier"])) + ".png")
 		
 
-	elif ActualOre["rank"] <= Global.Level["symbolid"]:
+	elif ActualOre["rank"] <= Global.Level["id"]:
 		$Rank.visible = false
 		$Tier.visible = false
 		
@@ -45,4 +45,10 @@ func _process(_delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	emit_signal("OreSelected",ActualOre["id"])
+	SFX.play_sfx("ToggleON")
+	pass # Replace with function body.
+
+
+func _on_button_mouse_entered() -> void:
+	SFX.play_sfx("Hover",0.6)
 	pass # Replace with function body.

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bkb88ju2dmfy5"
+path="res://.godot/imported/glass ringing.mp3-0ed4142b751b063b1e9e6e610011bf42.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/glass ringing.mp3"
+dest_files=["res://.godot/imported/glass ringing.mp3-0ed4142b751b063b1e9e6e610011bf42.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -99,4 +99,5 @@ theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = ExtResource("5_dq7vn")
 text = ">"
 
+[connection signal="mouse_entered" from="Text/All" to="." method="_on_all_mouse_entered"]
 [connection signal="pressed" from="Text/All" to="." method="MoveAll"]

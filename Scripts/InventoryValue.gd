@@ -71,7 +71,7 @@ func OreChanged(OreID):
 			#LabelOutline(AmountLabelBox)
 		pass
 		
-func LabelOutline(label):
+func LabelOutline(_label):
 		var color
 		#if label is RichTextLabel:
 		color = Color(Ore["color"])#label.get_theme_color("default_color")
