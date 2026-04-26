@@ -46,7 +46,7 @@ func _ready() -> void:
 		#style.border_color = ColorValue
 		self_modulate = ColorValue
 		#add_theme_stylebox_override("panel", style)
-		ColorLine.custom_minimum_size.x = size.x - 60
+		#ColorLine.custom_minimum_size.x = size.x - 60
 		Seperation.modulate = ColorValue * 0.8
 		LabelBox.modulate = ColorValue * 1.2
 		ColorLine.modulate = ColorValue * 1.2

@@ -5,3 +5,4 @@ data = PackedByteArray("//vQRAAA9QpkKJGPH7KlbHTwMej2WG2g1yex98MftBoA97D4ABWaxuL2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=145317831]
 stream = SubResource("AudioStreamMP3_rkxok")
+bus = &"SFX"

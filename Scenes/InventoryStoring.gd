@@ -69,9 +69,20 @@ func OreChanged(OreID):
 
 
 func MoveEverything() -> void:
-	SFX.play_sfx("Wood Hit",0.5)
+	SFX.play_sfx("Wood Hit",0.8)
+	SFX.play_sfx("Ring Button", 1 )
 	var index = 0
 	for amount in Global.OreAmounts:
+		Global.StoreOre(index,amount,true)
+		index += 1
+	pass # Replace with function body.
+
+
+func MoveEverythingBack() -> void:
+	SFX.play_sfx("Wood Hit",0.8)
+	SFX.play_sfx("Ring Button", 1 )
+	var index = 0
+	for amount in Global.StorageOreAmounts:
 		Global.StoreOre(index,amount,true)
 		index += 1
 	pass # Replace with function body.

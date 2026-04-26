@@ -39,8 +39,7 @@ size_flags_stretch_ratio = 0.12
 theme = ExtResource("1_ffo6q")
 theme_override_font_sizes/font_size = 71
 theme_override_styles/normal = ExtResource("2_clmel")
-text = "Inventory"
-horizontal_alignment = 1
+text = " Inventory"
 vertical_alignment = 2
 
 [node name="Button" type="Button" parent="FullHBox/Inventory/Label" unique_id=866939645]
@@ -50,13 +49,13 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -187.0
+offset_left = -87.0
 offset_top = -38.0
-offset_right = -16.0
+offset_right = -15.0
 offset_bottom = 34.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "Move All"
+text = ">>>"
 
 [node name="Scroll" type="ScrollContainer" parent="FullHBox/Inventory" unique_id=1844637718]
 z_index = -2
@@ -90,9 +89,21 @@ size_flags_stretch_ratio = 0.12
 theme = ExtResource("1_ffo6q")
 theme_override_font_sizes/font_size = 71
 theme_override_styles/normal = ExtResource("2_clmel")
-text = "Storage"
-horizontal_alignment = 1
+text = "Storage "
+horizontal_alignment = 2
 vertical_alignment = 2
+
+[node name="Button" type="Button" parent="FullHBox/Storage/Label" unique_id=958248120]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -38.0
+offset_right = 87.0
+offset_bottom = 34.0
+grow_vertical = 2
+text = "<<<"
 
 [node name="Scroll" type="ScrollContainer" parent="FullHBox/Storage" unique_id=2122581173]
 z_index = -2
@@ -141,5 +152,6 @@ grow_horizontal = 0
 texture_normal = SubResource("PlaceholderTexture2D_i5cya")
 
 [connection signal="pressed" from="FullHBox/Inventory/Label/Button" to="FullHBox/Inventory/Scroll/Inventory" method="MoveEverything"]
+[connection signal="pressed" from="FullHBox/Storage/Label/Button" to="FullHBox/Storage/Scroll/Storage" method="MoveEverythingBack"]
 [connection signal="pressed" from="FullHBox/Button" to="." method="CloseButton"]
 [connection signal="pressed" from="TextureButton" to="." method="CloseButton"]

@@ -7,5 +7,5 @@ var Type : String = "Mining"
 
 func Apply(MinedBlock, context):
 	if BlockIDs == [-1] or MinedBlock in BlockIDs:
-		context.Power *= PowerMult
+		context.Stats["Power"] *= PowerMult
 	return

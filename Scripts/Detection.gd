@@ -5,9 +5,11 @@ signal StartedMiningAnim
 signal Scaled
 signal ExitAttempt
 
-var ModFactor = [0.25,0.25,0.2]
+var ModFactors = [1,0.8,0.64,0.52,0.42,0.34,0.26,0.21,0.17,0.14,0.12,0.11,0.1,0.095,0.09,0.085,0.08,0]
 
-#@onready var %Cursor = self.get_node("%Cursor")
+var LastMined = 1
+var Lastminedamount = 0
+
 @onready var Effects = self.get_node("Effects")
 var InMine = false
 var ToSurface = true
@@ -28,12 +30,18 @@ var DefaultPos = []
 var TargetPos = []#[-Global.Tile_Size.y,0,Global.Tile_Size.y,68,102,136,170,204]
 #var Global.Tiles = [[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,1,0],[0,0,0,0,0,0,0,1,0],[1,1,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0]]
 # Called when the node enters the scene tree for the first time.
+
+var Speed
+
 func _ready() -> void:
+	
+	
+	
 	get_viewport().connect("size_changed", Callable(self, "update_position_and_scale"))
 	#Global.ExitPromptSelected.connect(PromptSelected)
 	update_position_and_scale()
 	
-	
+	Global.FullLayerReset($Layers.get_child_count())
 	
 	tile_set.tile_size = Global.TileSize
 
@@ -53,7 +61,8 @@ func _ready() -> void:
 	
 	var index = 0
 	for layer in self.get_node("Layers").get_children():
-		layer.modulate = Color(1 - (index) * ModFactor[0],1 - (index) * ModFactor[1],1 - (index) * ModFactor[2])
+		
+		layer.modulate = Color(ModFactors[index],ModFactors[index],ModFactors[index],1)
 		layer.z_index = self.get_node("Layers").get_child_count() - index
 		index += 1
 		
@@ -62,7 +71,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
   #*# (pow(1.5, log(Global.Depth + 1) / log(10.0))) * 10)
-var Speed = ((100 / Global.Pickaxe["stats"][1]))
+	Speed = ((100 / Global.Stats["DELAY"]))
 
 
 
@@ -85,7 +94,7 @@ func update_position_and_scale():
 @onready var Layer1 = self.get_node("Layers").get_node("1")
 func _process(delta: float) -> void:
 	if MovingDown == true:
-		Speed = ((100 / Global.Pickaxe["stats"][1]))
+		#Speed = ((100 / Global.Pickaxe["stats"][1]))
 		var index = 0
 		for layer in self.get_node("Layers").get_children():
  #layer.modulate.lerp(Color(1 - (index-1) * ModFactor[0],1 - (index-1) * ModFactor[1],1 - (index-1) * ModFactor[2]),delta* Speed / 80)
@@ -94,7 +103,7 @@ func _process(delta: float) -> void:
 				layer.scale = layer.scale.lerp(Vector2.ZERO,delta*max(Speed,100) / 30)
 				layer.position -= Vector2(0,delta* Speed)
 				var posy = layer.position.y
-				layer.modulate = Color(1 - (ModFactor[0] * (posy/Global.TileSize.y)),1 - (ModFactor[0] * (posy/Global.TileSize.y)),1 - (ModFactor[0] * (posy/Global.TileSize.y)))
+				layer.modulate = Color(1 - (ModFactors[1] * (posy/Global.TileSize.y)),1 - (ModFactors[1] * (posy/Global.TileSize.y)),1 - (ModFactors[1] * (posy/Global.TileSize.y)))
 				if Speed >= 1000:
 					layer.visible = false
 					#layer.position += Vector2(0,-delta * Speed)#layer.position.lerp(Vector2(0,TargetPos[index]),delta * Speed)
@@ -103,10 +112,13 @@ func _process(delta: float) -> void:
 			else:
 				
 				layer.position += Vector2(0,-delta * Speed)
-			
+				
 				var posy = layer.position.y
-				var mod = [1 - (ModFactor[0] * ((posy)/Global.TileSize.y)),1 - (ModFactor[1] * ((posy)/Global.TileSize.y)),1 - (ModFactor[2] * ((posy)/Global.TileSize.y))]
-				layer.modulate = Color(mod[0],mod[1],mod[2])
+				
+				
+				
+				var mod = 1 - ( (1-ModFactors[index]) * (posy)/TargetPos[index+1])
+				layer.modulate = Color(mod,mod,mod)
 				#layer.position = layer.position.lerp(Vector2(0,TargetPos[index]),delta * Speed / 10)
 				#var layernum = index 
 			index += 1
@@ -131,7 +143,7 @@ func _process(delta: float) -> void:
 		
 		var index = 0
 		
-		get_viewport_rect().size
+		
 		
 		%Camera2D.offset =  %Camera2D.offset.lerp(offset,delta*10) #%Camera2D.position.lerp(Vector2(0,2160),delta)
 		
@@ -141,7 +153,7 @@ func _process(delta: float) -> void:
 					#layers.modulate = Color(1 - (index) * ModFactor[0],1 - (index) * ModFactor[1],1 - (index) * ModFactor[2])
 					layers.position = Vector2i(0,DefaultPos[str_to_var(layers.name)-1])
 					layers.scale = Vector2(1,1)
-			Speed = Global.Pickaxe["stats"][1] #/ (pow(1.5, log(Global.Depth + 1) / log(10.0))) * 6
+			Speed = Global.Stats["DELAY"] #/ (pow(1.5, log(Global.Depth + 1) / log(10.0))) * 6
 			MovingBetween = false
 		
 		#for layer in self.get_node("Layers").get_children():
@@ -175,7 +187,7 @@ func _process(delta: float) -> void:
 
 	elif MovingSideways != Vector2(0,0):
 		for layer in self.get_node("Layers").get_children():
-			Speed = ((150 / Global.Pickaxe["stats"][1]))
+			#Speed = ((150 / Global.Pickaxe["stats"][1]))
 			layer.position += Vector2( Global.CellSize.x * delta* Speed / 80,Global.CellSize.y * delta* Speed / 80) * MovingSideways
 
 			if MovingSideways.y * (Vector2(Global.CellSize)-Layer1.position).y < 0 :
@@ -183,7 +195,7 @@ func _process(delta: float) -> void:
 
 
 
-#func _input(Input: InputInput) -> void:
+
 #func _physics_process(delta: float) -> void:
 	##(Vector2(floor(mousepos.x / Global.CellSize.x) , floor(mousepos.y / Global.CellSize.y)))
 	if Input.is_action_just_pressed("LockShift") and InMine == true:
@@ -255,11 +267,7 @@ func _process(delta: float) -> void:
 		
 		for layer in self.get_node("Layers").get_children():
 			
-			#if Locked == true or ShiftLocked == true: #%Cursor.OnGrid or
-				#for offset in [Vector2i(-1,0),Vector2i(0,0),Vector2i(0,0),Vector2i(0,0),Vector2i(0,0)]
-				##(layer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(0,str_to_var(layer.name)-1)) != -1)
-				#if str_to_var(layer.name) > 1:
-					#pass
+			
 				
 				if layer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(0,str_to_var(layer.name)-1)) != -1:
 					
@@ -411,7 +419,7 @@ func ResetLayers():
 
 	var index = 0
 	for layer in self.get_node("Layers").get_children():
-		layer.modulate = Color(1 - (index) * ModFactor[0],1 - (index) * ModFactor[1],1 - (index) * ModFactor[2])
+		layer.modulate = Color(ModFactors[index],ModFactors[index],ModFactors[index])
 		layer.position = Vector2i(0,DefaultPos[index])
 		layer.scale = Vector2(1,1)
 		layer.visible = true
@@ -446,7 +454,7 @@ func ResetLayers():
 
 		
 	
-	#(newlayer)
+	
 	Global.Tiles.append(newlayer)
 	MovingDown = false
 	
@@ -462,7 +470,7 @@ func equal_approx(a,b,c) -> bool:
 func MineTile(layer,shift = Vector2i.ZERO):
 	
 	Mining = true
-	#round(%Cursor.position)# 
+	
 	
 	
 	var GlobalCoordinates = Vector2(round(GetMouse().x / Global.CellSize.x) * Global.CellSize.x,round(GetMouse().y / Global.CellSize.y) * Global.CellSize.y)#GetMouse() #- Vector2(0,str_to_var(layer.name)-1) * Vector2(Global.TileSize)
@@ -482,18 +490,9 @@ func MineTile(layer,shift = Vector2i.ZERO):
 	if str_to_var(layer.name) == 1:
 		OreID = Global.TopLayer[TileCoords.find(local_to_map(GetMouse()))]
 		
-	var Context = MiningContext.new()
-	
-	Context.Power = ( Global.Pickaxe["stats"][0] )
-	
-	for id in Global.Pickaxe["traits"]:
-		
-		var Trait = TraitData.GetTrait(id)
-		Trait.Apply(OreID,Context)
-	
-	TraitData.GetBoost("Level").Apply(OreID,Context)
-		
-	var MineTime = (Global.GameData["ores"][var_to_str(OreID)]["hardness"] * (pow(1.5, log(Global.Depth + 1) / log(10.0)))) / Context.Power
+	var Context = Global.GetContext(OreID)
+	#print(Context.Stats)
+	var MineTime = Global.GetTime(OreID,Context.Stats["POWER"])
 		
 	MiningAnim(Coordinates,GetMouse(),layer,OreID,MineTime,GlobalCoordinates)
 		
@@ -596,19 +595,19 @@ func MiningAnim(TileCoordinates,MouseCoordinates,Layer,OreID,MineTime,GlobalCoor
 		
 		emit_signal("StartedMiningAnim",MineTime,OreID,ClickedCenter(MouseCoordinates))
 
-		if TopAnimation.speed_scale > 10:
-			TopAnimation.speed_scale *= 20
+		#if TopAnimation.speed_scale > 10:
+			#TopAnimation.speed_scale *= 20
 
 		TopAnimation.play()
-		TopAnimation.animation_finished.connect(FinishedMining.bind(TopAnimation.name,TileCoordinates,OreID,Layer,Ore["breaksound"],Ore["sound"],Ore["hardness"]/10),CONNECT_ONE_SHOT)
-		TopAnimation.frame_changed.connect(FrameChanged.bind(TopAnimation,Ore["sound"],Ore["hardness"] / Global.Pickaxe["stats"][0]))
+		TopAnimation.animation_finished.connect(FinishedMining.bind(TopAnimation.name,TileCoordinates,OreID,Layer,Ore["breaksound"],Ore["sound"],MineTime),CONNECT_ONE_SHOT)
+		TopAnimation.frame_changed.connect(FrameChanged.bind(TopAnimation,Ore["sound"],MineTime))
 		
 		
 		
 
 func GetMouse():
 	if Locked == false and ShiftLocked == false:
-			return get_local_mouse_position() #- Vector2(960,510))#%Cursor.Pos)
+			return get_local_mouse_position()
 	elif Locked:
 		return Vector2(0,0)
 	elif ShiftLocked:
@@ -632,16 +631,31 @@ func MoveBetween():
 		InMine = true
 	
 	MovingBetween = true
+	Global.MoveBetween(ToSurface)
 		
 
 	
-func FinishedMining(AnimName,TileCoordinates,OreID,Layer,BreakSound,Sound,Strength):
-	SFX.play_sfx(BreakSound,1,10*min(Strength-1,0))
-	SFX.play_sfx(Sound,1,10*min(Strength-1,0))
+func FinishedMining(AnimName,TileCoordinates,OreID,Layer,BreakSound,Sound,MineTime):
+	
+	if OreID == LastMined:
+		Lastminedamount += 1
+	else:
+		Lastminedamount = int(Lastminedamount / 4.0)
+		LastMined = OreID
+	
+	#if MineTime > 1 or Locked == false:
+	if OreID != 1:
+		SFX.play_sfx(BreakSound,(1+(0.04*Lastminedamount)))
+		#if MineTime > 0.1 or Locked == false:
+		SFX.play_sfx(Sound,(1+(0.04*Lastminedamount)))
+		Global.ShakeCamera(MineTime)
+	else:
+		SFX.play_sfx(BreakSound,(0.7+(0.002*Lastminedamount)),((-16-0.1*Lastminedamount)))
+		#if MineTime > 0.1 or Locked == false:
+		SFX.play_sfx(Sound,(0.7+(0.002*Lastminedamount)),(-16-0.1*Lastminedamount))
+		Global.ShakeCamera(MineTime)
 	
 	
-	
-	Global.ShakeCamera(Strength * 3)
 	var TopAnimation = Effects.get_node(str(AnimName))
 	TopAnimation.call_deferred("queue_free")
 	Layer.erase_cell(TileCoordinates)
@@ -650,9 +664,12 @@ func FinishedMining(AnimName,TileCoordinates,OreID,Layer,BreakSound,Sound,Streng
 		Global.TopLayer[TileCoords.find(TileCoordinates)] = -1
 	else:
 		Global.Tiles[str_to_var(Layer.name) -2][TileCoords.find(TileCoordinates)] = -1
-	
+
 	Global.AddOre(OreID,Global.GameData["ores"][var_to_str(OreID)])
 	Global.GainXP( Global.GameData["ores"][var_to_str(OreID)]["xp"] )
+	
+	Speed = 50 / Global.GetContext(OreID).Stats["DELAY"]
+	#print(Speed)
 	MoveDownFullCheck()
 	if ShiftLocked == true:
 		MovingSideways = Vector2(1,1)
@@ -675,10 +692,10 @@ func ClickedCenter(pos) -> Vector2:
 	
 	return (tile_center_local)
 	
-func FrameChanged(MineAnimNode,Sound,Strength,Playing = true):
+func FrameChanged(MineAnimNode,Sound,MineTime,Playing = true):
 	if Playing:
 		
-		if Strength > 0.5:
+		if MineTime > 0.2:
 			#~40 hiighest and ~0.005 lowest
-			SFX.play_sfx(Sound,((float(MineAnimNode.frame) / 7.0) * 0.5 + 0.5),10*min(Strength-1,0))
-			Global.ShakeCamera(Strength)
+			SFX.play_sfx(Sound,((float(MineAnimNode.frame) / 7.0) * 0.5 + 0.5),20*min(MineTime-1,0))
+			Global.ShakeCamera(MineTime)

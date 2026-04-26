@@ -83,11 +83,11 @@ func LoadLayer(LayerID,opening = true):
 			
 			index += 1
 	
-	Indicators.get_node("Start").text = str(int(A)) + "m"
+	Indicators.get_node("Start").text = "  " + str(int(A)) + "m"
 	Indicators.get_node("Start").visible = true
 	Indicators.move_child(Indicators.get_node("Start"),0)
 	
-	modulate = Color(Layer["color"]) + Color(0.65,0.65,0.65) 
+	modulate = Color(Layer["color"]) * 0.5 + Color(0.65,0.65,0.65) 
 	
 	ActualLayer = Global.GameData["layers"][var_to_str(LayerID)]
 	if ActualLayer["id"] < 10:
@@ -188,8 +188,9 @@ func ButtonPressed() -> void:
 		Opening = !Open
 		
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Forge"):
-		ButtonPressed()
+	if event.is_action_pressed("Esc"):
+		if Open:
+			ButtonPressed()
 	pass # Replace with function body.
 
 
@@ -200,7 +201,18 @@ func _on_button_pressed() -> void:
 					 
 func LeftPress() -> void:
 	if Global.FoundLayers[int(Layer["id"]-1)]:
-		LoadLayer(int(Layer["id"]-1),false)
+		if Layer["id"] == 0:
+			var index = 0
+			for i in Global.FoundLayers:
+				if i == false:
+					
+					if index == 0:
+						pass
+					else:
+						LoadLayer(index-1,false)
+				index += 1
+		else:
+			LoadLayer(int(Layer["id"]-1),false)
 	
 	
 

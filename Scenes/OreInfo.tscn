@@ -31,8 +31,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 20.0
-offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -53,7 +51,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 mouse_filter = 2
-theme_override_constants/separation = -8
+theme_override_constants/separation = 0
 
 [node name="Left" type="Button" parent="FullContainer/HBoxContainer" unique_id=1383076590]
 layout_mode = 2
@@ -72,11 +70,10 @@ size_flags_stretch_ratio = 0.8
 theme_override_constants/separation = -4
 
 [node name="Label" type="Label" parent="FullContainer/HBoxContainer/Ore" unique_id=1322785795]
-custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = ExtResource("3_7a4tp")
 text = "Ore Name"
 horizontal_alignment = 1
@@ -121,7 +118,6 @@ theme_override_constants/separation = -4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 1.2
 
 [node name="Rarity" type="Label" parent="FullContainer/HBoxContainer/Data/HBoxContainer/Panel" unique_id=1708996538]
 layout_mode = 1
@@ -130,7 +126,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 53
+theme_override_font_sizes/font_size = 40
 text = "★★★★★"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -151,7 +147,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 40
 text = "#022"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -186,16 +182,19 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.33
 
 [node name="Button" type="Button" parent="FullContainer/HBoxContainer/Data/HBoxContainer/Panel4" unique_id=147108110]
+z_index = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -97.75
-offset_bottom = 81.25
+offset_left = 6.0
+offset_top = -61.0
+offset_right = 2.0
+offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_wc56c")
-theme_override_font_sizes/font_size = 124
+theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxEmpty_42bqh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nbjw7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_665rs")
@@ -220,13 +219,7 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 theme_override_constants/separation = -8
 
-[node name="Panel4" type="Panel" parent="FullContainer/HBoxContainer/Right" unique_id=760229381]
-layout_mode = 2
-size_flags_vertical = 3
-mouse_filter = 2
-
 [node name="Button2" type="Button" parent="FullContainer/HBoxContainer/Right" unique_id=1135111892]
-custom_minimum_size = Vector2(0, 628)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.2
@@ -240,28 +233,25 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Description" type="Label" parent="FullContainer/ScrollContainer" unique_id=1150594983]
-custom_minimum_size = Vector2(1800, 300)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 60
-text = "\"Nietzsche once said that a man who has a why can bear almost any how. But a man who has a tungsten cube can bear any object less dense, and all this talk of why and how becomes unnecessary.\""
+theme_override_font_sizes/font_size = 35
+text = "en cube can bear any object less dense, and all this talk of why and how becomes unnecessary.\""
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Panel" type="Panel" parent="." unique_id=1294018499]
+visible = false
+z_index = 2
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -900.0
-offset_top = -500.0
-offset_right = 900.0
-offset_bottom = 500.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -20.0
+offset_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_42bqh")
@@ -295,12 +285,25 @@ helper_line_color = Color(1, 1, 1, 0.5647059)
 metadata/_custom_type_script = "uid://c52ll0p02s5e8"
 
 [node name="Line2D" type="Line2D" parent="Panel/MarginContainer/Chart" unique_id=1376933196]
+visible = false
 points = PackedVector2Array(-61, 587, 874, 229, 1662, 528)
 begin_cap_mode = 2
 end_cap_mode = 2
+
+[node name="Button" type="Button" parent="Panel" unique_id=428046590]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -119.0
+offset_right = 1.0
+offset_bottom = 120.0
+grow_horizontal = 0
+text = "X"
 
 [connection signal="pressed" from="FullContainer/HBoxContainer/Left" to="." method="LeftPress"]
 [connection signal="pressed" from="FullContainer/HBoxContainer/Data/HBoxContainer/Panel2/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="FullContainer/HBoxContainer/Data/HBoxContainer/Panel4/Button" to="Panel" method="_on_button_pressed"]
 [connection signal="LoadGraph" from="FullContainer/HBoxContainer/Data/ScrollContainer/InfoContainer" to="Panel" method="LoadGraph"]
 [connection signal="pressed" from="FullContainer/HBoxContainer/Right/Button2" to="." method="RightPress"]
+[connection signal="pressed" from="Panel/Button" to="Panel" method="_on_button_pressed"]

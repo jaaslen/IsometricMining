@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b64tf6r5w5xc1"]
+
+[node name="Credits" type="Label" unique_id=1094072766]
+offset_right = 40.0
+offset_bottom = 21.0
+text = "Credits:
+retr0_dev at https://godotshaders.com/shader/earthbound-like-battle-background-shader-w-scroll-effect-and-palette-cycling/
+VoxelChicken : https://github.com/VoxelChicken/Godot-ChartDesigner
+"

@@ -2,7 +2,7 @@ extends Control
 var Open = false
 var Closing = false
 var Opening = false
-var ClosedPos = Vector2(0,-1080)
+var ClosedPos = Vector2(0,-2000)
 var OpenPos = Vector2(0,0)
 signal MenuOpened
 signal MenuClosed
@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 			position = ClosedPos
 			Closing = false
 			Open = false
+			visible = false
 			modulate = Color(0,0,0,0)
 		
 	elif Opening:
@@ -31,6 +32,7 @@ func _process(delta: float) -> void:
 			position = OpenPos
 			Open = true
 			Opening = false
+			visible = true
 			emit_signal("MenuOpened")
 			
 			
@@ -57,14 +59,14 @@ func OpenButtonPressed() -> void:
 		if Open:
 			emit_signal("MenuClosed")
 		else:
-			
+			visible = true
 			SFX.play_sfx("Open Panel")
 			
 			modulate = Color(1,1,1,1)
 		
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Forge"):
-		OpenButtonPressed()
+	if event.is_action_pressed("Esc"):
+		CloseButton()
 	pass # Replace with function body.
 
 

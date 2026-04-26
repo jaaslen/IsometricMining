@@ -39,14 +39,17 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = -10
 
 [node name="Button" type="Button" parent="HBoxContainer" unique_id=736181724]
 modulate = Color(1, 0, 0, 1)
-custom_minimum_size = Vector2(90, 0)
+z_index = 10
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-size_flags_stretch_ratio = 0.09
+size_flags_stretch_ratio = 0.08
 theme_override_font_sizes/font_size = 68
 text = ">
 >
@@ -56,6 +59,7 @@ text = ">
 "
 
 [node name="TabContainer" type="TabContainer" parent="HBoxContainer" unique_id=2079994073]
+z_index = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/tabbar_background = ExtResource("3_nrkam")
@@ -70,7 +74,6 @@ layout_mode = 2
 metadata/_tab_index = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/TabContainer/Ores" unique_id=1582259720]
-clip_contents = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,6 +81,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_d3rv7")
+vertical_scroll_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="HBoxContainer/TabContainer/Ores/ScrollContainer" unique_id=367698296]
 unique_name_in_owner = true
@@ -94,9 +98,7 @@ script = ExtResource("1_la43g")
 unique_name_in_owner = true
 z_index = 2
 layout_mode = 1
-offset_left = 1920.0
-offset_right = 1920.0
-offset_bottom = 0.0
+offset_bottom = 1.0
 
 [node name="Panel" type="Panel" parent="HBoxContainer/TabContainer/Ores" unique_id=576616960]
 z_index = -1
@@ -115,15 +117,15 @@ layout_mode = 2
 metadata/_tab_index = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/TabContainer/Layers" unique_id=45602386]
-custom_minimum_size = Vector2(1760, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_d3rv7")
+vertical_scroll_mode = 2
+scroll_hint_mode = 2
 
 [node name="VerticalContainer" type="VBoxContainer" parent="HBoxContainer/TabContainer/Layers/ScrollContainer" unique_id=1097593155]
 unique_name_in_owner = true
@@ -146,8 +148,5 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_nrkam")
 
 [node name="Control" parent="HBoxContainer/TabContainer/Layers" unique_id=1820293531 instance=ExtResource("6_hq5wi")]
 layout_mode = 1
-offset_left = 1900.0
-offset_right = 1900.0
-offset_bottom = 0.0
 
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="CloseButton"]

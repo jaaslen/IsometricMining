@@ -12,7 +12,7 @@ func ShowTime(desired_time: float,oreid,Position) -> void:
 	Active = true
 	OrePosition = Position
 	
-	if desired_time == 0:
+	if desired_time <= 0:
 		OrePosition = Vector2(0,0)
 		value = 0
 		Camera.zoom = Vector2(1,1)
@@ -71,6 +71,8 @@ func _process(delta):
 			if DesiredTime > 1:
 				Camera.zoom = NormalizedCompletion
 				Camera.position = Vector2(960,540) + (OrePosition * 2 * completion)
+			else:
+				Camera.zoom = Vector2(1,1)
 				
 				
 				

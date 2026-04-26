@@ -52,7 +52,7 @@
 		  500
 		],
 		[
-		  10000,
+		  20000,
 		  500
 		]
 	  ],
@@ -63,11 +63,11 @@
 	  ],
 	  "arrival": 0,
 	  "optimal": 10000,
-	  "maximum": "10000",
+	  "maximum": "20000",
 	  "stats": [
 		0,
 		10000,
-		10000,
+		20000,
 		1,
 		1
 	  ],
@@ -94,7 +94,8 @@
 		18,
 		19,
 		20,
-		21
+		21,
+		22
 	  ],
 	  "description": "non"
 	},
@@ -120,7 +121,7 @@
 	  "rarity": 1,
 	  "atlas": [
 		1,
-		1
+		5
 	  ],
 	  "arrival": 2,
 	  "optimal": 2,
@@ -170,7 +171,7 @@
 	  "rarity": 1,
 	  "atlas": [
 		1,
-		2
+		6
 	  ],
 	  "arrival": 3,
 	  "optimal": 3,
@@ -212,7 +213,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		2,
-		2
+		6
 	  ],
 	  "arrival": 15,
 	  "optimal": 30,
@@ -269,7 +270,7 @@
 	  "rarity": 1,
 	  "atlas": [
 		1,
-		8
+		12
 	  ],
 	  "arrival": 30,
 	  "optimal": 3500,
@@ -315,7 +316,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		1,
-		3
+		7
 	  ],
 	  "arrival": 300,
 	  "optimal": 300,
@@ -356,7 +357,7 @@
 	  "rarity": 1,
 	  "atlas": [
 		2,
-		11
+		15
 	  ],
 	  "arrival": 650,
 	  "optimal": 650,
@@ -397,7 +398,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		1,
-		9
+		13
 	  ],
 	  "arrival": 7500,
 	  "optimal": 9000,
@@ -443,7 +444,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		1,
-		12
+		16
 	  ],
 	  "arrival": 800,
 	  "optimal": 1100,
@@ -484,7 +485,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		1,
-		7
+		11
 	  ],
 	  "arrival": 6300,
 	  "optimal": 7400,
@@ -526,7 +527,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		2,
-		7
+		11
 	  ],
 	  "arrival": 4500,
 	  "optimal": 4500,
@@ -583,7 +584,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		1,
-		11
+		15
 	  ],
 	  "arrival": 3500,
 	  "optimal": 9000,
@@ -629,7 +630,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		5,
-		3
+		7
 	  ],
 	  "arrival": 20,
 	  "optimal": 100,
@@ -670,7 +671,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		3,
-		2
+		6
 	  ],
 	  "arrival": 40,
 	  "optimal": 40,
@@ -712,7 +713,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		3,
-		11
+		15
 	  ],
 	  "arrival": 900,
 	  "optimal": 900,
@@ -753,7 +754,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		2,
-		3
+		7
 	  ],
 	  "arrival": 640,
 	  "optimal": 640,
@@ -794,7 +795,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		2,
-		1
+		5
 	  ],
 	  "arrival": 3500,
 	  "optimal": 3500,
@@ -835,7 +836,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		2,
-		1
+		5
 	  ],
 	  "arrival": 8250,
 	  "optimal": 9000,
@@ -876,7 +877,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		3,
-		3
+		7
 	  ],
 	  "arrival": 500,
 	  "optimal": 500,
@@ -917,7 +918,7 @@
 	  "rarity": 4,
 	  "atlas": [
 		4,
-		4
+		8
 	  ],
 	  "arrival": 6500,
 	  "optimal": 7400,
@@ -974,7 +975,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		1,
-		14
+		18
 	  ],
 	  "arrival": 5000,
 	  "optimal": 8250,
@@ -1017,7 +1018,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		5,
-		4
+		8
 	  ],
 	  "arrival": 6300,
 	  "optimal": 7400,
@@ -1059,7 +1060,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		4,
-		3
+		7
 	  ],
 	  "arrival": 1400,
 	  "optimal": 1400,
@@ -1104,7 +1105,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		1,
-		4
+		8
 	  ],
 	  "arrival": 150,
 	  "optimal": 300,
@@ -1148,7 +1149,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		5,
-		11
+		15
 	  ],
 	  "arrival": 4550,
 	  "optimal": 4550,
@@ -1189,7 +1190,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		1,
-		13
+		17
 	  ],
 	  "arrival": 1400,
 	  "optimal": 1400,
@@ -1231,7 +1232,7 @@
 	  "rarity": 4,
 	  "atlas": [
 		2,
-		10
+		14
 	  ],
 	  "arrival": 1000,
 	  "optimal": 1400,
@@ -1272,7 +1273,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		3,
-		8
+		12
 	  ],
 	  "arrival": 8250,
 	  "optimal": 9000,
@@ -1313,7 +1314,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		2,
-		4
+		8
 	  ],
 	  "arrival": 70,
 	  "optimal": 2500,
@@ -1358,7 +1359,7 @@
 	  "rarity": 4,
 	  "atlas": [
 		2,
-		6
+		10
 	  ],
 	  "arrival": 6000,
 	  "optimal": 6500,
@@ -1402,7 +1403,7 @@
 	  "rarity": 4,
 	  "atlas": [
 		1,
-		6
+		10
 	  ],
 	  "arrival": 4000,
 	  "optimal": 4500,
@@ -1447,7 +1448,7 @@
 	  "rarity": 4,
 	  "atlas": [
 		1,
-		10
+		14
 	  ],
 	  "arrival": 1400,
 	  "optimal": 1450,
@@ -1492,7 +1493,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		4,
-		7
+		11
 	  ],
 	  "arrival": 4550,
 	  "optimal": 5000,
@@ -1534,7 +1535,7 @@
 	  "rarity": 4,
 	  "atlas": [
 		1,
-		5
+		9
 	  ],
 	  "arrival": 4000,
 	  "optimal": 4500,
@@ -1575,7 +1576,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		3,
-		7
+		11
 	  ],
 	  "arrival": 4750,
 	  "optimal": 4750,
@@ -1620,7 +1621,7 @@
 	  "rarity": 4,
 	  "atlas": [
 		2,
-		8
+		12
 	  ],
 	  "arrival": 4550,
 	  "optimal": 4800,
@@ -1661,7 +1662,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		6,
-		4
+		8
 	  ],
 	  "arrival": 2000,
 	  "optimal": 3000,
@@ -1703,7 +1704,7 @@
 	  "rarity": 4,
 	  "atlas": [
 		4,
-		11
+		15
 	  ],
 	  "arrival": 2400,
 	  "optimal": 3000,
@@ -1745,7 +1746,7 @@
 	  "rarity": 4,
 	  "atlas": [
 		2,
-		5
+		9
 	  ],
 	  "arrival": 1900,
 	  "optimal": 2500,
@@ -1766,7 +1767,7 @@
 	},
 	"40": {
 	  "id": 40,
-	  "sorting": 46,
+	  "sorting": 47,
 	  "name": "Unobtainium",
 	  "color": "#FF00FF",
 	  "rank": 3,
@@ -1786,7 +1787,7 @@
 	  "rarity": 5,
 	  "atlas": [
 		1,
-		22
+		26
 	  ],
 	  "arrival": 1,
 	  "optimal": 1,
@@ -1816,7 +1817,7 @@
 	},
 	"41": {
 	  "id": 41,
-	  "sorting": 47,
+	  "sorting": 48,
 	  "name": "Stellarite",
 	  "color": "#FFFA73",
 	  "rank": 8,
@@ -1844,7 +1845,7 @@
 	  "rarity": 5,
 	  "atlas": [
 		2,
-		20
+		24
 	  ],
 	  "arrival": 5000,
 	  "optimal": 0,
@@ -1889,7 +1890,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		1,
-		19
+		23
 	  ],
 	  "arrival": 5,
 	  "optimal": 25,
@@ -1931,7 +1932,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		3,
-		19
+		23
 	  ],
 	  "arrival": 3000,
 	  "optimal": 3000,
@@ -1972,7 +1973,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		2,
-		17
+		21
 	  ],
 	  "arrival": 3000,
 	  "optimal": 3000,
@@ -2013,7 +2014,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		1,
-		15
+		19
 	  ],
 	  "arrival": 2500,
 	  "optimal": 2500,
@@ -2054,7 +2055,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		2,
-		19
+		23
 	  ],
 	  "arrival": 2500,
 	  "optimal": 2500,
@@ -2095,7 +2096,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		1,
-		21
+		25
 	  ],
 	  "arrival": 2800,
 	  "optimal": 2800,
@@ -2122,38 +2123,30 @@
 	  "color": "#FFFA73",
 	  "rank": 7,
 	  "hardness": 150,
-	  "value": 477,
+	  "value": 479,
 	  "xp": 40,
 	  "depth": [
 		[
-		  4400,
-		  0
-		],
-		[
-		  4500,
-		  8000
+		  4550,
+		  800
 		],
 		[
 		  4550,
-		  100
-		],
-		[
-		  5250,
 		  0
 		]
 	  ],
 	  "rarity": 5,
 	  "atlas": [
 		2,
-		20
+		18
 	  ],
-	  "arrival": 4400,
+	  "arrival": 4550,
 	  "optimal": 0,
-	  "maximum": "5250",
+	  "maximum": "4550",
 	  "stats": [
-		4400,
+		4550,
 		0,
-		5250,
+		4550,
 		150,
 		40
 	  ],
@@ -2166,6 +2159,47 @@
 		12
 	  ],
 	  "description": "non"
+	},
+	"49": {
+	  "id": 49,
+	  "sorting": 49,
+	  "name": "Bedrock",
+	  "color": "#434343",
+	  "rank": 7,
+	  "hardness": 9001,
+	  "value": 3164,
+	  "xp": 1,
+	  "depth": [
+		[
+		  9001,
+		  9999
+		],
+		[
+		  20000,
+		  9999
+		]
+	  ],
+	  "rarity": 0,
+	  "atlas": [
+		4,
+		24
+	  ],
+	  "arrival": 9001,
+	  "optimal": 9000,
+	  "maximum": "20000",
+	  "stats": [
+		9001,
+		9000,
+		20000,
+		9001,
+		1
+	  ],
+	  "sound": "Metal Hit",
+	  "breaksound": "Rock Break",
+	  "layer": [
+		22
+	  ],
+	  "description": "you cant mine this"
 	}
   },
   "pickaxes": {
@@ -2213,7 +2247,7 @@
 		1,
 		1
 	  ],
-	  "traits": [5],
+	  "traits": [],
 	  "original": 1,
 	  "maxlevel": 2,
 	  "value": 0,
@@ -2234,13 +2268,13 @@
 		]
 	  ],
 	  "stats": [
-		1.9,
+		1.5,
 		1.5,
 		1,
 		1,
 		1
 	  ],
-	  "traits": [6],
+	  "traits": [],
 	  "original": 2,
 	  "maxlevel": 0,
 	  "value": 1,
@@ -2338,7 +2372,7 @@
 	"6": {
 	  "id": 6,
 	  "name": "Gold Pickaxe",
-	  "color": "#FFD966",
+	  "color": "#FFB900",
 	  "cost": [
 		[
 		  2,
@@ -2498,11 +2532,11 @@
 		]
 	  ],
 	  "stats": [
-		10,
-		0.05,
-		10,
-		10,
-		1
+		100,
+		0.02,
+		5,
+		0.1,
+		10
 	  ],
 	  "traits": [],
 	  "original": 11,
@@ -2598,7 +2632,7 @@
 	},
 	"5": {
 	  "id": 5,
-	  "name": "stone smasher",
+	  "name": "stone proficiency",
 	  "description": "Stone-type tiles get mined twice as fast.",
 	  "color": "#00DC5F"
 	},
@@ -2658,6 +2692,46 @@
 	}
   },
   "stats": {
+	"0": {
+	  "id": 0,
+	  "name": "POWER",
+	  "color": "#EA9999",
+	  "description": "Using this pickaxe, ores are [color=white]%s[/color]x easier to mine.",
+	  "displaymult": 1
+	},
+	"1": {
+	  "id": 1,
+	  "name": "DELAY",
+	  "color": "#6D9EEB",
+	  "description": "Moving down a layer takes [color=white]%s[/color]x as long as before.",
+	  "displaymult": 1
+	},
+	"2": {
+	  "id": 2,
+	  "name": "XP MULT",
+	  "color": "#674EA7",
+	  "description": "You gain [color=white]%s[/color]x as much xp from the ores you mine.",
+	  "prefix": "x",
+	  "displaymult": 1
+	},
+	"3": {
+	  "id": 3,
+	  "name": "LUCK",
+	  "color": "#B6D7A8",
+	  "description": "Stone-type ores now appear at a rate of [nowrap](chance / [color=white]%s[/color])[/nowrap]",
+	  "prefix": "%",
+	  "displaymult": 100
+	},
+	"4": {
+	  "id": 4,
+	  "name": "RARE LUCK",
+	  "color": "#FFD966",
+	  "description": "Rare-type ores now appear at a rate of [nowrap](chance x [color=white]%s[/color])[/nowrap]",
+	  "prefix": "%",
+	  "displaymult": 100
+	}
+  },
+  "upgrades": {
 	"0": {
 	  "id": 0,
 	  "name": "power",
@@ -3111,310 +3185,370 @@
 	"0": {
 	  "id": 0,
 	  "name": "surface",
-	  "color": "#EFEFEF",
-	  "brightness": 16,
+	  "color": "#CAE6FF",
+	  "brightness": 1,
 	  "atlas": [
 		1,
 		0
 	  ],
+	  "BG": 1,
+	  "Music": 1,
 	  "description": "ok",
-	  "length": 5,
-	  "start": 1,
-	  "end": 5
+	  "length": 1,
+	  "start": 0,
+	  "end": 0
 	},
 	"1": {
 	  "id": 1,
 	  "name": "shallow caves",
-	  "color": "#A2C4C9",
-	  "brightness": 8,
+	  "color": "#C5C5C5",
+	  "brightness": 0.4,
 	  "atlas": [
-		2,
+		1,
 		0
 	  ],
+	  "BG": 1,
+	  "Music": 1,
 	  "description": "ok",
-	  "length": 145,
-	  "start": 6,
-	  "end": 150
+	  "length": 149,
+	  "start": 1,
+	  "end": 149
 	},
 	"2": {
 	  "id": 2,
 	  "name": "abandoned mines",
 	  "color": "#999999",
-	  "brightness": 4,
+	  "brightness": 0.4,
 	  "atlas": [
-		3,
+		1,
 		0
 	  ],
+	  "BG": 4,
+	  "Music": 8,
 	  "description": "ok",
 	  "length": 500,
-	  "start": 151,
-	  "end": 650
+	  "start": 150,
+	  "end": 649
 	},
 	"3": {
 	  "id": 3,
 	  "name": "gem caverns",
-	  "color": "#8E7CC3",
-	  "brightness": 2,
+	  "color": "#A000FF",
+	  "brightness": 0.4,
 	  "atlas": [
-		4,
+		1,
 		0
 	  ],
+	  "BG": 1,
+	  "Music": 10,
 	  "description": "ok",
 	  "length": 750,
-	  "start": 651,
-	  "end": 1400
+	  "start": 650,
+	  "end": 1399
 	},
 	"4": {
 	  "id": 4,
 	  "name": "deeper caves",
 	  "color": "#273934",
-	  "brightness": 1,
+	  "brightness": 0.4,
 	  "atlas": [
-		5,
+		1,
 		0
 	  ],
+	  "BG": 1,
+	  "Music": 4,
 	  "description": "ok",
 	  "length": 500,
-	  "start": 1401,
-	  "end": 1900
+	  "start": 1400,
+	  "end": 1899
 	},
 	"5": {
 	  "id": 5,
 	  "name": "deeper caves",
 	  "color": "#354843",
-	  "brightness": 1,
+	  "brightness": 0.4,
 	  "atlas": [
-		6,
+		1,
 		0
 	  ],
+	  "BG": 1,
+	  "Music": 1,
 	  "description": "ok",
 	  "length": 600,
-	  "start": 1901,
-	  "end": 2500
+	  "start": 1900,
+	  "end": 2499
 	},
 	"6": {
 	  "id": 6,
 	  "name": "rock taiga",
 	  "color": "#589D8C",
-	  "brightness": 1,
+	  "brightness": 0.4,
 	  "atlas": [
-		7,
+		1,
 		0
 	  ],
+	  "BG": 1,
+	  "Music": 1,
 	  "description": "ok",
 	  "length": 500,
-	  "start": 2501,
-	  "end": 3000
+	  "start": 2500,
+	  "end": 2999
 	},
 	"7": {
 	  "id": 7,
 	  "name": "frozen",
 	  "color": "#00FFFF",
-	  "brightness": 8,
+	  "brightness": 0.8,
 	  "atlas": [
-		8,
-		0
+		0,
+		1
 	  ],
+	  "BG": 3,
+	  "Music": 3,
 	  "description": "ok",
 	  "length": 500,
-	  "start": 3001,
-	  "end": 3500
+	  "start": 3000,
+	  "end": 3499
 	},
 	"8": {
 	  "id": 8,
 	  "name": "nuclear winter",
 	  "color": "#56DA84",
-	  "brightness": 4,
+	  "brightness": 0.4,
 	  "atlas": [
-		9,
-		0
+		1,
+		1
 	  ],
+	  "BG": 3,
+	  "Music": 3,
 	  "description": "ok",
 	  "length": 500,
-	  "start": 3501,
-	  "end": 4000
+	  "start": 3500,
+	  "end": 3999
 	},
 	"9": {
 	  "id": 9,
 	  "name": "haze",
 	  "color": "#B3D8D8",
-	  "brightness": 6,
+	  "brightness": 0.8,
 	  "atlas": [
-		10,
-		0
+		2,
+		1
 	  ],
+	  "BG": 0,
+	  "Music": 5,
 	  "description": "ok",
 	  "length": 500,
-	  "start": 4001,
-	  "end": 4500
+	  "start": 4000,
+	  "end": 4499
 	},
 	"10": {
 	  "id": 10,
 	  "name": "rock border (graphene?)",
 	  "color": "#434343",
-	  "brightness": 1,
+	  "brightness": 0.4,
 	  "atlas": [
-		11,
-		0
+		3,
+		1
 	  ],
+	  "BG": 1,
+	  "Music": 1,
 	  "description": "ok",
 	  "length": 50,
-	  "start": 4501,
-	  "end": 4550
+	  "start": 4500,
+	  "end": 4549
 	},
 	"11": {
 	  "id": 11,
 	  "name": "molten rock",
 	  "color": "#CD1C1C",
-	  "brightness": 2,
+	  "brightness": 0.4,
 	  "atlas": [
-		12,
-		0
+		4,
+		1
 	  ],
+	  "BG": 1,
+	  "Music": 7,
 	  "description": "ok",
 	  "length": 450,
-	  "start": 4551,
-	  "end": 5000
+	  "start": 4550,
+	  "end": 4999
 	},
 	"12": {
 	  "id": 12,
 	  "name": "outer core",
 	  "color": "#EE7C49",
-	  "brightness": 4,
+	  "brightness": 0.4,
 	  "atlas": [
-		13,
-		0
+		5,
+		1
 	  ],
+	  "BG": 2,
+	  "Music": 2,
 	  "description": "ok",
 	  "length": 250,
-	  "start": 5001,
-	  "end": 5250
+	  "start": 5000,
+	  "end": 5249
 	},
 	"13": {
 	  "id": 13,
 	  "name": "the core",
 	  "color": "#F1C232",
-	  "brightness": 8,
+	  "brightness": 0.4,
 	  "atlas": [
-		14,
-		0
+		6,
+		1
 	  ],
+	  "BG": 2,
+	  "Music": 6,
 	  "description": "ok",
 	  "length": 750,
-	  "start": 5251,
-	  "end": 6000
+	  "start": 5250,
+	  "end": 5999
 	},
 	"14": {
 	  "id": 14,
 	  "name": "coreset",
 	  "color": "#EE7C49",
-	  "brightness": 4,
+	  "brightness": 0.4,
 	  "atlas": [
-		15,
-		0
+		7,
+		1
 	  ],
+	  "BG": 2,
+	  "Music": 8,
 	  "description": "ok",
 	  "length": 100,
-	  "start": 6001,
-	  "end": 6300
+	  "start": 6000,
+	  "end": 6099
 	},
 	"15": {
 	  "id": 15,
 	  "name": "coreset",
 	  "color": "#E0659E",
-	  "brightness": 3,
+	  "brightness": 0.4,
 	  "atlas": [
-		16,
-		0
+		0,
+		2
 	  ],
+	  "BG": 2,
+	  "Music": 8,
 	  "description": "ok",
 	  "length": 100,
-	  "start": 6101,
-	  "end": 6300
+	  "start": 6100,
+	  "end": 6199
 	},
 	"16": {
 	  "id": 16,
 	  "name": "coreset",
 	  "color": "#8E7CC3",
-	  "brightness": 1.5,
+	  "brightness": 0.4,
 	  "atlas": [
-		17,
-		0
+		1,
+		2
 	  ],
+	  "BG": 2,
+	  "Music": 8,
 	  "description": "ok",
 	  "length": 100,
-	  "start": 6201,
-	  "end": 6300
+	  "start": 6200,
+	  "end": 6299
 	},
 	"17": {
 	  "id": 17,
 	  "name": "night",
 	  "color": "#073763",
-	  "brightness": 0.5,
+	  "brightness": 0.4,
 	  "atlas": [
-		18,
-		0
+		2,
+		2
 	  ],
+	  "BG": 0,
+	  "Music": 4,
 	  "description": "ok",
 	  "length": 200,
-	  "start": 6301,
-	  "end": 6500
+	  "start": 6300,
+	  "end": 6499
 	},
 	"18": {
 	  "id": 18,
 	  "name": "the deep blue",
 	  "color": "#0C343D",
-	  "brightness": 0.5,
+	  "brightness": 0.4,
 	  "atlas": [
-		19,
-		0
+		3,
+		2
 	  ],
+	  "BG": 0,
+	  "Music": 11,
 	  "description": "ok",
 	  "length": 900,
-	  "start": 6501,
-	  "end": 7400
+	  "start": 6500,
+	  "end": 7399
 	},
 	"19": {
 	  "id": 19,
 	  "name": "respite",
 	  "color": "#0B5394",
-	  "brightness": 1,
+	  "brightness": 0.4,
 	  "atlas": [
-		20,
-		0
+		4,
+		2
 	  ],
+	  "BG": 1,
+	  "Music": 1,
 	  "description": "ok",
 	  "length": 100,
-	  "start": 7401,
-	  "end": 7500
+	  "start": 7400,
+	  "end": 7499
 	},
 	"20": {
 	  "id": 20,
 	  "name": "electric blue",
 	  "color": "#2C75FF",
-	  "brightness": 8,
+	  "brightness": 0.4,
 	  "atlas": [
-		21,
-		0
+		5,
+		2
 	  ],
+	  "BG": 1,
+	  "Music": 6,
 	  "description": "ok",
 	  "length": 750,
-	  "start": 7501,
-	  "end": 8250
+	  "start": 7500,
+	  "end": 8249
 	},
 	"21": {
 	  "id": 21,
 	  "name": "the nucleus",
 	  "color": "#59BA17",
-	  "brightness": 7,
+	  "brightness": 0.4,
 	  "atlas": [
-		22,
-		0
+		6,
+		2
 	  ],
+	  "BG": 1,
+	  "Music": 6,
 	  "description": "ok",
 	  "length": 750,
-	  "start": 8251,
-	  "end": 9000
+	  "start": 8250,
+	  "end": 8999
+	},
+	"22": {
+	  "id": 22,
+	  "name": "thende",
+	  "color": "#434343",
+	  "brightness": 0.2,
+	  "atlas": [
+		7,
+		2
+	  ],
+	  "BG": 0,
+	  "Music": 2,
+	  "description": "no",
+	  "length": 11000,
+	  "start": 9000,
+	  "end": 19999
 	}
   }
 }

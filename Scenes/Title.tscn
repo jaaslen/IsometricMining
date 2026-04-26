@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://buvoxcatdxqgb"]
 
 [ext_resource type="Script" uid="uid://cniaxay254ah6" path="res://Scenes/TitleScreen.gd" id="1_phf2g"]
-[ext_resource type="Texture2D" uid="uid://dqs17kmqkxwp4" path="res://Visuals/Background.png" id="1_tochr"]
-[ext_resource type="AudioStream" uid="uid://dqtehoo3d3pei" path="res://Audio/Music/Idk.mp3" id="3_6khh7"]
+[ext_resource type="Texture2D" uid="uid://dqs17kmqkxwp4" path="res://Visuals/Backgrounds/Background4.png" id="1_tochr"]
+[ext_resource type="AudioStream" uid="uid://dhfevmvhtssc3" path="res://Audio/Music/Song__Electro.mp3" id="3_bwrlp"]
 [ext_resource type="Texture2D" uid="uid://cac7ikk2nei7g" path="res://Visuals/OIP-205755889.jpg" id="4_bwrlp"]
+[ext_resource type="PackedScene" uid="uid://chbgis4c6afk7" path="res://Scenes/Dictionary.tscn" id="5_84h87"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_bwrlp"]
 stream_count = 1
-stream_0/stream = ExtResource("3_6khh7")
+stream_0/stream = ExtResource("3_bwrlp")
 stream_0/volume = 0.0
 
 [node name="Tilte" type="Control" unique_id=1854520791]
@@ -96,10 +97,21 @@ vertical_alignment = 1
 [node name="PointLight2D" type="PointLight2D" parent="RichTextLabel" unique_id=1021965523]
 position = Vector2(915, 313)
 scale = Vector2(3.1392403, 1.3054187)
+enabled = false
 energy = 5.04
 texture = ExtResource("4_bwrlp")
+
+[node name="Dictionary" parent="." unique_id=2082685999 instance=ExtResource("5_84h87")]
+visible = false
+z_index = 10
+layout_mode = 1
+offset_left = 1920.0
+offset_right = 1960.0
+offset_bottom = 96.0
+mouse_filter = 2
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="HBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="HBoxContainer/Dictionary" to="." method="_on_dictionary_pressed"]
+[connection signal="pressed" from="HBoxContainer/Dictionary" to="Dictionary" method="OpenButtonPressed"]
 [connection signal="pressed" from="HBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -26,7 +26,7 @@ func update_position_and_scale():
 	#scale.y = scale.x
 	#emit_signal("Scaled")
 
-func AddScenes():
+func AddScenes(_Level = null):
 	var data = Global.GameData["ores"]
 	
 	for i in self.get_children():

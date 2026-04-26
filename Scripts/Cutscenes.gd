@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func LayerChanged(_Layer):
 	
-	play("LayerTransition")
+	play("LayerTransition",-1,8)
 
 
 # Called every frame. '_delta' is the elapsed time since the previous frame.

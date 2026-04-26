@@ -9,6 +9,7 @@ var Order = [1,2,3,5,7,6,4,13,14,16,18,22,9,15,8,12,17,32,34,11,10,28,23,20,24,2
 @onready var PanelStyle = load("uid://bu0qaxonbmuh1").duplicate(true)
 @onready var Buttons = %GridContainer
 @onready var IDlabel = $FullContainer/HBoxContainer/Data/HBoxContainer/Panel3/ID
+@onready var IconContainer = $FullContainer/HBoxContainer/Ore/Panel
 @onready var Icon = $FullContainer/HBoxContainer/Ore/Panel/MarginContainer/Icon
 @onready var Name = $FullContainer/HBoxContainer/Ore/Label
 @onready var InfoContainer = $FullContainer/HBoxContainer/Data/ScrollContainer/InfoContainer
@@ -47,7 +48,7 @@ func LoadOre(OreID,opening = true):
 	
 	
 	modulate = Color(Ore["color"]) * 0.5 + Color(0.65,0.65,0.65) 
-	
+	IconContainer.self_modulate = Color(Ore["color"]) + Color(0,0,0,1)
 	ActualOre = Global.GameData["ores"][var_to_str(OreID)]
 	if ActualOre["sorting"] < 10:
 		IDlabel.text = "#00" + var_to_str(ActualOre["sorting"])
@@ -117,6 +118,7 @@ var OpenPos = Vector2(0,0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	if Closing:
 		position = position.lerp(ClosedPos,delta * 10)
 		if position.distance_squared_to(ClosedPos) < 100:
@@ -147,8 +149,9 @@ func ButtonPressed() -> void:
 		Opening = !Open
 		
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Forge"):
-		ButtonPressed()
+	if event.is_action_pressed("Esc"):
+		if Open:
+			ButtonPressed()
 	pass # Replace with function body.
 
 
@@ -176,7 +179,9 @@ func LeftPress() -> void:
 	else:
 		for i in range(OresInGame):
 			if Global.FoundOres[OresInGame-i] == true:
-				LoadOre(Global.IndexFromSorting(OresInGame),false)
+				var g
+				g = Global.IndexFromSorting(OresInGame)
+				LoadOre(Global.IndexFromSorting(OresInGame-1),false)
 
 func RightPress() -> void:
 	if ActualOre["sorting"] < (OresInGame):

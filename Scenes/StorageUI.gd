@@ -22,7 +22,8 @@ func _process(delta: float) -> void:
 			position = ClosedPos
 			Closing = false
 			Open = false
-			modulate = Color(0,0,0,0)
+			#modulate = Color(0,0,0,0)
+			visible = false
 			#emit_signal("MenuClosed")
 		
 	elif Opening:
@@ -31,6 +32,7 @@ func _process(delta: float) -> void:
 			position = OpenPos
 			Open = true
 			Opening = false
+			visible = true
 			emit_signal("MenuOpened")
 			
 			
@@ -63,7 +65,7 @@ func OpenButtonPressed() -> void:
 			
 			emit_signal("MenuClosed")
 		else:
-			
+			visible = true
 			SFX.play_sfx("Open Panel")
 			
 			modulate = Color(1,1,1,1)
@@ -71,9 +73,8 @@ func OpenButtonPressed() -> void:
 			#%GridContainer.AddScenes()
 		
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Forge"):
-		OpenButtonPressed()
-	pass # Replace with function body.
+	if event.is_action_pressed("Esc"):
+		CloseButton()
 
 
 func OtherButtonPressed() -> void:

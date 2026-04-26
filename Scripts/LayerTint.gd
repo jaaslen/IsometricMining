@@ -4,6 +4,7 @@ extends CanvasModulate
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.LayerChanged.connect(LayerChanged)
+	color = Color(Global.Layer["color"])
 	pass # Replace with function body.
 
 
@@ -12,5 +13,5 @@ func _ready() -> void:
 
 func LayerChanged(Layer):
 	
-	color = Color(Layer["color"]) * 0.8 + Color(0,0,0,1)
+	color = Color(Layer["color"])
 	pass

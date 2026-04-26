@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://6nbcaxdd7tto"]
 
-[ext_resource type="Script" uid="uid://t6xhl1a41q1b" path="res://InfoPanel.gd" id="1_m0sod"]
+[ext_resource type="Script" uid="uid://t6xhl1a41q1b" path="res://Scripts/InfoPanel.gd" id="1_m0sod"]
 [ext_resource type="Texture2D" uid="uid://d35wlbx8ymfgl" path="res://Visuals/icon.svg" id="2_2lyjj"]
 [ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="4_crypf"]
 

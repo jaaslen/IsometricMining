@@ -7,13 +7,13 @@ class_name TraitDatabase
 	6: preload("res://Boosts/Traits/Resources/StoneStruggle.tres")
 }
 
-@export var Boosts := {
-	"Level": preload("res://Boosts/Traits/Resources/LevelBoost.tres")
+@export var Upgrades := {
+	0 : preload("res://Boosts/Upgrades/Resources/LevelBoost.tres")
 }
 
 func GetTrait(id: int) -> Boost:
 	return Traits.get(id)
 	
-func GetBoost(id: String) -> Boost:
-	return Boosts.get(id)
+func GetUpgrade(id: int) -> Boost:
+	return Upgrades.get(id)
 	

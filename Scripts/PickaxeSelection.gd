@@ -25,7 +25,7 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
-	SFX.play_sfx("Metal Button",0.6)
+	#SFX.play_sfx("Metal Button",0.6)
 	var PickaxeID = Pickaxe["original"]
 	Global.SelectPickaxe(PickaxeID)
 	pass # Replace with function body.

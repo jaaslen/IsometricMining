@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PowerUpgrade" format=3 uid="uid://cwg2gyskdvirp"]
+
+[ext_resource type="Script" uid="uid://dayvfpbt2jrm0" path="res://Boosts/Upgrades/UpgradeBases/PowerBoost.gd" id="1_bf2ds"]
+
+[resource]
+script = ExtResource("1_bf2ds")
+PowerMult = 1.2
+metadata/_custom_type_script = "uid://dayvfpbt2jrm0"

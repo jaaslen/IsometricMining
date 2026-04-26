@@ -50,9 +50,9 @@ func _on_pressed() -> void:
 			Global.RemoveOre(PickaxeCost[Index][0],PickaxeCost[Index][1])
 			Index += 1
 		
-		#Global.ForgePickaxe(PickaxeID)
-		#Global.EquipPickaxe(PickaxeID)
-		#emit_signal("PickaxeSelected",Global.GameData["pickaxes"][var_to_str(PickaxeID)])
+		Global.ForgePickaxe(PickaxeID)
+		Global.EquipPickaxe(PickaxeID)
+		emit_signal("PickaxeSelected",Global.GameData["pickaxes"][var_to_str(PickaxeID)])
 		PressedStage = 0
 		#for i in Global.OreAmounts
 	
