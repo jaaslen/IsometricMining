@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cdsd6xbm8m530"]
 
-[ext_resource type="Script" uid="uid://iphldv5dh8h8" path="res://Scenes/LayerInfoPanel.gd" id="1_cshn8"]
+[ext_resource type="Script" uid="uid://iphldv5dh8h8" path="res://Scripts/LayerInfoPanel.gd" id="1_cshn8"]
 [ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="2_ksa2b"]
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="3_ptoyi"]
-[ext_resource type="Script" uid="uid://bhycfho46ct80" path="res://Scenes/LayerOreInfo.gd" id="5_4q1xk"]
+[ext_resource type="Script" uid="uid://bhycfho46ct80" path="res://Scripts/LayerOreInfo.gd" id="5_4q1xk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqe5m"]
 bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
@@ -86,20 +86,18 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = ExtResource("3_ptoyi")
 text = "Layer Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="FullContainer/HBoxContainer/Data/HBoxContainer" unique_id=32318090]
+[node name="Depthrange" type="Label" parent="FullContainer/HBoxContainer/Data/HBoxContainer" unique_id=32318090]
 custom_minimum_size = Vector2(0, 85)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = ExtResource("3_ptoyi")
 text = "100-100"
@@ -120,7 +118,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 40
 text = "#022"
 horizontal_alignment = 1

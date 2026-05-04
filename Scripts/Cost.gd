@@ -27,11 +27,11 @@ func _ready() -> void:
 	style.bg_color = Color.html(Ore["color"]) * 0.5
 	OreProgressBar.add_theme_stylebox_override("background", style)
 	OreProgressBar.max_value = Cost
-	if Global.OreAmounts[ID] >= Cost: 
+	if Global.StorageOreAmounts[ID] >= Cost: 
 		CostLabelBox.modulate = Color(Ore["color"]) * 1.2
 	else:
 		CostLabelBox.modulate = Color(1.0, 0.0, 0.0, 1.0)
-
+	$Text/Divider.modulate = Color(Ore["color"]) * 1.2 + Color(0.2,0.2,0.2,1)
 	OreProgressBar.max_value = Cost
 	OreProgressBar.value = Global.OreAmounts[ID] 
 	pass # Replace with function body.

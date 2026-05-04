@@ -7,11 +7,11 @@ func _ready() -> void:
 	PickaxeChanged(1)
 	pass # Replace with function body.
 
-func PickaxeChanged(PickaxeID):
+func PickaxeChanged(PickaxeID : int):
 
 
 	#var OriginalID = PickaxeID
-	if Global.UnlockedPickaxes[PickaxeID] == false:
+	if Global.GameData["pickaxes"][str(PickaxeID)]["rank"] > Global.Level["id"]:
 		PickaxeID = 0
 	
 	

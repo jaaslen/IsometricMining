@@ -1,6 +1,7 @@
 extends Button
 var PickaxeCost
 var PickaxeID
+@warning_ignore("unused_signal")
 signal PickaxeSelected
 
 # Called when the node enters the scene tree for the first time.
@@ -33,6 +34,6 @@ func _on_pressed() -> void:
 	#Global.EquipPickaxe(PickaxeID)
 	#emit_signal("PickaxeSelected",Global.GameData["pickaxes"][var_to_str(PickaxeID)])
 
-	#for i in Global.OreAmounts
+
 	
 	pass # Replace with function body.

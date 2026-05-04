@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://ctx8xrjc65lmv"]
 
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="1_s813n"]
+[ext_resource type="StyleBox" uid="uid://bmkhgobjdxea2" path="res://Visuals/PureMetalPanel.tres" id="2_s813n"]
 [ext_resource type="Script" uid="uid://c73civ214bgmm" path="res://Scripts/StatBar.gd" id="2_w0e0x"]
 [ext_resource type="Texture2D" uid="uid://d35wlbx8ymfgl" path="res://Visuals/icon.svg" id="3_fxmb0"]
-[ext_resource type="Script" uid="uid://bqnhevyq06und" path="res://Scripts/Description.gd" id="5_n1pcy"]
+[ext_resource type="Script" uid="uid://cjoesv6tpkk37" path="res://Scripts/ResizeLabel.gd" id="5_s813n"]
+[ext_resource type="Script" uid="uid://dfd2ffg4q82ph" path="res://Scenes/RichResizeLabel.gd" id="6_w0e0x"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_w0e0x"]
+color = Color(1, 1, 1, 1)
+grow_begin = -100.0
+grow_end = -100.0
 
 [node name="PanelContainer" type="PanelContainer" unique_id=584935263]
 anchors_preset = 15
@@ -12,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_s813n")
+theme_override_styles/panel = ExtResource("2_s813n")
 script = ExtResource("2_w0e0x")
 
 [node name="Container" type="VBoxContainer" parent="." unique_id=783584816]
@@ -44,6 +52,7 @@ text = "???"
 horizontal_alignment = 2
 vertical_alignment = 2
 text_overrun_behavior = 1
+script = ExtResource("5_s813n")
 
 [node name="Seperation" type="Label" parent="Container/Text" unique_id=456874454]
 z_index = 1
@@ -55,11 +64,12 @@ size_flags_vertical = 1
 size_flags_stretch_ratio = 0.1
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 30
 text = ":"
 horizontal_alignment = 1
 vertical_alignment = 2
 text_overrun_behavior = 1
+script = ExtResource("5_s813n")
 
 [node name="Value" type="Label" parent="Container/Text" unique_id=620134135]
 z_index = 1
@@ -75,6 +85,7 @@ theme_override_font_sizes/font_size = 50
 text = "???"
 vertical_alignment = 2
 text_overrun_behavior = 1
+script = ExtResource("5_s813n")
 
 [node name="Increase" type="Label" parent="Container/Text" unique_id=1317229548]
 z_index = 1
@@ -91,16 +102,12 @@ text = "(+?)"
 horizontal_alignment = 1
 vertical_alignment = 2
 text_overrun_behavior = 1
+script = ExtResource("5_s813n")
 
-[node name="Line" type="HBoxContainer" parent="Container" unique_id=1935407079]
+[node name="Line" type="HSeparator" parent="Container" unique_id=1585843860]
 layout_mode = 2
-
-[node name="Line" type="ColorRect" parent="Container/Line" unique_id=947384681]
-custom_minimum_size = Vector2(260, 3)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_stretch_ratio = 10.0
-color = Color(0.43529412, 0.4392157, 0.4392157, 1)
+theme_override_constants/separation = 40
+theme_override_styles/separator = SubResource("StyleBoxLine_w0e0x")
 
 [node name="Description" type="RichTextLabel" parent="Container" unique_id=1563988122]
 clip_contents = false
@@ -117,4 +124,4 @@ autowrap_mode = 2
 tab_size = 0
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_n1pcy")
+script = ExtResource("6_w0e0x")

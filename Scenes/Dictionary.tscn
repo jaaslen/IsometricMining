@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dg1k0b6frkr3x" path="res://Scenes/OreInfo.tscn" id="2_xvgq2"]
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="3_nrkam"]
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="4_d3rv7"]
-[ext_resource type="Script" uid="uid://d01a4vs5xt5m2" path="res://Scenes/LayerDictionaryContainer.gd" id="5_t6gtc"]
+[ext_resource type="Script" uid="uid://d01a4vs5xt5m2" path="res://Scripts/LayerDictionaryContainer.gd" id="5_t6gtc"]
 [ext_resource type="PackedScene" uid="uid://cdsd6xbm8m530" path="res://Scenes/LayerInfo.tscn" id="6_hq5wi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvgq2"]
@@ -64,12 +64,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/tabbar_background = ExtResource("3_nrkam")
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 drag_to_rearrange_enabled = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Ores" type="Control" parent="HBoxContainer/TabContainer" unique_id=2037612179]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -113,6 +112,7 @@ theme = ExtResource("4_d3rv7")
 theme_override_styles/panel = SubResource("StyleBoxFlat_xvgq2")
 
 [node name="Layers" type="Control" parent="HBoxContainer/TabContainer" unique_id=483306039]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 

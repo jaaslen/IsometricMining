@@ -13,7 +13,9 @@ func PickaxeChanged(PickaxeID):
 	
 	
 	var OriginalID = PickaxeID
-	if Global.UnlockedPickaxes[PickaxeID] == false:
+	
+	
+	if Global.GameData["pickaxes"][str(int(PickaxeID))]["rank"] > Global.Level["id"]:
 		PickaxeID = 0
 	else:
 		PickaxeID = 1000 * (CurrentLevel) + PickaxeID

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="StatUpgrade" format=3]
+
+[ext_resource type="Script" path="res://Boosts/Upgrades/UpgradeBases/StatBoost.gd" id="1_bibuw"]
+
+[resource]
+script = ExtResource("1_bibuw")
+Stat = "LUCK"
+Mult = 1.3

@@ -14,13 +14,13 @@ var min_values = []
 var max_values = []
 
 func _ready():
-	spectrum = AudioServer.get_bus_effect_instance(1, 1, 0)
+	spectrum = AudioServer.get_bus_effect_instance(0, 0, 0)
 	min_values.resize(VU_COUNT)
 	min_values.fill(0.0)
 	max_values.resize(VU_COUNT)
 	max_values.fill(0.0)
 
-func _process(delta):
+func _process(_delta : float):
 	var prev_hz = 0
 	var data = []
 	for i in range(1, VU_COUNT + 1):

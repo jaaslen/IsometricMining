@@ -1,0 +1,310 @@
+[gd_scene format=3 uid="uid://dit22wc0wqt23"]
+
+[ext_resource type="Script" uid="uid://cq5ik53nyjbpe" path="res://Scripts/Settings.gd" id="1_7fyg7"]
+[ext_resource type="PackedScene" uid="uid://b7m6l0lvojrsj" path="res://ggs/components/option_list/component_option_list.tscn" id="1_qy7o3"]
+[ext_resource type="Resource" uid="uid://c12mnp8dkqxd7" path="res://ggs/game_settings/Display.tres" id="2_1dtb8"]
+[ext_resource type="Script" uid="uid://cjoesv6tpkk37" path="res://Scripts/ResizeLabel.gd" id="2_luq8a"]
+[ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="2_xc4d7"]
+[ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://ggs/components/slider/component_slider.tscn" id="3_jpljk"]
+[ext_resource type="Resource" uid="uid://cws5mwyqhbudh" path="res://ggs/game_settings/MusicVol.tres" id="4_17sk1"]
+[ext_resource type="Resource" uid="uid://douepkj3o3un8" path="res://ggs/game_settings/SFXVol.tres" id="5_17sk1"]
+[ext_resource type="Resource" uid="uid://cyer8ouokpfa2" path="res://ggs/game_settings/Rebind.tres" id="6_860ap"]
+[ext_resource type="PackedScene" uid="uid://dm1av7skxvp1j" path="res://ggs/components/input_btn/component_input_btn.tscn" id="6_ojh37"]
+[ext_resource type="PackedScene" uid="uid://npriuwbvb8jr" path="res://ggs/components/colorchoice/component_ColorChoice.tscn" id="10_bt7q3"]
+[ext_resource type="Script" uid="uid://bru1qejws0quq" path="res://ggs/scripts/setting_input_rebind.gd" id="11_dculb"]
+[ext_resource type="Resource" uid="uid://dfrxjlck31t5" path="res://ggs/game_settings/ColourChoice.tres" id="11_sgq6w"]
+[ext_resource type="Texture2D" uid="uid://dhmp7jfu8pog1" path="res://Visuals/Panelpix.png" id="12_dculb"]
+[ext_resource type="StyleBox" uid="uid://bmkhgobjdxea2" path="res://Visuals/PureMetalPanel.tres" id="12_luq8a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_luq8a"]
+
+[sub_resource type="Resource" id="Resource_j03d3"]
+resource_name = "Mine Lock Key"
+script = ExtResource("11_dculb")
+action = "Lock"
+event_index = 0
+key = "Mine Lock Key"
+section = "input"
+default = [0, 4194326, 0]
+metadata/_custom_type_script = "uid://bru1qejws0quq"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j03d3"]
+texture = ExtResource("12_dculb")
+modulate_color = Color(0.48452926, 0.48452926, 0.48452926, 1)
+
+[node name="Control" type="Control" unique_id=1968452938]
+z_index = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.5
+offset_top = -400.0
+offset_right = 246.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7fyg7")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1860811320]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=497746695]
+z_index = 1
+layout_mode = 2
+
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1912733163]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "SETTINGS"
+script = ExtResource("2_luq8a")
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=346058481]
+layout_mode = 2
+theme = ExtResource("2_xc4d7")
+theme_override_constants/separation = 12
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer" unique_id=2132739539]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_luq8a")
+
+[node name="TabContainer" type="TabContainer" parent="PanelContainer/VBoxContainer/ScrollContainer" unique_id=1301959673]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_xc4d7")
+current_tab = 0
+tabs_position = 1
+clip_tabs = false
+all_tabs_in_front = true
+tab_0/title = "Page 1"
+tab_1/title = "Colour"
+
+[node name="Main" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer" unique_id=1265472482]
+layout_mode = 2
+metadata/_tab_index = 0
+metadata/_tab_name = "Page 1"
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=150998047]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Display Mode"
+
+[node name="OptionList" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=287653133 instance=ExtResource("1_qy7o3")]
+layout_mode = 2
+theme = ExtResource("2_xc4d7")
+setting = ExtResource("2_1dtb8")
+
+[node name="Btn" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/OptionList" index="0" unique_id=388537928]
+theme_override_font_sizes/font_size = 20
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless"
+popup/item_1/id = 1
+popup/item_2/text = "Windowed"
+popup/item_2/id = 2
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=959144271]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=582272613]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Volume"
+
+[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=2044637463]
+layout_mode = 2
+text = "Music"
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1557402472]
+layout_mode = 2
+
+[node name="Slider" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/PanelContainer" unique_id=1970539111 instance=ExtResource("3_jpljk")]
+layout_mode = 2
+setting = ExtResource("4_17sk1")
+
+[node name="Slider" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/PanelContainer/Slider" index="0"]
+size_flags_horizontal = 1
+max_value = 200.0
+
+[node name="Label4" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1341229507]
+layout_mode = 2
+text = "Sound Effects"
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1931616940]
+layout_mode = 2
+
+[node name="Slider" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/PanelContainer2" unique_id=1063691690 instance=ExtResource("3_jpljk")]
+layout_mode = 2
+setting = ExtResource("5_17sk1")
+
+[node name="Slider" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/PanelContainer2/Slider" index="0"]
+size_flags_horizontal = 1
+max_value = 200.0
+
+[node name="Label5" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1963131695]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Controls"
+
+[node name="Label6" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1927547389]
+layout_mode = 2
+text = "Move between mine and surface"
+
+[node name="InputBtn" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=2012462761 instance=ExtResource("6_ojh37")]
+layout_mode = 2
+theme = ExtResource("2_xc4d7")
+setting = ExtResource("6_860ap")
+
+[node name="Label7" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=831316137]
+layout_mode = 2
+text = "Mining Lock"
+
+[node name="InputBtn2" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1745197212 instance=ExtResource("6_ojh37")]
+layout_mode = 2
+theme = ExtResource("2_xc4d7")
+setting = SubResource("Resource_j03d3")
+
+[node name="Color" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer" unique_id=1187550889]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+metadata/_tab_name = "Colour"
+
+[node name="Subtitle" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color" unique_id=1946596985]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Colors"
+script = ExtResource("2_luq8a")
+
+[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color" unique_id=738283086]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 2
+text = "Rank colours, unlocked as you level up."
+autowrap_mode = 2
+
+[node name="ChoiceGrid" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color" unique_id=1062833955 instance=ExtResource("10_bt7q3")]
+layout_mode = 2
+options = PackedStringArray("#D9D9D9", "#EA9999", "#CC0000", "#FF9900", "#FFD966", "#93C47D", "#6D9EEB", "#8E7CC3", "#FFFFFF", "#FFCCCC", "#FF8888", "#FFDDAA", "#FFFFCC", "#DDFFCC", "#CCDDFF", "#DDCCFF")
+setting = ExtResource("11_sgq6w")
+
+[node name="GridContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid" index="0" unique_id=2050387219]
+columns = 4
+
+[node name="0" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid/GridContainer" index="0" unique_id=261922112]
+size_flags_vertical = 3
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j03d3")
+
+[node name="1" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid/GridContainer" index="1" unique_id=1039132491]
+size_flags_vertical = 3
+
+[node name="2" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid/GridContainer" index="2" unique_id=633328969]
+size_flags_vertical = 3
+
+[node name="3" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid/GridContainer" index="3" unique_id=504420141]
+size_flags_vertical = 3
+
+[node name="4" type="Button" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid/GridContainer" index="4" unique_id=444214905]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("12_luq8a")
+
+[node name="5" type="Button" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid/GridContainer" index="5" unique_id=2010010061]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("12_luq8a")
+
+[node name="6" type="Button" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid/GridContainer" index="6" unique_id=249341731]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("12_luq8a")
+
+[node name="7" type="Button" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid/GridContainer" index="7" unique_id=1550414744]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("12_luq8a")
+
+[node name="8" type="Button" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid/GridContainer" index="8" unique_id=1935121812]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("12_luq8a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j03d3")
+
+[node name="9" type="Button" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid/GridContainer" index="9" unique_id=318928149]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("12_luq8a")
+
+[node name="10" type="Button" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid/GridContainer" index="10" unique_id=394458798]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("12_luq8a")
+
+[node name="11" type="Button" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid/GridContainer" index="11" unique_id=2132212697]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("12_luq8a")
+
+[node name="12" type="Button" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid/GridContainer" index="12" unique_id=380013156]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("12_luq8a")
+
+[node name="13" type="Button" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid/GridContainer" index="13" unique_id=919537573]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("12_luq8a")
+
+[node name="14" type="Button" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid/GridContainer" index="14" unique_id=1092885230]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("12_luq8a")
+
+[node name="15" type="Button" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid/GridContainer" index="15" unique_id=734988951]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("12_luq8a")
+
+[node name="Label5" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color" unique_id=56878699]
+visible = false
+layout_mode = 2
+text = "Light versions"
+
+[node name="HSeparator3" type="HSeparator" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color" unique_id=2034924905]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Button" type="Button" parent="." unique_id=98733177]
+modulate = Color(1, 0, 0, 1)
+z_index = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -55.0
+offset_bottom = 64.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 18
+text = "X"
+
+[connection signal="pressed" from="Button" to="." method="_on_settings_pressed"]
+
+[editable path="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/OptionList"]
+[editable path="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/PanelContainer/Slider"]
+[editable path="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/PanelContainer2/Slider"]
+[editable path="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/InputBtn"]
+[editable path="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/InputBtn2"]
+[editable path="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid"]

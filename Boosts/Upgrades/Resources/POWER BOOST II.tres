@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="StatUpgrade" format=3]
+
+[ext_resource type="Script" path="res://Boosts/Upgrades/UpgradeBases/StatBoost.gd" id="1_ib3pa"]
+
+[resource]
+script = ExtResource("1_ib3pa")
+Mult = 500.0

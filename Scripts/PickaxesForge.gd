@@ -1,5 +1,6 @@
 extends VBoxContainer
 signal PickaxesReady
+@warning_ignore("unused_signal")
 signal PickaxeSetup
 
 # Called when the node enters the scene tree for the first time.
@@ -79,11 +80,14 @@ func Setup():
 			
 			NewInventoryItem.Original = Global.GameData["pickaxes"][var_to_str(ID)]
 			
-			if Global.SaveData["unlocked"][ID] == false:
+			if Pickaxe["rank"] > Global.Level["id"]:
 				
 				ID = 0
 				
-			NewInventoryItem.Forged = Global.ForgedPickaxes[ID]
+			if ID in Global.ForgedPickaxes:
+				NewInventoryItem.Forged = true
+			else:
+				NewInventoryItem.Forged = false
 			if CurrentLevel > 0:
 				NewInventoryItem.Pickaxe = Global.GameData["pickaxes"][var_to_str(1000 * (CurrentLevel) + ID)]
 			else:

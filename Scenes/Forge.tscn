@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://b7sfjxux4a26a" path="res://Scripts/ForgeButton.gd" id="6_mbix4"]
 [ext_resource type="PackedScene" uid="uid://ctx8xrjc65lmv" path="res://Scenes/StatBar.tscn" id="8_vi8is"]
 [ext_resource type="PackedScene" uid="uid://xok4ed1xpd5x" path="res://Scenes/PickaxeSelect.tscn" id="9_gs31o"]
+[ext_resource type="StyleBox" uid="uid://d0q8uxj0q6kgx" path="res://Visuals/MetalPanelNarrow.tres" id="9_p22mi"]
 [ext_resource type="Script" uid="uid://da04gc0c3olsn" path="res://Scripts/UpgradeCosts.gd" id="9_qjbut"]
 [ext_resource type="Script" uid="uid://cs42pixs20bwv" path="res://Scripts/RegularPickaxeSelection.gd" id="9_ugol7"]
 [ext_resource type="Script" uid="uid://c8r5cq064hj73" path="res://Scripts/UpgradeButton.gd" id="15_667t3"]
@@ -106,10 +107,11 @@ theme = ExtResource("2_667t3")
 theme_override_constants/tab_separation = 9
 theme_override_font_sizes/font_size = 40
 theme_override_styles/tabbar_background = ExtResource("3_667t3")
-current_tab = 0
+current_tab = 1
 script = ExtResource("4_gk1wl")
 
 [node name="Stats" type="HBoxContainer" parent="ForgeContainer/StatsPanel" unique_id=1712034042]
+visible = false
 layout_mode = 2
 theme = ExtResource("2_667t3")
 metadata/_tab_index = 0
@@ -132,11 +134,11 @@ script = ExtResource("3_qlblt")
 layout_mode = 2
 
 [node name="CostPanel" type="PanelContainer" parent="ForgeContainer/StatsPanel/Stats" unique_id=1250627148]
-custom_minimum_size = Vector2(0, 540)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.4
+size_flags_stretch_ratio = 0.0
 theme = ExtResource("2_667t3")
+theme_override_styles/panel = ExtResource("9_p22mi")
 script = ExtResource("5_aelxu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Stats/CostPanel" unique_id=1376624245]
@@ -159,7 +161,7 @@ script = ExtResource("2_lg3is")
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
-theme_override_font_sizes/font_size = 104
+theme_override_font_sizes/font_size = 50
 text = "Forge!"
 script = ExtResource("6_mbix4")
 
@@ -178,7 +180,6 @@ fill_mode = 3
 show_percentage = false
 
 [node name="Upgrades" type="HBoxContainer" parent="ForgeContainer/StatsPanel" unique_id=1269663643]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")

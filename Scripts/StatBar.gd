@@ -7,7 +7,7 @@ extends PanelContainer
 @onready var LabelBox = self.get_node("Container").get_node("Text").get_node("Name")
 @onready var ValueLabelBox = self.get_node("Container").get_node("Text").get_node("Value")
 @onready var Seperation = self.get_node("Container").get_node("Text").get_node("Seperation")
-@onready var ColorLine = self.get_node("Container").get_node("Line").get_node("Line")
+@onready var ColorLine = self.get_node("Container").get_node("Line")
 @onready var IncreaseLabelBox = self.get_node("Container").get_node("Text").get_node("Increase")
 @onready var Description = self.get_node("Container").get_node("Description")
 #@onready var OreProgressBar = self.get_node("Container").get_node("ProgressBar")
@@ -23,7 +23,11 @@ func _ready() -> void:
 		Name = capitalize(Global.GameData["stats"][var_to_str(Stat)]["name"])
 		ColorValue = Global.GameData["stats"][var_to_str(Stat)]["color"]
 		if Increase != 0:
-			Description.text = Global.GameData["stats"][var_to_str(Stat)]["description"] % strip_trailing_zeros(Value / Global.Pickaxe["stats"][Stat])
+			
+			if Global.GameData["stats"][var_to_str(Stat)]["multiply"]:
+				Description.text = Global.GameData["stats"][var_to_str(Stat)]["description"] % (  strip_trailing_zeros(Value / Global.Pickaxe["stats"][Stat] * Global.GameData["stats"][str(Stat)]["displaymult"]) + Global.GameData["stats"][var_to_str(Stat)]["suffix"] )
+			else:
+				Description.text = Global.GameData["stats"][var_to_str(Stat)]["description"] % ( strip_trailing_zeros(Value - Global.Pickaxe["stats"][Stat] * Global.GameData["stats"][str(Stat)]["displaymult"]) + Global.GameData["stats"][var_to_str(Stat)]["suffix"] ) 
 			Description.add_theme_color_override("default_color",ColorValue * 1.2)
 		else:
 			if Global.Pickaxe != Pickaxe:

@@ -1,15 +1,11 @@
 [gd_scene format=3 uid="uid://buvoxcatdxqgb"]
 
-[ext_resource type="Script" uid="uid://cniaxay254ah6" path="res://Scenes/TitleScreen.gd" id="1_phf2g"]
+[ext_resource type="Script" uid="uid://cniaxay254ah6" path="res://Scripts/TitleScreen.gd" id="1_phf2g"]
 [ext_resource type="Texture2D" uid="uid://dqs17kmqkxwp4" path="res://Visuals/Backgrounds/Background4.png" id="1_tochr"]
-[ext_resource type="AudioStream" uid="uid://dhfevmvhtssc3" path="res://Audio/Music/Song__Electro.mp3" id="3_bwrlp"]
+[ext_resource type="AudioStream" uid="uid://b6i38hjiwbedi" path="res://Audio/Music/Song__Electro.mp3" id="3_bwrlp"]
 [ext_resource type="Texture2D" uid="uid://cac7ikk2nei7g" path="res://Visuals/OIP-205755889.jpg" id="4_bwrlp"]
 [ext_resource type="PackedScene" uid="uid://chbgis4c6afk7" path="res://Scenes/Dictionary.tscn" id="5_84h87"]
-
-[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_bwrlp"]
-stream_count = 1
-stream_0/stream = ExtResource("3_bwrlp")
-stream_0/volume = 0.0
+[ext_resource type="PackedScene" uid="uid://dit22wc0wqt23" path="res://ggs/game_settings/Settings.tscn" id="6_71b5n"]
 
 [node name="Tilte" type="Control" unique_id=1854520791]
 layout_mode = 3
@@ -77,8 +73,9 @@ size_flags_stretch_ratio = 0.5
 text = "Quit?"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1743999783]
-stream = SubResource("AudioStreamSynchronized_bwrlp")
+stream = ExtResource("3_bwrlp")
 autoplay = true
+bus = &"Music"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1320396389]
 layout_mode = 1
@@ -110,8 +107,39 @@ offset_right = 1960.0
 offset_bottom = 96.0
 mouse_filter = 2
 
+[node name="Settings" parent="." unique_id=1968452938 instance=ExtResource("6_71b5n")]
+visible = false
+layout_mode = 1
+anchors_preset = 9
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 0.0
+offset_right = 610.0
+offset_bottom = 0.0
+grow_horizontal = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1796263786]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 694.0
+offset_top = 282.0
+offset_bottom = -539.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "PRE-ALPHA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="HBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="HBoxContainer/Settings" to="Settings" method="_on_settings_pressed"]
 [connection signal="pressed" from="HBoxContainer/Dictionary" to="." method="_on_dictionary_pressed"]
 [connection signal="pressed" from="HBoxContainer/Dictionary" to="Dictionary" method="OpenButtonPressed"]
 [connection signal="pressed" from="HBoxContainer/Quit" to="." method="_on_quit_pressed"]

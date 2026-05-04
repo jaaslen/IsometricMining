@@ -8,7 +8,7 @@ func _ready() -> void:
 	DepthChanged(1)
 	pass # Replace with function body.
 
-func DepthChanged(change):
+func DepthChanged(_change):
 	
 	text = var_to_str(Global.Depth) + "m"
 	

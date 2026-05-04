@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://gjhrppsvinav"]
+
+[node name="DepthInfo" type="Control" unique_id=525882669]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SuggestedDepth" type="Label" parent="." unique_id=1377439549]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.021000002
+anchor_bottom = 0.021000002
+offset_right = -0.3200035

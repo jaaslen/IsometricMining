@@ -47,8 +47,8 @@ func LoadOre(OreID,opening = true):
 	
 	
 	
-	modulate = Color(Ore["color"]) * 0.5 + Color(0.65,0.65,0.65) 
-	IconContainer.self_modulate = Color(Ore["color"]) + Color(0,0,0,1)
+	modulate = Color(Ore["color"]) * 0.2 + Color(0.8,0.8,0.8) 
+	#IconContainer.self_modulate = Color(Ore["color"]) + Color(0,0,0,1)
 	ActualOre = Global.GameData["ores"][var_to_str(OreID)]
 	if ActualOre["sorting"] < 10:
 		IDlabel.text = "#00" + var_to_str(ActualOre["sorting"])
@@ -179,8 +179,7 @@ func LeftPress() -> void:
 	else:
 		for i in range(OresInGame):
 			if Global.FoundOres[OresInGame-i] == true:
-				var g
-				g = Global.IndexFromSorting(OresInGame)
+
 				LoadOre(Global.IndexFromSorting(OresInGame-1),false)
 
 func RightPress() -> void:

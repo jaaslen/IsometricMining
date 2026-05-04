@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PowerUpgrade" format=3 uid="uid://dlt88ljd8dqyc"]
+
+[ext_resource type="Script" uid="uid://dayvfpbt2jrm0" path="res://Boosts/Upgrades/UpgradeBases/StatBoost.gd" id="1_b3x23"]
+
+[resource]
+script = ExtResource("1_b3x23")
+Stat = "DELAY"
+PowerMult = 0.9
+metadata/_custom_type_script = "uid://dayvfpbt2jrm0"

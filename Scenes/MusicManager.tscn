@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d4c2y0wvfh54m"]
 
-[ext_resource type="Script" uid="uid://bcfhdprvsm17w" path="res://Scenes/BackgroundMusic.gd" id="1_iysw5"]
+[ext_resource type="Script" uid="uid://bcfhdprvsm17w" path="res://Scripts/BackgroundMusic.gd" id="1_iysw5"]
 
 [node name="Music" type="Control" unique_id=447228622]
 layout_mode = 3
@@ -12,3 +12,6 @@ grow_vertical = 2
 script = ExtResource("1_iysw5")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2102491675]
+volume_db = -18.0
+pitch_scale = 0.8
+bus = &"Music"

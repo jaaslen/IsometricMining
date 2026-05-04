@@ -15,12 +15,6 @@ var trauma_power = 2  # Trauma exponent. Use [2, 3].
 func Return():
 	Returning = true
 
-func toggle(boolean):
-	pass
-	#if boolean:
-		#timer.start()
-	#else:
-		#timer.stop()
 
 
 func pulse(size = 1.000,speed = 0.2):

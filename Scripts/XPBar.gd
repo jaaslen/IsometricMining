@@ -4,14 +4,14 @@ extends Control
 @onready var TierBox = $Tier
 @onready var AmountLabel = $Amount
 @onready var RequiredLabel = $Required
-@onready var PowerLabel = $Rank/RankPower
+@onready var PowerLabel = $RankPower
 @onready var FinalTier = $TierProgress/FinalTier
 @onready var TierProgress = $TierProgress
 @onready var Bar = $XPBar
 #var level = Global.level
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Global.LevelUp.connect(LevelUI)
+	
 	#GetLevel()
 	
 	Bar.value = Global.XP
@@ -19,13 +19,12 @@ func _ready() -> void:
 	var level = Global.Level
 	
 	FinalTier.texture = load("res://Visuals/Ranks/" + str(int(level["tiertotal"])) + ".png")
-	PowerLabel.text = "x" + str(level["boost"])
+	PowerLabel.text = " x" + str(level["boost"])
 	
 	Sprite.texture = load("res://Visuals/Ranks/" + level["name"] + ".png")
 	Tier.texture = load("res://Visuals/Ranks/" + str(int(level["tier"])) + ".png")
 	Bar.max_value = level["nextxp"]
-	LevelUI(level)
-	#self_modulate = Color(level["color"]) 
+		#self_modulate = Color(level["color"]) 
 	#$Rank.self_modulate = Color(level["color"]) 
 	#$Tier.modulate = Color(level["color"]) 
 	#$Required.modulate  = Color(level["color"]) 
@@ -40,7 +39,7 @@ func _ready() -> void:
 		TierBox.size.x = 174
 	else:
 		TierProgress.visible = false
-		TierBox.size.x = 140
+		#TierBox.size.x = 140
 	
 	#max_value = Global.GameData["levels"][str(Global.level)]["nextxp"]
 	#Sprite.texture = load("res://Visuals/Ranks/" + Global.GameData["levels"][str(Global.level)]["name"] + ".png")
@@ -93,12 +92,3 @@ func LevelUp():
 			#$Tier.self_modulate = Color(level["color"]) 
 			#Tier.self_modulate = Color(level["color"]) 
 			
-func LevelUI(level):
-	#self_modulate = Color(level["color"]) 
-	$XPBar.self_modulate = Color(level["color"]) 
-	$Stats.modulate = Color(level["color"]) 
-	$Rank.self_modulate = Color(level["color"]) 
-	$Tier.modulate = Color(level["color"]) 
-	$Required.modulate  = Color(level["color"]) 
-	TierProgress.modulate  = Color(level["color"]) 
-	#Tier.self_modulate = Color(level["color"]) 

@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://ckd04gu6f1lw"]
 
+[ext_resource type="Script" uid="uid://csmlaxo48hw3q" path="res://Scenes/Main.gd" id="1_ep8v8"]
 [ext_resource type="TileSet" uid="uid://b73qq53megiib" path="res://Visuals/DefaultTileset.tres" id="2_cm0pq"]
 [ext_resource type="Texture2D" uid="uid://82jgclr6ge6t" path="res://Visuals/OIP-2686731067.jpg" id="3_2w5on"]
 [ext_resource type="Texture2D" uid="uid://by84fajab3xgw" path="res://Visuals/MiningAnim.png" id="3_fos0i"]
@@ -10,46 +11,49 @@
 [ext_resource type="Script" uid="uid://d3ocoxtblykxh" path="res://Scripts/Inventory.gd" id="6_lgr22"]
 [ext_resource type="Texture2D" uid="uid://c1p6mrayp35rh" path="res://Visuals/OIP-3916291435.jpg" id="6_sxkr1"]
 [ext_resource type="Script" uid="uid://cgoxf007xiycg" path="res://Scripts/Lantern.gd" id="7_fq0cl"]
-[ext_resource type="Script" uid="uid://dkb6cx8pl66f8" path="res://Scripts/DepthLabel.gd" id="7_lgr22"]
 [ext_resource type="Texture2D" uid="uid://daxg4r2hrtpvi" path="res://Visuals/Backgrounds/Background1.png" id="8_5psol"]
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="8_c4ay3"]
 [ext_resource type="Script" uid="uid://cgdad8gk70kif" path="res://Scripts/BaseUI.gd" id="8_c5snn"]
-[ext_resource type="Script" uid="uid://bwjkpywr2l3c4" path="res://Scripts/XpLabel.gd" id="8_trn2v"]
-[ext_resource type="Script" uid="uid://nhg83jc5qjgs" path="res://Scripts/FPS.gd" id="9_03owx"]
-[ext_resource type="Script" uid="uid://4fsls3pjgu1j" path="res://Scenes/Background.gd" id="9_d8m2u"]
-[ext_resource type="Script" uid="uid://kqlw2m68m2qf" path="res://Scripts/available.gd" id="9_erwvk"]
+[ext_resource type="Script" uid="uid://4fsls3pjgu1j" path="res://Scripts/Background.gd" id="9_d8m2u"]
 [ext_resource type="Script" uid="uid://oxl83epljceq" path="res://Scripts/MiningProgress.gd" id="9_h1m7h"]
 [ext_resource type="Shader" uid="uid://bk201sysng156" path="res://Scripts/Ripple.gdshader" id="9_lac6x"]
-[ext_resource type="Shader" uid="uid://do1n1iawh0gg4" path="res://Scenes/Visualizer.gdshader" id="9_lfh1j"]
+[ext_resource type="Shader" uid="uid://do1n1iawh0gg4" path="res://Scripts/Visualizer.gdshader" id="9_lfh1j"]
 [ext_resource type="Script" uid="uid://1exf7htl1q0i" path="res://Scripts/Visualizer.gd" id="10_7sj7i"]
-[ext_resource type="Script" uid="uid://drgpx1hb486bv" path="res://Scenes/Ripple.gd" id="10_hpjjw"]
+[ext_resource type="Script" uid="uid://drgpx1hb486bv" path="res://Scripts/Ripple.gd" id="10_hpjjw"]
 [ext_resource type="PackedScene" uid="uid://60t2vbjjambe" path="res://Scenes/Forge.tscn" id="10_wkp8b"]
 [ext_resource type="PackedScene" uid="uid://chbgis4c6afk7" path="res://Scenes/Dictionary.tscn" id="12_c2ibq"]
+[ext_resource type="Script" uid="uid://ddqd1qhvci8xw" path="res://Scenes/BackgroundModulate.gd" id="13_ep8v8"]
 [ext_resource type="Script" uid="uid://b3km0j1twgxfq" path="res://Scripts/Cutscenes.gd" id="14_c2ibq"]
 [ext_resource type="Script" uid="uid://birc53blgft01" path="res://Scripts/XPBar.gd" id="14_jyqft"]
-[ext_resource type="Texture2D" uid="uid://dhmp7jfu8pog1" path="res://Visuals/Panel.png" id="17_5jffn"]
+[ext_resource type="Script" uid="uid://dqnnsorlcw6b6" path="res://Scenes/Menus.gd" id="14_vvjo1"]
+[ext_resource type="Texture2D" uid="uid://dhmp7jfu8pog1" path="res://Visuals/Panelpix.png" id="17_5jffn"]
 [ext_resource type="Script" uid="uid://cgd67btyn6bw5" path="res://Scripts/LayerTint.gd" id="18_346fj"]
 [ext_resource type="Texture2D" uid="uid://bjwm0qp2c3htl" path="res://Visuals/PanelRim.png" id="18_kpo4j"]
-[ext_resource type="Script" uid="uid://bo6cdg0uvkfeu" path="res://Scenes/RankPanel.gd" id="19_btbly"]
+[ext_resource type="Script" uid="uid://bo6cdg0uvkfeu" path="res://Scripts/RankPanel.gd" id="19_btbly"]
 [ext_resource type="Texture2D" uid="uid://c7eke32ticmhh" path="res://Visuals/Ranks/X.png" id="20_btbly"]
-[ext_resource type="Shader" uid="uid://dg5s1tyryus46" path="res://Scenes/Skew.gdshader" id="20_vs04g"]
+[ext_resource type="Shader" uid="uid://dg5s1tyryus46" path="res://Scripts/Skew.gdshader" id="20_vs04g"]
 [ext_resource type="Texture2D" uid="uid://dr8pc3dbujtar" path="res://Visuals/Ranks/8.png" id="21_vvnwx"]
+[ext_resource type="Script" uid="uid://dlj80g8nyf7h7" path="res://Scenes/DelayProgress.gd" id="22_3133c"]
 [ext_resource type="Script" uid="uid://cxe4k0d6wfxa0" path="res://Scripts/InventoryLabel.gd" id="23_xvtyr"]
-[ext_resource type="StyleBox" uid="uid://d1icai52bnijw" path="res://Visuals/OutlinePanel.tres" id="24_x3rx7"]
 [ext_resource type="Script" uid="uid://chusng02dmeij" path="res://Scripts/ReturnPrompt.gd" id="25_4yxf6"]
-[ext_resource type="Script" uid="uid://4e43bb8dsw4h" path="res://Scenes/DefaultUI.gd" id="25_6heos"]
-[ext_resource type="Script" uid="uid://0x7xhg6pqlfw" path="res://Scenes/StatPanel.gd" id="26_5psol"]
+[ext_resource type="Script" uid="uid://4e43bb8dsw4h" path="res://Scripts/DefaultUI.gd" id="25_6heos"]
+[ext_resource type="Script" uid="uid://0x7xhg6pqlfw" path="res://Scripts/StatPanel.gd" id="26_5psol"]
+[ext_resource type="StyleBox" uid="uid://dmkguktg2ckhq" path="res://Visuals/LinePanel.tres" id="26_7sj7i"]
 [ext_resource type="Shader" uid="uid://do6ncjgjm6i8a" path="res://Scripts/Transition.gdshader" id="26_vvnwx"]
-[ext_resource type="Script" uid="uid://dlobr5oby7fbk" path="res://Scenes/PlayerStats.gd" id="27_5psol"]
-[ext_resource type="Script" uid="uid://cd5n7b5b2egwi" path="res://Scenes/LayerName.gd" id="27_vvnwx"]
+[ext_resource type="Script" uid="uid://dlobr5oby7fbk" path="res://Scripts/PlayerStats.gd" id="27_5psol"]
+[ext_resource type="Script" uid="uid://cd5n7b5b2egwi" path="res://Scripts/LayerName.gd" id="27_vvnwx"]
+[ext_resource type="StyleBox" uid="uid://bmkhgobjdxea2" path="res://Visuals/PureMetalPanel.tres" id="29_7sj7i"]
 [ext_resource type="Texture2D" uid="uid://dhcc2mrh47gkn" path="res://Visuals/Ranks/3.png" id="31_m4llh"]
+[ext_resource type="StyleBox" uid="uid://d0q8uxj0q6kgx" path="res://Visuals/MetalPanelNarrow.tres" id="31_off7b"]
 [ext_resource type="Material" uid="uid://gfobpconwfdj" path="res://Visuals/BackgroundShader.tres" id="32_lac6x"]
 [ext_resource type="Script" uid="uid://dtrrficamtdai" path="res://Scripts/Button.gd" id="32_u7mjy"]
 [ext_resource type="Texture2D" uid="uid://dhgubmksjl5w2" path="res://Visuals/Chest.png" id="33_f7hdo"]
-[ext_resource type="Texture2D" uid="uid://dqf8y2c8qkx21" path="res://Visuals/ChestHover.png" id="34_f7hdo"]
-[ext_resource type="Texture2D" uid="uid://dijdivj57ct2m" path="res://Visuals/Anvil.png" id="41_d8m2u"]
-[ext_resource type="Texture2D" uid="uid://dd8kvxgs7tf53" path="res://Visuals/AnvilHover.png" id="42_5psol"]
-[ext_resource type="Script" uid="uid://didlpxm4ejp33" path="res://Scenes/DevTool.gd" id="46_m4llh"]
+[ext_resource type="Script" uid="uid://cjoesv6tpkk37" path="res://Scripts/ResizeLabel.gd" id="36_lfh1j"]
+[ext_resource type="Script" uid="uid://dqvdet8nlwmad" path="res://Scenes/Depthinfo.gd" id="39_3133c"]
+[ext_resource type="Script" uid="uid://bn2nkkoi80ve5" path="res://Scenes/DepthGauge.gd" id="40_js5gh"]
+[ext_resource type="Script" uid="uid://didlpxm4ejp33" path="res://Scripts/DevTool.gd" id="46_m4llh"]
+[ext_resource type="PackedScene" uid="uid://cn7e6itmncnsm" path="res://Scenes/Upgrades.tscn" id="46_semxg"]
+[ext_resource type="PackedScene" uid="uid://dit22wc0wqt23" path="res://ggs/game_settings/Settings.tscn" id="51_7sj7i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6i3y"]
 atlas = ExtResource("3_fos0i")
@@ -756,16 +760,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hpjjw"]
-shader = ExtResource("9_lac6x")
-shader_parameter/wave_count = 12.0
-shader_parameter/speed = 1.0000000149012
-shader_parameter/height = 0.330000015675
-shader_parameter/len = 0.0
-
 [sub_resource type="Gradient" id="Gradient_lfh1j"]
-offsets = PackedFloat32Array(0, 0.1716418)
-colors = PackedColorArray(0, 0, 0, 0.33100003, 0, 0, 0, 0.13900001)
+colors = PackedColorArray(0, 0, 0, 0.356, 0, 0, 0, 0.13900001)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_7sj7i"]
 gradient = SubResource("Gradient_lfh1j")
@@ -806,6 +802,12 @@ shader_parameter/hz29 = 0.0
 shader_parameter/hz30 = 0.0
 shader_parameter/hz31 = 0.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hpjjw"]
+shader = ExtResource("9_lac6x")
+shader_parameter/wave_count = 20.0
+shader_parameter/speed = 1.0000000149012
+shader_parameter/height = 0.50000002375
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kpo4j"]
 texture = ExtResource("17_5jffn")
 texture_margin_left = 10.0
@@ -836,14 +838,16 @@ gradient = SubResource("Gradient_kpo4j")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5psol"]
 shader = ExtResource("20_vs04g")
-shader_parameter/fov = 1.0
+shader_parameter/fov = 6.86800027873
 shader_parameter/cull_back = true
 shader_parameter/y_rot = 0.0
 shader_parameter/x_rot = 0.0
 shader_parameter/inset = 0.0
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c6i3y"]
-size = Vector2(4, 4)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_js5gh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vvjo1"]
+bg_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
 
 [sub_resource type="Gradient" id="Gradient_5psol"]
 offsets = PackedFloat32Array(0, 0.036144577, 0.8614458, 1)
@@ -969,7 +973,8 @@ _data = {
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vvnwx"]
 light_mode = 1
 
-[node name="Node2D" type="Node2D" unique_id=1283150566]
+[node name="Main" type="Node2D" unique_id=1283150566]
+script = ExtResource("1_ep8v8")
 
 [node name="Detection" type="TileMapLayer" parent="." unique_id=1629541775]
 unique_name_in_owner = true
@@ -1058,7 +1063,7 @@ collision_enabled = false
 [node name="8" type="TileMapLayer" parent="Detection/Layers" unique_id=540902399]
 modulate = Color(0.6651851, 0.6651851, 0.6651851, 1)
 light_mask = 517
-z_index = -2
+z_index = -3
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, 204)
@@ -1107,31 +1112,22 @@ script = ExtResource("6_0sclb")
 [node name="Background" type="CanvasLayer" parent="." unique_id=1663016366]
 layer = -1
 
+[node name="OverheatBackground" type="CanvasModulate" parent="Background" unique_id=714450889]
+script = ExtResource("13_ep8v8")
+
 [node name="Texture" type="TextureRect" parent="Background" unique_id=1119102804]
+modulate = Color(1, 0, 0, 1)
 light_mask = 3
 z_index = -2
 material = ExtResource("32_lac6x")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -78.0
-offset_top = -32.0
-offset_right = 87.0
-offset_bottom = 92.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_6ehlx")
 texture = ExtResource("8_5psol")
 script = ExtResource("9_d8m2u")
-
-[node name="Ripple" type="ColorRect" parent="Background" unique_id=1581532677]
-material = SubResource("ShaderMaterial_hpjjw")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("10_hpjjw")
 
 [node name="Visualizer" type="ColorRect" parent="Background" unique_id=401620344]
 z_index = -1
@@ -1143,43 +1139,122 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("10_7sj7i")
 
-[node name="Visualizer2" type="ColorRect" parent="Background" unique_id=191751965]
-z_index = -1
-material = SubResource("ShaderMaterial_off7b")
+[node name="Ripple" type="ColorRect" parent="Background" unique_id=1581532677]
+material = SubResource("ShaderMaterial_hpjjw")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1920.0
-offset_right = 1920.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(-1, 1)
-script = ExtResource("10_7sj7i")
+script = ExtResource("10_hpjjw")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=314353378]
 
-[node name="Storage" parent="CanvasLayer" unique_id=1994406455 instance=ExtResource("5_vvnwx")]
-visible = false
-z_index = 30
-offset_left = -1926.0
-offset_right = -1926.0
-theme = ExtResource("6_6ehlx")
+[node name="OverheatUI" type="CanvasModulate" parent="CanvasLayer" unique_id=1095246279]
+script = ExtResource("13_ep8v8")
 
-[node name="Forge" parent="CanvasLayer" unique_id=386438354 instance=ExtResource("10_wkp8b")]
-visible = false
-z_index = 20
-offset_top = -2000.0
-offset_right = 0.0
-offset_bottom = -2000.0
-mouse_filter = 2
+[node name="SettingsButton" type="Button" parent="CanvasLayer" unique_id=1055431936]
+z_index = -1
+anchors_preset = -1
+anchor_left = 0.001
+anchor_top = 0.38500002
+anchor_right = 0.119
+anchor_bottom = 0.476
+offset_left = -0.9200001
+offset_top = -3.0517578e-05
+offset_right = 0.519989
+focus_mode = 0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 40
+text = "Settings"
 
-[node name="Dictionary" parent="CanvasLayer" unique_id=325743707 instance=ExtResource("12_c2ibq")]
-visible = false
-z_index = 10
-offset_left = 1920.0
-offset_right = 1960.0
-offset_bottom = 96.0
-mouse_filter = 2
+[node name="Menus" type="Control" parent="CanvasLayer" unique_id=1887476013]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("14_vvjo1")
+
+[node name="StorageButton" type="Button" parent="CanvasLayer/Menus" unique_id=1104571493]
+z_index = -1
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.54200006
+anchor_right = 0.698
+anchor_bottom = 0.091000006
+offset_left = -0.6401367
+offset_right = -0.16003418
+offset_bottom = -11.000008
+focus_mode = 0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("31_off7b")
+text = "Storage"
+script = ExtResource("36_lfh1j")
+
+[node name="ForgeButton" type="Button" parent="CanvasLayer/Menus" unique_id=1780826468]
+z_index = -1
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.84400004
+anchor_right = 1.0
+anchor_bottom = 0.080000006
+offset_left = -0.48010254
+grow_horizontal = 0
+focus_mode = 0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("31_off7b")
+text = "Forge"
+script = ExtResource("36_lfh1j")
+
+[node name="UpgradeButton" type="Button" parent="CanvasLayer/Menus" unique_id=1938869438]
+modulate = Color(1, 0.9506531, 0.42578125, 1)
+z_index = -1
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.84400004
+anchor_top = 0.07
+anchor_right = 1.0
+anchor_bottom = 0.15
+offset_left = -0.48010254
+offset_top = 10.0
+offset_bottom = 10.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("31_off7b")
+text = "Upgrades"
+script = ExtResource("36_lfh1j")
+
+[node name="DictionaryButton" type="Button" parent="CanvasLayer" unique_id=93651330]
+z_index = -1
+clip_contents = true
+anchors_preset = -1
+anchor_left = 0.693
+anchor_right = 0.84900004
+anchor_bottom = 0.091000006
+offset_left = -0.5600586
+offset_right = -0.080078125
+offset_bottom = -11.000008
+grow_horizontal = 0
+focus_mode = 0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("31_off7b")
+text = "Dictionary"
+script = ExtResource("36_lfh1j")
 
 [node name="BaseUI" type="Control" parent="CanvasLayer" unique_id=214010551]
 layout_mode = 3
@@ -1193,48 +1268,33 @@ theme = ExtResource("6_6ehlx")
 script = ExtResource("8_c5snn")
 metadata/_edit_use_anchors_ = true
 
-[node name="DepthLabel" type="Label" parent="CanvasLayer/BaseUI" unique_id=1568614968]
-layout_mode = 0
-offset_left = 932.0
-offset_top = 224.0
-offset_right = 972.0
-offset_bottom = 247.0
+[node name="DelayProgress" type="ProgressBar" parent="CanvasLayer/BaseUI" unique_id=1095887624]
+visible = false
+top_level = true
+z_index = 10
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 330.0
+offset_top = -545.0
+offset_right = 350.0
+offset_bottom = -305.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
 theme = ExtResource("6_6ehlx")
-theme_override_constants/outline_size = 0
-text = "0m"
-script = ExtResource("7_lgr22")
+theme_override_styles/background = SubResource("StyleBoxTexture_kpo4j")
+theme_override_styles/fill = SubResource("StyleBoxFlat_h1m7h")
+value = 50.0
+fill_mode = 3
+script = ExtResource("22_3133c")
 
-[node name="XPLabel" type="Label" parent="CanvasLayer/BaseUI" unique_id=622379521]
-layout_mode = 0
-offset_left = 403.0
-offset_top = 96.0
-offset_right = 443.0
-offset_bottom = 119.0
-theme = ExtResource("6_6ehlx")
-theme_override_constants/outline_size = 0
-text = "0m"
-script = ExtResource("8_trn2v")
-
-[node name="FPS" type="Label" parent="CanvasLayer/BaseUI" unique_id=1578749329]
-layout_mode = 0
-offset_left = 652.0
-offset_top = 272.0
-offset_right = 692.0
-offset_bottom = 295.0
-theme = ExtResource("6_6ehlx")
-theme_override_constants/outline_size = 0
-text = "0m"
-script = ExtResource("9_03owx")
-
-[node name="Ores" type="Label" parent="CanvasLayer/BaseUI" unique_id=1502406112]
-layout_mode = 0
-offset_left = 900.0
-offset_top = 272.0
-offset_right = 940.0
-offset_bottom = 295.0
-theme = ExtResource("6_6ehlx")
-theme_override_constants/outline_size = 0
-script = ExtResource("9_erwvk")
+[node name="Timer" type="Timer" parent="CanvasLayer/BaseUI/DelayProgress" unique_id=2123785325]
+one_shot = true
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/BaseUI" unique_id=98817759]
 visible = false
@@ -1247,13 +1307,14 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -120.0
-offset_top = -100.0
+offset_top = -104.0
 offset_right = 120.0
-offset_bottom = -63.0
+offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 theme = ExtResource("6_6ehlx")
+theme_override_font_sizes/font_size = 14
 theme_override_styles/background = SubResource("StyleBoxTexture_kpo4j")
 theme_override_styles/fill = SubResource("StyleBoxFlat_h1m7h")
 value = 50.0
@@ -1283,7 +1344,7 @@ grow_vertical = 2
 tooltip_text = "Inventory, when full, return to the surface to put your ores in storage."
 mouse_default_cursor_shape = 9
 theme = ExtResource("6_6ehlx")
-theme_override_styles/panel = ExtResource("8_c4ay3")
+theme_override_styles/panel = ExtResource("31_off7b")
 script = ExtResource("25_6heos")
 
 [node name="Inventory" type="VBoxContainer" parent="CanvasLayer/BaseUI/Inventory/ScrollContainer" unique_id=1630048505]
@@ -1295,7 +1356,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 theme = ExtResource("6_6ehlx")
-theme_override_constants/separation = 10
+theme_override_constants/separation = 0
 script = ExtResource("6_lgr22")
 
 [node name="Label" type="Label" parent="CanvasLayer/BaseUI/Inventory" unique_id=929186709]
@@ -1317,8 +1378,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("6_6ehlx")
-theme_override_styles/panel = ExtResource("24_x3rx7")
-script = ExtResource("25_6heos")
+theme_override_styles/panel = ExtResource("26_7sj7i")
 
 [node name="Panel" type="Panel" parent="CanvasLayer/BaseUI" unique_id=1741493946]
 modulate = Color(1, 1, 1, 0)
@@ -1376,7 +1436,21 @@ anchor_bottom = 0.16
 offset_right = 3.825
 script = ExtResource("14_jyqft")
 
-[node name="XPBar" type="TextureProgressBar" parent="CanvasLayer/BaseUI/Level" unique_id=574370159]
+[node name="XPBar" type="ProgressBar" parent="CanvasLayer/BaseUI/Level" unique_id=570411564]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.156
+anchor_right = 0.9990001
+anchor_bottom = 0.30600002
+offset_left = -0.3567047
+offset_right = 0.13873291
+offset_bottom = 0.0399971
+theme_override_styles/background = ExtResource("31_off7b")
+value = 50.0
+show_percentage = false
+
+[node name="XPBar2" type="TextureProgressBar" parent="CanvasLayer/BaseUI/Level" unique_id=574370159]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.156
@@ -1400,6 +1474,7 @@ texture_over = ExtResource("18_kpo4j")
 texture_progress = SubResource("GradientTexture1D_4n42c")
 
 [node name="Rank" type="PanelContainer" parent="CanvasLayer/BaseUI/Level" unique_id=1400856191]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.16600001
@@ -1407,17 +1482,8 @@ anchor_bottom = 1.0
 offset_right = 0.0050354004
 tooltip_text = "rank this is how cool you are"
 theme = ExtResource("6_6ehlx")
-theme_override_styles/panel = ExtResource("8_c4ay3")
+theme_override_styles/panel = ExtResource("29_7sj7i")
 script = ExtResource("19_btbly")
-
-[node name="RankPower" type="Label" parent="CanvasLayer/BaseUI/Level/Rank" unique_id=617076253]
-z_index = 1
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme = ExtResource("6_6ehlx")
-theme_override_constants/outline_size = 0
-text = "10x"
 
 [node name="Level" type="TextureRect" parent="CanvasLayer/BaseUI/Level/Rank" unique_id=420292511]
 material = SubResource("ShaderMaterial_5psol")
@@ -1447,44 +1513,51 @@ stretch_mode = 5
 [node name="Amount" type="Label" parent="CanvasLayer/BaseUI/Level" unique_id=1983879341]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.16700001
-anchor_top = 0.056
-anchor_right = 0.16700001
-anchor_bottom = 0.25
-offset_left = 5.041214
-offset_top = 0.03999996
-offset_right = 221.04121
+anchor_left = 0.17
+anchor_top = 0.025
+anchor_right = 0.99600005
+anchor_bottom = 0.30600002
+offset_left = 9.14975
+offset_top = -4.0
+offset_right = 0.030212402
+offset_bottom = 0.0399971
 theme = ExtResource("6_6ehlx")
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 24
-text = "17"
+theme_override_font_sizes/font_size = 30
+text = "1"
+vertical_alignment = 1
+script = ExtResource("36_lfh1j")
 
-[node name="TierProgress" type="TextureProgressBar" parent="CanvasLayer/BaseUI/Level" unique_id=721222896]
+[node name="Required" type="Label" parent="CanvasLayer/BaseUI/Level" unique_id=765737261]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.30100003
-anchor_top = 0.25
-anchor_right = 0.30100003
-anchor_bottom = 1.0
-offset_left = 23.888641
-offset_right = 75.88864
-offset_bottom = 1.0
-grow_horizontal = 0
-grow_vertical = 2
-tooltip_text = "your XP bar, shows how close you are to the next tier / rank. Left number is current xp, right number is required xp."
+anchor_left = 0.156
+anchor_right = 0.97700006
+anchor_bottom = 0.30600002
+offset_left = -0.3567047
+offset_right = 0.3428955
+offset_bottom = 0.0399971
 theme = ExtResource("6_6ehlx")
-value = 50.0
-rounded = true
-allow_greater = true
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 30
+text = "6350 "
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("36_lfh1j")
+
+[node name="TierProgress" type="ProgressBar" parent="CanvasLayer/BaseUI/Level" unique_id=2035133188]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.326
+anchor_top = 0.25
+anchor_right = 0.379
+anchor_bottom = 1.0
+offset_left = -0.20697021
+offset_right = -0.28967285
+offset_bottom = 1.0
+value = 5.0
 fill_mode = 3
-nine_patch_stretch = true
-stretch_margin_left = 10
-stretch_margin_top = 10
-stretch_margin_right = 10
-stretch_margin_bottom = 8
-texture_under = ExtResource("17_5jffn")
-texture_over = ExtResource("18_kpo4j")
-texture_progress = SubResource("GradientTexture1D_4n42c")
+show_percentage = false
 
 [node name="FinalTier" type="TextureRect" parent="CanvasLayer/BaseUI/Level/TierProgress" unique_id=2090795560]
 layout_mode = 1
@@ -1493,7 +1566,7 @@ anchor_top = 0.083000004
 anchor_right = 1.0
 anchor_bottom = 0.37500003
 offset_left = 10.0
-offset_top = 0.03999901
+offset_top = 0.03999996
 offset_right = -10.0
 offset_bottom = -3.0000038
 grow_horizontal = 2
@@ -1501,32 +1574,16 @@ texture = ExtResource("21_vvnwx")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Required" type="Label" parent="CanvasLayer/BaseUI/Level" unique_id=765737261]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.98800004
-anchor_top = 0.056
-anchor_right = 0.98800004
-anchor_bottom = 0.24700001
-offset_left = -219.25916
-offset_top = 1.04
-offset_right = -3.2591553
-offset_bottom = 17.48
-theme = ExtResource("6_6ehlx")
-theme_override_constants/outline_size = 0
-theme_override_font_sizes/font_size = 24
-text = "6350"
-horizontal_alignment = 2
-
 [node name="Stats" type="Control" parent="CanvasLayer/BaseUI/Level" unique_id=1014530021]
-z_index = -1
 layout_mode = 1
 anchor_top = 0.93100005
-anchor_right = 0.379
-anchor_bottom = 1.194
-offset_top = 0.039993286
-offset_right = -0.28967285
-offset_bottom = -0.040008545
+anchor_right = 0.30100003
+anchor_bottom = 1.1810001
+offset_top = 1.0399933
+offset_right = -0.11135864
+offset_bottom = -0.960022
+grow_horizontal = 2
+grow_vertical = 0
 script = ExtResource("26_5psol")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/BaseUI/Level/Stats" unique_id=929257981]
@@ -1537,6 +1594,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("31_off7b")
 
 [node name="Stats" type="VBoxContainer" parent="CanvasLayer/BaseUI/Level/Stats/ScrollContainer" unique_id=624638254]
 layout_mode = 2
@@ -1545,28 +1603,45 @@ script = ExtResource("27_5psol")
 
 [node name="0" type="Label" parent="CanvasLayer/BaseUI/Level/Stats/ScrollContainer/Stats" unique_id=183675752]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme = ExtResource("6_6ehlx")
+theme_override_constants/outline_size = 0
 text = "Power : 5"
+script = ExtResource("36_lfh1j")
 
 [node name="1" type="Label" parent="CanvasLayer/BaseUI/Level/Stats/ScrollContainer/Stats" unique_id=1608151714]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_constants/outline_size = 0
 text = "Delay : 5"
 
 [node name="2" type="Label" parent="CanvasLayer/BaseUI/Level/Stats/ScrollContainer/Stats" unique_id=249237719]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_constants/outline_size = 0
 text = "XP Mult : 5"
 
 [node name="3" type="Label" parent="CanvasLayer/BaseUI/Level/Stats/ScrollContainer/Stats" unique_id=991751654]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_constants/outline_size = 0
 text = "Luck : %90"
 
 [node name="4" type="Label" parent="CanvasLayer/BaseUI/Level/Stats/ScrollContainer/Stats" unique_id=951246407]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_constants/outline_size = 0
 text = "Luck : %90"
+
+[node name="5" type="Label" parent="CanvasLayer/BaseUI/Level/Stats/ScrollContainer/Stats" unique_id=830942806]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+text = "Luck : %90"
+
+[node name="6" type="Label" parent="CanvasLayer/BaseUI/Level/Stats/ScrollContainer/Stats" unique_id=345467430]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+text = "Luck : %90"
+
+[node name="7" type="Label" parent="CanvasLayer/BaseUI/Level/Stats/ScrollContainer/Stats" unique_id=939243758]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+text = "ok"
 
 [node name="Button" type="Button" parent="CanvasLayer/BaseUI/Level/Stats" unique_id=294071013]
 layout_mode = 1
@@ -1574,46 +1649,187 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -42.0
-offset_bottom = -3.0
+offset_top = -28.0
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 14
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 9
 text = "V"
 
-[node name="DictionaryButton" type="TextureButton" parent="CanvasLayer" unique_id=66308490]
-top_level = true
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -172.0
-offset_top = 3.0
-offset_right = -44.0
-offset_bottom = 131.0
-grow_horizontal = 0
-scale = Vector2(0.5, 0.5)
-focus_mode = 0
+[node name="RankPower" type="Label" parent="CanvasLayer/BaseUI/Level" unique_id=617076253]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.010000001
+anchor_top = 0.062000003
+anchor_right = 0.068
+anchor_bottom = 0.26900002
+offset_left = 0.36174965
+offset_top = 0.07999992
+offset_right = 0.45989227
+offset_bottom = -0.04000473
+size_flags_horizontal = 8
+size_flags_vertical = 0
 theme = ExtResource("6_6ehlx")
-texture_normal = SubResource("PlaceholderTexture2D_c6i3y")
-stretch_mode = 0
-script = ExtResource("32_u7mjy")
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 25
+text = " 10x"
+script = ExtResource("36_lfh1j")
 
-[node name="StorageButton" type="TextureButton" parent="CanvasLayer" unique_id=2032177717]
-top_level = true
-anchors_preset = 1
-anchor_left = 1.0
+[node name="DepthGauge" type="Control" parent="CanvasLayer/BaseUI" unique_id=152046052]
+z_index = 1
+layout_mode = 1
+anchor_top = 0.79600006
+anchor_right = 0.25
+anchor_bottom = 1.0
+offset_top = -6.1035156e-05
+grow_vertical = 0
+script = ExtResource("40_js5gh")
+
+[node name="Depth" type="Panel" parent="CanvasLayer/BaseUI/DepthGauge" unique_id=1588084806]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.601
+anchor_bottom = 1.0
+offset_right = 0.15100098
+offset_bottom = -29.0
+
+[node name="Label" type="Label" parent="CanvasLayer/BaseUI/DepthGauge/Depth" unique_id=803313605]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.035
+anchor_top = 0.038000003
+anchor_right = 0.395
+anchor_bottom = 0.11800001
+offset_left = -0.10208511
+offset_top = 0.005999565
+offset_right = -0.009254456
+offset_bottom = -0.034002304
+text = "Depth :"
+
+[node name="Amount" type="Label" parent="CanvasLayer/BaseUI/DepthGauge/Depth" unique_id=1631325971]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053000003
+anchor_right = 0.94200003
+anchor_bottom = 0.563
+offset_left = -4.2974443
+offset_top = 7.0
+offset_right = 6.1095886
+offset_bottom = -0.069000244
+theme_override_font_sizes/font_size = 50
+text = "50%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaxDepth" type="Panel" parent="CanvasLayer/BaseUI/DepthGauge" unique_id=1466142855]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.50600004
+anchor_right = 0.601
+anchor_bottom = 1.0
+offset_top = 0.013996124
+offset_right = 0.15100098
+offset_bottom = -1.0
+
+[node name="Label" type="Label" parent="CanvasLayer/BaseUI/DepthGauge/MaxDepth" unique_id=772397452]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.038000003
+anchor_top = 0.07700001
+anchor_right = 0.39800003
+anchor_bottom = 0.223
+offset_left = 0.03202057
+offset_top = -0.029018402
+offset_right = 0.12484741
+offset_bottom = 0.058818817
+text = "Max Depth :"
+
+[node name="Amount" type="Label" parent="CanvasLayer/BaseUI/DepthGauge/MaxDepth" unique_id=475449402]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.038000003
+anchor_top = 0.009000001
+anchor_right = 0.96300006
+anchor_bottom = 1.0
+offset_left = 0.03202057
+offset_top = -0.055097222
+offset_right = 0.048309326
+offset_bottom = 1.5258789e-05
+theme_override_font_sizes/font_size = 50
+text = "50%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Power" type="Panel" parent="CanvasLayer/BaseUI/DepthGauge" unique_id=656248811]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.57900006
 anchor_right = 1.0
-offset_left = -241.0
-offset_top = 3.0
-offset_right = -113.0
-offset_bottom = 131.0
+anchor_bottom = 0.98800004
+offset_left = 0.028961182
+offset_bottom = -0.027999878
+
+[node name="Label" type="Label" parent="CanvasLayer/BaseUI/DepthGauge/Power" unique_id=572513861]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053000003
+anchor_right = 0.439
+anchor_bottom = 0.194
+offset_left = -0.017000198
+offset_right = -0.00869751
+offset_bottom = -0.09565735
+theme_override_font_sizes/font_size = 20
+text = "Power:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Amount" type="Label" parent="CanvasLayer/BaseUI/DepthGauge/Power" unique_id=1364663389]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.053000003
+anchor_right = 0.94200003
+anchor_bottom = 1.0120001
+offset_left = -0.017000198
+offset_top = 7.0
+offset_right = -0.038009644
+offset_bottom = 7.0399933
+theme_override_font_sizes/font_size = 50
+text = "50%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/BaseUI/DepthGauge" unique_id=474477344]
+modulate = Color(0, 0.6262097, 1, 1)
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.91700006
+anchor_right = 1.0
+anchor_bottom = 0.19100001
+offset_left = -0.16003418
+offset_bottom = 0.035995483
 grow_horizontal = 0
-scale = Vector2(0.5, 0.5)
-focus_mode = 0
-theme = ExtResource("6_6ehlx")
-texture_normal = SubResource("PlaceholderTexture2D_c6i3y")
-stretch_mode = 0
-script = ExtResource("32_u7mjy")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_js5gh")
+text = "[?]"
+
+[node name="Label" type="Label" parent="CanvasLayer/BaseUI/DepthGauge" unique_id=774384101]
+visible = false
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_vvjo1")
+text = "you lose power based on: 
+how deep you go
+your maximum depth
+you only start losing power past ur optimal depth but you immediately lose 20% of your power and lose more as you go past it"
+autowrap_mode = 2
+script = ExtResource("39_3133c")
 
 [node name="Prompt" type="Control" parent="CanvasLayer" unique_id=1851527439]
 visible = false
@@ -1642,11 +1858,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_6ehlx")
 theme_override_constants/outline_size = 0
-theme_override_font_sizes/font_size = 51
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = ExtResource("8_c4ay3")
-text = "are you sure bro"
+text = "Are you sure you want to return? 
+
+Your depth will be reset!"
 horizontal_alignment = 1
-vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="No" type="Button" parent="CanvasLayer/Prompt/Label" unique_id=30113080]
 modulate = Color(1, 0.49, 0.49, 1)
@@ -1658,8 +1876,10 @@ offset_top = 292.0
 offset_right = 438.0
 offset_bottom = -16.0
 grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
 theme = ExtResource("6_6ehlx")
-text = "nah"
+text = "Maybe not..."
 
 [node name="Yes" type="Button" parent="CanvasLayer/Prompt/Label" unique_id=1938239709]
 modulate = Color(0, 0.74202985, 0.47793996, 1)
@@ -1671,8 +1891,10 @@ offset_top = 292.0
 offset_right = 580.0
 offset_bottom = -16.0
 grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
 theme = ExtResource("6_6ehlx")
-text = "yeah"
+text = "Yep!"
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=1625839039]
 visible = false
@@ -1689,6 +1911,8 @@ offset_bottom = 218.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+focus_mode = 0
+mouse_default_cursor_shape = 2
 theme = ExtResource("6_6ehlx")
 text = "Chest"
 script = ExtResource("32_u7mjy")
@@ -1704,35 +1928,6 @@ offset_bottom = 384.0
 scale = Vector2(2.47, 2.47)
 texture = ExtResource("33_f7hdo")
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer" unique_id=716139272]
-top_level = true
-texture_filter = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -128.0
-offset_bottom = 128.0
-grow_horizontal = 0
-scale = Vector2(0.575, 0.575)
-focus_mode = 0
-theme = ExtResource("6_6ehlx")
-texture_normal = ExtResource("41_d8m2u")
-texture_hover = ExtResource("42_5psol")
-stretch_mode = 0
-script = ExtResource("32_u7mjy")
-
-[node name="Chest" type="TextureButton" parent="CanvasLayer" unique_id=1997306977]
-texture_filter = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -64.0
-offset_top = 79.0
-offset_bottom = 147.0
-grow_horizontal = 0
-texture_normal = ExtResource("33_f7hdo")
-texture_hover = ExtResource("34_f7hdo")
-
 [node name="Fill" type="TextureRect" parent="CanvasLayer" unique_id=840347529]
 light_mask = 3
 anchors_preset = 15
@@ -1742,6 +1937,46 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_m4llh")
+
+[node name="Settings" parent="CanvasLayer" unique_id=1968452938 instance=ExtResource("51_7sj7i")]
+visible = false
+anchors_preset = -1
+anchor_left = 0.0
+anchor_top = 0.30800003
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = -3.0517578e-05
+offset_right = 0.0
+offset_bottom = 0.0
+mouse_filter = 1
+
+[node name="Forge" parent="CanvasLayer" unique_id=386438354 instance=ExtResource("10_wkp8b")]
+visible = false
+z_index = 20
+offset_top = -2000.0
+offset_right = 0.0
+offset_bottom = -2000.0
+mouse_filter = 2
+
+[node name="Dictionary" parent="CanvasLayer" unique_id=325743707 instance=ExtResource("12_c2ibq")]
+visible = false
+z_index = 10
+offset_left = 1920.0
+offset_right = 1960.0
+offset_bottom = 96.0
+mouse_filter = 2
+
+[node name="Storage" parent="CanvasLayer" unique_id=1994406455 instance=ExtResource("5_vvnwx")]
+visible = false
+z_index = 30
+offset_left = -1926.0
+offset_right = -1926.0
+theme = ExtResource("6_6ehlx")
+
+[node name="Upgrades" parent="CanvasLayer" unique_id=1961836251 instance=ExtResource("46_semxg")]
+visible = false
+offset_left = 1920.0
+offset_top = 1000.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=213413100]
 libraries/ = SubResource("AnimationLibrary_c2ibq")
@@ -1792,6 +2027,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="TextEdit" type="TextEdit" parent="." unique_id=1129039032]
+visible = false
 offset_left = 744.0
 offset_top = 155.0
 offset_right = 973.0
@@ -1799,38 +2035,50 @@ offset_bottom = 210.0
 script = ExtResource("46_m4llh")
 
 [node name="Button" type="Button" parent="." unique_id=1777559438]
+visible = false
 offset_left = 969.0
 offset_top = 150.0
 offset_right = 1073.0
 offset_bottom = 220.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
 text = "dev button"
 
 [connection signal="ExitAttempt" from="Detection" to="CanvasLayer/Prompt" method="ExitAttempt"]
+[connection signal="Mined" from="Detection" to="CanvasLayer/BaseUI/DelayProgress" method="Mined"]
 [connection signal="StartedMiningAnim" from="Detection" to="CanvasLayer/BaseUI/ProgressBar" method="ShowTime"]
-[connection signal="MenuClosed" from="CanvasLayer/Storage" to="CanvasLayer/BaseUI" method="MenuClosed"]
-[connection signal="MenuOpened" from="CanvasLayer/Storage" to="CanvasLayer/BaseUI" method="MenuOpened"]
-[connection signal="MenuClosed" from="CanvasLayer/Forge" to="CanvasLayer/BaseUI" method="MenuClosed"]
-[connection signal="MenuOpened" from="CanvasLayer/Forge" to="CanvasLayer/BaseUI" method="MenuOpened"]
-[connection signal="MenuClosed" from="CanvasLayer/Dictionary" to="CanvasLayer/BaseUI" method="MenuClosed"]
-[connection signal="MenuOpened" from="CanvasLayer/Dictionary" to="CanvasLayer/BaseUI" method="MenuOpened"]
+[connection signal="pressed" from="CanvasLayer/SettingsButton" to="CanvasLayer/Settings" method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menus/StorageButton" to="CanvasLayer/Forge" method="OtherButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Menus/StorageButton" to="CanvasLayer/Dictionary" method="OtherButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Menus/StorageButton" to="CanvasLayer/Storage" method="OpenButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Menus/StorageButton" to="CanvasLayer/Upgrades" method="OtherButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Menus/ForgeButton" to="CanvasLayer/Forge" method="OpenButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Menus/ForgeButton" to="CanvasLayer/Dictionary" method="OtherButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Menus/ForgeButton" to="CanvasLayer/Storage" method="OtherButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Menus/ForgeButton" to="CanvasLayer/Upgrades" method="OtherButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Menus/UpgradeButton" to="CanvasLayer/Settings" method="OtherButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Menus/UpgradeButton" to="CanvasLayer/Forge" method="OtherButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Menus/UpgradeButton" to="CanvasLayer/Dictionary" method="OtherButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Menus/UpgradeButton" to="CanvasLayer/Upgrades" method="OpenButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/DictionaryButton" to="CanvasLayer/Forge" method="OtherButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/DictionaryButton" to="CanvasLayer/Dictionary" method="OpenButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/DictionaryButton" to="CanvasLayer/Storage" method="OtherButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/DictionaryButton" to="CanvasLayer/Upgrades" method="OtherButtonPressed"]
+[connection signal="DelayFinished" from="CanvasLayer/BaseUI/DelayProgress" to="Detection" method="_on_delay_progress_delay_finished"]
 [connection signal="FullCheck" from="CanvasLayer/BaseUI/Inventory/Label" to="Detection" method="FullCheck"]
 [connection signal="mouse_entered" from="CanvasLayer/BaseUI/Level/Rank" to="CanvasLayer/BaseUI/Level/Rank" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/BaseUI/Level/Rank" to="CanvasLayer/BaseUI/Level/Rank" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/BaseUI/Level/Stats/Button" to="CanvasLayer/BaseUI/Level/Stats" method="OpenButtonPressed"]
-[connection signal="pressed" from="CanvasLayer/DictionaryButton" to="CanvasLayer/Storage" method="OtherButtonPressed"]
-[connection signal="pressed" from="CanvasLayer/DictionaryButton" to="CanvasLayer/Forge" method="OtherButtonPressed"]
-[connection signal="pressed" from="CanvasLayer/DictionaryButton" to="CanvasLayer/Dictionary" method="OpenButtonPressed"]
-[connection signal="pressed" from="CanvasLayer/DictionaryButton" to="CanvasLayer/DictionaryButton" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/StorageButton" to="CanvasLayer/Storage" method="OpenButtonPressed"]
-[connection signal="pressed" from="CanvasLayer/StorageButton" to="CanvasLayer/Forge" method="OtherButtonPressed"]
-[connection signal="pressed" from="CanvasLayer/StorageButton" to="CanvasLayer/Dictionary" method="OtherButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/BaseUI/DepthGauge/Button" to="CanvasLayer/BaseUI/DepthGauge/Label" method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Prompt/Label/No" to="CanvasLayer/Prompt" method="_on_no_pressed"]
 [connection signal="pressed" from="CanvasLayer/Prompt/Label/Yes" to="CanvasLayer/Prompt" method="_on_yes_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Storage" method="OpenButtonPressed"]
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Forge" method="OtherButtonPressed"]
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Dictionary" method="OtherButtonPressed"]
-[connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer/Storage" method="OtherButtonPressed"]
-[connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer/Forge" method="OpenButtonPressed"]
-[connection signal="pressed" from="CanvasLayer/TextureButton" to="CanvasLayer/Dictionary" method="OtherButtonPressed"]
-[connection signal="pressed" from="CanvasLayer/Chest" to="CanvasLayer/Storage" method="OpenButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Storage" method="OpenButtonPressed"]
+[connection signal="MenuClosed" from="CanvasLayer/Forge" to="CanvasLayer/BaseUI" method="MenuClosed"]
+[connection signal="MenuOpened" from="CanvasLayer/Forge" to="CanvasLayer/BaseUI" method="MenuOpened"]
+[connection signal="MenuClosed" from="CanvasLayer/Dictionary" to="CanvasLayer/BaseUI" method="MenuClosed"]
+[connection signal="MenuOpened" from="CanvasLayer/Dictionary" to="CanvasLayer/BaseUI" method="MenuOpened"]
+[connection signal="MenuClosed" from="CanvasLayer/Storage" to="CanvasLayer/BaseUI" method="MenuClosed"]
+[connection signal="MenuOpened" from="CanvasLayer/Storage" to="CanvasLayer/BaseUI" method="MenuOpened"]
 [connection signal="pressed" from="Button" to="TextEdit" method="_on_button_pressed"]

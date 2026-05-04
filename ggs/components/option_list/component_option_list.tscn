@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b7m6l0lvojrsj"]
+
+[ext_resource type="Script" uid="uid://ddc66oavcpel0" path="res://ggs/components/option_list/component_option_list.gd" id="1_5yk06"]
+[ext_resource type="Script" uid="uid://budwe14cqu4ih" path="res://ggs/scripts/audio/setting_audio_mute.gd" id="2_401xu"]
+
+[sub_resource type="Resource" id="Resource_8rakb"]
+script = ExtResource("2_401xu")
+audio_bus = "Master"
+section = "audio"
+default = false
+metadata/_custom_type_script = "uid://budwe14cqu4ih"
+
+[node name="OptionList" type="MarginContainer" unique_id=287653133]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5yk06")
+setting = SubResource("Resource_8rakb")
+
+[node name="Btn" type="OptionButton" parent="." unique_id=388537928]
+layout_mode = 2

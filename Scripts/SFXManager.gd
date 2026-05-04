@@ -30,14 +30,14 @@ var sounds = {
 }
 
 
-func play_sfx(name: String, pitch : float = 1.0, DBshift = 0):
-	if sounds.has(name):
+func play_sfx(SFXName: String, pitch : float = 1.0, DBshift = 0):
+	if sounds.has(SFXName):
 		
 		var player = AudioStreamPlayer.new()
 		player.set_bus("SFX")
 		player.volume_db = DBshift
 		player.pitch_scale = pitch
-		player.stream = sounds[name]
+		player.stream = sounds[SFXName]
 		add_child(player)
 		player.play()
 		player.finished.connect(player.queue_free)
@@ -55,5 +55,5 @@ func play_with_delay(first_sound: String, second_sound: String, delay_time: floa
 	
 	SFX.play_sfx(second_sound, pitch2)
 
-func time_sfx(name: String):
-	return sounds[name].get_length()
+func time_sfx(SFXName: String):
+	return sounds[SFXName].get_length()

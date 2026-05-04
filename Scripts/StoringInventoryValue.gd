@@ -7,13 +7,12 @@ var LeftSide = false
 
 var Ore: Dictionary = Global.GameData["ores"]["1"]
 
-@onready var InfoContainer = $Text
-@onready var IconBox = self.get_node("Text").get_node("Texture")
-@onready var NameLabelBox = self.get_node("Text").get_node("Name")
-@onready var AmountLabelBox = self.get_node("Text").get_node("Cost")
+@onready var IconBox = $Texture
+@onready var NameLabelBox = $Name
+@onready var AmountLabelBox = $Amount
 #@onready var OreProgressBar = self.get_node("ProgressBar")
-@onready var Divider = $Text/Divider
-@onready var MoveAllButton = $Text/All
+@onready var Divider = $Divider
+@onready var MoveAllButton = $All
 #var Ore
 var  atlas
 var Amount : int = 0
@@ -23,7 +22,7 @@ var Name : String
 func _ready() -> void:
 	
 	if LeftSide == false:
-		InfoContainer.move_child(MoveAllButton,0)
+		move_child(MoveAllButton,0)
 		MoveAllButton.text = "<"
 	
 	Global.OreChanged.connect(OreChanged)
@@ -40,6 +39,7 @@ func _ready() -> void:
 	#style.bg_color = Color.html(Ore["color"]) # blue
 	#add_theme_stylebox_override("panel", style)
 	self_modulate = Color(Ore["color"]) * 0.8
+	MoveAllButton.self_modulate = Color(Ore["color"]) * 0.8
 	#OreProgressBar.max_value = Global.TotalOreAmount
 	var newtexture = IconBox.texture.duplicate(true)
 	IconBox.texture = newtexture
@@ -101,7 +101,7 @@ func LabelOutline(_label):
 			AmountLabelBox.modulate = Color(0.0, 0.0, 0.0, 1.0)
 			#label.add_theme_color_override("font_outline_color",Color(1.0,1.0,1.0))
 			#AmountLabelBox.add_theme_color_override("font_outline_color",Color(1.0,1.0,1.0))
-		elif visible:
+		else:
 			NameLabelBox.modulate = 0.9 * Color(Ore["color"]) + Color(0.3, 0.3, 0.3, 1.0)
 			AmountLabelBox.modulate = 0.9 * Color(Ore["color"]) + Color(0.3, 0.3, 0.3, 1.0)
 			#label.add_theme_color_override("font_outline_color",Color(0.0, 0.0, 0.0, 1.0))

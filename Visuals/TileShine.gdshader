@@ -77,10 +77,10 @@ void fragment() {
     float core = smoothstep(0.2, 0.0, radius) * core_intensity;
     rays += core;
     
-    vec4 gradient_color = texture(gradient, vec2(rays, 0.5));
+    vec4 gradient_color = texture(gradient, vec2(rays, 0));
     vec3 shine = vec3(rays) * gradient_color.rgb;
     
 	shine = vec4(shine, rays).rgb;
     
-    COLOR = vec4(shine, floor(rays * gradient_steps) / gradient_steps * gradient_color.a);
+    COLOR = vec4(shine, floor(rays * gradient_steps) / gradient_steps * (gradient_color.a*0.5));
 }

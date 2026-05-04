@@ -19,14 +19,15 @@ func _ready() -> void:
 		modulate = Color(0.3,0.3,0.3)
 		$Button.text = "???"
 		$Button.disabled = true
+	else:
 		
-	
-	Index.text = "#" + str(int(Layer["id"]))
+		Index.text = "#" + str(int(Layer["id"]))
 
-	OpenButton.modulate = Layer["color"]
-	
-	#NameLabel.text = Layer["name"]
-	#NameLabel.fit_text(#NameLabel,Vector2(140,90))
+		modulate = Layer["color"]
+		
+		$Button.text = Layer["name"]
+		$Button.disabled = false
+		
 	
 	
 	pass # Replace with function body.
@@ -46,3 +47,11 @@ func _on_button_pressed() -> void:
 func _on_button_mouse_entered() -> void:
 	SFX.play_sfx("Hover",  (float(Layer["id"]) / float(Global.LayerAmount)) * 0.2 + 0.5 )
 	pass # Replace with function body.
+	
+func Check():
+	if int(ActualLayer["id"]) in Global.FoundLayers:
+		Found = true
+		Layer = ActualLayer
+		_ready()
+		
+	

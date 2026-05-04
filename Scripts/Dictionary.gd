@@ -45,7 +45,7 @@ func OpenButtonPressed() -> void:
 		emit_signal("MenuClosed")
 	elif Closing:
 		
-		SFX.play_sfx("Open Panel")
+		SFX.play_sfx("Open Panel",0.6)
 		
 		Opening = true
 		Closing = false
@@ -61,7 +61,7 @@ func OpenButtonPressed() -> void:
 			emit_signal("MenuClosed")
 		else:
 			visible = true
-			SFX.play_sfx("Open Panel")
+			SFX.play_sfx("Open Panel",0.6)
 			
 			modulate = Color(1,1,1,1)
 			

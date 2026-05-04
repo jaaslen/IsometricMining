@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SettingColourTheme" format=3 uid="uid://dfrxjlck31t5"]
+
+[ext_resource type="Script" uid="uid://c2tpjtcv4yyef" path="res://ggs/scripts/setting_colortheme.gd" id="1_uejey"]
+
+[sub_resource type="Resource" id="Resource_uejey"]
+script = ExtResource("1_uejey")
+section = "colour"
+default = 2
+metadata/_custom_type_script = "uid://c2tpjtcv4yyef"
+
+[resource]
+resource_name = "Colour Choice"
+script = ExtResource("1_uejey")
+size_setting = SubResource("Resource_uejey")
+key = "Colour Choice"
+section = "colour"
+default = 0
+metadata/_custom_type_script = "uid://c2tpjtcv4yyef"

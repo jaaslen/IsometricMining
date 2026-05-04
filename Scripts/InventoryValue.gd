@@ -2,11 +2,11 @@ extends Panel
 @export var Icon : CompressedTexture2D
 @export var Ore: Dictionary = Global.GameData["ores"]["1"]
 
-@onready var IconBox = self.get_node("Text").get_node("Texture")
-@onready var NameLabelBox = self.get_node("Text").get_node("Name")
-@onready var AmountLabelBox = self.get_node("Text").get_node("Cost")
+@onready var IconBox = $MarginContainer/Texture
+@onready var NameLabelBox = $Name
+@onready var AmountLabelBox = $Amount
 #@onready var OreProgressBar = self.get_node("ProgressBar")
-@onready var Divider = $Text/Divider
+#@onready var Divider = $Divider
 #var Ore
 var  atlas
 var Amount : int = 0
@@ -19,10 +19,10 @@ func _ready() -> void:
 	Name = Ore["name"]
 	Amount = Global.OreAmounts[Ore["id"]]
 	
-	Divider.color = Color(Ore["color"]) * 1.2
+	#Divider.color = Color(Ore["color"]) * 1.2
 	NameLabelBox.modulate = 0.9 * Color(Ore["color"]) + Color(0.3, 0.3, 0.3, 1.0)
 	AmountLabelBox.modulate = 0.9 * Color(Ore["color"]) + Color(0.3, 0.3, 0.3, 1.0)
-	NameLabelBox.text = Name # + " " + var_to_str(Amount)
+	NameLabelBox.text = Name# + " " + var_to_str(Amount)
 	AmountLabelBox.text = var_to_str(Amount)
 	#var Original := get_theme_stylebox("panel")
 	#var style := Original.duplicate(true)

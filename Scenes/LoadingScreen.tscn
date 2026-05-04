@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="1_m6rkq"]
 [ext_resource type="Script" uid="uid://d1v5877lsmr4v" path="res://Scripts/LoadingScreen.gd" id="1_qjj4j"]
-[ext_resource type="Texture2D" uid="uid://dhmp7jfu8pog1" path="res://Visuals/Panel.png" id="2_qjj4j"]
+[ext_resource type="Texture2D" uid="uid://dhmp7jfu8pog1" path="res://Visuals/Panelpix.png" id="2_qjj4j"]
 [ext_resource type="Texture2D" uid="uid://bjwm0qp2c3htl" path="res://Visuals/PanelRim.png" id="3_dq85b"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ffghy"]

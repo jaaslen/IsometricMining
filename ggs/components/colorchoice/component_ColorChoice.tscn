@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://npriuwbvb8jr"]
+
+[ext_resource type="Script" uid="uid://cggbps6apayil" path="res://ggs/components/colorchoice/component_color_choice.gd" id="1_tsbmo"]
+[ext_resource type="Script" uid="uid://c2tpjtcv4yyef" path="res://ggs/scripts/setting_colortheme.gd" id="2_qaare"]
+[ext_resource type="StyleBox" uid="uid://bmkhgobjdxea2" path="res://Visuals/PureMetalPanel.tres" id="3_j4mdb"]
+
+[sub_resource type="Resource" id="Resource_j4mdb"]
+resource_name = "Theme Colour"
+script = ExtResource("2_qaare")
+key = "Theme Colour"
+section = "colour"
+default = 0
+metadata/_custom_type_script = "uid://c2tpjtcv4yyef"
+
+[node name="ChoiceGrid" type="MarginContainer" unique_id=1062833955]
+offset_right = 84.0
+offset_bottom = 84.0
+script = ExtResource("1_tsbmo")
+options = PackedStringArray("#D9D9D9", "#EA9999", "#CC0000", "#FF9900")
+setting = SubResource("Resource_j4mdb")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=2050387219]
+layout_mode = 2
+mouse_filter = 2
+columns = 2
+
+[node name="0" type="Button" parent="GridContainer" unique_id=261922112]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_j4mdb")
+
+[node name="1" type="Button" parent="GridContainer" unique_id=1039132491]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_j4mdb")
+
+[node name="2" type="Button" parent="GridContainer" unique_id=633328969]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_j4mdb")
+
+[node name="3" type="Button" parent="GridContainer" unique_id=504420141]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("3_j4mdb")

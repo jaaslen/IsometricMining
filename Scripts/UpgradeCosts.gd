@@ -15,7 +15,8 @@ func PickaxeChanged(PickaxeID):
 	var CurrentLevel = Global.PickaxeLevels[PickaxeID]
 	
 	var OriginalID = PickaxeID
-	if Global.UnlockedPickaxes[PickaxeID] == false:
+	
+	if Global.GameData["pickaxes"][str(PickaxeID)]["rank"] > Global.Level["id"]:
 		PickaxeID = 0
 	elif Global.GameData["pickaxes"][var_to_str(PickaxeID)]["maxlevel"] > CurrentLevel:
 		Cost = Global.GameData["pickaxes"][var_to_str(OriginalID + 1000 * (CurrentLevel+1))]["cost"]
@@ -32,7 +33,7 @@ func PickaxeChanged(PickaxeID):
 		var NewInventoryItem = load("uid://w4sqtpegcrlw").instantiate()
 		NewInventoryItem.Ore = Global.GameData["ores"][var_to_str(int(cost[0]))]
 		NewInventoryItem.Cost = cost[1]
-		if Global.OreAmounts[int(cost[0])] < int(cost[1]):
+		if Global.StorageOreAmounts[int(cost[0])] < int(cost[1]):
 			Buyable = false
 			pass
 			

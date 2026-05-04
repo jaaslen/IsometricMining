@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://b04p6hia7y3l0"]
 
+[ext_resource type="StyleBox" uid="uid://bmkhgobjdxea2" path="res://Visuals/PureMetalPanel.tres" id="1_ul6hm"]
 [ext_resource type="Script" uid="uid://cyf5xtmirhfm5" path="res://Scripts/Skill.gd" id="1_wh5ei"]
 [ext_resource type="Script" uid="uid://b6toywc661chx" path="res://Scripts/ListLabel.gd" id="3_skggp"]
 
 [node name="PanelContainer" type="PanelContainer" unique_id=1526809520]
 offset_right = 520.0
 offset_bottom = 171.0
+theme_override_styles/panel = ExtResource("1_ul6hm")
 script = ExtResource("1_wh5ei")
 
 [node name="Container" type="VBoxContainer" parent="." unique_id=1867771890]

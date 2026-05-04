@@ -4,9 +4,9 @@
 [ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="2_wc56c"]
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="3_7a4tp"]
 [ext_resource type="Texture2D" uid="uid://dcicd3utpj2kf" path="res://Visuals/OreSheet.png" id="4_e1t2j"]
-[ext_resource type="Script" uid="uid://2anxkc8y6jfh" path="res://Scenes/InfoContainer.gd" id="5_42bqh"]
-[ext_resource type="Script" uid="uid://c52ll0p02s5e8" path="res://addons/chartdesigner/chart_designer.gd" id="6_7a4tp"]
-[ext_resource type="Script" uid="uid://dl6w08gcp0vea" path="res://Scenes/ChartPanel.gd" id="6_42bqh"]
+[ext_resource type="Script" uid="uid://2anxkc8y6jfh" path="res://Scripts/InfoContainer.gd" id="5_42bqh"]
+[ext_resource type="Script" uid="uid://os1qbesmdys0" path="res://addons/chartdesigner/chart_designer.gd" id="6_7a4tp"]
+[ext_resource type="Script" uid="uid://dl6w08gcp0vea" path="res://Scripts/ChartPanel.gd" id="6_42bqh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqe5m"]
 bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
@@ -282,7 +282,6 @@ number_color = Color(1, 1, 1, 1)
 number_adjustment = 80.0
 helper_line_amount = 5
 helper_line_color = Color(1, 1, 1, 0.5647059)
-metadata/_custom_type_script = "uid://c52ll0p02s5e8"
 
 [node name="Line2D" type="Line2D" parent="Panel/MarginContainer/Chart" unique_id=1376933196]
 visible = false

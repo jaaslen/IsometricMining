@@ -1,7 +1,23 @@
 [gd_resource type="Theme" format=3 uid="uid://bhh6e3pgmrfbn"]
 
-[ext_resource type="Texture2D" uid="uid://dhmp7jfu8pog1" path="res://Visuals/Panel.png" id="1_2u6v2"]
+[ext_resource type="Texture2D" uid="uid://dhmp7jfu8pog1" path="res://Visuals/Panelpix.png" id="1_2u6v2"]
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="1_m0vlx"]
+[ext_resource type="StyleBox" uid="uid://dmkguktg2ckhq" path="res://Visuals/LinePanel.tres" id="3_2u6v2"]
+[ext_resource type="StyleBox" uid="uid://d0q8uxj0q6kgx" path="res://Visuals/MetalPanelNarrow.tres" id="4_h7b0r"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m0vlx"]
+load_path = "res://.godot/imported/Panel.png-c1cd98ca801d1d67769eac7758e4054a.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2u6v2"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+texture = SubResource("CompressedTexture2D_m0vlx")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h7b0r"]
 texture = ExtResource("1_2u6v2")
@@ -9,16 +25,56 @@ texture_margin_left = 10.0
 texture_margin_top = 10.0
 texture_margin_right = 10.0
 texture_margin_bottom = 10.0
-modulate_color = Color(3.7307422, 3.7307422, 3.7307422, 1)
+modulate_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cxn07"]
+load_path = "res://.godot/imported/Panel.png-c1cd98ca801d1d67769eac7758e4054a.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5c6vu"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+texture = SubResource("CompressedTexture2D_cxn07")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+modulate_color = Color(0.203125, 0.203125, 0.203125, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2u6v2"]
+bg_color = Color(1, 1, 1, 0.133)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.8001019, 0.8001019, 0.8001019, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7sa8"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 
 [resource]
-Button/styles/disabled = ExtResource("1_m0vlx")
+Button/styles/disabled = SubResource("StyleBoxTexture_2u6v2")
 Button/styles/hover = SubResource("StyleBoxTexture_h7b0r")
 Button/styles/normal = ExtResource("1_m0vlx")
+Button/styles/pressed = SubResource("StyleBoxTexture_5c6vu")
+HSeparator/styles/separator = ExtResource("3_2u6v2")
 HSlider/constants/center_grabber = 0
-Label/constants/outline_size = 8
 LineEdit/styles/normal = ExtResource("1_m0vlx")
+OptionButton/styles/normal = ExtResource("1_m0vlx")
 Panel/styles/panel = ExtResource("1_m0vlx")
 PanelContainer/styles/panel = ExtResource("1_m0vlx")
+PopupMenu/font_sizes/font_size = 30
 ProgressBar/styles/background = ExtResource("1_m0vlx")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_2u6v2")
 ScrollContainer/styles/panel = ExtResource("1_m0vlx")
+TabContainer/constants/side_margin = 0
+TabContainer/styles/panel = null
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_q7sa8")
+TabContainer/styles/tabbar_background = ExtResource("4_h7b0r")

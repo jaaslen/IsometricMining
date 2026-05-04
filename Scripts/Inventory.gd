@@ -1,12 +1,13 @@
 extends VBoxContainer
 
+var InventoryItem : PackedScene = preload("res://Scenes/InventoryValue.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var Index = 0
 	for amount in Global.OreAmounts:
 		
-		var NewInventoryItem = load("res://Scenes/InventoryValue.tscn").instantiate()
+		var NewInventoryItem = InventoryItem.instantiate()
 		NewInventoryItem.Ore = Global.GameData["ores"][var_to_str(Index)]
 		
 		

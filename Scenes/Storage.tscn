@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bjcsjc87cvvcu"]
 
-[ext_resource type="Script" uid="uid://3mqh8asbi3a" path="res://Scenes/StorageUI.gd" id="1_clmel"]
+[ext_resource type="Script" uid="uid://3mqh8asbi3a" path="res://Scripts/StorageUI.gd" id="1_clmel"]
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="1_ffo6q"]
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="2_clmel"]
-[ext_resource type="Script" uid="uid://b7v5ftjxpnlnp" path="res://Scenes/InventoryStoring.gd" id="3_tvprw"]
+[ext_resource type="Script" uid="uid://b7v5ftjxpnlnp" path="res://Scripts/InventoryStoring.gd" id="3_tvprw"]
+[ext_resource type="StyleBox" uid="uid://d0q8uxj0q6kgx" path="res://Visuals/MetalPanelNarrow.tres" id="4_clmel"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_i5cya"]
 size = Vector2(96, 96)
@@ -37,7 +38,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.12
 theme = ExtResource("1_ffo6q")
-theme_override_font_sizes/font_size = 71
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = ExtResource("2_clmel")
 text = " Inventory"
 vertical_alignment = 2
@@ -62,7 +63,7 @@ z_index = -2
 layout_mode = 2
 size_flags_vertical = 3
 mouse_default_cursor_shape = 9
-theme_override_styles/panel = ExtResource("2_clmel")
+theme_override_styles/panel = ExtResource("4_clmel")
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
@@ -87,7 +88,7 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.12
 theme = ExtResource("1_ffo6q")
-theme_override_font_sizes/font_size = 71
+theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = ExtResource("2_clmel")
 text = "Storage "
 horizontal_alignment = 2
@@ -110,7 +111,7 @@ z_index = -2
 layout_mode = 2
 size_flags_vertical = 3
 mouse_default_cursor_shape = 9
-theme_override_styles/panel = ExtResource("2_clmel")
+theme_override_styles/panel = ExtResource("4_clmel")
 vertical_scroll_mode = 2
 
 [node name="Storage" type="VBoxContainer" parent="FullHBox/Storage/Scroll" unique_id=319123870]

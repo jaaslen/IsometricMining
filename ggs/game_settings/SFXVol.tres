@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SettingAudioVolume" format=3 uid="uid://douepkj3o3un8"]
+
+[ext_resource type="Script" uid="uid://bht1jxwv3w1sp" path="res://ggs/scripts/audio/setting_audio_volume.gd" id="1_33qiq"]
+
+[resource]
+resource_name = "Sound Effect Volume"
+script = ExtResource("1_33qiq")
+audio_bus = "SFX"
+key = "Sound Effect Volume"
+section = "audio"
+default = 80.0
+metadata/_custom_type_script = "uid://bht1jxwv3w1sp"

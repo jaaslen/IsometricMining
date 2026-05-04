@@ -6,4 +6,12 @@ offset_bottom = 21.0
 text = "Credits:
 retr0_dev at https://godotshaders.com/shader/earthbound-like-battle-background-shader-w-scroll-effect-and-palette-cycling/
 VoxelChicken : https://github.com/VoxelChicken/Godot-ChartDesigner
-"
+nevoski at https://godotshaders.com/shader/ripple-shader/
+Spectrum Displaying Shader by KINOMOTO Yui
+checkerboard - dhero at https://godotshaders.com/shader/moving-
+checkerboard/
+
+shadecore_dev - made tile shine
+
+Queen of Squiggles at https://godotshaders.com/shader/fnaf-faked-3d-displacement-shader/"
+autowrap_trim_flags = 128

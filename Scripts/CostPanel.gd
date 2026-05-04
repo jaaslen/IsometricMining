@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func PickaxeChanged(PickaxeID):
-	if Global.ForgedPickaxes[PickaxeID] == true:
+	if PickaxeID in Global.ForgedPickaxes:
 		visible = false
 	else:
 		visible = true

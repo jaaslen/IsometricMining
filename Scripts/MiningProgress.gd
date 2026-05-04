@@ -3,6 +3,7 @@ extends ProgressBar
 @onready var timer: Timer = $Timer
 
 var DesiredTime: float
+var MoveCamera : bool = false
 var OrePosition: Vector2 = Vector2(0,0)
 var Extent = 0.3
 var SFXTime : float
@@ -10,6 +11,15 @@ var Active = false
 
 func ShowTime(desired_time: float,oreid,Position) -> void:
 	Active = true
+	
+	var Ore = Global.GameData["ores"][var_to_str(oreid)]
+
+	if DesiredTime >= 1 and oreid != 1:
+		MoveCamera = true
+	else:
+		MoveCamera = false
+
+	
 	OrePosition = Position
 	
 	if desired_time <= 0:
@@ -19,14 +29,13 @@ func ShowTime(desired_time: float,oreid,Position) -> void:
 		visible = false
 		timer.stop()
 	else:
-		Camera.toggle(true)
 		visible = true
 		DesiredTime = desired_time
 		min_value = 0
 		max_value = desired_time
 		value = 0
 
-		var Ore = Global.GameData["ores"][var_to_str(oreid)]
+		
 
 		#var Original := get_theme_stylebox("fill")
 		#var style := Original.duplicate(true)
@@ -45,7 +54,7 @@ func ShowTime(desired_time: float,oreid,Position) -> void:
 	
 	
 
-func _process(delta):
+func _process(_delta : float):
 	if Active:
 		if timer.is_stopped():
 			
@@ -54,7 +63,6 @@ func _process(delta):
 			#Camera.offset = Vector2(0,0)
 			Camera.position = Vector2(960,540)
 			#Camera.zoom = Vector2(1,1)
-			Camera.toggle(false)
 			Camera.Return()
 			Active = false
 			return
@@ -68,7 +76,7 @@ func _process(delta):
 			
 
 			
-			if DesiredTime > 1:
+			if MoveCamera:
 				Camera.zoom = NormalizedCompletion
 				Camera.position = Vector2(960,540) + (OrePosition * 2 * completion)
 			else:

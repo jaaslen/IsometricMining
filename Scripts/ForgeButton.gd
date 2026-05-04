@@ -1,6 +1,6 @@
 extends Button
 var PickaxeCost
-var PickaxeID
+var PickaxeID : int = 0
 signal PickaxeSelected
 var timer : Timer = Timer.new()
 @onready var Bar = $Bar
@@ -49,7 +49,7 @@ func _on_pressed() -> void:
 			
 			Global.RemoveOre(PickaxeCost[Index][0],PickaxeCost[Index][1])
 			Index += 1
-		
+
 		Global.ForgePickaxe(PickaxeID)
 		Global.EquipPickaxe(PickaxeID)
 		emit_signal("PickaxeSelected",Global.GameData["pickaxes"][var_to_str(PickaxeID)])
@@ -61,7 +61,7 @@ func _on_pressed() -> void:
 
 func _on_button_down() -> void:
 	if PressedStage < 4:
-		SFX.play_sfx("Tone Hit",float(PressedStage+1) / 5.0)
+		SFX.play_sfx("Tone Hit",float(PressedStage+1) / 5.0,-6)
 	SFX.play_sfx("Glass Clink 3")
 	SFX.play_sfx("Wood Hit")
 		

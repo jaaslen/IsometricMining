@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="1_6vxfe"]
 [ext_resource type="Script" uid="uid://sr3kwxijwepr" path="res://Scripts/Dictionary.gd" id="2_p3w5f"]
-[ext_resource type="Script" uid="uid://d01a4vs5xt5m2" path="res://Scenes/LayerDictionaryContainer.gd" id="3_6vxfe"]
+[ext_resource type="Script" uid="uid://d01a4vs5xt5m2" path="res://Scripts/LayerDictionaryContainer.gd" id="3_6vxfe"]
 [ext_resource type="PackedScene" uid="uid://cdsd6xbm8m530" path="res://Scenes/LayerInfo.tscn" id="4_6vxfe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvgq2"]
@@ -59,4 +59,3 @@ unique_name_in_owner = true
 layout_mode = 1
 offset_left = 1900.0
 offset_right = 1900.0
-offset_bottom = 0.0

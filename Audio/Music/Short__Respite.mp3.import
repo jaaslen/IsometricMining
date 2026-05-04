@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://dgt4p571a2sny"
+uid="uid://bk1ssaud1rfox"
 path="res://.godot/imported/Short__Respite.mp3-016a62fc59abc367d14c97f5f8def446.mp3str"
 
 [deps]
@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Short__Respite.mp3-016a62fc59abc367d14c97f5f8
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

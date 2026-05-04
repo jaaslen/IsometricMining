@@ -10,6 +10,10 @@ signal CameraShake
 signal ChangeBG
 signal MovedBetween
 
+
+var DepthPowerCurve : Curve = preload("res://Boosts/DepthPowerCurve.tres")
+var BaseScreenSize = Vector2(1920.0,1080.0)
+
 var GameData : Dictionary = LoadJson("res://Data/Data.json")
 var SaveData : Dictionary = LoadJson("res://Data/SaveData.json")
 
@@ -21,26 +25,30 @@ var CellSize : Vector2i = Vector2i(32,17)
 var TileSize : Vector2i = Vector2i(64,34) 
 var TotalOreAmount: int = 3
 var TotalStoneAmount : int = 1
+var PastDepth : bool = false
 
 var InventoryCapacity:int = 5000
+var MaxDepth : int = 0
+
 var OwnedTraits : Array = []
 var OreAmounts : Array = []
 var StorageOreAmounts : Array = []
 var PickaxeLevels : Array = []
-var UnlockedPickaxes : Array = []
+#var UnlockedPickaxes : Array = []
 var ForgedPickaxes : Array = []
 var FoundOres : Array = []
 var XP: int = 0
 var Level: Dictionary = GameData["levels"]["0"]
 var FoundLayers: Array = []
-
-var Upgrades : Array = [0]
+var LevelPoints : int = 0
+var Upgrades : Array = []
 
 var Tiles : Array = []
 
 var TopLayer : Array = [0,0,0,0,0,0,0,0,0]
 var PreviousTopLayer : Array = [0,0,0,0,0,0,0,0,0]
 var PickaxeLevel:int = 0
+var DepthPower : float = 1.0
 
 var Stats : Dictionary[String,float] = {
 	"POWER" : 1.0,
@@ -70,7 +78,8 @@ func _ready() -> void:
 	normalizelayers()
 	normalizepickaxes()
 	AvailableOres()
-	UpdateStats()
+	SetBaseStats()
+	CheckLevelPoints()
 
 		#var newlayer = []
 		#for i in range(9):
@@ -81,6 +90,8 @@ func _ready() -> void:
 		
 	Tiles = [[1,1,1,1,1,1,1,1,1],[1,1,1,1,1,1,1,1,1],[1,1,1,1,2,1,1,1,1],[1,1,2,1,3,1,1,1,1],[1,3,1,1,1,3,2,1,1],[1,1,1,3,1,1,1,1,1],[1,1,1,1,1,1,1,2,1]]
 	emit_signal("LevelUp",GameData["levels"][str(int(Level["id"]))])
+	#Music.ChangeSong(Layer["music"],Layer["pitch"])
+	NewBG(Layer["bg"],Color(Layer["color"]),Layer["brightness"])
 
 var OreDepthTables : Dictionary = {}
 var OreRarityTable : Dictionary = {}
@@ -95,12 +106,14 @@ func Save():
 	SaveData["storage"] = StorageOreAmounts
 	SaveData["inventory"] = OreAmounts
 	SaveData["levels"] = PickaxeLevels
-	SaveData["unlocked"] = UnlockedPickaxes
+	#SaveData["unlocked"] = UnlockedPickaxes
 	SaveData["foundsorted"] = FoundOres
 	SaveData["foundlayers"] = FoundLayers
 	SaveData["forged"] = ForgedPickaxes
 	SaveData["xp"] = XP
 	SaveData["level"] = Level["id"]
+	SaveData["levelpoints"] = LevelPoints
+	SaveData["upgrades"] = Upgrades
 	
 	save_json("res://Data/SaveData.json",SaveData)
 	pass
@@ -113,8 +126,23 @@ func FullLayerReset(Amount : int):
 			newlayer.append(GenerateOre(i))
 		
 		Tiles.append(newlayer)
-		
 
+func ChangeColorTheme(Col : String):
+	var Stylebox = load("res://Visuals/MetalPanel.tres")
+	var LinePanel = load("res://Visuals/LinePanel.tres")
+	var NarrowStyleBox = load("res://Visuals/MetalPanelNarrow.tres")
+	Stylebox.modulate_color = Color(Col)
+	LinePanel.color = Color(Col)
+	NarrowStyleBox.modulate_color = Color(Col)
+	
+func CheckLevelPoints():
+	var SpentPoints : int = 0
+	for i in Upgrades:
+		SpentPoints += GameData["upgrades"][str(i)]["cost"]
+	
+	if SpentPoints + LevelPoints != int(Level["id"]) + 1:
+		LevelPoints = int(Level["id"]) + 1 - Upgrades.size()
+	
 func IntArray(FloatArray):
 	
 	var result: Array
@@ -127,15 +155,16 @@ func Load():
 	OreAmounts = IntArray(SaveData["inventory"])
 	StorageOreAmounts = IntArray(SaveData["storage"])
 	PickaxeLevels = IntArray(SaveData["levels"])
-		
-	UnlockedPickaxes = SaveData["unlocked"]
-	ForgedPickaxes = SaveData["forged"]
+	Upgrades = IntArray(SaveData["upgrades"])
+	#UnlockedPickaxes = IntArray(SaveData["unlocked"])
+	ForgedPickaxes = IntArray(SaveData["forged"])
 	FoundOres = SaveData["foundsorted"]
 	XP = SaveData["xp"]
 	Level = GameData["levels"][str(int(SaveData["level"]))]
-	FoundLayers = SaveData["foundlayers"]
+	FoundLayers = IntArray(SaveData["foundlayers"])
+	LevelPoints = SaveData["levelpoints"]
 
-func PrecomputeRarity(max_depth: int):
+func PrecomputeRarity(_max_depth: int):
 	pass
 	#for ore_id in OreDepthTables:
 		#var table = OreDepthTables[ore_id]
@@ -147,8 +176,9 @@ func PrecomputeRarity(max_depth: int):
 		#PrecomputedRarity[ore_id] = rarity_map
 
 func LeveledUp():
-
+	LevelPoints += 1
 	emit_signal("LevelUp",Level)
+	SetBaseStats()
 
 func CacheData():
 	for id in GameData["ores"]:
@@ -169,26 +199,35 @@ func AvailableOres():
 	OresInLayer = Available
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-
-
-	
 	pass
 	
 func GlobalLayerChange():
+	
 	for layer in GameData["layers"].values():
 		if layer["id"] != Layer["id"]:
 			if Depth >= layer["start"] and Depth < layer["end"]:
 				Layer = layer#GameData["layers"][var_to_str(int(Layer["id"]) + 1)]
 				AvailableOres()
+				
+				Music.ChangeSong(Layer["music"],Layer["pitch"])
+				NewBG(Layer["bg"],Color(Layer["color"]),Layer["brightness"])
+				
+				if Layer["id"] not in Global.FoundLayers:
+					Global.FoundLayers.append(int(Layer["id"]))
+					
 				emit_signal("LayerChanged",Layer)
-				Music.ChangeSong(Layer["Music"])
-				NewBG(Layer["BG"],Color(Layer["color"]),Layer["brightness"])
-	
+				
+
 func GlobalMoveDown():
 	Depth += 1 
-
-		
+	if Depth > Stats["DEPTH"]:
+		PastDepth = true
+	else:
+		PastDepth = false
+	DepthPower = DepthPowerCurve.sample(min(Depth / Stats["DEPTH"],2))
 	emit_signal("DepthChanged",1)
+
+	
 
 func LoadJson(path: String) -> Dictionary:
 	var file = FileAccess.open(path, FileAccess.READ)
@@ -285,11 +324,17 @@ func GenerateOre(DepthChange = 0):
 		var Rarity : float = GetRarity(1 + Depth + 6 + DepthChange,OreID)
 		#Global.Pickaxe["stats"][1]["value"]
 		if OreRarityTable[OreID] == 0:
-			TotalWeighting += Rarity / Global.Pickaxe["stats"][3]
-			OreWeights.append(Rarity / Global.Pickaxe["stats"][3])
+			
+			var AdjustedRarity = Rarity / Stats["LUCK"]
+			
+			TotalWeighting += AdjustedRarity
+			OreWeights.append(AdjustedRarity)
 		elif OreRarityTable[OreID] == 4 or OreRarityTable[OreID] == 5:
-			TotalWeighting += Rarity * Global.Pickaxe["stats"][4]
-			OreWeights.append(Rarity * Global.Pickaxe["stats"][4])
+			
+			var AdjustedRarity = Rarity / Stats["RARE LUCK"]
+			
+			TotalWeighting += AdjustedRarity
+			OreWeights.append(AdjustedRarity)
 		else:
 			TotalWeighting += Rarity
 			OreWeights.append(Rarity)
@@ -336,7 +381,7 @@ func AddOre(OreID,Ore,amount = 1):
 	#emit_signal("Pulse",true)
 	
 func RemoveOre(OreID,amount = 1):
-	OreAmounts[OreID] -= amount
+	StorageOreAmounts[OreID] -= amount
 	if GameData["ores"][var_to_str(int(OreID))]["rarity"] != 0:
 		TotalOreAmount -= amount
 	else:
@@ -356,7 +401,11 @@ func UpgradePickaxe(PickaxeID):
 	return false
 	
 func ForgePickaxe(PickaxeID):
-	ForgedPickaxes[PickaxeID] = true
+	ForgedPickaxes.append(PickaxeID)
+	if Depth > Stats["DEPTH"]:
+		PastDepth = true
+	else:
+		PastDepth = false
 	emit_signal("PickaxeChanged",PickaxeID)
 
 func save_json(path: String, data) -> void:
@@ -371,8 +420,12 @@ func save_json(path: String, data) -> void:
 func EquipPickaxe(PickaxeID):
 	var CurrentLevel = PickaxeLevels[PickaxeID]
 	Pickaxe = GameData["pickaxes"][var_to_str(1000 * CurrentLevel + PickaxeID)]
+	if Depth > Stats["DEPTH"]:
+		PastDepth = true
+	else:
+		PastDepth = false
 	emit_signal("PickaxeChanged",PickaxeID)
-	UpdateStats()
+	SetBaseStats()
 	
 func SelectPickaxe(PickaxeID):
 	emit_signal("PickaxeChanged",PickaxeID)
@@ -427,46 +480,60 @@ func ShakeCamera(amount):
 func NewBG(id, Colour = Color(1,1,1,1), Brightness = 1):
 	emit_signal("ChangeBG",id,Colour,Brightness)
 	
-func UpdateStats():
+func GetStats(OreID : int = -1):
 	
 	
 	var context = MiningContext.new()
 	
-	context.Stats["POWER"] = Pickaxe["stats"][0]
-	context.Stats["DELAY"] = Pickaxe["stats"][1]
-	context.Stats["XP MULT"] = Pickaxe["stats"][2]
-	context.Stats["LUCK"] = Pickaxe["stats"][3]
-	context.Stats["RARE LUCK"] = Pickaxe["stats"][4]
+	context.BaseStats["POWER"] = Pickaxe["stats"][0]
+	context.BaseStats["DELAY"] = Pickaxe["stats"][1]
+	context.BaseStats["XP MULT"] = Pickaxe["stats"][2]
+	context.BaseStats["LUCK"] = Pickaxe["stats"][3]
+	context.BaseStats["RARE LUCK"] = Pickaxe["stats"][4]
+	context.BaseStats["V. RARE LUCK"] = Pickaxe["stats"][5]
+	context.BaseStats["DEPTH"] = Pickaxe["stats"][6]
+	context.BaseStats["STORAGE"] = Pickaxe["stats"][7]
+	
+	for id in Upgrades:
+		BoostData.GetUpgrade(id).Apply(OreID,context)
+	for id in Pickaxe["traits"]:
+		BoostData.GetTrait(id).Apply(OreID,context)
+	context.CalculateStats()
+	
+	
+	return context
+	
+func SetBaseStats():
+	var context = MiningContext.new()
+	
+	context.BaseStats["POWER"] = Pickaxe["stats"][0]
+	context.BaseStats["DELAY"] = Pickaxe["stats"][1]
+	context.BaseStats["XP MULT"] = Pickaxe["stats"][2]
+	context.BaseStats["LUCK"] = Pickaxe["stats"][3]
+	context.BaseStats["RARE LUCK"] = Pickaxe["stats"][4]
+	context.BaseStats["V. RARE LUCK"] = Pickaxe["stats"][5]
+	context.BaseStats["DEPTH"] = Pickaxe["stats"][6]
+	context.BaseStats["STORAGE"] = Pickaxe["stats"][7]
 	
 	for id in Upgrades:
 		BoostData.GetUpgrade(id).Apply(-1,context)
-		
-	
-	Stats = context.Stats
-	
 
-		
-func GetContext(OreID):
+	Stats = context.CalculateStats()
 	
-	var context = MiningContext.new()
-	
-	context.Stats = Stats
-	
-	for id in Pickaxe["traits"]:
-		
-		var Trait = BoostData.GetTrait(id)
-		Trait.Apply(OreID,context)
-		
-	return context
+	MaxDepth = context.DepthGain
+
 	
 func GetTime(OreID,Power):
-	return (Global.GameData["ores"][var_to_str(OreID)]["hardness"] * (pow(1.5, log(Global.Depth + 1) / log(10.0)))) / Power
+	return Global.GameData["ores"][var_to_str(OreID)]["hardness"] / Power
 
 func MoveBetween(ToSurface: bool):
 	if ToSurface:
 		Layer = GameData["layers"]["0"]
 		Depth = 0
-		NewBG(Layer["BG"],Color(Layer["color"]),1)
+		FullLayerReset(Tiles.size())
+		Music.ChangeSong(Layer["music"],Layer["pitch"])
+		NewBG(Layer["bg"],Color(Layer["color"]),1)
+		
 	
 	emit_signal("MovedBetween",ToSurface)
 	

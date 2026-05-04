@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SettingColourEdit" format=3 uid="uid://b7dsf5stvdght"]
+
+[ext_resource type="Script" uid="uid://b7g56is55lj0m" path="res://ggs/scripts/display/setting_colour_edit.gd" id="1_4nf3f"]
+
+[resource]
+script = ExtResource("1_4nf3f")
+section = "display"
+default = "ffffff"
+metadata/_custom_type_script = "uid://b7g56is55lj0m"
