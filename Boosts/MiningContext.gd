@@ -37,7 +37,7 @@ var Stats : Dictionary[String,float] = {
 	"MULTI MINE" : 1.0
 }
 
-var DepthGain : int = 0
+
 var MineAdjacent: bool = false
 var MULTIMINE : int = 1
 

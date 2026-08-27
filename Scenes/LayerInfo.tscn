@@ -1,20 +1,14 @@
 [gd_scene format=3 uid="uid://cdsd6xbm8m530"]
 
 [ext_resource type="Script" uid="uid://iphldv5dh8h8" path="res://Scripts/LayerInfoPanel.gd" id="1_cshn8"]
-[ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="2_ksa2b"]
+[ext_resource type="Script" uid="uid://cjoesv6tpkk37" path="res://Scripts/ResizeLabel.gd" id="3_cshn8"]
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="3_ptoyi"]
 [ext_resource type="Script" uid="uid://bhycfho46ct80" path="res://Scripts/LayerOreInfo.gd" id="5_4q1xk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqe5m"]
 bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5h8xl"]
-bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_42bqh"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbjw7"]
-bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_665rs"]
 bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
@@ -64,10 +58,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.1
 focus_mode = 0
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 40
 theme_override_styles/pressed = SubResource("StyleBoxFlat_oqe5m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5h8xl")
-text = "◀"
+text = "prev"
 
 [node name="Data" type="VBoxContainer" parent="FullContainer/HBoxContainer" unique_id=1425885787]
 layout_mode = 2
@@ -91,6 +84,7 @@ theme_override_styles/normal = ExtResource("3_ptoyi")
 text = "Layer Name"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("3_cshn8")
 
 [node name="Depthrange" type="Label" parent="FullContainer/HBoxContainer/Data/HBoxContainer" unique_id=32318090]
 custom_minimum_size = Vector2(0, 85)
@@ -103,6 +97,7 @@ theme_override_styles/normal = ExtResource("3_ptoyi")
 text = "100-100"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("3_cshn8")
 
 [node name="Panel3" type="Panel" parent="FullContainer/HBoxContainer/Data/HBoxContainer" unique_id=355233569]
 layout_mode = 2
@@ -118,10 +113,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 57
 text = "#022"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("3_cshn8")
 
 [node name="Panel2" type="Panel" parent="FullContainer/HBoxContainer/Data/HBoxContainer" unique_id=1564238539]
 layout_mode = 2
@@ -134,17 +130,16 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -97.75
-offset_bottom = 81.25
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_ksa2b")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 43
 theme_override_styles/normal = SubResource("StyleBoxEmpty_42bqh")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_nbjw7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_665rs")
-text = "⌕"
+text = "SEE
+ALL
+"
 vertical_icon_alignment = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Indicators" type="HBoxContainer" parent="FullContainer/HBoxContainer/Data" unique_id=125580803]
 custom_minimum_size = Vector2(0, 25)
@@ -161,182 +156,202 @@ alignment = 2
 [node name="1" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=1484101119]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="2" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=665516700]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="3" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=926193022]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="4" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=1435276119]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="5" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=390760702]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="6" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=534370781]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="7" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=1890121464]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="8" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=1778008955]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="9" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=1873564745]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="10" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=436451896]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="11" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=342393823]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="12" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=2136804747]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="13" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=1692589408]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="14" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=529694925]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="15" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=415012837]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="16" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=578357269]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="17" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=1475145111]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="18" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=1952935249]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="19" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=843366841]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="20" type="Button" parent="FullContainer/HBoxContainer/Data/Indicators" unique_id=2096559728]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_cshn8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8vn1h")
 text = "9999m"
 alignment = 2
+text_overrun_behavior = 1
 
 [node name="HSlider" type="HSlider" parent="FullContainer/HBoxContainer/Data" unique_id=1638777529]
 layout_mode = 2
@@ -363,16 +378,17 @@ custom_minimum_size = Vector2(0, 628)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.2
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 40
 theme_override_styles/pressed = SubResource("StyleBoxFlat_oqe5m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5h8xl")
-text = "▶ "
+text = "next"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="FullContainer" unique_id=1639120223]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Description" type="Label" parent="FullContainer/ScrollContainer" unique_id=1150594983]
+visible = false
 custom_minimum_size = Vector2(1800, 300)
 layout_mode = 2
 size_flags_horizontal = 3

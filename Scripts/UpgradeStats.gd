@@ -26,7 +26,7 @@ func PickaxeChanged(PickaxeID : int):
 	
 	if Global.GameData["pickaxes"][var_to_str(PickaxeID)]["maxlevel"] > CurrentLevel:
 		
-		var UpgradedPickaxe = Global.GameData["pickaxes"][var_to_str(PickaxeID + (1000 * int(CurrentLevel+1)))]
+		var UpgradedPickaxe = Global.GameData["pickaxes"][var_to_str(PickaxeID * 1000 + int(CurrentLevel+1))]
 		
 		
 

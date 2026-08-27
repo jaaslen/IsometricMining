@@ -5,6 +5,8 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfwe7"]
 bg_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
+border_width_left = 2
+border_width_bottom = 2
 
 [node name="PanelContainer" type="PanelContainer" unique_id=2122839461]
 offset_right = 353.0
@@ -25,10 +27,6 @@ show_percentage = false
 [node name="Text" type="HBoxContainer" parent="." unique_id=911926770]
 layout_mode = 2
 theme_override_constants/separation = 0
-
-[node name="Texture" type="TextureRect" parent="Text" unique_id=1607584439]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
 
 [node name="Name" type="Label" parent="Text" unique_id=1755500681]
 z_index = 1

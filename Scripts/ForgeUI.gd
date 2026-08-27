@@ -40,6 +40,7 @@ func _process(delta: float) -> void:
 
 
 func OpenButtonPressed() -> void:
+	Global.SelectPickaxe(int(Global.Pickaxe["original"]))
 	if Opening:
 		Opening = false
 		Closing = true
@@ -71,8 +72,8 @@ func _input(event: InputEvent) -> void:
 
 
 func OtherButtonPressed() -> void:
-	if Open:
-		OpenButtonPressed()
+	#if Open:
+		#OpenButtonPressed()
 	pass # Replace with function body.
 
 func update_position_and_scale():

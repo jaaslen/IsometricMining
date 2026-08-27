@@ -12,7 +12,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	#GetLevel()
+	Global.XPChanged.connect(GainedXP)
 	
 	Bar.value = Global.XP
 	
@@ -24,6 +24,10 @@ func _ready() -> void:
 	Sprite.texture = load("res://Visuals/Ranks/" + level["name"] + ".png")
 	Tier.texture = load("res://Visuals/Ranks/" + str(int(level["tier"])) + ".png")
 	Bar.max_value = level["nextxp"]
+	
+	GainedXP(0)
+	Bar.value = Global.XP 
+	AmountLabel.text = Global.Suffix(Bar.value,true)
 		#self_modulate = Color(level["color"]) 
 	#$Rank.self_modulate = Color(level["color"]) 
 	#$Tier.modulate = Color(level["color"]) 
@@ -36,7 +40,7 @@ func _ready() -> void:
 		TierProgress.visible = true
 		TierProgress.max_value = level["tiertotal"]
 		TierProgress.value = level["tier"]
-		TierBox.size.x = 174
+		#TierBox.size.x = 174
 	else:
 		TierProgress.visible = false
 		#TierBox.size.x = 140
@@ -47,16 +51,38 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	Bar.value = Global.XP
+func GainedXP(Amount) -> void:
+	
+	Bar.value = Global.XP 
 	AmountLabel.text = Global.Suffix(Bar.value,true)
 	RequiredLabel.text = Global.Suffix(Bar.max_value,true)
-	
-	if Bar.value >= Bar.max_value:
-		LevelUp()
+		
+
+	if Amount > 0:
+		
+		if Bar.value >= Bar.max_value:
+			LevelUp()
+		if Amount >= floori(Global.Level["nextxp"] / 100.0):
+			$XPBar/XPAmount.text = "+" + str(int(Amount)) + " xp"
+			$XPBar/AnimationPlayer.play("XPGain")
+		elif Amount > 1 and $XPBar/AnimationPlayer.is_playing() == false:
+			$XPBar/XPAmount.text = "+" + str(int(Amount)) + " xp"
+			$XPBar/AnimationPlayer.play("SmallXPGain")
 
 
 func LevelUp():
+	
+	#SFX.play_sfx("Shine",0.5,-12)
+	#SFX.play_sfx("Shine 2",0.5,-12)
+	SFX.play_sfx("Success",1.5,6)
+	#SFX.play_sfx("Shine 4",0.5,-12)
+	
+	if Global.Level["tier"] >= Global.Level["tiertotal"]:
+		$Rank/AnimationPlayer.play("LevelUp")
+		SFX.play_sfx("Shine 4",1.1,-12)
+
+	else:
+		$Tier/AnimationPlayer.play("LevelUp")
 	
 	var level = Global.GameData["levels"][str(int(Global.Level["id"]) + 1)]
 	
@@ -69,15 +95,16 @@ func LevelUp():
 	Tier.texture = load("res://Visuals/Ranks/" + str(int(level["tier"])) + ".png")
 	Global.LeveledUp()
 	
-	if level["tiertotal"] > level["tier"]:
-		TierProgress.visible = true
-		TierProgress.max_value = level["tiertotal"]
-		TierProgress.value = level["tier"]
-		TierBox.size.x = 174
-	else:
-		TierProgress.visible = false
-		TierBox.size.x = 140
 	
+		
+		#TierProgress.visible = true
+		#TierProgress.max_value = level["tiertotal"]
+		#TierProgress.value = level["tier"]
+		#TierBox.size.x = 174
+	#else:
+		#TierProgress.visible = false
+		#TierBox.size.x = 140
+	GainedXP(0)
 	pass
 	
 #func GetLevel():

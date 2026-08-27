@@ -74,7 +74,7 @@ func LoadLayer(LayerID,opening = true):
 			i.visible = true
 			var ButtonDepth = A + (B-A)/20 * index
 
-			i.text = str(int(ButtonDepth)) + "m"
+			i.text = str(int(ButtonDepth)) + "m  "
 			
 			
 			if int(ButtonDepth) == int( A + (B-A)/20 * (index-1)):

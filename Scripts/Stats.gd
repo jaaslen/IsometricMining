@@ -18,7 +18,10 @@ func PickaxeChanged(PickaxeID):
 	if Global.GameData["pickaxes"][str(int(PickaxeID))]["rank"] > Global.Level["id"]:
 		PickaxeID = 0
 	else:
-		PickaxeID = 1000 * (CurrentLevel) + PickaxeID
+		if CurrentLevel == 0:
+			pass
+		else:
+			PickaxeID = PickaxeID * 1000 + (CurrentLevel)
 	
 	for i in self.get_children():
 		i.queue_free()

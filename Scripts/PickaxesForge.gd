@@ -2,7 +2,7 @@ extends VBoxContainer
 signal PickaxesReady
 @warning_ignore("unused_signal")
 signal PickaxeSetup
-
+var InventoryScene = preload("uid://xok4ed1xpd5x")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.PickaxeChanged.connect(PickaxeChanged)
@@ -64,7 +64,7 @@ func PickaxeChanged(__) -> void:
 			#add_child(NewInventoryItem)
 
 func Setup():
-	var InventoryScene = load("uid://xok4ed1xpd5x")#.duplicate(true)
+	#.duplicate(true)
 	for i in self.get_children():
 		i.queue_free()
 	for Pickaxe in Global.GameData["pickaxes"].values():
@@ -89,7 +89,7 @@ func Setup():
 			else:
 				NewInventoryItem.Forged = false
 			if CurrentLevel > 0:
-				NewInventoryItem.Pickaxe = Global.GameData["pickaxes"][var_to_str(1000 * (CurrentLevel) + ID)]
+				NewInventoryItem.Pickaxe = Global.GameData["pickaxes"][var_to_str(ID * 1000 + (CurrentLevel))]
 			else:
 				NewInventoryItem.Pickaxe = Global.GameData["pickaxes"][var_to_str(ID)]
 			#NewInventoryItem.ID = ID

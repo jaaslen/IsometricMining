@@ -78,8 +78,8 @@ func _input(event: InputEvent) -> void:
 
 
 func OtherButtonPressed() -> void:
-	if Open:
-		OpenButtonPressed()
+	#if Open:
+		#OpenButtonPressed()
 	pass # Replace with function body.
 	
 func update_position_and_scale():

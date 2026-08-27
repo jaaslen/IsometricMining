@@ -46,12 +46,12 @@ func _ready() -> void:
 	atlas = Ore["atlas"]#Global.GameData["ores"][var_to_str(Ore["id"])]["atlas"]
 	#LabelOutline(NameLabelBox)
 	#LabelOutline(AmountLabelBox)
-	OreChanged(int(Ore["id"]))
+	OreChanged(int(Ore["id"]),0)
 	IconBox.texture.region = Rect2(Vector2(64 * atlas[0],68 * atlas[1]),Vector2(64,68))
 	LabelOutline(NameLabelBox)
 	pass # Replace with function body.
 
-func OreChanged(OreID):
+func OreChanged(OreID,_GainAmount):
 	
 	if OreID == Ore["id"]:
 		

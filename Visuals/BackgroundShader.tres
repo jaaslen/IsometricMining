@@ -1,26 +1,74 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://gfobpconwfdj"]
 
-[ext_resource type="Shader" uid="uid://2cyvgyhumo2l" path="res://Visuals/BackgroundShader.gdshader" id="1_airm8"]
+[sub_resource type="Shader" id="Shader_7mhnb"]
+code = "/*  8e4c87 fcfaf1
 
-[sub_resource type="Gradient" id="Gradient_d1u7i"]
-offsets = PackedFloat32Array(0, 0.5, 1)
-colors = PackedColorArray(0.95468724, 1, 0.8400777, 1, 0.5281222, 0.5516501, 0.6204995, 1, 0.95468724, 1, 0.8378605, 1)
+878d9e f3ffd6Z
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_ffwgs"]
-gradient = SubResource("Gradient_d1u7i")
+NOT MADE BY ME, this is by retr0_dev at https://godotshaders.com/shader/earthbound-like-battle-background-shader-w-scroll-effect-and-palette-cycling/
+
+Earthbound battle backgrounds shader with scrolling effect and palette cycling like in the original game.
+@retr0_dev
+	
+Apply the shader to a TextureRect or a Sprite. Use a texture with some shapes in a transparent background for best results.
+You can then use a ColorRect or another method to paint the background.
+You can use the shader on multiple TextureRects and obtain a double-buffer effect tweaking the values for each one, remember to Make Unique the shader material.
+*/
+shader_type canvas_item;
+
+uniform float screen_height = 640.0;
+uniform float amplitude = 0.075;
+uniform float frequency = 10.0;
+uniform float speed = 2.0;
+uniform float amplitude_vertical = 0.0;
+uniform float frequency_vertical = 0.0;
+uniform float speed_vertical = 0.0;
+uniform vec2 scroll_direction = vec2(0.0, 0.0);
+uniform float scrolling_speed = 0.08;
+uniform bool enable_palette_cycling = false;
+uniform vec4 color : source_color;
+uniform sampler2D palette;
+uniform float palette_speed = 0.1;
+
+void fragment()
+{
+	float diff_x = amplitude * sin((frequency * UV.y) + (speed * TIME));
+	float diff_y = amplitude_vertical * sin((frequency_vertical * UV.y)  + (speed_vertical * TIME));
+	vec2 scroll = scroll_direction * TIME * scrolling_speed;
+	vec4 tex = texture(TEXTURE, vec2(UV.x + diff_x, UV.y + diff_y) + scroll);
+	float palette_swap = mod(tex.r - TIME * palette_speed, 1);
+	
+	if (enable_palette_cycling)
+	{
+	COLOR = vec4(texture(palette, vec2(palette_swap, 0)).rgb, tex.a) * color;
+	COLOR = mix(vec4(0.0), COLOR, float(int(UV.y * screen_height) % 2));
+	}
+	else
+	{
+	COLOR = tex;
+	}
+	
+}"
+
+[sub_resource type="Gradient" id="Gradient_7mhnb"]
+offsets = PackedFloat32Array(0, 0.46575344, 1)
+colors = PackedColorArray(1, 0.78431374, 1, 1, 1, 1, 1, 1, 1, 0.78431374, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7mhnb"]
+gradient = SubResource("Gradient_7mhnb")
 
 [resource]
-shader = ExtResource("1_airm8")
-shader_parameter/screen_height = 638.645
-shader_parameter/amplitude = 0.075
-shader_parameter/frequency = 10.0
-shader_parameter/speed = 0.2
+shader = SubResource("Shader_7mhnb")
+shader_parameter/screen_height = 15.66
+shader_parameter/amplitude = 0.002
+shader_parameter/frequency = 5.0
+shader_parameter/speed = 0.83
 shader_parameter/amplitude_vertical = 0.0
-shader_parameter/frequency_vertical = 0.0
+shader_parameter/frequency_vertical = 1.77
 shader_parameter/speed_vertical = 0.0
 shader_parameter/scroll_direction = Vector2(0, 0)
-shader_parameter/scrolling_speed = 0.08
-shader_parameter/enable_palette_cycling = true
+shader_parameter/scrolling_speed = 0.04
+shader_parameter/enable_palette_cycling = false
 shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/palette = SubResource("GradientTexture1D_ffwgs")
-shader_parameter/palette_speed = 0.33
+shader_parameter/palette = SubResource("GradientTexture1D_7mhnb")
+shader_parameter/palette_speed = 0.32

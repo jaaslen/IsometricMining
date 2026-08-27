@@ -22,6 +22,11 @@ func _on_no_pressed() -> void:
 
 
 func _on_yes_pressed() -> void:
+	
+	#var index = 0
+	#for amount in Global.OreAmounts:
+	#	Global.StoreOre(index,amount,true)
+	#	index += 1
 	Global.emit_signal("ExitPromptSelected",true)
 	visible = false
 	pass # Replace with function body.

@@ -12,9 +12,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kcyok")
 
-[node name="Container" type="VBoxContainer" parent="." unique_id=373159065]
-layout_mode = 0
-
 [node name="Button" type="Button" parent="." unique_id=1403079969]
 custom_minimum_size = Vector2(68, 68)
 layout_mode = 1
@@ -44,9 +41,21 @@ size_flags_stretch_ratio = 0.3
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.674)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 20
-text = "#001"
 horizontal_alignment = 2
 text_overrun_behavior = 1
+
+[node name="Travel" type="Button" parent="." unique_id=1046425136]
+custom_minimum_size = Vector2(68, 68)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.0515625
+anchor_bottom = 1.0
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "Travel"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -10,6 +10,12 @@ var ActualLayer
 @onready var OpenButton = $Button
 # Called when the node enters the scene tree for the first time.n
 func _ready() -> void:
+	
+	if Global.AtTitle:
+		$Travel.visible = false
+	else:
+		$Travel.visible = true
+	
 	ActualLayer = Layer
 	
 	$Button.text = Layer["name"]

@@ -4,59 +4,224 @@
 [ext_resource type="Theme" uid="uid://bujuhsiar273u" path="res://Visuals/OrbitronTheme.tres" id="1_qvtl0"]
 [ext_resource type="Texture2D" uid="uid://dcicd3utpj2kf" path="res://Visuals/OreSheet.png" id="3_qvtl0"]
 [ext_resource type="Script" uid="uid://cjoesv6tpkk37" path="res://Scripts/ResizeLabel.gd" id="3_tujle"]
+[ext_resource type="FontVariation" uid="uid://daivjrli5uhag" path="res://Visuals/Orbitron.tres" id="5_qvtl0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5i07b"]
 bg_color = Color(0.27734375, 0.27734375, 0.27734375, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tujle"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tujle"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0.404)
+skew = Vector2(0.1, 0)
+border_color = Color(1, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvtl0"]
+skew = Vector2(0.655, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2gq36"]
 atlas = ExtResource("3_qvtl0")
 region = Rect2(0, 0, 64, 68)
 
+[sub_resource type="Animation" id="Animation_qvtl0"]
+resource_name = "OreGained"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 2.3, 2.5),
+"transitions": PackedFloat32Array(3.999999, 1, 1, 3.999999),
+"update": 0,
+"values": [Vector2(13.5, 30), Vector2(600, 30), Vector2(600, 30), Vector2(13.5, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1, 1.8, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.3, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-30, 0), Vector2(600, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 2.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_xtoog"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:size:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(13.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(13.5, 30)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-30, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ayvlw"]
+_data = {
+&"OreGained": SubResource("Animation_qvtl0"),
+&"RESET": SubResource("Animation_xtoog")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcpwt"]
+bg_color = Color(1, 1, 1, 1)
+
 [node name="Panel" type="Panel" unique_id=1835721096]
-clip_contents = true
 custom_minimum_size = Vector2(0, 30)
-offset_right = 424.0
-offset_bottom = 30.0
+anchors_preset = -1
+anchor_right = 3.0
+anchor_bottom = 0.055555556
+offset_right = -5460.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(2, 2)
 mouse_filter = 2
 theme = ExtResource("1_qvtl0")
 theme_override_styles/panel = SubResource("StyleBoxFlat_5i07b")
 script = ExtResource("1_5i07b")
+metadata/_edit_use_anchors_ = true
 
-[node name="Name" type="Label" parent="." unique_id=283064192]
-z_index = 1
-clip_contents = true
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2085265447]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.08800001
-anchor_right = 0.675
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 0.18799591
-offset_right = -0.2000122
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_tujle")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tujle")
+show_percentage = false
+
+[node name="Panel" type="Panel" parent="." unique_id=1235487447]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = -16.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qvtl0")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1902032660]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.071
+anchor_bottom = 1.0
+offset_right = 14.699999
+grow_vertical = 2
+
+[node name="Texture" type="TextureRect" parent="MarginContainer" unique_id=325535345]
+layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 20
-text = " Iron"
-vertical_alignment = 1
-text_overrun_behavior = 1
-script = ExtResource("3_tujle")
+size_flags_stretch_ratio = 0.3
+mouse_filter = 2
+texture = SubResource("AtlasTexture_2gq36")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Amount" type="Label" parent="." unique_id=501717260]
 z_index = 1
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.69600004
-anchor_top = -0.28300002
+anchor_left = 0.7
 anchor_right = 1.0
-anchor_bottom = 1.2830001
+anchor_bottom = 1.0
 offset_left = -0.104003906
 offset_top = -1.0099993
 offset_bottom = 0.0099983215
-grow_horizontal = 2
+grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 9
@@ -69,23 +234,43 @@ vertical_alignment = 1
 text_overrun_behavior = 1
 script = ExtResource("3_tujle")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1902032660]
+[node name="Name" type="Label" parent="." unique_id=283064192]
+z_index = 1
+clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.071
+anchor_left = 0.08800001
+anchor_right = 0.675
 anchor_bottom = 1.0
-offset_right = -0.10400009
+offset_left = 0.18799591
+offset_top = -3.0
+offset_right = -0.2000122
+offset_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 2
-theme_override_constants/margin_top = 2
-theme_override_constants/margin_right = 2
-theme_override_constants/margin_bottom = 2
-
-[node name="Texture" type="TextureRect" parent="MarginContainer" unique_id=325535345]
-layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.3
-mouse_filter = 2
-texture = SubResource("AtlasTexture_2gq36")
-expand_mode = 1
-stretch_mode = 5
+size_flags_vertical = 1
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 26
+text = " Iron"
+script = ExtResource("3_tujle")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=751355799]
+libraries/ = SubResource("AnimationLibrary_ayvlw")
+
+[node name="Label" type="Label" parent="." unique_id=23985876]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_qvtl0")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_qcpwt")
+text = "+1 Iron"
+horizontal_alignment = 1

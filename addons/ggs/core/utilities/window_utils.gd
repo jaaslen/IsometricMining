@@ -20,4 +20,4 @@ static func clamp_to_screen() -> void:
 	var window_size: Vector2i = DisplayServer.window_get_size()
 	var window_width: int = mini(screen_size.x, window_size.x)
 	var window_height: int = mini(screen_size.y, window_size.y)
-	DisplayServer.window_set_size(Vector2i(window_width, window_height))
+	#DisplayServer.window_set_size(Vector2i(window_width, window_height))

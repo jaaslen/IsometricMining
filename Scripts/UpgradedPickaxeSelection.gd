@@ -18,7 +18,7 @@ func PickaxeChanged(PickaxeID):
 	if Global.GameData["pickaxes"][var_to_str(PickaxeID)]["maxlevel"] > CurrentLevel:
 		var NewInventoryItem = load("uid://xok4ed1xpd5x").instantiate()
 		#if Global.GameData["pickaxes"][var_to_str(PickaxeID * 1000 + int(CurrentLevel))]["forged"] == false:
-		NewInventoryItem.Pickaxe = Global.GameData["pickaxes"][var_to_str((PickaxeID) + 1000 * int(CurrentLevel+1))]
+		NewInventoryItem.Pickaxe = Global.GameData["pickaxes"][var_to_str((PickaxeID) * 1000 + int(CurrentLevel+1))]
 		NewInventoryItem.Original = Global.GameData["pickaxes"][var_to_str(PickaxeID)]
 		NewInventoryItem.Forged = false
 		NewInventoryItem.disabled = true

@@ -21,7 +21,7 @@ func _ready() -> void:
 		Name = capitalize(Global.GameData["stats"][var_to_str(Stat)]["name"])
 		ColorValue = Global.GameData["stats"][var_to_str(Stat)]["color"]
 
-		#Global.OreChanged.connect(OreChanged)
+
 		#Value = (Pickaxe["stats"][Stat]["value"])
 		#Value = Global.OreAmounts[Pickaxe["id"]]
 		LabelBox.text = Name + " "#+ " : " + ( "%.2f" % Value)

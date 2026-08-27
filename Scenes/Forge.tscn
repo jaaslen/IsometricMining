@@ -18,12 +18,19 @@
 [ext_resource type="Script" uid="uid://da04gc0c3olsn" path="res://Scripts/UpgradeCosts.gd" id="9_qjbut"]
 [ext_resource type="Script" uid="uid://cs42pixs20bwv" path="res://Scripts/RegularPickaxeSelection.gd" id="9_ugol7"]
 [ext_resource type="Script" uid="uid://c8r5cq064hj73" path="res://Scripts/UpgradeButton.gd" id="15_667t3"]
+[ext_resource type="FontVariation" uid="uid://daivjrli5uhag" path="res://Visuals/Orbitron.tres" id="19_lwnpi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcom1"]
 bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kbjox"]
 size = Vector2(96, 96)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olnyl"]
+bg_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7yc4"]
+bg_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_667t3"]
 
@@ -106,12 +113,12 @@ size_flags_horizontal = 3
 theme = ExtResource("2_667t3")
 theme_override_constants/tab_separation = 9
 theme_override_font_sizes/font_size = 40
+theme_override_styles/panel = SubResource("StyleBoxFlat_olnyl")
 theme_override_styles/tabbar_background = ExtResource("3_667t3")
-current_tab = 1
+current_tab = 0
 script = ExtResource("4_gk1wl")
 
 [node name="Stats" type="HBoxContainer" parent="ForgeContainer/StatsPanel" unique_id=1712034042]
-visible = false
 layout_mode = 2
 theme = ExtResource("2_667t3")
 metadata/_tab_index = 0
@@ -127,7 +134,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
-theme_override_constants/separation = 0
+theme_override_constants/separation = 8
 script = ExtResource("3_qlblt")
 
 [node name="PanelContainer" parent="ForgeContainer/StatsPanel/Stats/ScrollContainer/StatsList" unique_id=584935263 instance=ExtResource("8_vi8is")]
@@ -136,7 +143,7 @@ layout_mode = 2
 [node name="CostPanel" type="PanelContainer" parent="ForgeContainer/StatsPanel/Stats" unique_id=1250627148]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.0
+size_flags_stretch_ratio = 0.5
 theme = ExtResource("2_667t3")
 theme_override_styles/panel = ExtResource("9_p22mi")
 script = ExtResource("5_aelxu")
@@ -149,6 +156,7 @@ theme = ExtResource("2_667t3")
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
+theme_override_styles/panel = SubResource("StyleBoxFlat_d7yc4")
 
 [node name="OreCosts" type="VBoxContainer" parent="ForgeContainer/StatsPanel/Stats/CostPanel/VBoxContainer/ScrollContainer" unique_id=999441316]
 layout_mode = 2
@@ -180,6 +188,7 @@ fill_mode = 3
 show_percentage = false
 
 [node name="Upgrades" type="HBoxContainer" parent="ForgeContainer/StatsPanel" unique_id=1269663643]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
@@ -291,13 +300,9 @@ script = ExtResource("15_667t3")
 modulate = Color(1, 0, 0, 1)
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
-size_flags_stretch_ratio = 0.1
-theme_override_font_sizes/font_size = 68
-text = "^
-^
-^
-^
-^
+theme_override_fonts/font = ExtResource("19_lwnpi")
+theme_override_font_sizes/font_size = 60
+text = "X
 "
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1056933540]

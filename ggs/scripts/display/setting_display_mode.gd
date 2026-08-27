@@ -4,7 +4,7 @@ class_name SettingDisplayMode
 ## Changes display mode between fullscreen, borderless, and windowed.
 
 ## A setting that can handle window size. Used to set the game window to the correct size after its state changes.
-@export var size_setting: GGSSetting
+#@export var size_setting: GGSSetting
 
 
 func _init() -> void:
@@ -24,9 +24,13 @@ func apply(value: int) -> void:
 			window_mode = DisplayServer.WINDOW_MODE_FULLSCREEN
 		2:
 			window_mode = DisplayServer.WINDOW_MODE_WINDOWED
+			
+			
 	DisplayServer.window_set_mode(window_mode)
 
-	if size_setting != null:
-		var size_value: int = GGSSaveManager.load_setting_value(size_setting)
-		GGS.setting_applied.emit(size_setting, size_value)
-		size_setting.apply(size_value)
+	
+
+	#if size_setting != null:
+		#var size_value: int = GGSSaveManager.load_setting_value(size_setting)
+		#GGS.setting_applied.emit(size_setting, size_value)
+		#size_setting.apply(size_value)

@@ -22,8 +22,10 @@ func _ready() -> void:
 	#Divider.color = Color(Ore["color"]) * 1.2
 	NameLabelBox.modulate = 0.9 * Color(Ore["color"]) + Color(0.3, 0.3, 0.3, 1.0)
 	AmountLabelBox.modulate = 0.9 * Color(Ore["color"]) + Color(0.3, 0.3, 0.3, 1.0)
-	NameLabelBox.text = Name# + " " + var_to_str(Amount)
+	$Label.self_modulate = 0.9 * Color(Ore["color"]) + Color(0.3, 0.3, 0.3, 1.0)
+	NameLabelBox.text = " " + Name# + " " + var_to_str(Amount)
 	AmountLabelBox.text = var_to_str(Amount)
+	
 	#var Original := get_theme_stylebox("panel")
 	#var style := Original.duplicate(true)
 	#style.bg_color = Color.html(Ore["color"]) # blue
@@ -35,12 +37,12 @@ func _ready() -> void:
 	atlas = Ore["atlas"]#Global.GameData["ores"][var_to_str(Ore["id"])]["atlas"]
 	#LabelOutline(NameLabelBox)
 	#LabelOutline(AmountLabelBox)
-	OreChanged(int(Ore["id"]))
+	OreChanged(int(Ore["id"]),Amount)
 	IconBox.texture.region = Rect2(Vector2(64 * atlas[0],68 * atlas[1]),Vector2(64,68))
 	LabelOutline(NameLabelBox)
 	pass # Replace with function body.
 
-func OreChanged(OreID):
+func OreChanged(OreID,OreAmount):
 	
 	if OreID == Ore["id"]:
 		
@@ -49,9 +51,11 @@ func OreChanged(OreID):
 		if Amount == 0:
 			visible = false
 
-		NameLabelBox.text = Name # + " " + var_to_str(Amount)
+		NameLabelBox.text = " " + Name # + " " + var_to_str(Amount)
 		AmountLabelBox.text = var_to_str(Amount)
-		
+		if OreID != 1:
+			$AnimationPlayer.play("OreGained")
+			$Label.text = "+" + str(OreAmount) + " " + Ore["name"]
 		
 		#var Original := get_theme_stylebox("panel")
 		#var style := Original.duplicate(true)

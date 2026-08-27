@@ -8,12 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://ggs/components/slider/component_slider.tscn" id="3_jpljk"]
 [ext_resource type="Resource" uid="uid://cws5mwyqhbudh" path="res://ggs/game_settings/MusicVol.tres" id="4_17sk1"]
 [ext_resource type="Resource" uid="uid://douepkj3o3un8" path="res://ggs/game_settings/SFXVol.tres" id="5_17sk1"]
-[ext_resource type="Resource" uid="uid://cyer8ouokpfa2" path="res://ggs/game_settings/Rebind.tres" id="6_860ap"]
 [ext_resource type="PackedScene" uid="uid://dm1av7skxvp1j" path="res://ggs/components/input_btn/component_input_btn.tscn" id="6_ojh37"]
 [ext_resource type="PackedScene" uid="uid://npriuwbvb8jr" path="res://ggs/components/colorchoice/component_ColorChoice.tscn" id="10_bt7q3"]
+[ext_resource type="Resource" uid="uid://dje3kavjs84io" path="res://ggs/game_settings/ChangeMoveInput.tres" id="10_dculb"]
 [ext_resource type="Script" uid="uid://bru1qejws0quq" path="res://ggs/scripts/setting_input_rebind.gd" id="11_dculb"]
 [ext_resource type="Resource" uid="uid://dfrxjlck31t5" path="res://ggs/game_settings/ColourChoice.tres" id="11_sgq6w"]
 [ext_resource type="Texture2D" uid="uid://dhmp7jfu8pog1" path="res://Visuals/Panelpix.png" id="12_dculb"]
+[ext_resource type="Script" uid="uid://cxs32jlq8a35v" path="res://Scripts/ResetData.gd" id="12_j03d3"]
 [ext_resource type="StyleBox" uid="uid://bmkhgobjdxea2" path="res://Visuals/PureMetalPanel.tres" id="12_luq8a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_luq8a"]
@@ -83,20 +84,20 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_xc4d7")
 current_tab = 0
-tabs_position = 1
 clip_tabs = false
-all_tabs_in_front = true
-tab_0/title = "Page 1"
+tab_0/title = "General"
 tab_1/title = "Colour"
 
 [node name="Main" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer" unique_id=1265472482]
 layout_mode = 2
 metadata/_tab_index = 0
-metadata/_tab_name = "Page 1"
+metadata/_tab_name = "General"
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=150998047]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 36
 text = "Display Mode"
 
 [node name="OptionList" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=287653133 instance=ExtResource("1_qy7o3")]
@@ -122,11 +123,14 @@ theme_override_constants/separation = 12
 
 [node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=582272613]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 36
 text = "Volume"
 
 [node name="Label3" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=2044637463]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Music"
 
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1557402472]
@@ -138,10 +142,10 @@ setting = ExtResource("4_17sk1")
 
 [node name="Slider" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/PanelContainer/Slider" index="0"]
 size_flags_horizontal = 1
-max_value = 200.0
 
 [node name="Label4" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1341229507]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Sound Effects"
 
 [node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1931616940]
@@ -153,30 +157,43 @@ setting = ExtResource("5_17sk1")
 
 [node name="Slider" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/PanelContainer2/Slider" index="0"]
 size_flags_horizontal = 1
-max_value = 200.0
+
+[node name="HSeparator3" type="HSeparator" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=624767097]
+layout_mode = 2
+theme_override_constants/separation = 12
 
 [node name="Label5" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1963131695]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 36
 text = "Controls"
 
 [node name="Label6" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1927547389]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Move between mine and surface"
 
 [node name="InputBtn" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=2012462761 instance=ExtResource("6_ojh37")]
 layout_mode = 2
 theme = ExtResource("2_xc4d7")
-setting = ExtResource("6_860ap")
+setting = ExtResource("10_dculb")
 
 [node name="Label7" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=831316137]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Mining Lock"
 
 [node name="InputBtn2" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1745197212 instance=ExtResource("6_ojh37")]
 layout_mode = 2
 theme = ExtResource("2_xc4d7")
 setting = SubResource("Resource_j03d3")
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=2071639503]
+modulate = Color(1, 0.3515625, 0.3515625, 1)
+layout_mode = 2
+text = "RESET DATA"
+script = ExtResource("12_j03d3")
 
 [node name="Color" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer" unique_id=1187550889]
 visible = false
@@ -300,6 +317,7 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 18
 text = "X"
 
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/Button" to="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/Button" method="_on_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_settings_pressed"]
 
 [editable path="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/OptionList"]

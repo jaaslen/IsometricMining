@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SettingInputRebind" format=3 uid="uid://dje3kavjs84io"]
+
+[ext_resource type="Script" uid="uid://bru1qejws0quq" path="res://ggs/scripts/setting_input_rebind.gd" id="1_cpewj"]
+
+[resource]
+resource_name = "ChangeMoveInput"
+script = ExtResource("1_cpewj")
+action = "MoveBetween"
+event_index = 0
+key = "ChangeMoveInput"
+section = "input"
+default = [0, 32, 0]
+metadata/_custom_type_script = "uid://bru1qejws0quq"

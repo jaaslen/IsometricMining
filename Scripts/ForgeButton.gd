@@ -37,11 +37,11 @@ func _on_pressed() -> void:
 	add_child(newtimer)
 	newtimer.start()
 	
-	Global.ShakeCamera(PressedStage)
+	
 	
 	PressedStage += 1
 
-	if PressedStage >= 5:
+	if PressedStage >= 1:
 		SFX.play_sfx("Low Kick")
 		SFX.play_sfx("Success")
 		var Index = 0

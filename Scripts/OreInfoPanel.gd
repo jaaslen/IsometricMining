@@ -6,7 +6,7 @@ var Order = [1,2,3,5,7,6,4,13,14,16,18,22,9,15,8,12,17,32,34,11,10,28,23,20,24,2
 @export var ActualOre = Global.GameData["ores"]["0"]
 @export var Ore = Global.GameData["ores"]["0"]
 
-@onready var PanelStyle = load("uid://bu0qaxonbmuh1").duplicate(true)
+#@onready var PanelStyle = load("uid://bu0qaxonbmuh1").duplicate(true)
 @onready var Buttons = %GridContainer
 @onready var IDlabel = $FullContainer/HBoxContainer/Data/HBoxContainer/Panel3/ID
 @onready var IconContainer = $FullContainer/HBoxContainer/Ore/Panel
@@ -47,7 +47,7 @@ func LoadOre(OreID,opening = true):
 	
 	
 	
-	modulate = Color(Ore["color"]) * 0.2 + Color(0.8,0.8,0.8) 
+	modulate = Color(Ore["color"]) * 0.5 + Color(0.5,0.5,0.5) 
 	#IconContainer.self_modulate = Color(Ore["color"]) + Color(0,0,0,1)
 	ActualOre = Global.GameData["ores"][var_to_str(OreID)]
 	if ActualOre["sorting"] < 10:
@@ -56,11 +56,11 @@ func LoadOre(OreID,opening = true):
 		IDlabel.text = "#0" + var_to_str(ActualOre["sorting"])
 	else:
 		IDlabel.text = "#" + var_to_str(ActualOre["sorting"])
-	if Global.FoundOres[Ore["sorting"]] == false:
+	if int(Ore["sorting"]) not in Global.FoundOres:
 		Ore = Global.GameData["ores"]["0"]
 
-	PanelStyle.border_color = Color(Ore["color"])  / 5 + Color(0.25,0.25,0.25,1)
-	PanelStyle.bg_color = Color(Ore["color"]) / 10 +Color(0.15,0.15,0.15,1)
+	#PanelStyle.border_color = Color(Ore["color"])  / 5 + Color(0.25,0.25,0.25,1)
+	#PanelStyle.bg_color = Color(Ore["color"]) / 10 +Color(0.15,0.15,0.15,1)
 
 	var atlas = Ore["atlas"]
 	RareLabel.text = ""
@@ -68,6 +68,7 @@ func LoadOre(OreID,opening = true):
 		RareLabel.text += "★"
 	for i in range(5-ActualOre["rarity"]):
 		RareLabel.text += "☆"
+	#RareLabel.text = str(int(ActualOre["rarity"])) + " Stars"
 	
 	#RareLabel.text = "★"
 	Name.text = Ore["name"]
@@ -167,20 +168,19 @@ func LeftPress() -> void:
 		for i in Global.GameData["ores"].values():
 			if i["sorting"] == ActualOre["sorting"] - 1:
 				nextid = i["id"]
-				if Global.FoundOres[i["sorting"]] == false:
+				if int(i["sorting"]) not in Global.FoundOres:
 					#var nextvalid : int = -67
 					for v : int in range(1,i["sorting"]):
 						var index : int = i["sorting"] - v
-						if Global.FoundOres[index] == true:
+						if index in Global.FoundOres:
 							LoadOre(Global.IndexFromSorting(index),false)
 							return
 
 		LoadOre(nextid,false)
 	else:
-		for i in range(OresInGame):
-			if Global.FoundOres[OresInGame-i] == true:
+		if (OresInGame-1) in Global.FoundOres:
 
-				LoadOre(Global.IndexFromSorting(OresInGame-1),false)
+			LoadOre(Global.IndexFromSorting(OresInGame-1),false)
 
 func RightPress() -> void:
 	if ActualOre["sorting"] < (OresInGame):
@@ -188,10 +188,10 @@ func RightPress() -> void:
 		for i in Global.GameData["ores"].values():
 			if i["sorting"] == ActualOre["sorting"] + 1:
 				nextid = i["id"]
-				if Global.FoundOres[i["sorting"]] == false:
+				if int(i["sorting"]) not in Global.FoundOres:
 					for v : int in range(1,(OresInGame-i["sorting"]+1)):
 						var index : int = i["sorting"] + v 
-						if Global.FoundOres[index] == true:
+						if index in Global.FoundOres:
 							
 							LoadOre(Global.IndexFromSorting(index),false)
 							return
@@ -202,9 +202,7 @@ func RightPress() -> void:
 	else:
 		LoadOre(1,false)
 		
-		#for i in range(OresInGame):
-			#if Global.FoundOres[OresInGame-i] == true:
-				#LoadOre(Global.IndexFromSorting(1),false)
+
 
 
 func update_position_and_scale():

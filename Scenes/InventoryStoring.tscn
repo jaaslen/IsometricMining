@@ -1,32 +1,31 @@
 [gd_scene format=3 uid="uid://c8rriee0ffc4q"]
 
 [ext_resource type="Theme" uid="uid://bujuhsiar273u" path="res://Visuals/OrbitronTheme.tres" id="1_eal2v"]
+[ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="2_dq7vn"]
 [ext_resource type="Script" uid="uid://bbkr2um2q1wma" path="res://Scripts/StoringInventoryValue.gd" id="3_ud746"]
 [ext_resource type="StyleBox" uid="uid://d0q8uxj0q6kgx" path="res://Visuals/MetalPanelNarrow.tres" id="4_eal2v"]
 [ext_resource type="Texture2D" uid="uid://dcicd3utpj2kf" path="res://Visuals/OreSheet.png" id="4_k6h4k"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dq7vn"]
-bg_color = Color(0.2784314, 0.2784314, 0.2784314, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2gq36"]
 atlas = ExtResource("4_k6h4k")
 region = Rect2(0, 0, 64, 68)
 
 [node name="Panel" type="Panel" unique_id=480130539]
+custom_minimum_size = Vector2(0, 64)
 clip_contents = true
-custom_minimum_size = Vector2(0, 40)
 offset_right = 730.0
 offset_bottom = 40.0
 scale = Vector2(2, 2)
 mouse_filter = 2
 theme = ExtResource("1_eal2v")
-theme_override_styles/panel = SubResource("StyleBoxFlat_dq7vn")
+theme_override_styles/panel = ExtResource("2_dq7vn")
 script = ExtResource("3_ud746")
 
 [node name="Texture" type="TextureRect" parent="." unique_id=1320960824]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.055000003
+anchor_left = 0.018
+anchor_right = 0.073
 anchor_bottom = 1.0
 offset_right = -0.15000153
 size_flags_vertical = 4
@@ -47,7 +46,7 @@ offset_bottom = 0.5
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_constants/outline_size = 0
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 30
 text = "Iron"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -55,11 +54,18 @@ text_overrun_behavior = 1
 
 [node name="Divider" type="ColorRect" parent="." unique_id=974377046]
 custom_minimum_size = Vector2(10, 10)
-layout_mode = 0
-offset_left = 399.0
-offset_top = 16.5
-offset_right = 409.0
-offset_bottom = 26.5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6
+anchor_top = 0.5
+anchor_right = 0.6
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.02
 mouse_filter = 2
@@ -80,7 +86,7 @@ size_flags_stretch_ratio = 0.6
 theme_override_font_sizes/font_size = 30
 text = "5"
 horizontal_alignment = 1
-vertical_alignment = 2
+vertical_alignment = 1
 text_overrun_behavior = 1
 
 [node name="LineEdit" type="LineEdit" parent="." unique_id=89805319]
@@ -95,11 +101,12 @@ theme = ExtResource("1_eal2v")
 modulate = Color(2.055, 2.055, 2.055, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.892
-anchor_top = -0.275
+anchor_left = 0.9
 anchor_right = 1.0
-anchor_bottom = 1.3000001
-offset_left = -0.16003418
+anchor_bottom = 1.0
+offset_left = 0.029968262
+grow_horizontal = 0
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 mouse_default_cursor_shape = 2

@@ -1,0 +1,360 @@
+[gd_scene format=3 uid="uid://cg3xs1rbf5r0m"]
+
+[ext_resource type="Script" uid="uid://cniaxay254ah6" path="res://Scripts/TitleScreen.gd" id="1_csos0"]
+[ext_resource type="Material" uid="uid://gfobpconwfdj" path="res://Visuals/BackgroundShader.tres" id="2_dd7nm"]
+[ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="3_0w6ye"]
+[ext_resource type="Texture2D" uid="uid://daxg4r2hrtpvi" path="res://Visuals/Backgrounds/Background1.png" id="4_orjdp"]
+[ext_resource type="Shader" uid="uid://bk201sysng156" path="res://Scripts/Ripple.gdshader" id="5_a621l"]
+[ext_resource type="Texture2D" uid="uid://br14dso6wk5uj" path="res://Visuals/gradient-texture.png" id="6_bvwna"]
+[ext_resource type="Texture2D" uid="uid://cac7ikk2nei7g" path="res://Visuals/OIP-205755889.jpg" id="7_5heij"]
+[ext_resource type="Texture2D" uid="uid://dedwk77gdc4lb" path="res://Visuals/Title.png" id="8_iyyww"]
+[ext_resource type="PackedScene" uid="uid://b8eitjjnj4s1a" path="res://squares.tscn" id="9_qw0f7"]
+[ext_resource type="PackedScene" uid="uid://dit22wc0wqt23" path="res://ggs/game_settings/Settings.tscn" id="10_bdflw"]
+[ext_resource type="PackedScene" uid="uid://chbgis4c6afk7" path="res://Scenes/Dictionary.tscn" id="11_n50pb"]
+
+[sub_resource type="Gradient" id="Gradient_81ldr"]
+interpolation_mode = 2
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.5529412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7t0me"]
+gradient = SubResource("Gradient_81ldr")
+height = 256
+fill_to = Vector2(0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ojsip"]
+shader = ExtResource("5_a621l")
+shader_parameter/wave_count = 3.0
+shader_parameter/speed = 0.5000000074506
+shader_parameter/height = 0.10000000475
+shader_parameter/colour = Color(0, 0, 0, 1)
+
+[sub_resource type="Shader" id="Shader_7mhnb"]
+code = "/*  8e4c87 fcfaf1
+
+878d9e f3ffd6Z
+
+NOT MADE BY ME, this is by retr0_dev at https://godotshaders.com/shader/earthbound-like-battle-background-shader-w-scroll-effect-and-palette-cycling/
+
+Earthbound battle backgrounds shader with scrolling effect and palette cycling like in the original game.
+@retr0_dev
+	
+Apply the shader to a TextureRect or a Sprite. Use a texture with some shapes in a transparent background for best results.
+You can then use a ColorRect or another method to paint the background.
+You can use the shader on multiple TextureRects and obtain a double-buffer effect tweaking the values for each one, remember to Make Unique the shader material.
+*/
+shader_type canvas_item;
+
+uniform float screen_height = 640.0;
+uniform float amplitude = 0.075;
+uniform float frequency = 10.0;
+uniform float speed = 2.0;
+uniform float amplitude_vertical = 0.0;
+uniform float frequency_vertical = 0.0;
+uniform float speed_vertical = 0.0;
+uniform vec2 scroll_direction = vec2(0.0, 0.0);
+uniform float scrolling_speed = 0.08;
+uniform bool enable_palette_cycling = false;
+uniform vec4 color : source_color;
+uniform sampler2D palette;
+uniform float palette_speed = 0.1;
+
+void fragment()
+{
+	float diff_x = amplitude * sin((frequency * UV.y) + (speed * TIME));
+	float diff_y = amplitude_vertical * sin((frequency_vertical * UV.y)  + (speed_vertical * TIME));
+	vec2 scroll = scroll_direction * TIME * scrolling_speed;
+	vec4 tex = texture(TEXTURE, vec2(UV.x + diff_x, UV.y + diff_y) + scroll);
+	float palette_swap = mod(tex.r - TIME * palette_speed, 1);
+	
+	if (enable_palette_cycling)
+	{
+	COLOR = vec4(texture(palette, vec2(palette_swap, 0)).rgb, tex.a) * color;
+	COLOR = mix(vec4(0.0), COLOR, float(int(UV.y * screen_height) % 2));
+	}
+	else
+	{
+	COLOR = tex;
+	}
+	
+}"
+
+[sub_resource type="Gradient" id="Gradient_1pdhp"]
+offsets = PackedFloat32Array(0, 0.46575344, 1)
+colors = PackedColorArray(1, 0.78431374, 1, 1, 1, 1, 1, 1, 1, 0.78431374, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_f3xlv"]
+gradient = SubResource("Gradient_1pdhp")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ablst"]
+shader = SubResource("Shader_7mhnb")
+shader_parameter/screen_height = 15.66
+shader_parameter/amplitude = 0.007
+shader_parameter/frequency = 5.0
+shader_parameter/speed = 0.83
+shader_parameter/amplitude_vertical = 0.0
+shader_parameter/frequency_vertical = 1.77
+shader_parameter/speed_vertical = 0.0
+shader_parameter/scroll_direction = Vector2(0, 0)
+shader_parameter/scrolling_speed = 0.04
+shader_parameter/enable_palette_cycling = false
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/palette = SubResource("GradientTexture1D_f3xlv")
+shader_parameter/palette_speed = 0.32
+
+[sub_resource type="Gradient" id="Gradient_5psol"]
+offsets = PackedFloat32Array(0, 0.036144577, 0.8614458, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0.80100006, 0, 0, 0, 0.91)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_epiv6"]
+gradient = SubResource("Gradient_5psol")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Environment" id="Environment_epiv6"]
+background_mode = 3
+background_energy_multiplier = 0.0
+glow_enabled = true
+glow_intensity = 1.15
+glow_bloom = 1.0
+
+[node name="Tilte" type="Control" unique_id=1854520791]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_csos0")
+
+[node name="Fill2" type="TextureRect" parent="." unique_id=1115823669]
+light_mask = 3
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_7t0me")
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=86955453]
+layer = -1
+
+[node name="Texture" type="TextureRect" parent="Background" unique_id=528789591]
+modulate = Color(1, 0, 0, 1)
+light_mask = 3
+z_index = -2
+material = ExtResource("2_dd7nm")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_0w6ye")
+texture = ExtResource("4_orjdp")
+
+[node name="Ripple" type="ColorRect" parent="Background" unique_id=1466072561]
+material = SubResource("ShaderMaterial_ojsip")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=1225780162]
+visible = false
+modulate = Color(1, 0, 0, 0.6862745)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_bvwna")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1743999783]
+autoplay = true
+bus = &"Music"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1320396389]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -539.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 161
+bbcode_enabled = true
+text = "[tornado radius=2.0 freq=6.0 connected=0]Mining Game[/tornado]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="RichTextLabel" unique_id=1021965523]
+position = Vector2(915, 313)
+scale = Vector2(3.1392403, 1.3054187)
+enabled = false
+energy = 5.04
+texture = ExtResource("7_5heij")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=764280147]
+modulate = Color(5.4700704, 5.4700704, 5.4700704, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19322917
+anchor_top = 0.08425926
+anchor_right = 0.79322916
+anchor_bottom = 0.52951866
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_iyyww")
+expand_mode = 5
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=122904640]
+material = SubResource("ShaderMaterial_ablst")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.08
+anchor_right = 0.8
+anchor_bottom = 0.5247037
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_iyyww")
+expand_mode = 5
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1796263786]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32900003
+anchor_top = 0.404
+anchor_right = 0.96700007
+anchor_bottom = 0.583
+offset_left = -0.6800537
+offset_right = 0.35986328
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/outline_size = 38
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "(PRE-ALPHA)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fill" type="TextureRect" parent="." unique_id=164594739]
+visible = false
+light_mask = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_epiv6")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1221791161]
+environment = SubResource("Environment_epiv6")
+
+[node name="Squares" parent="." unique_id=620367378 instance=ExtResource("9_qw0f7")]
+z_index = -1
+layout_mode = 1
+EdgeSquareModulate = Color(0.875, 0, 1, 1)
+CenterSquareModulate = Color(1, 0.97555804, 0.71484375, 0.5176471)
+MouseMovingMultiplier = 0.2
+RotatesOrScalesSpeed = 0.1
+Rings = 16
+RotatesOrScales = true
+RotateRange = 1.0
+ScaleCenter = Vector2(0.4, 0.4)
+Centers = true
+
+[node name="Squares2" parent="." unique_id=1733276917 instance=ExtResource("9_qw0f7")]
+z_index = -1
+layout_mode = 1
+EdgeSquareModulate = Color(0.875, 0, 1, 1)
+CenterSquareModulate = Color(1, 0.97555804, 0.71484375, 0.5176471)
+MouseMovingMultiplier = 0.2
+RotatesOrScalesSpeed = 0.1
+Rings = 16
+RotatesOrScales = true
+RotateRange = -1.0
+ScaleCenter = Vector2(0.4, 0.4)
+Centers = true
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1261449804]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI" unique_id=824395260]
+anchors_preset = -1
+anchor_left = 0.33854166
+anchor_top = 0.832
+anchor_right = 0.6614583
+anchor_bottom = 0.922
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" type="Button" parent="UI/HBoxContainer" unique_id=56639802]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SETTINGS"
+
+[node name="Dictionary" type="Button" parent="UI/HBoxContainer" unique_id=293603777]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "DICTIONARY"
+
+[node name="Quit" type="Button" parent="UI/HBoxContainer" unique_id=1895793810]
+modulate = Color(1, 0.25800002, 0.16000003, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "Quit?"
+
+[node name="Settings" parent="UI" unique_id=1968452938 instance=ExtResource("10_bdflw")]
+visible = false
+anchors_preset = 9
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 0.0
+offset_right = 610.0
+offset_bottom = 0.0
+grow_horizontal = 1
+
+[node name="Dictionary" parent="UI" unique_id=2082685999 instance=ExtResource("11_n50pb")]
+visible = false
+z_index = 10
+offset_left = 1920.0
+offset_right = 1960.0
+offset_bottom = 96.0
+mouse_filter = 2
+
+[node name="Play" type="Button" parent="UI" unique_id=1675802974]
+anchors_preset = -1
+anchor_left = 0.3125
+anchor_top = 0.639
+anchor_right = 0.6875
+anchor_bottom = 0.821
+offset_top = 10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 112
+text = "PLAY"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="UI/HBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="UI/HBoxContainer/Settings" to="UI/Settings" method="_on_settings_pressed"]
+[connection signal="pressed" from="UI/HBoxContainer/Dictionary" to="." method="_on_dictionary_pressed"]
+[connection signal="pressed" from="UI/HBoxContainer/Dictionary" to="UI/Dictionary" method="OpenButtonPressed"]
+[connection signal="pressed" from="UI/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="UI/Play" to="." method="_on_play_pressed"]

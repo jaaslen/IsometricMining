@@ -8,6 +8,7 @@ var ButtonScene : PackedScene = preload("res://Scenes/UpgradeButton.tscn")
 var Images = [preload("res://Visuals/Upgrades/0.png"),preload("res://Visuals/Upgrades/1.png"),
 preload("res://Visuals/Upgrades/2.png"),preload("res://Visuals/Upgrades/3.png"),preload("res://Visuals/Upgrades/4.png")]
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	AddUpgrades()
@@ -23,7 +24,7 @@ func UpgradeButtonPressed(ID):
 
 func AddUpgrades():
 	
-	var highestlevel : int = 0
+	var highestlevel : int = -1
 	for upgrade in Upgrades.values():
 		
 		
@@ -65,7 +66,7 @@ func GetUpgrade(ID : int):
 		var upgradebutton = get_child(int(upgrade["level"])).get_child(0).get_node(str(int(ID)))
 		#upgradebutton.disabled = true
 		upgradebutton.modulate = Color(upgrade["color"])
-		upgradebutton.Effect(false)
+		upgradebutton.Effect(true)
 		
 		get_child(int(upgrade["level"])+1).visible = true
 		Global.Upgrades.append(ID)

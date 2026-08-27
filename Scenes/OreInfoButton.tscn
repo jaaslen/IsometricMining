@@ -11,58 +11,72 @@ atlas = ExtResource("2_pr6m8")
 region = Rect2(128, 0, 128, 136)
 
 [node name="Control" type="Control" unique_id=1398558418]
+custom_minimum_size = Vector2(360, 360)
 layout_mode = 3
-anchor_right = 0.083000004
-anchor_bottom = 0.156
-offset_right = 0.63998413
-offset_bottom = 3.519989
+anchor_right = 0.187
+anchor_bottom = 0.333
+offset_right = 0.95999146
+offset_bottom = 0.35998535
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lg6u6")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=500605163]
 z_index = 1
-layout_mode = 0
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 144.0
-offset_bottom = 144.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_right = 0.9
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1851666345]
 layout_mode = 2
+alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=1940523556]
 texture_filter = 1
 layout_mode = 2
 texture = SubResource("AtlasTexture_auoxk")
 expand_mode = 5
-stretch_mode = 4
+stretch_mode = 5
 
 [node name="Button" type="Button" parent="." unique_id=961969495]
-layout_mode = 0
-offset_right = 160.0
-offset_bottom = 160.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("3_pr6m8")
 
 [node name="Rank" type="TextureRect" parent="." unique_id=1130002818]
 z_index = 1
-layout_mode = 0
-offset_right = 160.0
-offset_bottom = 160.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.93000007
+offset_bottom = 0.039993286
 mouse_filter = 2
 texture = ExtResource("4_lg6u6")
 expand_mode = 1
 
 [node name="Tier" type="TextureRect" parent="." unique_id=1567260776]
 z_index = 1
-layout_mode = 0
-offset_left = 80.0
-offset_top = 80.0
-offset_right = 160.0
-offset_bottom = 160.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.77800006
+anchor_top = 0.77800006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.08001709
+offset_top = -0.08001709
+grow_horizontal = 0
+grow_vertical = 0
 texture = ExtResource("5_pr6m8")
 expand_mode = 1
 

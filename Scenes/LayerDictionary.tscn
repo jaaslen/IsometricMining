@@ -25,8 +25,8 @@ theme = ExtResource("1_6vxfe")
 script = ExtResource("2_p3w5f")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1582259720]
-clip_contents = false
 custom_minimum_size = Vector2(1760, 0)
+clip_contents = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,7 +39,7 @@ theme = ExtResource("1_6vxfe")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 20
+theme_override_constants/separation = 32
 script = ExtResource("3_6vxfe")
 
 [node name="Panel" type="Panel" parent="." unique_id=576616960]

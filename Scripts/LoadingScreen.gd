@@ -13,5 +13,13 @@ func _process(delta):
 		$ProgressBar.value = progress[0] * 100
 
 	if status == ResourceLoader.THREAD_LOAD_LOADED:
+		Global.AtTitle = false
 		var scene = ResourceLoader.load_threaded_get(scene_path)
 		get_tree().change_scene_to_packed(scene)
+
+
+func _on_button_pressed() -> void:
+	Global.AtTitle = false
+	var scene = ResourceLoader.load_threaded_get(scene_path)
+	get_tree().change_scene_to_packed(scene)
+	pass # Replace with function body.

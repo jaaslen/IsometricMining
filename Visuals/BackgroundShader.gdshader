@@ -1,4 +1,6 @@
-/* 
+/*  8e4c87 fcfaf1
+
+878d9e f3ffd6Z
 
 NOT MADE BY ME, this is by retr0_dev at https://godotshaders.com/shader/earthbound-like-battle-background-shader-w-scroll-effect-and-palette-cycling/
 

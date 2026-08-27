@@ -4,7 +4,7 @@ var InventoryItemL = preload("res://Scenes/InventoryStoring.tscn")
 var InventoryItemR = preload("res://Scenes/InventoryStoringR.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#Global.OreChanged.connect(OreChanged)
+
 	var Index = 0
 	for amount in Global.StorageOreAmounts:
 		var NewInventoryItem : Panel

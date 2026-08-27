@@ -8,5 +8,5 @@ script = ExtResource("1_33qiq")
 audio_bus = "SFX"
 key = "Sound Effect Volume"
 section = "audio"
-default = 80.0
+default = 5.0
 metadata/_custom_type_script = "uid://bht1jxwv3w1sp"

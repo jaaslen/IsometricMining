@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Isometric"
-run/main_scene="res://Scenes/Main.tscn"
-config/features=PackedStringArray("4.6", "Forward Plus")
+run/main_scene="uid://buvoxcatdxqgb"
+config/features=PackedStringArray("4.7", "Forward Plus")
 run/max_fps=60
+boot_splash/bg_color=Color(0.42578125, 0.42578125, 0.42578125, 1)
 config/icon="res://Visuals/icon.svg"
 
 [audio]
@@ -31,11 +32,14 @@ GGS="*uid://esw7j7or7gpd"
 [display]
 
 window/size/viewport_width=1920
-window/size/viewport_height=1000
+window/size/viewport_height=1080
 window/stretch/aspect="ignore"
-window/stretch/scale=0.5
 window/stretch/scale_mode="integer"
 window/handheld/orientation=1
+
+[dotnet]
+
+project/assembly_name="Isometric"
 
 [editor_plugins]
 
@@ -126,7 +130,10 @@ common/physics_ticks_per_second=10
 
 [rendering]
 
+occlusion_culling/bvh_build_quality=0
+occlusion_culling/jitter_projection=false
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+textures/vram_compression/import_etc2_astc=true
+occlusion_culling/occlusion_rays_per_thread=216
+environment/defaults/default_clear_color=Color(0.51171875, 0.51171875, 0.51171875, 1)

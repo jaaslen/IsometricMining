@@ -3,10 +3,12 @@
 [ext_resource type="Script" uid="uid://sr3kwxijwepr" path="res://Scripts/Dictionary.gd" id="1_3abks"]
 [ext_resource type="Script" uid="uid://beygvhct1lf0w" path="res://Scripts/DictionaryContainer.gd" id="1_la43g"]
 [ext_resource type="PackedScene" uid="uid://dg1k0b6frkr3x" path="res://Scenes/OreInfo.tscn" id="2_xvgq2"]
-[ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="3_nrkam"]
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="4_d3rv7"]
+[ext_resource type="StyleBox" uid="uid://d0q8uxj0q6kgx" path="res://Visuals/MetalPanelNarrow.tres" id="4_nrkam"]
 [ext_resource type="Script" uid="uid://d01a4vs5xt5m2" path="res://Scripts/LayerDictionaryContainer.gd" id="5_t6gtc"]
 [ext_resource type="PackedScene" uid="uid://cdsd6xbm8m530" path="res://Scenes/LayerInfo.tscn" id="6_hq5wi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_42bqh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvgq2"]
 bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
@@ -50,19 +52,14 @@ z_index = 10
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 size_flags_stretch_ratio = 0.08
-theme_override_font_sizes/font_size = 68
-text = ">
->
->
->
->
-"
+theme_override_font_sizes/font_size = 60
+text = "X"
 
 [node name="TabContainer" type="TabContainer" parent="HBoxContainer" unique_id=2079994073]
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/tabbar_background = ExtResource("3_nrkam")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_42bqh")
 tab_alignment = 1
 current_tab = 0
 drag_to_rearrange_enabled = true
@@ -80,21 +77,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_d3rv7")
+theme_override_styles/panel = ExtResource("4_nrkam")
 vertical_scroll_mode = 2
+tile_scroll_hint = true
 
 [node name="GridContainer" type="GridContainer" parent="HBoxContainer/TabContainer/Ores/ScrollContainer" unique_id=367698296]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
 theme = ExtResource("4_d3rv7")
-theme_override_constants/h_separation = 150
-theme_override_constants/v_separation = 150
 columns = 11
 script = ExtResource("1_la43g")
 
 [node name="Control" parent="HBoxContainer/TabContainer/Ores" unique_id=9308825 instance=ExtResource("2_xvgq2")]
 unique_name_in_owner = true
+visible = false
 z_index = 2
 layout_mode = 1
 offset_bottom = 1.0

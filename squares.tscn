@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b8eitjjnj4s1a"]
+
+[ext_resource type="Script" uid="uid://cl0hw4hoqjek0" path="res://squares.gd" id="1_alp06"]
+
+[node name="Squares" type="Control" unique_id=620367378]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_alp06")
+FollowMouse = true

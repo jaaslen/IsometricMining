@@ -22,19 +22,29 @@ func _ready() -> void:
 		var Increase = (Value - Global.Pickaxe["stats"][Stat])
 		Name = capitalize(Global.GameData["stats"][var_to_str(Stat)]["name"])
 		ColorValue = Global.GameData["stats"][var_to_str(Stat)]["color"]
-		if Increase != 0:
+		
+		Description.add_theme_color_override("default_color",ColorValue * 1.2)
+		
+		if (Value > Global.Pickaxe["stats"][Stat] and Stat != 1) or (Value < Global.Pickaxe["stats"][Stat] and Stat == 1):
 			
 			if Global.GameData["stats"][var_to_str(Stat)]["multiply"]:
 				Description.text = Global.GameData["stats"][var_to_str(Stat)]["description"] % (  strip_trailing_zeros(Value / Global.Pickaxe["stats"][Stat] * Global.GameData["stats"][str(Stat)]["displaymult"]) + Global.GameData["stats"][var_to_str(Stat)]["suffix"] )
 			else:
 				Description.text = Global.GameData["stats"][var_to_str(Stat)]["description"] % ( strip_trailing_zeros(Value - Global.Pickaxe["stats"][Stat] * Global.GameData["stats"][str(Stat)]["displaymult"]) + Global.GameData["stats"][var_to_str(Stat)]["suffix"] ) 
-			Description.add_theme_color_override("default_color",ColorValue * 1.2)
+			#Description.add_theme_color_override("default_color",ColorValue * 1.2)
+		elif (Value < Global.Pickaxe["stats"][Stat] and Stat != 1) or (Value > Global.Pickaxe["stats"][Stat] and Stat == 1):
+			if Global.Pickaxe != Pickaxe:
+				Description.text = "Stat will decrease from equipping this!"
+			else:
+				Description.text = "Current Stat!"
+				
+			#add_theme_color_override("default_color",Color(1.0, 0.0, 0.0, 1.0))
 		else:
 			if Global.Pickaxe != Pickaxe:
 				Description.text = "Same as before, no change."
 			else:
 				Description.text = "Current Stat!"
-			Description.add_theme_color_override("default_color",ColorValue * 0.8)
+			#Description.add_theme_color_override("default_color",ColorValue * 0.8)
 		LabelBox.text = Name + " "#+ " : " + ( "%.2f" % Value)
 		#if Value < 10:
 			#ValueLabelBox.text = " " + ( "%.2f" % Value)

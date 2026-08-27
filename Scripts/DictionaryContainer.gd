@@ -20,7 +20,7 @@ func _ready() -> void:
 		#Index += 1
 		
 func update_position_and_scale():
-	columns = max(floori(get_viewport_rect().size.x / 160.0),1)
+	columns = 5#max(floori(get_viewport_rect().size.x / 320.0),1)
 	#var vp_size = get_viewport_rect().size
 	#scale.x = 4 * vp_size.x / reference_resolution.x
 	#scale.y = scale.x
@@ -42,7 +42,7 @@ func AddScenes(_Level = null):
 		if data[key]["id"] != 0:
 			var scene: PackedScene = load("uid://be6lsgn3ms26")
 			var instance = scene.instantiate()
-			if Global.FoundOres[data[key]["sorting"]]:
+			if int(data[key]["sorting"]) in Global.FoundOres:
 				instance.Found = true
 			instance.Ore = data[key]
 			add_child(instance)

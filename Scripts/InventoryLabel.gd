@@ -5,6 +5,7 @@ signal FullCheck
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.OreChanged.connect(OreChanged)
+	Global.PickaxeChanged.connect(OreChanged)
 	OreChanged(0)
 	pass # Replace with function body.
 
@@ -12,7 +13,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 	
-func OreChanged(__):
+func OreChanged(__,___ = null):
+	capacity = Global.InventoryCapacity
 	ores = 0
 	for amount in Global.OreAmounts:
 		ores += amount

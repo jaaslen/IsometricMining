@@ -282,7 +282,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "Pick an upgrade! hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+text = "Pick an upgrade! "
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -50,11 +50,11 @@ func PickaxeChanged(__):
 		EquipButton.disabled = false
 		custom_minimum_size.y = 180
 		EquipButton.text = "Equip?"
-		$Selected.text = "☐"
+		$Selected.text = ""
 		
 		if Global.Pickaxe["id"] == Pickaxe["id"]:
 			EquipButton.text = "Equipped!"
-			$Selected.text = "🗹"
+			$Selected.text = "X"
 			EquipButton.disabled = true
 			
 	else:
@@ -72,10 +72,15 @@ func PickaxeChanged(__):
 		$Rank.texture = load("res://Visuals/Ranks/" + Global.GameData["levels"][str(int(Original["rank"]))]["name"] + ".png")
 		$Tier.texture = load("res://Visuals/Ranks/" + str(int(Global.GameData["levels"][str(int(Original["rank"]))]["tier"])) + ".png")
 		
+		
+
+			
+		
 
 	elif Original["rank"] <= Global.Level["id"]:
 		$Rank.visible = false
 		$Tier.visible = false
+
 
 
 func _on_mouse_entered() -> void:

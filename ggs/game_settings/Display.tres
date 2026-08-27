@@ -7,5 +7,5 @@ resource_name = "Display Mode"
 script = ExtResource("1_mc0ts")
 key = "Display Mode"
 section = "display"
-default = 2
+default = 0
 metadata/_custom_type_script = "uid://brory0hphls2b"

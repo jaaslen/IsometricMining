@@ -28,7 +28,7 @@ func apply(value: int) -> void:
 	var base_h: int = ProjectSettings.get_setting("display/window/size/viewport_height")
 	var size: Vector2 = Vector2(base_w, base_h) * scale
 	GGSWindowUtils.clamp_to_screen()
-	DisplayServer.window_set_size(size)
+	#DisplayServer.window_set_size(size)
 	GGSWindowUtils.center()
 
 

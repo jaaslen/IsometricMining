@@ -43,7 +43,7 @@
 	  "name": "Stone",
 	  "color": "#999999",
 	  "rank": 0,
-	  "hardness": 1,
+	  "hardness": 0.5,
 	  "value": 0,
 	  "xp": 1,
 	  "depth": [
@@ -121,7 +121,7 @@
 	  "rarity": 1,
 	  "atlas": [
 		1,
-		5
+		3
 	  ],
 	  "arrival": 2,
 	  "optimal": 2,
@@ -171,7 +171,7 @@
 	  "rarity": 1,
 	  "atlas": [
 		1,
-		6
+		4
 	  ],
 	  "arrival": 3,
 	  "optimal": 3,
@@ -213,7 +213,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		2,
-		6
+		4
 	  ],
 	  "arrival": 15,
 	  "optimal": 30,
@@ -270,7 +270,7 @@
 	  "rarity": 1,
 	  "atlas": [
 		1,
-		12
+		10
 	  ],
 	  "arrival": 30,
 	  "optimal": 3500,
@@ -315,8 +315,8 @@
 	  ],
 	  "rarity": 2,
 	  "atlas": [
-		1,
-		7
+		0,
+		9
 	  ],
 	  "arrival": 300,
 	  "optimal": 300,
@@ -357,7 +357,7 @@
 	  "rarity": 1,
 	  "atlas": [
 		2,
-		15
+		13
 	  ],
 	  "arrival": 650,
 	  "optimal": 650,
@@ -398,7 +398,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		1,
-		13
+		11
 	  ],
 	  "arrival": 7500,
 	  "optimal": 9000,
@@ -444,7 +444,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		1,
-		16
+		14
 	  ],
 	  "arrival": 800,
 	  "optimal": 1100,
@@ -485,7 +485,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		1,
-		11
+		9
 	  ],
 	  "arrival": 6300,
 	  "optimal": 7400,
@@ -527,7 +527,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		2,
-		11
+		9
 	  ],
 	  "arrival": 4500,
 	  "optimal": 4500,
@@ -584,7 +584,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		1,
-		15
+		13
 	  ],
 	  "arrival": 3500,
 	  "optimal": 9000,
@@ -629,8 +629,8 @@
 	  ],
 	  "rarity": 2,
 	  "atlas": [
-		5,
-		7
+		1,
+		5
 	  ],
 	  "arrival": 20,
 	  "optimal": 100,
@@ -671,7 +671,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		3,
-		6
+		4
 	  ],
 	  "arrival": 40,
 	  "optimal": 40,
@@ -713,7 +713,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		3,
-		15
+		13
 	  ],
 	  "arrival": 900,
 	  "optimal": 900,
@@ -753,8 +753,8 @@
 	  ],
 	  "rarity": 2,
 	  "atlas": [
-		2,
-		7
+		1,
+		5
 	  ],
 	  "arrival": 640,
 	  "optimal": 640,
@@ -776,7 +776,7 @@
 	"17": {
 	  "id": 17,
 	  "sorting": 30,
-	  "name": "Uranium-238",
+	  "name": "Uranium",
 	  "color": "#B9DA4D",
 	  "rank": 3,
 	  "hardness": 50,
@@ -795,7 +795,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		2,
-		5
+		3
 	  ],
 	  "arrival": 3500,
 	  "optimal": 3500,
@@ -835,8 +835,8 @@
 	  ],
 	  "rarity": 2,
 	  "atlas": [
-		2,
-		5
+		3,
+		3
 	  ],
 	  "arrival": 8250,
 	  "optimal": 9000,
@@ -876,8 +876,8 @@
 	  ],
 	  "rarity": 2,
 	  "atlas": [
-		3,
-		7
+		2,
+		5
 	  ],
 	  "arrival": 500,
 	  "optimal": 500,
@@ -918,7 +918,7 @@
 	  "rarity": 4,
 	  "atlas": [
 		4,
-		8
+		6
 	  ],
 	  "arrival": 6500,
 	  "optimal": 7400,
@@ -975,7 +975,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		1,
-		18
+		16
 	  ],
 	  "arrival": 5000,
 	  "optimal": 8250,
@@ -1018,7 +1018,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		5,
-		8
+		6
 	  ],
 	  "arrival": 6300,
 	  "optimal": 7400,
@@ -1059,8 +1059,8 @@
 	  ],
 	  "rarity": 2,
 	  "atlas": [
-		4,
-		7
+		3,
+		5
 	  ],
 	  "arrival": 1400,
 	  "optimal": 1400,
@@ -1105,7 +1105,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		1,
-		8
+		6
 	  ],
 	  "arrival": 150,
 	  "optimal": 300,
@@ -1149,7 +1149,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		5,
-		15
+		13
 	  ],
 	  "arrival": 4550,
 	  "optimal": 4550,
@@ -1190,7 +1190,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		1,
-		17
+		15
 	  ],
 	  "arrival": 1400,
 	  "optimal": 1400,
@@ -1232,7 +1232,7 @@
 	  "rarity": 4,
 	  "atlas": [
 		2,
-		14
+		12
 	  ],
 	  "arrival": 1000,
 	  "optimal": 1400,
@@ -1273,7 +1273,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		3,
-		12
+		10
 	  ],
 	  "arrival": 8250,
 	  "optimal": 9000,
@@ -1314,7 +1314,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		2,
-		8
+		6
 	  ],
 	  "arrival": 70,
 	  "optimal": 2500,
@@ -1340,7 +1340,7 @@
 	"30": {
 	  "id": 30,
 	  "sorting": 40,
-	  "name": "XePLACEHOLDER",
+	  "name": "Xenon",
 	  "color": "#BBA4FF",
 	  "rank": 8,
 	  "hardness": 5,
@@ -1359,7 +1359,7 @@
 	  "rarity": 4,
 	  "atlas": [
 		2,
-		10
+		8
 	  ],
 	  "arrival": 6000,
 	  "optimal": 6500,
@@ -1403,7 +1403,7 @@
 	  "rarity": 4,
 	  "atlas": [
 		1,
-		10
+		8
 	  ],
 	  "arrival": 4000,
 	  "optimal": 4500,
@@ -1493,7 +1493,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		4,
-		11
+		9
 	  ],
 	  "arrival": 4550,
 	  "optimal": 5000,
@@ -1535,7 +1535,7 @@
 	  "rarity": 4,
 	  "atlas": [
 		1,
-		9
+		7
 	  ],
 	  "arrival": 4000,
 	  "optimal": 4500,
@@ -1576,7 +1576,7 @@
 	  "rarity": 2,
 	  "atlas": [
 		3,
-		11
+		9
 	  ],
 	  "arrival": 4750,
 	  "optimal": 4750,
@@ -1621,7 +1621,7 @@
 	  "rarity": 4,
 	  "atlas": [
 		2,
-		12
+		10
 	  ],
 	  "arrival": 4550,
 	  "optimal": 4800,
@@ -1662,7 +1662,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		6,
-		8
+		6
 	  ],
 	  "arrival": 2000,
 	  "optimal": 3000,
@@ -1704,7 +1704,7 @@
 	  "rarity": 4,
 	  "atlas": [
 		4,
-		15
+		13
 	  ],
 	  "arrival": 2400,
 	  "optimal": 3000,
@@ -1746,7 +1746,7 @@
 	  "rarity": 4,
 	  "atlas": [
 		2,
-		9
+		7
 	  ],
 	  "arrival": 1900,
 	  "optimal": 2500,
@@ -1787,7 +1787,7 @@
 	  "rarity": 5,
 	  "atlas": [
 		1,
-		26
+		24
 	  ],
 	  "arrival": 1,
 	  "optimal": 1,
@@ -1845,7 +1845,7 @@
 	  "rarity": 5,
 	  "atlas": [
 		2,
-		24
+		22
 	  ],
 	  "arrival": 5000,
 	  "optimal": 0,
@@ -1890,7 +1890,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		1,
-		23
+		21
 	  ],
 	  "arrival": 5,
 	  "optimal": 25,
@@ -1932,7 +1932,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		3,
-		23
+		21
 	  ],
 	  "arrival": 3000,
 	  "optimal": 3000,
@@ -1973,7 +1973,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		2,
-		21
+		19
 	  ],
 	  "arrival": 3000,
 	  "optimal": 3000,
@@ -2014,7 +2014,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		1,
-		19
+		17
 	  ],
 	  "arrival": 2500,
 	  "optimal": 2500,
@@ -2055,7 +2055,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		2,
-		23
+		21
 	  ],
 	  "arrival": 2500,
 	  "optimal": 2500,
@@ -2096,7 +2096,7 @@
 	  "rarity": 3,
 	  "atlas": [
 		1,
-		25
+		23
 	  ],
 	  "arrival": 2800,
 	  "optimal": 2800,
@@ -2138,7 +2138,7 @@
 	  "rarity": 5,
 	  "atlas": [
 		2,
-		18
+		16
 	  ],
 	  "arrival": 4550,
 	  "optimal": 0,
@@ -2182,7 +2182,7 @@
 	  "rarity": 0,
 	  "atlas": [
 		4,
-		24
+		22
 	  ],
 	  "arrival": 9001,
 	  "optimal": 9000,
@@ -2234,7 +2234,7 @@
 	  "id": 1,
 	  "name": "Stone Pickaxe",
 	  "color": "#666666",
-	  "rank": 1,
+	  "rank": 0,
 	  "cost": [
 		[
 		  1,
@@ -2247,13 +2247,13 @@
 	  ],
 	  "stats": [
 		0.75,
-		0.75,
+		0.25,
 		1,
 		1,
 		1,
 		1,
-		50,
-		80
+		25,
+		10
 	  ],
 	  "traits": [],
 	  "original": 1,
@@ -2265,7 +2265,7 @@
 	  "id": 2,
 	  "name": "Tin Pickaxe",
 	  "color": "#F9CB9C",
-	  "rank": 2,
+	  "rank": 0,
 	  "cost": [
 		[
 		  1,
@@ -2278,13 +2278,13 @@
 	  ],
 	  "stats": [
 		1.5,
-		1,
+		0.4,
 		1.1,
 		1,
 		1,
 		1,
 		100,
-		180
+		40
 	  ],
 	  "traits": [],
 	  "original": 2,
@@ -2296,7 +2296,7 @@
 	  "id": 3,
 	  "name": "Bronze Pickaxe",
 	  "color": "#B45F06",
-	  "rank": 3,
+	  "rank": 1,
 	  "cost": [
 		[
 		  2,
@@ -2313,13 +2313,13 @@
 	  ],
 	  "stats": [
 		3,
-		1.5,
+		0.5,
 		1,
 		1,
 		1,
 		1,
 		250,
-		400
+		100
 	  ],
 	  "traits": [],
 	  "original": 3,
@@ -2331,7 +2331,7 @@
 	  "id": 4,
 	  "name": "Iron Pickaxe",
 	  "color": "#A59C94",
-	  "rank": 4,
+	  "rank": 2,
 	  "cost": [
 		[
 		  1,
@@ -2344,13 +2344,13 @@
 	  ],
 	  "stats": [
 		4,
-		1.2,
+		0.4,
 		1,
 		1,
 		1,
 		1,
 		500,
-		800
+		160
 	  ],
 	  "traits": [],
 	  "original": 4,
@@ -2362,7 +2362,7 @@
 	  "id": 5,
 	  "name": "Silver Pickaxe",
 	  "color": "#C9DAF8",
-	  "rank": 5,
+	  "rank": 3,
 	  "cost": [
 		[
 		  2,
@@ -2379,13 +2379,13 @@
 	  ],
 	  "stats": [
 		3.8,
-		0.2,
+		0.07,
 		1,
 		1,
 		1,
 		1,
 		750,
-		1250
+		240
 	  ],
 	  "traits": [],
 	  "original": 5,
@@ -2397,7 +2397,7 @@
 	  "id": 6,
 	  "name": "Gold Pickaxe",
 	  "color": "#FFB900",
-	  "rank": 6,
+	  "rank": 4,
 	  "cost": [
 		[
 		  2,
@@ -2414,13 +2414,13 @@
 	  ],
 	  "stats": [
 		4.2,
-		0.3,
+		0.12,
 		1.5,
 		1,
 		1.5,
 		1,
 		1000,
-		1750
+		340
 	  ],
 	  "traits": [],
 	  "original": 6,
@@ -2432,7 +2432,7 @@
 	  "id": 7,
 	  "name": "Tourmaline Chisel",
 	  "color": "#EAD1DC",
-	  "rank": 7,
+	  "rank": 5,
 	  "cost": [
 		[
 		  42,
@@ -2449,13 +2449,13 @@
 	  ],
 	  "stats": [
 		5,
-		1.2,
+		0.8,
 		2,
 		2,
 		1.5,
 		1,
 		1400,
-		2500
+		460
 	  ],
 	  "traits": [],
 	  "original": 7,
@@ -2467,7 +2467,7 @@
 	  "id": 8,
 	  "name": "Lithium Pickaxe",
 	  "color": "#7E7255",
-	  "rank": 8,
+	  "rank": 6,
 	  "cost": [
 		[
 		  19,
@@ -2488,13 +2488,13 @@
 	  ],
 	  "stats": [
 		6,
-		0.5,
+		0.18,
 		1.5,
 		1,
 		1,
 		1,
 		2000,
-		3600
+		600
 	  ],
 	  "traits": [],
 	  "original": 8,
@@ -2505,7 +2505,7 @@
 	  "id": 9,
 	  "name": "Nickel Pickaxe",
 	  "color": "#7B776C",
-	  "rank": 9,
+	  "rank": 7,
 	  "cost": [
 		[
 		  6,
@@ -2518,13 +2518,13 @@
 	  ],
 	  "stats": [
 		7.5,
-		0.2,
+		0.1,
 		1,
 		1,
 		1,
 		1,
 		2500,
-		4500
+		760
 	  ],
 	  "traits": [],
 	  "original": 9,
@@ -2535,7 +2535,7 @@
 	  "id": 10,
 	  "name": "Cobalt Pickaxe",
 	  "color": "#8992AD",
-	  "rank": 10,
+	  "rank": 8,
 	  "cost": [
 		[
 		  16,
@@ -2552,13 +2552,13 @@
 	  ],
 	  "stats": [
 		14,
-		1.5,
+		0.6,
 		1,
 		1,
 		0.5,
 		1,
 		3000,
-		5200
+		1000
 	  ],
 	  "traits": [],
 	  "original": 10,
@@ -2623,8 +2623,8 @@
 	  "value": 0,
 	  "base": false
 	},
-	"2001": {
-	  "id": 2001,
+	"1002": {
+	  "id": 1002,
 	  "name": "Stone Pickaxe ★★",
 	  "color": "#666667",
 	  "rank": 0,
@@ -2820,8 +2820,8 @@
 	  "name": "XP MULT",
 	  "color": "#674EA7",
 	  "description": "You gain [color=white]%s[/color] as much xp from the ores you mine.",
-	  "suffix": "x",
-	  "displaymult": 1,
+	  "suffix": "%",
+	  "displaymult": 100,
 	  "multiply": true
 	},
 	"3": {
@@ -3466,37 +3466,37 @@
 		0
 	  ],
 	  "bg": 1,
-	  "music": 1,
-	  "pitch": 1,
+	  "music": 10,
+	  "pitch": 1.5,
 	  "description": "PLACEHOLDER",
-	  "length": 1,
+	  "length": 2,
 	  "start": 0,
-	  "end": 0
+	  "end": 1
 	},
 	"1": {
 	  "id": 1,
 	  "name": "shallow caves",
-	  "color": "#C5C5C5",
+	  "color": "#888888",
 	  "brightness": 0.4,
 	  "atlas": [
-		1,
+		2,
 		0
 	  ],
 	  "bg": 1,
 	  "music": 1,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
-	  "length": 149,
-	  "start": 1,
+	  "length": 148,
+	  "start": 2,
 	  "end": 149
 	},
 	"2": {
 	  "id": 2,
 	  "name": "abandoned mines",
-	  "color": "#999999",
+	  "color": "#666655",
 	  "brightness": 0.4,
 	  "atlas": [
-		1,
+		3,
 		0
 	  ],
 	  "bg": 4,
@@ -3510,10 +3510,10 @@
 	"3": {
 	  "id": 3,
 	  "name": "gem caverns",
-	  "color": "#A000FF",
+	  "color": "#674EA7",
 	  "brightness": 0.4,
 	  "atlas": [
-		1,
+		4,
 		0
 	  ],
 	  "bg": 1,
@@ -3527,10 +3527,10 @@
 	"4": {
 	  "id": 4,
 	  "name": "deeper caves",
-	  "color": "#273934",
+	  "color": "#47635b",
 	  "brightness": 0.4,
 	  "atlas": [
-		1,
+		5,
 		0
 	  ],
 	  "bg": 1,
@@ -3544,10 +3544,10 @@
 	"5": {
 	  "id": 5,
 	  "name": "deeper caves",
-	  "color": "#354843",
+	  "color": "#53766C",
 	  "brightness": 0.4,
 	  "atlas": [
-		1,
+		6,
 		0
 	  ],
 	  "bg": 1,
@@ -3564,7 +3564,7 @@
 	  "color": "#589D8C",
 	  "brightness": 0.4,
 	  "atlas": [
-		1,
+		7,
 		0
 	  ],
 	  "bg": 1,
@@ -3578,7 +3578,7 @@
 	"7": {
 	  "id": 7,
 	  "name": "frozen",
-	  "color": "#00FFFF",
+	  "color": "#6D9EEB",
 	  "brightness": 0.8,
 	  "atlas": [
 		0,
@@ -3595,7 +3595,7 @@
 	"8": {
 	  "id": 8,
 	  "name": "nuclear winter",
-	  "color": "#56DA84",
+	  "color": "#009F14",
 	  "brightness": 0.4,
 	  "atlas": [
 		1,
@@ -3612,7 +3612,7 @@
 	"9": {
 	  "id": 9,
 	  "name": "haze",
-	  "color": "#B3D8D8",
+	  "color": "#ACC3C3",
 	  "brightness": 0.8,
 	  "atlas": [
 		2,
@@ -3663,7 +3663,7 @@
 	"12": {
 	  "id": 12,
 	  "name": "outer core",
-	  "color": "#EE7C49",
+	  "color": "#FFCB68",
 	  "brightness": 0.4,
 	  "atlas": [
 		5,
@@ -3680,7 +3680,7 @@
 	"13": {
 	  "id": 13,
 	  "name": "the core",
-	  "color": "#F1C232",
+	  "color": "#FFFF90",
 	  "brightness": 0.4,
 	  "atlas": [
 		6,

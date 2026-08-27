@@ -2,16 +2,24 @@
 
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="1_m6rkq"]
 [ext_resource type="Script" uid="uid://d1v5877lsmr4v" path="res://Scripts/LoadingScreen.gd" id="1_qjj4j"]
-[ext_resource type="Texture2D" uid="uid://dhmp7jfu8pog1" path="res://Visuals/Panelpix.png" id="2_qjj4j"]
-[ext_resource type="Texture2D" uid="uid://bjwm0qp2c3htl" path="res://Visuals/PanelRim.png" id="3_dq85b"]
+[ext_resource type="Shader" uid="uid://behdrku3u66xq" path="res://Visuals/Checkerboard.gdshader" id="2_dq85b"]
+[ext_resource type="Texture2D" uid="uid://dqs17kmqkxwp4" path="res://Visuals/Backgrounds/Background4.png" id="3_ffghy"]
+[ext_resource type="Texture2D" uid="uid://djhyimix0wpgn" path="res://Visuals/Panel.png" id="5_68uam"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ffghy"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eywpa"]
+shader = ExtResource("2_dq85b")
+shader_parameter/size = 25.0
+shader_parameter/color1 = Color(0.21, 0.21, 0.21, 1)
+shader_parameter/color2 = Color(0, 0, 0, 1)
+shader_parameter/speed = 1.0
+shader_parameter/direction_x = 1.0
+shader_parameter/direction_y = 1.0
 
-[sub_resource type="Gradient" id="Gradient_68uam"]
+[sub_resource type="Gradient" id="Gradient_davxm"]
+colors = PackedColorArray(0.55, 0.55, 0.55, 0.5411765, 1, 1, 1, 0.48235294)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_davxm"]
-gradient = SubResource("Gradient_68uam")
-width = 200
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j7e3e"]
+gradient = SubResource("Gradient_davxm")
 
 [node name="Loading" type="Control" unique_id=434512329]
 layout_mode = 3
@@ -23,14 +31,14 @@ grow_vertical = 2
 script = ExtResource("1_qjj4j")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=671646722]
-visible = false
+material = SubResource("ShaderMaterial_eywpa")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_ffghy")
+texture = ExtResource("3_ffghy")
 
 [node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=243784766]
 layout_mode = 1
@@ -51,6 +59,23 @@ stretch_margin_left = 10
 stretch_margin_top = 10
 stretch_margin_right = 10
 stretch_margin_bottom = 10
-texture_under = ExtResource("2_qjj4j")
-texture_over = ExtResource("3_dq85b")
-texture_progress = SubResource("GradientTexture1D_davxm")
+texture_under = ExtResource("5_68uam")
+texture_progress = SubResource("GradientTexture1D_j7e3e")
+
+[node name="Button" type="Button" parent="." unique_id=1762844934]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.7
+anchor_right = 0.6
+anchor_bottom = 0.8
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 78
+text = "SKIP"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

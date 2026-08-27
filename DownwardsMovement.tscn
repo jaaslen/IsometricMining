@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://bf4q07s8cqp2h"]
+
+[ext_resource type="Script" uid="uid://b6elbmvdy237w" path="res://downwards_movement.gd" id="1_m3q37"]
+[ext_resource type="Script" uid="uid://ci2nf0matvb3u" path="res://optionbutton.gd" id="2_3md36"]
+[ext_resource type="StyleBox" uid="uid://d0q8uxj0q6kgx" path="res://Visuals/MetalPanelNarrow.tres" id="3_03boy"]
+
+[sub_resource type="Animation" id="Animation_3md36"]
+resource_name = "Down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1080)]
+}
+
+[sub_resource type="Animation" id="Animation_03boy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1080)]
+}
+
+[sub_resource type="Animation" id="Animation_bkg5q"]
+resource_name = "Up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1080), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sw74h"]
+_data = {
+&"Down": SubResource("Animation_3md36"),
+&"RESET": SubResource("Animation_03boy"),
+&"Up": SubResource("Animation_bkg5q")
+}
+
+[node name="Control" type="Control" unique_id=1237177536]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m3q37")
+
+[node name="Panel" type="Panel" parent="." unique_id=1116456711]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0000005
+offset_top = 1080.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1692385105]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=496081288]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+metadata/_edit_use_anchors_ = true
+
+[node name="1" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=150224440]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Move down on:
+Centre mined"
+autowrap_mode = 2
+script = ExtResource("2_3md36")
+selected = true
+
+[node name="2" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=797206286]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Move down on:
+All blocks mined"
+autowrap_mode = 2
+script = ExtResource("2_3md36")
+
+[node name="3" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=407067038]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Stay at current depth 
+(ores will regenerate)"
+autowrap_mode = 2
+script = ExtResource("2_3md36")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=176665387]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 223
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/HBoxContainer2" unique_id=282611708]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
+text = "Prevent going deeper if there is a rare ore:
+ENABLED"
+script = ExtResource("2_3md36")
+selected = true
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer/HBoxContainer2" unique_id=819418581]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
+text = "Prevent going deeper if there is a very rare ore:
+ENABLED"
+script = ExtResource("2_3md36")
+selected = true
+
+[node name="Button" type="Button" parent="." unique_id=1809321679]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.41093746
+anchor_top = 0.93333334
+anchor_right = 0.5890625
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = ExtResource("3_03boy")
+text = "  Mine Settings  "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1223421549]
+libraries/ = SubResource("AnimationLibrary_sw74h")
+
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/1" to="." method="_on_1_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/2" to="." method="_on_2_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/3" to="." method="_on_3_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer2/Button" to="." method="_on_rare_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

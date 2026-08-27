@@ -6,9 +6,9 @@ func _ready() -> void:
 	Global.LayerChanged.connect(LayerChanged)
 	pass # Replace with function body.
 
-func LayerChanged(_Layer):
-	
-	play("LayerTransition",-1,8)
+func LayerChanged(Layer):
+	if Layer["id"] != 0:
+		play("LayerTransition",-1,8)
 
 
 # Called every frame. '_delta' is the elapsed time since the previous frame.

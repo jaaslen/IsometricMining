@@ -14,7 +14,7 @@ var TraitName : String
 func _ready() -> void:
 	TraitName = Trait["name"]
 
-	#Global.OreChanged.connect(OreChanged)
+
 	Description.text = Trait["description"]
 
 	#Value = Global.OreAmounts[Trait["id"]]

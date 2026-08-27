@@ -3,7 +3,7 @@ extends VBoxContainer
 
 func _ready() -> void:
 	get_viewport().connect("size_changed", Callable(self, "update_position_and_scale"))
-	#Global.OreChanged.connect(AddScenes)
+
 	Global.LayerChanged.connect(ReloadScenes)
 	
 	AddScenes()

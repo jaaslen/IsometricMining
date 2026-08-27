@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bynqtr6o477ob" path="res://Scripts/PickaxeSelection.gd" id="1_48p6v"]
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="1_dgjc1"]
-[ext_resource type="StyleBox" uid="uid://bmkhgobjdxea2" path="res://Visuals/PureMetalPanel.tres" id="2_iktsf"]
 [ext_resource type="Texture2D" uid="uid://d35wlbx8ymfgl" path="res://Visuals/icon.svg" id="3_wob85"]
 [ext_resource type="Script" uid="uid://dwwe4laybj2bm" path="res://Scripts/EquipButton.gd" id="4_3lv84"]
 [ext_resource type="Script" uid="uid://dfd2ffg4q82ph" path="res://Scenes/RichResizeLabel.gd" id="5_d6djc"]
@@ -10,16 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://bhqqk4lwgwgs3" path="res://Visuals/Ranks/A.png" id="8_d6djc"]
 [ext_resource type="Texture2D" uid="uid://by7ba5d0vn2ok" path="res://Visuals/Ranks/1.png" id="9_5gwrt"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6djc"]
-bg_color = Color(0.5625, 0.5625, 0.5625, 0.38431373)
+[sub_resource type="SystemFont" id="SystemFont_d6djc"]
+subpixel_positioning = 0
 
 [node name="Button" type="Button" unique_id=1486486683]
 custom_minimum_size = Vector2(240, 100)
 offset_right = 614.0
-offset_bottom = 180.0
+offset_bottom = 119.0
 size_flags_horizontal = 3
 theme = ExtResource("1_dgjc1")
-theme_override_styles/normal = ExtResource("2_iktsf")
 script = ExtResource("1_48p6v")
 
 [node name="Texture" type="TextureRect" parent="." unique_id=689352701]
@@ -41,11 +39,16 @@ layout_mode = 0
 show_percentage = false
 
 [node name="Label" type="RichTextLabel" parent="." unique_id=1358114135]
-layout_mode = 0
-offset_left = 112.0
-offset_top = 16.0
-offset_right = 509.0
-offset_bottom = 74.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17300001
+anchor_top = 0.126
+anchor_right = 0.5
+anchor_bottom = 0.134
+offset_left = -0.22200775
+offset_top = 1.0059996
+offset_bottom = 90.054
+grow_horizontal = 2
 mouse_filter = 2
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 30
@@ -53,10 +56,11 @@ bbcode_enabled = true
 text = "kffff"
 fit_content = true
 autowrap_mode = 0
-vertical_alignment = 2
+vertical_alignment = 1
 script = ExtResource("5_d6djc")
 
 [node name="Button" type="Button" parent="." unique_id=1097033466]
+visible = false
 modulate = Color(1, 1, 1, 0.6117647)
 layout_mode = 1
 anchors_preset = -1
@@ -71,22 +75,22 @@ offset_bottom = -3.980011
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("6_iktsf")
 theme_override_font_sizes/font_size = 9
-theme_override_styles/normal = SubResource("StyleBoxFlat_d6djc")
 text = "Equip?"
 vertical_icon_alignment = 2
 script = ExtResource("4_3lv84")
 
 [node name="ID" type="Label" parent="." unique_id=858748157]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -73.0
-offset_top = -44.0
-offset_right = -13.0
-offset_bottom = 7.0
+offset_left = -254.0
+offset_top = -45.0
+offset_right = -194.0
+offset_bottom = 6.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/outline_size = 5
@@ -96,12 +100,17 @@ horizontal_alignment = 2
 
 [node name="Selected" type="Label" parent="." unique_id=1704957522]
 layout_mode = 1
-offset_left = 7.0
-offset_top = -31.0
-offset_right = 118.0
-offset_bottom = 135.0
-theme_override_font_sizes/font_size = 124
-text = "☐"
+anchors_preset = -1
+anchor_left = 0.011000001
+anchor_top = -0.11100001
+anchor_right = 0.192
+anchor_bottom = 0.75000006
+offset_left = 0.24599934
+offset_top = -0.01999855
+offset_right = 0.11199951
+offset_bottom = -1.5258789e-05
+theme_override_fonts/font = SubResource("SystemFont_d6djc")
+theme_override_font_sizes/font_size = 116
 
 [node name="Rank" type="TextureRect" parent="." unique_id=1971688276]
 z_index = 1

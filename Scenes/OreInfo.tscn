@@ -1,30 +1,18 @@
 [gd_scene format=3 uid="uid://dg1k0b6frkr3x"]
 
 [ext_resource type="Script" uid="uid://c45yi4iig5m6m" path="res://Scripts/OreInfoPanel.gd" id="1_swqym"]
-[ext_resource type="FontFile" uid="uid://dl7cun7xt8hoy" path="res://Visuals/outlinedfont2.otf" id="2_wc56c"]
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="3_7a4tp"]
+[ext_resource type="Script" uid="uid://cjoesv6tpkk37" path="res://Scripts/ResizeLabel.gd" id="4_3o36f"]
 [ext_resource type="Texture2D" uid="uid://dcicd3utpj2kf" path="res://Visuals/OreSheet.png" id="4_e1t2j"]
 [ext_resource type="Script" uid="uid://2anxkc8y6jfh" path="res://Scripts/InfoContainer.gd" id="5_42bqh"]
 [ext_resource type="Script" uid="uid://os1qbesmdys0" path="res://addons/chartdesigner/chart_designer.gd" id="6_7a4tp"]
 [ext_resource type="Script" uid="uid://dl6w08gcp0vea" path="res://Scripts/ChartPanel.gd" id="6_42bqh"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqe5m"]
-bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5h8xl"]
-bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_auoxk"]
 atlas = ExtResource("4_e1t2j")
 region = Rect2(128, 0, 128, 136)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_42bqh"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbjw7"]
-bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_665rs"]
-bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
 
 [node name="Control" type="Control" unique_id=1820293531]
 layout_mode = 3
@@ -53,15 +41,18 @@ size_flags_stretch_ratio = 2.0
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="Left" type="Button" parent="FullContainer/HBoxContainer" unique_id=1383076590]
+[node name="Left" type="VBoxContainer" parent="FullContainer/HBoxContainer" unique_id=798783650]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
+
+[node name="Left" type="Button" parent="FullContainer/HBoxContainer/Left" unique_id=1383076590]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 focus_mode = 0
-theme_override_font_sizes/font_size = 90
-theme_override_styles/pressed = SubResource("StyleBoxFlat_oqe5m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5h8xl")
-text = "◀"
+theme_override_font_sizes/font_size = 40
+text = "prev"
 
 [node name="Ore" type="VBoxContainer" parent="FullContainer/HBoxContainer" unique_id=1153031582]
 layout_mode = 2
@@ -127,9 +118,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
-text = "★★★★★"
+text = "1 Star"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_3o36f")
 
 [node name="Panel3" type="Panel" parent="FullContainer/HBoxContainer/Data/HBoxContainer" unique_id=355233569]
 layout_mode = 2
@@ -142,38 +134,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 40
 text = "#022"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Panel2" type="Panel" parent="FullContainer/HBoxContainer/Data/HBoxContainer" unique_id=1564238539]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.33
-
-[node name="Button" type="Button" parent="FullContainer/HBoxContainer/Data/HBoxContainer/Panel2" unique_id=1805182059]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -97.75
-offset_bottom = 81.25
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_wc56c")
-theme_override_font_sizes/font_size = 124
-theme_override_styles/normal = SubResource("StyleBoxEmpty_42bqh")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_nbjw7")
-theme_override_styles/hover = SubResource("StyleBoxFlat_665rs")
-text = "⌕"
-vertical_icon_alignment = 2
+script = ExtResource("4_3o36f")
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel4" type="Panel" parent="FullContainer/HBoxContainer/Data/HBoxContainer" unique_id=531454715]
 layout_mode = 2
@@ -187,19 +156,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = -61.0
-offset_right = 2.0
-offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_wc56c")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxEmpty_42bqh")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_nbjw7")
-theme_override_styles/hover = SubResource("StyleBoxFlat_665rs")
-text = "📈"
+text = "Info"
 vertical_icon_alignment = 2
+script = ExtResource("4_3o36f")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="FullContainer/HBoxContainer/Data" unique_id=1603072931]
 layout_mode = 2
@@ -222,11 +185,8 @@ theme_override_constants/separation = -8
 [node name="Button2" type="Button" parent="FullContainer/HBoxContainer/Right" unique_id=1135111892]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.2
-theme_override_font_sizes/font_size = 90
-theme_override_styles/pressed = SubResource("StyleBoxFlat_oqe5m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5h8xl")
-text = "▶ "
+theme_override_font_sizes/font_size = 40
+text = "next"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="FullContainer" unique_id=1639120223]
 layout_mode = 2
@@ -300,9 +260,38 @@ offset_bottom = 120.0
 grow_horizontal = 0
 text = "X"
 
-[connection signal="pressed" from="FullContainer/HBoxContainer/Left" to="." method="LeftPress"]
-[connection signal="pressed" from="FullContainer/HBoxContainer/Data/HBoxContainer/Panel2/Button" to="." method="_on_button_pressed"]
+[node name="Panel2" type="Panel" parent="." unique_id=1564238539]
+modulate = Color(1, 0.8671875, 0, 1)
+z_index = 20
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.036458332
+anchor_top = -0.11851852
+anchor_right = 0.0052083335
+anchor_bottom = 1.0
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Panel2" unique_id=1805182059]
+z_index = 20
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxEmpty_42bqh")
+text = ">"
+vertical_icon_alignment = 2
+script = ExtResource("4_3o36f")
+
+[connection signal="pressed" from="FullContainer/HBoxContainer/Left/Left" to="." method="LeftPress"]
 [connection signal="pressed" from="FullContainer/HBoxContainer/Data/HBoxContainer/Panel4/Button" to="Panel" method="_on_button_pressed"]
 [connection signal="LoadGraph" from="FullContainer/HBoxContainer/Data/ScrollContainer/InfoContainer" to="Panel" method="LoadGraph"]
 [connection signal="pressed" from="FullContainer/HBoxContainer/Right/Button2" to="." method="RightPress"]
 [connection signal="pressed" from="Panel/Button" to="Panel" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel2/Button" to="." method="_on_button_pressed"]

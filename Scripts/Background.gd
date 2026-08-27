@@ -9,7 +9,8 @@ var OnSurface = true
 func _ready():
 	Global.ChangeBG.connect(NewBG)
 	Global.MovedBetween.connect(SurfaceShift)
-	NewBG(1,Color(1,1,1,1),1)
+	#NewBG(1,Color(1,1,1,1),1)
+	
 	#ShiftBrightness(0.1)
 
 func NewBG(id,Colour,_brightness):
@@ -21,7 +22,7 @@ func NewBG(id,Colour,_brightness):
 	#else:
 	OriginalColor = Colour
 		
-	material.set("shader_parameter/color", Colour * 0.9 + Color(0,0,0,1))
+	material.set("shader_parameter/color", Colour - Color(0.2,0.2,0.2,0))
 
 	#$Fill.modulate = OriginalColor * Color(0.5,0.5,0.75)
 	#OriginalColor = Colour + Color(0,0,0,1)

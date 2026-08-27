@@ -1,8 +1,8 @@
-extends ColorRect
+extends Control
 
 
-const VU_COUNT = 30
-const FREQ_MAX = 11050.0
+const VU_COUNT = 32
+const FREQ_MAX = 2000.0
 const MIN_DB = 60
 const ANIMATION_SPEED = 0.1
 const HEIGHT_SCALE = 8.0
@@ -14,13 +14,13 @@ var min_values = []
 var max_values = []
 
 func _ready():
-	spectrum = AudioServer.get_bus_effect_instance(0, 0, 0)
+	spectrum = AudioServer.get_bus_effect_instance(0, 0)
 	min_values.resize(VU_COUNT)
 	min_values.fill(0.0)
 	max_values.resize(VU_COUNT)
 	max_values.fill(0.0)
 
-func _process(_delta : float):
+func _process(delta):
 	var prev_hz = 0
 	var data = []
 	for i in range(1, VU_COUNT + 1):
@@ -39,7 +39,4 @@ func _process(_delta : float):
 	var fft = []
 	for i in range(VU_COUNT):
 		fft.append(lerp(min_values[i], max_values[i], ANIMATION_SPEED))
-	var index = 0
-	for i in fft:
-		color_rect.get_material().set_shader_parameter("hz" + str(index), i)
-		index += 1
+	color_rect.get_material().set_shader_parameter("freq_data", fft)

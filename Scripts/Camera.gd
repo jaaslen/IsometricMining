@@ -51,11 +51,11 @@ func _process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func AddTrauma(amount):
-	trauma = min(trauma + amount, 1.0)
+	trauma = min(trauma + amount, 0.8)
 
 
 func shake():
 	var amount = pow(trauma, 2) / 10
 	rotation = max_roll * amount * randf_range(-1, 1)
 	offset.x = max_offset.x * amount * randf_range(-1, 1)
-	offset.y = max_offset.y * amount * randf_range(-1, 1) + 5000
+	#offset.y = max_offset.y * amount * randf_range(-1, 1) + 5000

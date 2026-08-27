@@ -8,6 +8,7 @@ var last_mouse_x := 0.0
 var target_rotation := 0.0
 
 func _ready():
+	Global.MovedBetween.connect(SurfaceShift)
 	last_mouse_x = get_viewport().get_mouse_position().x
 
 func _process(delta):
@@ -30,3 +31,6 @@ func _process(delta):
 		target_rotation,
 		delta * (rotate_speed if target_rotation != 0 else return_speed)
 	)
+
+func SurfaceShift(boolean):
+	visible = !boolean
