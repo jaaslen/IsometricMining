@@ -55,6 +55,8 @@ func _ready() -> void:
 	update_position_and_scale()
 	
 	Global.FullLayerReset($Layers.get_child_count())
+	Global.LayerChanged.connect(ResetLayers)
+	Global.DownToLayer.connect(MoveBetween)
 	
 	tile_set.tile_size = Global.TileSize
 
@@ -372,7 +374,10 @@ func MoveDownFullCheck():
 		var index := 0
 		for coords in TileCoords:
 			var toplayernode : TileMapLayer = self.get_node("Layers").get_node("1")
+			var Tile = Global.GameData["ores"][var_to_str(Global.TopLayer[index])]["id"]
 			var TileAtlas = Global.GameData["ores"][var_to_str(Global.TopLayer[index])]["atlas"]
+			if Tile == 1:
+				TileAtlas = Global.Layer["atlas"]
 			toplayernode.set_cell(coords,0,Vector2i(TileAtlas[0],TileAtlas[1]))
 			index += 1
 			
@@ -480,7 +485,7 @@ func ResetSideLayer():
 	MovingSideways = Vector2(0,0)
 			
 		
-func ResetLayers():
+func ResetLayers(_Layer : Dictionary = {}):
 
 	Global.GlobalLayerChange()
 
@@ -517,7 +522,8 @@ func ResetLayers():
 		#newlayer = [1,1,1,1,Global.GenerateOre(),1,1,1,1]
 	#else:
 	for i in range(9):
-		newlayer.append(Global.GenerateOre())
+		newlayer.append(Global.GenerateOre(Global.Tiles.size()))
+		
 
 		
 	
@@ -692,16 +698,19 @@ func GetMouse():
 	elif ShiftLocked:
 		return Vector2(32,17)
 		
-func MoveBetween():
+func MoveBetween(override := false):
+	
 	
 	if Mining == false:
-		if InMine == true:
+		if InMine == true and override == false:
 			emit_signal("ExitAttempt")
 			var x = await Global.ExitPromptSelected
 			if x == false:
 				return
 		
-		ToSurface = !ToSurface
+			ToSurface = !ToSurface
+		else:
+			ToSurface = false
 		if !ToSurface:
 			Global.FullLayerReset($Layers.get_child_count())
 			ResetLayers()
@@ -837,3 +846,8 @@ func _on_move_between_pressed() -> void:
 		Mining = false
 		ResetMining()
 		MoveBetween()
+
+
+func _on_mine_settings_selected(_selected : int) -> void:
+	MoveDownFullCheck()
+	pass # Replace with function body.

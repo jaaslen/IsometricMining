@@ -69,7 +69,7 @@ func Setup():
 		i.queue_free()
 	for Pickaxe in Global.GameData["pickaxes"].values():
 
-		if Pickaxe["base"] == true:
+		if Pickaxe["base"] == true and Pickaxe["id"] != 0:
 			
 			var NewInventoryItem = InventoryScene.instantiate()
 			

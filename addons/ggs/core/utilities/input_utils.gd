@@ -49,7 +49,7 @@ const MODIFIERS_MASK: int = KEY_MASK_SHIFT | KEY_MASK_CTRL | KEY_MASK_ALT
 
 
 ## Serializes the given event by saving its key properties in an array.
-static func serialize_event(event: InputEvent) -> Array:
+static func serialize_event(event: InputEvent) -> Array[Variant]:
 	var type: int = -1
 	var id: int = -1
 	var axis_dir: int = 0
@@ -109,7 +109,7 @@ static func deserialize_event(data: Array) -> InputEvent:
 
 ## Retrieves the input events associated with the given action. Unlike [method InputMap.action_get_events()], it works in the
 ## editor.
-static func action_get_events(action: String) -> Array:
+static func action_get_events(action: String) -> Array[Variant]:
 	var project_file: ConfigFile = ConfigFile.new()
 	project_file.load("res://project.godot")
 	var action_properties: Dictionary = project_file.get_value("input", action)

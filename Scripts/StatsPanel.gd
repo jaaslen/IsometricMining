@@ -10,11 +10,12 @@ func _ready() -> void:
 func PickaxeChanged(PickaxeID):
 	var CurrentLevel = Global.PickaxeLevels[PickaxeID]
 	if Global.GameData["pickaxes"][str(PickaxeID)]["maxlevel"] == CurrentLevel:
-		set_tab_title(1,"Max Level Achieved!")
-		set_tab_disabled(1,true)
+		#set_tab_title(1,"Max Level Achieved!")
+		#set_tab_disabled(1,true)
 		if current_tab == 1:
 			select_previous_available()
 	else:
-		set_tab_disabled(1,false)
-		set_tab_title(1,"Upgrade")
+		pass
+		#set_tab_disabled(1,false)
+		#set_tab_title(1,"Upgrade")
 # Called every frame. 'delta' is the elapsed time since the previous frame.

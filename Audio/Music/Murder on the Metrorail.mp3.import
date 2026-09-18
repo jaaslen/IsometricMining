@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvjx0kmnoik8l"
+path="res://.godot/imported/Murder on the Metrorail.mp3-c957697658772b3f76e06bc90f14cb87.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Murder on the Metrorail.mp3"
+dest_files=["res://.godot/imported/Murder on the Metrorail.mp3-c957697658772b3f76e06bc90f14cb87.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

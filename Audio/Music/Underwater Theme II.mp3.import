@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://46loeaijp0tt"
+path="res://.godot/imported/Underwater Theme II.mp3-d73e00b931254907dbbb290a10ee9e06.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Underwater Theme II.mp3"
+dest_files=["res://.godot/imported/Underwater Theme II.mp3-d73e00b931254907dbbb290a10ee9e06.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

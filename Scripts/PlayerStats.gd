@@ -11,7 +11,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	for stat in Global.GameData["stats"].values():
 		get_child(int(stat["id"])).text = " " + stat["name"] + " : " + str(Global.Stats[stat["name"]])
-		if Global.Stats[stat["name"]] == 1.0 and stat["id"] not in [0,1]:
-			get_child(stat["id"]).text = " ??? : 1.0"
+
 			
 		

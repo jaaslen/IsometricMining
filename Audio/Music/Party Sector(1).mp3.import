@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c632mwuslan5l"
+path="res://.godot/imported/Party Sector(1).mp3-1516dbaf98c2763715fe95e9a6ef0dcb.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Party Sector(1).mp3"
+dest_files=["res://.godot/imported/Party Sector(1).mp3-1516dbaf98c2763715fe95e9a6ef0dcb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

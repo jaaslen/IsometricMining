@@ -39,7 +39,8 @@ var Stats : Dictionary[String,float] = {
 
 
 var MineAdjacent: bool = false
-var MULTIMINE : int = 1
+var OreMultiplier : int = 1
+var MultiMine : int = 1
 
 func CalculateStats():
 	for i in Stats:

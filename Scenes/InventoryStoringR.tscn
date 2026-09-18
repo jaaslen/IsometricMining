@@ -44,12 +44,9 @@ z_index = 1
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.108
-anchor_right = 0.64900005
-anchor_bottom = 1.0120001
-offset_left = 0.15999603
-offset_right = 0.22994995
-offset_bottom = 0.019996643
+anchor_left = 0.10821918
+anchor_right = 0.64931506
+anchor_bottom = 1.0123125
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_constants/outline_size = 0
@@ -58,32 +55,32 @@ text = "Iron"
 horizontal_alignment = 1
 vertical_alignment = 1
 text_overrun_behavior = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Divider" type="ColorRect" parent="." unique_id=974377046]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.7
-anchor_top = 0.5
-anchor_right = 0.7
-anchor_bottom = 0.5
-offset_left = -5.0
-offset_top = -5.0
-offset_right = 5.0
-offset_bottom = 5.0
+anchor_left = 0.58287674
+anchor_top = 0.4296875
+anchor_right = 0.5965753
+anchor_bottom = 0.5859375
+offset_left = -3.0517578e-05
+offset_right = 3.0517578e-05
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.02
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Amount" type="Label" parent="." unique_id=538097013]
 z_index = 1
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.674
-anchor_right = 1.0
+anchor_left = 0.574685
+anchor_right = 0.87739724
 anchor_bottom = 1.0
 offset_left = -0.020019531
 offset_bottom = 0.5
@@ -94,6 +91,7 @@ text = "5"
 horizontal_alignment = 1
 vertical_alignment = 1
 text_overrun_behavior = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="LineEdit" type="LineEdit" parent="." unique_id=89805319]
 visible = false
@@ -117,6 +115,25 @@ theme = ExtResource("1_emcw4")
 theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = ExtResource("4_8jjhe")
 text = "<"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sell" type="Button" parent="." unique_id=32631264]
+visible = false
+modulate = Color(2.055, 2.055, 2.055, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8157534
+anchor_top = -0.0078125
+anchor_right = 0.9636986
+anchor_bottom = 0.9921875
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_emcw4")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = ExtResource("4_8jjhe")
+text = "Sell"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="mouse_entered" from="All" to="." method="_on_all_mouse_entered"]

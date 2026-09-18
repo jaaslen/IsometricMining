@@ -1,6 +1,25 @@
 [gd_scene format=3 uid="uid://d4c2y0wvfh54m"]
 
 [ext_resource type="Script" uid="uid://bcfhdprvsm17w" path="res://Scripts/BackgroundMusic.gd" id="1_iysw5"]
+[ext_resource type="Script" uid="uid://c6lfytsuwata5" path="res://Scenes/audio_stream_playlist.gd" id="2_6b4sy"]
+[ext_resource type="AudioStream" uid="uid://0sc5kpri4fd" path="res://Audio/Music/ChillLofiR.mp3" id="2_kgefd"]
+[ext_resource type="AudioStream" uid="uid://bk1ssaud1rfox" path="res://Audio/Music/Short__Respite.mp3" id="3_kokqj"]
+[ext_resource type="AudioStream" uid="uid://dxvu6uwmhcxhf" path="res://Audio/Music/Short__Guitar.mp3" id="4_jollc"]
+[ext_resource type="AudioStream" uid="uid://ca371p55vsuqq" path="res://Audio/Music/Song__Memory.mp3" id="5_s6noy"]
+[ext_resource type="AudioStream" uid="uid://o00dapu6fd2i" path="res://Audio/Music/Song__Echoes.mp3" id="6_a8nsr"]
+[ext_resource type="AudioStream" uid="uid://kjeqeiirp32l" path="res://Audio/Music/Song__Lava.mp3" id="7_o1gfp"]
+[ext_resource type="AudioStream" uid="uid://cjp2so2utblhh" path="res://Audio/SFX/break.mp3" id="8_2jk3c"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_iysw5"]
+random_pitch = 1.122462
+streams_count = 7
+stream_0/stream = ExtResource("2_kgefd")
+stream_1/stream = ExtResource("3_kokqj")
+stream_2/stream = ExtResource("4_jollc")
+stream_3/stream = ExtResource("5_s6noy")
+stream_4/stream = ExtResource("6_a8nsr")
+stream_5/stream = ExtResource("7_o1gfp")
+stream_6/stream = ExtResource("8_2jk3c")
 
 [node name="Music" type="Control" unique_id=447228622]
 layout_mode = 3
@@ -11,7 +30,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iysw5")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2102491675]
+[node name="AudioStreamPlaylist" type="AudioStreamPlayer" parent="." unique_id=2102491675]
+stream = SubResource("AudioStreamRandomizer_iysw5")
 volume_db = -18.0
 pitch_scale = 0.8
 bus = &"Music"
+script = ExtResource("2_6b4sy")
+
+[node name="AudioStreamOnce" type="AudioStreamPlayer" parent="." unique_id=1735583215]
+volume_db = -18.0
+bus = &"Music"
+
+[connection signal="finished" from="AudioStreamOnce" to="." method="_on_audio_stream_once_finished"]

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cdsd6xbm8m530"]
 
 [ext_resource type="Script" uid="uid://iphldv5dh8h8" path="res://Scripts/LayerInfoPanel.gd" id="1_cshn8"]
-[ext_resource type="Script" uid="uid://cjoesv6tpkk37" path="res://Scripts/ResizeLabel.gd" id="3_cshn8"]
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="3_ptoyi"]
+[ext_resource type="Texture2D" uid="uid://djhyimix0wpgn" path="res://Visuals/Panel.png" id="4_4q1xk"]
 [ext_resource type="Script" uid="uid://bhycfho46ct80" path="res://Scripts/LayerOreInfo.gd" id="5_4q1xk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqe5m"]
@@ -24,6 +24,17 @@ bg_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 corner_detail = 1
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8vn1h"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 60.0
+texture = ExtResource("4_4q1xk")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
 
 [node name="Control" type="Control" unique_id=1820293531]
 layout_mode = 3
@@ -84,7 +95,6 @@ theme_override_styles/normal = ExtResource("3_ptoyi")
 text = "Layer Name"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("3_cshn8")
 
 [node name="Depthrange" type="Label" parent="FullContainer/HBoxContainer/Data/HBoxContainer" unique_id=32318090]
 custom_minimum_size = Vector2(0, 85)
@@ -97,7 +107,6 @@ theme_override_styles/normal = ExtResource("3_ptoyi")
 text = "100-100"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("3_cshn8")
 
 [node name="Panel3" type="Panel" parent="FullContainer/HBoxContainer/Data/HBoxContainer" unique_id=355233569]
 layout_mode = 2
@@ -117,7 +126,6 @@ theme_override_font_sizes/font_size = 57
 text = "#022"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("3_cshn8")
 
 [node name="Panel2" type="Panel" parent="FullContainer/HBoxContainer/Data/HBoxContainer" unique_id=1564238539]
 layout_mode = 2
@@ -365,6 +373,7 @@ ticks_on_borders = true
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.85
+theme_override_styles/panel = SubResource("StyleBoxTexture_8vn1h")
 
 [node name="OreInfo" type="VBoxContainer" parent="FullContainer/HBoxContainer/Data/ScrollContainer" unique_id=1060689651]
 layout_mode = 2

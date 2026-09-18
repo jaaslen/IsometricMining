@@ -61,19 +61,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_42bqh")
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 drag_to_rearrange_enabled = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Ores" type="Control" parent="HBoxContainer/TabContainer" unique_id=2037612179]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/TabContainer/Ores" unique_id=1582259720]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.93000007
+offset_bottom = 0.16992188
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_d3rv7")
@@ -111,7 +113,6 @@ theme = ExtResource("4_d3rv7")
 theme_override_styles/panel = SubResource("StyleBoxFlat_xvgq2")
 
 [node name="Layers" type="Control" parent="HBoxContainer/TabContainer" unique_id=483306039]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -120,6 +121,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -41.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_d3rv7")

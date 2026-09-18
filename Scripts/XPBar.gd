@@ -36,14 +36,12 @@ func _ready() -> void:
 	#Tier.self_modulate = Color(level["color"]) 
 	
 	
-	if level["tiertotal"] > level["tier"]:
-		TierProgress.visible = true
-		TierProgress.max_value = level["tiertotal"]
-		TierProgress.value = level["tier"]
+
+	TierProgress.visible = true
+	TierProgress.max_value = level["tiertotal"]
+	TierProgress.value = level["tier"]
 		#TierBox.size.x = 174
-	else:
-		TierProgress.visible = false
-		#TierBox.size.x = 140
+
 	
 	#max_value = Global.GameData["levels"][str(Global.level)]["nextxp"]
 	#Sprite.texture = load("res://Visuals/Ranks/" + Global.GameData["levels"][str(Global.level)]["name"] + ".png")
@@ -62,11 +60,14 @@ func GainedXP(Amount) -> void:
 		
 		if Bar.value >= Bar.max_value:
 			LevelUp()
+			
+		
+		
 		if Amount >= floori(Global.Level["nextxp"] / 100.0):
-			$XPBar/XPAmount.text = "+" + str(int(Amount)) + " xp"
+			$XPBar/XPAmount.text = "+" + Global.Suffix(int(Amount),true) + " xp"
 			$XPBar/AnimationPlayer.play("XPGain")
 		elif Amount > 1 and $XPBar/AnimationPlayer.is_playing() == false:
-			$XPBar/XPAmount.text = "+" + str(int(Amount)) + " xp"
+			$XPBar/XPAmount.text = "+" + Global.Suffix(int(Amount),true) + " xp"
 			$XPBar/AnimationPlayer.play("SmallXPGain")
 
 

@@ -4,6 +4,7 @@ signal OreChanged
 signal DepthChanged
 signal PickaxeChanged
 signal LayerChanged
+signal DownToLayer
 signal LevelUp
 signal ExitPromptSelected
 signal CameraShake
@@ -13,13 +14,13 @@ signal XPChanged
 
 var AtTitle : bool = true
 
-var DepthPowerCurve : Curve = preload("res://Boosts/DepthPowerCurve.tres")
+
 var BaseScreenSize = Vector2(1920.0,1080.0)
 
 var GameData : Dictionary = LoadJson("res://Data/Data.json")
 var BaseSaveData : Dictionary = LoadJson("res://Data/SaveData.json")
 var SavePath : String = "user://Save.json"
-var SaveData
+var SaveData : FileAccess
 
 var MiningMode : int = 0
 var RareMode : bool = true
@@ -73,7 +74,7 @@ var Stats : Dictionary[String,float] = {
 #var GameData : Dictionary = LoadJson("res://Data/PickaxeData.json")
 #var GameData : Dictionary = LoadJson("res://Data/UpgradeData.json")
 
-var Pickaxe = GameData["pickaxes"]["1"]
+var Pickaxe = GameData["pickaxes"]["0"]
 var Layer = GameData["layers"]["0"]
 
 var OresInGame : int = 0
@@ -149,6 +150,10 @@ func FullLayerReset(Amount : int):
 			newlayer.append(GenerateOre(i))
 		
 		Tiles.append(newlayer)
+	emit_signal("LayerChanged",Layer)
+	
+	
+	
 
 func ChangeColorTheme(Col : String):
 	var Stylebox = load("res://Visuals/MetalPanel.tres")
@@ -266,14 +271,16 @@ func GlobalLayerChange():
 				emit_signal("LayerChanged",Layer)
 				
 
-func GlobalMoveDown():
-	Depth += 1 
+func GlobalMoveDown(amount : int = 1):
+	Depth += amount
 	if Depth > Stats["DEPTH"]:
 		PastDepth = true
 	else:
 		PastDepth = false
-	DepthPower = DepthPowerCurve.sample(min(Depth / Stats["DEPTH"],2))
-	emit_signal("DepthChanged",1)
+	DepthPower = 1
+	if PastDepth:
+		DepthPower = 0.1
+	emit_signal("DepthChanged",amount)
 
 	
 
@@ -367,7 +374,7 @@ func GenerateOre(DepthChange = 0):
 	var TotalWeighting = 0
 	var OreWeights = []
 	for OreID in range(OresInGame):
-		var Rarity : float = GetRarity(1 + Depth + 6 + DepthChange,OreID)
+		var Rarity : float = GetRarity(Depth + DepthChange,OreID)
 		#Global.Pickaxe["stats"][1]["value"]
 		if OreRarityTable[OreID] == 0:
 			
@@ -572,24 +579,28 @@ func SetBaseStats():
 
 	Stats = context.CalculateStats()
 	
-	MaxDepth = Stats["DEPTH"]
-	InventoryCapacity = Stats["STORAGE"]
+	MaxDepth = roundi(Stats["DEPTH"])
+	InventoryCapacity = roundi(Stats["STORAGE"])
 
 	
 func GetTime(OreID,Power):
 	return Global.GameData["ores"][var_to_str(OreID)]["hardness"] / Power
 
 func MoveBetween(ToSurface: bool):
-
-	Layer = GameData["layers"]["0"]
-	Depth = 0
-	Music.ChangeSong(Layer["music"],Layer["pitch"])
-	NewBG(Layer["bg"],Color(Layer["color"]),1)
+	if ToSurface:
+		Layer = GameData["layers"]["0"]
+		Depth = 0
+		Music.ChangeSong(Layer["music"],Layer["pitch"])
+		NewBG(Layer["bg"],Color(Layer["color"]),1)
+		PastDepth = false
 		
 	emit_signal("LayerChanged",Layer)
 	emit_signal("MovedBetween",ToSurface)
 	
 	pass
+	
+func MoveDownToLayer():
+	emit_signal("DownToLayer",true)
 
 func ResetData():
 

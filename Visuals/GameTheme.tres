@@ -51,8 +51,7 @@ border_width_right = 2
 border_width_bottom = 2
 
 [resource]
-Button/colors/font_outline_color = Color(1, 1, 1, 1)
-Button/constants/outline_size = 2
+Button/constants/outline_size = 5
 Button/fonts/font = ExtResource("1_cxn07")
 Button/styles/disabled = SubResource("StyleBoxTexture_2u6v2")
 Button/styles/hover = SubResource("StyleBoxTexture_h7b0r")
@@ -60,6 +59,7 @@ Button/styles/normal = ExtResource("4_h7b0r")
 Button/styles/pressed = SubResource("StyleBoxTexture_5c6vu")
 HSeparator/styles/separator = ExtResource("3_2u6v2")
 HSlider/constants/center_grabber = 0
+Label/constants/outline_size = 5
 Label/fonts/font = ExtResource("1_cxn07")
 LineEdit/styles/normal = ExtResource("1_m0vlx")
 OptionButton/styles/normal = ExtResource("1_m0vlx")

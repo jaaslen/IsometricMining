@@ -25,7 +25,7 @@ var hint: PropertyHint = PROPERTY_HINT_NONE
 var hint_string: String = ""
 
 
-func _get_property_list() -> Array:
+func _get_property_list() -> Array[Dictionary]:
 	var properties: Array
 	properties.append_array([
 		{

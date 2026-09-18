@@ -24,6 +24,11 @@ func PickaxeChanged(PickaxeID : int):
 
 	var CurrentLevel = Global.PickaxeLevels[PickaxeID]
 	
+	for Trait in Global.GameData["pickaxes"][var_to_str(PickaxeID)]["traits"]:
+		var NewInventoryItem = load("res://Scenes/TraitBar.tscn").instantiate()
+		NewInventoryItem.Trait = Global.GameData["traits"][str(int(Trait))]
+		add_child(NewInventoryItem)
+	
 	if Global.GameData["pickaxes"][var_to_str(PickaxeID)]["maxlevel"] > CurrentLevel:
 		
 		var UpgradedPickaxe = Global.GameData["pickaxes"][var_to_str(PickaxeID * 1000 + int(CurrentLevel+1))]
@@ -48,8 +53,5 @@ func PickaxeChanged(PickaxeID : int):
 		
 
 
-	for Trait in Global.GameData["pickaxes"][var_to_str(PickaxeID)]["traits"]:
-		var NewInventoryItem = load("res://Scenes/TraitBar.tscn").instantiate()
-		NewInventoryItem.Trait = Global.GameData["traits"][str(int(Trait))]
-		add_child(NewInventoryItem)
+
 	

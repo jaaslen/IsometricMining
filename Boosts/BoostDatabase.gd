@@ -19,6 +19,22 @@ func _ready() -> void:
 				ResourceSaver.save(newupgrade,path)
 			elif upgrade["stat"] == false:
 				newupgrade = AddTrait.new()
+	#for Trait in Global.GameData["trait"].values():
+		#var newtrait
+		#var path = "res://Boosts/Traits/Resources/" + Trait["name"] + ".tres"
+		#
+		#if ResourceLoader.exists(path):
+			#newtrait = load(path)
+		#else:
+			#
+			#if Trait["stat"] == true:
+				#newtrait = StatUpgrade.new()
+				#newtrait.Mult = Trait["amount"]
+				#newtrait.Stat = Trait["type"]
+				#newtrait.Multiply = Trait["multiply"]
+				#ResourceSaver.save(newtrait,path)
+			#elif Trait["stat"] == false:
+				#newtrait = AddTrait.new()
 
 
 @export var Traits := {
@@ -33,11 +49,14 @@ var UpgradeClasses = {
 
 
 func GetTrait(id: int) -> Boost:
-	return Traits.get(id)
+	var TraitName = Global.GameData["traits"][str(id)]["name"]
 	
-func GetUpgrade(ID : int) -> Boost:
 	
-	var UpgradeName = Global.GameData["upgrades"][str(ID)]["name"]
+	return load("res://Boosts/Traits/Resources/" + TraitName + ".tres")
+	
+func GetUpgrade(id : int) -> Boost:
+	
+	var UpgradeName = Global.GameData["upgrades"][str(id)]["name"]
 	
 	
 	return load("res://Boosts/Upgrades/Resources/" + UpgradeName + ".tres")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cku6c36w1esyo"
+path="res://.godot/imported/Zander Noriega - Perpetual Tension.mp3-e8628f7cba67ad42f6cb7e8e7533ca7e.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Zander Noriega - Perpetual Tension.mp3"
+dest_files=["res://.godot/imported/Zander Noriega - Perpetual Tension.mp3-e8628f7cba67ad42f6cb7e8e7533ca7e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

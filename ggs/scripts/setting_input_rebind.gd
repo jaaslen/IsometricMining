@@ -16,7 +16,7 @@ func _init() -> void:
 	section = "input"
 
 
-func _get_property_list() -> Array:
+func _get_property_list() -> Array[Variant]:
 	return [
 		{
 			"name": "action",

@@ -63,6 +63,7 @@ texture_under = ExtResource("5_68uam")
 texture_progress = SubResource("GradientTexture1D_j7e3e")
 
 [node name="Button" type="Button" parent="." unique_id=1762844934]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4
@@ -77,5 +78,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 78
 text = "SKIP"
+
+[node name="Label" type="Label" parent="." unique_id=73401550]
+layout_mode = 0
+anchor_left = 0.09010417
+anchor_top = 0.8981481
+anchor_right = 0.9145833
+anchor_bottom = 0.962963
+offset_top = 6.1035156e-05
+theme_override_font_sizes/font_size = 55
+text = "This shouldn't take long. If it does, you should reload."
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

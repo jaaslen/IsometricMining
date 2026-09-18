@@ -59,3 +59,4 @@ metadata/_edit_use_anchors_ = true
 
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Travel" to="." method="_on_travel_pressed"]

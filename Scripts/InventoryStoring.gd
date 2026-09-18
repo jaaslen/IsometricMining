@@ -84,6 +84,6 @@ func MoveEverythingBack() -> void:
 	SFX.play_sfx("Ring Button", 1 )
 	var index = 0
 	for amount in Global.StorageOreAmounts:
-		Global.StoreOre(index,amount,true)
+		Global.StoreOre(index,amount,false)
 		index += 1
 	pass # Replace with function body.

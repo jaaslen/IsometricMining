@@ -1,5 +1,7 @@
 extends Control
 
+signal Selected
+
 var up := false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,19 +34,48 @@ func _on_1_pressed() -> void:
 	$"Panel/VBoxContainer/HBoxContainer/2".Deselected()
 	$"Panel/VBoxContainer/HBoxContainer/3".Deselected()
 	Global.MiningMode = 0
+	emit_signal("Selected",1)
 
 func _on_2_pressed() -> void:
 	$"Panel/VBoxContainer/HBoxContainer/1".Deselected()
 	$"Panel/VBoxContainer/HBoxContainer/2".Selected()
 	$"Panel/VBoxContainer/HBoxContainer/3".Deselected()
 	Global.MiningMode = 1
+	emit_signal("Selected",2)
 
 func _on_3_pressed() -> void:
 	$"Panel/VBoxContainer/HBoxContainer/1".Deselected()
 	$"Panel/VBoxContainer/HBoxContainer/2".Deselected()
 	$"Panel/VBoxContainer/HBoxContainer/3".Selected()
 	Global.MiningMode = 2
+	emit_signal("Selected",3)
 
 
 func _on_rare_button_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_to_mine_button_pressed() -> void:
+	if up:
+		pass
+	else:
+		$Button.text = "v"
+		$AnimationPlayer.play("Up")
+		up = !up
+
+
+func _on_move_between_pressed() -> void:
+	if up:
+		$Button.text = "  Mine Settings  "
+		$AnimationPlayer.play("Down")
+
+		up = !up
+	pass # Replace with function body.
+
+
+func _on_lock_pressed() -> void:
+	if Global.MiningMode == 1:
+		$"Panel/VBoxContainer/HBoxContainer/1".Selected()
+		$"Panel/VBoxContainer/HBoxContainer/2".Deselected()
+		$"Panel/VBoxContainer/HBoxContainer/3".Deselected()
+		Global.MiningMode = 0

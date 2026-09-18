@@ -27,6 +27,8 @@ func apply(value: int) -> void:
 			
 			
 	DisplayServer.window_set_mode(window_mode)
+	if value == 2:
+		DisplayServer.window_set_position(Vector2i(0,320))
 
 	
 

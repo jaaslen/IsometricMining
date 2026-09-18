@@ -1,5 +1,5 @@
 extends Button
-
+var active : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,6 +17,19 @@ func _on_moved(boolean):
 func _on_detection_lock(boolean) -> void:
 	if boolean == true:
 		modulate = Color(0,1,0,1)
+		active = true
 	else:
 		modulate = Color(1,0,0,1)
+		active = false
+	pass # Replace with function body.
+
+
+func _on_mine_settings_selected(selected : int) -> void:
+	if selected == 1:
+		pass
+	else:
+		if active:
+			modulate = Color(1,0,0,1)
+			active = false
+			emit_signal("pressed")
 	pass # Replace with function body.

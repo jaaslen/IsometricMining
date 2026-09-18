@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceynw114wqp68"
-path="res://.godot/imported/ele.png-b16848a0b1429c0db078e426fe7ac315.ctex"
+uid="uid://cce6dopmt40s8"
+path="res://.godot/imported/Asset4.png-6d69fb0d7571b9eb07031764e8b239b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Audio/Music/ele.png"
-dest_files=["res://.godot/imported/ele.png-b16848a0b1429c0db078e426fe7ac315.ctex"]
+source_file="res://Visuals/Asset4.png"
+dest_files=["res://.godot/imported/Asset4.png-6d69fb0d7571b9eb07031764e8b239b5.ctex"]
 
 [params]
 

@@ -33,7 +33,7 @@ enum ChartType{
 ## The 'values' array is the array for the values displayed on the y axis in the Graph.
 ## It is also exported to the inspector on the right side of the screen (default setting). When you first get the add-on, there aren't any valuables set to this array, so you have to enter AT LEAST 2 values.
 @export var ColourScale : Array = [1,10] # Dark value, to Medium value,to Light value
-@export var ColourScaleColours : Array = [Color(1.0, 0.0, 0.0, 1.0),Color(0.0, 1.0, 0.0, 1.0)]
+@export var ColourScaleColours : Array[Color] = [Color(1.0, 0.0, 0.0, 1.0),Color(0.0, 1.0, 0.0, 1.0)]
 @export var values: PackedVector2Array
 
 

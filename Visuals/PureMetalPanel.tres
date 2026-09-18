@@ -1,6 +1,6 @@
 [gd_resource type="StyleBoxTexture" format=3 uid="uid://bmkhgobjdxea2"]
 
-[ext_resource type="Texture2D" uid="uid://dhmp7jfu8pog1" path="res://Visuals/Panelpix.png" id="1_mpkie"]
+[ext_resource type="Texture2D" uid="uid://djhyimix0wpgn" path="res://Visuals/Panel.png" id="1_mpkie"]
 
 [resource]
 content_margin_left = 20.0

@@ -25,6 +25,7 @@ func _ready() -> void:
 		modulate = Color(0.3,0.3,0.3)
 		$Button.text = "???"
 		$Button.disabled = true
+		$Travel.visible = false
 	else:
 		
 		Index.text = "#" + str(int(Layer["id"]))
@@ -61,3 +62,13 @@ func Check():
 		_ready()
 		
 	
+
+
+func _on_travel_pressed() -> void:
+	
+	Global.MoveDownToLayer()
+	Global.GlobalMoveDown(ActualLayer["start"]-Global.Depth)
+	Global.FullLayerReset(10)
+	Global.GlobalLayerChange()
+	
+	pass # Replace with function body.

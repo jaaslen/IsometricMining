@@ -13,7 +13,7 @@ func _init() -> void:
 	section = "audio"
 
 
-func _get_property_list() -> Array:
+func _get_property_list() -> Array[Variant]:
 	return [
 		{
 			"name": "audio_bus",

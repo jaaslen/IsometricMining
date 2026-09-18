@@ -3,8 +3,8 @@ extends Button
 #signal PickaxeListUpdated
 
 @export var Icon : CompressedTexture2D
-var Pickaxe: Dictionary = Global.GameData["pickaxes"]["0"]
-var Original : Dictionary = Global.GameData["pickaxes"]["0"]
+var Pickaxe: Dictionary = Global.GameData["pickaxes"]["1"]
+var Original : Dictionary = Global.GameData["pickaxes"]["1"]
 
 @export var Unlocked: bool
 @export var Forged: bool = true

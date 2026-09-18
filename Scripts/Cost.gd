@@ -16,7 +16,7 @@ func _ready() -> void:
 	#Cost = Global.OreAmounts[ID]
 	NameLabelBox.text = Name #+ " : " + var_to_str(Cost)
 	
-	CostLabelBox.text = "%s/%s" % [Global.StorageOreAmounts[ID],Cost]
+	CostLabelBox.text = "%d/%d" % [Global.StorageOreAmounts[ID],Cost]
 	##NameLabelBox.FitText()
 	#CostLabelBox.FitText()
 

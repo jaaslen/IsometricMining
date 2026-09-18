@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cq5ik53nyjbpe" path="res://Scripts/Settings.gd" id="1_7fyg7"]
 [ext_resource type="PackedScene" uid="uid://b7m6l0lvojrsj" path="res://ggs/components/option_list/component_option_list.tscn" id="1_qy7o3"]
 [ext_resource type="Resource" uid="uid://c12mnp8dkqxd7" path="res://ggs/game_settings/Display.tres" id="2_1dtb8"]
-[ext_resource type="Script" uid="uid://cjoesv6tpkk37" path="res://Scripts/ResizeLabel.gd" id="2_luq8a"]
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="2_xc4d7"]
 [ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://ggs/components/slider/component_slider.tscn" id="3_jpljk"]
 [ext_resource type="Resource" uid="uid://cws5mwyqhbudh" path="res://ggs/game_settings/MusicVol.tres" id="4_17sk1"]
@@ -19,6 +18,10 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_luq8a"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j03d3"]
+texture = ExtResource("12_dculb")
+modulate_color = Color(0.48452926, 0.48452926, 0.48452926, 1)
+
 [sub_resource type="Resource" id="Resource_j03d3"]
 resource_name = "Mine Lock Key"
 script = ExtResource("11_dculb")
@@ -28,10 +31,6 @@ key = "Mine Lock Key"
 section = "input"
 default = [0, 4194326, 0]
 metadata/_custom_type_script = "uid://bru1qejws0quq"
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j03d3"]
-texture = ExtResource("12_dculb")
-modulate_color = Color(0.48452926, 0.48452926, 0.48452926, 1)
 
 [node name="Control" type="Control" unique_id=1968452938]
 z_index = 1
@@ -66,7 +65,6 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "SETTINGS"
-script = ExtResource("2_luq8a")
 
 [node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=346058481]
 layout_mode = 2
@@ -79,133 +77,24 @@ size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_luq8a")
 
 [node name="TabContainer" type="TabContainer" parent="PanelContainer/VBoxContainer/ScrollContainer" unique_id=1301959673]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_xc4d7")
 current_tab = 0
 clip_tabs = false
-tab_0/title = "General"
-tab_1/title = "Colour"
-
-[node name="Main" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer" unique_id=1265472482]
-layout_mode = 2
-metadata/_tab_index = 0
-metadata/_tab_name = "General"
-
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=150998047]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 0
-theme_override_font_sizes/font_size = 36
-text = "Display Mode"
-
-[node name="OptionList" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=287653133 instance=ExtResource("1_qy7o3")]
-layout_mode = 2
-theme = ExtResource("2_xc4d7")
-setting = ExtResource("2_1dtb8")
-
-[node name="Btn" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/OptionList" index="0" unique_id=388537928]
-theme_override_font_sizes/font_size = 20
-selected = 0
-allow_reselect = true
-item_count = 3
-popup/item_0/text = "Fullscreen"
-popup/item_0/id = 0
-popup/item_1/text = "Borderless"
-popup/item_1/id = 1
-popup/item_2/text = "Windowed"
-popup/item_2/id = 2
-
-[node name="HSeparator2" type="HSeparator" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=959144271]
-layout_mode = 2
-theme_override_constants/separation = 12
-
-[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=582272613]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 0
-theme_override_font_sizes/font_size = 36
-text = "Volume"
-
-[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=2044637463]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Music"
-
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1557402472]
-layout_mode = 2
-
-[node name="Slider" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/PanelContainer" unique_id=1970539111 instance=ExtResource("3_jpljk")]
-layout_mode = 2
-setting = ExtResource("4_17sk1")
-
-[node name="Slider" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/PanelContainer/Slider" index="0"]
-size_flags_horizontal = 1
-
-[node name="Label4" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1341229507]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Sound Effects"
-
-[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1931616940]
-layout_mode = 2
-
-[node name="Slider" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/PanelContainer2" unique_id=1063691690 instance=ExtResource("3_jpljk")]
-layout_mode = 2
-setting = ExtResource("5_17sk1")
-
-[node name="Slider" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/PanelContainer2/Slider" index="0"]
-size_flags_horizontal = 1
-
-[node name="HSeparator3" type="HSeparator" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=624767097]
-layout_mode = 2
-theme_override_constants/separation = 12
-
-[node name="Label5" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1963131695]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 0
-theme_override_font_sizes/font_size = 36
-text = "Controls"
-
-[node name="Label6" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1927547389]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Move between mine and surface"
-
-[node name="InputBtn" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=2012462761 instance=ExtResource("6_ojh37")]
-layout_mode = 2
-theme = ExtResource("2_xc4d7")
-setting = ExtResource("10_dculb")
-
-[node name="Label7" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=831316137]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Mining Lock"
-
-[node name="InputBtn2" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=1745197212 instance=ExtResource("6_ojh37")]
-layout_mode = 2
-theme = ExtResource("2_xc4d7")
-setting = SubResource("Resource_j03d3")
-
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main" unique_id=2071639503]
-modulate = Color(1, 0.3515625, 0.3515625, 1)
-layout_mode = 2
-text = "RESET DATA"
-script = ExtResource("12_j03d3")
+tab_0/title = "Colour"
 
 [node name="Color" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer" unique_id=1187550889]
-visible = false
 layout_mode = 2
-metadata/_tab_index = 1
+metadata/_tab_index = 0
 metadata/_tab_name = "Colour"
 
 [node name="Subtitle" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color" unique_id=1946596985]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Colors"
-script = ExtResource("2_luq8a")
 
 [node name="Label3" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color" unique_id=738283086]
 custom_minimum_size = Vector2(1, 0)
@@ -304,6 +193,111 @@ text = "Light versions"
 layout_mode = 2
 theme_override_constants/separation = 12
 
+[node name="Main" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollContainer" unique_id=1265472482]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/Main" unique_id=150998047]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 36
+text = "Display Mode"
+
+[node name="OptionList" parent="PanelContainer/VBoxContainer/ScrollContainer/Main" unique_id=287653133 instance=ExtResource("1_qy7o3")]
+layout_mode = 2
+theme = ExtResource("2_xc4d7")
+setting = ExtResource("2_1dtb8")
+
+[node name="Btn" parent="PanelContainer/VBoxContainer/ScrollContainer/Main/OptionList" index="0" unique_id=388537928]
+theme_override_font_sizes/font_size = 20
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless"
+popup/item_1/id = 1
+popup/item_2/text = "Windowed"
+popup/item_2/id = 2
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/VBoxContainer/ScrollContainer/Main" unique_id=959144271]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/Main" unique_id=582272613]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 36
+text = "Volume"
+
+[node name="Label3" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/Main" unique_id=2044637463]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Music"
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/Main" unique_id=1557402472]
+layout_mode = 2
+
+[node name="Slider" parent="PanelContainer/VBoxContainer/ScrollContainer/Main/PanelContainer" unique_id=1970539111 instance=ExtResource("3_jpljk")]
+layout_mode = 2
+setting = ExtResource("4_17sk1")
+
+[node name="Slider" parent="PanelContainer/VBoxContainer/ScrollContainer/Main/PanelContainer/Slider" index="0"]
+size_flags_horizontal = 1
+
+[node name="Label4" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/Main" unique_id=1341229507]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Sound Effects"
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/ScrollContainer/Main" unique_id=1931616940]
+layout_mode = 2
+
+[node name="Slider" parent="PanelContainer/VBoxContainer/ScrollContainer/Main/PanelContainer2" unique_id=1063691690 instance=ExtResource("3_jpljk")]
+layout_mode = 2
+setting = ExtResource("5_17sk1")
+
+[node name="Slider" parent="PanelContainer/VBoxContainer/ScrollContainer/Main/PanelContainer2/Slider" index="0"]
+size_flags_horizontal = 1
+
+[node name="HSeparator3" type="HSeparator" parent="PanelContainer/VBoxContainer/ScrollContainer/Main" unique_id=624767097]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label5" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/Main" unique_id=1963131695]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 36
+text = "Controls"
+
+[node name="Label6" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/Main" unique_id=1927547389]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Move between mine and surface"
+
+[node name="InputBtn" parent="PanelContainer/VBoxContainer/ScrollContainer/Main" unique_id=2012462761 instance=ExtResource("6_ojh37")]
+layout_mode = 2
+theme = ExtResource("2_xc4d7")
+setting = ExtResource("10_dculb")
+
+[node name="Label7" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/Main" unique_id=831316137]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Mining Lock"
+
+[node name="InputBtn2" parent="PanelContainer/VBoxContainer/ScrollContainer/Main" unique_id=1745197212 instance=ExtResource("6_ojh37")]
+layout_mode = 2
+theme = ExtResource("2_xc4d7")
+setting = SubResource("Resource_j03d3")
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/ScrollContainer/Main" unique_id=2071639503]
+modulate = Color(1, 0.3515625, 0.3515625, 1)
+layout_mode = 2
+text = "RESET DATA"
+script = ExtResource("12_j03d3")
+
 [node name="Button" type="Button" parent="." unique_id=98733177]
 modulate = Color(1, 0, 0, 1)
 z_index = 1
@@ -317,12 +311,12 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 18
 text = "X"
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/Button" to="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/Button" method="_on_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ScrollContainer/Main/Button" to="PanelContainer/VBoxContainer/ScrollContainer/Main/Button" method="_on_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_settings_pressed"]
 
-[editable path="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/OptionList"]
-[editable path="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/PanelContainer/Slider"]
-[editable path="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/PanelContainer2/Slider"]
-[editable path="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/InputBtn"]
-[editable path="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Main/InputBtn2"]
 [editable path="PanelContainer/VBoxContainer/ScrollContainer/TabContainer/Color/ChoiceGrid"]
+[editable path="PanelContainer/VBoxContainer/ScrollContainer/Main/OptionList"]
+[editable path="PanelContainer/VBoxContainer/ScrollContainer/Main/PanelContainer/Slider"]
+[editable path="PanelContainer/VBoxContainer/ScrollContainer/Main/PanelContainer2/Slider"]
+[editable path="PanelContainer/VBoxContainer/ScrollContainer/Main/InputBtn"]
+[editable path="PanelContainer/VBoxContainer/ScrollContainer/Main/InputBtn2"]
