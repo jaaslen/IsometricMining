@@ -11,6 +11,7 @@ signal CameraShake
 signal ChangeBG
 signal MovedBetween
 signal XPChanged
+signal Travelled
 
 var AtTitle : bool = true
 
@@ -254,6 +255,22 @@ func AvailableOres():
 func _process(_delta: float) -> void:
 	pass
 	
+func TravelLayers():
+	for layer in GameData["layers"].values():
+		if layer["id"] != Layer["id"]:
+			if Depth >= layer["start"] and Depth < layer["end"]:
+				Layer = layer#GameData["layers"][var_to_str(int(Layer["id"]) + 1)]
+				AvailableOres()
+				
+				Music.ChangeSong(Layer["music"],Layer["pitch"])
+				NewBG(Layer["bg"],Color(Layer["color"]),Layer["brightness"])
+				
+				if Layer["id"] not in Global.FoundLayers:
+					Global.FoundLayers.append(int(Layer["id"]))
+					
+				emit_signal("LayerChanged",Layer)
+				emit_signal("Travelled")
+	
 func GlobalLayerChange():
 	
 	for layer in GameData["layers"].values():
@@ -384,7 +401,7 @@ func GenerateOre(DepthChange = 0):
 			OreWeights.append(AdjustedRarity)
 		elif OreRarityTable[OreID] == 4 or OreRarityTable[OreID] == 5:
 			
-			var AdjustedRarity = Rarity / Stats["RARE LUCK"]
+			var AdjustedRarity = Rarity * Stats["RARE LUCK"]
 			
 			TotalWeighting += AdjustedRarity
 			OreWeights.append(AdjustedRarity)
@@ -584,6 +601,8 @@ func SetBaseStats():
 
 	
 func GetTime(OreID,Power):
+	if PastDepth:
+		return (Global.GameData["ores"][var_to_str(OreID)]["hardness"] / (Power*0.1) )
 	return Global.GameData["ores"][var_to_str(OreID)]["hardness"] / Power
 
 func MoveBetween(ToSurface: bool):

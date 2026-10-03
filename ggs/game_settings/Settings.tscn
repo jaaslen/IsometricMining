@@ -35,15 +35,9 @@ metadata/_custom_type_script = "uid://bru1qejws0quq"
 [node name="Control" type="Control" unique_id=1968452938]
 z_index = 1
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -164.5
-offset_top = -400.0
-offset_right = 246.0
-offset_bottom = 400.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7fyg7")
@@ -195,6 +189,7 @@ theme_override_constants/separation = 12
 
 [node name="Main" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScrollContainer" unique_id=1265472482]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer/ScrollContainer/Main" unique_id=150998047]
 layout_mode = 2

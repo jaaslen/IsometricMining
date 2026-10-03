@@ -19,6 +19,8 @@
 [ext_resource type="Script" uid="uid://cs42pixs20bwv" path="res://Scripts/RegularPickaxeSelection.gd" id="9_ugol7"]
 [ext_resource type="Script" uid="uid://c8r5cq064hj73" path="res://Scripts/UpgradeButton.gd" id="15_667t3"]
 [ext_resource type="FontVariation" uid="uid://daivjrli5uhag" path="res://Visuals/Orbitron.tres" id="19_lwnpi"]
+[ext_resource type="Shader" uid="uid://bhnh7ur4ox6e2" path="res://Scenes/Blur.gdshader" id="20_d7yc4"]
+[ext_resource type="StyleBox" uid="uid://q3w7otm544mc" path="res://FlatPanel.tres" id="21_olnyl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcom1"]
 bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
@@ -34,6 +36,10 @@ bg_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_667t3"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wr4am"]
+shader = ExtResource("20_d7yc4")
+shader_parameter/blur_amount = 5.0
+
 [node name="Forge" type="Control" unique_id=468790923]
 layout_mode = 3
 anchors_preset = 15
@@ -47,9 +53,11 @@ script = ExtResource("2_kbjox")
 
 [node name="ForgeContainer" type="HBoxContainer" parent="." unique_id=629458856]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_667t3")
@@ -66,6 +74,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_lcom1")
 [node name="VBoxContainer" type="VBoxContainer" parent="ForgeContainer/Selection" unique_id=1159781669]
 z_index = 1
 layout_mode = 2
+size_flags_stretch_ratio = 0.5
 theme = ExtResource("2_667t3")
 theme_override_constants/separation = 0
 
@@ -93,15 +102,16 @@ vertical_alignment = 2
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
-horizontal_scroll_mode = 2
+theme_override_constants/scrollbar_v_separation = -5
+horizontal_scroll_mode = 0
+scroll_hint_mode = 2
 
 [node name="PickaxeSelection" type="VBoxContainer" parent="ForgeContainer/Selection/VBoxContainer/ScrollContainer" unique_id=576380366]
-clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_667t3")
-theme_override_constants/separation = 0
+theme_override_constants/separation = 12
 script = ExtResource("1_ewbv2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ForgeContainer/Selection/VBoxContainer" unique_id=410237944]
@@ -282,6 +292,7 @@ size_flags_vertical = 3
 theme = ExtResource("2_667t3")
 theme_override_font_sizes/font_size = 50
 text = "Forge!"
+text_overrun_behavior = 1
 script = ExtResource("6_mbix4")
 
 [node name="Bar" type="ProgressBar" parent="ForgeContainer/Stats/CostPanel/VBoxContainer/ForgeButton" unique_id=697549182]
@@ -319,6 +330,35 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("2_667t3")
 color = Color(0.05490196, 0.05490196, 0.05490196, 1)
+
+[node name="Blur" type="ColorRect" parent="." unique_id=564070229]
+z_index = -1
+material = SubResource("ShaderMaterial_wr4am")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=832013989]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("21_olnyl")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="PickaxeSetup" from="ForgeContainer/Selection/VBoxContainer/ScrollContainer/PickaxeSelection" to="ForgeContainer" method="PickaxeSetup"]
 [connection signal="PickaxesReady" from="ForgeContainer/Selection/VBoxContainer/ScrollContainer/PickaxeSelection" to="ForgeContainer" method="PickaxesReady"]

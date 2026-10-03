@@ -44,6 +44,9 @@ var Speed
 var CurrentTile = Vector2i(100,100)
 var CurrentOre : int = -1
 var CurrentMineTime : float = 0.0
+
+var MouseBuffered : Vector2
+
 @onready var TopAnimation : AnimatedSprite2D = $Effects/Mining
 
 func _ready() -> void:
@@ -55,7 +58,7 @@ func _ready() -> void:
 	update_position_and_scale()
 	
 	Global.FullLayerReset($Layers.get_child_count())
-	Global.LayerChanged.connect(ResetLayers)
+	Global.Travelled.connect(ResetLayers)
 	Global.DownToLayer.connect(MoveBetween)
 	
 	tile_set.tile_size = Global.TileSize
@@ -301,27 +304,33 @@ func _process(delta: float) -> void:
 						#if Mining == false:
 							MineTile(layer)
 							
-							#if str_to_var(layer.name) == 1:
-								#for coords in TileCoords: 
-									#if layer.get_cell_source_id(coords) != -1:
-										##z#(previouslayer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(0,str_to_var(layer.name)-1-1)))
-										#
-										#return
-										
-							
 							return
-						
 					else:
-						
-						
-						
-					
-					
-					##(layer)
-					
 						return
 				else:
 					pass
+		
+	elif (((Input.is_action_just_pressed("Mine") and InMine == true and MovingBetween == false) or (Locked == true and Mining == false) or ShiftLocked == true) and InventoryFull == false):
+		MouseBuffered = GetMouse()
+		$MineInputBuffer.start()
+		
+		
+	elif (((!$MineInputBuffer.is_stopped() and InMine == true and MovingBetween == false) or (Locked == true and Mining == false) or ShiftLocked == true) and InventoryFull == false and MovingDown == false and MovingSideways == Vector2(0,0) and OnCooldown == false):
+		
+		for layer in self.get_node("Layers").get_children():
+				if layer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(0,str_to_var(layer.name)-1)) != -1:
+					
+					var previouslayer = self.get_node("Layers").get_child(str_to_var(layer.name)-1-1)
+					##(previouslayer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(0,str_to_var(layer.name)-1)) == -1 or str_to_var(layer.name) == 1)
+					#(previouslayer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(1,0)) + previouslayer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(-1,1)))
+					if previouslayer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(0,str_to_var(layer.name)-1)) == -1 and previouslayer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(1,0)) + previouslayer.get_cell_source_id(local_to_map(GetMouse()) - Vector2i(-1,1)) or str_to_var(layer.name) == 1 : 
+						#if Mining == false:
+							MineTile(layer)
+							$MineInputBuffer.stop()
+							return
+					else:
+						return
+		
 		
 				
 func MoveDown():
@@ -467,7 +476,7 @@ func ResetSideLayer():
 		var finds = [0,1,3]
 		for coords in [TileCoords[0],TileCoords[1],TileCoords[3]]:
 			
-				var Tile = Global.GenerateOre(str_to_var(layer.name) -1 - 7)
+				var Tile = Global.GenerateOre(str_to_var(layer.name) -1)
 				#if layer.name == "1":
 					#Global.TopLayer[finds[Index]] = Tile
 				#else:
@@ -522,6 +531,7 @@ func ResetLayers(_Layer : Dictionary = {}):
 		#newlayer = [1,1,1,1,Global.GenerateOre(),1,1,1,1]
 	#else:
 	for i in range(9):
+		print(Global.Tiles.size())
 		newlayer.append(Global.GenerateOre(Global.Tiles.size()))
 		
 
@@ -634,7 +644,21 @@ func MiningAnim(Layer,_MineTime,_GlobalCoordinates):
 			TopAnimation.position = Vector2(0,0)
 		elif ShiftLocked:
 			TopAnimation.position = Vector2(32,17)
+		
 		#TopAnimation.z_index = self.get_node("Layers").get_child_count() - (str_to_var(Layer.name)-1)
+		$Particles/MineParticles.position = ClickedCenter()
+		
+		if int(Ore["id"]) != 1:
+			$Particles/BreakParticles.position = ClickedCenter()
+			$Particles/BreakParticles.modulate = Color(Ore["color"])
+			$Particles/BreakParticles.visible = false
+		else:
+			$Particles/BreakParticles.visible = false
+			
+		$Particles/MineParticles.modulate = Color(Ore["color"])
+		$Particles/MineParticles.restart(true)
+		
+		#$Particles/MineParticles.emitting = true
 		TopAnimation.visible = true
 
 		
@@ -691,8 +715,10 @@ func MiningAnim(Layer,_MineTime,_GlobalCoordinates):
 		
 
 func GetMouse():
-	if Locked == false and ShiftLocked == false:
-			return get_local_mouse_position()
+	if !$MineInputBuffer.is_stopped():
+		return MouseBuffered
+	elif Locked == false and ShiftLocked == false:
+		return get_local_mouse_position()
 	elif Locked:
 		return Vector2(0,0)
 	elif ShiftLocked:
@@ -739,6 +765,8 @@ func ResetMining():
 	
 	
 func FinishedMining(Layer = -1,BreakSound = "",Sound = ""):
+	$Particles/BreakParticles.restart(true)
+	
 	TopAnimation.visible = false
 	if CurrentOre == LastMined:
 		Lastminedamount += 1
@@ -748,6 +776,7 @@ func FinishedMining(Layer = -1,BreakSound = "",Sound = ""):
 	
 	#if MineTime > 1 or Locked == false:
 	if CurrentOre != 1:
+		$Particles/BreakParticles.visible = true
 		SFX.play_sfx(BreakSound,(1+(0.04*Lastminedamount)))
 		#if MineTime > 0.1 or Locked == false:
 		SFX.play_sfx(Sound,(1+(0.04*Lastminedamount)))

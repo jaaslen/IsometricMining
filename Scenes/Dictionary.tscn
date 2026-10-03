@@ -3,12 +3,17 @@
 [ext_resource type="Script" uid="uid://sr3kwxijwepr" path="res://Scripts/Dictionary.gd" id="1_3abks"]
 [ext_resource type="Script" uid="uid://beygvhct1lf0w" path="res://Scripts/DictionaryContainer.gd" id="1_la43g"]
 [ext_resource type="PackedScene" uid="uid://dg1k0b6frkr3x" path="res://Scenes/OreInfo.tscn" id="2_xvgq2"]
+[ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="3_2lwa5"]
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="4_d3rv7"]
-[ext_resource type="StyleBox" uid="uid://d0q8uxj0q6kgx" path="res://Visuals/MetalPanelNarrow.tres" id="4_nrkam"]
 [ext_resource type="Script" uid="uid://d01a4vs5xt5m2" path="res://Scripts/LayerDictionaryContainer.gd" id="5_t6gtc"]
 [ext_resource type="PackedScene" uid="uid://cdsd6xbm8m530" path="res://Scenes/LayerInfo.tscn" id="6_hq5wi"]
+[ext_resource type="Shader" uid="uid://bhnh7ur4ox6e2" path="res://Scenes/Blur.gdshader" id="8_eef4p"]
+[ext_resource type="StyleBox" uid="uid://q3w7otm544mc" path="res://FlatPanel.tres" id="9_5w4om"]
+[ext_resource type="StyleBox" uid="uid://ck0mxuo4tk28d" path="res://AngleButtonDisabled.tres" id="11_2lwa5"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_42bqh"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j4ftg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2lwa5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvgq2"]
 bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
@@ -17,12 +22,13 @@ border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrkam"]
-bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nrkam"]
+content_margin_left = 30.0
+content_margin_right = 30.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u4vi8"]
+shader = ExtResource("8_eef4p")
+shader_parameter/blur_amount = 5.0
 
 [node name="Control" type="Control" unique_id=2082685999]
 layout_mode = 3
@@ -38,28 +44,23 @@ script = ExtResource("1_3abks")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=418384101]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -20.0
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.95
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = -10
-
-[node name="Button" type="Button" parent="HBoxContainer" unique_id=736181724]
-modulate = Color(1, 0, 0, 1)
-z_index = 10
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-size_flags_stretch_ratio = 0.08
-theme_override_font_sizes/font_size = 60
-text = "X"
+metadata/_edit_use_anchors_ = true
 
 [node name="TabContainer" type="TabContainer" parent="HBoxContainer" unique_id=2079994073]
 z_index = 1
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxEmpty_42bqh")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/panel = SubResource("StyleBoxEmpty_j4ftg")
+theme_override_styles/tabbar_background = ExtResource("3_2lwa5")
 tab_alignment = 1
 current_tab = 1
 drag_to_rearrange_enabled = true
@@ -79,7 +80,7 @@ offset_bottom = 0.16992188
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_d3rv7")
-theme_override_styles/panel = ExtResource("4_nrkam")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2lwa5")
 vertical_scroll_mode = 2
 tile_scroll_hint = true
 
@@ -101,6 +102,7 @@ layout_mode = 1
 offset_bottom = 1.0
 
 [node name="Panel" type="Panel" parent="HBoxContainer/TabContainer/Ores" unique_id=576616960]
+visible = false
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -125,6 +127,7 @@ offset_bottom = -41.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_d3rv7")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nrkam")
 vertical_scroll_mode = 2
 scroll_hint_mode = 2
 
@@ -141,13 +144,61 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -33.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("4_d3rv7")
-theme_override_styles/panel = SubResource("StyleBoxFlat_nrkam")
+theme_override_styles/panel = ExtResource("3_2lwa5")
 
 [node name="Control" parent="HBoxContainer/TabContainer/Layers" unique_id=1820293531 instance=ExtResource("6_hq5wi")]
 layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.9
+anchor_bottom = 0.7
 
-[connection signal="pressed" from="HBoxContainer/Button" to="." method="CloseButton"]
+[node name="Blur" type="ColorRect" parent="." unique_id=553646950]
+z_index = -1
+material = SubResource("ShaderMaterial_u4vi8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=569770336]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("9_5w4om")
+
+[node name="Button" type="Button" parent="." unique_id=736181724]
+modulate = Color(1, 0, 0, 1)
+z_index = 10
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.09166667
+anchor_bottom = 0.11851852
+size_flags_stretch_ratio = 0.08
+theme_override_font_sizes/font_size = 40
+theme_override_styles/disabled = ExtResource("11_2lwa5")
+text = "X"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="." method="CloseButton"]

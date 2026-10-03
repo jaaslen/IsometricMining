@@ -4,6 +4,7 @@ extends ColorRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	Global.LayerChanged.connect(LayerChanged)
 	LayerChanged(Global.Layer)
 	pass # Replace with function body.
@@ -14,7 +15,7 @@ func _ready() -> void:
 
 func LayerChanged(Layer):
 
-	material.set_shader_parameter("colour",Color(Global.Layer["color"]) - Color(0.25,0.25,0.25,0))
-	material.set("shader_parameter/height",(0.5+Layer["id"])/30.0)
+	material.set_shader_parameter("colour",Color(Layer["color"])  - Color(0.2,0.2,0.2,0))
+	material.set("shader_parameter/height",(1+Layer["id"])/100.0)
 	material.set("shader_parameter/speed",(0.5+Layer["id"])/3.0)
 	pass

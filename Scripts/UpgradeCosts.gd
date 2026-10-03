@@ -34,7 +34,7 @@ func PickaxeChanged(PickaxeID,__ = null):
 		var NewInventoryItem = load("uid://w4sqtpegcrlw").instantiate()
 		NewInventoryItem.Ore = Global.GameData["ores"][var_to_str(int(cost[0]))]
 		NewInventoryItem.Cost = cost[1]
-		if Global.StorageOreAmounts[int(cost[0])] < int(cost[1]):
+		if (Global.StorageOreAmounts[int(cost[0])] + Global.OreAmounts[int(cost[0])]) < int(cost[1]):
 			Buyable = false
 			pass
 			

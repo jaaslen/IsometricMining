@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c261tr8cpm4up"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5i1nx"]
+bg_color = Color(0.14117648, 0.14117648, 0.14117648, 1)
+corner_radius_top_right = 200
+corner_radius_bottom_right = 200
+
+[node name="CurrentMusic" type="Control" unique_id=378408586]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1470028145]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5i1nx")

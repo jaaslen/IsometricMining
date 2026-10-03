@@ -41,31 +41,41 @@ func PickaxeChanged(__):
 	IDLabel.self_modulate = Color(Pickaxe["color"])
 	EquipButton.modulate = Color(Pickaxe["color"])
 	$Selected.modulate = Color(Pickaxe["color"])
+	$Status.modulate = Color(Pickaxe["color"])
 	IDLabel.text = "#" + str(Original["id"])
-	
-	EquipButton.visible = true
+	var atlas = Pickaxe["atlas"]
+	$Texture.texture.region = Rect2(Vector2(Global.TileSize.x * atlas[0],2 * Global.TileSize.y * atlas[1]),Vector2(Global.TileSize.x,Global.TileSize.y * 2))
+	custom_minimum_size.x = 480
+	EquipButton.visible = false
 	EquipButton.disabled = true
 	if Pickaxe["rank"] <= Global.Level["id"] and (int(Pickaxe["id"]) % 1000) in Global.ForgedPickaxes and Forged == true:
 		EquipButton.visible = true
 		EquipButton.disabled = false
-		custom_minimum_size.y = 180
+		$Status.text = "Forged"
 		EquipButton.text = "Equip?"
 		$Selected.text = ""
+		custom_minimum_size.x = 540
 		
 		if Global.Pickaxe["id"] == Pickaxe["id"]:
+			$Status.text = "Equipped"
 			EquipButton.text = "Equipped!"
+			
 			$Selected.text = "X"
 			EquipButton.disabled = true
 			
 	else:
 		EquipButton.visible = false
-		custom_minimum_size.y = 120
+		$Status.text = "Unlocked"
+		
 
 	self_modulate = Pickaxe["color"]
+	$Texture.texture.region = Rect2(Vector2(Global.TileSize.x * atlas[0],2 * Global.TileSize.y * atlas[1]),Vector2(Global.TileSize.x,Global.TileSize.y * 2))
 	LabelBox.self_modulate = Pickaxe["color"]
 	#LabelBox.add_theme_color_override("default_color", Color.html(Pickaxe["color"]) * 1.2)
 	LabelBox.text = Pickaxe["name"]
 	if Original["rank"] > Global.Level["id"]:
+		custom_minimum_size.x = 400
+		$Status.text = "Not Unlocked"
 		$Rank.visible = true
 		$Tier.visible = true
 		$Tier.modulate = Color(Global.GameData["levels"][str(int(Original["rank"]))]["color"])

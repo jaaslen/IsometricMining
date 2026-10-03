@@ -141,7 +141,6 @@ theme_override_font_sizes/font_size = 40
 text = "#022"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("4_3o36f")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel4" type="Panel" parent="FullContainer/HBoxContainer/Data/HBoxContainer" unique_id=531454715]
@@ -162,7 +161,6 @@ theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxEmpty_42bqh")
 text = "Info"
 vertical_icon_alignment = 2
-script = ExtResource("4_3o36f")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="FullContainer/HBoxContainer/Data" unique_id=1603072931]
 layout_mode = 2
@@ -265,7 +263,7 @@ modulate = Color(1, 0.8671875, 0, 1)
 z_index = 20
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.036458332
+anchor_left = -0.047395833
 anchor_top = -0.11851852
 anchor_right = 0.0052083335
 anchor_bottom = 1.0
@@ -287,7 +285,6 @@ theme_override_font_sizes/font_size = 38
 theme_override_styles/normal = SubResource("StyleBoxEmpty_42bqh")
 text = ">"
 vertical_icon_alignment = 2
-script = ExtResource("4_3o36f")
 
 [connection signal="pressed" from="FullContainer/HBoxContainer/Left/Left" to="." method="LeftPress"]
 [connection signal="pressed" from="FullContainer/HBoxContainer/Data/HBoxContainer/Panel4/Button" to="Panel" method="_on_button_pressed"]

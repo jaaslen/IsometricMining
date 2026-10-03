@@ -1,10 +1,13 @@
 extends Control
 
+# Energetic
+# Chill
+# Moody
 
 var Music : Dictionary[int, AudioStreamMP3] = {
 	
-	0 : preload("res://Audio/Music/Short__Guitar.mp3"),
-	1   : preload("res://Audio/Music/Short__Respite.mp3"),
+	0 : preload("res://Audio/Music/Short__Guitar.mp3"), # Chill
+	1   : preload("res://Audio/Music/Short__Respite.mp3"), #
 	2   : preload("res://Audio/Music/Short__what.mp3"),
 	3   : preload("res://Audio/Music/Song__Ambience.mp3"),
 	4   : preload("res://Audio/Music/Song__Darkness.mp3"),
@@ -28,7 +31,19 @@ var Music : Dictionary[int, AudioStreamMP3] = {
 	22  : preload("res://Audio/Music/This is Life(1).mp3"),
 	23  : preload("res://Audio/Music/Underwater Theme II.mp3"),
 	24  : preload("res://Audio/Music/Zander Noriega - Blinding Lights.mp3"),
-	25  : preload("res://Audio/Music/Zander Noriega - Perpetual Tension.mp3")
+	25  : preload("res://Audio/Music/Zander Noriega - Perpetual Tension.mp3"),
+	26  : preload("res://Audio/Music/155 November_snow-33_tape_leveled.mp3"),
+	27  : preload("res://Audio/Music/wednesday_night.mp3"),
+	28  : preload("res://Audio/Music/arcticambienttheme.mp3"),
+	29  : preload("res://Audio/Music/ChillinWithMyPuzzles.mp3"),
+	30  : preload("res://Audio/Music/Driving(remastered).mp3"),
+	31  : preload("res://Audio/Music/DST-MindStream.mp3"),
+	32  : preload("res://Audio/Music/Slow Stride Loop.mp3")
+	
+	
+	
+	
+	
 	
 }
 
@@ -45,6 +60,8 @@ func ChangeSong(SongID : int,Pitch : float = 0.8) -> void:
 		if $AudioStreamOnce.stream != Music[SongID]:
 			$AudioStreamOnce.stream = Music[SongID]
 			$AudioStreamOnce.play()
+		if !$AudioStreamOnce.playing:
+			$AudioStreamOnce.play()
 	
 func Next() -> void:
 	pass
@@ -52,5 +69,9 @@ func Next() -> void:
 
 
 func _on_audio_stream_once_finished() -> void:
-	$AudioStreamPlaylist.play()
+	PlayPlaylist()
 	pass # Replace with function body.
+	
+func PlayPlaylist() -> void:
+	$AudioStreamPlaylist.stream = Music[randi_range(0,32)]
+	$AudioStreamPlaylist.play()

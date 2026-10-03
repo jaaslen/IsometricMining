@@ -9,7 +9,7 @@ func _ready() -> void:
 	#position = %Camera2D.position #- Vector2(950,500)#(size / 2)
 
 func MenuOpened():
-	visible = false
+	#visible = false
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 func MenuClosed():

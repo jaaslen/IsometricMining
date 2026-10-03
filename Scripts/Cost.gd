@@ -16,18 +16,18 @@ func _ready() -> void:
 	#Cost = Global.OreAmounts[ID]
 	NameLabelBox.text = Name #+ " : " + var_to_str(Cost)
 	
-	CostLabelBox.text = "%d/%d" % [Global.StorageOreAmounts[ID],Cost]
+	CostLabelBox.text = "%d/%d" % [Global.StorageOreAmounts[ID]+Global.OreAmounts[ID],Cost]
 	##NameLabelBox.FitText()
 	#CostLabelBox.FitText()
 
 	OreProgressBar.max_value = Cost
-	if Global.StorageOreAmounts[ID] >= Cost: 
+	if Global.StorageOreAmounts[ID]+Global.OreAmounts[ID] >= Cost: 
 		modulate = Color(Ore["color"]) * 0.5 + Color(0.5,0.5,0.5,0.5)
 	else:
 		modulate = Color(1.0, 0.0, 0.0, 1.0)
 	$Text/Divider.modulate = Color(Ore["color"]) * 1.2 + Color(0.2,0.2,0.2,1)
 	OreProgressBar.max_value = Cost
-	OreProgressBar.value = Global.OreAmounts[ID] 
+	OreProgressBar.value = Global.OreAmounts[ID]+Global.StorageOreAmounts[ID]
 	pass # Replace with function body.
 
 #func OreChanged(OreID):

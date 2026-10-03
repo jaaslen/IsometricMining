@@ -63,7 +63,6 @@ texture_under = ExtResource("5_68uam")
 texture_progress = SubResource("GradientTexture1D_j7e3e")
 
 [node name="Button" type="Button" parent="." unique_id=1762844934]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.4

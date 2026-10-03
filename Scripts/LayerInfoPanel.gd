@@ -6,25 +6,16 @@ var Order = [1,2,3,5,7,6,4,13,14,16,18,22,9,15,8,12,17,32,34,11,10,28,23,20,24,2
 @export var ActualLayer = Global.GameData["layers"]["0"]
 @export var Layer = Global.GameData["layers"]["0"]
 
-@onready var DepthSlider = $FullContainer/HBoxContainer/Data/HSlider
-@onready var Indicators = $FullContainer/HBoxContainer/Data/Indicators
-@onready var PanelStyle = load("uid://bu0qaxonbmuh1").duplicate(true)
-@onready var Buttons = %VerticalContainer
-@onready var IDlabel = $FullContainer/HBoxContainer/Data/HBoxContainer/Panel3/ID
-#@onready var Icon = $FullContainer/HBoxContainer/Layer/Panel/MarginContainer/Icon
-@onready var Name = $FullContainer/HBoxContainer/Data/HBoxContainer/Label
-@onready var DepthRange = $FullContainer/HBoxContainer/Data/HBoxContainer/Depthrange
-@onready var InfoContainer = $FullContainer/HBoxContainer/Data/ScrollContainer/OreInfo
-#@onready var MinDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer/Container/Text/MinValue
-#@onready var MinDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer/Container/Description
-#@onready var MaxDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer2/Container/Text/MaxValue
-#@onready var MaxDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer2/Container/Description
-#@onready var OptimalDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer3/Container/Text/OptValue
-#@onready var OptDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer3/Container/Description
-#@onready var Hardness = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer4/Container/Text/Hardness
-#@onready var HardDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer4/Container/Description
 
-@onready var Description = $FullContainer/ScrollContainer/Description
+@onready var Buttons = %VerticalContainer
+@onready var IDlabel = $FullContainer/Name/ID
+#@onready var Icon = $FullContainer/HBoxContainer/Layer/Panel/MarginContainer/Icon
+@onready var Name = $FullContainer/Name
+@onready var ID = $FullContainer/Name/ID
+@onready var DepthRange = $FullContainer/DepthRange
+#@onready var InfoContainer = $FullContainer/HBoxContainer/Data/ScrollContainer/OreInfo
+
+@onready var Description = $Description
 
 #@onready var RareLabel = $FullContainer/HBoxContainer/Data/HBoxContainer/Panel/Rarity
 # Called when the node enters the scene tree for the first time.
@@ -40,10 +31,7 @@ func reconnect():
 		for i in Buttons.get_children():
 			if i.is_connected("LayerSelected",LoadLayer) == false:
 				i.LayerSelected.connect(LoadLayer)
-	if Indicators != null:
-		for i in Indicators.get_children():
-			if i.is_connected("pressed",DepthButtonPressed) == false:
-				i.pressed.connect(DepthButtonPressed.bind(i))
+
 
 
 func LoadLayer(LayerID,opening = true):
@@ -60,48 +48,49 @@ func LoadLayer(LayerID,opening = true):
 
 		
 	
-	var A = Layer["start"]
-	var B = Layer["end"]
-	
-	DepthSlider.min_value = A
-	DepthSlider.max_value = B
-	#DepthSlider.step = 0.1
-	
-	
-	var index = 1
-	for i in Indicators.get_children():
-		if i.name != "Start":
-			i.visible = true
-			var ButtonDepth = A + (B-A)/20 * index
-
-			i.text = str(int(ButtonDepth)) + "m  "
-			
-			
-			if int(ButtonDepth) == int( A + (B-A)/20 * (index-1)):
-				i.visible = false
-				
-			
-			
-			index += 1
-	
-	Indicators.get_node("Start").text = "  " + str(int(A)) + "m"
-	Indicators.get_node("Start").visible = true
-	Indicators.move_child(Indicators.get_node("Start"),0)
-	
-	modulate = Color(Layer["color"]) * 0.5 + Color(0.65,0.65,0.65) 
+	#var A = Layer["start"]
+	#var B = Layer["end"]
+	#
+	#DepthSlider.min_value = A
+	#DepthSlider.max_value = B
+	##DepthSlider.step = 0.1
+	#
+	#
+	#var index = 1
+	#for i in Indicators.get_children():
+		#if i.name != "Start":
+			#i.visible = true
+			#var ButtonDepth = A + (B-A)/20 * index
+#
+			#i.text = str(int(ButtonDepth)) + "m  "
+			#
+			#
+			#if int(ButtonDepth) == int( A + (B-A)/20 * (index-1)):
+				#i.visible = false
+				#
+			#
+			#
+			#index += 1
+	#
+	#Indicators.get_node("Start").text = "  " + str(int(A)) + "m"
+	#Indicators.get_node("Start").visible = true
+	#Indicators.move_child(Indicators.get_node("Start"),0)
+	#
+	$FullContainer/Ripple.material.set_shader_parameter("tex,",load("res://Visuals/Backgrounds/Background" + str(int(Layer["bg"])) + ".png"))
+	$FullContainer/Ripple.LayerChanged(Layer)
+	modulate = Color(Layer["color"]) * 0.8 + Color(0.2,0.2,0.2,0.2)
 	
 	ActualLayer = Global.GameData["layers"][var_to_str(LayerID)]
-	if ActualLayer["id"] < 10:
-		IDlabel.text = "#00" + var_to_str(ActualLayer["id"])
-	elif ActualLayer["id"] < 100:
-		IDlabel.text = "#0" + var_to_str(ActualLayer["id"])
-	else:
-		IDlabel.text = "#" + var_to_str(ActualLayer["id"])
+	#if ActualLayer["id"] < 10:
+		#IDlabel.text = "#00" + var_to_str(ActualLayer["id"])
+	#elif ActualLayer["id"] < 100:
+		#IDlabel.text = "#0" + var_to_str(ActualLayer["id"])
+	#else:
+		#IDlabel.text = "#" + var_to_str(ActualLayer["id"])
 	if Layer["id"] not in Global.FoundLayers:
 		Layer = Global.GameData["layers"]["0"]
 
-	PanelStyle.border_color = Color(Layer["color"])  / 5 + Color(0.25,0.25,0.25,1)
-	PanelStyle.bg_color = Color(Layer["color"]) / 10 +Color(0.15,0.15,0.15,1)
+
 
 	#var atlas = Layer["atlas"]
 	#RareLabel.text = ""
@@ -112,6 +101,7 @@ func LoadLayer(LayerID,opening = true):
 	
 	#RareLabel.text = "★"
 	Name.text = Layer["name"]
+	ID.text = "#" + str(Layer["id"])
 	DepthRange.text = str(int(Layer["start"])) + "M - " + str(int(Layer["end"])) + "M"
 	#Name.self_modulate = Color(Layer["color"]) + Color(0.2,0.2,0.2) #add_theme_color_override("font_color",Color(Layer["color"])*1.2)
 	#Name.add_theme_color_override("font_outline_color",Color(Layer["color"]))
@@ -119,8 +109,8 @@ func LoadLayer(LayerID,opening = true):
 	#Icon.texture = Icon.texture.duplicate(true)
 	#Icon.texture.region = Rect2(Vector2(Global.TileSize.x * atlas[0],2 * Global.TileSize.y * atlas[1]),Vector2(Global.TileSize.x,Global.TileSize.y * 2))#Rect2(Vector2(Global.TileSize.x * atlas[0],2 * Global.TileSize.y * atlas[1]),Vector2(Global.TileSize.x,Global.TileSize.y * 2))#Rect2(Vector2(64 * atlas[0],68 * atlas[1])*2,Vector2(64,68)*2)
 	
-	InfoContainer.LoadLayerOres(LayerID)
-	DepthSlider.value = DepthSlider.min_value
+	#InfoContainer.LoadLayerOres(LayerID)
+
 	#if Layer["id"] == 0:
 		#MinDepth.text = "%sm" % int(ActualLayer["arrival"])
 		#MaxDepth.text = "???m"
@@ -147,14 +137,14 @@ func LoadLayer(LayerID,opening = true):
 	
 		
 	if opening:
-		ButtonPressed()
+		Opening = true
 
 
 var Open = true
 var Closing = false
 var Opening = false
 var ClosedPos = Vector2(1920,0)
-var OpenPos = Vector2(0,0)
+var OpenPos = Vector2(930,0)
 # Called when the node enters the scene tree for the first time.
 
 
@@ -238,7 +228,3 @@ func update_position_and_scale():
 	#scale.x = 4 * vp_size.x / reference_resolution.x
 	#scale.y = scale.x
 	#emit_signal("Scaled")
-
-
-func DepthButtonPressed(ButtonNode):
-	DepthSlider.value = float(ButtonNode.text.left(-1))

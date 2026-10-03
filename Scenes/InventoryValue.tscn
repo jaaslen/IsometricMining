@@ -7,6 +7,9 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5i07b"]
 bg_color = Color(0.27734375, 0.27734375, 0.27734375, 1)
+skew = Vector2(0.325, 0)
+border_width_right = 2
+border_width_bottom = 2
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tujle"]
 
@@ -161,7 +164,7 @@ custom_minimum_size = Vector2(0, 30)
 anchors_preset = -1
 anchor_right = 3.0
 anchor_bottom = 0.055555556
-offset_right = -5460.0
+offset_right = -5506.0
 offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -170,7 +173,6 @@ mouse_filter = 2
 theme = ExtResource("1_qvtl0")
 theme_override_styles/panel = SubResource("StyleBoxFlat_5i07b")
 script = ExtResource("1_5i07b")
-metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=2085265447]
 layout_mode = 1
@@ -198,6 +200,7 @@ anchors_preset = -1
 anchor_right = 0.071
 anchor_bottom = 1.0
 offset_right = 14.699999
+grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Texture" type="TextureRect" parent="MarginContainer" unique_id=325535345]

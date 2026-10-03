@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://br22t7bflckoq"]
+
+[ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="1_pf1v3"]
+[ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="2_7vjw1"]
+[ext_resource type="Script" uid="uid://tnkba6h6wnww" path="res://Scenes/NameBar.gd" id="3_taxm2"]
+[ext_resource type="Texture2D" uid="uid://d35wlbx8ymfgl" path="res://Visuals/icon.svg" id="4_ctjsn"]
+[ext_resource type="Script" uid="uid://cjoesv6tpkk37" path="res://Scripts/ResizeLabel.gd" id="5_cv1ys"]
+[ext_resource type="Script" uid="uid://dfd2ffg4q82ph" path="res://Scenes/RichResizeLabel.gd" id="6_5ler7"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_w0e0x"]
+color = Color(1, 1, 1, 1)
+grow_begin = -100.0
+grow_end = -100.0
+
+[node name="PanelContainer" type="PanelContainer" unique_id=584935263]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pf1v3")
+theme_override_styles/panel = ExtResource("2_7vjw1")
+script = ExtResource("3_taxm2")
+
+[node name="Container" type="VBoxContainer" parent="." unique_id=783584816]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Text" type="HBoxContainer" parent="Container" unique_id=1014402812]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Texture" type="TextureRect" parent="Container/Text" unique_id=2107636755]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("4_ctjsn")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="Container/Text" unique_id=443338331]
+z_index = 1
+custom_minimum_size = Vector2(0, 56)
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+text = "Pickaxe"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 1
+script = ExtResource("5_cv1ys")
+
+[node name="Line" type="HSeparator" parent="Container" unique_id=1585843860]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 40
+theme_override_styles/separator = SubResource("StyleBoxLine_w0e0x")
+
+[node name="Description" type="RichTextLabel" parent="Container" unique_id=1563988122]
+visible = false
+custom_minimum_size = Vector2(0, 20)
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/line_separation = 10
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Unknown Stat"
+fit_content = true
+autowrap_mode = 2
+tab_size = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_5ler7")

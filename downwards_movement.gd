@@ -55,22 +55,22 @@ func _on_rare_button_pressed() -> void:
 	pass # Replace with function body.
 
 
-func _on_to_mine_button_pressed() -> void:
-	if up:
-		pass
-	else:
-		$Button.text = "v"
-		$AnimationPlayer.play("Up")
-		up = !up
-
-
-func _on_move_between_pressed() -> void:
-	if up:
-		$Button.text = "  Mine Settings  "
-		$AnimationPlayer.play("Down")
-
-		up = !up
-	pass # Replace with function body.
+#func _on_to_mine_button_pressed() -> void:
+	#if up:
+		#pass
+	#else:
+		#$Button.text = "v"
+		#$AnimationPlayer.play("Up")
+		#up = !up
+#
+#
+#func _on_move_between_pressed() -> void:
+	#if up:
+		#$Button.text = "  Mine Settings  "
+		#$AnimationPlayer.play("Down")
+#
+		#up = !up
+	#pass # Replace with function body.
 
 
 func _on_lock_pressed() -> void:

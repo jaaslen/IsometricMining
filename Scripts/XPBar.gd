@@ -35,7 +35,12 @@ func _ready() -> void:
 	#TierProgress.modulate  = Color(level["color"]) 
 	#Tier.self_modulate = Color(level["color"]) 
 	
-	
+	if level["id"] == 22:
+		$Required.visible = false
+		$Amount.text = "Max Level!"
+		#$XPBar.indeterminate = true
+		$XPBar.max_value = 1.0
+		$Amount.horizontal_alignment = 1
 
 	TierProgress.visible = true
 	TierProgress.max_value = level["tiertotal"]
@@ -51,24 +56,25 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func GainedXP(Amount) -> void:
 	
-	Bar.value = Global.XP 
-	AmountLabel.text = Global.Suffix(Bar.value,true)
-	RequiredLabel.text = Global.Suffix(Bar.max_value,true)
-		
-
-	if Amount > 0:
-		
-		if Bar.value >= Bar.max_value:
-			LevelUp()
+	if Global.Level["id"] < 22:
+		Bar.value = Global.XP 
+		AmountLabel.text = Global.Suffix(Bar.value,true)
+		RequiredLabel.text = Global.Suffix(Bar.max_value,true)
 			
-		
-		
-		if Amount >= floori(Global.Level["nextxp"] / 100.0):
-			$XPBar/XPAmount.text = "+" + Global.Suffix(int(Amount),true) + " xp"
-			$XPBar/AnimationPlayer.play("XPGain")
-		elif Amount > 1 and $XPBar/AnimationPlayer.is_playing() == false:
-			$XPBar/XPAmount.text = "+" + Global.Suffix(int(Amount),true) + " xp"
-			$XPBar/AnimationPlayer.play("SmallXPGain")
+
+		if Amount > 0:
+			
+			if Bar.value >= Bar.max_value:
+				LevelUp()
+				
+			
+			
+			if Amount >= floori(Global.Level["nextxp"] / 100.0):
+				$XPBar/XPAmount.text = "+" + Global.Suffix(int(Amount),true) + " xp"
+				$XPBar/AnimationPlayer.play("XPGain")
+			elif Amount > 1 and $XPBar/AnimationPlayer.is_playing() == false:
+				$XPBar/XPAmount.text = "+" + Global.Suffix(int(Amount),true) + " xp"
+				$XPBar/AnimationPlayer.play("SmallXPGain")
 
 
 func LevelUp():
@@ -95,6 +101,7 @@ func LevelUp():
 	Sprite.texture = load("res://Visuals/Ranks/" + level["name"] + ".png")
 	Tier.texture = load("res://Visuals/Ranks/" + str(int(level["tier"])) + ".png")
 	Global.LeveledUp()
+	
 	
 	
 		

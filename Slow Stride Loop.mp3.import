@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://p21yx5ilc8jc"
+path="res://.godot/imported/Slow Stride Loop.mp3-740693b6835821d2435d4bd42e987f2c.mp3str"
+
+[deps]
+
+source_file="res://Slow Stride Loop.mp3"
+dest_files=["res://.godot/imported/Slow Stride Loop.mp3-740693b6835821d2435d4bd42e987f2c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

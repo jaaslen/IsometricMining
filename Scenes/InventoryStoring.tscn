@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bbkr2um2q1wma" path="res://Scripts/StoringInventoryValue.gd" id="3_ud746"]
 [ext_resource type="StyleBox" uid="uid://d0q8uxj0q6kgx" path="res://Visuals/MetalPanelNarrow.tres" id="4_eal2v"]
 [ext_resource type="Texture2D" uid="uid://dcicd3utpj2kf" path="res://Visuals/OreSheet.png" id="4_k6h4k"]
+[ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="5_ud746"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2gq36"]
 atlas = ExtResource("4_k6h4k")
@@ -110,7 +111,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 mouse_default_cursor_shape = 2
-theme = ExtResource("1_eal2v")
+theme = ExtResource("5_ud746")
 theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = ExtResource("4_eal2v")
 text = ">"

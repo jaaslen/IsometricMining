@@ -274,22 +274,14 @@ text = "Quit?"
 [node name="Settings" parent="UI" unique_id=1968452938 instance=ExtResource("6_71b5n")]
 visible = false
 anchors_preset = 9
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 0.0
-anchor_bottom = 1.0
 offset_left = 10.0
-offset_top = 0.0
 offset_right = 610.0
-offset_bottom = 0.0
 grow_horizontal = 1
 
 [node name="Dictionary" parent="UI" unique_id=2082685999 instance=ExtResource("5_84h87")]
 visible = false
 z_index = 10
-offset_left = 1920.0
-offset_right = 1960.0
-offset_bottom = 96.0
 mouse_filter = 2
 
 [connection signal="pressed" from="UI/Play" to="." method="_on_play_pressed"]

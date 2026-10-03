@@ -255,7 +255,7 @@
 		],
 		[
 		  150,
-		  50
+		  30
 		],
 		[
 		  151,
@@ -267,11 +267,11 @@
 		],
 		[
 		  750,
-		  50
+		  30
 		],
 		[
 		  1500,
-		  75
+		  0
 		]
 	  ],
 	  "rarity": 1,
@@ -481,10 +481,11 @@
 		9
 	  ],
 	  "arrival": 1200,
+	  "optimal": 1500,
 	  "maximum": "1500",
 	  "stats": [
 		1200,
-		0,
+		1500,
 		1500,
 		36,
 		18962
@@ -522,10 +523,11 @@
 		9
 	  ],
 	  "arrival": 1200,
+	  "optimal": 1500,
 	  "maximum": "1500",
 	  "stats": [
 		1200,
-		0,
+		1500,
 		1500,
 		31,
 		18260
@@ -855,7 +857,7 @@
 	  "id": 19,
 	  "sorting": 6,
 	  "name": "Lithium",
-	  "color": "#7E7255",
+	  "color": "#6f5f81",
 	  "rank": 0,
 	  "hardness": 8,
 	  "value": 78,
@@ -910,7 +912,7 @@
 		],
 		[
 		  2450,
-		  10
+		  15
 		],
 		[
 		  2500,
@@ -961,10 +963,11 @@
 		16
 	  ],
 	  "arrival": 1500,
+	  "optimal": 1900,
 	  "maximum": "1900",
 	  "stats": [
 		1500,
-		0,
+		1900,
 		1900,
 		39,
 		90428
@@ -999,10 +1002,11 @@
 		6
 	  ],
 	  "arrival": 1500,
+	  "optimal": 2450,
 	  "maximum": "2450",
 	  "stats": [
 		1500,
-		0,
+		2450,
 		2450,
 		100,
 		87769
@@ -1081,10 +1085,11 @@
 		6
 	  ],
 	  "arrival": 500,
+	  "optimal": 900,
 	  "maximum": "900",
 	  "stats": [
 		500,
-		0,
+		900,
 		900,
 		32,
 		11916
@@ -1164,10 +1169,11 @@
 		15
 	  ],
 	  "arrival": 1250,
+	  "optimal": 1250,
 	  "maximum": "1500",
 	  "stats": [
 		1250,
-		0,
+		1250,
 		1500,
 		12,
 		63463
@@ -1244,10 +1250,11 @@
 		19
 	  ],
 	  "arrival": 750,
+	  "optimal": 750,
 	  "maximum": "1500",
 	  "stats": [
 		750,
-		0,
+		750,
 		1500,
 		15,
 		21442
@@ -1278,7 +1285,7 @@
 		],
 		[
 		  750,
-		  40
+		  16
 		]
 	  ],
 	  "rarity": 3,
@@ -1367,10 +1374,11 @@
 		8
 	  ],
 	  "arrival": 1500,
+	  "optimal": 2000,
 	  "maximum": "2000",
 	  "stats": [
 		1500,
-		0,
+		2000,
 		2000,
 		15,
 		181811
@@ -1447,10 +1455,11 @@
 		9
 	  ],
 	  "arrival": 1250,
+	  "optimal": 1500,
 	  "maximum": "1500",
 	  "stats": [
 		1250,
-		0,
+		1500,
 		1500,
 		47,
 		25882
@@ -1523,10 +1532,11 @@
 		9
 	  ],
 	  "arrival": 1500,
+	  "optimal": 1500,
 	  "maximum": "1900",
 	  "stats": [
 		1500,
-		0,
+		1500,
 		1900,
 		37,
 		35906
@@ -1561,10 +1571,11 @@
 		10
 	  ],
 	  "arrival": 1250,
+	  "optimal": 1250,
 	  "maximum": "1500",
 	  "stats": [
 		1250,
-		0,
+		1250,
 		1500,
 		27,
 		128080
@@ -1719,10 +1730,11 @@
 		24
 	  ],
 	  "arrival": 1250,
+	  "optimal": 3100,
 	  "maximum": "3100",
 	  "stats": [
 		1250,
-		0,
+		3100,
 		3100,
 		10,
 		349831
@@ -1791,7 +1803,7 @@
 	  "rank": 1,
 	  "hardness": 20,
 	  "value": 1121,
-	  "xp": 762,
+	  "xp": 1713,
 	  "depth": [
 		[
 		  150,
@@ -1815,14 +1827,11 @@
 		300,
 		300,
 		20,
-		762
+		1713
 	  ],
 	  "sound": "Cinematic Hit 2",
 	  "breaksound": "Glass Break",
-	  "layer": [
-		2,
-		3
-	  ],
+	  "layer": [],
 	  "description": "Can be almost any colour, but you get this one."
 	},
 	"43": {
@@ -1862,10 +1871,11 @@
 		21
 	  ],
 	  "arrival": 300,
+	  "optimal": 2500,
 	  "maximum": "2500",
 	  "stats": [
 		300,
-		0,
+		2500,
 		2500,
 		44,
 		127161
@@ -1903,10 +1913,11 @@
 		19
 	  ],
 	  "arrival": 1200,
+	  "optimal": 1200,
 	  "maximum": "1250",
 	  "stats": [
 		1200,
-		0,
+		1200,
 		1250,
 		41,
 		46610
@@ -1941,10 +1952,11 @@
 		17
 	  ],
 	  "arrival": 500,
+	  "optimal": 900,
 	  "maximum": "900",
 	  "stats": [
 		500,
-		0,
+		900,
 		900,
 		36,
 		12512
@@ -1986,10 +1998,11 @@
 		21
 	  ],
 	  "arrival": 500,
+	  "optimal": 750,
 	  "maximum": "1200",
 	  "stats": [
 		500,
-		0,
+		750,
 		1200,
 		27,
 		10725
@@ -2028,10 +2041,11 @@
 		23
 	  ],
 	  "arrival": 500,
+	  "optimal": 500,
 	  "maximum": "1200",
 	  "stats": [
 		500,
-		0,
+		500,
 		1200,
 		22,
 		11320
@@ -2178,6 +2192,10 @@
   "pickaxes": {
 	"0": {
 	  "id": 0,
+	  "atlas": [
+		0,
+		0
+	  ],
 	  "name": "Not Unlocked",
 	  "color": "#efefef",
 	  "rank": 0,
@@ -2205,7 +2223,11 @@
 	},
 	"1": {
 	  "id": 1,
-	  "name": "Stone",
+	  "atlas": [
+		1,
+		0
+	  ],
+	  "name": "Stone Pickaxe",
 	  "color": "#999999",
 	  "rank": 0,
 	  "cost": [
@@ -2236,7 +2258,11 @@
 	},
 	"2": {
 	  "id": 2,
-	  "name": "Tin",
+	  "atlas": [
+		1,
+		4
+	  ],
+	  "name": "Tin Pickaxe",
 	  "color": "#93a58c",
 	  "rank": 0,
 	  "cost": [
@@ -2275,7 +2301,11 @@
 	},
 	"3": {
 	  "id": 3,
-	  "name": "Copper",
+	  "atlas": [
+		2,
+		4
+	  ],
+	  "name": "Copper Pickaxe",
 	  "color": "#b45f06",
 	  "rank": 1,
 	  "cost": [
@@ -2318,7 +2348,11 @@
 	},
 	"4": {
 	  "id": 4,
-	  "name": "Lithium",
+	  "atlas": [
+		3,
+		5
+	  ],
+	  "name": "Lithium Pickaxe",
 	  "color": "#7e7255",
 	  "rank": 2,
 	  "cost": [
@@ -2345,7 +2379,7 @@
 	  ],
 	  "stats": [
 		5.5,
-		0.5,
+		0.6,
 		1.09,
 		2.5,
 		1,
@@ -2361,7 +2395,11 @@
 	},
 	"5": {
 	  "id": 5,
-	  "name": "Iron",
+	  "atlas": [
+		1,
+		5
+	  ],
+	  "name": "Iron Pickaxe",
 	  "color": "#a69489",
 	  "rank": 2,
 	  "cost": [
@@ -2412,29 +2450,29 @@
 	},
 	"6": {
 	  "id": 6,
-	  "name": "Tourmaline",
+	  "atlas": [
+		1,
+		21
+	  ],
+	  "name": "Tourmaline Chisel",
 	  "color": "#ead1dc",
 	  "rank": 3,
 	  "cost": [
 		[
 		  42,
-		  4
+		  8
 		],
 		[
 		  13,
-		  25
+		  16
 		],
 		[
 		  14,
-		  15
-		],
-		[
-		  29,
-		  12
+		  25
 		],
 		[
 		  4,
-		  10
+		  20
 		]
 	  ],
 	  "stats": [
@@ -2455,7 +2493,11 @@
 	},
 	"7": {
 	  "id": 7,
-	  "name": "Selenite",
+	  "atlas": [
+		1,
+		14
+	  ],
+	  "name": "Selenite Pickaxe",
 	  "color": "#e4d7c8",
 	  "rank": 4,
 	  "cost": [
@@ -2474,10 +2516,6 @@
 		[
 		  42,
 		  3
-		],
-		[
-		  29,
-		  10
 		],
 		[
 		  4,
@@ -2502,7 +2540,11 @@
 	},
 	"8": {
 	  "id": 8,
-	  "name": "Ruby",
+	  "atlas": [
+		4,
+		21
+	  ],
+	  "name": "Ruby Pickaxe",
 	  "color": "#ff0000",
 	  "rank": 5,
 	  "cost": [
@@ -2557,9 +2599,7 @@
 		600,
 		1200
 	  ],
-	  "traits": [
-		1
-	  ],
+	  "traits": [],
 	  "original": 8,
 	  "maxlevel": 0,
 	  "value": 1,
@@ -2567,7 +2607,11 @@
 	},
 	"9": {
 	  "id": 9,
-	  "name": "Nickel",
+	  "atlas": [
+		0,
+		9
+	  ],
+	  "name": "Nickel Hammer",
 	  "color": "#7b776c",
 	  "rank": 6,
 	  "cost": [
@@ -2618,7 +2662,7 @@
 	  ],
 	  "stats": [
 		18,
-		0.4,
+		0.6,
 		1,
 		2,
 		1,
@@ -2634,7 +2678,11 @@
 	},
 	"10": {
 	  "id": 10,
-	  "name": "Silver",
+	  "atlas": [
+		2,
+		6
+	  ],
+	  "name": "Silver Chisel",
 	  "color": "#c9daf8",
 	  "rank": 6,
 	  "cost": [
@@ -2697,7 +2745,11 @@
 	},
 	"11": {
 	  "id": 11,
-	  "name": "Cobalt",
+	  "atlas": [
+		2,
+		5
+	  ],
+	  "name": "Cobalt Pickaxe",
 	  "color": "#8992ad",
 	  "rank": 7,
 	  "cost": [
@@ -2760,7 +2812,11 @@
 	},
 	"12": {
 	  "id": 12,
-	  "name": "Gold",
+	  "atlas": [
+		1,
+		6
+	  ],
+	  "name": "Gold Hammer",
 	  "color": "#ffd966",
 	  "rank": 8,
 	  "cost": [
@@ -2823,9 +2879,7 @@
 		1575,
 		3150
 	  ],
-	  "traits": [
-		1
-	  ],
+	  "traits": [],
 	  "original": 12,
 	  "maxlevel": 0,
 	  "value": 1,
@@ -2833,57 +2887,61 @@
 	},
 	"13": {
 	  "id": 13,
-	  "name": "Uranium",
+	  "atlas": [
+		2,
+		3
+	  ],
+	  "name": "Uranium Pickaxe",
 	  "color": "#b9da4d",
 	  "rank": 9,
 	  "cost": [
 		[
 		  17,
-		  80
+		  160
 		],
 		[
 		  16,
-		  45
+		  90
 		],
 		[
 		  28,
-		  60
+		  120
 		],
 		[
 		  19,
-		  40
+		  80
 		],
 		[
 		  6,
-		  35
+		  70
 		],
 		[
 		  7,
-		  35
+		  70
 		],
 		[
 		  45,
-		  10
+		  20
 		],
 		[
 		  46,
-		  15
+		  30
 		],
 		[
 		  47,
-		  10
+		  20
 		],
 		[
 		  50,
-		  15
+		  30
 		],
 		[
 		  9,
-		  20
+		  40
 		],
 		[
 		  12,
-		  20
+		  40
 		]
 	  ],
 	  "stats": [
@@ -2904,65 +2962,69 @@
 	},
 	"14": {
 	  "id": 14,
-	  "name": "Graphene",
+	  "atlas": [
+		2,
+		16
+	  ],
+	  "name": "Graphene Pickaxe",
 	  "color": "#434343",
 	  "rank": 10,
 	  "cost": [
 		[
 		  48,
-		  95
+		  190
 		],
 		[
 		  17,
-		  65
+		  130
 		],
 		[
 		  24,
-		  20
-		],
-		[
-		  7,
-		  80
-		],
-		[
-		  16,
-		  50
-		],
-		[
-		  19,
-		  45
-		],
-		[
-		  29,
-		  50
-		],
-		[
-		  6,
 		  40
 		],
 		[
+		  7,
+		  160
+		],
+		[
+		  16,
+		  100
+		],
+		[
+		  19,
+		  90
+		],
+		[
+		  29,
+		  100
+		],
+		[
+		  6,
+		  80
+		],
+		[
 		  45,
-		  10
-		],
-		[
-		  46,
-		  15
-		],
-		[
-		  47,
-		  10
-		],
-		[
-		  50,
 		  20
 		],
 		[
+		  46,
+		  30
+		],
+		[
+		  47,
+		  20
+		],
+		[
+		  50,
+		  40
+		],
+		[
 		  10,
-		  5
+		  10
 		],
 		[
 		  23,
-		  50
+		  100
 		]
 	  ],
 	  "stats": [
@@ -2983,62 +3045,66 @@
 	},
 	"15": {
 	  "id": 15,
-	  "name": "Onyx",
+	  "atlas": [
+		2,
+		19
+	  ],
+	  "name": "Onyx Chisel",
 	  "color": "#434343",
 	  "rank": 11,
 	  "cost": [
 		[
 		  44,
-		  110
+		  220
 		],
 		[
 		  48,
-		  70
+		  140
 		],
 		[
 		  24,
-		  35
-		],
-		[
-		  16,
 		  70
 		],
 		[
+		  16,
+		  140
+		],
+		[
 		  17,
-		  60
+		  120
 		],
 		[
 		  7,
-		  65
+		  130
 		],
 		[
 		  19,
-		  50
+		  100
 		],
 		[
 		  28,
-		  50
+		  100
 		],
 		[
 		  42,
-		  30
+		  60
 		],
 		[
 		  50,
-		  20
+		  40
 		],
 		[
 		  10,
-		  10
+		  20
 		],
 		[
 		  11,
-		  15
+		  30
 		]
 	  ],
 	  "stats": [
-		40,
-		0.2,
+		50,
+		0.5,
 		1.35,
 		5,
 		1,
@@ -3054,61 +3120,65 @@
 	},
 	"16": {
 	  "id": 16,
-	  "name": "Vanadium",
+	  "atlas": [
+		2,
+		10
+	  ],
+	  "name": "Vanadium Pickaxe",
 	  "color": "#c62a00",
 	  "rank": 12,
 	  "cost": [
 		[
 		  36,
-		  125
+		  250
 		],
 		[
 		  44,
-		  80
+		  160
 		],
 		[
 		  17,
-		  85
+		  170
 		],
 		[
 		  24,
-		  40
+		  80
 		],
 		[
 		  25,
-		  20
+		  40
 		],
 		[
 		  48,
-		  70
+		  140
 		],
 		[
 		  16,
-		  60
+		  120
 		],
 		[
 		  22,
-		  35
+		  70
 		],
 		[
 		  19,
-		  60
+		  120
 		],
 		[
 		  33,
-		  30
+		  60
 		],
 		[
 		  50,
-		  20
+		  40
 		],
 		[
 		  10,
-		  20
+		  40
 		],
 		[
 		  11,
-		  30
+		  60
 		]
 	  ],
 	  "stats": [
@@ -3129,65 +3199,69 @@
 	},
 	"17": {
 	  "id": 17,
-	  "name": "Osmium",
+	  "atlas": [
+		5,
+		6
+	  ],
+	  "name": "Osmium Pickaxe",
 	  "color": "#596b5a",
 	  "rank": 13,
 	  "cost": [
 		[
 		  22,
-		  140
+		  280
 		],
 		[
 		  25,
-		  30
+		  60
 		],
 		[
 		  21,
-		  30
+		  60
 		],
 		[
 		  36,
-		  90
+		  180
 		],
 		[
 		  44,
-		  95
+		  190
 		],
 		[
 		  48,
-		  80
+		  160
 		],
 		[
 		  17,
-		  90
+		  180
 		],
 		[
 		  16,
-		  65
+		  130
 		],
 		[
 		  31,
-		  25
+		  50
 		],
 		[
 		  35,
-		  25
+		  50
 		],
 		[
 		  26,
-		  10
-		],
-		[
-		  33,
-		  30
-		],
-		[
-		  50,
 		  20
 		],
 		[
+		  33,
+		  60
+		],
+		[
+		  50,
+		  40
+		],
+		[
 		  11,
-		  50
+		  100
 		]
 	  ],
 	  "stats": [
@@ -3208,65 +3282,69 @@
 	},
 	"18": {
 	  "id": 18,
-	  "name": "Sapphire",
+	  "atlas": [
+		3,
+		21
+	  ],
+	  "name": "Sapphire Chisel",
 	  "color": "#0000ff",
 	  "rank": 14,
 	  "cost": [
 		[
 		  43,
-		  155
+		  310
 		],
 		[
 		  22,
-		  100
+		  200
 		],
 		[
 		  36,
-		  110
+		  220
 		],
 		[
 		  44,
-		  90
+		  180
 		],
 		[
 		  48,
-		  85
+		  170
 		],
 		[
 		  17,
-		  95
+		  190
 		],
 		[
 		  16,
-		  75
+		  150
 		],
 		[
 		  31,
-		  35
+		  70
 		],
 		[
 		  35,
-		  35
+		  70
 		],
 		[
 		  26,
-		  5
-		],
-		[
-		  42,
 		  10
 		],
 		[
-		  50,
+		  42,
 		  20
 		],
 		[
+		  50,
+		  40
+		],
+		[
 		  15,
-		  30
+		  60
 		],
 		[
 		  21,
-		  30
+		  60
 		]
 	  ],
 	  "stats": [
@@ -3279,9 +3357,7 @@
 		3000,
 		6000
 	  ],
-	  "traits": [
-		1
-	  ],
+	  "traits": [],
 	  "original": 18,
 	  "maxlevel": 0,
 	  "value": 1,
@@ -3289,29 +3365,33 @@
 	},
 	"19": {
 	  "id": 19,
-	  "name": "Antimony",
+	  "atlas": [
+		4,
+		13
+	  ],
+	  "name": "Antimony Pickaxe",
 	  "color": "#7D5B74",
 	  "rank": 15,
 	  "cost": [
 		[
 		  37,
-		  50
+		  100
 		],
 		[
 		  34,
-		  38
+		  76
 		],
 		[
 		  38,
-		  38
+		  76
 		],
 		[
 		  32,
-		  40
+		  80
 		],
 		[
 		  27,
-		  10
+		  20
 		]
 	  ],
 	  "stats": [
@@ -3332,80 +3412,82 @@
 	},
 	"20": {
 	  "id": 20,
-	  "name": "Tantalum",
+	  "atlas": [
+		4,
+		6
+	  ],
+	  "name": "Tantalum Drill",
 	  "color": "#0b5394",
 	  "rank": 16,
 	  "cost": [
 		[
 		  20,
-		  175
+		  35
 		],
 		[
 		  43,
-		  115
+		  230
 		],
 		[
 		  22,
-		  120
+		  240
 		],
 		[
 		  17,
-		  140
+		  280
 		],
 		[
 		  36,
-		  120
+		  240
 		],
 		[
 		  44,
-		  95
+		  190
 		],
 		[
 		  48,
-		  90
+		  180
 		],
 		[
 		  24,
-		  130
+		  260
 		],
 		[
 		  16,
-		  80
+		  160
 		],
 		[
 		  19,
-		  70
+		  140
 		],
 		[
 		  29,
-		  60
+		  120
 		],
 		[
 		  30,
-		  30
+		  60
 		],
 		[
 		  11,
-		  50
+		  100
 		],
 		[
 		  15,
-		  50
+		  100
 		]
 	  ],
 	  "stats": [
-		12,
+		50,
+		0.01,
 		0.5,
 		0.5,
-		0.5,
-		1,
+		5,
 		1,
 		3000,
 		8000
 	  ],
-	  "traits": [
-		3
-	  ],
+	  "traits": [],
 	  "original": 20,
 	  "maxlevel": 0,
 	  "value": 1,
@@ -3413,57 +3495,61 @@
 	},
 	"21": {
 	  "id": 21,
-	  "name": "Radium",
+	  "atlas": [
+		1,
+		11
+	  ],
+	  "name": "Radium Pickaxe",
 	  "color": "#6aa84f",
 	  "rank": 17,
 	  "cost": [
 		[
 		  8,
-		  195
+		  390
 		],
 		[
 		  20,
-		  125
+		  25
 		],
 		[
 		  17,
-		  135
+		  270
 		],
 		[
 		  43,
-		  120
+		  240
 		],
 		[
 		  22,
-		  125
+		  250
 		],
 		[
 		  36,
-		  120
+		  240
 		],
 		[
 		  44,
-		  100
+		  200
 		],
 		[
 		  48,
-		  95
+		  190
 		],
 		[
 		  16,
-		  85
+		  170
 		],
 		[
 		  19,
-		  75
+		  150
 		],
 		[
 		  27,
-		  6
+		  12
 		],
 		[
 		  12,
-		  30
+		  60
 		]
 	  ],
 	  "stats": [
@@ -3484,7 +3570,11 @@
 	},
 	"22": {
 	  "id": 22,
-	  "name": "Tungsten",
+	  "atlas": [
+		1,
+		7
+	  ],
+	  "name": "Tungsten Pickaxe",
 	  "color": "#d9ead3",
 	  "rank": 18,
 	  "cost": [
@@ -3498,7 +3588,7 @@
 		],
 		[
 		  20,
-		  145
+		  15
 		],
 		[
 		  22,
@@ -3559,7 +3649,11 @@
 	},
 	"23": {
 	  "id": 23,
-	  "name": "Unobtainium",
+	  "atlas": [
+		1,
+		24
+	  ],
+	  "name": "Unobtainium Drill",
 	  "color": "#ff00ff",
 	  "rank": 19,
 	  "cost": [
@@ -3577,7 +3671,7 @@
 		],
 		[
 		  20,
-		  75
+		  35
 		],
 		[
 		  43,
@@ -3634,12 +3728,16 @@
 	},
 	"24": {
 	  "id": 24,
+	  "atlas": [
+		0,
+		0
+	  ],
 	  "name": "dev",
 	  "color": "#FF00FF",
 	  "rank": 0,
 	  "cost": [
 		[
-		  0,
+		  1,
 		  1
 		]
 	  ],
@@ -3647,8 +3745,8 @@
 		9999,
 		0.01,
 		99,
-		5,
-		5,
+		0.1,
+		999,
 		5,
 		9999,
 		19998
@@ -3792,80 +3890,6 @@
 	"MULTI MINE": {
 	  "name": "MULTI MINE",
 	  "color": "#FFFFFF"
-	}
-  },
-  "stats": {
-	"0": {
-	  "id": 0,
-	  "name": "POWER",
-	  "color": "#EA9999",
-	  "description": "Using this pickaxe, ores are [color=white]%s[/color] easier to mine.",
-	  "suffix": "x",
-	  "displaymult": 1,
-	  "multiply": true
-	},
-	"1": {
-	  "id": 1,
-	  "name": "DELAY",
-	  "color": "#6D9EEB",
-	  "description": "The cooldown between blocks is [color=white]%s[/color] as long as before.",
-	  "suffix": "x",
-	  "displaymult": 1,
-	  "multiply": true
-	},
-	"2": {
-	  "id": 2,
-	  "name": "XP MULT",
-	  "color": "#674EA7",
-	  "description": "You gain [color=white]%s[/color] as much xp from the ores you mine.",
-	  "suffix": "%",
-	  "displaymult": 100,
-	  "multiply": true
-	},
-	"3": {
-	  "id": 3,
-	  "name": "LUCK",
-	  "color": "#B6D7A8",
-	  "description": "All Ores (★☆☆☆☆ and above) now appear at a rate of [color=white]%s[/color].",
-	  "suffix": "%",
-	  "displaymult": 100,
-	  "multiply": true
-	},
-	"4": {
-	  "id": 4,
-	  "name": "RARE LUCK",
-	  "color": "#FFD966",
-	  "description": "Rare Ores (★★★★ and ★★★★★) now appear at a rate of [color=white]%s[/color].",
-	  "suffix": "%",
-	  "displaymult": 100,
-	  "multiply": true
-	},
-	"5": {
-	  "id": 5,
-	  "name": "V. RARE LUCK",
-	  "color": "#FF9900",
-	  "description": "The Rarest Ores (★★★★★ only) now appear at a rate of [color=white]%s[/color].",
-	  "suffix": "%",
-	  "displaymult": 100,
-	  "multiply": true
-	},
-	"6": {
-	  "id": 6,
-	  "name": "DEPTH",
-	  "color": "#FF00FF",
-	  "description": "Maximum Depth increased by [color=white]%s[/color]!",
-	  "suffix": "M",
-	  "displaymult": 1,
-	  "multiply": false
-	},
-	"7": {
-	  "id": 7,
-	  "name": "STORAGE",
-	  "color": "#999999",
-	  "description": "You Can Hold [color=white]%s[/color]more ores.",
-	  "suffix": " ",
-	  "displaymult": 1,
-	  "multiply": false
 	}
   },
   "upgrades": {
@@ -4338,119 +4362,11 @@
 	  "symbolid": 8,
 	  "tiertotal": 1,
 	  "tier": 1,
-	  "nextxp": 25000000,
+	  "nextxp": 100000000000000000000,
 	  "requiredxp": 6200000,
 	  "color": "#FFFFFF",
-	  "fullxp": 25000000,
-	  "boost": 7
-	},
-	"23": {
-	  "id": 23,
-	  "name": "β",
-	  "symbolid": 9,
-	  "tiertotal": 1,
-	  "tier": 1,
-	  "nextxp": 105000000,
-	  "requiredxp": 25000000,
-	  "color": "#FFFFFF",
-	  "fullxp": 105000000,
+	  "fullxp": "99999999999999999999",
 	  "boost": 10
-	},
-	"24": {
-	  "id": 24,
-	  "name": "θ",
-	  "symbolid": 10,
-	  "tiertotal": 1,
-	  "tier": 1,
-	  "nextxp": 440000000,
-	  "requiredxp": 105000000,
-	  "color": "#FFFFFF",
-	  "fullxp": 440000000,
-	  "boost": 14
-	},
-	"25": {
-	  "id": 25,
-	  "name": "Λ",
-	  "symbolid": 11,
-	  "tiertotal": 1,
-	  "tier": 1,
-	  "nextxp": 2000000000,
-	  "requiredxp": 440000000,
-	  "color": "#FFFFFF",
-	  "fullxp": 2000000000,
-	  "boost": 20
-	},
-	"26": {
-	  "id": 26,
-	  "name": "λ",
-	  "symbolid": 12,
-	  "tiertotal": 1,
-	  "tier": 1,
-	  "nextxp": 8200000000,
-	  "requiredxp": 2000000000,
-	  "color": "#FFFFFF",
-	  "fullxp": 8200000000,
-	  "boost": 28
-	},
-	"27": {
-	  "id": 27,
-	  "name": "Π",
-	  "symbolid": 13,
-	  "tiertotal": 1,
-	  "tier": 1,
-	  "nextxp": 36000000000,
-	  "requiredxp": 8200000000,
-	  "color": "#FFFFFF",
-	  "fullxp": 36000000000,
-	  "boost": 40
-	},
-	"28": {
-	  "id": 28,
-	  "name": "Σ",
-	  "symbolid": 14,
-	  "tiertotal": 1,
-	  "tier": 1,
-	  "nextxp": 160000000000,
-	  "requiredxp": 36000000000,
-	  "color": "#FFFFFF",
-	  "fullxp": 160000000000,
-	  "boost": 58
-	},
-	"29": {
-	  "id": 29,
-	  "name": "Φ",
-	  "symbolid": 15,
-	  "tiertotal": 1,
-	  "tier": 1,
-	  "nextxp": 720000000000,
-	  "requiredxp": 160000000000,
-	  "color": "#FFFFFF",
-	  "fullxp": 720000000000,
-	  "boost": 85
-	},
-	"30": {
-	  "id": 30,
-	  "name": "Ψ",
-	  "symbolid": 16,
-	  "tiertotal": 1,
-	  "tier": 1,
-	  "nextxp": 3500000000000,
-	  "requiredxp": 720000000000,
-	  "color": "#FFFFFF",
-	  "fullxp": 3500000000000,
-	  "boost": 130
-	},
-	"31": {
-	  "id": 31,
-	  "name": "Ω",
-	  "symbolid": 17,
-	  "tiertotal": 1,
-	  "tier": 1,
-	  "nextxp": 15000000000000,
-	  "requiredxp": 3500000000000,
-	  "color": "#FFFFFF",
-	  "fullxp": 15000000000000,
-	  "boost": 200
 	}
   },
   "layers": {
@@ -4502,7 +4418,7 @@
 		3,
 		0
 	  ],
-	  "bg": 4,
+	  "bg": 5,
 	  "music": 8,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
@@ -4514,7 +4430,7 @@
 	"3": {
 	  "id": 3,
 	  "name": "gem caverns",
-	  "color": "#674EA7",
+	  "color": "#9c76ff",
 	  "Light": true,
 	  "brightness": 0.4,
 	  "atlas": [
@@ -4559,7 +4475,7 @@
 		0,
 		1
 	  ],
-	  "bg": 1,
+	  "bg": 4,
 	  "music": 17,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
@@ -4616,7 +4532,7 @@
 		3,
 		1
 	  ],
-	  "bg": 1,
+	  "bg": 6,
 	  "music": 18,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
@@ -4635,7 +4551,7 @@
 		4,
 		1
 	  ],
-	  "bg": 2,
+	  "bg": 3,
 	  "music": 7,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
@@ -4654,7 +4570,7 @@
 		6,
 		1
 	  ],
-	  "bg": 2,
+	  "bg": 3,
 	  "music": 25,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
@@ -4673,7 +4589,7 @@
 		0,
 		2
 	  ],
-	  "bg": 2,
+	  "bg": 3,
 	  "music": 15,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
@@ -4685,14 +4601,14 @@
 	"12": {
 	  "id": 12,
 	  "name": "night",
-	  "color": "#073763",
+	  "color": "#094173",
 	  "Light": false,
 	  "brightness": 0.4,
 	  "atlas": [
 		2,
 		2
 	  ],
-	  "bg": 0,
+	  "bg": 7,
 	  "music": 23,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
@@ -4757,6 +4673,166 @@
 	  "start": 3000,
 	  "end": 99999,
 	  "mini": false
+	}
+  },
+  "reforges": {
+	"0": {
+	  "id": 0,
+	  "name": "None",
+	  "color": "#CAE6FF",
+	  "stat": -1,
+	  "boost": 1
+	},
+	"1": {
+	  "id": 1,
+	  "name": "Powerful",
+	  "color": "#EA9999",
+	  "stat": 0,
+	  "boost": 1.5
+	},
+	"2": {
+	  "id": 2,
+	  "name": "Mighty",
+	  "color": "#EA9999",
+	  "stat": 0,
+	  "boost": 2
+	},
+	"3": {
+	  "id": 3,
+	  "name": "Brisk",
+	  "color": "#6D9EEB",
+	  "stat": 1,
+	  "boost": 0.75
+	},
+	"4": {
+	  "id": 4,
+	  "name": "Rapid",
+	  "color": "#6D9EEB",
+	  "stat": 1,
+	  "boost": 0.5
+	},
+	"5": {
+	  "id": 5,
+	  "name": "Adept",
+	  "color": "#674EA7",
+	  "stat": 2,
+	  "boost": 2
+	},
+	"6": {
+	  "id": 6,
+	  "name": "Wise",
+	  "color": "#674EA7",
+	  "stat": 2,
+	  "boost": 4
+	},
+	"7": {
+	  "id": 7,
+	  "name": "Fortunate",
+	  "color": "#B6D7A8",
+	  "stat": 3,
+	  "boost": 1.4
+	},
+	"8": {
+	  "id": 8,
+	  "name": "Karmic",
+	  "color": "#B6D7A8",
+	  "stat": 3,
+	  "boost": 1.8
+	},
+	"9": {
+	  "id": 9,
+	  "name": "Exploratory",
+	  "color": "#FF00FF",
+	  "stat": 6,
+	  "boost": 1.2
+	},
+	"10": {
+	  "id": 10,
+	  "name": "Probative",
+	  "color": "#FF00FF",
+	  "stat": 6,
+	  "boost": 1.4
+	},
+	"11": {
+	  "id": 11,
+	  "name": "Vast",
+	  "color": "#999999",
+	  "stat": 7,
+	  "boost": 2
+	}
+  },
+  "stats": {
+	"0": {
+	  "id": 0,
+	  "name": "POWER",
+	  "color": "#EA9999",
+	  "description": "Using this pickaxe, ores are [color=white]%s[/color] easier to mine.",
+	  "suffix": "x",
+	  "displaymult": 1,
+	  "multiply": true
+	},
+	"1": {
+	  "id": 1,
+	  "name": "DELAY",
+	  "color": "#6D9EEB",
+	  "description": "The cooldown between blocks is [color=white]%s[/color] as long as before.",
+	  "suffix": "x",
+	  "displaymult": 1,
+	  "multiply": true
+	},
+	"2": {
+	  "id": 2,
+	  "name": "XP MULT",
+	  "color": "#674EA7",
+	  "description": "You gain [color=white]%s[/color] as much xp from the ores you mine.",
+	  "suffix": "%",
+	  "displaymult": 100,
+	  "multiply": true
+	},
+	"3": {
+	  "id": 3,
+	  "name": "LUCK",
+	  "color": "#B6D7A8",
+	  "description": "All Ores (★☆☆☆☆ and above) now appear at a rate of [color=white]%s[/color].",
+	  "suffix": "%",
+	  "displaymult": 100,
+	  "multiply": true
+	},
+	"4": {
+	  "id": 4,
+	  "name": "RARE LUCK",
+	  "color": "#FFD966",
+	  "description": "Rare Ores (★★★★ and ★★★★★) now appear at a rate of [color=white]%s[/color].",
+	  "suffix": "%",
+	  "displaymult": 100,
+	  "multiply": true
+	},
+	"5": {
+	  "id": 5,
+	  "name": "V. RARE LUCK",
+	  "color": "#FF9900",
+	  "description": "The Rarest Ores (★★★★★ only) now appear at a rate of [color=white]%s[/color].",
+	  "suffix": "%",
+	  "displaymult": 100,
+	  "multiply": true
+	},
+	"6": {
+	  "id": 6,
+	  "name": "DEPTH",
+	  "color": "#FF00FF",
+	  "description": "Maximum Depth increased by [color=white]%s[/color]!",
+	  "suffix": "M",
+	  "displaymult": 1,
+	  "multiply": false
+	},
+	"7": {
+	  "id": 7,
+	  "name": "STORAGE",
+	  "color": "#999999",
+	  "description": "You Can Hold [color=white]%s[/color]more ores.",
+	  "suffix": " ",
+	  "displaymult": 1,
+	  "multiply": false
 	}
   }
 }

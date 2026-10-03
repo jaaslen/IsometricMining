@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://lh1ucjldiue5"
+path="res://.godot/imported/Chillin&#039; with My Puzzles.mp3-fa1c85d7cebe8e500313b969ebc478bd.mp3str"
+
+[deps]
+
+source_file="res://Chillin&#039; with My Puzzles.mp3"
+dest_files=["res://.godot/imported/Chillin&#039; with My Puzzles.mp3-fa1c85d7cebe8e500313b969ebc478bd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

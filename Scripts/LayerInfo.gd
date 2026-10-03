@@ -27,6 +27,8 @@ func _ready() -> void:
 		$Button.disabled = true
 		$Travel.visible = false
 	else:
+		#custom_minimum_size.y = 60 + (int(mini(Layer["length"],2000) * 0.03) * 10)
+		$TextureRect/Background.texture = load("res://Visuals/Backgrounds/Background" + str(int(Layer["bg"])) + ".png")
 		
 		Index.text = "#" + str(int(Layer["id"]))
 
@@ -69,6 +71,6 @@ func _on_travel_pressed() -> void:
 	Global.MoveDownToLayer()
 	Global.GlobalMoveDown(ActualLayer["start"]-Global.Depth)
 	Global.FullLayerReset(10)
-	Global.GlobalLayerChange()
+	Global.TravelLayers()
 	
 	pass # Replace with function body.
