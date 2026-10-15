@@ -16,6 +16,6 @@ func _ready() -> void:
 func LayerChanged(Layer):
 
 	material.set_shader_parameter("colour",Color(Layer["color"])  - Color(0.2,0.2,0.2,0))
-	material.set("shader_parameter/height",(1+Layer["id"])/100.0)
+	material.set("shader_parameter/height",(2+Layer["id"])/20.0)
 	material.set("shader_parameter/speed",(0.5+Layer["id"])/3.0)
 	pass

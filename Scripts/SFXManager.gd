@@ -26,7 +26,9 @@ var sounds = {
 	"Metal Hit" : preload("res://Audio/SFX/metal hit.mp3"),
 	"Tone Hit" : preload("res://Audio/SFX/tone hit.mp3"),
 	"Wood Hit" : preload("res://Audio/SFX/wood hit.mp3"),
-	"Open Panel" : preload("res://Audio/SFX/open panel.mp3")
+	"Open Panel" : preload("res://Audio/SFX/open panel.mp3"),
+	"Combo 1" : preload("res://Audio/Music/Combo (1).mp3"),
+	"Combo 2" : preload("res://Audio/Music/Combo (2).mp3")
 }
 
 

@@ -1,0 +1,10 @@
+[gd_resource type="Environment" format=3 uid="uid://ol615npraut7"]
+
+[resource]
+background_mode = 3
+ambient_light_color = Color(1, 1, 1, 1)
+glow_enabled = true
+glow_intensity = 1.89
+glow_bloom = 0.49
+glow_hdr_threshold = 1.04
+glow_hdr_scale = 1.88

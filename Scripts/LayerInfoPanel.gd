@@ -15,7 +15,7 @@ var Order = [1,2,3,5,7,6,4,13,14,16,18,22,9,15,8,12,17,32,34,11,10,28,23,20,24,2
 @onready var DepthRange = $FullContainer/DepthRange
 #@onready var InfoContainer = $FullContainer/HBoxContainer/Data/ScrollContainer/OreInfo
 
-@onready var Description = $Description
+@onready var Description = $FullContainer/Description
 
 #@onready var RareLabel = $FullContainer/HBoxContainer/Data/HBoxContainer/Panel/Rarity
 # Called when the node enters the scene tree for the first time.
@@ -100,7 +100,7 @@ func LoadLayer(LayerID,opening = true):
 		#RareLabel.text += "☆"
 	
 	#RareLabel.text = "★"
-	Name.text = Layer["name"]
+	Name.text = "  " + Layer["name"]
 	ID.text = "#" + str(Layer["id"])
 	DepthRange.text = str(int(Layer["start"])) + "M - " + str(int(Layer["end"])) + "M"
 	#Name.self_modulate = Color(Layer["color"]) + Color(0.2,0.2,0.2) #add_theme_color_override("font_color",Color(Layer["color"])*1.2)
@@ -143,8 +143,8 @@ func LoadLayer(LayerID,opening = true):
 var Open = true
 var Closing = false
 var Opening = false
-var ClosedPos = Vector2(1920,0)
-var OpenPos = Vector2(930,0)
+var ClosedPos = Vector2(1920,-60)
+var OpenPos = Vector2(905,-60)
 # Called when the node enters the scene tree for the first time.
 
 

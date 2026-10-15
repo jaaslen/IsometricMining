@@ -1,6 +1,6 @@
 # Trait_speed.gd
 extends Boost
-class_name AddTrait
+class_name AddUnlock
 @export var TraitName : String = "POWER"
 
 func Apply(_MinedBlock, context):

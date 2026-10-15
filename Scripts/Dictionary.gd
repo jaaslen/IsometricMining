@@ -40,6 +40,7 @@ func _process(delta: float) -> void:
 
 func OpenButtonPressed() -> void:
 	if Opening:
+		return
 		Opening = false
 		Closing = true
 		emit_signal("MenuClosed")

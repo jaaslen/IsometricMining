@@ -29,6 +29,10 @@ func PickaxeChanged(PickaxeID):
 	var PickaxeName = load("res://Scenes/NameBar.tscn").instantiate()
 	PickaxeName.Pickaxe = Global.GameData["pickaxes"][var_to_str(PickaxeID)]
 	add_child(PickaxeName)
+	
+	var Chances = load("res://Scenes/Chances.tscn").instantiate()
+	Chances.getchances(Global.GameData["pickaxes"][var_to_str(PickaxeID)]["chances"])
+	add_child(Chances)
 		
 	var StatIndex = 0
 	var stats = Global.GameData["pickaxes"][var_to_str(PickaxeID)]["stats"]

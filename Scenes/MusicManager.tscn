@@ -13,11 +13,12 @@ script = ExtResource("1_iysw5")
 
 [node name="AudioStreamPlaylist" type="AudioStreamPlayer" parent="." unique_id=2102491675]
 volume_db = -18.0
-pitch_scale = 0.8
 bus = &"Music"
 
 [node name="AudioStreamOnce" type="AudioStreamPlayer" parent="." unique_id=1735583215]
 volume_db = -18.0
+pitch_scale = 1.1
 bus = &"Music"
 
+[connection signal="finished" from="AudioStreamPlaylist" to="." method="_on_audio_stream_playlist_finished"]
 [connection signal="finished" from="AudioStreamOnce" to="." method="_on_audio_stream_once_finished"]

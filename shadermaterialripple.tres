@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c5w7aba2hhh0c"]
+
+[ext_resource type="Shader" uid="uid://b1j1t3cr3cfh5" path="res://Rippleshader.gdshader" id="1_33t6q"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i6qgn"]
+load_path = "res://.godot/imported/Background1.png-07658ebc785ecba34513c6e1ff11ec60.ctex"
+
+[resource]
+shader = ExtResource("1_33t6q")
+shader_parameter/tex = SubResource("CompressedTexture2D_i6qgn")
+shader_parameter/wave_count = 20.0
+shader_parameter/speed = 3.0
+shader_parameter/height = 0.1950000092625
+shader_parameter/colour = Color(1, 1, 1, 1)

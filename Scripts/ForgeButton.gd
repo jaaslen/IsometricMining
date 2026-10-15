@@ -17,6 +17,10 @@ func _process(_delta: float) -> void:
 
 func PriceChange(Cost,Buyable,ID) -> void:
 	disabled = !Buyable
+	if Buyable:
+		text = "Forge!"
+	else:
+		text = "Not Enough Ores!"
 	PickaxeCost = Cost
 	PickaxeID = ID
 	

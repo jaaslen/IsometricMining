@@ -23,12 +23,16 @@ func _ready() -> void:
 	if Found == false:
 		Layer = Global.GameData["layers"]["0"]
 		modulate = Color(0.3,0.3,0.3)
+		$TextureRect/Ripple.visible = false
 		$Button.text = "???"
 		$Button.disabled = true
 		$Travel.visible = false
 	else:
 		#custom_minimum_size.y = 60 + (int(mini(Layer["length"],2000) * 0.03) * 10)
-		$TextureRect/Background.texture = load("res://Visuals/Backgrounds/Background" + str(int(Layer["bg"])) + ".png")
+		$TextureRect/Ripple.visible = true
+		$TextureRect/Ripple.material = load("res://shadermaterialripple.tres").duplicate(true)
+		$TextureRect/Ripple.material.set_shader_parameter("tex,",load("res://Visuals/Backgrounds/Background" + str(int(Layer["bg"])) + ".png"))
+		$TextureRect/Ripple.LayerChanged(Layer)
 		
 		Index.text = "#" + str(int(Layer["id"]))
 
@@ -67,10 +71,10 @@ func Check():
 
 
 func _on_travel_pressed() -> void:
-	
-	Global.MoveDownToLayer()
-	Global.GlobalMoveDown(ActualLayer["start"]-Global.Depth)
-	Global.FullLayerReset(10)
-	Global.TravelLayers()
+	if ActualLayer["id"] != Global.Layer["id"]:
+		Global.MoveDownToLayer()
+		Global.GlobalMoveDown(ActualLayer["start"]-Global.Depth)
+		Global.FullLayerReset(10)
+		Global.TravelLayers()
 	
 	pass # Replace with function body.

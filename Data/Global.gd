@@ -453,7 +453,12 @@ func AddOre(OreID,Ore,amount = 1):
 	#emit_signal("Pulse",true)
 	
 func RemoveOre(OreID,amount = 1):
-	StorageOreAmounts[OreID] -= amount
+	var amountininv = OreAmounts[OreID]
+	if amountininv <= amount:
+		OreAmounts[OreID] -= amountininv
+		StorageOreAmounts[OreID] -= (amount - amountininv)
+	else:
+		OreAmounts[OreID] -= amount
 	if GameData["ores"][var_to_str(int(OreID))]["rarity"] != 0:
 		TotalOreAmount -= amount
 	else:
@@ -462,7 +467,7 @@ func RemoveOre(OreID,amount = 1):
 
 func GainXP(amount):
 	XP += amount * Global.Pickaxe["stats"][2]
-	emit_signal("XPChanged",amount)
+	emit_signal("XPChanged",amount* Global.Pickaxe["stats"][2])
 
 func UpgradePickaxe(PickaxeID):
 	PickaxeLevels[PickaxeID] += 1
@@ -601,9 +606,12 @@ func SetBaseStats():
 
 	
 func GetTime(OreID,Power):
+	
+	var layerpenalty = max((4.0/(4.0+max(Layer["id"]-1,0))),0.2)
+	
 	if PastDepth:
-		return (Global.GameData["ores"][var_to_str(OreID)]["hardness"] / (Power*0.1) )
-	return Global.GameData["ores"][var_to_str(OreID)]["hardness"] / Power
+		return (Global.GameData["ores"][var_to_str(OreID)]["hardness"] / (Power*0.1*layerpenalty) )
+	return Global.GameData["ores"][var_to_str(OreID)]["hardness"] / (Power*layerpenalty)
 
 func MoveBetween(ToSurface: bool):
 	if ToSurface:

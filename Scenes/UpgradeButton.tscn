@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://u3qbg3v7luv7" path="res://Visuals/Upgrades/0.png" id="1_t6ejy"]
 [ext_resource type="Script" uid="uid://b2hu4rsvo1opv" path="res://Scripts/Upgrade.gd" id="2_5eb03"]
 [ext_resource type="Shader" uid="uid://bbxwb4hfoqe22" path="res://Visuals/TileShine.gdshader" id="3_4w0ce"]
+[ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="4_a21di"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a21di"]
 shader = ExtResource("3_4w0ce")
@@ -32,6 +33,7 @@ size_flags_horizontal = 4
 script = ExtResource("2_5eb03")
 
 [node name="Effect" type="TextureRect" parent="." unique_id=314058819]
+visible = false
 z_index = 4
 z_as_relative = false
 material = SubResource("ShaderMaterial_a21di")
@@ -67,3 +69,20 @@ offset_left = -57.0
 offset_top = -73.0
 offset_right = 199.0
 offset_bottom = 199.0
+
+[node name="Label" type="Label" parent="." unique_id=479646220]
+z_index = 20
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.1328125
+anchor_top = 0.96875
+anchor_right = 1.1328125
+anchor_bottom = 1.4296875
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("4_a21di")
+text = "Click Me!"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true

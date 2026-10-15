@@ -11,14 +11,15 @@ atlas = ExtResource("2_pr6m8")
 region = Rect2(128, 0, 128, 136)
 
 [node name="Control" type="Control" unique_id=1398558418]
-custom_minimum_size = Vector2(360, 360)
+custom_minimum_size = Vector2(160, 160)
 layout_mode = 3
 anchor_right = 0.187
 anchor_bottom = 0.333
-offset_right = 0.95999146
 offset_bottom = 0.35998535
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_lg6u6")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=500605163]

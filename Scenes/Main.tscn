@@ -8,11 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://bjcsjc87cvvcu" path="res://Scenes/Storage.tscn" id="5_vvnwx"]
 [ext_resource type="Script" uid="uid://ce00buhltmq1e" path="res://Scripts/Camera.gd" id="6_0sclb"]
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="6_6ehlx"]
+[ext_resource type="Texture2D" uid="uid://coad6nrpotmbk" path="res://Visuals/Combo2.png" id="6_ex7s8"]
 [ext_resource type="Script" uid="uid://d3ocoxtblykxh" path="res://Scripts/Inventory.gd" id="6_lgr22"]
 [ext_resource type="Script" uid="uid://cgoxf007xiycg" path="res://Scripts/Lantern.gd" id="7_fq0cl"]
+[ext_resource type="Texture2D" uid="uid://qmh5quc0lhaj" path="res://Visuals/Combo3.png" id="7_nkjwg"]
 [ext_resource type="Texture2D" uid="uid://daxg4r2hrtpvi" path="res://Visuals/Backgrounds/Background1.png" id="8_5psol"]
+[ext_resource type="Texture2D" uid="uid://dofejbxd467e7" path="res://Visuals/Combo4.png" id="8_8n4h5"]
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="8_c4ay3"]
 [ext_resource type="Script" uid="uid://cgdad8gk70kif" path="res://Scripts/BaseUI.gd" id="8_c5snn"]
+[ext_resource type="Texture2D" uid="uid://bj0w4o04llq2s" path="res://Visuals/Combo5.png" id="9_as1io"]
 [ext_resource type="Script" uid="uid://4fsls3pjgu1j" path="res://Scripts/Background.gd" id="9_d8m2u"]
 [ext_resource type="Script" uid="uid://oxl83epljceq" path="res://Scripts/MiningProgress.gd" id="9_h1m7h"]
 [ext_resource type="Shader" uid="uid://bk201sysng156" path="res://Scripts/Ripple.gdshader" id="9_lac6x"]
@@ -47,11 +51,13 @@
 [ext_resource type="Texture2D" uid="uid://dhgubmksjl5w2" path="res://Visuals/Chest.png" id="33_f7hdo"]
 [ext_resource type="Texture2D" uid="uid://dnr7ltrky66kb" path="res://Visuals/pixelpanel.png" id="34_t3x2a"]
 [ext_resource type="Script" uid="uid://cjoesv6tpkk37" path="res://Scripts/ResizeLabel.gd" id="36_lfh1j"]
-[ext_resource type="Script" uid="uid://1ij4u6ic85bb" path="res://Scenes/layerinfo.gd" id="37_t3x2a"]
 [ext_resource type="Script" uid="uid://gtn63pikwfyv" path="res://Scenes/LevelXPLabel.gd" id="38_5gwyn"]
 [ext_resource type="Script" uid="uid://bn2nkkoi80ve5" path="res://Scenes/DepthGauge.gd" id="40_js5gh"]
+[ext_resource type="StyleBox" uid="uid://ckiyntv3jfww6" path="res://AngleButton.tres" id="41_1bbis"]
 [ext_resource type="Script" uid="uid://drdnu7f0qxu6k" path="res://Scenes/WarningLabel.gd" id="41_5gwyn"]
 [ext_resource type="Script" uid="uid://b40n1e6mxxyo2" path="res://Scenes/move_between.gd" id="41_eywpa"]
+[ext_resource type="StyleBox" uid="uid://de02od0lh6fuq" path="res://AngleButtonHighlight.tres" id="42_yic5e"]
+[ext_resource type="StyleBox" uid="uid://ck0mxuo4tk28d" path="res://AngleButtonDisabled.tres" id="43_ex7s8"]
 [ext_resource type="Script" uid="uid://b0k2660ymyhon" path="res://Scenes/storage_button.gd" id="44_y2ulj"]
 [ext_resource type="PackedScene" uid="uid://cn7e6itmncnsm" path="res://Scenes/Upgrades.tscn" id="46_semxg"]
 [ext_resource type="Script" uid="uid://bholm431m45vi" path="res://Scenes/lock.gd" id="47_rgw24"]
@@ -60,6 +66,9 @@
 [ext_resource type="PackedScene" uid="uid://bf4q07s8cqp2h" path="res://DownwardsMovement.tscn" id="50_r6gtk"]
 [ext_resource type="PackedScene" uid="uid://b8eitjjnj4s1a" path="res://squares.tscn" id="50_rgw24"]
 [ext_resource type="PackedScene" uid="uid://dit22wc0wqt23" path="res://ggs/game_settings/Settings.tscn" id="51_7sj7i"]
+[ext_resource type="Script" uid="uid://bbpsdx6bfspdk" path="res://Scenes/squares.gd" id="52_j7e3e"]
+[ext_resource type="Script" uid="uid://buctau1p7n0r1" path="res://Scenes/overheatlabel.gd" id="52_t3x2a"]
+[ext_resource type="PackedScene" uid="uid://fxl041k2gdj8" path="res://Radio.tscn" id="52_y2ulj"]
 [ext_resource type="Shader" uid="uid://5404aetut5vn" path="res://Scenes/3dDisplacement.gdshader" id="57_yisvs"]
 [ext_resource type="Texture2D" uid="uid://ceynw114wqp68" path="res://Visuals/ele.png" id="60_r6gtk"]
 [ext_resource type="Script" uid="uid://dfvbbnn7k83pi" path="res://Scenes/ele.gd" id="61_81ldr"]
@@ -769,6 +778,210 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_ex7s8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_ex7s8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_4clwk"]
+resource_name = "x2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_ex7s8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.3, 0.3), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.5235988, 0.5235988, -0.5235988]
+}
+
+[sub_resource type="Animation" id="Animation_xd5mi"]
+resource_name = "x3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_nkjwg")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.35, 0.35), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.5235988, 0.5235988, -0.5235988]
+}
+
+[sub_resource type="Animation" id="Animation_tt1x2"]
+resource_name = "x4"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_8n4h5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.4, 0.4), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.5235988, 0.5235988, -0.5235988]
+}
+
+[sub_resource type="Animation" id="Animation_2wrh7"]
+resource_name = "x5"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_as1io")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.45, 0.45), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.5235988, 0.5235988, -0.5235988]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h2tpa"]
+_data = {
+&"RESET": SubResource("Animation_ex7s8"),
+&"x2": SubResource("Animation_4clwk"),
+&"x3": SubResource("Animation_xd5mi"),
+&"x4": SubResource("Animation_tt1x2"),
+&"x5": SubResource("Animation_2wrh7")
+}
+
 [sub_resource type="Gradient" id="Gradient_rgw24"]
 offsets = PackedFloat32Array(0.9612403, 0.9767442)
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
@@ -1304,14 +1517,15 @@ height = 640
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[sub_resource type="Environment" id="Environment_r6gtk"]
+[sub_resource type="Environment" id="Environment_jhbkm"]
 background_mode = 3
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 2.07
+ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 glow_enabled = true
-glow_intensity = 1.89
-glow_bloom = 0.49
-glow_hdr_threshold = 1.04
-glow_hdr_scale = 1.88
+glow_intensity = 1.77
+glow_bloom = 0.39
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wr4am"]
 shader = ExtResource("57_yisvs")
@@ -1320,9 +1534,9 @@ shader_parameter/smoothed = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hpjjw"]
 shader = ExtResource("9_lac6x")
-shader_parameter/wave_count = 13.0
-shader_parameter/speed = 9.0000001341108
-shader_parameter/height = 0.8790000417525
+shader_parameter/wave_count = 20.0
+shader_parameter/speed = 1.0000000149012
+shader_parameter/height = 1.86000008835
 shader_parameter/colour = Color(1, 1, 1, 0.11372549)
 
 [sub_resource type="Gradient" id="Gradient_eywpa"]
@@ -1497,6 +1711,15 @@ animation = &"LeftB"
 offset = Vector2(0, 17)
 script = ExtResource("5_rgw24")
 
+[node name="Multiplier" type="Sprite2D" parent="Detection/Effects" unique_id=1204244080]
+z_index = 63
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("6_ex7s8")
+
+[node name="Multiplier" type="AnimationPlayer" parent="Detection/Effects/Multiplier" unique_id=2063787162]
+libraries/ = SubResource("AnimationLibrary_h2tpa")
+speed_scale = 3.0
+
 [node name="TextureRect" type="TextureRect" parent="Detection" unique_id=497178930]
 offset_left = -386.75
 offset_top = 83.25
@@ -1570,9 +1793,6 @@ script = ExtResource("6_0sclb")
 script = ExtResource("18_346fj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=314353378]
-
-[node name="OverheatUI" type="CanvasModulate" parent="CanvasLayer" unique_id=1095246279]
-script = ExtResource("13_ep8v8")
 
 [node name="SettingsButton" type="Button" parent="CanvasLayer" unique_id=1055431936]
 z_index = -1
@@ -2109,19 +2329,6 @@ horizontal_alignment = 2
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="CanvasLayer/BaseUI" unique_id=99702666]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.2859375
-anchor_top = 0.725
-anchor_right = 0.66302085
-anchor_bottom = 0.80833334
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 35
-script = ExtResource("37_t3x2a")
-metadata/_edit_use_anchors_ = true
-
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=1625839039]
 visible = false
 z_index = 8
@@ -2195,6 +2402,7 @@ anchor_bottom = 0.9222222
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("31_off7b")
+toggle_mode = true
 text = "Lock"
 script = ExtResource("47_rgw24")
 metadata/_edit_use_anchors_ = true
@@ -2251,64 +2459,82 @@ script = ExtResource("14_vvjo1")
 metadata/_edit_use_anchors_ = true
 
 [node name="Menus" type="HBoxContainer" parent="CanvasLayer/Menus" unique_id=170188338]
-layout_mode = 0
-offset_right = 968.0
-offset_bottom = 220.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.1
 size_flags_vertical = 3
-theme_override_constants/separation = -10
+theme_override_constants/separation = 32
+metadata/_edit_use_anchors_ = true
 
 [node name="ForgeButton" type="Button" parent="CanvasLayer/Menus/Menus" unique_id=1780826468]
 modulate = Color(0, 1, 0, 1)
 z_index = -1
-clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = ExtResource("41_1bbis")
+theme_override_styles/pressed = ExtResource("41_1bbis")
+theme_override_styles/hover = ExtResource("42_yic5e")
+theme_override_styles/disabled = ExtResource("43_ex7s8")
 text = "Forge"
 clip_text = true
 
 [node name="StorageButton" type="Button" parent="CanvasLayer/Menus/Menus" unique_id=1104571493]
-clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = ExtResource("41_1bbis")
+theme_override_styles/pressed = ExtResource("41_1bbis")
+theme_override_styles/hover = ExtResource("42_yic5e")
+theme_override_styles/disabled = ExtResource("43_ex7s8")
 text = "Storage"
 clip_text = true
 
 [node name="StorageButton" type="Button" parent="CanvasLayer/Menus/Menus/StorageButton" unique_id=2034560302]
-clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.6227273
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.1
+anchor_top = 0.79207927
+anchor_right = 0.9
+anchor_bottom = 1.1700001
+offset_left = -55.099976
+offset_top = -1.0
+offset_right = -55.099976
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 focus_mode = 0
 mouse_default_cursor_shape = 2
-theme_override_font_sizes/font_size = 38
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("41_1bbis")
+theme_override_styles/pressed = ExtResource("41_1bbis")
+theme_override_styles/hover = ExtResource("42_yic5e")
+theme_override_styles/disabled = ExtResource("43_ex7s8")
 text = "QUICK STORE"
 clip_text = true
 script = ExtResource("44_y2ulj")
-metadata/_edit_use_anchors_ = true
 
 [node name="UpgradeButton" type="Button" parent="CanvasLayer/Menus/Menus" unique_id=1938869438]
 modulate = Color(1, 0.9506531, 0.42578125, 1)
 z_index = -1
-clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = ExtResource("41_1bbis")
+theme_override_styles/pressed = ExtResource("41_1bbis")
+theme_override_styles/hover = ExtResource("42_yic5e")
+theme_override_styles/disabled = ExtResource("43_ex7s8")
 text = "Upgrades"
 clip_text = true
 metadata/_edit_use_anchors_ = true
@@ -2332,34 +2558,31 @@ script = ExtResource("50_81ldr")
 [node name="WarningLabel" type="Label" parent="CanvasLayer" unique_id=2012676248]
 z_index = 1
 anchors_preset = -1
-anchor_left = 0.21614583
-anchor_top = 0.2611111
-anchor_right = 0.43177083
-anchor_bottom = 0.44907406
-offset_left = 1056.0
-offset_top = -193.0
-offset_right = 1056.0
-offset_bottom = -193.0
+anchor_left = 0.3
+anchor_top = 0.4
+anchor_right = 0.7
+anchor_bottom = 0.6
+offset_bottom = 45.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 26
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("8_c4ay3")
 text = "Inventory Full! 
 Put Ores in Storage!"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("41_5gwyn")
-metadata/_edit_use_anchors_ = true
 
 [node name="MoveBetween" type="Button" parent="CanvasLayer/WarningLabel" unique_id=899799252]
-visible = false
 modulate = Color(1.5565991, 1.5565991, 1.5565991, 1)
 layout_mode = 1
 anchors_preset = -1
+anchor_left = 0.1
 anchor_top = 0.8664596
-anchor_right = 1.0
+anchor_right = 0.9
 anchor_bottom = 1.3322982
 grow_horizontal = 2
 grow_vertical = 0
@@ -2400,7 +2623,6 @@ Your depth will be reset!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-script = ExtResource("36_lfh1j")
 
 [node name="No" type="Button" parent="CanvasLayer/Prompt/Label" unique_id=30113080]
 modulate = Color(1, 0.49, 0.49, 1)
@@ -2439,6 +2661,11 @@ theme = ExtResource("6_6ehlx")
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
 text = "Yep!"
+
+[node name="Radio" parent="CanvasLayer" unique_id=1815654636 instance=ExtResource("52_y2ulj")]
+anchor_top = 0.35
+anchor_bottom = 0.7
+grow_horizontal = 1
 
 [node name="Settings" parent="CanvasLayer" unique_id=1968452938 instance=ExtResource("51_7sj7i")]
 visible = false
@@ -2489,6 +2716,25 @@ anchor_left = 1.0
 anchor_top = 0.9259259
 metadata/_edit_use_anchors_ = true
 
+[node name="OptimalDepth" type="Label" parent="CanvasLayer" unique_id=531018971]
+visible = false
+anchors_preset = -1
+anchor_left = 0.45572916
+anchor_top = 0.16666667
+anchor_right = 0.5421875
+anchor_bottom = 0.18611111
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Past optimal depth!"
+horizontal_alignment = 1
+script = ExtResource("52_t3x2a")
+metadata/_edit_use_anchors_ = true
+
+[node name="OverheatUI" type="CanvasModulate" parent="CanvasLayer" unique_id=1095246279]
+position = Vector2(895, 190.5)
+script = ExtResource("13_ep8v8")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=213413100]
 libraries/ = SubResource("AnimationLibrary_c2ibq")
 script = ExtResource("14_c2ibq")
@@ -2527,7 +2773,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2048862837]
-environment = SubResource("Environment_r6gtk")
+environment = SubResource("Environment_jhbkm")
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=1663016366]
 layer = -1
@@ -2548,6 +2794,7 @@ script = ExtResource("9_d8m2u")
 metadata/_edit_use_anchors_ = true
 
 [node name="Ele" type="TextureRect" parent="Background" unique_id=990222297]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2632,6 +2879,24 @@ texture = SubResource("GradientTexture2D_y2ulj")
 lifetime = 20.0
 process_material = SubResource("ParticleProcessMaterial_wr4am")
 
+[node name="Control" type="Control" parent="Background" unique_id=1626561760]
+visible = false
+z_index = -1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("52_j7e3e")
+CentreSquareScale = Vector2(0.1, 0.1)
+CenterSquareModulate = Color(1, 1, 1, 0)
+CenterSquareAlphaMod = -0.215
+CentreSquareRotation = 1.55
+FollowMouse = true
+Rings = 122
+
 [connection signal="ExitAttempt" from="Detection" to="CanvasLayer/Prompt" method="ExitAttempt"]
 [connection signal="FinishedMiningAnim" from="Detection" to="CanvasLayer/BaseUI/ProgressBar" method="_on_detection_finished_mining_anim"]
 [connection signal="FrameChanged" from="Detection" to="CanvasLayer/BaseUI/ProgressBar" method="_on_detection_frame_changed"]
@@ -2652,7 +2917,7 @@ process_material = SubResource("ParticleProcessMaterial_wr4am")
 [connection signal="pressed" from="CanvasLayer/MoveBetween" to="Detection" method="_on_move_between_pressed"]
 [connection signal="pressed" from="CanvasLayer/MoveBetween" to="CanvasLayer/MineSettings" method="_on_move_between_pressed"]
 [connection signal="pressed" from="CanvasLayer/Lock" to="Detection" method="_on_lock_pressed"]
-[connection signal="pressed" from="CanvasLayer/Lock" to="CanvasLayer/MineSettings" method="_on_lock_pressed"]
+[connection signal="toggled" from="CanvasLayer/Lock" to="CanvasLayer/MineSettings" method="_on_lock_pressed"]
 [connection signal="pressed" from="CanvasLayer/DictionaryButton" to="CanvasLayer/Forge" method="OtherButtonPressed"]
 [connection signal="pressed" from="CanvasLayer/DictionaryButton" to="CanvasLayer/Dictionary" method="OpenButtonPressed"]
 [connection signal="pressed" from="CanvasLayer/DictionaryButton" to="CanvasLayer/Storage" method="OtherButtonPressed"]

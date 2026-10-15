@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bynqtr6o477ob" path="res://Scripts/PickaxeSelection.gd" id="1_48p6v"]
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="1_dgjc1"]
 [ext_resource type="StyleBox" uid="uid://ckiyntv3jfww6" path="res://AngleButton.tres" id="2_5gwrt"]
-[ext_resource type="Texture2D" uid="uid://dcicd3utpj2kf" path="res://Visuals/OreSheet.png" id="3_c82o0"]
 [ext_resource type="StyleBox" uid="uid://de02od0lh6fuq" path="res://AngleButtonHighlight.tres" id="3_n3b1w"]
 [ext_resource type="Script" uid="uid://dwwe4laybj2bm" path="res://Scripts/EquipButton.gd" id="4_3lv84"]
 [ext_resource type="StyleBox" uid="uid://ck0mxuo4tk28d" path="res://AngleButtonDisabled.tres" id="4_n3b1w"]
@@ -12,14 +11,19 @@
 [ext_resource type="Texture2D" uid="uid://bhqqk4lwgwgs3" path="res://Visuals/Ranks/A.png" id="8_d6djc"]
 [ext_resource type="Texture2D" uid="uid://by7ba5d0vn2ok" path="res://Visuals/Ranks/1.png" id="9_5gwrt"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d6djc"]
-atlas = ExtResource("3_c82o0")
-region = Rect2(32, 0, 64, 68)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5gwrt"]
+load_path = "res://.godot/imported/OreSheet.png-51585efd4c3a87caae500bda9f2149bb.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3b1w"]
+atlas = SubResource("CompressedTexture2D_5gwrt")
+region = Rect2(0, 0, 64, 68)
+filter_clip = true
 
 [sub_resource type="SystemFont" id="SystemFont_d6djc"]
 subpixel_positioning = 0
 
 [node name="Button" type="Button" unique_id=1486486683]
+z_index = 1
 custom_minimum_size = Vector2(500, 68)
 anchors_preset = -1
 size_flags_horizontal = 4
@@ -37,7 +41,7 @@ offset_top = 6.0
 offset_right = 106.0
 offset_bottom = 61.0
 size_flags_horizontal = 0
-texture = SubResource("AtlasTexture_d6djc")
+texture = SubResource("AtlasTexture_n3b1w")
 expand_mode = 1
 stretch_mode = 5
 

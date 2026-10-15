@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://sr3kwxijwepr" path="res://Scripts/Dictionary.gd" id="1_3abks"]
 [ext_resource type="Script" uid="uid://beygvhct1lf0w" path="res://Scripts/DictionaryContainer.gd" id="1_la43g"]
-[ext_resource type="PackedScene" uid="uid://dg1k0b6frkr3x" path="res://Scenes/OreInfo.tscn" id="2_xvgq2"]
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="3_2lwa5"]
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="4_d3rv7"]
+[ext_resource type="PackedScene" uid="uid://oua0gsv33ubi" path="res://Scenes/OreInfo2.tscn" id="5_5w4om"]
 [ext_resource type="Script" uid="uid://d01a4vs5xt5m2" path="res://Scripts/LayerDictionaryContainer.gd" id="5_t6gtc"]
 [ext_resource type="PackedScene" uid="uid://cdsd6xbm8m530" path="res://Scenes/LayerInfo.tscn" id="6_hq5wi"]
 [ext_resource type="Shader" uid="uid://bhnh7ur4ox6e2" path="res://Scenes/Blur.gdshader" id="8_eef4p"]
@@ -14,6 +14,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j4ftg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2lwa5"]
+content_margin_left = 28.0
+content_margin_right = 28.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvgq2"]
 bg_color = Color(0.1764706, 0.1764706, 0.1764706, 1)
@@ -23,8 +25,8 @@ border_width_right = 5
 border_width_bottom = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nrkam"]
-content_margin_left = 30.0
-content_margin_right = 30.0
+content_margin_left = 28.0
+content_margin_right = 28.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u4vi8"]
 shader = ExtResource("8_eef4p")
@@ -62,12 +64,11 @@ theme_override_font_sizes/font_size = 36
 theme_override_styles/panel = SubResource("StyleBoxEmpty_j4ftg")
 theme_override_styles/tabbar_background = ExtResource("3_2lwa5")
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 drag_to_rearrange_enabled = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Ores" type="Control" parent="HBoxContainer/TabContainer" unique_id=2037612179]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -86,20 +87,21 @@ tile_scroll_hint = true
 
 [node name="GridContainer" type="GridContainer" parent="HBoxContainer/TabContainer/Ores/ScrollContainer" unique_id=367698296]
 unique_name_in_owner = true
+propagate_maximum_size = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 theme = ExtResource("4_d3rv7")
-columns = 11
+columns = 5
 script = ExtResource("1_la43g")
 
-[node name="Control" parent="HBoxContainer/TabContainer/Ores" unique_id=9308825 instance=ExtResource("2_xvgq2")]
+[node name="Control" parent="HBoxContainer/TabContainer/Ores" unique_id=1820293531 instance=ExtResource("5_5w4om")]
 unique_name_in_owner = true
-visible = false
-z_index = 2
 layout_mode = 1
-offset_bottom = 1.0
+anchors_preset = -1
+anchor_right = 0.9027778
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="HBoxContainer/TabContainer/Ores" unique_id=576616960]
 visible = false
@@ -115,6 +117,7 @@ theme = ExtResource("4_d3rv7")
 theme_override_styles/panel = SubResource("StyleBoxFlat_xvgq2")
 
 [node name="Layers" type="Control" parent="HBoxContainer/TabContainer" unique_id=483306039]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -136,6 +139,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 12
 script = ExtResource("5_t6gtc")
 
 [node name="Panel" type="Panel" parent="HBoxContainer/TabContainer/Layers" unique_id=1651100801]
@@ -151,11 +155,13 @@ mouse_filter = 2
 theme = ExtResource("4_d3rv7")
 theme_override_styles/panel = ExtResource("3_2lwa5")
 
-[node name="Control" parent="HBoxContainer/TabContainer/Layers" unique_id=1820293531 instance=ExtResource("6_hq5wi")]
+[node name="Control" parent="HBoxContainer/TabContainer/Layers" unique_id=1425964325 instance=ExtResource("6_hq5wi")]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.9
-anchor_bottom = 0.7
+anchor_left = 1.050926
+anchor_right = 1.950926
+offset_bottom = 50.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Blur" type="ColorRect" parent="." unique_id=553646950]
 z_index = -1
@@ -200,5 +206,15 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/disabled = ExtResource("11_2lwa5")
 text = "X"
 metadata/_edit_use_anchors_ = true
+
+[node name="Panel2" type="Panel" parent="." unique_id=1229000327]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 0
+grow_vertical = 2
 
 [connection signal="pressed" from="Button" to="." method="CloseButton"]

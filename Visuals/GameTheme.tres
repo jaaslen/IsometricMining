@@ -1,22 +1,10 @@
 [gd_resource type="Theme" format=3 uid="uid://bhh6e3pgmrfbn"]
 
 [ext_resource type="FontVariation" uid="uid://daivjrli5uhag" path="res://Visuals/Orbitron.tres" id="1_cxn07"]
-[ext_resource type="Texture2D" uid="uid://djhyimix0wpgn" path="res://Visuals/Panel.png" id="1_h7b0r"]
 [ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="1_m0vlx"]
 [ext_resource type="StyleBox" uid="uid://dmkguktg2ckhq" path="res://Visuals/LinePanel.tres" id="3_2u6v2"]
 [ext_resource type="StyleBox" uid="uid://cnyb351ov4jx6" path="res://pressedButton.tres" id="4_5c6vu"]
 [ext_resource type="StyleBox" uid="uid://d0q8uxj0q6kgx" path="res://Visuals/MetalPanelNarrow.tres" id="4_h7b0r"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2u6v2"]
-content_margin_left = 20.0
-content_margin_top = 20.0
-content_margin_right = 20.0
-content_margin_bottom = 20.0
-texture = ExtResource("1_h7b0r")
-texture_margin_left = 10.0
-texture_margin_top = 10.0
-texture_margin_right = 10.0
-texture_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2u6v2"]
 bg_color = Color(1, 1, 1, 0.133)
@@ -38,7 +26,7 @@ border_width_bottom = 2
 [resource]
 Button/constants/outline_size = 5
 Button/fonts/font = ExtResource("1_cxn07")
-Button/styles/disabled = SubResource("StyleBoxTexture_2u6v2")
+Button/styles/disabled = ExtResource("1_m0vlx")
 Button/styles/hover = ExtResource("4_5c6vu")
 Button/styles/normal = ExtResource("4_h7b0r")
 Button/styles/pressed = ExtResource("4_h7b0r")

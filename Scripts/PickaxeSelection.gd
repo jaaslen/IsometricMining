@@ -44,13 +44,15 @@ func PickaxeChanged(__):
 	$Status.modulate = Color(Pickaxe["color"])
 	IDLabel.text = "#" + str(Original["id"])
 	var atlas = Pickaxe["atlas"]
-	$Texture.texture.region = Rect2(Vector2(Global.TileSize.x * atlas[0],2 * Global.TileSize.y * atlas[1]),Vector2(Global.TileSize.x,Global.TileSize.y * 2))
+	disabled = false
+	#$Texture.texture.region = Rect2(Vector2(Global.TileSize.x * atlas[0],2 * Global.TileSize.y * atlas[1]),Vector2(Global.TileSize.x,Global.TileSize.y * 2))
 	custom_minimum_size.x = 480
 	EquipButton.visible = false
 	EquipButton.disabled = true
 	if Pickaxe["rank"] <= Global.Level["id"] and (int(Pickaxe["id"]) % 1000) in Global.ForgedPickaxes and Forged == true:
 		EquipButton.visible = true
 		EquipButton.disabled = false
+
 		$Status.text = "Forged"
 		EquipButton.text = "Equip?"
 		$Selected.text = ""
@@ -67,15 +69,17 @@ func PickaxeChanged(__):
 		EquipButton.visible = false
 		$Status.text = "Unlocked"
 		
+		
 
 	self_modulate = Pickaxe["color"]
-	$Texture.texture.region = Rect2(Vector2(Global.TileSize.x * atlas[0],2 * Global.TileSize.y * atlas[1]),Vector2(Global.TileSize.x,Global.TileSize.y * 2))
+	
 	LabelBox.self_modulate = Pickaxe["color"]
 	#LabelBox.add_theme_color_override("default_color", Color.html(Pickaxe["color"]) * 1.2)
 	LabelBox.text = Pickaxe["name"]
 	if Original["rank"] > Global.Level["id"]:
 		custom_minimum_size.x = 400
 		$Status.text = "Not Unlocked"
+		disabled = true
 		$Rank.visible = true
 		$Tier.visible = true
 		$Tier.modulate = Color(Global.GameData["levels"][str(int(Original["rank"]))]["color"])
@@ -83,13 +87,19 @@ func PickaxeChanged(__):
 		$Tier.texture = load("res://Visuals/Ranks/" + str(int(Global.GameData["levels"][str(int(Original["rank"]))]["tier"])) + ".png")
 		
 		
+		
 
 			
 		
 
 	elif Original["rank"] <= Global.Level["id"]:
+		$Texture.texture = AtlasTexture.new()
+		$Texture.texture.atlas = load("res://Visuals/OreSheet.png")
+		$Texture.texture.filter_clip = true
+		$Texture.texture.region = Rect2(Vector2(64.0 * atlas[0],68.0 * atlas[1]),Vector2(Global.TileSize.x,Global.TileSize.y * 2.0))
 		$Rank.visible = false
 		$Tier.visible = false
+		
 
 
 

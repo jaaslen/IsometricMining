@@ -4,6 +4,8 @@
 [ext_resource type="StyleBox" uid="uid://ckiyntv3jfww6" path="res://AngleButton.tres" id="2_kcyok"]
 [ext_resource type="StyleBox" uid="uid://de02od0lh6fuq" path="res://AngleButtonHighlight.tres" id="3_6nc4s"]
 [ext_resource type="StyleBox" uid="uid://ck0mxuo4tk28d" path="res://AngleButtonDisabled.tres" id="4_6nc4s"]
+[ext_resource type="Material" uid="uid://c5w7aba2hhh0c" path="res://shadermaterialripple.tres" id="5_i6qgn"]
+[ext_resource type="Script" uid="uid://b1o86uilrq6c4" path="res://Scenes/dictionaryripple.gd" id="7_p3quo"]
 
 [sub_resource type="Gradient" id="Gradient_6nc4s"]
 offsets = PackedFloat32Array(0)
@@ -92,6 +94,7 @@ grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_kcyok")
 
 [node name="Background" type="TextureRect" parent="TextureRect" unique_id=2053787417]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.5
@@ -103,6 +106,21 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("GradientTexture1D_ieyvp")
+
+[node name="Ripple" type="ColorRect" parent="TextureRect" unique_id=282613572]
+texture_filter = 1
+texture_repeat = 3
+material = ExtResource("5_i6qgn")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.1
+anchor_right = 1.1
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.35
+script = ExtResource("7_p3quo")
 
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

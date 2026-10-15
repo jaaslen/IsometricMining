@@ -73,9 +73,10 @@ func _on_rare_button_pressed() -> void:
 	#pass # Replace with function body.
 
 
-func _on_lock_pressed() -> void:
-	if Global.MiningMode == 1:
-		$"Panel/VBoxContainer/HBoxContainer/1".Selected()
-		$"Panel/VBoxContainer/HBoxContainer/2".Deselected()
-		$"Panel/VBoxContainer/HBoxContainer/3".Deselected()
-		Global.MiningMode = 0
+func _on_lock_pressed(toggled_on) -> void:
+	pass
+	#if Global.MiningMode == 1 and toggled_on:
+		#$"Panel/VBoxContainer/HBoxContainer/1".Selected()
+		#$"Panel/VBoxContainer/HBoxContainer/2".Deselected()
+		#$"Panel/VBoxContainer/HBoxContainer/3".Deselected()
+		#Global.MiningMode = 0

@@ -36,8 +36,11 @@
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "PLACEHOLDER"
+	  "description": "PLACEHOLDER",
+	  "layer": [
+		0,
+		-1
+	  ]
 	},
 	"1": {
 	  "id": 1,
@@ -51,11 +54,15 @@
 	  "depth": [
 		[
 		  0,
-		  500
+		  1000
+		],
+		[
+		  1500,
+		  2000
 		],
 		[
 		  2999,
-		  500
+		  2000
 		]
 	  ],
 	  "rarity": 0,
@@ -75,6 +82,7 @@
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Stone Drop",
+	  "description": "PLACEHOLDER",
 	  "layer": [
 		0,
 		1,
@@ -90,8 +98,7 @@
 		12,
 		13,
 		14
-	  ],
-	  "description": "PLACEHOLDER"
+	  ]
 	},
 	"2": {
 	  "id": 2,
@@ -99,33 +106,33 @@
 	  "name": "Coal",
 	  "color": "#1A1A1A",
 	  "rank": 0,
-	  "hardness": 5,
+	  "hardness": 4,
 	  "value": 4,
-	  "xp": 5,
+	  "xp": 15,
 	  "depth": [
 		[
 		  2,
-		  60
+		  40
 		],
 		[
-		  150,
-		  65
+		  100,
+		  35
 		],
 		[
-		  151,
+		  101,
 		  0
 		],
 		[
-		  999,
+		  899,
 		  0
 		],
 		[
-		  1000,
+		  900,
 		  50
 		],
 		[
-		  1250,
-		  80
+		  1100,
+		  50
 		]
 	  ],
 	  "rarity": 1,
@@ -135,23 +142,23 @@
 	  ],
 	  "arrival": 2,
 	  "optimal": 1250,
-	  "maximum": "1250",
+	  "maximum": "1100",
 	  "stats": [
 		2,
 		1250,
-		1250,
-		5,
-		5
+		1100,
+		4,
+		15
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "PLACEHOLDER",
 	  "layer": [
 		1,
 		2,
 		7,
 		8
-	  ],
-	  "description": "PLACEHOLDER"
+	  ]
 	},
 	"3": {
 	  "id": 3,
@@ -159,16 +166,16 @@
 	  "name": "Tin",
 	  "color": "#93A58C",
 	  "rank": 0,
-	  "hardness": 7,
+	  "hardness": 5,
 	  "value": 6,
-	  "xp": 9,
+	  "xp": 50,
 	  "depth": [
 		[
 		  5,
 		  60
 		],
 		[
-		  149,
+		  99,
 		  60
 		]
 	  ],
@@ -179,21 +186,21 @@
 	  ],
 	  "arrival": 5,
 	  "optimal": 5,
-	  "maximum": "149",
+	  "maximum": "99",
 	  "stats": [
 		5,
 		5,
-		149,
-		7,
-		9
+		99,
+		5,
+		50
 	  ],
 	  "sound": "Metal Hit",
 	  "breaksound": "Rock Break",
+	  "description": "PLACEHOLDER",
 	  "layer": [
 		1,
 		2
-	  ],
-	  "description": "PLACEHOLDER"
+	  ]
 	},
 	"4": {
 	  "id": 4,
@@ -202,15 +209,15 @@
 	  "color": "#B45F06",
 	  "rank": 0,
 	  "hardness": 10,
-	  "value": 75,
-	  "xp": 39,
+	  "value": 74,
+	  "xp": 60,
 	  "depth": [
 		[
-		  25,
+		  15,
 		  25
 		],
 		[
-		  400,
+		  300,
 		  35
 		]
 	  ],
@@ -219,25 +226,25 @@
 		2,
 		4
 	  ],
-	  "arrival": 25,
+	  "arrival": 15,
 	  "optimal": 400,
-	  "maximum": "400",
+	  "maximum": "300",
 	  "stats": [
-		25,
+		15,
 		400,
-		400,
+		300,
 		10,
-		39
+		60
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "PLACEHOLDER",
 	  "layer": [
 		1,
 		2,
 		3,
 		4
-	  ],
-	  "description": "PLACEHOLDER"
+	  ]
 	},
 	"5": {
 	  "id": 5,
@@ -247,30 +254,30 @@
 	  "rank": 0,
 	  "hardness": 3,
 	  "value": 3,
-	  "xp": 7,
+	  "xp": 30,
 	  "depth": [
 		[
 		  2,
-		  40
+		  20
 		],
 		[
-		  150,
+		  100,
 		  30
 		],
 		[
-		  151,
+		  101,
 		  0
 		],
 		[
-		  749,
+		  649,
 		  0
 		],
 		[
-		  750,
+		  650,
 		  30
 		],
 		[
-		  1500,
+		  1350,
 		  0
 		]
 	  ],
@@ -281,16 +288,17 @@
 	  ],
 	  "arrival": 2,
 	  "optimal": 750,
-	  "maximum": "1500",
+	  "maximum": "1350",
 	  "stats": [
 		2,
 		750,
-		1500,
+		1350,
 		3,
-		7
+		30
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "PLACEHOLDER",
 	  "layer": [
 		1,
 		2,
@@ -298,8 +306,7 @@
 		7,
 		8,
 		9
-	  ],
-	  "description": "PLACEHOLDER"
+	  ]
 	},
 	"6": {
 	  "id": 6,
@@ -307,16 +314,16 @@
 	  "name": "Nickel",
 	  "color": "#7B776C",
 	  "rank": 0,
-	  "hardness": 23,
-	  "value": 101,
-	  "xp": 2294,
+	  "hardness": 34,
+	  "value": 99,
+	  "xp": 1000,
 	  "depth": [
 		[
-		  300,
+		  200,
 		  20
 		],
 		[
-		  500,
+		  400,
 		  30
 		]
 	  ],
@@ -325,20 +332,23 @@
 		0,
 		9
 	  ],
-	  "arrival": 300,
+	  "arrival": 200,
 	  "optimal": 500,
-	  "maximum": "500",
+	  "maximum": "400",
 	  "stats": [
-		300,
+		200,
 		500,
-		500,
-		23,
-		2294
+		400,
+		34,
+		1000
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "PLACEHOLDER"
+	  "description": "PLACEHOLDER",
+	  "layer": [
+		4,
+		-1
+	  ]
 	},
 	"7": {
 	  "id": 7,
@@ -346,17 +356,17 @@
 	  "name": "Quartz",
 	  "color": "#E3E3E3",
 	  "rank": 0,
-	  "hardness": 14,
-	  "value": 26,
-	  "xp": 239,
+	  "hardness": 21,
+	  "value": 24,
+	  "xp": 150,
 	  "depth": [
 		[
-		  150,
-		  80
+		  100,
+		  30
 		],
 		[
-		  300,
-		  30
+		  200,
+		  0
 		]
 	  ],
 	  "rarity": 1,
@@ -364,20 +374,23 @@
 		2,
 		13
 	  ],
-	  "arrival": 150,
+	  "arrival": 100,
 	  "optimal": 150,
-	  "maximum": "300",
+	  "maximum": "200",
 	  "stats": [
+		100,
 		150,
-		150,
-		300,
-		14,
-		239
+		200,
+		21,
+		150
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "Good for keeping time! But you would need a watch to put it in..."
+	  "description": "Good for keeping time! But you would need a watch to put it in...",
+	  "layer": [
+		3,
+		-1
+	  ]
 	},
 	"8": {
 	  "id": 8,
@@ -385,8 +398,8 @@
 	  "name": "Radium",
 	  "color": "#6AA84F",
 	  "rank": 2,
-	  "hardness": 50,
-	  "value": 167,
+	  "hardness": 75,
+	  "value": 175,
 	  "xp": 104151,
 	  "depth": [
 		[
@@ -409,30 +422,33 @@
 		2500,
 		0,
 		3000,
-		50,
+		75,
 		104151
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "PLACEHOLDER"
+	  "description": "PLACEHOLDER",
+	  "layer": [
+		14,
+		-1
+	  ]
 	},
 	"9": {
 	  "id": 9,
 	  "sorting": 11,
-	  "name": "Selenite",
-	  "color": "#E4D7C8",
+	  "name": "Topaz",
+	  "color": "#ffb900",
 	  "rank": 0,
-	  "hardness": 14,
-	  "value": 89,
-	  "xp": 884,
+	  "hardness": 21,
+	  "value": 88,
+	  "xp": 400,
 	  "depth": [
 		[
-		  150,
+		  100,
 		  25
 		],
 		[
-		  300,
+		  200,
 		  15
 		]
 	  ],
@@ -441,20 +457,23 @@
 		1,
 		14
 	  ],
-	  "arrival": 150,
+	  "arrival": 100,
 	  "optimal": 150,
-	  "maximum": "300",
+	  "maximum": "200",
 	  "stats": [
+		100,
 		150,
-		150,
-		300,
-		14,
-		884
+		200,
+		21,
+		400
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "This one is round?"
+	  "description": "This one is cool",
+	  "layer": [
+		3,
+		-1
+	  ]
 	},
 	"10": {
 	  "id": 10,
@@ -462,16 +481,16 @@
 	  "name": "Erbium",
 	  "color": "#434343",
 	  "rank": 1,
-	  "hardness": 36,
+	  "hardness": 54,
 	  "value": 136,
-	  "xp": 18962,
+	  "xp": 18620,
 	  "depth": [
 		[
-		  1200,
+		  1000,
 		  15
 		],
 		[
-		  1500,
+		  1350,
 		  40
 		]
 	  ],
@@ -480,23 +499,23 @@
 		1,
 		9
 	  ],
-	  "arrival": 1200,
+	  "arrival": 1000,
 	  "optimal": 1500,
-	  "maximum": "1500",
+	  "maximum": "1350",
 	  "stats": [
-		1200,
+		1000,
 		1500,
-		1500,
-		36,
-		18962
+		1350,
+		54,
+		18620
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "Shoutout... to everyone from Ytterby, Sweden... Again. How many elements did these guys find?",
 	  "layer": [
 		8,
 		9
-	  ],
-	  "description": "Shoutout... to everyone from Ytterby, Sweden... Again. How many elements did these guys find?"
+	  ]
 	},
 	"11": {
 	  "id": 11,
@@ -504,16 +523,16 @@
 	  "name": "Bauxite",
 	  "color": "#8E5948",
 	  "rank": 1,
-	  "hardness": 31,
+	  "hardness": 46,
 	  "value": 134,
-	  "xp": 18260,
+	  "xp": 17930,
 	  "depth": [
 		[
-		  1200,
+		  1000,
 		  20
 		],
 		[
-		  1500,
+		  1350,
 		  50
 		]
 	  ],
@@ -522,23 +541,23 @@
 		2,
 		9
 	  ],
-	  "arrival": 1200,
+	  "arrival": 1000,
 	  "optimal": 1500,
-	  "maximum": "1500",
+	  "maximum": "1350",
 	  "stats": [
-		1200,
+		1000,
 		1500,
-		1500,
-		31,
-		18260
+		1350,
+		46,
+		17930
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "PLACEHOLDER",
 	  "layer": [
 		8,
 		9
-	  ],
-	  "description": "PLACEHOLDER"
+	  ]
 	},
 	"12": {
 	  "id": 12,
@@ -546,12 +565,12 @@
 	  "name": "Yttrium",
 	  "color": "#7D8444",
 	  "rank": 0,
-	  "hardness": 30,
+	  "hardness": 45,
 	  "value": 121,
-	  "xp": 8293,
+	  "xp": 8110,
 	  "depth": [
 		[
-		  750,
+		  600,
 		  30
 		],
 		[
@@ -580,23 +599,23 @@
 		1,
 		13
 	  ],
-	  "arrival": 750,
+	  "arrival": 600,
 	  "optimal": 750,
 	  "maximum": "3000",
 	  "stats": [
-		750,
+		600,
 		750,
 		3000,
-		30,
-		8293
+		45,
+		8110
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "Shoutout to everyone from Ytterby, Sweden",
 	  "layer": [
 		6,
 		14
-	  ],
-	  "description": "Shoutout to everyone from Ytterby, Sweden"
+	  ]
 	},
 	"13": {
 	  "id": 13,
@@ -604,16 +623,16 @@
 	  "name": "Iron",
 	  "color": "#A69489",
 	  "rank": 0,
-	  "hardness": 15,
-	  "value": 83,
-	  "xp": 266,
+	  "hardness": 22,
+	  "value": 80,
+	  "xp": 244,
 	  "depth": [
 		[
-		  70,
-		  30
+		  30,
+		  35
 		],
 		[
-		  150,
+		  100,
 		  40
 		]
 	  ],
@@ -622,20 +641,23 @@
 		1,
 		5
 	  ],
-	  "arrival": 70,
+	  "arrival": 30,
 	  "optimal": 150,
-	  "maximum": "150",
+	  "maximum": "100",
 	  "stats": [
-		70,
+		30,
 		150,
-		150,
-		15,
-		266
+		100,
+		22,
+		244
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "PLACEHOLDER"
+	  "description": "PLACEHOLDER",
+	  "layer": [
+		2,
+		-1
+	  ]
 	},
 	"14": {
 	  "id": 14,
@@ -644,15 +666,15 @@
 	  "color": "#999E9C",
 	  "rank": 0,
 	  "hardness": 16,
-	  "value": 81,
-	  "xp": 225,
+	  "value": 77,
+	  "xp": 206,
 	  "depth": [
 		[
-		  50,
+		  20,
 		  35
 		],
 		[
-		  500,
+		  400,
 		  30
 		]
 	  ],
@@ -661,24 +683,24 @@
 		3,
 		4
 	  ],
-	  "arrival": 50,
+	  "arrival": 20,
 	  "optimal": 500,
-	  "maximum": "500",
+	  "maximum": "400",
 	  "stats": [
-		50,
+		20,
 		500,
-		500,
+		400,
 		16,
-		225
+		206
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "Come back...zinc...come back...zinc... Zinc? Zi..what? It was all a dream. Thank goodness I still live in a world of telephones, car batteries, handguns, and many things made of zinc!",
 	  "layer": [
 		2,
 		3,
 		4
-	  ],
-	  "description": "Come back...zinc...come back...zinc... Zinc? Zi..what? It was all a dream. Thank goodness I still live in a world of telephones, car batteries, handguns, and many things made of zinc!"
+	  ]
 	},
 	"15": {
 	  "id": 15,
@@ -686,16 +708,16 @@
 	  "name": "Calcite",
 	  "color": "#C5A246",
 	  "rank": 1,
-	  "hardness": 60,
-	  "value": 159,
-	  "xp": 50046,
+	  "hardness": 90,
+	  "value": 166,
+	  "xp": 49636,
 	  "depth": [
 		[
-		  1900,
+		  1750,
 		  5
 		],
 		[
-		  2000,
+		  1900,
 		  8
 		]
 	  ],
@@ -704,19 +726,22 @@
 		3,
 		13
 	  ],
-	  "arrival": 1900,
-	  "maximum": "2000",
+	  "arrival": 1750,
+	  "maximum": "1900",
 	  "stats": [
-		1900,
+		1750,
 		0,
-		2000,
-		60,
-		50046
+		1900,
+		90,
+		49636
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "PLACEHOLDER"
+	  "description": "PLACEHOLDER",
+	  "layer": [
+		11,
+		-1
+	  ]
 	},
 	"16": {
 	  "id": 16,
@@ -724,12 +749,12 @@
 	  "name": "Cobalt",
 	  "color": "#8992AD",
 	  "rank": 0,
-	  "hardness": 30,
-	  "value": 112,
-	  "xp": 4274,
+	  "hardness": 45,
+	  "value": 113,
+	  "xp": 600,
 	  "depth": [
 		[
-		  500,
+		  400,
 		  15
 		],
 		[
@@ -742,20 +767,23 @@
 		2,
 		5
 	  ],
-	  "arrival": 500,
+	  "arrival": 400,
 	  "optimal": 750,
 	  "maximum": "750",
 	  "stats": [
-		500,
+		400,
 		750,
 		750,
-		30,
-		4274
+		45,
+		600
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "ts is NOT blue"
+	  "description": "ts is NOT blue",
+	  "layer": [
+		5,
+		-1
+	  ]
 	},
 	"17": {
 	  "id": 17,
@@ -763,12 +791,12 @@
 	  "name": "Uranium",
 	  "color": "#B9DA4D",
 	  "rank": 0,
-	  "hardness": 28,
-	  "value": 120,
-	  "xp": 8670,
+	  "hardness": 42,
+	  "value": 122,
+	  "xp": 8547,
 	  "depth": [
 		[
-		  750,
+		  650,
 		  30
 		],
 		[
@@ -797,23 +825,23 @@
 		2,
 		3
 	  ],
-	  "arrival": 750,
+	  "arrival": 650,
 	  "optimal": 750,
 	  "maximum": "3000",
 	  "stats": [
-		750,
+		650,
 		750,
 		3000,
-		28,
-		8670
+		42,
+		8547
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "Not actually super radioactive.",
 	  "layer": [
 		6,
 		14
-	  ],
-	  "description": "Not actually super radioactive."
+	  ]
 	},
 	"18": {
 	  "id": 18,
@@ -821,8 +849,8 @@
 	  "name": "Uranium-240",
 	  "color": "#B9DA4D",
 	  "rank": 2,
-	  "hardness": 50,
-	  "value": 167,
+	  "hardness": 75,
+	  "value": 175,
 	  "xp": 106465,
 	  "depth": [
 		[
@@ -845,13 +873,16 @@
 		2500,
 		0,
 		3000,
-		50,
+		75,
 		106465
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "Not actually super radioactive."
+	  "description": "Not actually super radioactive.",
+	  "layer": [
+		14,
+		-1
+	  ]
 	},
 	"19": {
 	  "id": 19,
@@ -860,15 +891,15 @@
 	  "color": "#6f5f81",
 	  "rank": 0,
 	  "hardness": 8,
-	  "value": 78,
-	  "xp": 193,
+	  "value": 74,
+	  "xp": 176,
 	  "depth": [
 		[
-		  50,
+		  20,
 		  45
 		],
 		[
-		  500,
+		  400,
 		  10
 		]
 	  ],
@@ -877,24 +908,24 @@
 		3,
 		5
 	  ],
-	  "arrival": 50,
+	  "arrival": 20,
 	  "optimal": 50,
-	  "maximum": "500",
+	  "maximum": "400",
 	  "stats": [
+		20,
 		50,
-		50,
-		500,
+		400,
 		8,
-		193
+		176
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "75% of Lithium is used in batteries, Is the other 25% Pickaxes?",
 	  "layer": [
 		2,
 		3,
 		4
-	  ],
-	  "description": "75% of Lithium is used in batteries, Is the other 25% Pickaxes?"
+	  ]
 	},
 	"20": {
 	  "id": 20,
@@ -902,12 +933,12 @@
 	  "name": "Tantalum",
 	  "color": "#0B5394",
 	  "rank": 4,
-	  "hardness": 60,
-	  "value": 8296,
-	  "xp": 395656,
+	  "hardness": 90,
+	  "value": 8305,
+	  "xp": 393976,
 	  "depth": [
 		[
-		  2400,
+		  2300,
 		  5
 		],
 		[
@@ -924,19 +955,22 @@
 		4,
 		6
 	  ],
-	  "arrival": 2400,
+	  "arrival": 2300,
 	  "maximum": "2500",
 	  "stats": [
-		2400,
+		2300,
 		0,
 		2500,
-		60,
-		395656
+		90,
+		393976
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "Shoutout... to everyone from Ytterby, Sweden... Again. How many elements did these guys find?"
+	  "description": "Shoutout... to everyone from Ytterby, Sweden... Again. How many elements did these guys find?",
+	  "layer": [
+		13,
+		-1
+	  ]
 	},
 	"21": {
 	  "id": 21,
@@ -944,16 +978,16 @@
 	  "name": "Thorium",
 	  "color": "#E69138",
 	  "rank": 2,
-	  "hardness": 39,
-	  "value": 1173,
-	  "xp": 90428,
+	  "hardness": 58,
+	  "value": 1176,
+	  "xp": 89481,
 	  "depth": [
 		[
-		  1500,
+		  1350,
 		  9
 		],
 		[
-		  1900,
+		  1750,
 		  11
 		]
 	  ],
@@ -962,20 +996,23 @@
 		1,
 		16
 	  ],
-	  "arrival": 1500,
+	  "arrival": 1350,
 	  "optimal": 1900,
-	  "maximum": "1900",
+	  "maximum": "1750",
 	  "stats": [
-		1500,
+		1350,
 		1900,
-		1900,
-		39,
-		90428
+		1750,
+		58,
+		89481
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "PLACEHOLDER"
+	  "description": "PLACEHOLDER",
+	  "layer": [
+		10,
+		-1
+	  ]
 	},
 	"22": {
 	  "id": 22,
@@ -983,12 +1020,12 @@
 	  "name": "Osmium",
 	  "color": "#596B5A",
 	  "rank": 2,
-	  "hardness": 100,
-	  "value": 1193,
-	  "xp": 87769,
+	  "hardness": 150,
+	  "value": 1207,
+	  "xp": 86849,
 	  "depth": [
 		[
-		  1500,
+		  1350,
 		  3
 		],
 		[
@@ -1001,25 +1038,25 @@
 		5,
 		6
 	  ],
-	  "arrival": 1500,
+	  "arrival": 1350,
 	  "optimal": 2450,
 	  "maximum": "2450",
 	  "stats": [
-		1500,
+		1350,
 		2450,
 		2450,
-		100,
-		87769
+		150,
+		86849
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "Shoutout... to everyone from Ytterby, Sweden... Again. How many elements did these guys find?",
 	  "layer": [
 		10,
 		11,
 		12,
 		13
-	  ],
-	  "description": "Shoutout... to everyone from Ytterby, Sweden... Again. How many elements did these guys find?"
+	  ]
 	},
 	"23": {
 	  "id": 23,
@@ -1027,38 +1064,41 @@
 	  "name": "Neodymium",
 	  "color": "#666666",
 	  "rank": 0,
-	  "hardness": 28,
-	  "value": 103,
-	  "xp": 2141,
+	  "hardness": 42,
+	  "value": 102,
+	  "xp": 1000,
 	  "depth": [
 		[
-		  300,
-		  10
+		  200,
+		  18
 		],
 		[
-		  500,
+		  400,
 		  30
 		]
 	  ],
 	  "rarity": 2,
 	  "atlas": [
-		3,
+		4,
 		5
 	  ],
-	  "arrival": 300,
+	  "arrival": 200,
 	  "optimal": 500,
-	  "maximum": "500",
+	  "maximum": "400",
 	  "stats": [
-		300,
+		200,
 		500,
-		500,
-		28,
-		2141
+		400,
+		42,
+		1000
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "The most attractive ore."
+	  "description": "The most attractive ore.",
+	  "layer": [
+		4,
+		-1
+	  ]
 	},
 	"24": {
 	  "id": 24,
@@ -1066,12 +1106,12 @@
 	  "name": "Gold",
 	  "color": "#FFD966",
 	  "rank": 1,
-	  "hardness": 32,
-	  "value": 1142,
-	  "xp": 11916,
+	  "hardness": 48,
+	  "value": 1144,
+	  "xp": 11653,
 	  "depth": [
 		[
-		  500,
+		  400,
 		  8
 		],
 		[
@@ -1084,23 +1124,23 @@
 		1,
 		6
 	  ],
-	  "arrival": 500,
+	  "arrival": 400,
 	  "optimal": 900,
 	  "maximum": "900",
 	  "stats": [
-		500,
+		400,
 		900,
 		900,
-		32,
-		11916
+		48,
+		11653
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "Really bad for a pickaxe in real life. Good thing this is not real life.",
 	  "layer": [
 		5,
 		6
-	  ],
-	  "description": "Really bad for a pickaxe in real life. Good thing this is not real life."
+	  ]
 	},
 	"25": {
 	  "id": 25,
@@ -1108,12 +1148,12 @@
 	  "name": "Magnesium",
 	  "color": "#543142",
 	  "rank": 2,
-	  "hardness": 10,
-	  "value": 1172,
-	  "xp": 121921,
+	  "hardness": 15,
+	  "value": 1170,
+	  "xp": 120922,
 	  "depth": [
 		[
-		  1900,
+		  1750,
 		  30
 		],
 		[
@@ -1126,23 +1166,23 @@
 		2,
 		23
 	  ],
-	  "arrival": 1900,
+	  "arrival": 1750,
 	  "maximum": "2500",
 	  "stats": [
-		1900,
+		1750,
 		0,
 		2500,
-		10,
-		121921
+		15,
+		120922
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "PLACEHOLDER",
 	  "layer": [
 		11,
 		12,
 		13
-	  ],
-	  "description": "PLACEHOLDER"
+	  ]
 	},
 	"26": {
 	  "id": 26,
@@ -1150,16 +1190,16 @@
 	  "name": "Phosphorus",
 	  "color": "#84262B",
 	  "rank": 2,
-	  "hardness": 12,
-	  "value": 1158,
-	  "xp": 63463,
+	  "hardness": 18,
+	  "value": 1156,
+	  "xp": 62656,
 	  "depth": [
 		[
-		  1250,
+		  1100,
 		  15
 		],
 		[
-		  1500,
+		  1350,
 		  15
 		]
 	  ],
@@ -1168,20 +1208,23 @@
 		1,
 		15
 	  ],
-	  "arrival": 1250,
+	  "arrival": 1100,
 	  "optimal": 1250,
-	  "maximum": "1500",
+	  "maximum": "1350",
 	  "stats": [
+		1100,
 		1250,
-		1250,
-		1500,
-		12,
-		63463
+		1350,
+		18,
+		62656
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "PLACEHOLDER"
+	  "description": "PLACEHOLDER",
+	  "layer": [
+		9,
+		-1
+	  ]
 	},
 	"27": {
 	  "id": 27,
@@ -1189,16 +1232,16 @@
 	  "name": "Zircon",
 	  "color": "#D16156",
 	  "rank": 3,
-	  "hardness": 70,
-	  "value": 8290,
-	  "xp": 244561,
+	  "hardness": 105,
+	  "value": 8299,
+	  "xp": 242558,
 	  "depth": [
 		[
-		  1900,
+		  1750,
 		  4
 		],
 		[
-		  2000,
+		  1900,
 		  6
 		]
 	  ],
@@ -1207,19 +1250,22 @@
 		2,
 		12
 	  ],
-	  "arrival": 1900,
-	  "maximum": "2000",
+	  "arrival": 1750,
+	  "maximum": "1900",
 	  "stats": [
-		1900,
+		1750,
 		0,
-		2000,
-		70,
-		244561
+		1900,
+		105,
+		242558
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "PLACEHOLDER"
+	  "description": "PLACEHOLDER",
+	  "layer": [
+		11,
+		-1
+	  ]
 	},
 	"28": {
 	  "id": 28,
@@ -1227,12 +1273,12 @@
 	  "name": "Arsenic",
 	  "color": "#B99F54",
 	  "rank": 1,
-	  "hardness": 15,
-	  "value": 1145,
-	  "xp": 21442,
+	  "hardness": 22,
+	  "value": 1144,
+	  "xp": 21137,
 	  "depth": [
 		[
-		  750,
+		  650,
 		  30
 		],
 		[
@@ -1240,7 +1286,7 @@
 		  5
 		],
 		[
-		  1500,
+		  1350,
 		  20
 		]
 	  ],
@@ -1249,25 +1295,25 @@
 		1,
 		19
 	  ],
-	  "arrival": 750,
+	  "arrival": 650,
 	  "optimal": 750,
-	  "maximum": "1500",
+	  "maximum": "1350",
 	  "stats": [
+		650,
 		750,
-		750,
-		1500,
-		15,
-		21442
+		1350,
+		22,
+		21137
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "You shouldn't be allowed to mine this stuff without protective equipment, but I know you will.",
 	  "layer": [
 		6,
 		7,
 		8,
 		9
-	  ],
-	  "description": "You shouldn't be allowed to mine this stuff without protective equipment, but I know you will."
+	  ]
 	},
 	"29": {
 	  "id": 29,
@@ -1275,12 +1321,12 @@
 	  "name": "Silver",
 	  "color": "#C9DAF8",
 	  "rank": 1,
-	  "hardness": 27,
-	  "value": 1137,
-	  "xp": 5967,
+	  "hardness": 40,
+	  "value": 1136,
+	  "xp": 5798,
 	  "depth": [
 		[
-		  400,
+		  300,
 		  8
 		],
 		[
@@ -1293,23 +1339,23 @@
 		2,
 		6
 	  ],
-	  "arrival": 400,
+	  "arrival": 300,
 	  "optimal": 750,
 	  "maximum": "750",
 	  "stats": [
-		400,
+		300,
 		750,
 		750,
-		27,
-		5967
+		40,
+		5798
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "Each block is 1 cubic meter, at that size, the value of this block of silver should be over $8,000,000.",
 	  "layer": [
 		4,
 		5
-	  ],
-	  "description": "Each block is 1 cubic meter, at that size, the value of this block of silver should be over $8,000,000."
+	  ]
 	},
 	"30": {
 	  "id": 30,
@@ -1317,12 +1363,12 @@
 	  "name": "Xenon",
 	  "color": "#BBA4FF",
 	  "rank": 4,
-	  "hardness": 12,
-	  "value": 8280,
-	  "xp": 404857,
+	  "hardness": 18,
+	  "value": 8281,
+	  "xp": 403138,
 	  "depth": [
 		[
-		  2400,
+		  2300,
 		  10
 		],
 		[
@@ -1335,19 +1381,22 @@
 		2,
 		8
 	  ],
-	  "arrival": 2400,
+	  "arrival": 2300,
 	  "maximum": "2500",
 	  "stats": [
-		2400,
+		2300,
 		0,
 		2500,
-		12,
-		404857
+		18,
+		403138
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "PLACEHOLDER"
+	  "description": "PLACEHOLDER",
+	  "layer": [
+		13,
+		-1
+	  ]
 	},
 	"31": {
 	  "id": 31,
@@ -1355,16 +1404,16 @@
 	  "name": "Neon",
 	  "color": "#FFB900",
 	  "rank": 3,
-	  "hardness": 15,
-	  "value": 8264,
-	  "xp": 181811,
+	  "hardness": 22,
+	  "value": 8262,
+	  "xp": 179906,
 	  "depth": [
 		[
-		  1500,
+		  1350,
 		  15
 		],
 		[
-		  2000,
+		  1900,
 		  20
 		]
 	  ],
@@ -1373,23 +1422,23 @@
 		1,
 		8
 	  ],
-	  "arrival": 1500,
+	  "arrival": 1350,
 	  "optimal": 2000,
-	  "maximum": "2000",
+	  "maximum": "1900",
 	  "stats": [
-		1500,
+		1350,
 		2000,
-		2000,
-		15,
-		181811
+		1900,
+		22,
+		179906
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "This is not the planet Superman was born on, It is a real thing.",
 	  "layer": [
 		10,
 		11
-	  ],
-	  "description": "This is not the planet Superman was born on, It is a real thing."
+	  ]
 	},
 	"32": {
 	  "id": 32,
@@ -1397,16 +1446,16 @@
 	  "name": "Azure",
 	  "color": "#9900FF",
 	  "rank": 2,
-	  "hardness": 31,
-	  "value": 8223,
-	  "xp": 4829,
+	  "hardness": 46,
+	  "value": 8224,
+	  "xp": 2000,
 	  "depth": [
 		[
-		  150,
+		  100,
 		  5
 		],
 		[
-		  300,
+		  200,
 		  7
 		]
 	  ],
@@ -1415,20 +1464,23 @@
 		1,
 		12
 	  ],
-	  "arrival": 150,
+	  "arrival": 100,
 	  "optimal": 300,
-	  "maximum": "300",
+	  "maximum": "200",
 	  "stats": [
-		150,
+		100,
 		300,
-		300,
-		31,
-		4829
+		200,
+		46,
+		2000
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "I think there was a better game that used this stuff..."
+	  "description": "I think there was a better game that used this stuff...",
+	  "layer": [
+		3,
+		-1
+	  ]
 	},
 	"33": {
 	  "id": 33,
@@ -1436,16 +1488,16 @@
 	  "name": "Cinnabar",
 	  "color": "#DE0000",
 	  "rank": 1,
-	  "hardness": 47,
-	  "value": 140,
-	  "xp": 25882,
+	  "hardness": 70,
+	  "value": 144,
+	  "xp": 25553,
 	  "depth": [
 		[
-		  1250,
+		  1100,
 		  10
 		],
 		[
-		  1500,
+		  1350,
 		  15
 		]
 	  ],
@@ -1454,37 +1506,40 @@
 		4,
 		9
 	  ],
-	  "arrival": 1250,
+	  "arrival": 1100,
 	  "optimal": 1500,
-	  "maximum": "1500",
+	  "maximum": "1350",
 	  "stats": [
-		1250,
+		1100,
 		1500,
-		1500,
-		47,
-		25882
+		1350,
+		70,
+		25553
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "PLACEHOLDER"
+	  "description": "PLACEHOLDER",
+	  "layer": [
+		9,
+		-1
+	  ]
 	},
 	"34": {
 	  "id": 34,
 	  "sorting": 42,
 	  "name": "Titanium",
 	  "color": "#F3F3F3",
-	  "rank": 4,
-	  "hardness": 120,
-	  "value": 8309,
-	  "xp": 323338,
+	  "rank": 3,
+	  "hardness": 180,
+	  "value": 8327,
+	  "xp": 321684,
 	  "depth": [
 		[
-		  2000,
+		  1900,
 		  6
 		],
 		[
-		  2400,
+		  2300,
 		  8
 		]
 	  ],
@@ -1493,19 +1548,22 @@
 		2,
 		7
 	  ],
-	  "arrival": 2000,
-	  "maximum": "2400",
+	  "arrival": 1900,
+	  "maximum": "2300",
 	  "stats": [
-		2000,
+		1900,
 		0,
-		2400,
-		120,
-		323338
+		2300,
+		180,
+		321684
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "PLACEHOLDER"
+	  "description": "PLACEHOLDER",
+	  "layer": [
+		12,
+		-1
+	  ]
 	},
 	"35": {
 	  "id": 35,
@@ -1513,16 +1571,16 @@
 	  "name": "Barium",
 	  "color": "#B77A00",
 	  "rank": 1,
-	  "hardness": 37,
-	  "value": 143,
-	  "xp": 35906,
+	  "hardness": 55,
+	  "value": 145,
+	  "xp": 35530,
 	  "depth": [
 		[
-		  1500,
+		  1350,
 		  30
 		],
 		[
-		  1900,
+		  1750,
 		  30
 		]
 	  ],
@@ -1531,20 +1589,23 @@
 		3,
 		9
 	  ],
-	  "arrival": 1500,
+	  "arrival": 1350,
 	  "optimal": 1500,
-	  "maximum": "1900",
+	  "maximum": "1750",
 	  "stats": [
+		1350,
 		1500,
-		1500,
-		1900,
-		37,
-		35906
+		1750,
+		55,
+		35530
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "PLACEHOLDER"
+	  "description": "PLACEHOLDER",
+	  "layer": [
+		10,
+		-1
+	  ]
 	},
 	"36": {
 	  "id": 36,
@@ -1552,16 +1613,16 @@
 	  "name": "Vanadium",
 	  "color": "#C62A00",
 	  "rank": 3,
-	  "hardness": 27,
+	  "hardness": 40,
 	  "value": 8262,
-	  "xp": 128080,
+	  "xp": 126454,
 	  "depth": [
 		[
-		  1250,
+		  1100,
 		  15
 		],
 		[
-		  1500,
+		  1350,
 		  15
 		]
 	  ],
@@ -1570,36 +1631,36 @@
 		2,
 		10
 	  ],
-	  "arrival": 1250,
+	  "arrival": 1100,
 	  "optimal": 1250,
-	  "maximum": "1500",
+	  "maximum": "1350",
 	  "stats": [
+		1100,
 		1250,
-		1250,
-		1500,
-		27,
-		128080
+		1350,
+		40,
+		126454
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "PLACEHOLDER",
 	  "layer": [
 		9,
 		10
-	  ],
-	  "description": "PLACEHOLDER"
+	  ]
 	},
 	"37": {
 	  "id": 37,
 	  "sorting": 40,
 	  "name": "Chromium",
 	  "color": "#351940",
-	  "rank": 3,
-	  "hardness": 51,
-	  "value": 1187,
-	  "xp": 157667,
+	  "rank": 2,
+	  "hardness": 76,
+	  "value": 1194,
+	  "xp": 156860,
 	  "depth": [
 		[
-		  2000,
+		  1900,
 		  25
 		],
 		[
@@ -1612,39 +1673,39 @@
 		6,
 		6
 	  ],
-	  "arrival": 2000,
+	  "arrival": 1900,
 	  "maximum": "2500",
 	  "stats": [
-		2000,
+		1900,
 		0,
 		2500,
-		51,
-		157667
+		76,
+		156860
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "PLACEHOLDER",
 	  "layer": [
 		12,
 		13
-	  ],
-	  "description": "PLACEHOLDER"
+	  ]
 	},
 	"38": {
 	  "id": 38,
 	  "sorting": 41,
 	  "name": "Antimony",
 	  "color": "#7D5B74",
-	  "rank": 4,
-	  "hardness": 67,
-	  "value": 8291,
-	  "xp": 315640,
+	  "rank": 3,
+	  "hardness": 100,
+	  "value": 8300,
+	  "xp": 314025,
 	  "depth": [
 		[
-		  2000,
+		  1900,
 		  12
 		],
 		[
-		  2400,
+		  2300,
 		  26
 		]
 	  ],
@@ -1653,19 +1714,22 @@
 		4,
 		13
 	  ],
-	  "arrival": 2000,
-	  "maximum": "2400",
+	  "arrival": 1900,
+	  "maximum": "2300",
 	  "stats": [
-		2000,
+		1900,
 		0,
-		2400,
-		67,
-		315640
+		2300,
+		100,
+		314025
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "PLACEHOLDER"
+	  "description": "PLACEHOLDER",
+	  "layer": [
+		12,
+		-1
+	  ]
 	},
 	"39": {
 	  "id": 39,
@@ -1673,8 +1737,8 @@
 	  "name": "Tungsten",
 	  "color": "#D9D9D9",
 	  "rank": 4,
-	  "hardness": 150,
-	  "value": 8328,
+	  "hardness": 225,
+	  "value": 8353,
 	  "xp": 503604,
 	  "depth": [
 		[
@@ -1697,13 +1761,16 @@
 		2500,
 		0,
 		3000,
-		150,
+		225,
 		503604
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "Nietzsche once said that a man who has a why can bear almost any how. But a man who has a tungsten cube can bear any object less dense, and all this talk of why and how becomes unnecessary."
+	  "description": "Nietzsche once said that a man who has a why can bear almost any how. But a man who has a tungsten cube can bear any object less dense, and all this talk of why and how becomes unnecessary.",
+	  "layer": [
+		14,
+		-1
+	  ]
 	},
 	"40": {
 	  "id": 40,
@@ -1711,12 +1778,12 @@
 	  "name": "Unobtainium",
 	  "color": "#FF00FF",
 	  "rank": 4,
-	  "hardness": 10,
-	  "value": 39127,
-	  "xp": 349831,
+	  "hardness": 15,
+	  "value": 39124,
+	  "xp": 345387,
 	  "depth": [
 		[
-		  1250,
+		  1100,
 		  0.05
 		],
 		[
@@ -1729,26 +1796,26 @@
 		1,
 		24
 	  ],
-	  "arrival": 1250,
+	  "arrival": 1100,
 	  "optimal": 3100,
 	  "maximum": "3100",
 	  "stats": [
-		1250,
+		1100,
 		3100,
 		3100,
-		10,
-		349831
+		15,
+		345387
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "Suprisingly obtainable!",
 	  "layer": [
 		9,
 		11,
 		12,
 		13,
 		14
-	  ],
-	  "description": "Suprisingly obtainable!"
+	  ]
 	},
 	"41": {
 	  "id": 41,
@@ -1756,12 +1823,12 @@
 	  "name": "Stellarite",
 	  "color": "#FFFA73",
 	  "rank": 4,
-	  "hardness": 60,
-	  "value": 39149,
-	  "xp": 448812,
+	  "hardness": 90,
+	  "value": 39156,
+	  "xp": 444108,
 	  "depth": [
 		[
-		  1500,
+		  1350,
 		  0.1
 		],
 		[
@@ -1774,17 +1841,18 @@
 		2,
 		22
 	  ],
-	  "arrival": 1500,
+	  "arrival": 1350,
 	  "maximum": "3100",
 	  "stats": [
-		1500,
+		1350,
 		0,
 		3100,
-		60,
-		448812
+		90,
+		444108
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "PLACEHOLDER",
 	  "layer": [
 		10,
 		11,
@@ -1792,8 +1860,7 @@
 		13,
 		14,
 		15
-	  ],
-	  "description": "PLACEHOLDER"
+	  ]
 	},
 	"42": {
 	  "id": 42,
@@ -1801,16 +1868,16 @@
 	  "name": "Tourmaline",
 	  "color": "#EAD1DC",
 	  "rank": 1,
-	  "hardness": 20,
-	  "value": 1121,
-	  "xp": 1713,
+	  "hardness": 30,
+	  "value": 1120,
+	  "xp": 820,
 	  "depth": [
 		[
-		  150,
+		  100,
 		  5
 		],
 		[
-		  300,
+		  200,
 		  12
 		]
 	  ],
@@ -1819,20 +1886,23 @@
 		1,
 		21
 	  ],
-	  "arrival": 150,
+	  "arrival": 100,
 	  "optimal": 300,
-	  "maximum": "300",
+	  "maximum": "200",
 	  "stats": [
-		150,
+		100,
 		300,
-		300,
-		20,
-		1713
+		200,
+		30,
+		820
 	  ],
 	  "sound": "Cinematic Hit 2",
 	  "breaksound": "Glass Break",
-	  "layer": [],
-	  "description": "Can be almost any colour, but you get this one."
+	  "description": "Can be almost any colour, but you get this one.",
+	  "layer": [
+		3,
+		-1
+	  ]
 	},
 	"43": {
 	  "id": 43,
@@ -1840,24 +1910,24 @@
 	  "name": "Sapphire",
 	  "color": "#0000FF",
 	  "rank": 1,
-	  "hardness": 44,
-	  "value": 1138,
-	  "xp": 127161,
+	  "hardness": 66,
+	  "value": 1139,
+	  "xp": 7633,
 	  "depth": [
 		[
-		  300,
+		  200,
 		  10
 		],
 		[
-		  301,
+		  201,
 		  0
 		],
 		[
-		  1249,
+		  1899,
 		  0
 		],
 		[
-		  2000,
+		  1750,
 		  20
 		],
 		[
@@ -1870,23 +1940,24 @@
 		3,
 		21
 	  ],
-	  "arrival": 300,
+	  "arrival": 200,
 	  "optimal": 2500,
 	  "maximum": "2500",
 	  "stats": [
-		300,
+		200,
 		2500,
 		2500,
-		44,
-		127161
+		66,
+		7633
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "PLACEHOLDER",
 	  "layer": [
+		3,
 		12,
 		13
-	  ],
-	  "description": "PLACEHOLDER"
+	  ]
 	},
 	"44": {
 	  "id": 44,
@@ -1894,16 +1965,16 @@
 	  "name": "Onyx",
 	  "color": "#434343",
 	  "rank": 2,
-	  "hardness": 41,
-	  "value": 1167,
-	  "xp": 46610,
+	  "hardness": 61,
+	  "value": 1168,
+	  "xp": 45768,
 	  "depth": [
 		[
-		  1200,
+		  1000,
 		  20
 		],
 		[
-		  1250,
+		  1100,
 		  20
 		]
 	  ],
@@ -1912,20 +1983,23 @@
 		2,
 		19
 	  ],
-	  "arrival": 1200,
+	  "arrival": 1000,
 	  "optimal": 1200,
-	  "maximum": "1250",
+	  "maximum": "1100",
 	  "stats": [
+		1000,
 		1200,
-		1200,
-		1250,
-		41,
-		46610
+		1100,
+		61,
+		45768
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "PLACEHOLDER"
+	  "description": "PLACEHOLDER",
+	  "layer": [
+		8,
+		-1
+	  ]
 	},
 	"45": {
 	  "id": 45,
@@ -1933,12 +2007,12 @@
 	  "name": "Malachite",
 	  "color": "#00DC5F",
 	  "rank": 1,
-	  "hardness": 36,
-	  "value": 1144,
-	  "xp": 12512,
+	  "hardness": 54,
+	  "value": 1146,
+	  "xp": 12236,
 	  "depth": [
 		[
-		  500,
+		  400,
 		  15
 		],
 		[
@@ -1951,37 +2025,37 @@
 		1,
 		17
 	  ],
-	  "arrival": 500,
+	  "arrival": 400,
 	  "optimal": 900,
 	  "maximum": "900",
 	  "stats": [
-		500,
+		400,
 		900,
 		900,
-		36,
-		12512
+		54,
+		12236
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "PLACEHOLDER",
 	  "layer": [
 		5,
 		6
-	  ],
-	  "description": "PLACEHOLDER"
+	  ]
 	},
 	"46": {
 	  "id": 46,
 	  "sorting": 18,
 	  "name": "Jade",
-	  "color": "#00DC5F",
+	  "color": "#38761D",
 	  "rank": 1,
-	  "hardness": 27,
-	  "value": 1141,
-	  "xp": 10725,
+	  "hardness": 40,
+	  "value": 1124,
+	  "xp": 750,
 	  "depth": [
 		[
-		  500,
-		  10
+		  100,
+		  8
 		],
 		[
 		  750,
@@ -1997,37 +2071,39 @@
 		2,
 		21
 	  ],
-	  "arrival": 500,
+	  "arrival": 100,
 	  "optimal": 750,
 	  "maximum": "1200",
 	  "stats": [
-		500,
+		100,
 		750,
 		1200,
-		27,
-		10725
+		40,
+		750
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "PLACEHOLDER",
 	  "layer": [
+		3,
+		4,
 		5,
 		6,
 		7
-	  ],
-	  "description": "PLACEHOLDER"
+	  ]
 	},
 	"47": {
 	  "id": 47,
 	  "sorting": 19,
 	  "name": "Axinite",
-	  "color": "#00DC5F",
+	  "color": "#284E3F",
 	  "rank": 1,
-	  "hardness": 22,
+	  "hardness": 33,
 	  "value": 1139,
-	  "xp": 11320,
+	  "xp": 11071,
 	  "depth": [
 		[
-		  500,
+		  400,
 		  30
 		],
 		[
@@ -2040,24 +2116,24 @@
 		1,
 		23
 	  ],
-	  "arrival": 500,
+	  "arrival": 400,
 	  "optimal": 500,
 	  "maximum": "1200",
 	  "stats": [
-		500,
+		400,
 		500,
 		1200,
-		22,
-		11320
+		33,
+		11071
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
+	  "description": "PLACEHOLDER",
 	  "layer": [
 		5,
 		6,
 		7
-	  ],
-	  "description": "PLACEHOLDER"
+	  ]
 	},
 	"48": {
 	  "id": 48,
@@ -2065,16 +2141,16 @@
 	  "name": "Graphene",
 	  "color": "#434342",
 	  "rank": 0,
-	  "hardness": 50,
-	  "value": 76,
-	  "xp": 652,
+	  "hardness": 75,
+	  "value": 79,
+	  "xp": 640,
 	  "depth": [
 		[
-		  1200,
+		  1000,
 		  1500
 		],
 		[
-		  1250,
+		  1100,
 		  1500
 		]
 	  ],
@@ -2083,20 +2159,23 @@
 		2,
 		16
 	  ],
-	  "arrival": 1200,
+	  "arrival": 1000,
 	  "optimal": 1200,
-	  "maximum": "1250",
+	  "maximum": "1100",
 	  "stats": [
+		1000,
 		1200,
-		1200,
-		1250,
-		50,
-		652
+		1100,
+		75,
+		640
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "PLACEHOLDER"
+	  "description": "PLACEHOLDER",
+	  "layer": [
+		8,
+		-1
+	  ]
 	},
 	"49": {
 	  "id": 49,
@@ -2104,8 +2183,8 @@
 	  "name": "Bedrock",
 	  "color": "#434343",
 	  "rank": 1,
-	  "hardness": 179,
-	  "value": 154,
+	  "hardness": 268,
+	  "value": 184,
 	  "xp": 4812,
 	  "depth": [
 		[
@@ -2129,13 +2208,16 @@
 		3000,
 		3000,
 		99999,
-		179,
+		268,
 		4812
 	  ],
 	  "sound": "Metal Hit",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "you cant mine this"
+	  "description": "you cant mine this",
+	  "layer": [
+		15,
+		-1
+	  ]
 	},
 	"50": {
 	  "id": 50,
@@ -2143,28 +2225,28 @@
 	  "name": "Ruby",
 	  "color": "#FF0000",
 	  "rank": 1,
-	  "hardness": 21,
+	  "hardness": 31,
 	  "value": 1121,
-	  "xp": 2283,
+	  "xp": 600,
 	  "depth": [
 		[
-		  150,
+		  100,
 		  16
 		],
 		[
-		  300,
+		  200,
 		  16
 		],
 		[
-		  301,
+		  201,
 		  0
 		],
 		[
-		  1249,
+		  1099,
 		  0
 		],
 		[
-		  1250,
+		  1100,
 		  30
 		]
 	  ],
@@ -2173,20 +2255,24 @@
 		4,
 		21
 	  ],
-	  "arrival": 150,
+	  "arrival": 100,
 	  "optimal": 1250,
-	  "maximum": "300",
+	  "maximum": "200",
 	  "stats": [
-		150,
+		100,
 		1250,
-		300,
-		21,
-		2283
+		200,
+		31,
+		600
 	  ],
 	  "sound": "Low Kick",
 	  "breaksound": "Rock Break",
-	  "layer": [],
-	  "description": "ruby"
+	  "description": "ruby",
+	  "layer": [
+		3,
+		9,
+		-1
+	  ]
 	}
   },
   "pickaxes": {
@@ -2196,7 +2282,7 @@
 		0,
 		0
 	  ],
-	  "name": "Not Unlocked",
+	  "name": "Unknown",
 	  "color": "#efefef",
 	  "rank": 0,
 	  "cost": [
@@ -2214,6 +2300,13 @@
 		-1,
 		-1,
 		-1
+	  ],
+	  "chances": [
+		20,
+		0,
+		0,
+		0,
+		0
 	  ],
 	  "traits": [],
 	  "original": 1,
@@ -2250,6 +2343,13 @@
 		25,
 		50
 	  ],
+	  "chances": [
+		19,
+		1,
+		0,
+		0,
+		0
+	  ],
 	  "traits": [],
 	  "original": 1,
 	  "maxlevel": 0,
@@ -2268,7 +2368,7 @@
 	  "cost": [
 		[
 		  3,
-		  8
+		  2
 		],
 		[
 		  1,
@@ -2276,11 +2376,11 @@
 		],
 		[
 		  2,
-		  5
+		  2
 		],
 		[
 		  5,
-		  8
+		  3
 		]
 	  ],
 	  "stats": [
@@ -2292,6 +2392,13 @@
 		1,
 		60,
 		120
+	  ],
+	  "chances": [
+		18,
+		2,
+		0,
+		0,
+		0
 	  ],
 	  "traits": [],
 	  "original": 2,
@@ -2307,7 +2414,7 @@
 	  ],
 	  "name": "Copper Pickaxe",
 	  "color": "#b45f06",
-	  "rank": 1,
+	  "rank": 0,
 	  "cost": [
 		[
 		  4,
@@ -2340,6 +2447,13 @@
 		115,
 		230
 	  ],
+	  "chances": [
+		18,
+		1,
+		1,
+		0,
+		0
+	  ],
 	  "traits": [],
 	  "original": 3,
 	  "maxlevel": 0,
@@ -2353,8 +2467,8 @@
 		5
 	  ],
 	  "name": "Lithium Pickaxe",
-	  "color": "#7e7255",
-	  "rank": 2,
+	  "color": "#6f5f81",
+	  "rank": 1,
 	  "cost": [
 		[
 		  19,
@@ -2375,11 +2489,15 @@
 		[
 		  1,
 		  20
+		],
+		[
+		  7,
+		  5
 		]
 	  ],
 	  "stats": [
-		5.5,
-		0.6,
+		6,
+		0.4,
 		1.09,
 		2.5,
 		1,
@@ -2387,11 +2505,18 @@
 		215,
 		430
 	  ],
+	  "chances": [
+		15,
+		5,
+		0,
+		0,
+		0
+	  ],
 	  "traits": [],
 	  "original": 4,
 	  "maxlevel": 0,
 	  "value": 1,
-	  "base": false
+	  "base": true
 	},
 	"5": {
 	  "id": 5,
@@ -2401,11 +2526,11 @@
 	  ],
 	  "name": "Iron Pickaxe",
 	  "color": "#a69489",
-	  "rank": 2,
+	  "rank": 1,
 	  "cost": [
 		[
 		  13,
-		  20
+		  12
 		],
 		[
 		  4,
@@ -2430,17 +2555,28 @@
 		[
 		  14,
 		  15
+		],
+		[
+		  7,
+		  25
 		]
 	  ],
 	  "stats": [
-		4.5,
-		0.25,
+		5.5,
+		0.1,
 		1.1,
 		3,
 		1,
 		1,
 		280,
 		560
+	  ],
+	  "chances": [
+		14,
+		3,
+		3,
+		0,
+		0
 	  ],
 	  "traits": [],
 	  "original": 5,
@@ -2456,7 +2592,7 @@
 	  ],
 	  "name": "Tourmaline Chisel",
 	  "color": "#ead1dc",
-	  "rank": 3,
+	  "rank": 2,
 	  "cost": [
 		[
 		  42,
@@ -2464,7 +2600,7 @@
 		],
 		[
 		  13,
-		  16
+		  8
 		],
 		[
 		  14,
@@ -2476,14 +2612,21 @@
 		]
 	  ],
 	  "stats": [
-		5,
-		0.15,
-		2,
+		7.5,
+		0.2,
+		1.2,
 		3.5,
 		1,
 		1,
 		350,
 		700
+	  ],
+	  "chances": [
+		12,
+		8,
+		0,
+		0,
+		0
 	  ],
 	  "traits": [],
 	  "original": 6,
@@ -2497,9 +2640,9 @@
 		1,
 		14
 	  ],
-	  "name": "Selenite Pickaxe",
-	  "color": "#e4d7c8",
-	  "rank": 4,
+	  "name": "Topaz Pickaxe",
+	  "color": "#ffb900",
+	  "rank": 2,
 	  "cost": [
 		[
 		  9,
@@ -2507,7 +2650,7 @@
 		],
 		[
 		  13,
-		  32
+		  16
 		],
 		[
 		  2,
@@ -2523,7 +2666,7 @@
 		]
 	  ],
 	  "stats": [
-		7,
+		9,
 		0.2,
 		1.25,
 		4,
@@ -2531,6 +2674,13 @@
 		1,
 		400,
 		800
+	  ],
+	  "chances": [
+		18,
+		2,
+		0,
+		0,
+		0
 	  ],
 	  "traits": [],
 	  "original": 7,
@@ -2546,7 +2696,7 @@
 	  ],
 	  "name": "Ruby Pickaxe",
 	  "color": "#ff0000",
-	  "rank": 5,
+	  "rank": 3,
 	  "cost": [
 		[
 		  50,
@@ -2555,10 +2705,6 @@
 		[
 		  42,
 		  3
-		],
-		[
-		  24,
-		  25
 		],
 		[
 		  6,
@@ -2577,10 +2723,6 @@
 		  18
 		],
 		[
-		  29,
-		  12
-		],
-		[
 		  19,
 		  10
 		],
@@ -2590,7 +2732,7 @@
 		]
 	  ],
 	  "stats": [
-		10,
+		15,
 		0.25,
 		2,
 		8,
@@ -2598,6 +2740,13 @@
 		2,
 		600,
 		1200
+	  ],
+	  "chances": [
+		17,
+		2,
+		1,
+		0,
+		0
 	  ],
 	  "traits": [],
 	  "original": 8,
@@ -2613,7 +2762,7 @@
 	  ],
 	  "name": "Nickel Hammer",
 	  "color": "#7b776c",
-	  "rank": 6,
+	  "rank": 4,
 	  "cost": [
 		[
 		  6,
@@ -2621,14 +2770,6 @@
 		],
 		[
 		  19,
-		  25
-		],
-		[
-		  24,
-		  20
-		],
-		[
-		  29,
 		  25
 		],
 		[
@@ -2658,10 +2799,14 @@
 		[
 		  14,
 		  15
+		],
+		[
+		  46,
+		  20
 		]
 	  ],
 	  "stats": [
-		18,
+		30,
 		0.6,
 		1,
 		2,
@@ -2669,6 +2814,13 @@
 		1,
 		800,
 		1600
+	  ],
+	  "chances": [
+		15,
+		5,
+		0,
+		0,
+		0
 	  ],
 	  "traits": [],
 	  "original": 9,
@@ -2684,7 +2836,7 @@
 	  ],
 	  "name": "Silver Chisel",
 	  "color": "#c9daf8",
-	  "rank": 6,
+	  "rank": 5,
 	  "cost": [
 		[
 		  29,
@@ -2696,7 +2848,7 @@
 		],
 		[
 		  24,
-		  20
+		  10
 		],
 		[
 		  1,
@@ -2725,10 +2877,14 @@
 		[
 		  32,
 		  20
+		],
+		[
+		  45,
+		  25
 		]
 	  ],
 	  "stats": [
-		15,
+		10,
 		0.15,
 		1.15,
 		4,
@@ -2736,6 +2892,13 @@
 		1,
 		1050,
 		2100
+	  ],
+	  "chances": [
+		10,
+		4,
+		3,
+		3,
+		0
 	  ],
 	  "traits": [],
 	  "original": 10,
@@ -2751,7 +2914,7 @@
 	  ],
 	  "name": "Cobalt Pickaxe",
 	  "color": "#8992ad",
-	  "rank": 7,
+	  "rank": 6,
 	  "cost": [
 		[
 		  16,
@@ -2766,7 +2929,7 @@
 		  25
 		],
 		[
-		  28,
+		  47,
 		  30
 		],
 		[
@@ -2775,7 +2938,7 @@
 		],
 		[
 		  24,
-		  25
+		  15
 		],
 		[
 		  13,
@@ -2795,14 +2958,21 @@
 		]
 	  ],
 	  "stats": [
-		22,
-		0.35,
+		26,
+		0.2,
 		1.2,
 		6,
 		1,
 		1,
 		1225,
 		2450
+	  ],
+	  "chances": [
+		16,
+		2,
+		2,
+		0,
+		0
 	  ],
 	  "traits": [],
 	  "original": 11,
@@ -2818,11 +2988,11 @@
 	  ],
 	  "name": "Gold Hammer",
 	  "color": "#ffd966",
-	  "rank": 8,
+	  "rank": 6,
 	  "cost": [
 		[
 		  24,
-		  35
+		  25
 		],
 		[
 		  16,
@@ -2841,7 +3011,7 @@
 		  30
 		],
 		[
-		  28,
+		  47,
 		  25
 		],
 		[
@@ -2850,10 +3020,6 @@
 		],
 		[
 		  45,
-		  8
-		],
-		[
-		  47,
 		  8
 		],
 		[
@@ -2870,14 +3036,21 @@
 		]
 	  ],
 	  "stats": [
-		30,
-		0.6,
+		48,
+		0.65,
 		2.25,
 		8,
 		2,
 		3,
 		1575,
 		3150
+	  ],
+	  "chances": [
+		0,
+		20,
+		0,
+		0,
+		0
 	  ],
 	  "traits": [],
 	  "original": 12,
@@ -2893,11 +3066,11 @@
 	  ],
 	  "name": "Uranium Pickaxe",
 	  "color": "#b9da4d",
-	  "rank": 9,
+	  "rank": 7,
 	  "cost": [
 		[
 		  17,
-		  160
+		  80
 		],
 		[
 		  16,
@@ -2905,7 +3078,7 @@
 		],
 		[
 		  28,
-		  120
+		  60
 		],
 		[
 		  19,
@@ -2946,13 +3119,20 @@
 	  ],
 	  "stats": [
 		30,
-		0.25,
+		0.18,
 		1.45,
 		6,
 		1,
 		1,
 		1925,
 		3850
+	  ],
+	  "chances": [
+		9,
+		3,
+		3,
+		3,
+		2
 	  ],
 	  "traits": [],
 	  "original": 13,
@@ -2968,15 +3148,15 @@
 	  ],
 	  "name": "Graphene Pickaxe",
 	  "color": "#434343",
-	  "rank": 10,
+	  "rank": 8,
 	  "cost": [
 		[
 		  48,
-		  190
+		  95
 		],
 		[
 		  17,
-		  130
+		  65
 		],
 		[
 		  24,
@@ -2984,7 +3164,7 @@
 		],
 		[
 		  7,
-		  160
+		  80
 		],
 		[
 		  16,
@@ -3037,6 +3217,13 @@
 		2020,
 		4040
 	  ],
+	  "chances": [
+		14,
+		3,
+		3,
+		0,
+		0
+	  ],
 	  "traits": [],
 	  "original": 14,
 	  "maxlevel": 0,
@@ -3051,15 +3238,15 @@
 	  ],
 	  "name": "Onyx Chisel",
 	  "color": "#434343",
-	  "rank": 11,
+	  "rank": 9,
 	  "cost": [
 		[
 		  44,
-		  220
+		  73
 		],
 		[
 		  48,
-		  140
+		  70
 		],
 		[
 		  24,
@@ -3067,15 +3254,15 @@
 		],
 		[
 		  16,
-		  140
+		  70
 		],
 		[
 		  17,
-		  120
+		  60
 		],
 		[
 		  7,
-		  130
+		  65
 		],
 		[
 		  19,
@@ -3112,6 +3299,13 @@
 		2500,
 		5000
 	  ],
+	  "chances": [
+		10,
+		4,
+		3,
+		2,
+		1
+	  ],
 	  "traits": [],
 	  "original": 15,
 	  "maxlevel": 0,
@@ -3126,19 +3320,19 @@
 	  ],
 	  "name": "Vanadium Pickaxe",
 	  "color": "#c62a00",
-	  "rank": 12,
+	  "rank": 10,
 	  "cost": [
 		[
 		  36,
-		  250
+		  83
 		],
 		[
 		  44,
-		  160
+		  80
 		],
 		[
 		  17,
-		  170
+		  85
 		],
 		[
 		  24,
@@ -3150,11 +3344,11 @@
 		],
 		[
 		  48,
-		  140
+		  70
 		],
 		[
 		  16,
-		  120
+		  60
 		],
 		[
 		  22,
@@ -3162,7 +3356,7 @@
 		],
 		[
 		  19,
-		  120
+		  60
 		],
 		[
 		  33,
@@ -3191,6 +3385,13 @@
 		2700,
 		5400
 	  ],
+	  "chances": [
+		8,
+		4,
+		3,
+		3,
+		2
+	  ],
 	  "traits": [],
 	  "original": 16,
 	  "maxlevel": 0,
@@ -3205,11 +3406,11 @@
 	  ],
 	  "name": "Osmium Pickaxe",
 	  "color": "#596b5a",
-	  "rank": 13,
+	  "rank": 11,
 	  "cost": [
 		[
 		  22,
-		  280
+		  70
 		],
 		[
 		  25,
@@ -3221,23 +3422,23 @@
 		],
 		[
 		  36,
-		  180
+		  90
 		],
 		[
 		  44,
-		  190
+		  95
 		],
 		[
 		  48,
-		  160
+		  80
 		],
 		[
 		  17,
-		  180
+		  90
 		],
 		[
 		  16,
-		  130
+		  65
 		],
 		[
 		  31,
@@ -3274,11 +3475,18 @@
 		2850,
 		5700
 	  ],
+	  "chances": [
+		15,
+		2,
+		2,
+		1,
+		0
+	  ],
 	  "traits": [],
 	  "original": 17,
 	  "maxlevel": 0,
 	  "value": 1,
-	  "base": true
+	  "base": false
 	},
 	"18": {
 	  "id": 18,
@@ -3288,35 +3496,35 @@
 	  ],
 	  "name": "Sapphire Chisel",
 	  "color": "#0000ff",
-	  "rank": 14,
+	  "rank": 12,
 	  "cost": [
 		[
 		  43,
-		  310
+		  78
 		],
 		[
 		  22,
-		  200
+		  100
 		],
 		[
 		  36,
-		  220
+		  73
 		],
 		[
 		  44,
-		  180
+		  90
 		],
 		[
 		  48,
-		  170
+		  85
 		],
 		[
 		  17,
-		  190
+		  95
 		],
 		[
 		  16,
-		  150
+		  75
 		],
 		[
 		  31,
@@ -3351,11 +3559,18 @@
 		75,
 		0.4,
 		3.25,
-		20,
+		10,
 		3,
 		5,
 		3000,
 		6000
+	  ],
+	  "chances": [
+		6,
+		5,
+		4,
+		3,
+		2
 	  ],
 	  "traits": [],
 	  "original": 18,
@@ -3371,7 +3586,7 @@
 	  ],
 	  "name": "Antimony Pickaxe",
 	  "color": "#7D5B74",
-	  "rank": 15,
+	  "rank": 13,
 	  "cost": [
 		[
 		  37,
@@ -3395,7 +3610,7 @@
 		]
 	  ],
 	  "stats": [
-		100,
+		110,
 		0.25,
 		2,
 		5,
@@ -3403,6 +3618,13 @@
 		1,
 		3000,
 		7000
+	  ],
+	  "chances": [
+		20,
+		0,
+		0,
+		0,
+		0
 	  ],
 	  "traits": [],
 	  "original": 19,
@@ -3418,7 +3640,7 @@
 	  ],
 	  "name": "Tantalum Drill",
 	  "color": "#0b5394",
-	  "rank": 16,
+	  "rank": 14,
 	  "cost": [
 		[
 		  20,
@@ -3426,43 +3648,43 @@
 		],
 		[
 		  43,
-		  230
+		  77
 		],
 		[
 		  22,
-		  240
+		  80
 		],
 		[
 		  17,
-		  280
+		  70
 		],
 		[
 		  36,
-		  240
+		  80
 		],
 		[
 		  44,
-		  190
+		  95
 		],
 		[
 		  48,
-		  180
+		  90
 		],
 		[
 		  24,
-		  260
+		  65
 		],
 		[
 		  16,
-		  160
+		  80
 		],
 		[
 		  19,
-		  140
+		  70
 		],
 		[
 		  29,
-		  120
+		  60
 		],
 		[
 		  30,
@@ -3487,6 +3709,13 @@
 		3000,
 		8000
 	  ],
+	  "chances": [
+		0,
+		20,
+		0,
+		0,
+		0
+	  ],
 	  "traits": [],
 	  "original": 20,
 	  "maxlevel": 0,
@@ -3501,11 +3730,11 @@
 	  ],
 	  "name": "Radium Pickaxe",
 	  "color": "#6aa84f",
-	  "rank": 17,
+	  "rank": 15,
 	  "cost": [
 		[
 		  8,
-		  390
+		  98
 		],
 		[
 		  20,
@@ -3513,35 +3742,35 @@
 		],
 		[
 		  17,
-		  270
+		  68
 		],
 		[
 		  43,
-		  240
+		  80
 		],
 		[
 		  22,
-		  250
+		  83
 		],
 		[
 		  36,
-		  240
+		  80
 		],
 		[
 		  44,
-		  200
+		  100
 		],
 		[
 		  48,
-		  190
+		  95
 		],
 		[
 		  16,
-		  170
+		  85
 		],
 		[
 		  19,
-		  150
+		  75
 		],
 		[
 		  27,
@@ -3553,14 +3782,21 @@
 		]
 	  ],
 	  "stats": [
-		115,
-		0.2,
+		125,
+		0.12,
 		1.05,
 		10,
 		1,
 		1,
 		3000,
 		9000
+	  ],
+	  "chances": [
+		5,
+		10,
+		3,
+		1,
+		1
 	  ],
 	  "traits": [],
 	  "original": 21,
@@ -3576,15 +3812,15 @@
 	  ],
 	  "name": "Tungsten Pickaxe",
 	  "color": "#d9ead3",
-	  "rank": 18,
+	  "rank": 16,
 	  "cost": [
 		[
 		  39,
-		  220
+		  73
 		],
 		[
 		  8,
-		  140
+		  70
 		],
 		[
 		  20,
@@ -3592,23 +3828,23 @@
 		],
 		[
 		  22,
-		  165
+		  83
 		],
 		[
 		  43,
-		  135
+		  68
 		],
 		[
 		  17,
-		  150
+		  75
 		],
 		[
 		  36,
-		  130
+		  65
 		],
 		[
 		  44,
-		  110
+		  55
 		],
 		[
 		  48,
@@ -3616,7 +3852,7 @@
 		],
 		[
 		  24,
-		  160
+		  80
 		],
 		[
 		  16,
@@ -3641,6 +3877,13 @@
 		3000,
 		10000
 	  ],
+	  "chances": [
+		0,
+		10,
+		5,
+		3,
+		2
+	  ],
 	  "traits": [],
 	  "original": 22,
 	  "maxlevel": 0,
@@ -3655,11 +3898,11 @@
 	  ],
 	  "name": "Unobtainium Drill",
 	  "color": "#ff00ff",
-	  "rank": 19,
+	  "rank": 17,
 	  "cost": [
 		[
 		  40,
-		  220
+		  73
 		],
 		[
 		  39,
@@ -3720,6 +3963,13 @@
 		99999,
 		99999
 	  ],
+	  "chances": [
+		0,
+		0,
+		10,
+		7,
+		3
+	  ],
 	  "traits": [],
 	  "original": 23,
 	  "maxlevel": 0,
@@ -3750,6 +4000,13 @@
 		5,
 		9999,
 		19998
+	  ],
+	  "chances": [
+		0,
+		0,
+		0,
+		0,
+		20
 	  ],
 	  "traits": [],
 	  "original": 24,
@@ -3988,13 +4245,13 @@
 	  "name": "DEPTH GAIN I",
 	  "stage": 1,
 	  "color": "#FF00FF",
-	  "description": "You can now go 500m deeper before overheating.",
+	  "description": "You can now go 100m deeper before overheating.",
 	  "level": 4,
 	  "cost": 2,
 	  "upgradetype": "STAT",
 	  "image": 4,
 	  "type": "DEPTH",
-	  "amount": 500,
+	  "amount": 100,
 	  "multiply": false,
 	  "stat": true
 	},
@@ -4098,10 +4355,10 @@
 	  "symbolid": 0,
 	  "tiertotal": 1,
 	  "tier": 1,
-	  "nextxp": 100,
+	  "nextxp": 1000,
 	  "requiredxp": 0,
 	  "color": "#D9D9D9",
-	  "fullxp": 100,
+	  "fullxp": 1000,
 	  "boost": 1
 	},
 	"1": {
@@ -4110,10 +4367,10 @@
 	  "symbolid": 1,
 	  "tiertotal": 2,
 	  "tier": 1,
-	  "nextxp": 640,
+	  "nextxp": 12800,
 	  "requiredxp": 100,
 	  "color": "#EA9999",
-	  "fullxp": 640,
+	  "fullxp": 12800,
 	  "boost": 1.1
 	},
 	"2": {
@@ -4122,10 +4379,10 @@
 	  "symbolid": 1,
 	  "tiertotal": 2,
 	  "tier": 2,
-	  "nextxp": 770,
+	  "nextxp": 15360,
 	  "requiredxp": 640,
 	  "color": "#EA9999",
-	  "fullxp": 640,
+	  "fullxp": 12800,
 	  "boost": 1.1
 	},
 	"3": {
@@ -4134,10 +4391,10 @@
 	  "symbolid": 2,
 	  "tiertotal": 2,
 	  "tier": 1,
-	  "nextxp": 3000,
+	  "nextxp": 60000,
 	  "requiredxp": 770,
 	  "color": "#CC0000",
-	  "fullxp": 3000,
+	  "fullxp": 60000,
 	  "boost": 1.3
 	},
 	"4": {
@@ -4146,10 +4403,10 @@
 	  "symbolid": 2,
 	  "tiertotal": 2,
 	  "tier": 2,
-	  "nextxp": 3600,
+	  "nextxp": 72000,
 	  "requiredxp": 3000,
 	  "color": "#CC0001",
-	  "fullxp": 3000,
+	  "fullxp": 60000,
 	  "boost": 1.3
 	},
 	"5": {
@@ -4158,10 +4415,10 @@
 	  "symbolid": 3,
 	  "tiertotal": 3,
 	  "tier": 1,
-	  "nextxp": 22000,
+	  "nextxp": 400000,
 	  "requiredxp": 3600,
 	  "color": "#FF9900",
-	  "fullxp": 22000,
+	  "fullxp": 400000,
 	  "boost": 1.6
 	},
 	"6": {
@@ -4170,10 +4427,10 @@
 	  "symbolid": 3,
 	  "tiertotal": 3,
 	  "tier": 2,
-	  "nextxp": 26400,
+	  "nextxp": 480000,
 	  "requiredxp": 22000,
 	  "color": "#FF9900",
-	  "fullxp": 22000,
+	  "fullxp": 400000,
 	  "boost": 1.6
 	},
 	"7": {
@@ -4182,10 +4439,10 @@
 	  "symbolid": 3,
 	  "tiertotal": 3,
 	  "tier": 3,
-	  "nextxp": 30800,
+	  "nextxp": 560000,
 	  "requiredxp": 26400,
 	  "color": "#FF9900",
-	  "fullxp": 22000,
+	  "fullxp": 400000,
 	  "boost": 1.6
 	},
 	"8": {
@@ -4194,10 +4451,10 @@
 	  "symbolid": 4,
 	  "tiertotal": 3,
 	  "tier": 1,
-	  "nextxp": 95000,
+	  "nextxp": 3200000,
 	  "requiredxp": 30800,
 	  "color": "#FFD966",
-	  "fullxp": 95000,
+	  "fullxp": 3200000,
 	  "boost": 2
 	},
 	"9": {
@@ -4206,10 +4463,10 @@
 	  "symbolid": 4,
 	  "tiertotal": 3,
 	  "tier": 2,
-	  "nextxp": 114000,
+	  "nextxp": 3840000,
 	  "requiredxp": 95000,
 	  "color": "#FFD966",
-	  "fullxp": 95000,
+	  "fullxp": 3200000,
 	  "boost": 2
 	},
 	"10": {
@@ -4218,10 +4475,10 @@
 	  "symbolid": 4,
 	  "tiertotal": 3,
 	  "tier": 3,
-	  "nextxp": 133000,
+	  "nextxp": 4480000,
 	  "requiredxp": 114000,
 	  "color": "#FFD966",
-	  "fullxp": 95000,
+	  "fullxp": 3200000,
 	  "boost": 2
 	},
 	"11": {
@@ -4230,10 +4487,10 @@
 	  "symbolid": 5,
 	  "tiertotal": 5,
 	  "tier": 1,
-	  "nextxp": 380000,
+	  "nextxp": 20000000,
 	  "requiredxp": 133000,
 	  "color": "#93C47D",
-	  "fullxp": 380000,
+	  "fullxp": 20000000,
 	  "boost": 2.6
 	},
 	"12": {
@@ -4242,10 +4499,10 @@
 	  "symbolid": 5,
 	  "tiertotal": 5,
 	  "tier": 2,
-	  "nextxp": 456000,
+	  "nextxp": 24000000,
 	  "requiredxp": 380000,
 	  "color": "#93C47D",
-	  "fullxp": 380000,
+	  "fullxp": 20000000,
 	  "boost": 2.6
 	},
 	"13": {
@@ -4254,10 +4511,10 @@
 	  "symbolid": 5,
 	  "tiertotal": 5,
 	  "tier": 3,
-	  "nextxp": 532000,
+	  "nextxp": 28000000,
 	  "requiredxp": 456000,
 	  "color": "#93C47D",
-	  "fullxp": 380000,
+	  "fullxp": 20000000,
 	  "boost": 2.6
 	},
 	"14": {
@@ -4266,10 +4523,10 @@
 	  "symbolid": 5,
 	  "tiertotal": 5,
 	  "tier": 4,
-	  "nextxp": 646000,
+	  "nextxp": 34000000,
 	  "requiredxp": 532000,
 	  "color": "#93C47D",
-	  "fullxp": 380000,
+	  "fullxp": 20000000,
 	  "boost": 2.6
 	},
 	"15": {
@@ -4278,10 +4535,10 @@
 	  "symbolid": 5,
 	  "tiertotal": 5,
 	  "tier": 5,
-	  "nextxp": 798000,
+	  "nextxp": 42000000,
 	  "requiredxp": 646000,
 	  "color": "#93C47D",
-	  "fullxp": 380000,
+	  "fullxp": 20000000,
 	  "boost": 2.6
 	},
 	"16": {
@@ -4290,10 +4547,10 @@
 	  "symbolid": 6,
 	  "tiertotal": 5,
 	  "tier": 1,
-	  "nextxp": 1500000,
+	  "nextxp": 120000000,
 	  "requiredxp": 798000,
 	  "color": "#6D9EEB",
-	  "fullxp": 1500000,
+	  "fullxp": 120000000,
 	  "boost": 3.5
 	},
 	"17": {
@@ -4302,10 +4559,10 @@
 	  "symbolid": 6,
 	  "tiertotal": 5,
 	  "tier": 2,
-	  "nextxp": 1800000,
+	  "nextxp": 144000000,
 	  "requiredxp": 1500000,
 	  "color": "#6D9EEB",
-	  "fullxp": 1500000,
+	  "fullxp": 120000000,
 	  "boost": 3.5
 	},
 	"18": {
@@ -4314,10 +4571,10 @@
 	  "symbolid": 6,
 	  "tiertotal": 5,
 	  "tier": 3,
-	  "nextxp": 2100000,
+	  "nextxp": 168000000,
 	  "requiredxp": 1800000,
 	  "color": "#6D9EEB",
-	  "fullxp": 1500000,
+	  "fullxp": 120000000,
 	  "boost": 3.5
 	},
 	"19": {
@@ -4326,10 +4583,10 @@
 	  "symbolid": 6,
 	  "tiertotal": 5,
 	  "tier": 4,
-	  "nextxp": 2550000,
+	  "nextxp": 204000000,
 	  "requiredxp": 2100000,
 	  "color": "#6D9EEB",
-	  "fullxp": 1500000,
+	  "fullxp": 120000000,
 	  "boost": 3.5
 	},
 	"20": {
@@ -4338,10 +4595,10 @@
 	  "symbolid": 6,
 	  "tiertotal": 5,
 	  "tier": 5,
-	  "nextxp": 3150000,
+	  "nextxp": 252000000,
 	  "requiredxp": 2550000,
 	  "color": "#6D9EEB",
-	  "fullxp": 1500000,
+	  "fullxp": 120000000,
 	  "boost": 3.5
 	},
 	"21": {
@@ -4350,10 +4607,10 @@
 	  "symbolid": 7,
 	  "tiertotal": 1,
 	  "tier": 1,
-	  "nextxp": 6200000,
+	  "nextxp": 1000000000,
 	  "requiredxp": 3150000,
 	  "color": "#8E7CC3",
-	  "fullxp": 6200000,
+	  "fullxp": 1000000000,
 	  "boost": 5
 	},
 	"22": {
@@ -4381,13 +4638,13 @@
 		0
 	  ],
 	  "bg": 1,
-	  "music": 14,
+	  "music": 13,
 	  "pitch": 1,
 	  "description": "PLACEHOLDER",
 	  "length": 1,
 	  "start": 0,
 	  "end": 1,
-	  "mini": true
+	  "mini": false
 	},
 	"1": {
 	  "id": 1,
@@ -4403,9 +4660,9 @@
 	  "music": 9,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
-	  "length": 49,
+	  "length": 19,
 	  "start": 2,
-	  "end": 49,
+	  "end": 19,
 	  "mini": false
 	},
 	"2": {
@@ -4422,9 +4679,9 @@
 	  "music": 8,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
-	  "length": 100,
-	  "start": 50,
-	  "end": 149,
+	  "length": 80,
+	  "start": 20,
+	  "end": 99,
 	  "mini": false
 	},
 	"3": {
@@ -4441,9 +4698,9 @@
 	  "music": 10,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
-	  "length": 150,
-	  "start": 150,
-	  "end": 299,
+	  "length": 100,
+	  "start": 100,
+	  "end": 199,
 	  "mini": false
 	},
 	"4": {
@@ -4461,8 +4718,8 @@
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
 	  "length": 200,
-	  "start": 300,
-	  "end": 499,
+	  "start": 200,
+	  "end": 399,
 	  "mini": false
 	},
 	"5": {
@@ -4476,12 +4733,12 @@
 		1
 	  ],
 	  "bg": 4,
-	  "music": 17,
+	  "music": 16,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
 	  "length": 250,
-	  "start": 500,
-	  "end": 749,
+	  "start": 400,
+	  "end": 649,
 	  "mini": false
 	},
 	"6": {
@@ -4495,12 +4752,12 @@
 		1
 	  ],
 	  "bg": 1,
-	  "music": 16,
+	  "music": 15,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
-	  "length": 250,
-	  "start": 750,
-	  "end": 999,
+	  "length": 300,
+	  "start": 650,
+	  "end": 949,
 	  "mini": false
 	},
 	"7": {
@@ -4513,13 +4770,13 @@
 		2,
 		1
 	  ],
-	  "bg": 0,
+	  "bg": 8,
 	  "music": 3,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
-	  "length": 125,
-	  "start": 1000,
-	  "end": 1124,
+	  "length": 50,
+	  "start": 950,
+	  "end": 999,
 	  "mini": false
 	},
 	"8": {
@@ -4533,12 +4790,12 @@
 		1
 	  ],
 	  "bg": 6,
-	  "music": 18,
+	  "music": 17,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
-	  "length": 125,
-	  "start": 1125,
-	  "end": 1249,
+	  "length": 100,
+	  "start": 1000,
+	  "end": 1099,
 	  "mini": true
 	},
 	"9": {
@@ -4556,8 +4813,8 @@
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
 	  "length": 250,
-	  "start": 1250,
-	  "end": 1499,
+	  "start": 1100,
+	  "end": 1349,
 	  "mini": false
 	},
 	"10": {
@@ -4571,12 +4828,12 @@
 		1
 	  ],
 	  "bg": 3,
-	  "music": 25,
+	  "music": 24,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
 	  "length": 400,
-	  "start": 1500,
-	  "end": 1899,
+	  "start": 1350,
+	  "end": 1749,
 	  "mini": false
 	},
 	"11": {
@@ -4590,12 +4847,12 @@
 		2
 	  ],
 	  "bg": 3,
-	  "music": 15,
+	  "music": 14,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
-	  "length": 100,
-	  "start": 1900,
-	  "end": 1999,
+	  "length": 150,
+	  "start": 1750,
+	  "end": 1899,
 	  "mini": true
 	},
 	"12": {
@@ -4609,12 +4866,12 @@
 		2
 	  ],
 	  "bg": 7,
-	  "music": 23,
+	  "music": 22,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
 	  "length": 400,
-	  "start": 2000,
-	  "end": 2399,
+	  "start": 1900,
+	  "end": 2299,
 	  "mini": false
 	},
 	"13": {
@@ -4631,8 +4888,8 @@
 	  "music": 1,
 	  "pitch": 0.8,
 	  "description": "PLACEHOLDER",
-	  "length": 100,
-	  "start": 2400,
+	  "length": 200,
+	  "start": 2300,
 	  "end": 2499,
 	  "mini": true
 	},

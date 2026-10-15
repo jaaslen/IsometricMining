@@ -1,0 +1,182 @@
+extends Control
+
+var Order = [1,2,3,5,7,6,4,13,14,16,18,22,9,15,8,12,17,32,34,11,10,28,23,20,24,25,27,36,21,26,31,35,38,29,37,33,30,19,39,40]
+
+@onready var OresInGame: int = Global.OresInGame
+@export var ActualOre = Global.GameData["ores"]["0"]
+@export var Ore = Global.GameData["ores"]["0"]
+
+#@onready var PanelStyle = load("uid://bu0qaxonbmuh1").duplicate(true)
+@onready var Buttons = %GridContainer
+@onready var IDlabel = $FullContainer/Name/ID
+@onready var IconContainer = $FullContainer/Container/Ripple
+@onready var Icon = $FullContainer/Container/Ripple/Icon
+@onready var Name = $FullContainer/Name
+@onready var RareLabel: Label = $FullContainer/Name/Rarity
+@onready var DepthRange: Label = $FullContainer/DepthRange
+
+
+#@onready var InfoContainer = $FullContainer/HBoxContainer/Data/ScrollContainer/InfoContainer
+#@onready var MinDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer/Container/Text/MinValue
+#@onready var MinDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer/Container/Description
+#@onready var MaxDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer2/Container/Text/MaxValue
+#@onready var MaxDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer2/Container/Description
+#@onready var OptimalDepth = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer3/Container/Text/OptValue
+#@onready var OptDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer3/Container/Description
+#@onready var Hardness = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer4/Container/Text/Hardness
+#@onready var HardDescription = $FullContainer/HBoxContainer/VBoxContainer2/ScrollContainer/InfoContainer/PanelContainer4/Container/Description
+
+@onready var Description = $FullContainer/Description
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	#get_viewport().connect("size_changed", Callable(self, "update_position_and_scale"))
+	#update_position_and_scale()
+	position = ClosedPos
+	#LoadOre(1)
+	reconnect()
+
+func reconnect():
+	if Buttons != null:
+		for i in Buttons.get_children():
+			if i.is_connected("OreSelected",LoadOre) == false:
+				i.OreSelected.connect(LoadOre)
+
+func LoadOre(OreID,opening = true):
+	
+	visible = true
+	
+	Ore = Global.GameData["ores"][var_to_str(OreID)]
+	
+	
+	
+	modulate = Color(Ore["color"]) * 0.5 + Color(0.5,0.5,0.5) 
+	#IconContainer.self_modulate = Color(Ore["color"]) + Color(0,0,0,1)
+	ActualOre = Global.GameData["ores"][var_to_str(OreID)]
+	if ActualOre["sorting"] < 10:
+		IDlabel.text = "#00" + var_to_str(ActualOre["sorting"])
+	elif ActualOre["sorting"] < 100:
+		IDlabel.text = "#0" + var_to_str(ActualOre["sorting"])
+	else:
+		IDlabel.text = "#" + var_to_str(ActualOre["sorting"])
+	if int(Ore["sorting"]) not in Global.FoundOres:
+		Ore = Global.GameData["ores"]["0"]
+
+	#PanelStyle.border_color = Color(Ore["color"])  / 5 + Color(0.25,0.25,0.25,1)
+	#PanelStyle.bg_color = Color(Ore["color"]) / 10 +Color(0.15,0.15,0.15,1)
+	DepthRange.text = "%sM -> %sM" % [int(Ore["arrival"]),int(Ore["maximum"])]
+	var atlas = Ore["atlas"]
+	RareLabel.text = ""
+	for i in range(ActualOre["rarity"]):
+		RareLabel.text += "★"
+	for i in range(5-ActualOre["rarity"]):
+		RareLabel.text += "☆"
+	#RareLabel.text = str(int(ActualOre["rarity"])) + " Stars"
+	
+	#RareLabel.text = "★"
+	Name.text = Ore["name"]
+	#Name.self_modulate = Color(Ore["color"]) + Color(0.2,0.2,0.2) #add_theme_color_override("font_color",Color(Ore["color"])*1.2)
+	#Name.add_theme_color_override("font_outline_color",Color(Ore["color"]))
+	Description.text = Ore["description"]
+	Icon.texture = Icon.texture.duplicate(true)
+	Icon.texture.region = Rect2(Vector2(Global.TileSize.x * atlas[0],2 * Global.TileSize.y * atlas[1]),Vector2(Global.TileSize.x,Global.TileSize.y * 2))#Rect2(Vector2(Global.TileSize.x * atlas[0],2 * Global.TileSize.y * atlas[1]),Vector2(Global.TileSize.x,Global.TileSize.y * 2))#Rect2(Vector2(64 * atlas[0],68 * atlas[1])*2,Vector2(64,68)*2)
+	IconContainer.LayerChanged(Global.GameData["layers"][str(int(Ore["layer"][0]))])
+	IconContainer.material.set_shader_parameter("tex,",load("res://Visuals/Backgrounds/Background" + str(int(Global.GameData["layers"][str(int(Ore["layer"][0]))]["bg"])) + ".png"))
+	#InfoContainer.LoadOre(OreID)
+	
+	#if Ore["id"] == 0:
+		#MinDepth.text = "%sm" % int(ActualOre["arrival"])
+		#MaxDepth.text = "???m"
+		#Hardness.text = "???"
+		#OptimalDepth.text = "???m"
+		#OptimalDepth.add_theme_font_size_override("font_size",50)
+	#else:
+	#
+		#MinDepth.text = "%sm" % int(Ore["arrival"])
+		#MaxDepth.text = "%sm" % int(Ore["depth"][-1][0])
+		#Hardness.text = "%s" % int(Ore["hardness"])
+		#if Ore["optimal"].size() == 2:
+			#OptimalDepth.text = "%s-%sm " % [int(Ore["optimal"][0]),int(Ore["optimal"][1])]
+			#OptDescription.text = "This ore is most common at a depth of [color=white]%s[/color]-[color=white]%s[/color]m." % [int(Ore["optimal"][0]),int(Ore["optimal"][1])]
+			#OptimalDepth.add_theme_font_size_override("font_size",40)
+		#else:
+			#OptimalDepth.text = "%sm" % int(Ore["optimal"][0])
+			#OptDescription.text = "This ore is most common at a depth of [color=white]%d[/color]m." % int(Ore["optimal"][0])
+			#OptimalDepth.add_theme_font_size_override("font_size",50)
+			#
+	#MinDescription.text = "This ore first starts appearing at a depth of [color=white]%d[/color]m." % int(Ore["arrival"])
+	#MaxDescription.text = "This ore will stop appearing past a depth of [color=white]%d[/color]m." % int(Ore["depth"][-1][0])
+	#HardDescription.text = "This ore has a toughness %sx harder than stone" % int(Ore["hardness"])
+	
+		
+	if !Open:
+		ButtonPressed()
+
+
+var Open = false
+var Closing = false
+var Opening = false
+var ClosedPos = Vector2(1920,-60)
+var OpenPos = Vector2(905,-60)
+# Called when the node enters the scene tree for the first time.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	
+	if Closing:
+		position = position.lerp(ClosedPos,delta * 10)
+		if position.distance_squared_to(ClosedPos) < 100:
+			position = ClosedPos
+			Closing = false
+			Open = false
+		
+	elif Opening:
+		position = position.lerp(OpenPos,delta * 7)
+		if position.distance_squared_to(OpenPos) < 100:
+			position = OpenPos
+			Open = true
+			Opening = false
+			
+
+
+
+func ButtonPressed() -> void:
+	
+	if Opening:
+		Opening = false
+		Closing = true
+	elif Closing:
+		Opening = true
+		Closing = false
+	else:
+		Closing = Open
+		Opening = !Open
+		
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Esc"):
+		if !Open:
+			ButtonPressed()
+	pass # Replace with function body.
+
+
+func _on_button_pressed() -> void:
+	SFX.play_sfx("ToggleOFF")
+	if !Open:
+		ButtonPressed()
+	pass # Replace with function body.
+
+
+		
+
+
+#
+#func update_position_and_scale():
+	#var vp_size = get_viewport_rect().size
+	#if Open == false and Opening == false and Closing == false:
+		#position.x = vp_size.x
+	#ClosedPos = Vector2(vp_size.x,0)
+	#
+	#scale.x = 4 * vp_size.x / reference_resolution.x
+	#scale.y = scale.x
+	#emit_signal("Scaled")

@@ -8,6 +8,7 @@
 [ext_resource type="Theme" uid="uid://bhh6e3pgmrfbn" path="res://Visuals/GameTheme.tres" id="5_8nov7"]
 [ext_resource type="Script" uid="uid://d1pm4a1qmljmt" path="res://Scenes/PointsLabel.gd" id="6_eoefc"]
 [ext_resource type="StyleBox" uid="uid://d0q8uxj0q6kgx" path="res://Visuals/MetalPanelNarrow.tres" id="6_pjr1x"]
+[ext_resource type="Script" uid="uid://cl0hw4hoqjek0" path="res://squares.gd" id="9_e8f14"]
 
 [sub_resource type="Gradient" id="Gradient_pln1o"]
 offsets = PackedFloat32Array(0, 0.89759034)
@@ -353,6 +354,22 @@ anchor_right = 0.033
 anchor_bottom = 0.064
 offset_right = 0.6399994
 text = "X"
+
+[node name="Control" type="Control" parent="." unique_id=568765973]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("9_e8f14")
+CentreSquareScale = Vector2(0.05, 0.05)
+EdgeSquareModulate = Color(0, 0, 0, 0)
+CentreSquareRotation = 3.15
+Clamp = false
+FollowMouse = true
+MouseMovingMultiplier = 2.0
+Rings = 50
+metadata/_edit_use_anchors_ = true
 
 [connection signal="UpgradeSelected" from="ScrollContainer/Upgrades" to="." method="UpgradesSelected"]
 [connection signal="pressed" from="Info/InfoVBox/HBoxContainer/Unlock" to="." method="_on_unlock_pressed"]

@@ -99,7 +99,19 @@ func LevelUp():
 	Global.Level = level
 	Bar.max_value = level["nextxp"]
 	Sprite.texture = load("res://Visuals/Ranks/" + level["name"] + ".png")
-	Tier.texture = load("res://Visuals/Ranks/" + str(int(level["tier"])) + ".png")
+	
+	if level["tiertotal"] >= 2:
+		Tier.texture = load("res://Visuals/Ranks/" + str(int(level["tier"])) + ".png")
+		FinalTier.texture = load("res://Visuals/Ranks/" + str(int(level["tiertotal"])) + ".png")
+		TierProgress.visible = true
+		TierProgress.max_value = level["tiertotal"]
+		TierProgress.value = level["tier"]
+	else:
+		TierProgress.visible = true
+		Tier.visible = false
+		
+	
+	
 	Global.LeveledUp()
 	
 	

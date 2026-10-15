@@ -20,6 +20,6 @@ void fragment() {
 	float cLength = length(cPos);
 	vec2 uv = FRAGCOORD.xy / (1.0 / SCREEN_PIXEL_SIZE).xy + (cPos/cLength) * cos(cLength * wave_count - TIME * speed) * height;
     vec3 col = texture(tex,uv).xyz;
-	COLOR = vec4(col,1.0);
-	COLOR = mix(colour, COLOR, float(int(UV.y * 160.0) % 2));
+	COLOR = vec4(col,1.0) * colour;
+	COLOR = mix(0.5 * vec4(col,1.0) + colour * 0.5, COLOR, float(int(UV.y * 160.0) % 2));
 }

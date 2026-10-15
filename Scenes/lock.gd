@@ -25,7 +25,7 @@ func _on_detection_lock(boolean) -> void:
 
 
 func _on_mine_settings_selected(selected : int) -> void:
-	if selected == 1:
+	if selected == 1 or selected == 3:
 		pass
 	else:
 		if active:

@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="StatUpgrade" format=3]
+[gd_resource type="Resource" script_class="StatUpgrade" format=3 uid="uid://svoqk70gstef"]
 
-[ext_resource type="Script" path="res://Boosts/Upgrades/UpgradeBases/StatBoost.gd" id="1_c2s43"]
+[ext_resource type="Script" uid="uid://dayvfpbt2jrm0" path="res://Boosts/Upgrades/UpgradeBases/StatBoost.gd" id="1_c2s43"]
 
 [resource]
 script = ExtResource("1_c2s43")
 Stat = "DEPTH"
-Mult = 500.0
+Mult = 50.0
 Multiply = false

@@ -1,0 +1,190 @@
+[gd_scene format=3 uid="uid://dmkd2dw8fv71t"]
+
+[ext_resource type="Script" uid="uid://b6ddyeicx5f5b" path="res://Scenes/chances.gd" id="1_pvveh"]
+
+[node name="PanelContainer" type="Panel" unique_id=75731276]
+custom_minimum_size = Vector2(0, 80)
+anchors_preset = -1
+anchor_right = 0.19739583
+anchor_bottom = 0.16018519
+script = ExtResource("1_pvveh")
+metadata/_edit_use_anchors_ = true
+
+[node name="Container" type="HBoxContainer" parent="." unique_id=1118432354]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="1" type="Panel" parent="Container" unique_id=1395221864]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Container/1" unique_id=926691066]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[shake rate=8.0 level=0 connected=0]x1[/shake]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="chance" type="RichTextLabel" parent="Container/1" unique_id=980526243]
+clip_contents = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.1
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[shake rate=8.0 level=0 connected=0]x1[/shake]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="2" type="Panel" parent="Container" unique_id=992285123]
+modulate = Color(0.8, 1, 0.96999997, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Container/2" unique_id=100871358]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[shake rate=8.0 level=10 connected=0]x2[/shake]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="chance" type="RichTextLabel" parent="Container/2" unique_id=905847431]
+clip_contents = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.1
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[shake rate=8.0 level=0 connected=0]x1[/shake]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="3" type="Panel" parent="Container" unique_id=2000263121]
+modulate = Color(0.908, 1, 0.77, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Container/3" unique_id=181539616]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[shake rate=8.0 level=10 connected=0]x3[/shake]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="chance" type="RichTextLabel" parent="Container/3" unique_id=1527352171]
+clip_contents = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.1
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[shake rate=8.0 level=0 connected=0]x1[/shake]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="4" type="Panel" parent="Container" unique_id=211677922]
+modulate = Color(1, 0.706, 0.51, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Container/4" unique_id=714760900]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[shake rate=8.0 level=10 connected=0]x4[/shake]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="chance" type="RichTextLabel" parent="Container/4" unique_id=1554721390]
+clip_contents = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.1
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[shake rate=8.0 level=0 connected=0]x1[/shake]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="5" type="Panel" parent="Container" unique_id=1614922162]
+modulate = Color(1, 0.49, 0.49, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Container/5" unique_id=1480309971]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[shake rate=8.0 level=10 connected=0]x5[/shake]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="chance" type="RichTextLabel" parent="Container/5" unique_id=689564633]
+clip_contents = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.1
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[shake rate=8.0 level=0 connected=0]x1[/shake]"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 2

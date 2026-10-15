@@ -21,7 +21,7 @@ func _process(delta):
 
 
 func _on_button_pressed() -> void:
-	var scene = ResourceLoader.load_threaded_get("res://Scenes/Title.tscn")
+	var scene = ResourceLoader.load_threaded_get(scene_path)
 	get_tree().change_scene_to_packed(scene)
 
 	pass # Replace with function body.

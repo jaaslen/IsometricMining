@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cdsd6xbm8m530"]
 
 [ext_resource type="Script" uid="uid://iphldv5dh8h8" path="res://Scripts/LayerInfoPanel.gd" id="1_cshn8"]
-[ext_resource type="StyleBox" uid="uid://ckiyntv3jfww6" path="res://AngleButton.tres" id="2_cshn8"]
+[ext_resource type="StyleBox" uid="uid://ys1qtfbmwbtv" path="res://Visuals/MetalPanel.tres" id="2_ksa2b"]
 [ext_resource type="Shader" uid="uid://q7mcrixlhor3" path="res://RippleUI.gdshader" id="3_ksa2b"]
-[ext_resource type="Script" uid="uid://drgpx1hb486bv" path="res://Scripts/Ripple.gd" id="4_ksa2b"]
 [ext_resource type="Shader" uid="uid://bhnh7ur4ox6e2" path="res://Scenes/Blur.gdshader" id="5_8vn1h"]
 [ext_resource type="Texture2D" uid="uid://daxg4r2hrtpvi" path="res://Visuals/Backgrounds/Background1.png" id="5_ksa2b"]
+[ext_resource type="Script" uid="uid://b1o86uilrq6c4" path="res://Scenes/dictionaryripple.gd" id="5_ptoyi"]
 [ext_resource type="StyleBox" uid="uid://q3w7otm544mc" path="res://FlatPanel.tres" id="6_ksa2b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_anmin"]
@@ -14,7 +14,7 @@ shader_parameter/tex = ExtResource("5_ksa2b")
 shader_parameter/wave_count = 20.0
 shader_parameter/speed = 3.0
 shader_parameter/height = 0.003
-shader_parameter/colour = Color(0, 0, 0, 1)
+shader_parameter/colour = Color(0.984375, 0.984375, 0.984375, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ksa2b"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -25,13 +25,6 @@ skew = Vector2(0.16, 0)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ptoyi"]
 shader = ExtResource("5_8vn1h")
 shader_parameter/blur_amount = 5.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8vn1h"]
-bg_color = Color(0.3137255, 0.3137255, 0.3137255, 0.57254905)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
 
 [node name="Control" type="Control" unique_id=1820293531]
 layout_mode = 3
@@ -59,9 +52,8 @@ custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = ExtResource("2_cshn8")
+theme_override_styles/normal = ExtResource("2_ksa2b")
 text = "Layername"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ID" type="Label" parent="FullContainer/Name" unique_id=1109487173]
@@ -73,7 +65,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-theme_override_styles/normal = ExtResource("2_cshn8")
+theme_override_styles/normal = ExtResource("2_ksa2b")
 text = "Id"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -84,7 +76,7 @@ custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = ExtResource("2_cshn8")
+theme_override_styles/normal = ExtResource("2_ksa2b")
 text = "StartDepth"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -94,7 +86,7 @@ material = SubResource("ShaderMaterial_anmin")
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.35
-script = ExtResource("4_ksa2b")
+script = ExtResource("5_ptoyi")
 
 [node name="Panel" type="Panel" parent="FullContainer" unique_id=1802554121]
 visible = false
@@ -104,6 +96,18 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.15
 theme_override_styles/panel = SubResource("StyleBoxFlat_ksa2b")
+
+[node name="Description" type="Label" parent="FullContainer" unique_id=1483098816]
+z_index = 2
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.5
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("2_ksa2b")
+text = "Layername"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel2" type="Panel" parent="." unique_id=45080734]
 visible = false
@@ -160,20 +164,5 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme_override_styles/panel = ExtResource("6_ksa2b")
-
-[node name="Description" type="Label" parent="." unique_id=1483098816]
-z_index = 2
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.5425926
-anchor_right = 1.0
-anchor_bottom = 1.0111111
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_8vn1h")
-text = "Layername"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Panel2/Button" to="." method="_on_button_pressed"]

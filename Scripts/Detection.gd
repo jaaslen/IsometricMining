@@ -231,17 +231,17 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("LockShift") and InMine == true:
 		if ShiftLocked == false:
-			for i in Effects.get_children():
-				if i.name != "Mining":
-					i.call_deferred("queue_free")
+			#for i in Effects.get_children():
+				#if i.name != "Mining":
+					#i.call_deferred("queue_free")
 			ShiftLocked = true
 			Locked = false
 		else:
 			#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			ShiftLocked = false
-			for i in Effects.get_children():
-				if i.name != "Mining":
-					i.call_deferred("queue_free")
+			#for i in Effects.get_children():
+				#if i.name != "Mining":
+					#i.call_deferred("queue_free")
 		
 	
 	#elif Input.is_action_just_pressed("Shift") and InMine == true and MovingDown == false and Mining == false and MovingSideways == Vector2(0,0) and Locked == false :
@@ -647,8 +647,9 @@ func MiningAnim(Layer,_MineTime,_GlobalCoordinates):
 		
 		#TopAnimation.z_index = self.get_node("Layers").get_child_count() - (str_to_var(Layer.name)-1)
 		$Particles/MineParticles.position = ClickedCenter()
-		
+		$Effects/Multiplier.position = ClickedCenter()
 		if int(Ore["id"]) != 1:
+			
 			$Particles/BreakParticles.position = ClickedCenter()
 			$Particles/BreakParticles.modulate = Color(Ore["color"])
 			$Particles/BreakParticles.visible = false
@@ -767,6 +768,33 @@ func ResetMining():
 func FinishedMining(Layer = -1,BreakSound = "",Sound = ""):
 	$Particles/BreakParticles.restart(true)
 	
+	var multiplier_roll : int = randi_range(1,20)
+	var result = 1
+	
+	var total_threshold = 0
+	for i in Global.Pickaxe["chances"]:
+		total_threshold += i
+		if multiplier_roll > total_threshold:
+			result += 1
+	
+	if result == 2:
+		$Effects/Multiplier/Multiplier.play("x2")
+		
+	elif result == 3:
+		$Effects/Multiplier/Multiplier.play("x3")
+		
+	elif result == 4:
+		$Effects/Multiplier/Multiplier.play("x4")
+		
+	elif result == 5:
+		$Effects/Multiplier/Multiplier.play("x5")
+		
+	
+	if result > 1 and CurrentOre != 1:
+		SFX.play_sfx("Combo 2",randf_range(0.8,1.2) + (result-1) * 0.5,4)
+	
+	
+	
 	TopAnimation.visible = false
 	if CurrentOre == LastMined:
 		Lastminedamount += 1
@@ -802,7 +830,7 @@ func FinishedMining(Layer = -1,BreakSound = "",Sound = ""):
 	else:
 		Global.Tiles[str_to_var(Layer.name) -2][TileCoords.find(CurrentTile)] = -1
 
-	Global.AddOre(CurrentOre,Global.GameData["ores"][var_to_str(CurrentOre)])
+	Global.AddOre(CurrentOre,Global.GameData["ores"][var_to_str(CurrentOre)],result)
 	Global.GainXP( Global.GameData["ores"][var_to_str(CurrentOre)]["xp"] )
 	CurrentTile = Vector2i(100,100)
 	CurrentOre = -1
